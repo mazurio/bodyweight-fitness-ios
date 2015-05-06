@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:SlideOutNavigation.xcodeproj">
+      location = "self:Fit for Reddit.xcodeproj">
    </FileRef>
 </Workspace>
