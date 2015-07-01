@@ -1,2 +1,3 @@
-# fit-for-reddit-ios
-Fit for Reddit (iOS)
+# bodyweight-fitness-ios
+
+Source is current out of date. Updating soon.
