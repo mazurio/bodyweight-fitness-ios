@@ -1,0 +1,1086 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 47;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E0667C551B542C9800700007 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871D1B5272B400540104 /* SwiftyJSON.swift */; };
+		E0667C571B542C9800700007 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
+		E0667C5E1B542C9800700007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871F1B5272B400540104 /* SWRevealViewController.m */; };
+		E0667C621B542C9800700007 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
+		E0667C631B542C9800700007 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587371B52730000540104 /* DrawerController.swift */; };
+		E0667C651B542C9800700007 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
+		E0667C661B542C9800700007 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
+		E0667C671B542C9800700007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
+		E0667C6C1B542C9800700007 /* pseudo_planche.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587671B52733100540104 /* pseudo_planche.gif */; };
+		E0667C6D1B542C9800700007 /* scapular_shrugs.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587711B52733100540104 /* scapular_shrugs.gif */; };
+		E0667C6E1B542C9800700007 /* leg_swings.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875F1B52733100540104 /* leg_swings.gif */; };
+		E0667C6F1B542C9800700007 /* band_dislocates.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587501B52733100540104 /* band_dislocates.gif */; };
+		E0667C701B542C9800700007 /* burpee.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587521B52733100540104 /* burpee.gif */; };
+		E0667C711B542C9800700007 /* vertical_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587781B52733100540104 /* vertical_row.gif */; };
+		E0667C721B542C9800700007 /* wall_extensions.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587791B52733100540104 /* wall_extensions.gif */; };
+		E0667C731B542C9800700007 /* rings_turned_out_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */; };
+		E0667C741B542C9800700007 /* plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587651B52733100540104 /* plank.gif */; };
+		E0667C751B542C9800700007 /* Routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* Routine.json */; };
+		E0667C761B542C9800700007 /* l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875E1B52733100540104 /* l_sit.gif */; };
+		E0667C771B542C9800700007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F587411B52730C00540104 /* Main.storyboard */; };
+		E0667C781B542C9800700007 /* one_foot_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587621B52733100540104 /* one_foot_l_sit.gif */; };
+		E0667C791B542C9800700007 /* pullover.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587681B52733100540104 /* pullover.gif */; };
+		E0667C7A1B542C9800700007 /* deep_stepup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587541B52733100540104 /* deep_stepup.gif */; };
+		E0667C7C1B542C9800700007 /* ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876C1B52733100540104 /* ring_dips.gif */; };
+		E0667C7D1B542C9800700007 /* wall_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877B1B52733100540104 /* wall_plank.gif */; };
+		E0667C7E1B542C9800700007 /* pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587691B52733100540104 /* pullup.gif */; };
+		E0667C7F1B542C9800700007 /* parallel_bar_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587631B52733100540104 /* parallel_bar_dips.gif */; };
+		E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */; };
+		E0667C811B542C9800700007 /* ring_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876E1B52733100540104 /* ring_support.gif */; };
+		E0667C821B542C9800700007 /* horizontal_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875A1B52733100540104 /* horizontal_row.gif */; };
+		E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587551B52733100540104 /* diamond_pushup.gif */; };
+		E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587751B52733100540104 /* tuck_front_lever.gif */; };
+		E0667C851B542C9800700007 /* full_body_circles.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587581B52733100540104 /* full_body_circles.gif */; };
+		E0667C861B542C9800700007 /* pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876A1B52733100540104 /* pushup.gif */; };
+		E0667C871B542C9800700007 /* negative_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587611B52733100540104 /* negative_pullup.gif */; };
+		E0667C881B542C9800700007 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
+		E0667C891B542C9800700007 /* tuck_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587771B52733100540104 /* tuck_l_sit.gif */; };
+		E0667C8A1B542C9800700007 /* assisted_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874F1B52733100540104 /* assisted_squat.gif */; };
+		E0667C8B1B542C9800700007 /* incline_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875C1B52733100540104 /* incline_row.gif */; };
+		E0667C8C1B542C9800700007 /* freestanding_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587571B52733100540104 /* freestanding_handstand.gif */; };
+		E0667C8D1B542C9800700007 /* wide_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877D1B52733100540104 /* wide_row.gif */; };
+		E0667C8E1B542C9800700007 /* wall_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877C1B52733100540104 /* wall_pushup.gif */; };
+		E0667C8F1B542C9800700007 /* rings_turned_out_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587701B52733100540104 /* rings_turned_out_support.gif */; };
+		E0667C901B542C9800700007 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
+		E0667C911B542C9800700007 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
+		E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
+		E0667C931B542C9800700007 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
+		E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
+		E0667C951B542C9800700007 /* side_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587721B52733100540104 /* side_plank.gif */; };
+		E0667C961B542C9800700007 /* reverse_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876B1B52733100540104 /* reverse_plank.gif */; };
+		E0667C971B542C9800700007 /* cat_camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587531B52733100540104 /* cat_camel.gif */; };
+		E0667C981B542C9800700007 /* ring_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876D1B52733100540104 /* ring_pushup.gif */; };
+		E0667C991B542C9800700007 /* incline_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875B1B52733100540104 /* incline_pushup.gif */; };
+		E0667C9A1B542C9800700007 /* pseudo_planche_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587661B52733100540104 /* pseudo_planche_pushup.gif */; };
+		E0667C9B1B542C9800700007 /* parallel_bar_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587641B52733100540104 /* parallel_bar_hold.gif */; };
+		E0667C9C1B542C9800700007 /* arch.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874E1B52733100540104 /* arch.gif */; };
+		E0667C9D1B542C9800700007 /* squat_jumps.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587731B52733100540104 /* squat_jumps.gif */; };
+		E0667C9E1B542C9800700007 /* lsit_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587601B52733100540104 /* lsit_pullup.gif */; };
+		E0667C9F1B542C9800700007 /* l_ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875D1B52733100540104 /* l_ring_dips.gif */; };
+		E0667CA01B542C9800700007 /* tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587741B52733100540104 /* tuck_front_lever_row.gif */; };
+		E0667CA11B542C9800700007 /* wall_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877A1B52733100540104 /* wall_handstand.gif */; };
+		E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
+		E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
+		E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0667CAE1B542F7800700007 /* Images Pro.xcassets */; };
+		E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */; };
+		E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
+		E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
+		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
+		E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
+		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
+		E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
+		E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
+		E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
+		E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
+		E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
+		E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
+		E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
+		E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
+		E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
+		E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
+		E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
+		E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
+		E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
+		E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
+		E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
+		E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; settings = {ASSET_TAGS = (); }; };
+		E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; settings = {ASSET_TAGS = (); }; };
+		E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; settings = {ASSET_TAGS = (); }; };
+		E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; settings = {ASSET_TAGS = (); }; };
+		E0F0EA111B556E93001DBAE4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */; };
+		E0F0EA121B556E93001DBAE4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */; };
+		E0F0EA131B556E93001DBAE4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */; };
+		E0F0EA141B556E93001DBAE4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */; };
+		E0F587291B5272B400540104 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871D1B5272B400540104 /* SwiftyJSON.swift */; };
+		E0F5872A1B5272B400540104 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871F1B5272B400540104 /* SWRevealViewController.m */; };
+		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
+		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
+		E0F587351B5272F400540104 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
+		E0F5873B1B52730000540104 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587371B52730000540104 /* DrawerController.swift */; };
+		E0F5873C1B52730000540104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
+		E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
+		E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
+		E0F587461B52730C00540104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F587411B52730C00540104 /* Main.storyboard */; };
+		E0F587471B52730C00540104 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
+		E0F5874A1B52731C00540104 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
+		E0F5874B1B52731C00540104 /* Routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* Routine.json */; };
+		E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
+		E0F587801B52733100540104 /* arch.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874E1B52733100540104 /* arch.gif */; };
+		E0F587811B52733100540104 /* assisted_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874F1B52733100540104 /* assisted_squat.gif */; };
+		E0F587821B52733100540104 /* band_dislocates.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587501B52733100540104 /* band_dislocates.gif */; };
+		E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
+		E0F587841B52733100540104 /* burpee.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587521B52733100540104 /* burpee.gif */; };
+		E0F587851B52733100540104 /* cat_camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587531B52733100540104 /* cat_camel.gif */; };
+		E0F587861B52733100540104 /* deep_stepup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587541B52733100540104 /* deep_stepup.gif */; };
+		E0F587871B52733100540104 /* diamond_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587551B52733100540104 /* diamond_pushup.gif */; };
+		E0F587881B52733100540104 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
+		E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587571B52733100540104 /* freestanding_handstand.gif */; };
+		E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587581B52733100540104 /* full_body_circles.gif */; };
+		E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
+		E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875A1B52733100540104 /* horizontal_row.gif */; };
+		E0F5878D1B52733100540104 /* incline_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875B1B52733100540104 /* incline_pushup.gif */; };
+		E0F5878E1B52733100540104 /* incline_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875C1B52733100540104 /* incline_row.gif */; };
+		E0F5878F1B52733100540104 /* l_ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875D1B52733100540104 /* l_ring_dips.gif */; };
+		E0F587901B52733100540104 /* l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875E1B52733100540104 /* l_sit.gif */; };
+		E0F587911B52733100540104 /* leg_swings.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875F1B52733100540104 /* leg_swings.gif */; };
+		E0F587921B52733100540104 /* lsit_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587601B52733100540104 /* lsit_pullup.gif */; };
+		E0F587931B52733100540104 /* negative_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587611B52733100540104 /* negative_pullup.gif */; };
+		E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587621B52733100540104 /* one_foot_l_sit.gif */; };
+		E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587631B52733100540104 /* parallel_bar_dips.gif */; };
+		E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587641B52733100540104 /* parallel_bar_hold.gif */; };
+		E0F587971B52733100540104 /* plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587651B52733100540104 /* plank.gif */; };
+		E0F587981B52733100540104 /* pseudo_planche_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587661B52733100540104 /* pseudo_planche_pushup.gif */; };
+		E0F587991B52733100540104 /* pseudo_planche.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587671B52733100540104 /* pseudo_planche.gif */; };
+		E0F5879A1B52733100540104 /* pullover.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587681B52733100540104 /* pullover.gif */; };
+		E0F5879B1B52733100540104 /* pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587691B52733100540104 /* pullup.gif */; };
+		E0F5879C1B52733100540104 /* pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876A1B52733100540104 /* pushup.gif */; };
+		E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876B1B52733100540104 /* reverse_plank.gif */; };
+		E0F5879E1B52733100540104 /* ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876C1B52733100540104 /* ring_dips.gif */; };
+		E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876D1B52733100540104 /* ring_pushup.gif */; };
+		E0F587A01B52733100540104 /* ring_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876E1B52733100540104 /* ring_support.gif */; };
+		E0F587A11B52733100540104 /* rings_turned_out_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */; };
+		E0F587A21B52733100540104 /* rings_turned_out_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587701B52733100540104 /* rings_turned_out_support.gif */; };
+		E0F587A31B52733100540104 /* scapular_shrugs.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587711B52733100540104 /* scapular_shrugs.gif */; };
+		E0F587A41B52733100540104 /* side_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587721B52733100540104 /* side_plank.gif */; };
+		E0F587A51B52733100540104 /* squat_jumps.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587731B52733100540104 /* squat_jumps.gif */; };
+		E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587741B52733100540104 /* tuck_front_lever_row.gif */; };
+		E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587751B52733100540104 /* tuck_front_lever.gif */; };
+		E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */; };
+		E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587771B52733100540104 /* tuck_l_sit.gif */; };
+		E0F587AA1B52733100540104 /* vertical_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587781B52733100540104 /* vertical_row.gif */; };
+		E0F587AB1B52733100540104 /* wall_extensions.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587791B52733100540104 /* wall_extensions.gif */; };
+		E0F587AC1B52733100540104 /* wall_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877A1B52733100540104 /* wall_handstand.gif */; };
+		E0F587AD1B52733100540104 /* wall_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877B1B52733100540104 /* wall_plank.gif */; };
+		E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877C1B52733100540104 /* wall_pushup.gif */; };
+		E0F587AF1B52733100540104 /* wide_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877D1B52733100540104 /* wide_row.gif */; };
+		E0F587B01B52733100540104 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
+		E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B11B52734000540104 /* Bodyweight Fitness.plist */; };
+		E0F587B41B52734900540104 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B31B52734900540104 /* Images.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E0C7E3481B5BD8B500EB6389 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0667CAE1B542F7800700007 /* Images Pro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images Pro.xcassets"; path = "BodyweightFitness/Images Pro.xcassets"; sourceTree = SOURCE_ROOT; };
+		E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness Pro.plist"; path = "BodyweightFitness/Bodyweight Fitness Pro.plist"; sourceTree = SOURCE_ROOT; };
+		E0743FC91B5BF27300D3B739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/iPhone4S.storyboard; sourceTree = SOURCE_ROOT; };
+		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
+		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
+		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
+		E0C7E3071B5BC12B00EB6389 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = BodyweightFitness/Frameworks/Array.swift; sourceTree = "<group>"; };
+		E0C7E3081B5BC12B00EB6389 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Curry.swift; path = BodyweightFitness/Frameworks/Curry.swift; sourceTree = "<group>"; };
+		E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSourceHelpers.swift; path = BodyweightFitness/Frameworks/ImageSourceHelpers.swift; sourceTree = "<group>"; };
+		E0C7E30A1B5BC12B00EB6389 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = BodyweightFitness/Frameworks/Operators.swift; sourceTree = "<group>"; };
+		E0C7E30B1B5BC12B00EB6389 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = BodyweightFitness/Frameworks/Optional.swift; sourceTree = "<group>"; };
+		E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = BodyweightFitness/Frameworks/UIImageExtension.swift; sourceTree = "<group>"; };
+		E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerController.swift; path = BodyweightFitness/Controller/TimerController.swift; sourceTree = SOURCE_ROOT; };
+		E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = BodyweightFitness/Service/PersistenceManager.swift; sourceTree = SOURCE_ROOT; };
+		E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E0F5870E1B52728E00540104 /* RoutineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineTests.swift; path = BodyweightFitnessTests/RoutineTests.swift; sourceTree = SOURCE_ROOT; };
+		E0F587101B52729B00540104 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BodyweightFitnessTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		E0F587161B5272B400540104 /* Bodyweight Fitness-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bodyweight Fitness-Bridging-Header.h"; path = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h"; sourceTree = "<group>"; };
+		E0F5871D1B5272B400540104 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = BodyweightFitness/Frameworks/SwiftyJSON.swift; sourceTree = "<group>"; };
+		E0F5871E1B5272B400540104 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = BodyweightFitness/Frameworks/SWRevealViewController.h; sourceTree = "<group>"; };
+		E0F5871F1B5272B400540104 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = BodyweightFitness/Frameworks/SWRevealViewController.m; sourceTree = "<group>"; };
+		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BodyweightFitness/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = BodyweightFitness/Model/Routine.swift; sourceTree = SOURCE_ROOT; };
+		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = BodyweightFitness/View/ActionView.swift; sourceTree = SOURCE_ROOT; };
+		E0F587371B52730000540104 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawerController.swift; path = BodyweightFitness/Controller/DrawerController.swift; sourceTree = SOURCE_ROOT; };
+		E0F587381B52730000540104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = BodyweightFitness/Controller/SettingsController.swift; sourceTree = SOURCE_ROOT; };
+		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerController.swift; path = BodyweightFitness/Controller/TimePickerController.swift; sourceTree = SOURCE_ROOT; };
+		E0F587401B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		E0F587421B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/TimePicker.xib; sourceTree = SOURCE_ROOT; };
+		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finished.mp3; path = BodyweightFitness/Resources/finished.mp3; sourceTree = SOURCE_ROOT; };
+		E0F587491B52731C00540104 /* Routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Routine.json; path = BodyweightFitness/Resources/Routine.json; sourceTree = SOURCE_ROOT; };
+		E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = advanced_tuck_front_lever_row.gif; path = BodyweightFitness/Resources/Gifs/advanced_tuck_front_lever_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F5874E1B52733100540104 /* arch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = arch.gif; path = BodyweightFitness/Resources/Gifs/arch.gif; sourceTree = SOURCE_ROOT; };
+		E0F5874F1B52733100540104 /* assisted_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = assisted_squat.gif; path = BodyweightFitness/Resources/Gifs/assisted_squat.gif; sourceTree = SOURCE_ROOT; };
+		E0F587501B52733100540104 /* band_dislocates.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = band_dislocates.gif; path = BodyweightFitness/Resources/Gifs/band_dislocates.gif; sourceTree = SOURCE_ROOT; };
+		E0F587511B52733100540104 /* bodyweight_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = bodyweight_squat.gif; path = BodyweightFitness/Resources/Gifs/bodyweight_squat.gif; sourceTree = SOURCE_ROOT; };
+		E0F587521B52733100540104 /* burpee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = burpee.gif; path = BodyweightFitness/Resources/Gifs/burpee.gif; sourceTree = SOURCE_ROOT; };
+		E0F587531B52733100540104 /* cat_camel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = cat_camel.gif; path = BodyweightFitness/Resources/Gifs/cat_camel.gif; sourceTree = SOURCE_ROOT; };
+		E0F587541B52733100540104 /* deep_stepup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = deep_stepup.gif; path = BodyweightFitness/Resources/Gifs/deep_stepup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587551B52733100540104 /* diamond_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = diamond_pushup.gif; path = BodyweightFitness/Resources/Gifs/diamond_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587561B52733100540104 /* floor_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = floor_l_sit.gif; path = BodyweightFitness/Resources/Gifs/floor_l_sit.gif; sourceTree = SOURCE_ROOT; };
+		E0F587571B52733100540104 /* freestanding_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = freestanding_handstand.gif; path = BodyweightFitness/Resources/Gifs/freestanding_handstand.gif; sourceTree = SOURCE_ROOT; };
+		E0F587581B52733100540104 /* full_body_circles.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = full_body_circles.gif; path = BodyweightFitness/Resources/Gifs/full_body_circles.gif; sourceTree = SOURCE_ROOT; };
+		E0F587591B52733100540104 /* hollow_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hollow_hold.gif; path = BodyweightFitness/Resources/Gifs/hollow_hold.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875A1B52733100540104 /* horizontal_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = horizontal_row.gif; path = BodyweightFitness/Resources/Gifs/horizontal_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875B1B52733100540104 /* incline_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = incline_pushup.gif; path = BodyweightFitness/Resources/Gifs/incline_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875C1B52733100540104 /* incline_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = incline_row.gif; path = BodyweightFitness/Resources/Gifs/incline_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875D1B52733100540104 /* l_ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = l_ring_dips.gif; path = BodyweightFitness/Resources/Gifs/l_ring_dips.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875E1B52733100540104 /* l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = l_sit.gif; path = BodyweightFitness/Resources/Gifs/l_sit.gif; sourceTree = SOURCE_ROOT; };
+		E0F5875F1B52733100540104 /* leg_swings.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = leg_swings.gif; path = BodyweightFitness/Resources/Gifs/leg_swings.gif; sourceTree = SOURCE_ROOT; };
+		E0F587601B52733100540104 /* lsit_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lsit_pullup.gif; path = BodyweightFitness/Resources/Gifs/lsit_pullup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587611B52733100540104 /* negative_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = negative_pullup.gif; path = BodyweightFitness/Resources/Gifs/negative_pullup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587621B52733100540104 /* one_foot_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = one_foot_l_sit.gif; path = BodyweightFitness/Resources/Gifs/one_foot_l_sit.gif; sourceTree = SOURCE_ROOT; };
+		E0F587631B52733100540104 /* parallel_bar_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = parallel_bar_dips.gif; path = BodyweightFitness/Resources/Gifs/parallel_bar_dips.gif; sourceTree = SOURCE_ROOT; };
+		E0F587641B52733100540104 /* parallel_bar_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = parallel_bar_hold.gif; path = BodyweightFitness/Resources/Gifs/parallel_bar_hold.gif; sourceTree = SOURCE_ROOT; };
+		E0F587651B52733100540104 /* plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = plank.gif; path = BodyweightFitness/Resources/Gifs/plank.gif; sourceTree = SOURCE_ROOT; };
+		E0F587661B52733100540104 /* pseudo_planche_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pseudo_planche_pushup.gif; path = BodyweightFitness/Resources/Gifs/pseudo_planche_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587671B52733100540104 /* pseudo_planche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pseudo_planche.gif; path = BodyweightFitness/Resources/Gifs/pseudo_planche.gif; sourceTree = SOURCE_ROOT; };
+		E0F587681B52733100540104 /* pullover.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pullover.gif; path = BodyweightFitness/Resources/Gifs/pullover.gif; sourceTree = SOURCE_ROOT; };
+		E0F587691B52733100540104 /* pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pullup.gif; path = BodyweightFitness/Resources/Gifs/pullup.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876A1B52733100540104 /* pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pushup.gif; path = BodyweightFitness/Resources/Gifs/pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876B1B52733100540104 /* reverse_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = reverse_plank.gif; path = BodyweightFitness/Resources/Gifs/reverse_plank.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876C1B52733100540104 /* ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_dips.gif; path = BodyweightFitness/Resources/Gifs/ring_dips.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876D1B52733100540104 /* ring_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_pushup.gif; path = BodyweightFitness/Resources/Gifs/ring_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876E1B52733100540104 /* ring_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_support.gif; path = BodyweightFitness/Resources/Gifs/ring_support.gif; sourceTree = SOURCE_ROOT; };
+		E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = rings_turned_out_pushup.gif; path = BodyweightFitness/Resources/Gifs/rings_turned_out_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F587701B52733100540104 /* rings_turned_out_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = rings_turned_out_support.gif; path = BodyweightFitness/Resources/Gifs/rings_turned_out_support.gif; sourceTree = SOURCE_ROOT; };
+		E0F587711B52733100540104 /* scapular_shrugs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = scapular_shrugs.gif; path = BodyweightFitness/Resources/Gifs/scapular_shrugs.gif; sourceTree = SOURCE_ROOT; };
+		E0F587721B52733100540104 /* side_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = side_plank.gif; path = BodyweightFitness/Resources/Gifs/side_plank.gif; sourceTree = SOURCE_ROOT; };
+		E0F587731B52733100540104 /* squat_jumps.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = squat_jumps.gif; path = BodyweightFitness/Resources/Gifs/squat_jumps.gif; sourceTree = SOURCE_ROOT; };
+		E0F587741B52733100540104 /* tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_front_lever_row.gif; path = BodyweightFitness/Resources/Gifs/tuck_front_lever_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F587751B52733100540104 /* tuck_front_lever.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_front_lever.gif; path = BodyweightFitness/Resources/Gifs/tuck_front_lever.gif; sourceTree = SOURCE_ROOT; };
+		E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_ice_cream_maker.gif; path = BodyweightFitness/Resources/Gifs/tuck_ice_cream_maker.gif; sourceTree = SOURCE_ROOT; };
+		E0F587771B52733100540104 /* tuck_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_l_sit.gif; path = BodyweightFitness/Resources/Gifs/tuck_l_sit.gif; sourceTree = SOURCE_ROOT; };
+		E0F587781B52733100540104 /* vertical_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = vertical_row.gif; path = BodyweightFitness/Resources/Gifs/vertical_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F587791B52733100540104 /* wall_extensions.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_extensions.gif; path = BodyweightFitness/Resources/Gifs/wall_extensions.gif; sourceTree = SOURCE_ROOT; };
+		E0F5877A1B52733100540104 /* wall_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_handstand.gif; path = BodyweightFitness/Resources/Gifs/wall_handstand.gif; sourceTree = SOURCE_ROOT; };
+		E0F5877B1B52733100540104 /* wall_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_plank.gif; path = BodyweightFitness/Resources/Gifs/wall_plank.gif; sourceTree = SOURCE_ROOT; };
+		E0F5877C1B52733100540104 /* wall_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_pushup.gif; path = BodyweightFitness/Resources/Gifs/wall_pushup.gif; sourceTree = SOURCE_ROOT; };
+		E0F5877D1B52733100540104 /* wide_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wide_row.gif; path = BodyweightFitness/Resources/Gifs/wide_row.gif; sourceTree = SOURCE_ROOT; };
+		E0F5877E1B52733100540104 /* wrist_progression.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wrist_progression.gif; path = BodyweightFitness/Resources/Gifs/wrist_progression.gif; sourceTree = SOURCE_ROOT; };
+		E0F587B11B52734000540104 /* Bodyweight Fitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness.plist"; path = "BodyweightFitness/Bodyweight Fitness.plist"; sourceTree = SOURCE_ROOT; };
+		E0F587B31B52734900540104 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BodyweightFitness/Images.xcassets; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2BD2CA801B458FFD00841AB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0F0EA131B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				E0F0EA111B556E93001DBAE4 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0667C6A1B542C9800700007 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0F0EA141B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				E0F0EA121B556E93001DBAE4 /* Fabric.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2BD2CA7A1B458FFD00841AB7 = {
+			isa = PBXGroup;
+			children = (
+				2BD2CA851B458FFD00841AB7 /* BodyweightFitness */,
+				E00242FB1B4F1CFD0003A230 /* Frameworks */,
+				2BD2CA9E1B458FFE00841AB7 /* BodyweightFitnessTests */,
+				2BD2CA841B458FFD00841AB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2BD2CA841B458FFD00841AB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
+				E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2BD2CA851B458FFD00841AB7 /* BodyweightFitness */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
+				E078934D1B472CCD001195AC /* Model */,
+				E078934C1B472CAF001195AC /* View */,
+				E02BF7B01B45E2EB00D5CE52 /* Controller */,
+				E0C7E3241B5BC65000EB6389 /* Service */,
+				E00242CB1B4B0E370003A230 /* Layout */,
+				E08139041B5270EE00390A73 /* Resources */,
+				2BD2CA861B458FFD00841AB7 /* Supporting Files */,
+			);
+			name = BodyweightFitness;
+			path = TabsTest;
+			sourceTree = "<group>";
+		};
+		2BD2CA861B458FFD00841AB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E0F587B11B52734000540104 /* Bodyweight Fitness.plist */,
+				E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2BD2CA9E1B458FFE00841AB7 /* BodyweightFitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5870E1B52728E00540104 /* RoutineTests.swift */,
+				E0F587101B52729B00540104 /* Info.plist */,
+			);
+			name = BodyweightFitnessTests;
+			path = TabsTestTests;
+			sourceTree = "<group>";
+		};
+		E00242CB1B4B0E370003A230 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
+				E0F587411B52730C00540104 /* Main.storyboard */,
+				E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */,
+				E0F587431B52730C00540104 /* TimePicker.xib */,
+			);
+			name = Layout;
+			sourceTree = "<group>";
+		};
+		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */,
+				E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */,
+				E0C7E3221B5BC62000EB6389 /* SwiftyJSON */,
+				E0C7E3211B5BC61400EB6389 /* RevealViewController */,
+				E0C7E3201B5BC60600EB6389 /* Gifu */,
+				E0C7E31F1B5BC5F700EB6389 /* Runes */,
+				E0C7E3231B5BC63700EB6389 /* Header */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
+				E0F587391B52730000540104 /* TimePickerController.swift */,
+				E0F587371B52730000540104 /* DrawerController.swift */,
+				E0F587381B52730000540104 /* SettingsController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E0667CAA1B542E2400700007 /* Free */ = {
+			isa = PBXGroup;
+			children = (
+				E0F587B31B52734900540104 /* Images.xcassets */,
+			);
+			name = Free;
+			sourceTree = "<group>";
+		};
+		E0667CAB1B542E2900700007 /* Pro */ = {
+			isa = PBXGroup;
+			children = (
+				E0667CAE1B542F7800700007 /* Images Pro.xcassets */,
+			);
+			name = Pro;
+			sourceTree = "<group>";
+		};
+		E078934C1B472CAF001195AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E0F587331B5272F400540104 /* ActionView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E078934D1B472CCD001195AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E0F587301B5272E200540104 /* Routine.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E08139041B5270EE00390A73 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0667CAA1B542E2400700007 /* Free */,
+				E0667CAB1B542E2900700007 /* Pro */,
+				E0F5874C1B52732500540104 /* Gifs */,
+				E0F587481B52731C00540104 /* finished.mp3 */,
+				E0F587491B52731C00540104 /* Routine.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E0C7E31F1B5BC5F700EB6389 /* Runes */ = {
+			isa = PBXGroup;
+			children = (
+				E0C7E3071B5BC12B00EB6389 /* Array.swift */,
+				E0C7E3081B5BC12B00EB6389 /* Curry.swift */,
+				E0C7E30A1B5BC12B00EB6389 /* Operators.swift */,
+				E0C7E30B1B5BC12B00EB6389 /* Optional.swift */,
+			);
+			name = Runes;
+			sourceTree = "<group>";
+		};
+		E0C7E3201B5BC60600EB6389 /* Gifu */ = {
+			isa = PBXGroup;
+			children = (
+				E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */,
+				E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */,
+				E0C7E3061B5BC12B00EB6389 /* Animator.swift */,
+				E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */,
+				E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */,
+			);
+			name = Gifu;
+			sourceTree = "<group>";
+		};
+		E0C7E3211B5BC61400EB6389 /* RevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5871E1B5272B400540104 /* SWRevealViewController.h */,
+				E0F5871F1B5272B400540104 /* SWRevealViewController.m */,
+			);
+			name = RevealViewController;
+			sourceTree = "<group>";
+		};
+		E0C7E3221B5BC62000EB6389 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5871D1B5272B400540104 /* SwiftyJSON.swift */,
+			);
+			name = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		E0C7E3231B5BC63700EB6389 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				E0F587161B5272B400540104 /* Bodyweight Fitness-Bridging-Header.h */,
+			);
+			name = Header;
+			sourceTree = "<group>";
+		};
+		E0C7E3241B5BC65000EB6389 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		E0F5874C1B52732500540104 /* Gifs */ = {
+			isa = PBXGroup;
+			children = (
+				E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */,
+				E0F5874E1B52733100540104 /* arch.gif */,
+				E0F5874F1B52733100540104 /* assisted_squat.gif */,
+				E0F587501B52733100540104 /* band_dislocates.gif */,
+				E0F587511B52733100540104 /* bodyweight_squat.gif */,
+				E0F587521B52733100540104 /* burpee.gif */,
+				E0F587531B52733100540104 /* cat_camel.gif */,
+				E0F587541B52733100540104 /* deep_stepup.gif */,
+				E0F587551B52733100540104 /* diamond_pushup.gif */,
+				E0F587561B52733100540104 /* floor_l_sit.gif */,
+				E0F587571B52733100540104 /* freestanding_handstand.gif */,
+				E0F587581B52733100540104 /* full_body_circles.gif */,
+				E0F587591B52733100540104 /* hollow_hold.gif */,
+				E0F5875A1B52733100540104 /* horizontal_row.gif */,
+				E0F5875B1B52733100540104 /* incline_pushup.gif */,
+				E0F5875C1B52733100540104 /* incline_row.gif */,
+				E0F5875D1B52733100540104 /* l_ring_dips.gif */,
+				E0F5875E1B52733100540104 /* l_sit.gif */,
+				E0F5875F1B52733100540104 /* leg_swings.gif */,
+				E0F587601B52733100540104 /* lsit_pullup.gif */,
+				E0F587611B52733100540104 /* negative_pullup.gif */,
+				E0F587621B52733100540104 /* one_foot_l_sit.gif */,
+				E0F587631B52733100540104 /* parallel_bar_dips.gif */,
+				E0F587641B52733100540104 /* parallel_bar_hold.gif */,
+				E0F587651B52733100540104 /* plank.gif */,
+				E0F587661B52733100540104 /* pseudo_planche_pushup.gif */,
+				E0F587671B52733100540104 /* pseudo_planche.gif */,
+				E0F587681B52733100540104 /* pullover.gif */,
+				E0F587691B52733100540104 /* pullup.gif */,
+				E0F5876A1B52733100540104 /* pushup.gif */,
+				E0F5876B1B52733100540104 /* reverse_plank.gif */,
+				E0F5876C1B52733100540104 /* ring_dips.gif */,
+				E0F5876D1B52733100540104 /* ring_pushup.gif */,
+				E0F5876E1B52733100540104 /* ring_support.gif */,
+				E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */,
+				E0F587701B52733100540104 /* rings_turned_out_support.gif */,
+				E0F587711B52733100540104 /* scapular_shrugs.gif */,
+				E0F587721B52733100540104 /* side_plank.gif */,
+				E0F587731B52733100540104 /* squat_jumps.gif */,
+				E0F587741B52733100540104 /* tuck_front_lever_row.gif */,
+				E0F587751B52733100540104 /* tuck_front_lever.gif */,
+				E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */,
+				E0F587771B52733100540104 /* tuck_l_sit.gif */,
+				E0F587781B52733100540104 /* vertical_row.gif */,
+				E0F587791B52733100540104 /* wall_extensions.gif */,
+				E0F5877A1B52733100540104 /* wall_handstand.gif */,
+				E0F5877B1B52733100540104 /* wall_plank.gif */,
+				E0F5877C1B52733100540104 /* wall_pushup.gif */,
+				E0F5877D1B52733100540104 /* wide_row.gif */,
+				E0F5877E1B52733100540104 /* wrist_progression.gif */,
+			);
+			name = Gifs;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness" */;
+			buildPhases = (
+				2BD2CA7F1B458FFD00841AB7 /* Sources */,
+				2BD2CA801B458FFD00841AB7 /* Frameworks */,
+				2BD2CA811B458FFD00841AB7 /* Resources */,
+				E09D693C1B556D7E00C477C6 /* ShellScript */,
+				E0C7E3481B5BD8B500EB6389 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bodyweight Fitness";
+			productName = TabsTest;
+			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E0667C521B542C9800700007 /* Bodyweight Fitness Pro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0667CA51B542C9800700007 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness Pro" */;
+			buildPhases = (
+				E0667C531B542C9800700007 /* Sources */,
+				E0667C6A1B542C9800700007 /* Frameworks */,
+				E0667C6B1B542C9800700007 /* Resources */,
+				E09D693D1B556D9200C477C6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bodyweight Fitness Pro";
+			productName = TabsTest;
+			productReference = E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2BD2CA7B1B458FFD00841AB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Damian Mazurkiewicz";
+				TargetAttributes = {
+					2BD2CA821B458FFD00841AB7 = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 32UU4L8Z8S;
+					};
+					E0667C521B542C9800700007 = {
+						DevelopmentTeam = 32UU4L8Z8S;
+					};
+				};
+			};
+			buildConfigurationList = 2BD2CA7E1B458FFD00841AB7 /* Build configuration list for PBXProject "BodyweightFitness" */;
+			compatibilityVersion = "Xcode 6.3";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2BD2CA7A1B458FFD00841AB7;
+			productRefGroup = 2BD2CA841B458FFD00841AB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */,
+				E0667C521B542C9800700007 /* Bodyweight Fitness Pro */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2BD2CA811B458FFD00841AB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0F587991B52733100540104 /* pseudo_planche.gif in Resources */,
+				E0F587A31B52733100540104 /* scapular_shrugs.gif in Resources */,
+				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
+				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
+				E0F587841B52733100540104 /* burpee.gif in Resources */,
+				E0F587AA1B52733100540104 /* vertical_row.gif in Resources */,
+				E0F587AB1B52733100540104 /* wall_extensions.gif in Resources */,
+				E0F587A11B52733100540104 /* rings_turned_out_pushup.gif in Resources */,
+				E0F587971B52733100540104 /* plank.gif in Resources */,
+				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
+				E0F587901B52733100540104 /* l_sit.gif in Resources */,
+				E0F587461B52730C00540104 /* Main.storyboard in Resources */,
+				E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */,
+				E0F5879A1B52733100540104 /* pullover.gif in Resources */,
+				E0F587861B52733100540104 /* deep_stepup.gif in Resources */,
+				E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */,
+				E0F5879E1B52733100540104 /* ring_dips.gif in Resources */,
+				E0F587AD1B52733100540104 /* wall_plank.gif in Resources */,
+				E0F5879B1B52733100540104 /* pullup.gif in Resources */,
+				E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */,
+				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
+				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
+				E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
+				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
+				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
+				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
+				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
+				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
+				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
+				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
+				E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */,
+				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
+				E0F5878E1B52733100540104 /* incline_row.gif in Resources */,
+				E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */,
+				E0F587AF1B52733100540104 /* wide_row.gif in Resources */,
+				E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */,
+				E0F587A21B52733100540104 /* rings_turned_out_support.gif in Resources */,
+				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
+				E0F587471B52730C00540104 /* TimePicker.xib in Resources */,
+				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
+				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
+				E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */,
+				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
+				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
+				E0F587851B52733100540104 /* cat_camel.gif in Resources */,
+				E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */,
+				E0F5878D1B52733100540104 /* incline_pushup.gif in Resources */,
+				E0F587981B52733100540104 /* pseudo_planche_pushup.gif in Resources */,
+				E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */,
+				E0F587801B52733100540104 /* arch.gif in Resources */,
+				E0F587A51B52733100540104 /* squat_jumps.gif in Resources */,
+				E0F587921B52733100540104 /* lsit_pullup.gif in Resources */,
+				E0F5878F1B52733100540104 /* l_ring_dips.gif in Resources */,
+				E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */,
+				E0F587AC1B52733100540104 /* wall_handstand.gif in Resources */,
+				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
+				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
+				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0667C6B1B542C9800700007 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0667C6C1B542C9800700007 /* pseudo_planche.gif in Resources */,
+				E0667C6D1B542C9800700007 /* scapular_shrugs.gif in Resources */,
+				E0667C6E1B542C9800700007 /* leg_swings.gif in Resources */,
+				E0667C6F1B542C9800700007 /* band_dislocates.gif in Resources */,
+				E0667C701B542C9800700007 /* burpee.gif in Resources */,
+				E0667C711B542C9800700007 /* vertical_row.gif in Resources */,
+				E0667C721B542C9800700007 /* wall_extensions.gif in Resources */,
+				E0667C731B542C9800700007 /* rings_turned_out_pushup.gif in Resources */,
+				E0667C741B542C9800700007 /* plank.gif in Resources */,
+				E0667C751B542C9800700007 /* Routine.json in Resources */,
+				E0667C761B542C9800700007 /* l_sit.gif in Resources */,
+				E0667C771B542C9800700007 /* Main.storyboard in Resources */,
+				E0667C781B542C9800700007 /* one_foot_l_sit.gif in Resources */,
+				E0667C791B542C9800700007 /* pullover.gif in Resources */,
+				E0667C7A1B542C9800700007 /* deep_stepup.gif in Resources */,
+				E0667C7C1B542C9800700007 /* ring_dips.gif in Resources */,
+				E0667C7D1B542C9800700007 /* wall_plank.gif in Resources */,
+				E0667C7E1B542C9800700007 /* pullup.gif in Resources */,
+				E0667C7F1B542C9800700007 /* parallel_bar_dips.gif in Resources */,
+				E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */,
+				E0667C811B542C9800700007 /* ring_support.gif in Resources */,
+				E0667C821B542C9800700007 /* horizontal_row.gif in Resources */,
+				E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
+				E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */,
+				E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */,
+				E0667C851B542C9800700007 /* full_body_circles.gif in Resources */,
+				E0667C861B542C9800700007 /* pushup.gif in Resources */,
+				E0667C871B542C9800700007 /* negative_pullup.gif in Resources */,
+				E0667C881B542C9800700007 /* wrist_progression.gif in Resources */,
+				E0667C891B542C9800700007 /* tuck_l_sit.gif in Resources */,
+				E0667C8A1B542C9800700007 /* assisted_squat.gif in Resources */,
+				E0667C8B1B542C9800700007 /* incline_row.gif in Resources */,
+				E0667C8C1B542C9800700007 /* freestanding_handstand.gif in Resources */,
+				E0667C8D1B542C9800700007 /* wide_row.gif in Resources */,
+				E0667C8E1B542C9800700007 /* wall_pushup.gif in Resources */,
+				E0667C8F1B542C9800700007 /* rings_turned_out_support.gif in Resources */,
+				E0667C901B542C9800700007 /* finished.mp3 in Resources */,
+				E0667C911B542C9800700007 /* TimePicker.xib in Resources */,
+				E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */,
+				E0667C931B542C9800700007 /* hollow_hold.gif in Resources */,
+				E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */,
+				E0667C951B542C9800700007 /* side_plank.gif in Resources */,
+				E0667C961B542C9800700007 /* reverse_plank.gif in Resources */,
+				E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */,
+				E0667C971B542C9800700007 /* cat_camel.gif in Resources */,
+				E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */,
+				E0667C981B542C9800700007 /* ring_pushup.gif in Resources */,
+				E0667C991B542C9800700007 /* incline_pushup.gif in Resources */,
+				E0667C9A1B542C9800700007 /* pseudo_planche_pushup.gif in Resources */,
+				E0667C9B1B542C9800700007 /* parallel_bar_hold.gif in Resources */,
+				E0667C9C1B542C9800700007 /* arch.gif in Resources */,
+				E0667C9D1B542C9800700007 /* squat_jumps.gif in Resources */,
+				E0667C9E1B542C9800700007 /* lsit_pullup.gif in Resources */,
+				E0667C9F1B542C9800700007 /* l_ring_dips.gif in Resources */,
+				E0667CA01B542C9800700007 /* tuck_front_lever_row.gif in Resources */,
+				E0667CA11B542C9800700007 /* wall_handstand.gif in Resources */,
+				E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */,
+				E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E09D693C1B556D7E00C477C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5dcec45142f2b7beb83af419bcb06344e8598390 f37f74ee55215607611bede5f6fd7baf1a2584de9167cdf7b72947665f50bff0";
+		};
+		E09D693D1B556D9200C477C6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5dcec45142f2b7beb83af419bcb06344e8598390 f37f74ee55215607611bede5f6fd7baf1a2584de9167cdf7b72947665f50bff0";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2BD2CA7F1B458FFD00841AB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0F587291B5272B400540104 /* SwiftyJSON.swift in Sources */,
+				E0F587351B5272F400540104 /* ActionView.swift in Sources */,
+				E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
+				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
+				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
+				E0F5872A1B5272B400540104 /* SWRevealViewController.m in Sources */,
+				E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */,
+				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
+				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
+				E0F5873B1B52730000540104 /* DrawerController.swift in Sources */,
+				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
+				E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */,
+				E0F587311B5272E200540104 /* Routine.swift in Sources */,
+				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
+				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
+				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
+				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
+				E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */,
+				E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0667C531B542C9800700007 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */,
+				E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
+				E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
+				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
+				E0667C551B542C9800700007 /* SwiftyJSON.swift in Sources */,
+				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
+				E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */,
+				E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */,
+				E0667C5E1B542C9800700007 /* SWRevealViewController.m in Sources */,
+				E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */,
+				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
+				E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */,
+				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
+				E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
+				E0667C631B542C9800700007 /* DrawerController.swift in Sources */,
+				E0667C651B542C9800700007 /* Routine.swift in Sources */,
+				E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */,
+				E0667C661B542C9800700007 /* SettingsController.swift in Sources */,
+				E0667C671B542C9800700007 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0743FC91B5BF27300D3B739 /* Base */,
+			);
+			name = iPhone4S.storyboard;
+			sourceTree = "<group>";
+		};
+		E0F5873F1B52730C00540104 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0F587401B52730C00540104 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		E0F587411B52730C00540104 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0F587421B52730C00540104 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0F587431B52730C00540104 /* TimePicker.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0F587441B52730C00540104 /* Base */,
+			);
+			name = TimePicker.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2BD2CAA31B458FFE00841AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Damian Mazurkiewicz (2HYG5VX9N6)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
+				SDKROOT = iphoneos9.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BD2CAA41B458FFE00841AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
+				SDKROOT = iphoneos9.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BD2CAA61B458FFE00841AB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Bodyweight Fitness";
+				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
+				SDKROOT = iphoneos9.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2BD2CAA71B458FFE00841AB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "Bodyweight Fitness";
+				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
+				SDKROOT = iphoneos9.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E0667CA61B542C9800700007 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Damian Mazurkiewicz (2HYG5VX9N6)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
+				SDKROOT = iphoneos9.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0667CA71B542C9800700007 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
+				SDKROOT = iphoneos9.0;
+				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2BD2CA7E1B458FFD00841AB7 /* Build configuration list for PBXProject "BodyweightFitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BD2CAA31B458FFE00841AB7 /* Debug */,
+				2BD2CAA41B458FFE00841AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BD2CAA61B458FFE00841AB7 /* Debug */,
+				2BD2CAA71B458FFE00841AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0667CA51B542C9800700007 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness Pro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0667CA61B542C9800700007 /* Debug */,
+				E0667CA71B542C9800700007 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2BD2CA7B1B458FFD00841AB7 /* Project object */;
+}
