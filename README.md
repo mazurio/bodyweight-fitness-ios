@@ -1,9 +1,6 @@
 # bodyweight-fitness-ios
 
-<a href="https://play.google.com/store/apps/details?id=io.mazur.fit.pro">
-  <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
-</a>
+<a href="https://geo.itunes.apple.com/gb/app/bodyweight-fitness/id1018863605?mt=8" style="display:inline-block;overflow:hidden;background:url(http://linkmaker.itunes.apple.com/images/badges/en-us/badge_appstore-lrg.svg) no-repeat;width:165px;height:40px;"></a>
 
 An iOS application focused on Bodyweight Fitness/Training - part of BWF.
 
