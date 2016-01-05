@@ -1,4 +1,5 @@
 import UIKit
+
 import ImageIO
 
 /// Responsible for storing and updating the frames of a `AnimatableImageView` instance via delegation.

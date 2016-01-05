@@ -1,4 +1,5 @@
 import UIKit
+import MaterialKit
 import CoreData
 import Fabric
 import Crashlytics
@@ -7,16 +8,26 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(
-        application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
-    {
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
         
         UITabBar.appearance().backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
-        loadCustomStoryboardForIPhone4S()
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        let sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
+        
+        let sideNavigationViewController = SideNavigationViewController(mainViewController: mainViewController, sideViewController: sideViewController)
+        
+        sideNavigationViewController.setSideViewWidth(260, hidden: false, animated: false)
+        sideNavigationViewController.toggle()
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = sideNavigationViewController
+        window?.makeKeyAndVisible()
+        
+//        loadCustomStoryboardForIPhone4S()
         
         return true
     }
@@ -26,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
-        print("applicationDidEnterBackground, idleTimerDisabled = false")
         UIApplication.sharedApplication().idleTimerDisabled = false
     }
 
@@ -35,7 +45,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(application: UIApplication) {
-        print("applicationDidBecomeActive, idleTimerDisabled = true")
         UIApplication.sharedApplication().idleTimerDisabled = true
     }
 

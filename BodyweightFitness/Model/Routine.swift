@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 enum RoutineType: Int {
     case Category

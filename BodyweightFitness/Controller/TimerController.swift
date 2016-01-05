@@ -26,20 +26,15 @@ class TimerController: UIViewController, UIActionSheetDelegate, AVAudioPlayerDel
     
     var audioPlayer: AVAudioPlayer?
     
+    @IBAction func onClickMenuAction(sender: AnyObject) {
+        sideNavigationViewController?.toggle()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
-        
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            
-            self.view.addGestureRecognizer(
-                self.revealViewController().panGestureRecognizer())
-            self.revealViewController().rearViewRevealWidth = 260
-        }
-        
+
         setNavigationBar()
         updateLabel()
         changeExercise(routine.getFirstExercise())
@@ -77,14 +72,6 @@ class TimerController: UIViewController, UIActionSheetDelegate, AVAudioPlayerDel
             .URLForResource(id, withExtension: "gif")!)
 
         gifView.animateWithImageData(imageData!)
-    }
-    
-    func drawerController() -> DrawerController? {
-        if let drawerController = self.revealViewController().rearViewController as? DrawerController {
-            return drawerController
-        } else {
-            return nil
-        }
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {
