@@ -334,7 +334,7 @@
         <!--MainController-->
         <scene sceneID="pl6-YK-5d8">
             <objects>
-                <navigationController storyboardIdentifier="MainViewController" title="MainController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VwB-pV-3g0" customClass="MainViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainViewController" title="MainController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VwB-pV-3g0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>

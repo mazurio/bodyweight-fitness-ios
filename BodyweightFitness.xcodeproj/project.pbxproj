@@ -15,8 +15,6 @@
 		73D2BCE41C3C62EA00CE6C00 /* MaterialKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
-		73D2BCE91C3C644A00CE6C00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE81C3C644A00CE6C00 /* MainViewController.swift */; };
-		73D2BCEA1C3C644A00CE6C00 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE81C3C644A00CE6C00 /* MainViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
 		73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
 		73D2BCF01C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */; };
@@ -224,7 +222,6 @@
 		73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
-		73D2BCE81C3C644A00CE6C00 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
@@ -449,7 +446,6 @@
 				E0F587391B52730000540104 /* TimePickerController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
-				73D2BCE81C3C644A00CE6C00 /* MainViewController.swift */,
 				73D2BCF91C3EB5CB00CE6C00 /* BuyEquipmentController.swift */,
 			);
 			name = Controller;
@@ -873,7 +869,6 @@
 				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
-				73D2BCE91C3C644A00CE6C00 /* MainViewController.swift in Sources */,
 				E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
@@ -902,7 +897,6 @@
 				E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
 				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
-				73D2BCEA1C3C644A00CE6C00 /* MainViewController.swift in Sources */,
 				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
 				E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */,
 				E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */,

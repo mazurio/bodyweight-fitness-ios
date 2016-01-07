@@ -15,7 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController") as! MainViewController
+        
+        let mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         let sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
         
         let sideNavigationViewController = SideNavigationViewController(mainViewController: mainViewController, sideViewController: sideViewController)
