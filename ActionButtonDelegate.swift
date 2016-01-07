@@ -11,11 +11,15 @@
         if(buttonIndex == 0) {
             return
         } else if(buttonIndex == 1) {
-            // Buy Equipment
-            print("Buy Equipment")
+            let viewController = self.timerController.storyboard?.instantiateViewControllerWithIdentifier("BuyEquipmentNavigationController") as! BuyEquipmentNavigationController
+            
+            self.timerController.navigationController?.presentViewController(viewController, animated: true, completion: nil)
         } else if(buttonIndex == 2) {
-            // YouTube
-            print("Watch on YouTube")
+            if let youTubeId = self.timerController.current?.youTubeId {
+                if let requestUrl = NSURL(string: "https://www.youtube.com/watch?v=" + youTubeId) {
+                    UIApplication.sharedApplication().openURL(requestUrl)
+                }
+            }
         } else if(buttonIndex == 3) {
             if let exercises = self.timerController.current?.section?.exercises {
                 let sheet = UIActionSheet(
