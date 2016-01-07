@@ -7,13 +7,19 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let sectionCellIdentifier = "SectionCell"
     let exerciseCellIdentifier = "ExerciseCell"
     
-    let routine: Routine = PersistenceManager.getRoutine()
+    var routine: Routine = PersistenceManager.getRoutine()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
+    }
+    
+    func notifyDataSetChanged(routine: Routine) {
+        self.routine = routine
+        
+        tableView.reloadData()
     }
     
     func timerController() -> TimerController? {
@@ -41,16 +47,15 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         switch(routinePart.getType()) {
         case RoutineType.Category:
-            let cell = tableView.dequeueReusableCellWithIdentifier(categoryCellIdentifier) as! UITableViewCell!
-            
+            let cell = tableView.dequeueReusableCellWithIdentifier(categoryCellIdentifier) as UITableViewCell!
             let category = routinePart as! Category
+            
             cell.textLabel?.text = category.title
             
             return cell
             
         default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(sectionCellIdentifier) as! UITableViewCell!
-            
+            let cell = tableView.dequeueReusableCellWithIdentifier(sectionCellIdentifier) as UITableViewCell!
             let section = routinePart as! Section
             
             cell.textLabel?.text = section.title
@@ -79,13 +84,17 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         default:
             let section = routinePart as! Section
             
-            return section.exercises.count
+            if(section.mode == SectionMode.All) {
+                return section.exercises.count
+            } else {
+                return 1
+            }
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Recycling of cells
-        let cell = tableView.dequeueReusableCellWithIdentifier(exerciseCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(exerciseCellIdentifier, forIndexPath: indexPath) as UITableViewCell!
         
         // todo: we should use (if let option) to avoid crashes
         let currentSection = routine.categoriesAndSections[indexPath.section] as! Section
@@ -93,8 +102,13 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if currentSection.getType() == RoutineType.Section {
             let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
             
-            cell.textLabel?.text = currentExercise.level
-            cell.detailTextLabel?.text = currentExercise.title
+            if(currentSection.mode == SectionMode.All) {
+                cell.textLabel?.text = currentExercise.level
+                cell.detailTextLabel?.text = currentExercise.title
+            } else {
+                cell.textLabel?.text = currentSection.currentExercise?.level
+                cell.detailTextLabel?.text = currentSection.currentExercise?.title
+            }
         }
         
         return cell
@@ -113,7 +127,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let currentSection = routine.categoriesAndSections[indexPath.section] as! Section
         if currentSection.getType() == RoutineType.Section {
             let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
-            self.timerController()?.changeExercise(currentExercise)
+            
+            if(currentSection.mode == SectionMode.All) {
+                self.timerController()?.changeExercise(currentExercise)
+            } else {
+                self.timerController()?.changeExercise(currentSection.currentExercise!)
+            }
         }
     }
 }

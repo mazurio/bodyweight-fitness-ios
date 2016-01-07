@@ -21,6 +21,10 @@
 		73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
 		73D2BCF01C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */; };
 		73D2BCF11C3C6D8E00CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */; };
+		73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
+		73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
+		73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
+		73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
 		E0667C571B542C9800700007 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
 		E0667C621B542C9800700007 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
 		E0667C651B542C9800700007 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
@@ -82,7 +86,6 @@
 		E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
 		E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
 		E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0667CAE1B542F7800700007 /* Images Pro.xcassets */; };
-		E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */; };
 		E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
 		E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
@@ -171,7 +174,6 @@
 		E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877C1B52733100540104 /* wall_pushup.gif */; };
 		E0F587AF1B52733100540104 /* wide_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877D1B52733100540104 /* wide_row.gif */; };
 		E0F587B01B52733100540104 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
-		E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B11B52734000540104 /* Bodyweight Fitness.plist */; };
 		E0F587B41B52734900540104 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B31B52734900540104 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +221,8 @@
 		73D2BCE81C3C644A00CE6C00 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
+		73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
+		73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProgressionDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0667CAE1B542F7800700007 /* Images Pro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images Pro.xcassets"; path = "BodyweightFitness/Images Pro.xcassets"; sourceTree = SOURCE_ROOT; };
 		E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness Pro.plist"; path = "BodyweightFitness/Bodyweight Fitness Pro.plist"; sourceTree = SOURCE_ROOT; };
@@ -382,6 +386,15 @@
 			path = TabsTestTests;
 			sourceTree = "<group>";
 		};
+		73D2BCF21C3EB10400CE6C00 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */,
+				73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +425,7 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				E0F587391B52730000540104 /* TimePickerController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
@@ -604,7 +618,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Damian Mazurkiewicz";
 				TargetAttributes = {
 					2BD2CA821B458FFD00841AB7 = {
@@ -655,7 +669,6 @@
 				E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */,
 				E0F5879A1B52733100540104 /* pullover.gif in Resources */,
 				E0F587861B52733100540104 /* deep_stepup.gif in Resources */,
-				E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */,
 				E0F5879E1B52733100540104 /* ring_dips.gif in Resources */,
 				E0F587AD1B52733100540104 /* wall_plank.gif in Resources */,
 				E0F5879B1B52733100540104 /* pullup.gif in Resources */,
@@ -750,7 +763,6 @@
 				E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */,
 				E0667C951B542C9800700007 /* side_plank.gif in Resources */,
 				E0667C961B542C9800700007 /* reverse_plank.gif in Resources */,
-				E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */,
 				E0667C971B542C9800700007 /* cat_camel.gif in Resources */,
 				E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */,
 				E0667C981B542C9800700007 /* ring_pushup.gif in Resources */,
@@ -838,6 +850,7 @@
 				E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
 				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
+				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				73D2BCE91C3C644A00CE6C00 /* MainViewController.swift in Sources */,
 				E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
@@ -846,6 +859,7 @@
 				E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
+				73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
@@ -863,6 +877,7 @@
 				E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
+				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				73D2BCEA1C3C644A00CE6C00 /* MainViewController.swift in Sources */,
 				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
 				E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */,
@@ -871,6 +886,7 @@
 				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
 				E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */,
 				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
+				73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
 				E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				E0667C651B542C9800700007 /* Routine.swift in Sources */,
@@ -959,7 +975,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -998,7 +1014,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1022,7 +1038,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
 				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1047,7 +1063,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
 				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1071,7 +1087,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1096,7 +1112,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
