@@ -9,15 +9,6 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var routine: Routine = PersistenceManager.getRoutine()
     
-    func scrollViewDidScroll(scrollView: UIScrollView, floatingView: UIView){
-        var frame: CGRect = floatingView.frame
-        
-        frame.origin.y = scrollView.contentOffset.y
-        floatingView.frame = frame;
-        
-        view.bringSubviewToFront(floatingView)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
