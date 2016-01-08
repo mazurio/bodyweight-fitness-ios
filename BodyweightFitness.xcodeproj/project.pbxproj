@@ -407,14 +407,6 @@
 			name = Delegate;
 			sourceTree = "<group>";
 		};
-		73D2BCFF1C3EC59E00CE6C00 /* TableView */ = {
-			isa = PBXGroup;
-			children = (
-				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
-			);
-			name = TableView;
-			sourceTree = "<group>";
-		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,7 +439,6 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				73D2BCFF1C3EC59E00CE6C00 /* TableView */,
 				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				E0F587391B52730000540104 /* TimePickerController.swift */,
@@ -479,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F587331B5272F400540104 /* ActionView.swift */,
+				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";

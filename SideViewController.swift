@@ -25,7 +25,9 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func notifyDataSetChanged(routine: Routine) {
         self.routine = routine
         
-        tableView.reloadData()
+        dispatch_async(dispatch_get_main_queue(), {
+            self.tableView.reloadData()
+        });
     }
     
     func timerController() -> TimerController? {
@@ -125,7 +127,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     //
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
+
         // Close the drawer
         sideNavigationViewController?.toggle()
         
