@@ -9,9 +9,24 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     var routine: Routine = PersistenceManager.getRoutine()
     
+    func scrollViewDidScroll(scrollView: UIScrollView, floatingView: UIView){
+        var frame: CGRect = floatingView.frame
+        
+        frame.origin.y = scrollView.contentOffset.y
+        floatingView.frame = frame;
+        
+        view.bringSubviewToFront(floatingView)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let header: HeaderViewController = HeaderViewController()
+        header.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150)
+
+        self.addChildViewController(header)
+        self.view.addSubview(header.view)
+
         tableView.delegate = self
         tableView.dataSource = self
     }

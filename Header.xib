@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="ByB-Uu-0Cx" id="w8x-mg-euf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="f4D-aF-c5a" customClass="HeaderViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="XmN-2v-5PE"/>
+                <viewControllerLayoutGuide type="bottom" id="g8t-OX-m8h"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="ByB-Uu-0Cx">
+                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beginner Routine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bU3-oU-aHE">
+                        <rect key="frame" x="35" y="564" width="104" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bodyweight Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAL-W8-hjO">
+                        <rect key="frame" x="35" y="540" width="134" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="g8t-OX-m8h" firstAttribute="top" secondItem="bU3-oU-aHE" secondAttribute="bottom" constant="20" id="CAk-o5-rti"/>
+                    <constraint firstItem="bU3-oU-aHE" firstAttribute="leading" secondItem="ByB-Uu-0Cx" secondAttribute="leadingMargin" constant="15" id="UBI-Dt-vyF"/>
+                    <constraint firstItem="jAL-W8-hjO" firstAttribute="leading" secondItem="ByB-Uu-0Cx" secondAttribute="leadingMargin" constant="15" id="X6F-at-30e"/>
+                    <constraint firstItem="bU3-oU-aHE" firstAttribute="top" secondItem="jAL-W8-hjO" secondAttribute="bottom" constant="6" id="yXD-eF-jwD"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="383" y="-9"/>
+        </viewController>
+    </objects>
+</document>

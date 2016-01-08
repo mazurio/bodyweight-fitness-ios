@@ -242,12 +242,12 @@
                         <viewControllerLayoutGuide type="top" id="qE8-1z-KPp"/>
                         <viewControllerLayoutGuide type="bottom" id="hm1-bS-ZDQ"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cv1-Lb-quK" customClass="Drawer">
+                    <view key="view" contentMode="scaleToFill" id="cv1-Lb-quK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="48" sectionFooterHeight="48" translatesAutoresizingMaskIntoConstraints="NO" id="twF-bi-o40">
-                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CategoryCell" textLabel="lJR-5F-UpE" rowHeight="40" style="IBUITableViewCellStyleDefault" id="qHJ-kw-Mqc">
@@ -318,8 +318,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="twF-bi-o40" firstAttribute="leading" secondItem="cv1-Lb-quK" secondAttribute="leading" id="6ZR-AZ-2mY"/>
-                            <constraint firstItem="twF-bi-o40" firstAttribute="top" secondItem="qE8-1z-KPp" secondAttribute="bottom" id="dzJ-OR-Ofn"/>
                             <constraint firstItem="hm1-bS-ZDQ" firstAttribute="top" secondItem="twF-bi-o40" secondAttribute="bottom" id="i6E-JK-tEn"/>
+                            <constraint firstItem="twF-bi-o40" firstAttribute="top" secondItem="qE8-1z-KPp" secondAttribute="bottom" constant="150" id="m2a-ae-lXW"/>
                             <constraint firstAttribute="trailing" secondItem="twF-bi-o40" secondAttribute="trailing" id="v4j-k4-oAr"/>
                         </constraints>
                     </view>
