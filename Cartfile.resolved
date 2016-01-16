@@ -1,2 +1,4 @@
-github "CosmicMind/MaterialKit" "1.27.4"
+github "kaishin/Gifu" "v1.0.0"
+github "CosmicMind/MaterialKit" "1.27.14"
+github "thoughtbot/Runes" "v3.1.0"
 github "SwiftyJSON/SwiftyJSON" "2.3.3"

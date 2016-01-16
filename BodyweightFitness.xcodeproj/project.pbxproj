@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
+		7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
+		7349F6A51C492729009DBE7B /* Runes.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A61C492729009DBE7B /* Runes.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A71C49275C009DBE7B /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A81C492784009DBE7B /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
 		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
 		73D2BCDD1C3C628E00CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */; };
 		73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
@@ -23,8 +29,6 @@
 		73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
 		73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
 		73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
-		73D2BCFA1C3EB5CB00CE6C00 /* BuyEquipmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF91C3EB5CB00CE6C00 /* BuyEquipmentController.swift */; };
-		73D2BCFB1C3EB5CB00CE6C00 /* BuyEquipmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF91C3EB5CB00CE6C00 /* BuyEquipmentController.swift */; };
 		73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
 		73D2BCFE1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
 		73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
@@ -102,16 +106,8 @@
 		E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
 		E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
 		E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
-		E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
-		E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
-		E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
-		E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
 		E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
 		E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
-		E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
-		E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
-		E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
-		E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
 		E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
 		E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
 		E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; };
@@ -192,6 +188,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7349F6A71C49275C009DBE7B /* Runes.framework.dSYM in CopyFiles */,
 				73D2BCF01C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */,
 				73D2BCDD1C3C628E00CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */,
 			);
@@ -203,6 +200,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				7349F6A81C492784009DBE7B /* Runes.framework.dSYM in CopyFiles */,
 				73D2BCF11C3C6D8E00CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */,
 				73D2BCE21C3C62E500CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */,
 			);
@@ -222,6 +220,8 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7349F6A11C492729009DBE7B /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
+		7349F6A21C492729009DBE7B /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
@@ -230,7 +230,6 @@
 		73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProgressionDelegate.swift; sourceTree = SOURCE_ROOT; };
-		73D2BCF91C3EB5CB00CE6C00 /* BuyEquipmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuyEquipmentController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = SOURCE_ROOT; };
 		73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = SOURCE_ROOT; };
 		73D2BD061C3ED77300CE6C00 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = SOURCE_ROOT; };
@@ -242,11 +241,7 @@
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
 		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
-		E0C7E3071B5BC12B00EB6389 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = BodyweightFitness/Frameworks/Array.swift; sourceTree = "<group>"; };
-		E0C7E3081B5BC12B00EB6389 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Curry.swift; path = BodyweightFitness/Frameworks/Curry.swift; sourceTree = "<group>"; };
 		E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSourceHelpers.swift; path = BodyweightFitness/Frameworks/ImageSourceHelpers.swift; sourceTree = "<group>"; };
-		E0C7E30A1B5BC12B00EB6389 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = BodyweightFitness/Frameworks/Operators.swift; sourceTree = "<group>"; };
-		E0C7E30B1B5BC12B00EB6389 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = BodyweightFitness/Frameworks/Optional.swift; sourceTree = "<group>"; };
 		E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = BodyweightFitness/Frameworks/UIImageExtension.swift; sourceTree = "<group>"; };
 		E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerController.swift; path = BodyweightFitness/Controller/TimerController.swift; sourceTree = SOURCE_ROOT; };
 		E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = BodyweightFitness/Service/PersistenceManager.swift; sourceTree = SOURCE_ROOT; };
@@ -326,6 +321,7 @@
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
 				73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */,
 				E0F0EA131B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */,
 				E0F0EA111B556E93001DBAE4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,6 +333,7 @@
 				73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */,
 				73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */,
 				E0F0EA141B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */,
 				E0F0EA121B556E93001DBAE4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,15 +420,16 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7349F6A21C492729009DBE7B /* Runes.framework.dSYM */,
 				73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */,
 				73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */,
 				73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */,
+				7349F6A11C492729009DBE7B /* Runes.framework */,
 				73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */,
 				73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */,
 				E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */,
 				E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */,
 				E0C7E3201B5BC60600EB6389 /* Gifu */,
-				E0C7E31F1B5BC5F700EB6389 /* Runes */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -439,13 +437,11 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				E0F587391B52730000540104 /* TimePickerController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				73D2BD091C3ED7B900CE6C00 /* HeaderViewController.swift */,
-				73D2BCF91C3EB5CB00CE6C00 /* BuyEquipmentController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -469,6 +465,7 @@
 		E078934C1B472CAF001195AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0F587331B5272F400540104 /* ActionView.swift */,
 				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
 			);
@@ -493,17 +490,6 @@
 				E0F587491B52731C00540104 /* Routine.json */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		E0C7E31F1B5BC5F700EB6389 /* Runes */ = {
-			isa = PBXGroup;
-			children = (
-				E0C7E3071B5BC12B00EB6389 /* Array.swift */,
-				E0C7E3081B5BC12B00EB6389 /* Curry.swift */,
-				E0C7E30A1B5BC12B00EB6389 /* Operators.swift */,
-				E0C7E30B1B5BC12B00EB6389 /* Optional.swift */,
-			);
-			name = Runes;
 			sourceTree = "<group>";
 		};
 		E0C7E3201B5BC60600EB6389 /* Gifu */ = {
@@ -697,6 +683,7 @@
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
 				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
+				7349F6A51C492729009DBE7B /* Runes.framework.dSYM in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
@@ -764,6 +751,7 @@
 				E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */,
 				E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */,
 				E0667C851B542C9800700007 /* full_body_circles.gif in Resources */,
+				7349F6A61C492729009DBE7B /* Runes.framework.dSYM in Resources */,
 				E0667C861B542C9800700007 /* pushup.gif in Resources */,
 				E0667C871B542C9800700007 /* negative_pullup.gif in Resources */,
 				E0667C881B542C9800700007 /* wrist_progression.gif in Resources */,
@@ -811,6 +799,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 			);
 			outputPaths = (
 			);
@@ -826,6 +815,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 			);
 			outputPaths = (
 			);
@@ -871,12 +861,9 @@
 				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
-				E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
-				73D2BCFA1C3EB5CB00CE6C00 /* BuyEquipmentController.swift in Sources */,
-				E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
@@ -886,8 +873,6 @@
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
 				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
-				E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */,
-				E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -901,12 +886,7 @@
 				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
 				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
-				E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */,
-				E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */,
-				E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */,
-				73D2BCFB1C3EB5CB00CE6C00 /* BuyEquipmentController.swift in Sources */,
 				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
-				E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */,
 				73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
 				73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,

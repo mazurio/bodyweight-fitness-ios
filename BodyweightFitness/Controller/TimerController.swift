@@ -80,7 +80,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             
             sheet.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
       
-            sheet.addButtonWithTitle("Buy Equipment")
             sheet.addButtonWithTitle("Watch on YouTube")
             
             addChooseProgressionButton(sheet)

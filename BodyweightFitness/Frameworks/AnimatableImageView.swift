@@ -1,4 +1,5 @@
 import UIKit
+import Runes
 
 /// A subclass of `UIImageView` that can be animated using an image name string or raw data.
 public class AnimatableImageView: UIImageView {
