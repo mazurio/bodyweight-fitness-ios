@@ -100,8 +100,6 @@
 		E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
 		E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
 		E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0667CAE1B542F7800700007 /* Images Pro.xcassets */; };
-		E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
-		E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
@@ -241,7 +239,6 @@
 		E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0667CAE1B542F7800700007 /* Images Pro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images Pro.xcassets"; path = "BodyweightFitness/Images Pro.xcassets"; sourceTree = SOURCE_ROOT; };
 		E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness Pro.plist"; path = "BodyweightFitness/Bodyweight Fitness Pro.plist"; sourceTree = SOURCE_ROOT; };
-		E0743FC91B5BF27300D3B739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/iPhone4S.storyboard; sourceTree = SOURCE_ROOT; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
 		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
@@ -414,7 +411,6 @@
 				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
 				733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */,
 				E0F587411B52730C00540104 /* Main.storyboard */,
-				E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */,
 				E0F587431B52730C00540104 /* TimePicker.xib */,
 				73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */,
 				73D2BD061C3ED77300CE6C00 /* Header.xib */,
@@ -684,7 +680,6 @@
 				E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */,
 				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
 				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
-				E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
@@ -753,7 +748,6 @@
 				E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */,
 				E0667C811B542C9800700007 /* ring_support.gif in Resources */,
 				E0667C821B542C9800700007 /* horizontal_row.gif in Resources */,
-				E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
 				E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */,
 				E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */,
 				E0667C851B542C9800700007 /* full_body_circles.gif in Resources */,
@@ -911,14 +905,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0743FC91B5BF27300D3B739 /* Base */,
-			);
-			name = iPhone4S.storyboard;
-			sourceTree = "<group>";
-		};
 		E0F5873F1B52730C00540104 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
