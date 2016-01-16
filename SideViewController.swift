@@ -7,8 +7,6 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let sectionCellIdentifier = "SectionCell"
     let exerciseCellIdentifier = "ExerciseCell"
     
-    var routine: Routine = PersistenceManager.getRoutine()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -22,9 +20,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tableView.dataSource = self
     }
     
-    func notifyDataSetChanged(routine: Routine) {
-        self.routine = routine
-        
+    func notifyDataSetChanged() {
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
         });
@@ -44,14 +40,14 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     // and sections.
     //
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return routine.categoriesAndSections.count
+        return RoutineStream.sharedInstance.routine.categoriesAndSections.count
     }
     
     //
     // Return different view for different sections.
     //
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let routinePart = routine.categoriesAndSections[section] as! LinkedRoutine
+        let routinePart = RoutineStream.sharedInstance.routine.categoriesAndSections[section] as! LinkedRoutine
         
         switch(routinePart.getType()) {
         case RoutineType.Category:
@@ -82,7 +78,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         // category == 0
         // section == number of exercises
         
-        let routinePart = routine.categoriesAndSections[section] as! LinkedRoutine
+        let routinePart = RoutineStream.sharedInstance.routine.categoriesAndSections[section] as! LinkedRoutine
         let type = routinePart.getType()
         
         switch(type) {
@@ -105,7 +101,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let cell = tableView.dequeueReusableCellWithIdentifier(exerciseCellIdentifier, forIndexPath: indexPath) as UITableViewCell!
         
         // todo: we should use (if let option) to avoid crashes
-        let currentSection = routine.categoriesAndSections[indexPath.section] as! Section
+        let currentSection = RoutineStream.sharedInstance.routine.categoriesAndSections[indexPath.section] as! Section
         
         if currentSection.getType() == RoutineType.Section {
             let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
@@ -132,7 +128,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         sideNavigationViewController?.toggle()
         
         // get current exercise
-        let currentSection = routine.categoriesAndSections[indexPath.section] as! Section
+        let currentSection = RoutineStream.sharedInstance.routine.categoriesAndSections[indexPath.section] as! Section
         if currentSection.getType() == RoutineType.Section {
             let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
             

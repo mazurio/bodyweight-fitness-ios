@@ -9,13 +9,13 @@ class ChooseProgressionDelegate: NSObject, UIActionSheetDelegate {
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if let exercise = self.timerController.current?.section?.exercises[buttonIndex - 1] as? Exercise {
-            self.timerController.routine.setProgression(exercise)
+            RoutineStream.sharedInstance.routine.setProgression(exercise)
             self.timerController.changeExercise(exercise)
             
-            PersistenceManager.storeRoutine(self.timerController.routine)
+            PersistenceManager.storeRoutine(RoutineStream.sharedInstance.routine)
             
             let sideViewController = self.timerController.sideNavigationViewController?.sideViewController as? SideViewController
-            sideViewController?.notifyDataSetChanged(self.timerController.routine)
+            sideViewController?.notifyDataSetChanged()
         }
     }
 }

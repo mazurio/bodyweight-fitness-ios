@@ -201,6 +201,11 @@
                                     <constraint firstItem="cbd-Re-Lo9" firstAttribute="top" secondItem="Jo1-3T-Dh0" secondAttribute="top" constant="5" id="jl8-G6-x4y"/>
                                     <constraint firstAttribute="bottom" secondItem="dO5-Tu-kiA" secondAttribute="bottom" constant="12" id="k8H-qC-4L7"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="qjO-vN-VO8"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57233116610000001" blue="0.53333333329999999" alpha="1" colorSpace="deviceRGB"/>

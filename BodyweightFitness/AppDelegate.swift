@@ -8,7 +8,6 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    // TODO: Choose Progression does change the exercise but linking in the Drawer is different (sometimes).
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics()])
         
