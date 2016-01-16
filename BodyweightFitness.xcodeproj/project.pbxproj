@@ -7,11 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E0667C551B542C9800700007 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871D1B5272B400540104 /* SwiftyJSON.swift */; };
+		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
+		733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
+		733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */; };
+		733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
+		733876DB1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
+		7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
+		7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
+		7349F6A51C492729009DBE7B /* Runes.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A61C492729009DBE7B /* Runes.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A71C49275C009DBE7B /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		7349F6A81C492784009DBE7B /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
+		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
+		73D2BCDD1C3C628E00CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */; };
+		73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
+		73D2BCE21C3C62E500CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */; };
+		73D2BCE31C3C62E800CE6C00 /* MaterialKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */; };
+		73D2BCE41C3C62EA00CE6C00 /* MaterialKit.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */; };
+		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
+		73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
+		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
+		73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
+		73D2BCF01C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */; };
+		73D2BCF11C3C6D8E00CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */; };
+		73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
+		73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
+		73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
+		73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
+		73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
+		73D2BCFE1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
+		73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
+		73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
+		73D2BD071C3ED77300CE6C00 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BD061C3ED77300CE6C00 /* Header.xib */; };
+		73D2BD081C3ED77300CE6C00 /* Header.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BD061C3ED77300CE6C00 /* Header.xib */; };
+		73D2BD0A1C3ED7B900CE6C00 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD091C3ED7B900CE6C00 /* HeaderViewController.swift */; };
+		73D2BD0B1C3ED7B900CE6C00 /* HeaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD091C3ED7B900CE6C00 /* HeaderViewController.swift */; };
 		E0667C571B542C9800700007 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
-		E0667C5E1B542C9800700007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871F1B5272B400540104 /* SWRevealViewController.m */; };
 		E0667C621B542C9800700007 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
-		E0667C631B542C9800700007 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587371B52730000540104 /* DrawerController.swift */; };
 		E0667C651B542C9800700007 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
 		E0667C661B542C9800700007 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
 		E0667C671B542C9800700007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
@@ -54,7 +86,6 @@
 		E0667C911B542C9800700007 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
 		E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
 		E0667C931B542C9800700007 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
-		E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
 		E0667C951B542C9800700007 /* side_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587721B52733100540104 /* side_plank.gif */; };
 		E0667C961B542C9800700007 /* reverse_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876B1B52733100540104 /* reverse_plank.gif */; };
 		E0667C971B542C9800700007 /* cat_camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587531B52733100540104 /* cat_camel.gif */; };
@@ -71,41 +102,27 @@
 		E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
 		E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
 		E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0667CAE1B542F7800700007 /* Images Pro.xcassets */; };
-		E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */; };
-		E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
-		E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
 		E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
 		E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
 		E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
-		E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
-		E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3071B5BC12B00EB6389 /* Array.swift */; };
-		E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
-		E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3081B5BC12B00EB6389 /* Curry.swift */; };
 		E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
 		E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
-		E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
-		E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30A1B5BC12B00EB6389 /* Operators.swift */; };
-		E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
-		E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30B1B5BC12B00EB6389 /* Optional.swift */; };
 		E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
 		E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
-		E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; settings = {ASSET_TAGS = (); }; };
-		E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; settings = {ASSET_TAGS = (); }; };
-		E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; settings = {ASSET_TAGS = (); }; };
-		E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; settings = {ASSET_TAGS = (); }; };
+		E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; };
+		E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; };
+		E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; };
+		E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; };
 		E0F0EA111B556E93001DBAE4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */; };
 		E0F0EA121B556E93001DBAE4 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */; };
 		E0F0EA131B556E93001DBAE4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */; };
 		E0F0EA141B556E93001DBAE4 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */; };
-		E0F587291B5272B400540104 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871D1B5272B400540104 /* SwiftyJSON.swift */; };
-		E0F5872A1B5272B400540104 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F5871F1B5272B400540104 /* SWRevealViewController.m */; };
 		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
 		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
 		E0F587351B5272F400540104 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
-		E0F5873B1B52730000540104 /* DrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587371B52730000540104 /* DrawerController.swift */; };
 		E0F5873C1B52730000540104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
 		E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
 		E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
@@ -163,11 +180,34 @@
 		E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877C1B52733100540104 /* wall_pushup.gif */; };
 		E0F587AF1B52733100540104 /* wide_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877D1B52733100540104 /* wide_row.gif */; };
 		E0F587B01B52733100540104 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
-		E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B11B52734000540104 /* Bodyweight Fitness.plist */; };
 		E0F587B41B52734900540104 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B31B52734900540104 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		73D2BCDB1C3C627200CE6C00 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7349F6A71C49275C009DBE7B /* Runes.framework.dSYM in CopyFiles */,
+				73D2BCF01C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */,
+				73D2BCDD1C3C628E00CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D2BCE01C3C62CE00CE6C00 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				7349F6A81C492784009DBE7B /* Runes.framework.dSYM in CopyFiles */,
+				73D2BCF11C3C6D8E00CE6C00 /* SwiftyJSON.framework.dSYM in CopyFiles */,
+				73D2BCE21C3C62E500CE6C00 /* MaterialKit.framework.dSYM in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0C7E3481B5BD8B500EB6389 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,18 +222,30 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
+		733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
+		7349F6A11C492729009DBE7B /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
+		7349F6A21C492729009DBE7B /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
+		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
+		73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
+		73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = MaterialKit.framework.dSYM; path = Carthage/Build/iOS/MaterialKit.framework.dSYM; sourceTree = "<group>"; };
+		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
+		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
+		73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
+		73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProgressionDelegate.swift; sourceTree = SOURCE_ROOT; };
+		73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = SOURCE_ROOT; };
+		73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = SOURCE_ROOT; };
+		73D2BD061C3ED77300CE6C00 /* Header.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Header.xib; sourceTree = SOURCE_ROOT; };
+		73D2BD091C3ED7B900CE6C00 /* HeaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewController.swift; sourceTree = SOURCE_ROOT; };
 		E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0667CAE1B542F7800700007 /* Images Pro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images Pro.xcassets"; path = "BodyweightFitness/Images Pro.xcassets"; sourceTree = SOURCE_ROOT; };
 		E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness Pro.plist"; path = "BodyweightFitness/Bodyweight Fitness Pro.plist"; sourceTree = SOURCE_ROOT; };
-		E0743FC91B5BF27300D3B739 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/iPhone4S.storyboard; sourceTree = SOURCE_ROOT; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
 		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
-		E0C7E3071B5BC12B00EB6389 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = BodyweightFitness/Frameworks/Array.swift; sourceTree = "<group>"; };
-		E0C7E3081B5BC12B00EB6389 /* Curry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Curry.swift; path = BodyweightFitness/Frameworks/Curry.swift; sourceTree = "<group>"; };
 		E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSourceHelpers.swift; path = BodyweightFitness/Frameworks/ImageSourceHelpers.swift; sourceTree = "<group>"; };
-		E0C7E30A1B5BC12B00EB6389 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = BodyweightFitness/Frameworks/Operators.swift; sourceTree = "<group>"; };
-		E0C7E30B1B5BC12B00EB6389 /* Optional.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = BodyweightFitness/Frameworks/Optional.swift; sourceTree = "<group>"; };
 		E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = BodyweightFitness/Frameworks/UIImageExtension.swift; sourceTree = "<group>"; };
 		E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerController.swift; path = BodyweightFitness/Controller/TimerController.swift; sourceTree = SOURCE_ROOT; };
 		E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = BodyweightFitness/Service/PersistenceManager.swift; sourceTree = SOURCE_ROOT; };
@@ -201,14 +253,9 @@
 		E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		E0F5870E1B52728E00540104 /* RoutineTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineTests.swift; path = BodyweightFitnessTests/RoutineTests.swift; sourceTree = SOURCE_ROOT; };
 		E0F587101B52729B00540104 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = BodyweightFitnessTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		E0F587161B5272B400540104 /* Bodyweight Fitness-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Bodyweight Fitness-Bridging-Header.h"; path = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h"; sourceTree = "<group>"; };
-		E0F5871D1B5272B400540104 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = BodyweightFitness/Frameworks/SwiftyJSON.swift; sourceTree = "<group>"; };
-		E0F5871E1B5272B400540104 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = BodyweightFitness/Frameworks/SWRevealViewController.h; sourceTree = "<group>"; };
-		E0F5871F1B5272B400540104 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = BodyweightFitness/Frameworks/SWRevealViewController.m; sourceTree = "<group>"; };
 		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BodyweightFitness/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = BodyweightFitness/Model/Routine.swift; sourceTree = SOURCE_ROOT; };
 		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = BodyweightFitness/View/ActionView.swift; sourceTree = SOURCE_ROOT; };
-		E0F587371B52730000540104 /* DrawerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DrawerController.swift; path = BodyweightFitness/Controller/DrawerController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587381B52730000540104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = BodyweightFitness/Controller/SettingsController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerController.swift; path = BodyweightFitness/Controller/TimePickerController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587401B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
@@ -275,7 +322,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
+				73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */,
 				E0F0EA131B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */,
 				E0F0EA111B556E93001DBAE4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +334,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */,
+				73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */,
 				E0F0EA141B556E93001DBAE4 /* Crashlytics.framework in Frameworks */,
+				7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */,
 				E0F0EA121B556E93001DBAE4 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,13 +399,24 @@
 			path = TabsTestTests;
 			sourceTree = "<group>";
 		};
+		73D2BCF21C3EB10400CE6C00 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */,
+				73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
+				733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */,
 				E0F587411B52730C00540104 /* Main.storyboard */,
-				E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */,
 				E0F587431B52730C00540104 /* TimePicker.xib */,
+				73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */,
+				73D2BD061C3ED77300CE6C00 /* Header.xib */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -360,13 +424,16 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7349F6A21C492729009DBE7B /* Runes.framework.dSYM */,
+				73D2BCEF1C3C6D8800CE6C00 /* SwiftyJSON.framework.dSYM */,
+				73D2BCE11C3C62E500CE6C00 /* MaterialKit.framework.dSYM */,
+				73D2BCDC1C3C628E00CE6C00 /* MaterialKit.framework.dSYM */,
+				7349F6A11C492729009DBE7B /* Runes.framework */,
+				73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */,
+				73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */,
 				E0F0EA101B556E93001DBAE4 /* Crashlytics.framework */,
 				E0F0EA0F1B556E93001DBAE4 /* Fabric.framework */,
-				E0C7E3221B5BC62000EB6389 /* SwiftyJSON */,
-				E0C7E3211B5BC61400EB6389 /* RevealViewController */,
 				E0C7E3201B5BC60600EB6389 /* Gifu */,
-				E0C7E31F1B5BC5F700EB6389 /* Runes */,
-				E0C7E3231B5BC63700EB6389 /* Header */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -376,8 +443,9 @@
 			children = (
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				E0F587391B52730000540104 /* TimePickerController.swift */,
-				E0F587371B52730000540104 /* DrawerController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
+				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
+				73D2BD091C3ED7B900CE6C00 /* HeaderViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -401,7 +469,10 @@
 		E078934C1B472CAF001195AC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0F587331B5272F400540104 /* ActionView.swift */,
+				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
+				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -426,17 +497,6 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		E0C7E31F1B5BC5F700EB6389 /* Runes */ = {
-			isa = PBXGroup;
-			children = (
-				E0C7E3071B5BC12B00EB6389 /* Array.swift */,
-				E0C7E3081B5BC12B00EB6389 /* Curry.swift */,
-				E0C7E30A1B5BC12B00EB6389 /* Operators.swift */,
-				E0C7E30B1B5BC12B00EB6389 /* Optional.swift */,
-			);
-			name = Runes;
-			sourceTree = "<group>";
-		};
 		E0C7E3201B5BC60600EB6389 /* Gifu */ = {
 			isa = PBXGroup;
 			children = (
@@ -449,35 +509,11 @@
 			name = Gifu;
 			sourceTree = "<group>";
 		};
-		E0C7E3211B5BC61400EB6389 /* RevealViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E0F5871E1B5272B400540104 /* SWRevealViewController.h */,
-				E0F5871F1B5272B400540104 /* SWRevealViewController.m */,
-			);
-			name = RevealViewController;
-			sourceTree = "<group>";
-		};
-		E0C7E3221B5BC62000EB6389 /* SwiftyJSON */ = {
-			isa = PBXGroup;
-			children = (
-				E0F5871D1B5272B400540104 /* SwiftyJSON.swift */,
-			);
-			name = SwiftyJSON;
-			sourceTree = "<group>";
-		};
-		E0C7E3231B5BC63700EB6389 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				E0F587161B5272B400540104 /* Bodyweight Fitness-Bridging-Header.h */,
-			);
-			name = Header;
-			sourceTree = "<group>";
-		};
 		E0C7E3241B5BC65000EB6389 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */,
+				733876D91C4ABF88006AABA7 /* RoutineStream.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -551,6 +587,8 @@
 				2BD2CA811B458FFD00841AB7 /* Resources */,
 				E09D693C1B556D7E00C477C6 /* ShellScript */,
 				E0C7E3481B5BD8B500EB6389 /* Embed App Extensions */,
+				73D2BCDA1C3C625A00CE6C00 /* ShellScript */,
+				73D2BCDB1C3C627200CE6C00 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -569,6 +607,8 @@
 				E0667C6A1B542C9800700007 /* Frameworks */,
 				E0667C6B1B542C9800700007 /* Resources */,
 				E09D693D1B556D9200C477C6 /* ShellScript */,
+				73D2BCDF1C3C62B800CE6C00 /* ShellScript */,
+				73D2BCE01C3C62CE00CE6C00 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -586,7 +626,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Damian Mazurkiewicz";
 				TargetAttributes = {
 					2BD2CA821B458FFD00841AB7 = {
@@ -637,18 +677,18 @@
 				E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */,
 				E0F5879A1B52733100540104 /* pullover.gif in Resources */,
 				E0F587861B52733100540104 /* deep_stepup.gif in Resources */,
-				E0F587B21B52734000540104 /* Bodyweight Fitness.plist in Resources */,
 				E0F5879E1B52733100540104 /* ring_dips.gif in Resources */,
+				73D2BD071C3ED77300CE6C00 /* Header.xib in Resources */,
 				E0F587AD1B52733100540104 /* wall_plank.gif in Resources */,
 				E0F5879B1B52733100540104 /* pullup.gif in Resources */,
 				E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */,
 				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
 				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
-				E0743FCA1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
 				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
+				7349F6A51C492729009DBE7B /* Runes.framework.dSYM in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
@@ -656,8 +696,10 @@
 				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
 				E0F5878E1B52733100540104 /* incline_row.gif in Resources */,
 				E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */,
+				73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */,
 				E0F587AF1B52733100540104 /* wide_row.gif in Resources */,
 				E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */,
+				73D2BCE41C3C62EA00CE6C00 /* MaterialKit.framework.dSYM in Resources */,
 				E0F587A21B52733100540104 /* rings_turned_out_support.gif in Resources */,
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
 				E0F587471B52730C00540104 /* TimePicker.xib in Resources */,
@@ -703,16 +745,17 @@
 				E0667C791B542C9800700007 /* pullover.gif in Resources */,
 				E0667C7A1B542C9800700007 /* deep_stepup.gif in Resources */,
 				E0667C7C1B542C9800700007 /* ring_dips.gif in Resources */,
+				73D2BD081C3ED77300CE6C00 /* Header.xib in Resources */,
 				E0667C7D1B542C9800700007 /* wall_plank.gif in Resources */,
 				E0667C7E1B542C9800700007 /* pullup.gif in Resources */,
 				E0667C7F1B542C9800700007 /* parallel_bar_dips.gif in Resources */,
 				E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */,
 				E0667C811B542C9800700007 /* ring_support.gif in Resources */,
 				E0667C821B542C9800700007 /* horizontal_row.gif in Resources */,
-				E0743FCB1B5BF27300D3B739 /* iPhone4S.storyboard in Resources */,
 				E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */,
 				E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */,
 				E0667C851B542C9800700007 /* full_body_circles.gif in Resources */,
+				7349F6A61C492729009DBE7B /* Runes.framework.dSYM in Resources */,
 				E0667C861B542C9800700007 /* pushup.gif in Resources */,
 				E0667C871B542C9800700007 /* negative_pullup.gif in Resources */,
 				E0667C881B542C9800700007 /* wrist_progression.gif in Resources */,
@@ -720,17 +763,18 @@
 				E0667C8A1B542C9800700007 /* assisted_squat.gif in Resources */,
 				E0667C8B1B542C9800700007 /* incline_row.gif in Resources */,
 				E0667C8C1B542C9800700007 /* freestanding_handstand.gif in Resources */,
+				73D2BCFE1C3EC52100CE6C00 /* ImageCell.xib in Resources */,
 				E0667C8D1B542C9800700007 /* wide_row.gif in Resources */,
 				E0667C8E1B542C9800700007 /* wall_pushup.gif in Resources */,
 				E0667C8F1B542C9800700007 /* rings_turned_out_support.gif in Resources */,
+				73D2BCE31C3C62E800CE6C00 /* MaterialKit.framework.dSYM in Resources */,
 				E0667C901B542C9800700007 /* finished.mp3 in Resources */,
 				E0667C911B542C9800700007 /* TimePicker.xib in Resources */,
+				733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */,
 				E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */,
 				E0667C931B542C9800700007 /* hollow_hold.gif in Resources */,
-				E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */,
 				E0667C951B542C9800700007 /* side_plank.gif in Resources */,
 				E0667C961B542C9800700007 /* reverse_plank.gif in Resources */,
-				E0667CB11B542FA600700007 /* Bodyweight Fitness Pro.plist in Resources */,
 				E0667C971B542C9800700007 /* cat_camel.gif in Resources */,
 				E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */,
 				E0667C981B542C9800700007 /* ring_pushup.gif in Resources */,
@@ -751,6 +795,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		73D2BCDA1C3C625A00CE6C00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
+		73D2BCDF1C3C62B800CE6C00 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "";
+		};
 		E09D693C1B556D7E00C477C6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -784,25 +860,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0F587291B5272B400540104 /* SwiftyJSON.swift in Sources */,
 				E0F587351B5272F400540104 /* ActionView.swift in Sources */,
 				E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
 				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
-				E0F5872A1B5272B400540104 /* SWRevealViewController.m in Sources */,
-				E0C7E3131B5BC12B00EB6389 /* Array.swift in Sources */,
+				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
-				E0F5873B1B52730000540104 /* DrawerController.swift in Sources */,
+				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
-				E0C7E3151B5BC12B00EB6389 /* Curry.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
+				73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
+				73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
+				73D2BD0A1C3ED7B900CE6C00 /* HeaderViewController.swift in Sources */,
+				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
+				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
 				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
-				E0C7E31B1B5BC12B00EB6389 /* Optional.swift in Sources */,
-				E0C7E3191B5BC12B00EB6389 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -814,18 +890,18 @@
 				E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
-				E0667C551B542C9800700007 /* SwiftyJSON.swift in Sources */,
+				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
-				E0C7E31A1B5BC12B00EB6389 /* Operators.swift in Sources */,
-				E0C7E3141B5BC12B00EB6389 /* Array.swift in Sources */,
-				E0667C5E1B542C9800700007 /* SWRevealViewController.m in Sources */,
-				E0C7E31C1B5BC12B00EB6389 /* Optional.swift in Sources */,
 				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
-				E0C7E3161B5BC12B00EB6389 /* Curry.swift in Sources */,
+				733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */,
+				73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
+				73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
 				E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
-				E0667C631B542C9800700007 /* DrawerController.swift in Sources */,
+				73D2BD0B1C3ED7B900CE6C00 /* HeaderViewController.swift in Sources */,
+				73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				E0667C651B542C9800700007 /* Routine.swift in Sources */,
+				733876DB1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */,
 				E0667C661B542C9800700007 /* SettingsController.swift in Sources */,
 				E0667C671B542C9800700007 /* AppDelegate.swift in Sources */,
@@ -835,14 +911,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0743FC91B5BF27300D3B739 /* Base */,
-			);
-			name = iPhone4S.storyboard;
-			sourceTree = "<group>";
-		};
 		E0F5873F1B52730C00540104 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -911,7 +979,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -950,7 +1018,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
-				SDKROOT = iphoneos9.0;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -966,15 +1034,16 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
-				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
-				SDKROOT = iphoneos9.0;
-				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -985,20 +1054,21 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
-				PROVISIONING_PROFILE = "25959d6c-944b-45c0-b8e0-e7b5ae6b2204";
-				SDKROOT = iphoneos9.0;
-				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -1013,6 +1083,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1020,8 +1091,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
-				SDKROOT = iphoneos9.0;
-				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1037,6 +1108,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1044,8 +1116,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "614eaad5-2046-4962-ab21-2e3e9b5529a2";
-				SDKROOT = iphoneos9.0;
-				SWIFT_OBJC_BRIDGING_HEADER = "BodyweightFitness/Frameworks/Bodyweight Fitness-Bridging-Header.h";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

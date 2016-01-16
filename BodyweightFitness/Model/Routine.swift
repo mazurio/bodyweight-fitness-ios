@@ -1,4 +1,5 @@
 import Foundation
+import SwiftyJSON
 
 enum RoutineType: Int {
     case Category
@@ -64,16 +65,18 @@ class Exercise: LinkedRoutine {
     let level: String
     let title: String
     let desc: String
+    let youTubeId: String
     var category: Category?
     var section: Section?
     var previous: Exercise?
     var next: Exercise?
     
-    init(id: String, level: String, title: String, desc: String) {
+    init(id: String, level: String, title: String, desc: String, youTubeId: String) {
         self.id = id
         self.level = level
         self.title = title
         self.desc = desc
+        self.youTubeId = youTubeId
     }
     
     func getType() -> RoutineType {
@@ -127,7 +130,8 @@ class Routine {
                     id: item["id"].stringValue,
                     level: item["level"].stringValue,
                     title: item["title"].stringValue,
-                    desc: item["description"].stringValue)
+                    desc: item["description"].stringValue,
+                    youTubeId: item["youTubeId"].stringValue)
 
                 exercise.category = currentCategory
                 exercise.section = currentSection

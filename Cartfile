@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift" ~> 2.0 
+github "thoughtbot/Runes"
+github "SwiftyJSON/SwiftyJSON"
+github "CosmicMind/MaterialKit"

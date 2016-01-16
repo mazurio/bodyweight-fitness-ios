@@ -1,5 +1,8 @@
 /// A `UIImage` extension that makes it easier to resize the image and inspect its size.
 
+import UIKit
+import Runes
+
 extension UIImage {
     /// Resizes an image instance.
     ///

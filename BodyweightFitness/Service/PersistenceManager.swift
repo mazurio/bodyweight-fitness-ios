@@ -40,12 +40,10 @@ class PersistenceManager {
         if(fileManager.fileExistsAtPath(dataFilePath)) {
             if let currentExercises = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? Dictionary<String, String> {
                 return Routine(dictionary: currentExercises)
-            } else {
-                return Routine()
             }
-        } else {
-            return Routine()
         }
+        
+        return Routine()
     }
     
     class func storeRoutine(routine: Routine) {

@@ -1,6 +1,7 @@
 import ImageIO
 import MobileCoreServices
 import UIKit
+import Runes
 
 typealias GIFProperties = [String : Double]
 private let defaultDuration: Double = 0

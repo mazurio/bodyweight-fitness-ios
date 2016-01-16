@@ -1,56 +1,62 @@
 import UIKit
 import AVFoundation
 
-class TimerController: UIViewController, UIActionSheetDelegate, AVAudioPlayerDelegate {
+class TimerController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var actionButton: UIButton!
-    
     @IBOutlet var timerMinutesButton: UIButton!
     @IBOutlet var timerButton: UIButton!
     @IBOutlet var mainView: UIView!
-    
     @IBOutlet var gifView: AnimatableImageView!
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var playButton: UIButton!
     
     var timePickerController: TimePickerController?
-    
     var timer = NSTimer()
     var isPlaying = false
     var seconds = PersistenceManager.getTimer()
     var defaultSeconds = PersistenceManager.getTimer()
     
-    let routine: Routine = PersistenceManager.getRoutine()
     var current: Exercise?
     
     var audioPlayer: AVAudioPlayer?
+    var actionButtonDelegate: UIActionSheetDelegate?
+    var chooseProgressionDelegate: UIActionSheetDelegate?
+    
+    @IBAction func onClickMenuAction(sender: AnyObject) {
+        sideNavigationViewController?.toggle()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.actionButtonDelegate = ActionButtonDelegate(timerController: self)
+        self.chooseProgressionDelegate = ChooseProgressionDelegate(timerController: self)
+        
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
-        
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            
-            self.view.addGestureRecognizer(
-                self.revealViewController().panGestureRecognizer())
-            self.revealViewController().rearViewRevealWidth = 260
-        }
-        
+
         setNavigationBar()
         updateLabel()
-        changeExercise(routine.getFirstExercise())
+        changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
     }
     
-    func changeExercise(currentExercise: Exercise) {
+    internal func changeExercise(currentExercise: Exercise) {
         self.current = currentExercise
         
         setNavigationBarTitle(currentExercise.title)
         restartTimer(defaultSeconds)
         setGifImage(currentExercise.id)
+        
+//        if (currentExercise.section?.mode == SectionMode.All) {
+//            if let image = UIImage(named: "plus") {
+//                actionButton.setImage(image, forState: .Normal)
+//            }
+//        } else {
+//            if let image = UIImage(named: "progression") {
+//                actionButton.setImage(image, forState: .Normal)
+//            }
+//        }
         
         if let _ = self.current?.previous {
             previousButton.hidden = false
@@ -63,12 +69,6 @@ class TimerController: UIViewController, UIActionSheetDelegate, AVAudioPlayerDel
         } else {
             nextButton.hidden = true
         }
-        
-        if(current?.section?.mode == SectionMode.Levels || current?.section?.mode == SectionMode.Pick) {
-            actionButton.hidden = false
-        } else {
-            actionButton.hidden = true
-        }
     }
     
     func setGifImage(id: String) {
@@ -79,51 +79,27 @@ class TimerController: UIViewController, UIActionSheetDelegate, AVAudioPlayerDel
         gifView.animateWithImageData(imageData!)
     }
     
-    func drawerController() -> DrawerController? {
-        if let drawerController = self.revealViewController().rearViewController as? DrawerController {
-            return drawerController
-        } else {
-            return nil
-        }
-    }
-    
     @IBAction func actionButtonClicked(sender: AnyObject) {
-        if let exercises = current?.section?.exercises {
+        if let _ = current?.section?.exercises {
             let sheet = UIActionSheet(
                 title: nil,
-                delegate: self,
+                delegate: actionButtonDelegate,
                 cancelButtonTitle: "Cancel",
                 destructiveButtonTitle: nil)
             
             sheet.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
+      
+            sheet.addButtonWithTitle("Watch on YouTube")
             
-            for anyExercise in exercises {
-                if let exercise = anyExercise as? Exercise {
-                    if(exercise.section?.mode == SectionMode.Levels) {
-                        sheet.addButtonWithTitle("\(exercise.level): \(exercise.title)")
-                    } else {
-                        sheet.addButtonWithTitle("\(exercise.title)")
-                    }
-                }
-            }
+            addChooseProgressionButton(sheet)
             
             sheet.showInView(self.view)
         }
     }
     
-    ///
-    /// Delegate of an action sheet.
-    ///
-    func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if(buttonIndex == 0) {
-            return
-        }
-        
-        /// Set current progression.
-        if let exercise = current?.section?.exercises[buttonIndex - 1] as? Exercise {
-            routine.setProgression(exercise)
-            changeExercise(exercise)
-            PersistenceManager.storeRoutine(routine)
+    func addChooseProgressionButton(sheet: UIActionSheet) {
+        if(current?.section?.mode == SectionMode.Levels || current?.section?.mode == SectionMode.Pick) {
+            sheet.addButtonWithTitle("Choose Progression")
         }
     }
     

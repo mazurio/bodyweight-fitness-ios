@@ -1,5 +1,7 @@
 import UIKit
+
 import ImageIO
+import Runes
 
 /// Responsible for storing and updating the frames of a `AnimatableImageView` instance via delegation.
 class Animator {
