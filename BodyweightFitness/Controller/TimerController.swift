@@ -18,7 +18,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     var seconds = PersistenceManager.getTimer()
     var defaultSeconds = PersistenceManager.getTimer()
     
-//    let routine: Routine = PersistenceManager.getRoutine()
     var current: Exercise?
     
     var audioPlayer: AVAudioPlayer?
