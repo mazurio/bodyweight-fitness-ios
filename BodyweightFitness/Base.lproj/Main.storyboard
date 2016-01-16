@@ -165,29 +165,41 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dO5-Tu-kiA" userLabel="Action Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                                        <rect key="frame" x="516" y="252" width="60" height="60"/>
+                                        <rect key="frame" x="528" y="264" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="71V-jf-cmp"/>
                                             <constraint firstAttribute="height" constant="60" id="Spe-3f-qOi"/>
                                         </constraints>
                                         <state key="normal" image="plus">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="actionButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3cD-fU-i3b"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjO-vN-VO8" customClass="LogWorkoutButton" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                                        <rect key="frame" x="528" y="192" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Hs6-8Q-F2Q"/>
+                                            <constraint firstAttribute="height" constant="60" id="yAI-Y8-8DH"/>
+                                        </constraints>
+                                        <state key="normal" image="log">
+                                            <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.019607843829999999" green="0.011764707040000001" blue="0.015686275440000001" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dO5-Tu-kiA" firstAttribute="top" secondItem="qjO-vN-VO8" secondAttribute="bottom" constant="12" id="1Pa-3b-ovh"/>
                                     <constraint firstAttribute="centerX" secondItem="cbd-Re-Lo9" secondAttribute="centerX" id="BQv-Jr-wXd"/>
+                                    <constraint firstAttribute="trailing" secondItem="qjO-vN-VO8" secondAttribute="trailing" constant="12" id="HvL-WF-qFT"/>
                                     <constraint firstAttribute="bottom" secondItem="cbd-Re-Lo9" secondAttribute="bottom" constant="5" id="Lqd-Od-9ay"/>
                                     <constraint firstAttribute="trailing" secondItem="cbd-Re-Lo9" secondAttribute="trailing" id="S0Y-Iq-a1O"/>
-                                    <constraint firstAttribute="trailing" secondItem="dO5-Tu-kiA" secondAttribute="trailing" constant="24" id="XN5-Ks-QJJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="dO5-Tu-kiA" secondAttribute="trailing" constant="12" id="XN5-Ks-QJJ"/>
                                     <constraint firstAttribute="centerY" secondItem="cbd-Re-Lo9" secondAttribute="centerY" id="Yma-qN-rg1"/>
                                     <constraint firstItem="cbd-Re-Lo9" firstAttribute="leading" secondItem="Jo1-3T-Dh0" secondAttribute="leading" id="guf-CJ-2YM"/>
                                     <constraint firstItem="cbd-Re-Lo9" firstAttribute="top" secondItem="Jo1-3T-Dh0" secondAttribute="top" constant="5" id="jl8-G6-x4y"/>
-                                    <constraint firstAttribute="bottom" secondItem="dO5-Tu-kiA" secondAttribute="bottom" constant="24" id="k8H-qC-4L7"/>
+                                    <constraint firstAttribute="bottom" secondItem="dO5-Tu-kiA" secondAttribute="bottom" constant="12" id="k8H-qC-4L7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -450,15 +462,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bodyweight Fitness Pro" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Uc-6P-Rwp">
-                                                    <rect key="frame" x="15" y="6" width="170.5" height="19.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bodyweight Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6Uc-6P-Rwp">
+                                                    <rect key="frame" x="15" y="6" width="142" height="19.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1.0.4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sQV-Ri-S2E">
-                                                    <rect key="frame" x="15" y="25.5" width="25" height="13.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="1.0.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sQV-Ri-S2E">
+                                                    <rect key="frame" x="15" y="25.5" width="24.5" height="13.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="highlightedColor"/>
@@ -492,6 +504,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="log" width="22" height="22"/>
         <image name="menu" width="22" height="22"/>
         <image name="next" width="44" height="44"/>
         <image name="play" width="44" height="44"/>

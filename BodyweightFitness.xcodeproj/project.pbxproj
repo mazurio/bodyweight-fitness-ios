@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
+		733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
+		733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */; };
 		7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
 		7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
 		7349F6A51C492729009DBE7B /* Runes.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 7349F6A21C492729009DBE7B /* Runes.framework.dSYM */; };
@@ -81,7 +84,6 @@
 		E0667C911B542C9800700007 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
 		E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
 		E0667C931B542C9800700007 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
-		E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
 		E0667C951B542C9800700007 /* side_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587721B52733100540104 /* side_plank.gif */; };
 		E0667C961B542C9800700007 /* reverse_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876B1B52733100540104 /* reverse_plank.gif */; };
 		E0667C971B542C9800700007 /* cat_camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587531B52733100540104 /* cat_camel.gif */; };
@@ -220,6 +222,8 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
+		733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		7349F6A11C492729009DBE7B /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		7349F6A21C492729009DBE7B /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
@@ -408,6 +412,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
+				733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */,
 				E0F587411B52730C00540104 /* Main.storyboard */,
 				E0743FC81B5BF27300D3B739 /* iPhone4S.storyboard */,
 				E0F587431B52730C00540104 /* TimePicker.xib */,
@@ -468,6 +473,7 @@
 				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0F587331B5272F400540104 /* ActionView.swift */,
 				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
+				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -766,9 +772,9 @@
 				73D2BCE31C3C62E800CE6C00 /* MaterialKit.framework.dSYM in Resources */,
 				E0667C901B542C9800700007 /* finished.mp3 in Resources */,
 				E0667C911B542C9800700007 /* TimePicker.xib in Resources */,
+				733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */,
 				E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */,
 				E0667C931B542C9800700007 /* hollow_hold.gif in Resources */,
-				E0667C941B542C9800700007 /* LaunchScreen.xib in Resources */,
 				E0667C951B542C9800700007 /* side_plank.gif in Resources */,
 				E0667C961B542C9800700007 /* reverse_plank.gif in Resources */,
 				E0667C971B542C9800700007 /* cat_camel.gif in Resources */,
@@ -863,6 +869,7 @@
 				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
+				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
@@ -887,6 +894,7 @@
 				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
 				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
 				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
+				733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */,
 				73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
 				73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,

@@ -11,17 +11,17 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bodyweight Fitness Pro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pMz-ch-Nz7">
-                    <rect key="frame" x="104" y="224" width="272" height="32"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                    <color key="textColor" red="0.019607843829999999" green="0.270588249" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
-                    <color key="highlightedColor" red="0.019607843829999999" green="0.270588249" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bodyweight Fitness" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt0-Gp-Mhk">
+                    <rect key="frame" x="131" y="225" width="219" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="pMz-ch-Nz7" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HKW-Qj-a3H"/>
-                <constraint firstItem="pMz-ch-Nz7" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="P09-Ee-Uli"/>
+                <constraint firstItem="pt0-Gp-Mhk" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mXX-M3-V6N"/>
+                <constraint firstItem="pt0-Gp-Mhk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rbj-x1-jN5"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

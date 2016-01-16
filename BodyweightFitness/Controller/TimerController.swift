@@ -49,6 +49,16 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         restartTimer(defaultSeconds)
         setGifImage(currentExercise.id)
         
+        if (currentExercise.section?.mode == SectionMode.All) {
+            if let image = UIImage(named: "plus") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        } else {
+            if let image = UIImage(named: "progression") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        }
+        
         if let _ = self.current?.previous {
             previousButton.hidden = false
         } else {
