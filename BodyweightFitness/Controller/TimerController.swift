@@ -28,6 +28,16 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         sideNavigationViewController?.toggle()
     }
     
+    @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
+        let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
+        
+        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        
+        let navController = UINavigationController(rootViewController: logWorkoutController)
+        
+        self.presentViewController(navController, animated:true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
