@@ -17,6 +17,7 @@
 		732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */; };
 		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
 		732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */; };
+		732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */; };
 		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
 		733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
 		733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
@@ -62,7 +63,7 @@
 		734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */; };
 		7366D8D11C4EE9CC00819790 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */; };
 		7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */; };
-		7366D8E11C51810600819790 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E01C51810600819790 /* ViewController+Extensions.swift */; };
+		7366D8E11C51810600819790 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E01C51810600819790 /* Extensions.swift */; };
 		7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8E31C51AD5900819790 /* SwiftCharts.framework */; };
 		7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */; };
 		7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */; };
@@ -71,8 +72,6 @@
 		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
-		73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
-		73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
@@ -86,7 +85,6 @@
 		E0F587351B5272F400540104 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
 		E0F5873C1B52730000540104 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
 		E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
-		E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F5873F1B52730C00540104 /* LaunchScreen.xib */; };
 		E0F587461B52730C00540104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F587411B52730C00540104 /* Main.storyboard */; };
 		E0F587471B52730C00540104 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
 		E0F5874A1B52731C00540104 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
@@ -184,6 +182,7 @@
 		732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
 		732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = SOURCE_ROOT; };
+		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
 		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
@@ -229,7 +228,7 @@
 		734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = SOURCE_ROOT; };
 		7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = SOURCE_ROOT; };
-		7366D8E01C51810600819790 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		7366D8E01C51810600819790 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
 		7366D8E31C51AD5900819790 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
 		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
 		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -238,8 +237,6 @@
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = SOURCE_ROOT; };
-		73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = SOURCE_ROOT; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = SOURCE_ROOT; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
@@ -255,7 +252,6 @@
 		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = BodyweightFitness/View/ActionView.swift; sourceTree = SOURCE_ROOT; };
 		E0F587381B52730000540104 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsController.swift; path = BodyweightFitness/Controller/SettingsController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerController.swift; path = BodyweightFitness/Controller/TimePickerController.swift; sourceTree = SOURCE_ROOT; };
-		E0F587401B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		E0F587421B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/TimePicker.xib; sourceTree = SOURCE_ROOT; };
 		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finished.mp3; path = BodyweightFitness/Resources/finished.mp3; sourceTree = SOURCE_ROOT; };
@@ -385,6 +381,14 @@
 			path = TabsTestTests;
 			sourceTree = "<group>";
 		};
+		732BA0311C5BC2A500C1CDB5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7366D8E01C51810600819790 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		734B6F951C4BB72C00CFB6BD /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +438,7 @@
 		73C8E4AC1C598888005E0248 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				E0F587391B52730000540104 /* TimePickerController.swift */,
 				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
 			);
 			name = Modal;
@@ -458,10 +463,9 @@
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
-				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
 				E0F587411B52730C00540104 /* Main.storyboard */,
 				E0F587431B52730C00540104 /* TimePicker.xib */,
-				73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */,
+				732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -492,15 +496,14 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				732BA0311C5BC2A500C1CDB5 /* Extensions */,
 				73C8E4AD1C5A1C99005E0248 /* Progress */,
 				73C8E4AC1C598888005E0248 /* Modal */,
+				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
-				E0F587391B52730000540104 /* TimePickerController.swift */,
-				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
-				7366D8E01C51810600819790 /* ViewController+Extensions.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -509,7 +512,6 @@
 			isa = PBXGroup;
 			children = (
 				E0F587331B5272F400540104 /* ActionView.swift */,
-				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
 				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
 				732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */,
@@ -717,7 +719,6 @@
 				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
 				E0F5878E1B52733100540104 /* incline_row.gif in Resources */,
 				E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */,
-				73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */,
 				E0F587AF1B52733100540104 /* wide_row.gif in Resources */,
 				E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */,
 				E0F587A21B52733100540104 /* rings_turned_out_support.gif in Resources */,
@@ -726,7 +727,6 @@
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
-				E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
 				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
 				E0F587851B52733100540104 /* cat_camel.gif in Resources */,
@@ -741,6 +741,7 @@
 				E0F5878F1B52733100540104 /* l_ring_dips.gif in Resources */,
 				E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */,
 				E0F587AC1B52733100540104 /* wall_handstand.gif in Resources */,
+				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
@@ -791,7 +792,7 @@
 				734B6FBB1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				734B6FD31C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */,
-				7366D8E11C51810600819790 /* ViewController+Extensions.swift in Sources */,
+				7366D8E11C51810600819790 /* Extensions.swift in Sources */,
 				732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				734B70021C4BF57600CFB6BD /* RepositoryStream.swift in Sources */,
@@ -806,7 +807,6 @@
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
 				734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */,
-				73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
 				734B6FBD1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
 				734B6F421C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */,
@@ -843,14 +843,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		E0F5873F1B52730C00540104 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E0F587401B52730C00540104 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		E0F587411B52730C00540104 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

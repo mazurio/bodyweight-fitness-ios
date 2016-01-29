@@ -4,11 +4,10 @@ import CoreData
 //import Fabric
 //import Crashlytics
 
-import RealmSwift
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var mask: CALayer?
     
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
@@ -22,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
-        
+        g
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
@@ -42,24 +41,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    func applicationWillResignActive(application: UIApplication) {
-
-    }
-
     func applicationDidEnterBackground(application: UIApplication) {
         UIApplication.sharedApplication().idleTimerDisabled = false
     }
-
-    func applicationWillEnterForeground(application: UIApplication) {
-
-    }
-
+    
     func applicationDidBecomeActive(application: UIApplication) {
         UIApplication.sharedApplication().idleTimerDisabled = true
-    }
-
-    func applicationWillTerminate(application: UIApplication) {
-
     }
 }
 

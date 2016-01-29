@@ -44,6 +44,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
+        
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
 
         setNavigationBar()
@@ -348,23 +350,5 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     ///
     func setNavigationBarTitle(title: String) {
         navigationItem.title = title
-    }
-    
-    func setNavigationBar() {
-        //
-        // Apply primary dark color to the title in navigation bar.
-        //
-        let titleDict: NSDictionary = [
-            NSForegroundColorAttributeName: UIColor(red:0, green:0.27, blue:0.24, alpha:1)
-        ]
-        
-        navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
-        
-        navigationController!.navigationBar.translucent = true
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.setBackgroundImage(
-            UIImage(),
-            forBarMetrics: UIBarMetrics.Default
-        )
     }
 }
