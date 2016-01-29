@@ -228,10 +228,10 @@ class Routine {
     ///
     func loadRoutineFromFile() -> NSData {
         let fileRoot = NSBundle.mainBundle().pathForResource("Routine", ofType: "json")!
-        
-        if let data: AnyObject = NSData.dataWithContentsOfMappedFile(fileRoot) {
-            return data as! NSData
-        } else {
+
+        do {
+            return try NSData(contentsOfFile: fileRoot, options: .DataReadingMappedIfSafe)
+        } catch _ {
             return NSData()
         }
     }

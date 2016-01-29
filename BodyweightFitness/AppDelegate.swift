@@ -12,10 +12,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
+    var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        Fabric.with([Crashlytics()])
-        
+
         UITabBar.appearance().backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
@@ -24,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
-
+        settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
+        
         let sideNavigationViewController = SideNavigationViewController(
             mainViewController: mainViewController!,
             sideViewController: sideViewController
@@ -36,8 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = sideNavigationViewController
         window?.makeKeyAndVisible()
-        
-//        testRealm()
         
         return true
     }
@@ -61,16 +61,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
 
     }
-    
-//    func testRealm() {
-//        let routine = RoutineStream.sharedInstance.routine
-//        let repositoryRoutine = RepositoryStream.buildRoutine(routine)
-//        
-//        let realm = try! Realm()
-//        try! realm.write {
-//            realm.deleteAll()
-//            realm.add(repositoryRoutine)
-//        }
-//    }
 }
 

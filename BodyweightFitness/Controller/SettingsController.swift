@@ -6,18 +6,16 @@ class SettingsController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
+        
         let defaults = NSUserDefaults.standardUserDefaults()
         if(defaults.objectForKey("playAudioWhenTimerStops") != nil) {
             self.playAudioWhenTimerStops.on = defaults.boolForKey("playAudioWhenTimerStops")
         }
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    @IBAction func onDismiss(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func onClickNavigationItem(sender: AnyObject) {
+        self.sideNavigationViewController?.toggle()
     }
     
     @IBAction func playAudioWhenTimerStopsChanged(sender: AnyObject) {

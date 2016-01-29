@@ -1,5 +1,6 @@
 import UIKit
 import AVFoundation
+import SwiftCharts
 
 class TimerController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var menuButton: UIBarButtonItem!
@@ -21,8 +22,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     var current: Exercise?
     
     var audioPlayer: AVAudioPlayer?
-    var actionButtonDelegate: UIActionSheetDelegate?
-    var chooseProgressionDelegate: UIActionSheetDelegate?
     
     @IBAction func onClickMenuAction(sender: AnyObject) {
         sideNavigationViewController?.toggle()
@@ -30,25 +29,30 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
         let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
-        
-        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
-        
-        let navController = UINavigationController(rootViewController: logWorkoutController)
-        
-        self.presentViewController(navController, animated:true, completion: nil)
-    }
     
+        logWorkoutController.parentController = self
+        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+    
+        self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        self.modalPresentationStyle = .CurrentContext
+        
+        self.presentViewController(logWorkoutController, animated: true, completion: nil)
+        
+        self.dim(.In, alpha: 0.5, speed: 0.5)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.actionButtonDelegate = ActionButtonDelegate(timerController: self)
-        self.chooseProgressionDelegate = ChooseProgressionDelegate(timerController: self)
         
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
 
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
+        
+//        let s = self.storyboard!.instantiateViewControllerWithIdentifier("SupportDeveloperViewController") as! SupportDeveloperViewController
+        
+//        self.presentViewController(s, animated: true, completion: nil)
     }
     
     internal func changeExercise(currentExercise: Exercise) {
@@ -56,7 +60,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         
         setNavigationBarTitle(currentExercise.title)
         restartTimer(defaultSeconds)
-        setGifImage(currentExercise.id)
+//        setGifImage(currentExercise.id)
         
 //        if (currentExercise.section?.mode == SectionMode.All) {
 //            if let image = UIImage(named: "plus") {
@@ -90,27 +94,73 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {
-        if let _ = current?.section?.exercises {
-            let sheet = UIActionSheet(
-                title: nil,
-                delegate: actionButtonDelegate,
-                cancelButtonTitle: "Cancel",
-                destructiveButtonTitle: nil)
-            
-            sheet.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
-      
-            sheet.addButtonWithTitle("Watch on YouTube")
-            
-            addChooseProgressionButton(sheet)
-            
-            sheet.showInView(self.view)
+        let alertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .ActionSheet)
+
+        // ... Cancel Action
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        // ... Watch on YouTube Action
+        alertController.addAction(
+            UIAlertAction(title: "Watch on YouTube", style: .Default) { (action) in
+                /// ... Watch on YouTube
+                if let youTubeId = self.current?.youTubeId {
+                    if let requestUrl = NSURL(string: "https://www.youtube.com/watch?v=" + youTubeId) {
+                        UIApplication.sharedApplication().openURL(requestUrl)
+                    }
+                }
+            }
+        )
+        
+        // ... Choose Progression Action
+        if let currentSection = current?.section {
+            if (currentSection.mode == .Levels || currentSection.mode == .Pick) {
+                // ... Choose Progression
+                alertController.addAction(
+                    UIAlertAction(title: "Choose Progression", style: .Default) { (action) in
+                        if let exercises = self.current?.section?.exercises {
+                            let alertController = UIAlertController(
+                                title: "Choose Progression",
+                                message: nil,
+                                preferredStyle: .ActionSheet)
+                            
+                            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                            
+                            for anyExercise in exercises {
+                                if let exercise = anyExercise as? Exercise {
+                                    var title = ""
+                                    
+                                    if(exercise.section?.mode == SectionMode.Levels) {
+                                        title = "\(exercise.level): \(exercise.title)"
+                                    } else {
+                                        title = "\(exercise.title)"
+                                    }
+                                    
+                                    alertController.addAction(
+                                        UIAlertAction(title: title, style: .Default) { (action) in
+                                            RoutineStream.sharedInstance.routine.setProgression(exercise)
+                                            
+                                            self.changeExercise(exercise)
+                                            
+                                            PersistenceManager.storeRoutine(RoutineStream.sharedInstance.routine)
+                                            
+                                            let sideViewController = self.sideNavigationViewController?.sideViewController as? SideViewController
+                                            sideViewController?.notifyDataSetChanged()
+                                        }
+                                    )
+                                }
+                            }
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    }
+                )
+            }
         }
-    }
-    
-    func addChooseProgressionButton(sheet: UIActionSheet) {
-        if(current?.section?.mode == SectionMode.Levels || current?.section?.mode == SectionMode.Pick) {
-            sheet.addButtonWithTitle("Choose Progression")
-        }
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     ///
@@ -137,7 +187,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     func setTimeAction() {
         if let seconds = self.timePickerController?.getTotalSeconds() {
             self.defaultSeconds = seconds
-            restartTimer(self.defaultSeconds)
+            self.restartTimer(seconds)
             
             PersistenceManager.storeTimer(self.defaultSeconds)
         }

@@ -1,3 +1,6 @@
+github "uacaps/PageMenu"
+github "i-schuetz/SwiftCharts" ~> 0.3
+github "kitasuke/PagingMenuController"
 github "realm/realm-cocoa"
 github "ReactiveX/RxSwift" ~> 2.0 
 github "thoughtbot/Runes"

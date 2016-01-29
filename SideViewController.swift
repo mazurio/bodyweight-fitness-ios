@@ -1,9 +1,19 @@
 import UIKit
 
+class HeaderCell: UITableViewCell {
+    @IBOutlet weak var arrowButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
+
 class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var tableView: UITableView!
     
     var appDelegate: AppDelegate?
+    
+    var headerCell: UITableViewCell?
     
     let menuCellIdentifier = "MenuCell"
     let headerCellIdentifier = "HeaderCell"
@@ -27,6 +37,11 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         dispatch_async(dispatch_get_main_queue(), {
             self.tableView.reloadData()
         });
+    }
+    
+    func onClickHeader() {
+        showMenu = !showMenu
+        notifyDataSetChanged()
     }
     
     func timerController() -> TimerController? {
@@ -58,27 +73,21 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 45
     }
     
-    func onClickHeader() {
-        showMenu = !showMenu
-        
-        notifyDataSetChanged()
-    }
-    
     //
     // Return different view for different sections.
     //
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if (section == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
+            headerCell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
             
             let gestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "onClickHeader")
             gestureRecognizer.delegate = self
             gestureRecognizer.numberOfTapsRequired = 1
             gestureRecognizer.numberOfTouchesRequired = 1
             
-            cell.addGestureRecognizer(gestureRecognizer)
+            headerCell?.addGestureRecognizer(gestureRecognizer)
             
-            return cell
+            return headerCell
         }
         
         let routinePart = RoutineStream.sharedInstance.routine.categoriesAndSections[section - 1] as! LinkedRoutine
@@ -141,6 +150,8 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             
             switch(indexPath.row) {
             case 0:
+                self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.None)
+                
                 cell.textLabel?.text = "Home"
                 break;
                 
@@ -228,6 +239,18 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             case 3:
                 // Settings
+                
+                if(sideNavigationViewController?.mainViewController == (appDelegate?.settingsViewController)!) {
+                    break;
+                }
+                
+                sideNavigationViewController?.transitionFromMainViewController(
+                    (appDelegate?.settingsViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
                 break;
                 
             default:
@@ -246,7 +269,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             }
         }
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+//        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         
         

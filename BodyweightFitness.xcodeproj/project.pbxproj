@@ -7,185 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
+		732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */; };
+		732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */; };
+		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
+		732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */; };
+		732BA0281C5AE8F900C1CDB5 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */; };
+		732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */; };
+		732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */; };
+		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
+		732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */; };
 		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
-		733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
-		733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */; };
 		733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
-		733876DB1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
 		733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
 		733876DF1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */; };
-		733876E01C4AC831006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
-		733876E11C4AC831006AABA7 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */; };
 		7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
-		7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7349F6A11C492729009DBE7B /* Runes.framework */; };
 		734B6F3F1C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */; };
-		734B6F401C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */; };
 		734B6F421C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */; };
-		734B6F431C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */; };
 		734B6FB11C4BB73D00CFB6BD /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F961C4BB73D00CFB6BD /* CVAuxiliaryView.swift */; };
-		734B6FB21C4BB73D00CFB6BD /* CVAuxiliaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F961C4BB73D00CFB6BD /* CVAuxiliaryView.swift */; };
 		734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F971C4BB73D00CFB6BD /* CVCalendarContentViewController.swift */; };
-		734B6FB41C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F971C4BB73D00CFB6BD /* CVCalendarContentViewController.swift */; };
 		734B6FB51C4BB73D00CFB6BD /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F981C4BB73D00CFB6BD /* CVCalendarDayView.swift */; };
-		734B6FB61C4BB73D00CFB6BD /* CVCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F981C4BB73D00CFB6BD /* CVCalendarDayView.swift */; };
 		734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F991C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift */; };
-		734B6FB81C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F991C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift */; };
 		734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9A1C4BB73D00CFB6BD /* CVCalendarManager.swift */; };
-		734B6FBA1C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9A1C4BB73D00CFB6BD /* CVCalendarManager.swift */; };
 		734B6FBB1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9B1C4BB73D00CFB6BD /* CVCalendarMenuView.swift */; };
-		734B6FBC1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9B1C4BB73D00CFB6BD /* CVCalendarMenuView.swift */; };
 		734B6FBD1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9C1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift */; };
-		734B6FBE1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9C1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift */; };
 		734B6FBF1C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9D1C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift */; };
-		734B6FC01C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9D1C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift */; };
 		734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9E1C4BB73D00CFB6BD /* CVCalendarMonthView.swift */; };
-		734B6FC21C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9E1C4BB73D00CFB6BD /* CVCalendarMonthView.swift */; };
 		734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9F1C4BB73D00CFB6BD /* CVCalendarTouchController.swift */; };
-		734B6FC41C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6F9F1C4BB73D00CFB6BD /* CVCalendarTouchController.swift */; };
 		734B6FC51C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA01C4BB73D00CFB6BD /* CVCalendarView.swift */; };
-		734B6FC61C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA01C4BB73D00CFB6BD /* CVCalendarView.swift */; };
 		734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA11C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift */; };
-		734B6FC81C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA11C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift */; };
 		734B6FC91C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA21C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift */; };
-		734B6FCA1C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA21C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift */; };
 		734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA31C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift */; };
-		734B6FCC1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA31C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift */; };
 		734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA41C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift */; };
-		734B6FCE1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA41C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift */; };
 		734B6FCF1C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA51C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift */; };
-		734B6FD01C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA51C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift */; };
 		734B6FD11C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA61C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift */; };
-		734B6FD21C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA61C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift */; };
 		734B6FD31C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA71C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift */; };
-		734B6FD41C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA71C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift */; };
 		734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA81C4BB73D00CFB6BD /* CVCalendarWeekday.swift */; };
-		734B6FD61C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA81C4BB73D00CFB6BD /* CVCalendarWeekday.swift */; };
 		734B6FD71C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA91C4BB73D00CFB6BD /* CVCalendarWeekView.swift */; };
-		734B6FD81C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FA91C4BB73D00CFB6BD /* CVCalendarWeekView.swift */; };
 		734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAA1C4BB73D00CFB6BD /* CVDate.swift */; };
-		734B6FDA1C4BB73D00CFB6BD /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAA1C4BB73D00CFB6BD /* CVDate.swift */; };
 		734B6FDB1C4BB73D00CFB6BD /* CVRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAB1C4BB73D00CFB6BD /* CVRange.swift */; };
-		734B6FDC1C4BB73D00CFB6BD /* CVRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAB1C4BB73D00CFB6BD /* CVRange.swift */; };
 		734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAC1C4BB73D00CFB6BD /* CVScrollDirection.swift */; };
-		734B6FDE1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAC1C4BB73D00CFB6BD /* CVScrollDirection.swift */; };
 		734B6FDF1C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAD1C4BB73D00CFB6BD /* CVSelectionType.swift */; };
-		734B6FE01C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAD1C4BB73D00CFB6BD /* CVSelectionType.swift */; };
 		734B6FE11C4BB73D00CFB6BD /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAE1C4BB73D00CFB6BD /* CVSet.swift */; };
-		734B6FE21C4BB73D00CFB6BD /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAE1C4BB73D00CFB6BD /* CVSet.swift */; };
 		734B6FE31C4BB73D00CFB6BD /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAF1C4BB73D00CFB6BD /* CVShape.swift */; };
-		734B6FE41C4BB73D00CFB6BD /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FAF1C4BB73D00CFB6BD /* CVShape.swift */; };
 		734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FB01C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift */; };
-		734B6FE61C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FB01C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift */; };
-		734B6FE91C4BE84600CFB6BD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B6FE71C4BE84600CFB6BD /* Realm.framework */; };
-		734B6FEA1C4BE84600CFB6BD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */; };
 		734B6FF11C4BE86100CFB6BD /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B6FE71C4BE84600CFB6BD /* Realm.framework */; };
 		734B6FF21C4BE86300CFB6BD /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */; };
 		734B6FF91C4BE8CB00CFB6BD /* Realm.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */; };
 		734B6FFA1C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */; };
-		734B6FFB1C4BE8D100CFB6BD /* Realm.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */; };
-		734B6FFC1C4BE8D100CFB6BD /* RealmSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */; };
 		734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */; };
-		734B70001C4BF46400CFB6BD /* RepositorySet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */; };
 		734B70021C4BF57600CFB6BD /* RepositoryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70011C4BF57600CFB6BD /* RepositoryStream.swift */; };
-		734B70031C4BF57600CFB6BD /* RepositoryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70011C4BF57600CFB6BD /* RepositoryStream.swift */; };
 		734B70051C4BF7C700CFB6BD /* RepositoryRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */; };
-		734B70061C4BF7C700CFB6BD /* RepositoryRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */; };
 		734B70081C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */; };
-		734B70091C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */; };
 		734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */; };
-		734B700C1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */; };
-		7366D8CE1C4D959C00819790 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8CD1C4D959C00819790 /* SetCell.swift */; };
-		7366D8CF1C4D959C00819790 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8CD1C4D959C00819790 /* SetCell.swift */; };
+		7366D8D11C4EE9CC00819790 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */; };
+		7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */; };
+		7366D8E11C51810600819790 /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E01C51810600819790 /* ViewController+Extensions.swift */; };
+		7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8E31C51AD5900819790 /* SwiftCharts.framework */; };
+		7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */; };
+		7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */; };
+		7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8EC1C52943D00819790 /* StoreKit.framework */; };
+		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
-		73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
-		73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
-		73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
-		73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
-		73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */; };
-		73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
-		73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */; };
 		73D2BCFD1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
-		73D2BCFE1C3EC52100CE6C00 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */; };
 		73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
-		73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
-		73FE1F5C1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
-		E0667C571B542C9800700007 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
-		E0667C621B542C9800700007 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
-		E0667C651B542C9800700007 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
-		E0667C661B542C9800700007 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsController.swift */; };
-		E0667C671B542C9800700007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
-		E0667C6C1B542C9800700007 /* pseudo_planche.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587671B52733100540104 /* pseudo_planche.gif */; };
-		E0667C6D1B542C9800700007 /* scapular_shrugs.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587711B52733100540104 /* scapular_shrugs.gif */; };
-		E0667C6E1B542C9800700007 /* leg_swings.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875F1B52733100540104 /* leg_swings.gif */; };
-		E0667C6F1B542C9800700007 /* band_dislocates.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587501B52733100540104 /* band_dislocates.gif */; };
-		E0667C701B542C9800700007 /* burpee.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587521B52733100540104 /* burpee.gif */; };
-		E0667C711B542C9800700007 /* vertical_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587781B52733100540104 /* vertical_row.gif */; };
-		E0667C721B542C9800700007 /* wall_extensions.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587791B52733100540104 /* wall_extensions.gif */; };
-		E0667C731B542C9800700007 /* rings_turned_out_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */; };
-		E0667C741B542C9800700007 /* plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587651B52733100540104 /* plank.gif */; };
-		E0667C751B542C9800700007 /* Routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* Routine.json */; };
-		E0667C761B542C9800700007 /* l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875E1B52733100540104 /* l_sit.gif */; };
-		E0667C771B542C9800700007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F587411B52730C00540104 /* Main.storyboard */; };
-		E0667C781B542C9800700007 /* one_foot_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587621B52733100540104 /* one_foot_l_sit.gif */; };
-		E0667C791B542C9800700007 /* pullover.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587681B52733100540104 /* pullover.gif */; };
-		E0667C7A1B542C9800700007 /* deep_stepup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587541B52733100540104 /* deep_stepup.gif */; };
-		E0667C7C1B542C9800700007 /* ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876C1B52733100540104 /* ring_dips.gif */; };
-		E0667C7D1B542C9800700007 /* wall_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877B1B52733100540104 /* wall_plank.gif */; };
-		E0667C7E1B542C9800700007 /* pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587691B52733100540104 /* pullup.gif */; };
-		E0667C7F1B542C9800700007 /* parallel_bar_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587631B52733100540104 /* parallel_bar_dips.gif */; };
-		E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */; };
-		E0667C811B542C9800700007 /* ring_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876E1B52733100540104 /* ring_support.gif */; };
-		E0667C821B542C9800700007 /* horizontal_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875A1B52733100540104 /* horizontal_row.gif */; };
-		E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587551B52733100540104 /* diamond_pushup.gif */; };
-		E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587751B52733100540104 /* tuck_front_lever.gif */; };
-		E0667C851B542C9800700007 /* full_body_circles.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587581B52733100540104 /* full_body_circles.gif */; };
-		E0667C861B542C9800700007 /* pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876A1B52733100540104 /* pushup.gif */; };
-		E0667C871B542C9800700007 /* negative_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587611B52733100540104 /* negative_pullup.gif */; };
-		E0667C881B542C9800700007 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
-		E0667C891B542C9800700007 /* tuck_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587771B52733100540104 /* tuck_l_sit.gif */; };
-		E0667C8A1B542C9800700007 /* assisted_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874F1B52733100540104 /* assisted_squat.gif */; };
-		E0667C8B1B542C9800700007 /* incline_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875C1B52733100540104 /* incline_row.gif */; };
-		E0667C8C1B542C9800700007 /* freestanding_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587571B52733100540104 /* freestanding_handstand.gif */; };
-		E0667C8D1B542C9800700007 /* wide_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877D1B52733100540104 /* wide_row.gif */; };
-		E0667C8E1B542C9800700007 /* wall_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877C1B52733100540104 /* wall_pushup.gif */; };
-		E0667C8F1B542C9800700007 /* rings_turned_out_support.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587701B52733100540104 /* rings_turned_out_support.gif */; };
-		E0667C901B542C9800700007 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
-		E0667C911B542C9800700007 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
-		E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
-		E0667C931B542C9800700007 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
-		E0667C951B542C9800700007 /* side_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587721B52733100540104 /* side_plank.gif */; };
-		E0667C961B542C9800700007 /* reverse_plank.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876B1B52733100540104 /* reverse_plank.gif */; };
-		E0667C971B542C9800700007 /* cat_camel.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587531B52733100540104 /* cat_camel.gif */; };
-		E0667C981B542C9800700007 /* ring_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5876D1B52733100540104 /* ring_pushup.gif */; };
-		E0667C991B542C9800700007 /* incline_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875B1B52733100540104 /* incline_pushup.gif */; };
-		E0667C9A1B542C9800700007 /* pseudo_planche_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587661B52733100540104 /* pseudo_planche_pushup.gif */; };
-		E0667C9B1B542C9800700007 /* parallel_bar_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587641B52733100540104 /* parallel_bar_hold.gif */; };
-		E0667C9C1B542C9800700007 /* arch.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874E1B52733100540104 /* arch.gif */; };
-		E0667C9D1B542C9800700007 /* squat_jumps.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587731B52733100540104 /* squat_jumps.gif */; };
-		E0667C9E1B542C9800700007 /* lsit_pullup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587601B52733100540104 /* lsit_pullup.gif */; };
-		E0667C9F1B542C9800700007 /* l_ring_dips.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875D1B52733100540104 /* l_ring_dips.gif */; };
-		E0667CA01B542C9800700007 /* tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587741B52733100540104 /* tuck_front_lever_row.gif */; };
-		E0667CA11B542C9800700007 /* wall_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877A1B52733100540104 /* wall_handstand.gif */; };
-		E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
-		E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587511B52733100540104 /* bodyweight_squat.gif */; };
-		E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0667CAE1B542F7800700007 /* Images Pro.xcassets */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
-		E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
-		E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
 		E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
-		E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3061B5BC12B00EB6389 /* Animator.swift */; };
 		E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
-		E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */; };
 		E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
-		E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */; };
 		E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; };
-		E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */; };
 		E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; };
-		E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */; };
 		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
 		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
 		E0F587351B5272F400540104 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
@@ -256,23 +151,12 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */,
+				7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */,
 				734B6FF91C4BE8CB00CFB6BD /* Realm.framework.dSYM in CopyFiles */,
 				734B6FFA1C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM in CopyFiles */,
 				733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */,
 				733876DF1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		73D2BCE01C3C62CE00CE6C00 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				734B6FFB1C4BE8D100CFB6BD /* Realm.framework.dSYM in CopyFiles */,
-				734B6FFC1C4BE8D100CFB6BD /* RealmSwift.framework.dSYM in CopyFiles */,
-				733876E01C4AC831006AABA7 /* Runes.framework.dSYM in CopyFiles */,
-				733876E11C4AC831006AABA7 /* SwiftyJSON.framework.dSYM in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,8 +174,17 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = SOURCE_ROOT; };
+		732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageMenuFramework.framework; path = Carthage/Build/iOS/PageMenuFramework.framework; sourceTree = "<group>"; };
+		732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PageMenuFramework.framework.dSYM; path = Carthage/Build/iOS/PageMenuFramework.framework.dSYM; sourceTree = "<group>"; };
+		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = SOURCE_ROOT; };
+		732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
+		732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = SOURCE_ROOT; };
 		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
-		733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
@@ -334,18 +227,20 @@
 		734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutine.swift; sourceTree = SOURCE_ROOT; };
 		734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCategory.swift; sourceTree = SOURCE_ROOT; };
 		734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = SOURCE_ROOT; };
-		7366D8CD1C4D959C00819790 /* SetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = SOURCE_ROOT; };
+		7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = SOURCE_ROOT; };
+		7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = SOURCE_ROOT; };
+		7366D8E01C51810600819790 /* ViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = SOURCE_ROOT; };
+		7366D8E31C51AD5900819790 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
+		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
+		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
+		7366D8EC1C52943D00819790 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionButtonDelegate.swift; sourceTree = SOURCE_ROOT; };
-		73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseProgressionDelegate.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = SOURCE_ROOT; };
 		73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = SOURCE_ROOT; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = SOURCE_ROOT; };
-		E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0667CAE1B542F7800700007 /* Images Pro.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = "Images Pro.xcassets"; path = "BodyweightFitness/Images Pro.xcassets"; sourceTree = SOURCE_ROOT; };
-		E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness Pro.plist"; path = "BodyweightFitness/Bodyweight Fitness Pro.plist"; sourceTree = SOURCE_ROOT; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
 		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
@@ -424,23 +319,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */,
+				7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */,
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
+				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
 				73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */,
 				7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */,
 				734B6FF11C4BE86100CFB6BD /* Realm.framework in Frameworks */,
 				734B6FF21C4BE86300CFB6BD /* RealmSwift.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0667C6A1B542C9800700007 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				734B6FE91C4BE84600CFB6BD /* Realm.framework in Frameworks */,
-				734B6FEA1C4BE84600CFB6BD /* RealmSwift.framework in Frameworks */,
-				73D2BCEE1C3C6D7200CE6C00 /* SwiftyJSON.framework in Frameworks */,
-				73D2BCDE1C3C62A800CE6C00 /* MaterialKit.framework in Frameworks */,
-				7349F6A41C492729009DBE7B /* Runes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
-				E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -486,7 +371,6 @@
 			isa = PBXGroup;
 			children = (
 				E0F587B11B52734000540104 /* Bodyweight Fitness.plist */,
-				E0667CB01B542FA600700007 /* Bodyweight Fitness Pro.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -547,20 +431,34 @@
 			name = Repository;
 			sourceTree = "<group>";
 		};
-		73D2BCF21C3EB10400CE6C00 /* Delegate */ = {
+		73C8E4AC1C598888005E0248 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				73D2BCF31C3EB11500CE6C00 /* ActionButtonDelegate.swift */,
-				73D2BCF61C3EB14200CE6C00 /* ChooseProgressionDelegate.swift */,
+				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
 			);
-			name = Delegate;
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		73C8E4AD1C5A1C99005E0248 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
+				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
+				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
+				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
+				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
+				732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */,
+				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
+				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
+				732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */,
+			);
+			name = Progress;
 			sourceTree = "<group>";
 		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
 				E0F5873F1B52730C00540104 /* LaunchScreen.xib */,
-				733876D71C4AB6B1006AABA7 /* LaunchScreen.xib */,
 				E0F587411B52730C00540104 /* Main.storyboard */,
 				E0F587431B52730C00540104 /* TimePicker.xib */,
 				73D2BCFC1C3EC52100CE6C00 /* ImageCell.xib */,
@@ -571,12 +469,17 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				734B6FE71C4BE84600CFB6BD /* Realm.framework */,
-				734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */,
+				732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */,
+				7366D8EC1C52943D00819790 /* StoreKit.framework */,
 				733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */,
+				732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */,
+				7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */,
 				733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */,
 				734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */,
 				734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */,
+				7366D8E31C51AD5900819790 /* SwiftCharts.framework */,
+				734B6FE71C4BE84600CFB6BD /* Realm.framework */,
+				734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */,
 				7349F6A11C492729009DBE7B /* Runes.framework */,
 				73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */,
 				73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */,
@@ -589,40 +492,27 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73C8E4AD1C5A1C99005E0248 /* Progress */,
+				73C8E4AC1C598888005E0248 /* Modal */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
-				E0F587391B52730000540104 /* TimePickerController.swift */,
+				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
+				E0F587391B52730000540104 /* TimePickerController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
-				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
+				7366D8E01C51810600819790 /* ViewController+Extensions.swift */,
 			);
 			name = Controller;
-			sourceTree = "<group>";
-		};
-		E0667CAA1B542E2400700007 /* Free */ = {
-			isa = PBXGroup;
-			children = (
-				E0F587B31B52734900540104 /* Images.xcassets */,
-			);
-			name = Free;
-			sourceTree = "<group>";
-		};
-		E0667CAB1B542E2900700007 /* Pro */ = {
-			isa = PBXGroup;
-			children = (
-				E0667CAE1B542F7800700007 /* Images Pro.xcassets */,
-			);
-			name = Pro;
 			sourceTree = "<group>";
 		};
 		E078934C1B472CAF001195AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				73D2BCF21C3EB10400CE6C00 /* Delegate */,
 				E0F587331B5272F400540104 /* ActionView.swift */,
 				73D2BD001C3EC5AD00CE6C00 /* ImageCell.swift */,
 				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
-				7366D8CD1C4D959C00819790 /* SetCell.swift */,
+				46B020C26FAF7645B926FA26 /* CardView.swift */,
+				732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -639,9 +529,8 @@
 		E08139041B5270EE00390A73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E0667CAA1B542E2400700007 /* Free */,
-				E0667CAB1B542E2900700007 /* Pro */,
 				E0F5874C1B52732500540104 /* Gifs */,
+				E0F587B31B52734900540104 /* Images.xcassets */,
 				E0F587481B52731C00540104 /* finished.mp3 */,
 				E0F587491B52731C00540104 /* Routine.json */,
 			);
@@ -750,25 +639,6 @@
 			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E0667C521B542C9800700007 /* Bodyweight Fitness Pro */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E0667CA51B542C9800700007 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness Pro" */;
-			buildPhases = (
-				E0667C531B542C9800700007 /* Sources */,
-				E0667C6A1B542C9800700007 /* Frameworks */,
-				E0667C6B1B542C9800700007 /* Resources */,
-				73D2BCDF1C3C62B800CE6C00 /* ShellScript */,
-				73D2BCE01C3C62CE00CE6C00 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Bodyweight Fitness Pro";
-			productName = TabsTest;
-			productReference = E0667CA81B542C9800700007 /* Bodyweight Fitness Pro.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -782,9 +652,11 @@
 					2BD2CA821B458FFD00841AB7 = {
 						CreatedOnToolsVersion = 6.2;
 						DevelopmentTeam = 32UU4L8Z8S;
-					};
-					E0667C521B542C9800700007 = {
-						DevelopmentTeam = 32UU4L8Z8S;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -802,7 +674,6 @@
 			projectRoot = "";
 			targets = (
 				2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */,
-				E0667C521B542C9800700007 /* Bodyweight Fitness Pro */,
 			);
 		};
 /* End PBXProject section */
@@ -817,9 +688,11 @@
 				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
 				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
 				E0F587841B52733100540104 /* burpee.gif in Resources */,
+				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
 				E0F587AA1B52733100540104 /* vertical_row.gif in Resources */,
 				E0F587AB1B52733100540104 /* wall_extensions.gif in Resources */,
 				E0F587A11B52733100540104 /* rings_turned_out_pushup.gif in Resources */,
+				732BA0281C5AE8F900C1CDB5 /* SectionViewCell.xib in Resources */,
 				E0F587971B52733100540104 /* plank.gif in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
@@ -851,6 +724,7 @@
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
 				E0F587471B52730C00540104 /* TimePicker.xib in Resources */,
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
+				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
 				E0F587451B52730C00540104 /* LaunchScreen.xib in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
@@ -862,6 +736,7 @@
 				E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */,
 				E0F587801B52733100540104 /* arch.gif in Resources */,
 				E0F587A51B52733100540104 /* squat_jumps.gif in Resources */,
+				732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */,
 				E0F587921B52733100540104 /* lsit_pullup.gif in Resources */,
 				E0F5878F1B52733100540104 /* l_ring_dips.gif in Resources */,
 				E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */,
@@ -869,70 +744,6 @@
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0667C6B1B542C9800700007 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E0667C6C1B542C9800700007 /* pseudo_planche.gif in Resources */,
-				E0667C6D1B542C9800700007 /* scapular_shrugs.gif in Resources */,
-				E0667C6E1B542C9800700007 /* leg_swings.gif in Resources */,
-				E0667C6F1B542C9800700007 /* band_dislocates.gif in Resources */,
-				E0667C701B542C9800700007 /* burpee.gif in Resources */,
-				E0667C711B542C9800700007 /* vertical_row.gif in Resources */,
-				E0667C721B542C9800700007 /* wall_extensions.gif in Resources */,
-				E0667C731B542C9800700007 /* rings_turned_out_pushup.gif in Resources */,
-				E0667C741B542C9800700007 /* plank.gif in Resources */,
-				E0667C751B542C9800700007 /* Routine.json in Resources */,
-				E0667C761B542C9800700007 /* l_sit.gif in Resources */,
-				E0667C771B542C9800700007 /* Main.storyboard in Resources */,
-				E0667C781B542C9800700007 /* one_foot_l_sit.gif in Resources */,
-				E0667C791B542C9800700007 /* pullover.gif in Resources */,
-				E0667C7A1B542C9800700007 /* deep_stepup.gif in Resources */,
-				E0667C7C1B542C9800700007 /* ring_dips.gif in Resources */,
-				E0667C7D1B542C9800700007 /* wall_plank.gif in Resources */,
-				E0667C7E1B542C9800700007 /* pullup.gif in Resources */,
-				E0667C7F1B542C9800700007 /* parallel_bar_dips.gif in Resources */,
-				E0667C801B542C9800700007 /* tuck_ice_cream_maker.gif in Resources */,
-				E0667C811B542C9800700007 /* ring_support.gif in Resources */,
-				E0667C821B542C9800700007 /* horizontal_row.gif in Resources */,
-				E0667C831B542C9800700007 /* diamond_pushup.gif in Resources */,
-				E0667C841B542C9800700007 /* tuck_front_lever.gif in Resources */,
-				E0667C851B542C9800700007 /* full_body_circles.gif in Resources */,
-				E0667C861B542C9800700007 /* pushup.gif in Resources */,
-				E0667C871B542C9800700007 /* negative_pullup.gif in Resources */,
-				E0667C881B542C9800700007 /* wrist_progression.gif in Resources */,
-				E0667C891B542C9800700007 /* tuck_l_sit.gif in Resources */,
-				E0667C8A1B542C9800700007 /* assisted_squat.gif in Resources */,
-				E0667C8B1B542C9800700007 /* incline_row.gif in Resources */,
-				E0667C8C1B542C9800700007 /* freestanding_handstand.gif in Resources */,
-				73D2BCFE1C3EC52100CE6C00 /* ImageCell.xib in Resources */,
-				E0667C8D1B542C9800700007 /* wide_row.gif in Resources */,
-				E0667C8E1B542C9800700007 /* wall_pushup.gif in Resources */,
-				E0667C8F1B542C9800700007 /* rings_turned_out_support.gif in Resources */,
-				E0667C901B542C9800700007 /* finished.mp3 in Resources */,
-				E0667C911B542C9800700007 /* TimePicker.xib in Resources */,
-				733876D81C4AB6B1006AABA7 /* LaunchScreen.xib in Resources */,
-				E0667C921B542C9800700007 /* floor_l_sit.gif in Resources */,
-				E0667C931B542C9800700007 /* hollow_hold.gif in Resources */,
-				E0667C951B542C9800700007 /* side_plank.gif in Resources */,
-				E0667C961B542C9800700007 /* reverse_plank.gif in Resources */,
-				E0667C971B542C9800700007 /* cat_camel.gif in Resources */,
-				E0667CAF1B542F7800700007 /* Images Pro.xcassets in Resources */,
-				E0667C981B542C9800700007 /* ring_pushup.gif in Resources */,
-				E0667C991B542C9800700007 /* incline_pushup.gif in Resources */,
-				E0667C9A1B542C9800700007 /* pseudo_planche_pushup.gif in Resources */,
-				E0667C9B1B542C9800700007 /* parallel_bar_hold.gif in Resources */,
-				E0667C9C1B542C9800700007 /* arch.gif in Resources */,
-				E0667C9D1B542C9800700007 /* squat_jumps.gif in Resources */,
-				E0667C9E1B542C9800700007 /* lsit_pullup.gif in Resources */,
-				E0667C9F1B542C9800700007 /* l_ring_dips.gif in Resources */,
-				E0667CA01B542C9800700007 /* tuck_front_lever_row.gif in Resources */,
-				E0667CA11B542C9800700007 /* wall_handstand.gif in Resources */,
-				E0667CA31B542C9800700007 /* advanced_tuck_front_lever_row.gif in Resources */,
-				E0667CA41B542C9800700007 /* bodyweight_squat.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -950,24 +761,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = "";
-		};
-		73D2BCDF1C3C62B800CE6C00 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/SwiftCharts.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PageMenuFramework.framework",
 			);
 			outputPaths = (
 			);
@@ -985,6 +780,7 @@
 				734B6FCF1C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift in Sources */,
 				734B6FE11C4BB73D00CFB6BD /* CVSet.swift in Sources */,
 				734B70051C4BF7C700CFB6BD /* RepositoryRoutine.swift in Sources */,
+				7366D8D11C4EE9CC00819790 /* ProgressViewController.swift in Sources */,
 				734B6FB11C4BB73D00CFB6BD /* CVAuxiliaryView.swift in Sources */,
 				E0F587351B5272F400540104 /* ActionView.swift in Sources */,
 				734B70081C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */,
@@ -995,32 +791,35 @@
 				734B6FBB1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				734B6FD31C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */,
-				73D2BCF41C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
+				7366D8E11C51810600819790 /* ViewController+Extensions.swift in Sources */,
+				732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				734B70021C4BF57600CFB6BD /* RepositoryStream.swift in Sources */,
 				734B6FC91C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
+				7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */,
 				734B6FD11C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */,
 				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
+				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
 				734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */,
 				73D2BD011C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
-				7366D8CE1C4D959C00819790 /* SetCell.swift in Sources */,
 				734B6FBD1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsController.swift in Sources */,
 				734B6F421C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */,
-				73D2BCF71C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
 				734B6FD71C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
+				732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */,
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
+				732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
 				734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
 				734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
@@ -1032,71 +831,12 @@
 				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
+				73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */,
 				734B6FC51C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */,
 				734B6FE31C4BB73D00CFB6BD /* CVShape.swift in Sources */,
 				734B6FB51C4BB73D00CFB6BD /* CVCalendarDayView.swift in Sources */,
 				734B6F3F1C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E0667C531B542C9800700007 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				734B6FD01C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift in Sources */,
-				734B6FE21C4BB73D00CFB6BD /* CVSet.swift in Sources */,
-				734B70061C4BF7C700CFB6BD /* RepositoryRoutine.swift in Sources */,
-				734B6FB21C4BB73D00CFB6BD /* CVAuxiliaryView.swift in Sources */,
-				E0C7E3121B5BC12B00EB6389 /* Animator.swift in Sources */,
-				734B70091C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */,
-				734B6FDC1C4BB73D00CFB6BD /* CVRange.swift in Sources */,
-				E0C7E3101B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
-				734B6FC01C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift in Sources */,
-				E0C7E31E1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
-				734B6FBC1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */,
-				E0C7E3181B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
-				734B6FD41C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */,
-				73D2BCF51C3EB11500CE6C00 /* ActionButtonDelegate.swift in Sources */,
-				E0667C571B542C9800700007 /* ActionView.swift in Sources */,
-				734B70031C4BF57600CFB6BD /* RepositoryStream.swift in Sources */,
-				734B6FCA1C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */,
-				E0CA1FC91BACA5A400FF6F8C /* PersistenceManager.swift in Sources */,
-				734B6FD21C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */,
-				733876D61C4AB16D006AABA7 /* LogWorkoutButton.swift in Sources */,
-				734B70001C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
-				734B6FB81C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
-				73D2BD021C3EC5AD00CE6C00 /* ImageCell.swift in Sources */,
-				E0667C621B542C9800700007 /* TimePickerController.swift in Sources */,
-				734B6FDA1C4BB73D00CFB6BD /* CVDate.swift in Sources */,
-				73D2BCF81C3EB14200CE6C00 /* ChooseProgressionDelegate.swift in Sources */,
-				7366D8CF1C4D959C00819790 /* SetCell.swift in Sources */,
-				734B6FBE1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */,
-				E0C7E30E1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
-				734B6F431C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */,
-				73D2BCE71C3C633200CE6C00 /* SideViewController.swift in Sources */,
-				734B6FD81C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */,
-				E0667C651B542C9800700007 /* Routine.swift in Sources */,
-				734B6FCE1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
-				734B6FBA1C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
-				734B6FE61C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
-				733876DB1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
-				E0CA1FC61BACA59400FF6F8C /* TimerController.swift in Sources */,
-				734B6FB41C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
-				E0667C661B542C9800700007 /* SettingsController.swift in Sources */,
-				734B6FD61C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
-				734B6FDE1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
-				734B700C1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */,
-				734B6FE01C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */,
-				734B6FC21C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
-				734B6FC41C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
-				734B6FCC1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
-				E0667C671B542C9800700007 /* AppDelegate.swift in Sources */,
-				734B6FC81C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
-				73FE1F5C1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
-				734B6FC61C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */,
-				734B6FE41C4BB73D00CFB6BD /* CVShape.swift in Sources */,
-				734B6FB61C4BB73D00CFB6BD /* CVCalendarDayView.swift in Sources */,
-				734B6F401C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */,
+				46B02780EEC08B16FB384A4F /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1167,7 +907,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
@@ -1207,7 +947,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
 				SDKROOT = iphoneos;
@@ -1229,7 +969,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
@@ -1254,59 +994,10 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		E0667CA61B542C9800700007 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		E0667CA71B542C9800700007 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
-				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness Pro.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -1331,15 +1022,6 @@
 			buildConfigurations = (
 				2BD2CAA61B458FFE00841AB7 /* Debug */,
 				2BD2CAA71B458FFE00841AB7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E0667CA51B542C9800700007 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness Pro" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E0667CA61B542C9800700007 /* Debug */,
-				E0667CA71B542C9800700007 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

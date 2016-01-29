@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="166" id="QM3-ch-ujm" customClass="CardViewCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="166"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QM3-ch-ujm" id="3OP-CJ-Ub7">
+                <rect key="frame" x="0.0" y="0.0" width="417" height="165.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="92U-yf-ac0" customClass="CardView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                        <rect key="frame" x="8" y="8" width="401" height="150"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wall Extensions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1u-fv-PjG">
+                                <rect key="frame" x="16" y="16" width="166.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1x(5-10)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eop-JZ-yfH">
+                                <rect key="frame" x="16" y="53" width="63" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYa-ud-fZT">
+                                <rect key="frame" x="16" y="104" width="75" height="30"/>
+                                <state key="normal" title="Full Report"/>
+                                <connections>
+                                    <action selector="onClickFullReport:" destination="QM3-ch-ujm" eventType="touchUpInside" id="nZa-zp-bzF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T1u-fv-PjG" firstAttribute="top" secondItem="92U-yf-ac0" secondAttribute="top" constant="16" id="2fb-NI-afI"/>
+                            <constraint firstItem="aYa-ud-fZT" firstAttribute="leading" secondItem="92U-yf-ac0" secondAttribute="leading" constant="16" id="5EJ-rm-Mws"/>
+                            <constraint firstItem="Eop-JZ-yfH" firstAttribute="leading" secondItem="92U-yf-ac0" secondAttribute="leading" constant="16" id="IRs-g3-TM9"/>
+                            <constraint firstItem="T1u-fv-PjG" firstAttribute="leading" secondItem="92U-yf-ac0" secondAttribute="leading" constant="16" id="Koq-zj-bNy"/>
+                            <constraint firstItem="Eop-JZ-yfH" firstAttribute="top" secondItem="T1u-fv-PjG" secondAttribute="bottom" constant="8" id="gn4-SY-MI4"/>
+                            <constraint firstAttribute="bottom" secondItem="aYa-ud-fZT" secondAttribute="bottom" constant="16" id="ph9-JZ-ksy"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="92U-yf-ac0" secondAttribute="bottom" id="EWD-88-0fN"/>
+                    <constraint firstItem="92U-yf-ac0" firstAttribute="leading" secondItem="3OP-CJ-Ub7" secondAttribute="leadingMargin" id="a9c-yy-u78"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="92U-yf-ac0" secondAttribute="trailing" id="iFA-sv-i3I"/>
+                    <constraint firstItem="92U-yf-ac0" firstAttribute="top" secondItem="3OP-CJ-Ub7" secondAttribute="topMargin" id="inZ-Cm-VE6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="subtitle" destination="Eop-JZ-yfH" id="Nzg-41-QHu"/>
+                <outlet property="title" destination="T1u-fv-PjG" id="tnW-mF-c4v"/>
+            </connections>
+            <point key="canvasLocation" x="125.5" y="261.5"/>
+        </tableViewCell>
+    </objects>
+</document>
