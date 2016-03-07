@@ -14,7 +14,13 @@ class SupportDeveloperViewController: UIViewController, SKProductsRequestDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setNavigationBar()
+        
         requestProductData()
+    }
+    
+    @IBAction func onClickNavigationItem(sender: AnyObject) {
+        self.sideNavigationViewController?.toggle()
     }
     
     @IBAction func onClickDonation(sender: AnyObject) {

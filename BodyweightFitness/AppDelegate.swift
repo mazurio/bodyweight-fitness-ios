@@ -9,8 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var mask: CALayer?
     
+    var sideNavigationViewController: SideNavigationViewController?
+    
+    var sideViewController: UIViewController?
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
+    var supportViewController: UIViewController?
     var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -20,22 +24,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
+        sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController")
+            as! SideViewController
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
+        supportViewController = storyboard.instantiateViewControllerWithIdentifier("SupportDeveloperNavigationViewController")
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
         
-        let sideNavigationViewController = SideNavigationViewController(
+        sideNavigationViewController = SideNavigationViewController(
             mainViewController: mainViewController!,
-            sideViewController: sideViewController
+            sideViewController: sideViewController!
         )
         
-        sideNavigationViewController.setSideViewWidth(260, hidden: false, animated: false)
-        sideNavigationViewController.toggle()
+        sideNavigationViewController?.setSideViewWidth(260, hidden: false, animated: false)
+        sideNavigationViewController?.toggle()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = sideNavigationViewController
+        window?.rootViewController = sideNavigationViewController!
         window?.makeKeyAndVisible()
         
         return true

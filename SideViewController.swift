@@ -235,6 +235,18 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 
             case 2:
                 // Support Developer
+                
+                if(sideNavigationViewController?.mainViewController == (appDelegate?.supportViewController)!) {
+                    break;
+                }
+                
+                sideNavigationViewController?.transitionFromMainViewController(
+                    (appDelegate?.supportViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
                 break;
                 
             case 3:

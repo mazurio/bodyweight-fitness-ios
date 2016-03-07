@@ -3,6 +3,10 @@ import AVFoundation
 import SwiftCharts
 
 class TimerController: UIViewController, AVAudioPlayerDelegate {
+    @IBOutlet var exerciseTitle: UILabel!
+    @IBOutlet var sectionTitle: UILabel!
+    @IBOutlet var exerciseDescription: UILabel!
+    
     @IBOutlet var menuButton: UIBarButtonItem!
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var timerMinutesButton: UIButton!
@@ -30,19 +34,19 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
         let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
     
-        logWorkoutController.parentController = self
+        logWorkoutController.parentController = self.navigationController
         logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
     
-        self.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        self.modalPresentationStyle = .CurrentContext
-        
-        self.presentViewController(logWorkoutController, animated: true, completion: nil)
-        
-        self.dim(.In, alpha: 0.5, speed: 0.5)
+        self.navigationController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        self.navigationController?.modalPresentationStyle = .CurrentContext
+        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("viewDidLoad")
         
         self.setNavigationBar()
         
@@ -51,18 +55,44 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-//        let s = self.storyboard!.instantiateViewControllerWithIdentifier("SupportDeveloperViewController") as! SupportDeveloperViewController
+        print("viewDidAppear")
         
-//        self.presentViewController(s, animated: true, completion: nil)
+        if let superView = self.navigationItem.titleView?.superview {
+            self.navigationItem.titleView?.frame = CGRectMake(
+                0,
+                0,
+                superView.bounds.size.width,
+                35)
+        }
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        if let superView = self.navigationItem.titleView?.superview {
+            self.navigationItem.titleView?.frame = CGRectMake(
+                0,
+                0,
+                superView.bounds.size.width,
+                35)
+        }
+        
     }
     
     internal func changeExercise(currentExercise: Exercise) {
         self.current = currentExercise
         
-        setNavigationBarTitle(currentExercise.title)
+        self.exerciseTitle.text = currentExercise.title
+        self.exerciseDescription.text = currentExercise.desc
+        self.sectionTitle.text = currentExercise.section?.title
+        
         restartTimer(defaultSeconds)
-//        setGifImage(currentExercise.id)
+        setGifImage(currentExercise.id)
         
 //        if (currentExercise.section?.mode == SectionMode.All) {
 //            if let image = UIImage(named: "plus") {
@@ -113,6 +143,21 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
                         UIApplication.sharedApplication().openURL(requestUrl)
                     }
                 }
+            }
+        )
+        
+        // ... Today's Workout Action
+        alertController.addAction(UIAlertAction(title: "Today's Workout", style: .Default) { (action) in
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            
+            self.navigationItem.backBarButtonItem = backItem
+            
+            let progressViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProgressViewController") as! ProgressViewController
+            
+            progressViewController.setRoutine(NSDate(), repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+            
+            self.showViewController(progressViewController, sender: nil)
             }
         )
         
@@ -343,12 +388,5 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     ///
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    ///
-    /// Set title of the navigation bar.
-    ///
-    func setNavigationBarTitle(title: String) {
-        navigationItem.title = title
     }
 }

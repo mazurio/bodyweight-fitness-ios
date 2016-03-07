@@ -1,160 +1,21 @@
 import Foundation
 import UIKit
-import MessageUI
+import RealmSwift
 
-class CalendarViewController:
-    UIViewController,
+class CalendarViewController: UIViewController,
     CVCalendarViewDelegate,
     CVCalendarMenuViewDelegate,
     CVCalendarViewAppearanceDelegate,
-    MFMailComposeViewControllerDelegate {
-    
-    var date: NSDate?
-    var repositoryRoutine: RepositoryRoutine?
+    UITableViewDataSource,
+    UITableViewDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet var tableView: UITableView!
     
-    @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var cardViewLabel: UILabel!
-    @IBOutlet weak var cardView: CardView!
-    
-    func configuredMailComposeViewController(data: NSData) -> MFMailComposeViewController {
-        let emailController = MFMailComposeViewController()
-        
-        emailController.mailComposeDelegate = self
-        emailController.setSubject("CSV File")
-        emailController.setMessageBody("Bodyweight Fitness Summary for: ", isHTML: false)
-        emailController.addAttachmentData(data, mimeType: "text/csv", fileName: "Workout.csv")
-        
-        return emailController
-    }
-    
-    func mailComposeController(controller: MFMailComposeViewController,
-        didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-            // Check the result or perform other tasks.
-            
-            // Dismiss the mail compose view controller.
-            controller.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    @IBAction func onClickViewAction(sender: AnyObject) {
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
-        
-        let progressViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProgressViewController") as! ProgressViewController
-        
-        progressViewController.setRoutine(self.date!, repositoryRoutine: self.repositoryRoutine!)
-  
-        self.showViewController(progressViewController, sender: nil)
-    }
-    
-    @IBAction func onClickShareAction(sender: AnyObject) {
-        let mailString = NSMutableString()
-        
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        let date = formatter.stringFromDate(repositoryRoutine!.startTime)
-        
-        let timeFormatter = NSDateFormatter()
-        timeFormatter.timeStyle = .LongStyle
-        
-        let startTime = timeFormatter.stringFromDate(repositoryRoutine!.startTime)
-        let endTime = timeFormatter.stringFromDate(repositoryRoutine!.lastUpdatedTime)
-        
-        let exercises = repositoryRoutine?.exercises.filter { (exercise) in
-            exercise.visible == true
-        }
-        
-        mailString.appendString("Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds\n")
-        
-        for exercise in exercises! {
-            let title = exercise.title
-            let weightValue: String = "kg"
-            var index = 1
-            
-            for set in exercise.sets {
-                let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
-
-                mailString.appendString(String(
-                    format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
-                    date,
-                    startTime,
-                    endTime,
-                    "1h 10m",
-                    "Bodyweight Fitness - Beginner Routine",
-                    title,
-                    index,
-                    set.weight,
-                    weightValue,
-                    set.reps,
-                    minutes,
-                    seconds))
-                
-                index++
-            }
-            
-        }
-        
-        let data = mailString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        if let content = data {
-            if !MFMailComposeViewController.canSendMail() {
-                print("Mail services are not available")
-                return
-            }
-            
-            let emailViewController = configuredMailComposeViewController(content)
-            
-            if MFMailComposeViewController.canSendMail() {
-                self.presentViewController(emailViewController, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    @IBAction func onClickRemoveAction(sender: AnyObject) {
-        let alertController = UIAlertController(
-            title: "Remove Workout",
-            message: "Are you sure you want to remove this workout?",
-            preferredStyle: UIAlertControllerStyle.Alert)
-        
-        alertController.addAction(UIAlertAction(
-            title: "Cancel",
-            style: UIAlertActionStyle.Cancel,
-            handler: nil))
-        
-        alertController.addAction(UIAlertAction(
-            title: "Remove",
-            style: UIAlertActionStyle.Destructive,
-            handler: { (action: UIAlertAction!) in
-                let realm = RepositoryStream.sharedInstance.getRealm()
-                try! realm.write {
-                    realm.delete(self.repositoryRoutine!)
-                }
-                
-                self.messageLabel.hidden = false
-                
-                self.cardViewLabel.hidden = true
-                self.cardView.hidden = true
-            }))
-        
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    @IBAction func onClickNavigationItem(sender: AnyObject) {
-        self.sideNavigationViewController?.toggle()
-    }
-    
-    
-    @IBAction func onClickNavigationCalendar(sender: AnyObject) {
-        self.calendarView.toggleCurrentDayView()
-    }
+    var date: NSDate?
+    var routines: Results<RepositoryRoutine>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -182,6 +43,17 @@ class CalendarViewController:
         self.menuView.delegate = self
         
         self.navigationItem.title = CVDate(date: NSDate()).commonDescription
+        
+        self.tableView.registerNib(
+            UINib(nibName: "CalendarSectionViewCell", bundle: nil),
+            forCellReuseIdentifier: "CalendarSectionViewCell")
+        
+        self.tableView.registerNib(
+            UINib(nibName: "CalendarCardViewCell", bundle: nil),
+            forCellReuseIdentifier: "CalendarCardViewCell")
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -200,21 +72,17 @@ class CalendarViewController:
     }
     
     func showOrHideCardViewForDate(date: NSDate) {
-        if let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForDate(date) {
-            self.date = date
-            self.repositoryRoutine = repositoryRoutine
-            
-            self.messageLabel.hidden = true
-            
-            self.cardViewLabel.hidden = false
-            self.cardView.hidden = false
+        self.date = date
+        
+        let routines = RepositoryStream.sharedInstance.getRoutinesForDate(date)
+        if (routines.count > 0) {
+            self.routines = routines
         } else {
-            self.messageLabel.hidden = false
-            
-            self.cardViewLabel.hidden = true
-            self.cardView.hidden = true
+            // show message
+            self.routines = nil
         }
 
+        self.tableView.reloadData()
     }
     
     func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
@@ -241,27 +109,19 @@ class CalendarViewController:
         return false
     }
     
-//    func dotMarker(shouldShowOnDayView dayView: CVCalendarDayView) -> Bool {
-//        if let _ = RepositoryStream.sharedInstance.getRepositoryRoutineForDate(dayView.date.date) {
-//            return true
-//        } else {
-//            return false
-//        }
-//
-//        return false
-//    }
-//
-//    func dotMarker(colorOnDayView dayView: CVCalendarDayView) -> [UIColor] {
-//        return [UIColor.whiteColor()]
-//    }
-//
-//    func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
-//        return true
-//    }
-//
-//    func dotMarker(sizeOnDayView dayView: DayView) -> CGFloat {
-//        return 13
-//    }
+    func dotMarker(shouldMoveOnHighlightingOnDayView dayView: DayView) -> Bool {
+        return false
+    }
+    
+    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
+        let routines = RepositoryStream.sharedInstance.getRoutinesForDate(dayView.date.date)
+        
+        return (routines.count > 0)
+    }
+    
+    func dotMarker(colorOnDayView dayView: DayView) -> [UIColor] {
+        return [UIColor.whiteColor()]
+    }
     
     func dayLabelWeekdayOutTextColor() -> UIColor {
         return UIColor.whiteColor()
@@ -288,6 +148,73 @@ class CalendarViewController:
     }
     
     func dayOfWeekTextColor() -> UIColor {
-        return UIColor(red:0, green:0.27, blue:0.24, alpha:1)
+        return UIColor(red:0, green: 0.27, blue: 0.24, alpha: 1)
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if let _ = self.routines {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let routines = self.routines {
+            return routines.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 44
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if (indexPath.row == 0) {
+            return 166
+        }
+        
+        return 166
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "CalendarSectionViewCell") as! CalendarSectionViewCell
+        
+        cell.title.text = "Workout Log"
+        
+        return cell
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(
+            "CalendarCardViewCell",
+            forIndexPath: indexPath) as! CalendarCardViewCell
+        
+        if let routines = self.routines {
+            let repositoryRoutine = routines[indexPath.row]
+            
+            cell.parentController = self
+            cell.date = date
+            
+            cell.title.text = "Bodyweight Fitness"
+            cell.subtitle.text = "Beginner Routine"
+            
+            cell.repositoryRoutine = repositoryRoutine
+        }
+
+        return cell
+    }
+
+    @IBAction func onClickNavigationItem(sender: AnyObject) {
+        self.sideNavigationViewController?.toggle()
+    }
+    
+    
+    @IBAction func onClickNavigationCalendar(sender: AnyObject) {
+        self.calendarView.toggleCurrentDayView()
     }
 }

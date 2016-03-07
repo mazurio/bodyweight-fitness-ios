@@ -7,15 +7,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="45" id="In8-em-VBy" customClass="SectionViewCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CalendarSectionViewCell" rowHeight="44" id="w1T-Jr-gEb" customClass="CalendarSectionViewCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="In8-em-VBy" id="f1M-tG-T2P">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="44.5"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w1T-Jr-gEb" id="Efi-ES-opz">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-DS-hyX">
-                        <rect key="frame" x="16" y="12" width="39" height="19.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Log" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9G-Eb-fex">
+                        <rect key="frame" x="20" y="15.5" width="91" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OvB-4Z-aJc"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -24,15 +27,15 @@
                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                 <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstItem="RNG-DS-hyX" firstAttribute="leading" secondItem="f1M-tG-T2P" secondAttribute="leadingMargin" constant="8" id="cOA-7M-bTx"/>
-                    <constraint firstItem="RNG-DS-hyX" firstAttribute="centerY" secondItem="f1M-tG-T2P" secondAttribute="centerY" id="fvU-LB-l4I"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="p9G-Eb-fex" secondAttribute="bottom" id="RI5-IP-gB5"/>
+                    <constraint firstItem="p9G-Eb-fex" firstAttribute="leading" secondItem="Efi-ES-opz" secondAttribute="leadingMargin" constant="12" id="qTk-XL-Gyg"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="title" destination="RNG-DS-hyX" id="5Ur-Br-tne"/>
+                <outlet property="title" destination="p9G-Eb-fex" id="I3y-fO-2P8"/>
             </connections>
-            <point key="canvasLocation" x="529" y="330"/>
+            <point key="canvasLocation" x="198" y="91.5"/>
         </tableViewCell>
     </objects>
 </document>

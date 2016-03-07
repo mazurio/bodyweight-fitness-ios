@@ -32,8 +32,17 @@ extension UIViewController {
             
             dimView.translatesAutoresizingMaskIntoConstraints = false
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[dimView]|", options: [], metrics: nil, views: ["dimView": dimView]))
+            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "|[dimView]|",
+                options: [],
+                metrics: nil,
+                views: ["dimView": dimView]))
+            
+            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|[dimView]|",
+                options: [],
+                metrics: nil,
+                views: ["dimView": dimView]))
             
             UIView.animateWithDuration(speed) { () -> Void in
                 dimView.alpha = alpha

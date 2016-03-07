@@ -20,6 +20,8 @@ class ProgressViewController: UIViewController {
         
         generalViewController.parentController = self.navigationController
         generalViewController.title = "General"
+        generalViewController.date = date
+        generalViewController.repositoryRoutine = self.repositoryRoutine
         
         controllerArray.append(generalViewController)
         
@@ -29,7 +31,7 @@ class ProgressViewController: UIViewController {
                     nibName: "ProgressPageViewController",
                     bundle: nil)
                 
-                viewController.parentController = self
+                viewController.parentController = self.navigationController
                 viewController.title = category.title
                 viewController.category = category
                 

@@ -18,6 +18,10 @@
 		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
 		732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */; };
 		732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */; };
+		732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */; };
+		732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */; };
+		732BA0471C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */; };
+		732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */; };
 		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
 		733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
 		733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
@@ -183,6 +187,10 @@
 		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
 		732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = SOURCE_ROOT; };
 		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
+		732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCardViewCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCardViewCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
 		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
@@ -389,6 +397,29 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		732BA0401C5E41EB00C1CDB5 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
+				732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */,
+				732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */,
+				732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */,
+				732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */,
+			);
+			name = Calendar;
+			sourceTree = "<group>";
+		};
+		732BA0411C5EB6A600C1CDB5 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */,
+				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
+				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
+				732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		734B6F951C4BB72C00CFB6BD /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,10 +483,6 @@
 				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
-				732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */,
-				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
-				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
-				732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */,
 			);
 			name = Progress;
 			sourceTree = "<group>";
@@ -496,12 +523,13 @@
 		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				732BA0411C5EB6A600C1CDB5 /* Cell */,
 				732BA0311C5BC2A500C1CDB5 /* Extensions */,
+				732BA0401C5E41EB00C1CDB5 /* Calendar */,
 				73C8E4AD1C5A1C99005E0248 /* Progress */,
 				73C8E4AC1C598888005E0248 /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
-				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
 			);
@@ -689,6 +717,7 @@
 				E0F587A31B52733100540104 /* scapular_shrugs.gif in Resources */,
 				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
 				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
+				732BA0471C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib in Resources */,
 				E0F587841B52733100540104 /* burpee.gif in Resources */,
 				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
 				E0F587AA1B52733100540104 /* vertical_row.gif in Resources */,
@@ -745,6 +774,7 @@
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
+				732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -803,6 +833,7 @@
 				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
+				732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
@@ -814,6 +845,7 @@
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
 				732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */,
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,

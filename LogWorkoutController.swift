@@ -34,6 +34,7 @@ class LogWorkoutController: UIViewController {
     let timerInterval = 0.15
     
     var numberOfSetViews = 0
+    var updateLastUpdatedTime = true
     var isActionViewShowing = false
     
     var setView: SetView?
@@ -162,6 +163,10 @@ class LogWorkoutController: UIViewController {
         for set in (self.exercise?.sets)! {
             self.addSet(set)
         }
+        
+        // Disable Navigation Drawer
+        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        appDelegate?.sideNavigationViewController?.enabled = false
     }
     
     func setRepositoryRoutine(repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
@@ -215,7 +220,21 @@ class LogWorkoutController: UIViewController {
     func updateActionView() {
         if let set = set {
             if set.isTimed {
+                if let setView = self.setView {
+                    if let index = self.exercise?.sets.indexOf(setView.repositorySet!) {
+                        self.setNumber.text = "\(index + 1)"
+                    } else {
+                        self.setNumber.text = ""
+                    }
+                }
                 
+                let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
+                
+                self.repsNumber.text = "\(minutes)"
+                self.repsLabel.text = "Minutes"
+                
+                self.weightNumber.text = "\(seconds)"
+                self.weightLabel.text = "Seconds"
             } else {
                 if let setView = self.setView {
                     if let index = self.exercise?.sets.indexOf(setView.repositorySet!) {
@@ -263,15 +282,23 @@ class LogWorkoutController: UIViewController {
     }
     
     /**
-     * TODO:
-     * Update last updated time.
-     *
      * Update only if the difference between start time and last updated time is less than
      * 120 minutes (it ignores changing the time later in the day after the workout ends
      * if we decide to update some values).
      */
     func setLastUpdatedTime() {
-        self.routine?.lastUpdatedTime = NSDate()
+        if updateLastUpdatedTime {
+            if let routine = self.routine {
+                let elapsedTime = routine.startTime.timeIntervalSinceDate(routine.lastUpdatedTime)
+                let minutes = (NSInteger(elapsedTime) % 3600) / 60;
+                
+                print(minutes)
+                
+                if (minutes < 120) {
+                    routine.lastUpdatedTime = NSDate()
+                }
+            }
+        }
     }
     
     @IBAction func onClickAddSet(sender: AnyObject) {
@@ -300,6 +327,8 @@ class LogWorkoutController: UIViewController {
             
             self.exercise?.sets.append(repositorySet)
             self.addSet(repositorySet)
+            
+            setLastUpdatedTime()
         }
     }
     
@@ -310,6 +339,8 @@ class LogWorkoutController: UIViewController {
         
         try! realm.write {
             exercise?.sets.removeLast()
+            
+            setLastUpdatedTime()
         }
        
         self.horizontalStackView?.subviews.last!.removeFromSuperview()
@@ -334,6 +365,10 @@ class LogWorkoutController: UIViewController {
             self.parentController?.dim(.Out, alpha: 0.5, speed: 0.5)
             
             self.dismissViewControllerAnimated(true, completion: nil)
+            
+            // Enable Navigation Drawer
+            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+            appDelegate?.sideNavigationViewController?.enabled = true
         }
     }
     
@@ -341,7 +376,11 @@ class LogWorkoutController: UIViewController {
         try! realm.write {
             if let set = set {
                 if set.isTimed {
+                    if set.seconds / 60 >= 5 {
+                        return;
+                    }
                     
+                    set.seconds += 60
                 } else {
                     if set.reps >= 50 {
                         return;
@@ -362,7 +401,9 @@ class LogWorkoutController: UIViewController {
         try! realm.write {
             if let set = set {
                 if set.isTimed {
-                    
+                    if set.seconds >= 60 {
+                        set.seconds -= 60
+                    }
                 } else {
                     if set.reps == 0 {
                         return;
@@ -378,12 +419,16 @@ class LogWorkoutController: UIViewController {
             }
         }
     }
-    
+
     func increaseWeight() {
         try! realm.write {
             if let set = set {
                 if set.isTimed {
-                    
+                    if set.seconds % 60 == 59 {
+                        set.seconds -= 59
+                    } else {
+                        set.seconds += 1
+                    }
                 } else {
                     if set.weight >= 250 {
                         return;
@@ -404,7 +449,11 @@ class LogWorkoutController: UIViewController {
         try! realm.write {
             if let set = set {
                 if set.isTimed {
-                    
+                    if set.seconds % 60 == 0 {
+                        set.seconds += 59
+                    } else {
+                        set.seconds -= 1
+                    }
                 } else {
                     if set.weight <= 0 {
                         return;
@@ -419,6 +468,10 @@ class LogWorkoutController: UIViewController {
                 setLastUpdatedTime()
             }
         }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 }
 
@@ -468,27 +521,64 @@ class SetView: UIButton {
         self.removeAllSubviews()
         
         if let set = repositorySet {
-            if set.weight == 0 {
-                self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
-                self.centerLabel?.textAlignment = NSTextAlignment.Center
-                self.centerLabel?.text = "\(set.reps)"
+            if set.isTimed {
+                let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
                 
-                self.addSubview(self.centerLabel!)
+                if minutes == 0 {
+                    self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.text = "\(seconds)s"
+                    
+                    self.addSubview(self.centerLabel!)
+                } else if (minutes > 0 && seconds == 0) {
+                    self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.text = "\(minutes)m"
+                    
+                    self.addSubview(self.centerLabel!)
+                } else {
+                    self.topLabel = UILabel(frame: CGRect.init(x: 0, y: 20, width: 70, height: 15))
+                    self.topLabel?.font = UIFont.boldSystemFontOfSize(12.0)
+                    self.topLabel?.textAlignment = NSTextAlignment.Center
+                    self.topLabel?.text = "\(minutes)m"
+                    
+                    self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
+                    self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
+                    self.bottomLabel?.textAlignment = NSTextAlignment.Center
+                    self.bottomLabel?.text = "\(seconds)s"
+                    
+                    self.addSubview(self.topLabel!)
+                    self.addSubview(self.bottomLabel!)
+                }
             } else {
-                self.topLabel = UILabel(frame: CGRect.init(x: 0, y: 20, width: 70, height: 15))
-                self.topLabel?.font = UIFont.boldSystemFontOfSize(12.0)
-                self.topLabel?.textAlignment = NSTextAlignment.Center
-                self.topLabel?.text = "\(set.reps) x"
-                
-                self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
-                self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
-                self.bottomLabel?.textAlignment = NSTextAlignment.Center
-                self.bottomLabel?.text = "\(set.weight) lbs"
-                
-                self.addSubview(self.topLabel!)
-                self.addSubview(self.bottomLabel!)
+                if set.weight == 0 {
+                    self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.text = "\(set.reps)"
+                    
+                    self.addSubview(self.centerLabel!)
+                } else {
+                    self.topLabel = UILabel(frame: CGRect.init(x: 0, y: 20, width: 70, height: 15))
+                    self.topLabel?.font = UIFont.boldSystemFontOfSize(12.0)
+                    self.topLabel?.textAlignment = NSTextAlignment.Center
+                    self.topLabel?.text = "\(set.reps) x"
+                    
+                    self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
+                    self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
+                    self.bottomLabel?.textAlignment = NSTextAlignment.Center
+                    self.bottomLabel?.text = "\(set.weight) lbs"
+                    
+                    self.addSubview(self.topLabel!)
+                    self.addSubview(self.bottomLabel!)
+                }
             }
         }
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 }
