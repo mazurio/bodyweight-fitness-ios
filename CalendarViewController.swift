@@ -10,8 +10,11 @@ class CalendarViewController: UIViewController,
     UITableViewDelegate {
     
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var bottomView: UIView!
+    
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
+    
     @IBOutlet var tableView: UITableView!
     
     var date: NSDate?
@@ -77,9 +80,17 @@ class CalendarViewController: UIViewController,
         let routines = RepositoryStream.sharedInstance.getRoutinesForDate(date)
         if (routines.count > 0) {
             self.routines = routines
+            self.tableView?.backgroundView = nil
         } else {
-            // show message
+            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            
+            label.text = "When you log a workout, you'll see it here."
+            label.font = UIFont(name: "Helvetica Neue", size: 15)
+            label.textAlignment = .Center
+            label.sizeToFit()
+            
             self.routines = nil
+            self.tableView?.backgroundView = label
         }
 
         self.tableView.reloadData()

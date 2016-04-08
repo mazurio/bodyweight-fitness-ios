@@ -199,9 +199,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
                                             self.changeExercise(exercise)
                                             
                                             PersistenceManager.storeRoutine(RoutineStream.sharedInstance.routine)
-                                            
-                                            let sideViewController = self.sideNavigationViewController?.sideViewController as? SideViewController
-                                            sideViewController?.notifyDataSetChanged()
                                         }
                                     )
                                 }

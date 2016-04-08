@@ -1,5 +1,6 @@
 import UIKit
 
+@IBDesignable
 class ActionView: UIButton {
     let horizontalPadding: CGFloat = 14.0
     var buttonColor: UIColor?

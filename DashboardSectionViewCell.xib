@@ -34,6 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="GXi-Wm-YQr" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="Nd4-Sv-Lsb"/>
                     <constraint firstItem="TDH-nf-gI1" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="SDv-Fn-7i4"/>
@@ -43,6 +44,7 @@
                     <constraint firstItem="fA0-pr-DD6" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="ou3-a9-E0m"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="desc" destination="TDH-nf-gI1" id="dqH-tp-dx4"/>
                 <outlet property="title" destination="fA0-pr-DD6" id="HCX-G0-aYl"/>

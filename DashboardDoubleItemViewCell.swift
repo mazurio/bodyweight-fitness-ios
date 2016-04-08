@@ -7,9 +7,48 @@ class DashboardDoubleItemViewCell: UITableViewCell {
     @IBOutlet weak var leftView: ActionView!
     @IBOutlet weak var rightView: ActionView!
     
+    @IBOutlet weak var leftButton: UIButton!
+    @IBOutlet weak var rightButton: UIButton!
+    
     var dashboardViewController: DashboardViewController?
-    var leftExercise: Exercise?
-    var rightExercise: Exercise?
+    
+    private var _leftExercise: Exercise? = nil
+    var leftExercise: Exercise? {
+        get {
+            return _leftExercise
+        }
+        
+        set {
+            self._leftExercise = newValue
+            
+            if let exercise = newValue {
+                if (exercise.defaultSet == "weighted") {
+                    self.leftButton.setImage(UIImage(named: "weighted"), forState: .Normal)
+                } else {
+                    self.leftButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                }
+            }
+        }
+    }
+    
+    private var _rightExercise: Exercise? = nil
+    var rightExercise: Exercise? {
+        get {
+            return _rightExercise
+        }
+        
+        set {
+            self._rightExercise = newValue
+            
+            if let exercise = newValue {
+                if (exercise.defaultSet == "weighted") {
+                    self.rightButton.setImage(UIImage(named: "weighted"), forState: .Normal)
+                } else {
+                    self.rightButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

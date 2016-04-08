@@ -3,9 +3,28 @@ import UIKit
 class DashboardSingleItemViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var view: ActionView!
+    @IBOutlet weak var button: UIButton!
     
     var dashboardViewController: DashboardViewController?
-    var exercise: Exercise?
+    
+    private var _exercise: Exercise? = nil
+    var exercise: Exercise? {
+        get {
+            return _exercise
+        }
+        
+        set {
+            self._exercise = newValue
+            
+            if let exercise = newValue {
+                if (exercise.defaultSet == "weighted") {
+                    self.button.setImage(UIImage(named: "weighted"), forState: .Normal)
+                } else {
+                    self.button.setImage(UIImage(named: "timed"), forState: .Normal)
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

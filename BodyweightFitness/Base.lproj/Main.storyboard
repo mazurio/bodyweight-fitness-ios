@@ -99,6 +99,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="backgroundView" destination="hrs-bi-mtn" id="0QE-fk-6Hp"/>
+                        <outlet property="bottomView" destination="T8Q-a1-dQz" id="cps-pF-ixX"/>
                         <outlet property="calendarView" destination="TnS-CC-YwJ" id="Crp-pw-ewU"/>
                         <outlet property="menuView" destination="yKG-te-9m9" id="Tdg-GB-q9w"/>
                         <outlet property="tableView" destination="Ftk-dn-vyU" id="kSS-On-Prc"/>
@@ -671,19 +672,12 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsk-WA-DtB">
-                                                    <rect key="frame" x="560" y="88" width="20" height="42"/>
-                                                    <state key="normal" image="arrow_down"/>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstItem="Zsk-WA-DtB" firstAttribute="top" secondItem="blg-Ud-Eel" secondAttribute="top" id="G1Y-iG-l7K"/>
                                                 <constraint firstItem="blg-Ud-Eel" firstAttribute="leading" secondItem="Q4z-jL-hAQ" secondAttribute="leadingMargin" constant="6" id="N5t-Yy-Q23"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ndB-Iz-m7l" secondAttribute="bottom" constant="12" id="QE2-Gv-d4y"/>
                                                 <constraint firstItem="ndB-Iz-m7l" firstAttribute="leading" secondItem="Q4z-jL-hAQ" secondAttribute="leadingMargin" constant="6" id="YOV-Tq-Leo"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Zsk-WA-DtB" secondAttribute="bottom" constant="12" id="gr7-h5-WIi"/>
-                                                <constraint firstItem="Zsk-WA-DtB" firstAttribute="trailing" secondItem="Q4z-jL-hAQ" secondAttribute="trailingMargin" constant="-12" id="u87-V6-hpe"/>
                                                 <constraint firstItem="ndB-Iz-m7l" firstAttribute="top" secondItem="blg-Ud-Eel" secondAttribute="bottom" constant="8" id="xEC-8q-dGR"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1117,7 +1111,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="arrow_down" width="20" height="20"/>
         <image name="calendar" width="22" height="22"/>
         <image name="log" width="22" height="22"/>
         <image name="menu" width="22" height="22"/>

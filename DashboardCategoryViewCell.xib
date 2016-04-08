@@ -16,15 +16,17 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9D-TL-dWa">
                         <rect key="frame" x="123" y="39.5" width="74.5" height="20.5"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
+                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="C9D-TL-dWa" firstAttribute="centerX" secondItem="aLA-N8-cLu" secondAttribute="centerX" id="9nu-00-uwQ"/>
                     <constraint firstItem="C9D-TL-dWa" firstAttribute="centerY" secondItem="aLA-N8-cLu" secondAttribute="centerY" id="c8l-KJ-Zt7"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="title" destination="C9D-TL-dWa" id="gi5-vV-TY6"/>
             </connections>
