@@ -196,6 +196,9 @@ class CalendarViewController: UIViewController,
         
         cell.title.text = "Workout Log"
         
+        cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        cell.contentView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        
         return cell
         
     }
@@ -212,7 +215,7 @@ class CalendarViewController: UIViewController,
             cell.date = date
             
             cell.title.text = "Bodyweight Fitness"
-            cell.subtitle.text = "Beginner Routine"
+            cell.subtitle.text = "Recommended Routine"
             
             cell.repositoryRoutine = repositoryRoutine
         }

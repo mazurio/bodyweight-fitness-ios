@@ -28,7 +28,7 @@
                     <constraint firstItem="RNG-DS-hyX" firstAttribute="centerY" secondItem="f1M-tG-T2P" secondAttribute="centerY" id="fvU-LB-l4I"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="title" destination="RNG-DS-hyX" id="5Ur-Br-tne"/>
             </connections>

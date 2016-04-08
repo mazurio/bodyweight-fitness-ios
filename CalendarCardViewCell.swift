@@ -63,7 +63,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
                     startTime,
                     endTime,
                     "1h 10m",
-                    "Bodyweight Fitness - Beginner Routine",
+                    "Bodyweight Fitness - Recommended Routine",
                     title,
                     index,
                     set.weight,

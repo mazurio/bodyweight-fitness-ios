@@ -58,6 +58,9 @@ class ProgressPageViewController: UITableViewController {
         
         cell.parentController = parentController
         
+        cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        cell.contentView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        
         if let category = self.category {
             let section = category.sections[section]
             

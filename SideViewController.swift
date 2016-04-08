@@ -49,9 +49,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerCell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
         
-        return headerCell
+        cell.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+        cell.contentView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
