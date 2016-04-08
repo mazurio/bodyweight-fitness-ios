@@ -3,7 +3,8 @@ import UIKit
 class DashboardViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     
-    var routine: Routine = RoutineStream.sharedInstance.routine
+    let routine: Routine = RoutineStream.sharedInstance.routine
+    var timerController: TimerController?
     
     init() {
         super.init(nibName: "DashboardView", bundle: nil)
@@ -35,12 +36,12 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.separatorStyle = .None;
         self.tableView.sectionFooterHeight = 0
         self.tableView.sectionHeaderHeight = 0
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        let r = UIBarButtonItem(title: "Title", style: UIBarButtonItemStyle.Plain, target: self, action: "close")
         
-        self.navigationItem.leftBarButtonItem = r
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            title: "Close",
+            style: .Plain,
+            target: self,
+            action: "dismiss:")
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -101,10 +102,14 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
           
             if (section.mode == SectionMode.All) {
                 if let exercise = section.exercises[0] as? Exercise {
+                    cell.dashboardViewController = self
+                    cell.exercise = exercise
                     cell.title?.text = exercise.title
                 }
             } else {
                 if let exercise = section.currentExercise {
+                    cell.dashboardViewController = self
+                    cell.exercise = exercise
                     cell.title?.text = exercise.title
                 }
             }
@@ -119,12 +124,19 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             if let nextExercise = exercise.next {
                 let cell = tableView.dequeueReusableCellWithIdentifier("DashboardDoubleItemViewCell", forIndexPath: indexPath) as! DashboardDoubleItemViewCell
                 
+                cell.dashboardViewController = self
+                
                 if (nextExercise.section === exercise.section) {
+                    cell.leftExercise = exercise
+                    cell.rightExercise = nextExercise
+                    
                     cell.leftTitle?.text = exercise.title
                     cell.rightTitle?.text = nextExercise.title
                 } else {
                     let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
                     
+                    cell.dashboardViewController = self
+                    cell.exercise = exercise
                     cell.title?.text = exercise.title
                     
                     return cell
@@ -134,6 +146,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
                 
+                cell.dashboardViewController = self
+                cell.exercise = exercise
                 cell.title?.text = exercise.title
                 
                 return cell
@@ -153,5 +167,15 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 150
+    }
+    
+    func dismiss(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func dismissWithExercise(exercise: Exercise) {
+        self.timerController?.changeExercise(exercise)
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }

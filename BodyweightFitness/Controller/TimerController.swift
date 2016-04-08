@@ -34,7 +34,10 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func onClickDashboardAction(sender: AnyObject) {
-        let controller = UINavigationController(rootViewController: DashboardViewController())
+        let dashboard = DashboardViewController()
+        dashboard.timerController = self
+        
+        let controller = UINavigationController(rootViewController: dashboard)
         
         self.navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
@@ -54,8 +57,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("viewDidLoad")
-        
         self.setNavigationBar()
         
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
@@ -67,8 +68,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        print("viewDidAppear")
         
         if let superView = self.navigationItem.titleView?.superview {
             self.navigationItem.titleView?.frame = CGRectMake(
@@ -100,7 +99,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         self.sectionTitle.text = currentExercise.section?.title
         
         restartTimer(defaultSeconds)
-//        setGifImage(currentExercise.id)
+        setGifImage(currentExercise.id)
         
 //        if (currentExercise.section?.mode == SectionMode.All) {
 //            if let image = UIImage(named: "plus") {
