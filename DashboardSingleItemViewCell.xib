@@ -49,6 +49,7 @@
                     <constraint firstItem="yri-qx-3M2" firstAttribute="top" secondItem="lll-Bd-c16" secondAttribute="bottom" constant="8" id="kIZ-2k-b4l"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
                 <outlet property="button" destination="BhC-kZ-D44" id="QTV-rg-gjm"/>
                 <outlet property="title" destination="yri-qx-3M2" id="98X-pC-4Xu"/>

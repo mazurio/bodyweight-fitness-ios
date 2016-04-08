@@ -27,6 +27,7 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="title" destination="C9D-TL-dWa" id="gi5-vV-TY6"/>
             </connections>

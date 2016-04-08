@@ -17,11 +17,11 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RNG-DS-hyX">
                         <rect key="frame" x="16" y="12" width="39" height="19.5"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                 <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="RNG-DS-hyX" firstAttribute="leading" secondItem="f1M-tG-T2P" secondAttribute="leadingMargin" constant="8" id="cOA-7M-bTx"/>

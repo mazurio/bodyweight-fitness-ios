@@ -33,10 +33,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.separatorStyle = .None;
+        self.tableView.separatorStyle = .None
         self.tableView.sectionFooterHeight = 0
         self.tableView.sectionHeaderHeight = 0
-       
+        self.tableView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        
         let closeItem = UIBarButtonItem(
             image: UIImage(named: "close"),
             landscapeImagePhone: nil,
@@ -82,6 +83,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.title?.text = category.title
             
+            // iPad Bug: Background color has 1px border.
+            // http://stackoverflow.com/posts/27325035/revisions
+            cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+            cell.contentView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+            
             return cell
         }
         
@@ -90,6 +96,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             
             cell.title?.text = section.title
             cell.desc?.text = section.desc
+            
+            // iPad Bug: Background color has 1px border.
+            // http://stackoverflow.com/posts/27325035/revisions
+            cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+            cell.contentView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
             
             return cell
         }
