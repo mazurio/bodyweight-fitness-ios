@@ -22,7 +22,7 @@ class ProgressGeneralViewController: UIViewController {
             self.startTime.text = dayTimePeriodFormatter.stringFromDate(routine.startTime)
             self.endTime.text = dayTimePeriodFormatter.stringFromDate(routine.lastUpdatedTime)
             
-            self.workoutLength.text = "TODO"
+            self.workoutLength.text = "--"
             
             // TODO:
             // If numberOfExercises == numberOfExercisesCompleted (100% progress) then:

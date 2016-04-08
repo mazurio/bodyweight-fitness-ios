@@ -8,6 +8,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var exerciseDescription: UILabel!
     
     @IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet var dashboardButton: UIBarButtonItem!
+    
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var timerMinutesButton: UIButton!
     @IBOutlet var timerButton: UIButton!
@@ -29,6 +31,12 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func onClickMenuAction(sender: AnyObject) {
         sideNavigationViewController?.toggle()
+    }
+    
+    @IBAction func onClickDashboardAction(sender: AnyObject) {
+        let controller = UINavigationController(rootViewController: DashboardViewController())
+        
+        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
@@ -92,7 +100,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         self.sectionTitle.text = currentExercise.section?.title
         
         restartTimer(defaultSeconds)
-        setGifImage(currentExercise.id)
+//        setGifImage(currentExercise.id)
         
 //        if (currentExercise.section?.mode == SectionMode.All) {
 //            if let image = UIImage(named: "plus") {

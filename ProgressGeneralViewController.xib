@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressGeneralViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
@@ -30,62 +30,43 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzj-x9-zQO">
-                    <rect key="frame" x="270.5" y="16" width="60" height="17"/>
+                    <rect key="frame" x="270" y="16" width="60" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d1-NQ-Shi">
-                    <rect key="frame" x="270.5" y="41" width="67.5" height="33.5"/>
+                    <rect key="frame" x="270" y="41" width="67.5" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEE-3w-gZg">
-                    <rect key="frame" x="482" y="16" width="102" height="17"/>
+                    <rect key="frame" x="16" y="82" width="102" height="17"/>
                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 10m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaW-YI-dtg">
-                    <rect key="frame" x="482" y="41" width="110" height="33.5"/>
+                    <rect key="frame" x="16" y="107" width="89.5" height="33.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="28"/>
                     <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B7C-Ch-SS4" customClass="GraphView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                    <rect key="frame" x="16" y="91" width="568" height="240"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="240" id="5yo-AJ-IbT"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="startColor">
-                            <color key="value" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="endColor">
-                            <color key="value" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="B7C-Ch-SS4" secondAttribute="trailing" constant="16" id="1nT-TG-hjV"/>
                 <constraint firstItem="5Xv-t3-N4v" firstAttribute="top" secondItem="WX1-WU-dn6" secondAttribute="bottom" constant="8" id="5Xo-Q3-3Br"/>
                 <constraint firstItem="9d1-NQ-Shi" firstAttribute="leading" secondItem="tzj-x9-zQO" secondAttribute="leading" id="8KK-To-oQv"/>
-                <constraint firstItem="B7C-Ch-SS4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="9Ky-d3-Jpz"/>
+                <constraint firstItem="xaW-YI-dtg" firstAttribute="top" secondItem="vEE-3w-gZg" secondAttribute="bottom" constant="8" id="Ccs-R5-e83"/>
                 <constraint firstItem="5Xv-t3-N4v" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="DTn-uA-JKk"/>
                 <constraint firstItem="WX1-WU-dn6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="Flf-hU-JVb"/>
-                <constraint firstItem="vEE-3w-gZg" firstAttribute="leading" secondItem="xaW-YI-dtg" secondAttribute="leading" id="GAt-B3-XQx"/>
-                <constraint firstItem="xaW-YI-dtg" firstAttribute="top" secondItem="vEE-3w-gZg" secondAttribute="bottom" constant="8" id="JYX-5G-DCO"/>
-                <constraint firstItem="B7C-Ch-SS4" firstAttribute="top" secondItem="xaW-YI-dtg" secondAttribute="bottom" constant="16" id="SUg-mF-eQT"/>
                 <constraint firstItem="WX1-WU-dn6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Tkt-G7-HQk"/>
                 <constraint firstItem="tzj-x9-zQO" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="TvW-MS-K9z"/>
+                <constraint firstItem="vEE-3w-gZg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="cgI-ON-G1C"/>
                 <constraint firstItem="tzj-x9-zQO" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dp8-9h-oTf"/>
-                <constraint firstItem="vEE-3w-gZg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="glL-vc-zi2"/>
-                <constraint firstAttribute="trailing" secondItem="vEE-3w-gZg" secondAttribute="trailing" constant="16" id="quf-6G-3et"/>
-                <constraint firstAttribute="trailing" secondItem="xaW-YI-dtg" secondAttribute="trailing" constant="8" id="rcy-Oc-b2i"/>
+                <constraint firstItem="vEE-3w-gZg" firstAttribute="top" secondItem="5Xv-t3-N4v" secondAttribute="bottom" constant="7.5" id="hMr-Va-2Mm"/>
+                <constraint firstItem="xaW-YI-dtg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="lva-vu-V7B"/>
                 <constraint firstItem="9d1-NQ-Shi" firstAttribute="top" secondItem="tzj-x9-zQO" secondAttribute="bottom" constant="8" id="sFA-oB-2M5"/>
             </constraints>
         </view>

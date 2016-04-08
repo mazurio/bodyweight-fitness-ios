@@ -328,7 +328,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="left" id="UAY-oa-3cO">
-                            <rect key="frame" x="59" y="4.5" width="521" height="35"/>
+                            <rect key="frame" x="59" y="4.5" width="431" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wall Extensions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPn-hY-bjh">
@@ -360,10 +360,16 @@
                                 <constraint firstItem="hce-NB-UTV" firstAttribute="leading" secondItem="b1T-0m-h95" secondAttribute="trailing" constant="4" id="dj0-X0-76X"/>
                             </constraints>
                         </view>
+                        <barButtonItem key="rightBarButtonItem" title="Dashboard" id="5NF-Ql-PIe" userLabel="Dashboard">
+                            <connections>
+                                <action selector="onClickDashboardAction:" destination="BYZ-38-t0r" id="IrU-gr-Mib"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="actionButton" destination="dO5-Tu-kiA" id="11L-MK-RbJ"/>
+                        <outlet property="dashboardButton" destination="5NF-Ql-PIe" id="1PT-YC-iFo"/>
                         <outlet property="exerciseDescription" destination="hce-NB-UTV" id="xLD-Aa-hqh"/>
                         <outlet property="exerciseTitle" destination="GPn-hY-bjh" id="Xt3-ke-L9y"/>
                         <outlet property="gifView" destination="cbd-Re-Lo9" id="Vix-IQ-17e"/>

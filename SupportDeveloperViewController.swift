@@ -15,8 +15,7 @@ class SupportDeveloperViewController: UIViewController, SKProductsRequestDelegat
         super.viewDidLoad()
         
         self.setNavigationBar()
-        
-        requestProductData()
+        self.requestProductData()
     }
     
     @IBAction func onClickNavigationItem(sender: AnyObject) {
@@ -47,6 +46,7 @@ class SupportDeveloperViewController: UIViewController, SKProductsRequestDelegat
     func requestProductData() {
         if SKPaymentQueue.canMakePayments() {
             let request = SKProductsRequest(productIdentifiers: self.productIdentifiers)
+            
             request.delegate = self
             request.start()
         } else {

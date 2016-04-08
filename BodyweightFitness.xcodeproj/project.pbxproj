@@ -72,6 +72,16 @@
 		7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */; };
 		7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */; };
 		7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8EC1C52943D00819790 /* StoreKit.framework */; };
+		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
+		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
+		73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */; };
+		73AA28F11CB7ABC300DEED79 /* DashboardSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */; };
+		73AA28F31CB7ACC100DEED79 /* DashboardCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */; };
+		73AA28F51CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */; };
+		73AA28F71CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */; };
+		73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */; };
+		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */; };
+		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
@@ -241,6 +251,16 @@
 		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
 		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8EC1C52943D00819790 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
+		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = SOURCE_ROOT; };
+		73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCategoryViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCategoryViewCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSingleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -361,7 +381,9 @@
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
 				E078934D1B472CCD001195AC /* Model */,
 				E078934C1B472CAF001195AC /* View */,
-				E02BF7B01B45E2EB00D5CE52 /* Controller */,
+				73BA31BC1CB83A9B001784F7 /* Controller */,
+				73AA28EB1CABE8E000DEED79 /* UI */,
+				E02BF7B01B45E2EB00D5CE52 /* RefactorController */,
 				E0C7E3241B5BC65000EB6389 /* Service */,
 				E00242CB1B4B0E370003A230 /* Layout */,
 				E08139041B5270EE00390A73 /* Resources */,
@@ -416,6 +438,14 @@
 				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
 				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
 				732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */,
+				73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */,
+				73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */,
+				73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */,
+				73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */,
+				73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */,
+				73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */,
+				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */,
+				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -464,6 +494,22 @@
 				734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */,
 			);
 			name = Repository;
+			sourceTree = "<group>";
+		};
+		73AA28EB1CABE8E000DEED79 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		73BA31BC1CB83A9B001784F7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		73C8E4AC1C598888005E0248 /* Modal */ = {
@@ -520,7 +566,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E02BF7B01B45E2EB00D5CE52 /* Controller */ = {
+		E02BF7B01B45E2EB00D5CE52 /* RefactorController */ = {
 			isa = PBXGroup;
 			children = (
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
@@ -533,7 +579,7 @@
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
 			);
-			name = Controller;
+			name = RefactorController;
 			sourceTree = "<group>";
 		};
 		E078934C1B472CAF001195AC /* View */ = {
@@ -715,8 +761,10 @@
 			files = (
 				E0F587991B52733100540104 /* pseudo_planche.gif in Resources */,
 				E0F587A31B52733100540104 /* scapular_shrugs.gif in Resources */,
+				73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */,
 				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
 				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
+				73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */,
 				732BA0471C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib in Resources */,
 				E0F587841B52733100540104 /* burpee.gif in Resources */,
 				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
@@ -725,6 +773,8 @@
 				E0F587A11B52733100540104 /* rings_turned_out_pushup.gif in Resources */,
 				732BA0281C5AE8F900C1CDB5 /* SectionViewCell.xib in Resources */,
 				E0F587971B52733100540104 /* plank.gif in Resources */,
+				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib in Resources */,
+				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
 				E0F587461B52730C00540104 /* Main.storyboard in Resources */,
@@ -737,6 +787,7 @@
 				E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */,
 				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
 				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
+				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib in Resources */,
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
@@ -831,10 +882,12 @@
 				7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */,
 				734B6FD11C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */,
 				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
+				73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
+				73AA28F31CB7ACC100DEED79 /* DashboardCategoryViewCell.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
 				734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */,
@@ -853,13 +906,16 @@
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
 				732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
+				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */,
 				734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
+				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
 				734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
 				734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */,
 				734B6FDF1C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */,
 				734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
 				734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
 				734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
+				73AA28F11CB7ABC300DEED79 /* DashboardSectionViewCell.swift in Sources */,
 				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
