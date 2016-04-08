@@ -36,12 +36,18 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.tableView.separatorStyle = .None;
         self.tableView.sectionFooterHeight = 0
         self.tableView.sectionHeaderHeight = 0
-        
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(
-            title: "Close",
+       
+        let closeItem = UIBarButtonItem(
+            image: UIImage(named: "close"),
+            landscapeImagePhone: nil,
             style: .Plain,
             target: self,
             action: "dismiss:")
+        
+        closeItem.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
+        
+        self.navigationItem.leftBarButtonItem = closeItem
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
