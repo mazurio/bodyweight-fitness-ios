@@ -48,8 +48,16 @@
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D6O-Fy-YDZ" userLabel="Right" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
                         <rect key="frame" x="204" y="23" width="60" height="60"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9s-Rb-tEh">
+                                <rect key="frame" x="19" y="19" width="22" height="22"/>
+                                <state key="normal" image="timed"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="L9s-Rb-tEh" firstAttribute="centerY" secondItem="D6O-Fy-YDZ" secondAttribute="centerY" id="3dK-mH-KbP"/>
+                            <constraint firstItem="L9s-Rb-tEh" firstAttribute="centerX" secondItem="D6O-Fy-YDZ" secondAttribute="centerX" id="HlW-0k-B91"/>
                             <constraint firstAttribute="width" constant="60" id="Hlf-6j-8Wb"/>
                             <constraint firstAttribute="height" constant="60" id="awJ-n7-Zg6"/>
                         </constraints>
@@ -64,10 +72,6 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9s-Rb-tEh">
-                        <rect key="frame" x="223" y="42" width="22" height="22"/>
-                        <state key="normal" image="timed"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="UjH-Ct-DRf" firstAttribute="centerX" secondItem="D6O-Fy-YDZ" secondAttribute="centerX" id="10n-zi-WhQ"/>
