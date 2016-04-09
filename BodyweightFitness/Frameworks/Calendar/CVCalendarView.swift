@@ -42,7 +42,7 @@ public final class CVCalendarView: UIView {
     
     public var (weekViewSize, dayViewSize): (CGSize?, CGSize?)
     
-    private var validated = false
+    public var validated = false
     
     public var firstWeekday: Weekday {
         get {
@@ -319,7 +319,7 @@ extension CVCalendarView {
 
 // MARK: - Mode load 
 
-private extension CVCalendarView {
+public extension CVCalendarView {
     func loadCalendarMode() {
         if let delegate = delegate {
             calendarMode = delegate.presentationMode()

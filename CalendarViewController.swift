@@ -17,7 +17,7 @@ class CalendarViewController: UIViewController,
     
     @IBOutlet var tableView: UITableView!
     
-    var date: NSDate?
+    var date: NSDate? = NSDate()
     var routines: Results<RepositoryRoutine>?
     
     override func viewDidLoad() {
@@ -70,8 +70,32 @@ class CalendarViewController: UIViewController,
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
+        let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
+
+        for (_, weekView) in weekContentViewController.weekViews {
+            for dayView in weekView.dayViews {
+                dayView.setDeselectedWithClearing(true)
+                dayView.selectionView = nil
+            }
+        }
+        
+        self.calendarView.validated = false
+        
         self.calendarView.commitCalendarViewUpdate()
         self.menuView.commitMenuViewUpdate()
+        
+        for (_, weekView) in weekContentViewController.weekViews {
+            for dayView in weekView.dayViews {
+                let order = NSCalendar.currentCalendar().compareDate(
+                    date!,
+                    toDate: dayView.date.date,
+                    toUnitGranularity: .Day)
+                
+                if (order == .OrderedSame) {
+                    dayView.setSelectedWithType(.Single)
+                }
+            }
+        }
     }
     
     func showOrHideCardViewForDate(date: NSDate) {

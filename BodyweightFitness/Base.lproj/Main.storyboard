@@ -65,7 +65,6 @@
                             <constraint firstItem="yKG-te-9m9" firstAttribute="top" secondItem="eym-ma-zpQ" secondAttribute="bottom" constant="8" id="BOT-cq-Hkp"/>
                             <constraint firstItem="TnS-CC-YwJ" firstAttribute="top" secondItem="yKG-te-9m9" secondAttribute="bottom" id="Enx-dY-33k"/>
                             <constraint firstAttribute="trailingMargin" secondItem="yKG-te-9m9" secondAttribute="trailing" id="GFn-3p-pLc"/>
-                            <constraint firstItem="Ftk-dn-vyU" firstAttribute="top" secondItem="hrs-bi-mtn" secondAttribute="top" id="NiM-rB-yPB"/>
                             <constraint firstItem="T8Q-a1-dQz" firstAttribute="leading" secondItem="S4i-pR-l4h" secondAttribute="leadingMargin" constant="-20" id="Ta9-An-WOk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="TnS-CC-YwJ" secondAttribute="trailing" id="Zmx-zg-xoL"/>
                             <constraint firstItem="hrs-bi-mtn" firstAttribute="top" secondItem="eym-ma-zpQ" secondAttribute="bottom" id="cMA-jI-KPG"/>
@@ -75,11 +74,6 @@
                             <constraint firstItem="3rb-ON-dZN" firstAttribute="top" secondItem="T8Q-a1-dQz" secondAttribute="bottom" id="qZR-QP-tkp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="T8Q-a1-dQz" secondAttribute="trailing" constant="-20" id="t9V-Dw-pFj"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="NiM-rB-yPB"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Workout Log" id="Qe1-VD-0NB">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="9xV-rs-8Mh">

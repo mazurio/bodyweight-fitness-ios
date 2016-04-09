@@ -9,7 +9,7 @@
 import UIKit
 
 public final class CVCalendarWeekContentViewController: CVCalendarContentViewController {
-    private var weekViews: [Identifier : WeekView]
+    public var weekViews: [Identifier : WeekView]
     private var monthViews: [Identifier : MonthView]
     
     public override init(calendarView: CalendarView, frame: CGRect) {
