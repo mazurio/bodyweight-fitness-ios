@@ -46,7 +46,7 @@ class ProgressViewController: UIViewController {
                 UIColor(red:0, green:0.59, blue:0.53, alpha:1)
             ),
             .ViewBackgroundColor(
-                UIColor(red:0.93, green:0.93, blue:0.93, alpha:1)
+                UIColor(red:0.88, green:0.88, blue:0.88, alpha:1.00)
             ),
             .SelectionIndicatorColor(
                 UIColor(red:0.02, green:0.21, blue:0.18, alpha:1)

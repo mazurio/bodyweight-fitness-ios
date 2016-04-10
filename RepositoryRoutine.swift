@@ -1,6 +1,15 @@
 import Foundation
 import RealmSwift
 
+func stringFromTimeInterval(interval: NSTimeInterval) -> (Int, Int) {
+    let interval = Int(interval)
+    
+    let minutes = (interval / 60) % 60
+    let hours = (interval / 3600)
+    
+    return (hours, minutes)
+}
+
 class RepositoryRoutine: Object {
     dynamic var id = "Routine-" + NSUUID().UUIDString
     dynamic var routineId = "routine0"
@@ -61,6 +70,40 @@ class RepositoryRoutine: Object {
         } else {
             return "--"
         }
-
+    }
+    
+    func completedExercises() -> Int {
+        var completed = 0
+        for exercise in exercises {
+            if exercise.visible {
+                let firstSet = exercise.sets[0]
+                
+                if firstSet.isTimed {
+                    if firstSet.seconds > 0 {
+                        completed += 1
+                    }
+                } else {
+                    if firstSet.reps > 0 {
+                        completed += 1
+                    }
+                }
+            }
+        }
+        
+        return completed
+    }
+    
+    func totalExercises() -> Int {
+        return exercises.filter({
+            $0.visible == true
+        }).count
+    }
+    
+    func exercisesLeft() -> Int {
+        return totalExercises() - completedExercises()
+    }
+    
+    func isCompleted() -> Bool {
+        return exercisesLeft() == 0
     }
 }
