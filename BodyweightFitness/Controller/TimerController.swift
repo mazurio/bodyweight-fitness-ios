@@ -69,26 +69,28 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let superView = self.navigationItem.titleView?.superview {
-            self.navigationItem.titleView?.frame = CGRectMake(
-                0,
-                0,
-                superView.bounds.size.width,
-                35)
-        }
+        setTitle()
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        setTitle()
     }
     
     override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         
-        if let superView = self.navigationItem.titleView?.superview {
-            self.navigationItem.titleView?.frame = CGRectMake(
-                0,
-                0,
-                superView.bounds.size.width,
-                35)
-        }
+        setTitle()
+    }
+    
+    func setTitle() {
+        let navigationBarSize = self.navigationController?.navigationBar.frame.size
+        let titleView = self.navigationItem.titleView
+        var titleViewFrame = titleView?.frame
+        titleViewFrame?.size = navigationBarSize!
+        self.navigationItem.titleView?.frame = titleViewFrame!
         
+        titleView?.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
+        titleView?.autoresizesSubviews = true
     }
     
     internal func changeExercise(currentExercise: Exercise) {

@@ -325,33 +325,32 @@
                             <rect key="frame" x="59" y="4.5" width="431" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wall Extensions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPn-hY-bjh">
-                                    <rect key="frame" x="0.0" y="0.0" width="107" height="18"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wall Extensions" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GPn-hY-bjh">
+                                    <rect key="frame" x="0.0" y="-2" width="127" height="21"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                     <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dynamic Stretches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1T-0m-h95">
-                                    <rect key="frame" x="0.0" y="20.5" width="107" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <rect key="frame" x="0.0" y="18" width="118.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3x(10-30s)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hce-NB-UTV">
-                                    <rect key="frame" x="111" y="20.5" width="63" height="14.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <rect key="frame" x="122" y="18" width="66" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                     <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="GPn-hY-bjh" firstAttribute="top" secondItem="UAY-oa-3cO" secondAttribute="top" id="KCp-rz-1rD"/>
                                 <constraint firstAttribute="bottom" secondItem="b1T-0m-h95" secondAttribute="bottom" id="MWp-LK-qEz"/>
                                 <constraint firstAttribute="bottom" secondItem="hce-NB-UTV" secondAttribute="bottom" id="OmO-Wd-BCi"/>
                                 <constraint firstItem="GPn-hY-bjh" firstAttribute="leading" secondItem="UAY-oa-3cO" secondAttribute="leading" id="Tpk-JP-Vgw"/>
                                 <constraint firstItem="b1T-0m-h95" firstAttribute="leading" secondItem="UAY-oa-3cO" secondAttribute="leading" id="UhR-c7-xSU"/>
                                 <constraint firstItem="hce-NB-UTV" firstAttribute="leading" secondItem="b1T-0m-h95" secondAttribute="trailing" constant="4" id="dj0-X0-76X"/>
+                                <constraint firstAttribute="bottom" secondItem="GPn-hY-bjh" secondAttribute="bottom" constant="16" id="eiW-Ef-HKd"/>
                             </constraints>
                         </view>
                         <barButtonItem key="rightBarButtonItem" title="Dashboard" id="5NF-Ql-PIe" userLabel="Dashboard">
