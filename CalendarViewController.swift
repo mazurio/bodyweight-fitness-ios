@@ -45,7 +45,7 @@ class CalendarViewController: UIViewController,
         self.calendarView.appearance.delegate = self
         self.menuView.delegate = self
         
-        self.navigationItem.title = CVDate(date: NSDate()).commonDescription
+        self.navigationItem.title = CVDate(date: date!).commonDescription
         
         self.tableView.registerNib(
             UINib(nibName: "CalendarSectionViewCell", bundle: nil),
@@ -62,7 +62,7 @@ class CalendarViewController: UIViewController,
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.showOrHideCardViewForDate(NSDate())
+        self.showOrHideCardViewForDate(date!)
 
         self.calendarView.contentController.refreshPresentedMonth()
     }
@@ -70,29 +70,35 @@ class CalendarViewController: UIViewController,
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
-
-        for (_, weekView) in weekContentViewController.weekViews {
-            for dayView in weekView.dayViews {
-                dayView.setDeselectedWithClearing(true)
-                dayView.selectionView = nil
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
+            
+            for (_, weekView) in weekContentViewController.weekViews {
+                for dayView in weekView.dayViews {
+                    dayView.setDeselectedWithClearing(true)
+                    dayView.selectionView = nil
+                }
             }
+            
+            self.calendarView.validated = false
         }
-        
-        self.calendarView.validated = false
         
         self.calendarView.commitCalendarViewUpdate()
         self.menuView.commitMenuViewUpdate()
         
-        for (_, weekView) in weekContentViewController.weekViews {
-            for dayView in weekView.dayViews {
-                let order = NSCalendar.currentCalendar().compareDate(
-                    date!,
-                    toDate: dayView.date.date,
-                    toUnitGranularity: .Day)
-                
-                if (order == .OrderedSame) {
-                    dayView.setSelectedWithType(.Single)
+        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+            let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
+            
+            for (_, weekView) in weekContentViewController.weekViews {
+                for dayView in weekView.dayViews {
+                    let order = NSCalendar.currentCalendar().compareDate(
+                        date!,
+                        toDate: dayView.date.date,
+                        toUnitGranularity: .Day)
+                    
+                    if (order == .OrderedSame) {
+                        dayView.setSelectedWithType(.Single)
+                    }
                 }
             }
         }

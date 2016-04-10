@@ -16,15 +16,10 @@ class ProgressGeneralViewController: UIViewController {
         super.viewDidLoad()
         
         if let routine = self.repositoryRoutine {
-            let dayTimePeriodFormatter = NSDateFormatter()
-            dayTimePeriodFormatter.dateFormat = "HH:mm"
+            self.startTime.text = routine.getStartTime()
+            self.endTime.text = routine.getLastUpdatedTime()
+            self.workoutLength.text = routine.getWorkoutLength()
             
-            self.startTime.text = dayTimePeriodFormatter.stringFromDate(routine.startTime)
-            self.endTime.text = dayTimePeriodFormatter.stringFromDate(routine.lastUpdatedTime)
-            
-            self.workoutLength.text = "--"
-            
-            // TODO:
             // If numberOfExercises == numberOfExercisesCompleted (100% progress) then:
             // Change label to End Time
         } else {

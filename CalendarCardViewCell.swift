@@ -33,15 +33,9 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
     @IBAction func onClickExport(sender: AnyObject) {
         let mailString = NSMutableString()
         
-        let formatter = NSDateFormatter()
-        formatter.dateStyle = .ShortStyle
-        let date = formatter.stringFromDate(repositoryRoutine!.startTime)
-        
-        let timeFormatter = NSDateFormatter()
-        timeFormatter.timeStyle = .LongStyle
-        
-        let startTime = timeFormatter.stringFromDate(repositoryRoutine!.startTime)
-        let endTime = timeFormatter.stringFromDate(repositoryRoutine!.lastUpdatedTime)
+        let date = repositoryRoutine!.getDate()
+        let startTime = repositoryRoutine!.getStartTime()
+        let lastUpdatedTime = repositoryRoutine!.getLastUpdatedTime()
         
         let exercises = repositoryRoutine?.exercises.filter { (exercise) in
             exercise.visible == true
@@ -61,7 +55,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
                     format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
                     date,
                     startTime,
-                    endTime,
+                    lastUpdatedTime,
                     "1h 10m",
                     "Bodyweight Fitness - Recommended Routine",
                     title,
@@ -72,19 +66,60 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
                     minutes,
                     seconds))
                 
-                index++
+                index += 1
             }
+        }
+        
+        let content = NSMutableString()
+        
+        content.appendString("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
+        
+        var emailTitle: String = "Bodyweight Fitness Workout"
+        
+        if let routine = repositoryRoutine {
+            emailTitle = "Bodyweight Fitness workout for \(routine.getStartTime(true))"
             
+            content.appendString("\n\nWorkout on \(routine.getStartTime(true)).")
+            content.appendString("\nLast Updated at \(routine.getLastUpdatedTime())")
+            content.appendString("\nWorkout length: --")
+        }
+
+        content.appendString("\n\nBodyweight Fitness\nRecommended Routine")
+        
+        let weightUnit = "kg"
+        
+        if let exercises = exercises {
+            for exercise in exercises {
+                content.appendString("\n\n\(exercise.title)")
+                
+                var index = 1
+                for set in exercise.sets {
+                    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
+                    
+                    content.appendString("\nSet \(index)")
+                    
+                    if (set.isTimed) {
+                        content.appendString("\nMinutes: \(minutes)")
+                        content.appendString("\nSeconds: \(seconds)")
+                    } else {
+                        content.appendString("\nReps: \(set.reps)")
+                        content.appendString("\nWeight: \(set.weight) \(weightUnit)")
+                    }
+                    
+                    index += 1
+                }
+            }
+
         }
         
         let data = mailString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        if let content = data {
+        if let c = data {
             if !MFMailComposeViewController.canSendMail() {
                 print("Mail services are not available")
                 return
             }
             
-            let emailViewController = configuredMailComposeViewController(content)
+            let emailViewController = configuredMailComposeViewController(c, subject: emailTitle, messageBody: content as String)
             
             if MFMailComposeViewController.canSendMail() {
                 self.parentController?.presentViewController(emailViewController, animated: true, completion: nil)
@@ -123,23 +158,19 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
         self.parentController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
-    func configuredMailComposeViewController(data: NSData) -> MFMailComposeViewController {
+    func configuredMailComposeViewController(data: NSData, subject: String, messageBody: String) -> MFMailComposeViewController {
         let emailController = MFMailComposeViewController()
         
         emailController.mailComposeDelegate = self
-        emailController.setSubject("CSV File")
-        emailController.setMessageBody("Bodyweight Fitness Summary for: ", isHTML: false)
+        emailController.setSubject(subject)
+        emailController.setMessageBody(messageBody, isHTML: false)
         emailController.addAttachmentData(data, mimeType: "text/csv", fileName: "Workout.csv")
         
         return emailController
     }
     
-    func mailComposeController(controller: MFMailComposeViewController,
-        didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-            // Check the result or perform other tasks.
-            
-            // Dismiss the mail compose view controller.
-            controller.dismissViewControllerAnimated(true, completion: nil)
+    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+        controller.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {

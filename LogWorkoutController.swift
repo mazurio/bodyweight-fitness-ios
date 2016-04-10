@@ -278,7 +278,7 @@ class LogWorkoutController: UIViewController {
         
         setView.customizeAppearance()
         
-        numberOfSetViews++
+        numberOfSetViews += 1
     }
     
     /**
@@ -291,8 +291,6 @@ class LogWorkoutController: UIViewController {
             if let routine = self.routine {
                 let elapsedTime = routine.startTime.timeIntervalSinceDate(routine.lastUpdatedTime)
                 let minutes = (NSInteger(elapsedTime) % 3600) / 60;
-                
-                print(minutes)
                 
                 if (minutes < 120) {
                     routine.lastUpdatedTime = NSDate()

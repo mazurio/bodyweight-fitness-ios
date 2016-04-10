@@ -12,7 +12,9 @@ class ProgressViewController: UIViewController {
         
         self.setNavigationBar()
         
-        self.navigationItem.title = CVDate(date: NSDate()).commonDescription
+        if let routine = repositoryRoutine {
+            self.navigationItem.title = CVDate(date: routine.startTime).commonDescription
+        }
         
         let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
             nibName: "ProgressGeneralViewController",
