@@ -248,7 +248,12 @@ class LogWorkoutController: UIViewController {
                 self.repsLabel.text = "Reps"
                 
                 self.weightNumber.text = "\(set.weight)"
-                self.weightLabel.text = "Weight (lbs)"
+                
+                if PersistenceManager.getWeightUnit() == "lbs" {
+                    self.weightLabel.text = "Weight (lbs)"
+                } else {
+                    self.weightLabel.text = "Weight (kg)"
+                }
             }
         }
     }
@@ -567,7 +572,12 @@ class SetView: UIButton {
                     self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
                     self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
                     self.bottomLabel?.textAlignment = NSTextAlignment.Center
-                    self.bottomLabel?.text = "\(set.weight) lbs"
+                    
+                    if PersistenceManager.getWeightUnit() == "lbs" {
+                        self.bottomLabel?.text = "\(set.weight) lbs"
+                    } else {
+                        self.bottomLabel?.text = "\(set.weight) kg"
+                    }
                     
                     self.addSubview(self.topLabel!)
                     self.addSubview(self.bottomLabel!)

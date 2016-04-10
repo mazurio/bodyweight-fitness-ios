@@ -1,6 +1,14 @@
 import UIKit
 import MessageUI
 
+func getWeightUnit() -> String {
+    if PersistenceManager.getWeightUnit() == "lbs" {
+        return "lbs"
+    } else {
+        return "kg"
+    }
+}
+
 class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
@@ -45,7 +53,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
         
         for exercise in exercises! {
             let title = exercise.title
-            let weightValue: String = "kg"
+            let weightValue = getWeightUnit()
             var index = 1
             
             for set in exercise.sets {
@@ -86,7 +94,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
 
         content.appendString("\n\nBodyweight Fitness\nRecommended Routine")
         
-        let weightUnit = "kg"
+        let weightUnit = getWeightUnit()
         
         if let exercises = exercises {
             for exercise in exercises {

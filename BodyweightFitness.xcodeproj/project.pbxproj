@@ -85,6 +85,7 @@
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
 		73BFEBBA1CBA8A4700B9DDAE /* Material.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
+		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
@@ -266,6 +267,7 @@
 		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
 		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
+		73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = SOURCE_ROOT; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -451,6 +453,7 @@
 				73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */,
 				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */,
 				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */,
+				73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
+				73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */,
 				732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
 				73AA28F31CB7ACC100DEED79 /* DashboardCategoryViewCell.swift in Sources */,
