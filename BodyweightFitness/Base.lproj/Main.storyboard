@@ -900,11 +900,11 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Developed by" id="dgu-yF-vWy">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="PeN-NR-agM" detailTextLabel="f4M-cT-40f" style="IBUITableViewCellStyleSubtitle" id="xsB-3Q-EEf">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="PeN-NR-agM" detailTextLabel="f4M-cT-40f" style="IBUITableViewCellStyleSubtitle" id="xsB-3Q-EEf" customClass="DevelopedByCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="310" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xsB-3Q-EEf" id="NST-TA-unR">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Damian Mazurkiewicz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PeN-NR-agM">
