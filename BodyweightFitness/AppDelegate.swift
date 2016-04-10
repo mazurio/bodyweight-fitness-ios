@@ -1,5 +1,5 @@
 import UIKit
-import MaterialKit
+import Material
 import CoreData
 //import Fabric
 //import Crashlytics
@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var mask: CALayer?
     
-    var sideNavigationViewController: SideNavigationViewController?
+    var sideNavigationViewController: SideNavigationController?
     
     var sideViewController: UIViewController?
     var mainViewController: UIViewController?
@@ -32,13 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         supportViewController = storyboard.instantiateViewControllerWithIdentifier("SupportDeveloperNavigationViewController")
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
         
-        sideNavigationViewController = SideNavigationViewController(
-            mainViewController: mainViewController!,
-            sideViewController: sideViewController!
+        sideNavigationViewController = SideNavigationController(
+            rootViewController: mainViewController!,
+            leftViewController: sideViewController!
         )
         
-        sideNavigationViewController?.setSideViewWidth(260, hidden: false, animated: false)
-        sideNavigationViewController?.toggle()
+        sideNavigationViewController?.setLeftViewWidth(260, hidden: false, animated: false)
+        sideNavigationViewController?.toggleLeftView()
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = sideNavigationViewController!

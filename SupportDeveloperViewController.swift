@@ -19,7 +19,7 @@ class SupportDeveloperViewController: UIViewController, SKProductsRequestDelegat
     }
     
     @IBAction func onClickNavigationItem(sender: AnyObject) {
-        self.sideNavigationViewController?.toggle()
+        self.sideNavigationController?.toggleLeftView()
     }
     
     @IBAction func onClickDonation(sender: AnyObject) {

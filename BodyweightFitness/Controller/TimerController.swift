@@ -30,7 +30,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer?
     
     @IBAction func onClickMenuAction(sender: AnyObject) {
-        sideNavigationViewController?.toggle()
+        self.sideNavigationController?.toggleLeftView()
     }
     
     @IBAction func onClickDashboardAction(sender: AnyObject) {

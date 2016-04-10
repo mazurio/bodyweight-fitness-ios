@@ -29,7 +29,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func timerController() -> TimerController? {
         if let timerController =
-            (sideNavigationViewController?.mainViewController as? UINavigationController)?.viewControllers[0] as? TimerController {
+            (sideNavigationController?.rootViewController as? UINavigationController)?.viewControllers[0] as? TimerController {
                 return timerController
         } else {
             return nil
@@ -95,11 +95,11 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 0:
                 // Home
                 
-                if(sideNavigationViewController?.mainViewController == (appDelegate?.mainViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.mainViewController)!) {
                     break;
                 }
                 
-                sideNavigationViewController?.transitionFromMainViewController(
+                sideNavigationController?.transitionFromRootViewController(
                     (appDelegate?.mainViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
@@ -111,11 +111,11 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 1:
                 // Workout Log
                 
-                if(sideNavigationViewController?.mainViewController == (appDelegate?.calendarViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.calendarViewController)!) {
                     break;
                 }
                 
-                sideNavigationViewController?.transitionFromMainViewController(
+                sideNavigationController?.transitionFromRootViewController(
                     (appDelegate?.calendarViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
@@ -127,11 +127,11 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 2:
                 // Support Developer
                 
-                if(sideNavigationViewController?.mainViewController == (appDelegate?.supportViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.supportViewController)!) {
                     break;
                 }
                 
-                sideNavigationViewController?.transitionFromMainViewController(
+                sideNavigationController?.transitionFromRootViewController(
                     (appDelegate?.supportViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
@@ -143,11 +143,11 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 3:
                 // Settings
                 
-                if(sideNavigationViewController?.mainViewController == (appDelegate?.settingsViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.settingsViewController)!) {
                     break;
                 }
                 
-                sideNavigationViewController?.transitionFromMainViewController(
+                sideNavigationController?.transitionFromRootViewController(
                     (appDelegate?.settingsViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
@@ -160,6 +160,6 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
                 break;
         }
         
-        sideNavigationViewController?.toggle()
+        sideNavigationController?.toggleLeftView()
     }
 }

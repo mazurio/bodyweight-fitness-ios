@@ -248,7 +248,7 @@ class CalendarViewController: UIViewController,
     }
 
     @IBAction func onClickNavigationItem(sender: AnyObject) {
-        self.sideNavigationViewController?.toggle()
+        self.sideNavigationController?.toggleLeftView()
     }
     
     

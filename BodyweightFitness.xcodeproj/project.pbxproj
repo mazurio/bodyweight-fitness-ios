@@ -82,8 +82,10 @@
 		73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */; };
 		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */; };
 		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */; };
+		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
+		73BFEBBA1CBA8A4700B9DDAE /* Material.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
+		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
-		73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
@@ -163,6 +165,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */,
 				732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */,
 				7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */,
 				734B6FF91C4BE8CB00CFB6BD /* Realm.framework.dSYM in CopyFiles */,
@@ -261,6 +264,8 @@
 		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
 		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
 		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
+		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -343,11 +348,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */,
 				732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */,
 				7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */,
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
 				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
-				73D2BCD91C3C625200CE6C00 /* MaterialKit.framework in Frameworks */,
 				7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */,
 				734B6FF11C4BE86100CFB6BD /* Realm.framework in Frameworks */,
 				734B6FF21C4BE86300CFB6BD /* RealmSwift.framework in Frameworks */,
@@ -512,6 +517,20 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
+			isa = PBXGroup;
+			children = (
+				733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */,
+				732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */,
+				7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */,
+				733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */,
+				73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */,
+				734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */,
+				734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */,
+			);
+			name = dSYM;
+			sourceTree = "<group>";
+		};
 		73C8E4AC1C598888005E0248 /* Modal */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,20 +565,16 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73BFEBB71CBA889400B9DDAE /* Material.framework */,
 				732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */,
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
-				733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */,
-				732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */,
-				7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */,
-				733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */,
-				734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */,
-				734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */,
 				7366D8E31C51AD5900819790 /* SwiftCharts.framework */,
 				734B6FE71C4BE84600CFB6BD /* Realm.framework */,
 				734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */,
 				7349F6A11C492729009DBE7B /* Runes.framework */,
 				73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */,
 				73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */,
+				73BFEBBC1CBA8B4900B9DDAE /* dSYM */,
 				734B6F951C4BB72C00CFB6BD /* Calendar */,
 				E0C7E3201B5BC60600EB6389 /* Gifu */,
 			);
@@ -808,6 +823,7 @@
 				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
+				73BFEBBA1CBA8A4700B9DDAE /* Material.framework.dSYM in Resources */,
 				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
 				E0F587851B52733100540104 /* cat_camel.gif in Resources */,
 				E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */,
@@ -838,7 +854,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/MaterialKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",

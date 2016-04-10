@@ -15,7 +15,7 @@ class SettingsController: UITableViewController {
     }
     
     @IBAction func onClickNavigationItem(sender: AnyObject) {
-        self.sideNavigationViewController?.toggle()
+        self.sideNavigationController?.toggleLeftView()
     }
     
     @IBAction func playAudioWhenTimerStopsChanged(sender: AnyObject) {
