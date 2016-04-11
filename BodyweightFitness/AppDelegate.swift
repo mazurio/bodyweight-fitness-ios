@@ -14,7 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sideViewController: UIViewController?
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
-    var supportViewController: UIViewController?
+    var supportDeveloperViewController: UIViewController =
+        UINavigationController(rootViewController: SupportDeveloperViewController()
+    )
+    
     var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -29,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
-        supportViewController = storyboard.instantiateViewControllerWithIdentifier("SupportDeveloperNavigationViewController")
+        
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
         
         sideNavigationViewController = SideNavigationController(

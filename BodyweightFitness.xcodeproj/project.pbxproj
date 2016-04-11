@@ -88,6 +88,7 @@
 		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
 		73BFEBC01CBAE19A00B9DDAE /* DevelopedByCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */; };
 		73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */; };
+		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
@@ -272,6 +273,7 @@
 		73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = SOURCE_ROOT; };
 		73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopedByCell.swift; sourceTree = SOURCE_ROOT; };
 		73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
+		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = SOURCE_ROOT; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -513,6 +515,7 @@
 			isa = PBXGroup;
 			children = (
 				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
+				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -521,6 +524,7 @@
 			isa = PBXGroup;
 			children = (
 				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
+				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -600,7 +604,6 @@
 				73C8E4AC1C598888005E0248 /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
-				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,
 			);
 			name = RefactorController;
@@ -836,6 +839,7 @@
 				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
 				E0F587851B52733100540104 /* cat_camel.gif in Resources */,
 				E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */,
+				73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */,
 				E0F5878D1B52733100540104 /* incline_pushup.gif in Resources */,
 				E0F587981B52733100540104 /* pseudo_planche_pushup.gif in Resources */,
 				E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */,

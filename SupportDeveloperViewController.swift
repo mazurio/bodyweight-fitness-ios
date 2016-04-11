@@ -1,116 +1,32 @@
-import Foundation
+import UIKit
 import StoreKit
 
-class SupportDeveloperViewController: UIViewController, SKProductsRequestDelegate {
-    let productIdentifiers = Set([
-        "com.bodyweight.fitness.donation", "com.bodyweight.fitness.gold"
-    ])
+class SupportDeveloperViewController: UIViewController {
+    init() {
+        super.init(nibName: "SupportDeveloperView", bundle: nil)
+    }
     
-    var donationProduct: SKProduct?
-    var subscribeProduct: SKProduct?
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    var productsArray = Array<SKProduct>()
-
     override func viewDidLoad() {
-        super.viewDidLoad()
+        let menuItem = UIBarButtonItem(
+            image: UIImage(named: "menu"),
+            landscapeImagePhone: nil,
+            style: .Plain,
+            target: self,
+            action: #selector(dismiss))
         
-        self.setNavigationBar()
-        self.requestProductData()
+        menuItem.tintColor = UIColor.primaryDark()
+        
+        self.navigationItem.leftBarButtonItem = menuItem
+        self.navigationItem.title = "Support Developer"
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.primary()
     }
     
-    @IBAction func onClickNavigationItem(sender: AnyObject) {
+    func dismiss(sender: UIBarButtonItem) {
         self.sideNavigationController?.toggleLeftView()
-    }
-    
-    @IBAction func onClickDonation(sender: AnyObject) {
-        if let product = donationProduct {
-            let payment = SKPayment(product: product)
-            
-            SKPaymentQueue.defaultQueue().addPayment(payment)
-        }
-    }
-    
-    @IBAction func onClickSubscribe(sender: AnyObject) {
-        if let product = subscribeProduct {
-            let payment = SKPayment(product: product)
-            
-            SKPaymentQueue.defaultQueue().addPayment(payment)
-        }
-    }
-    
-    @IBAction func onClickRestore(sender: AnyObject) {
-//        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
-        SKPaymentQueue.defaultQueue().restoreCompletedTransactions()
-    }
-    
-    func requestProductData() {
-        if SKPaymentQueue.canMakePayments() {
-            let request = SKProductsRequest(productIdentifiers: self.productIdentifiers)
-            
-            request.delegate = self
-            request.start()
-        } else {
-            print("Cannot make payments, enable in settings!!!!")
-        }
-    }
-    
-    func productsRequest(request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        let products = response.products
-
-        if (products.count != 0) {
-            for product in products {
-                if(product.localizedTitle == "Donation") {
-                    donationProduct = product
-                } else {
-                    subscribeProduct = product
-                }
-                
-                print(product.price)
-                print(product.localizedTitle)
-                print(product.localizedDescription)
-                
-                productsArray.append(product)
-            }
-        } else {
-            print("No products found")
-        }
-    }
-    
-    func paymentQueue(queue: SKPaymentQueue!, updatedTransactions transactions: [AnyObject]!) {
-        for transaction in transactions as! [SKPaymentTransaction] {
-            switch transaction.transactionState {
-            case SKPaymentTransactionState.Purchased:
-                print("Transaction Approved")
-                print("Product Identifier: \(transaction.payment.productIdentifier)")
-                
-                self.deliverProduct(transaction)
-                
-                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-            case SKPaymentTransactionState.Failed:
-                print("Transaction Failed")
-                
-                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-            default:
-                break
-            }
-        }
-    }
-    
-    func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
-        print("Transactions Restored")
-        
-        for transaction:SKPaymentTransaction in queue.transactions {
-            deliverProduct(transaction)
-        }
-        
-        print("restored!")
-    }
-    
-    func deliverProduct(transaction:SKPaymentTransaction) {
-        if transaction.payment.productIdentifier == "com.bodyweight.fitness.donation" {
-            print("Donation!!!! Thanks!!!!")
-        } else if transaction.payment.productIdentifier == "com.bodyweight.fitness.gold" {
-            print("Gold purchased!!!!!!!")
-        }
     }
 }

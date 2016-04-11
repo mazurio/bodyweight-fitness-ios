@@ -127,12 +127,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 2:
                 // Support Developer
                 
-                if(sideNavigationController?.rootViewController == (appDelegate?.supportViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.supportDeveloperViewController)!) {
                     break;
                 }
                 
                 sideNavigationController?.transitionFromRootViewController(
-                    (appDelegate?.supportViewController)!,
+                    (appDelegate?.supportDeveloperViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
                     animations: nil,
