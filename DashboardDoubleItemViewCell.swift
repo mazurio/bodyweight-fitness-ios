@@ -59,8 +59,8 @@ class DashboardDoubleItemViewCell: UITableViewCell {
         self.rightView.layer.cornerRadius = self.rightView.frame.size.width / 2
         self.rightView.clipsToBounds = true
         
-        self.leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onLeftClick:"))
-        self.rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onRightClick:"))
+        self.leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemViewCell.onLeftClick(_:))))
+        self.rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemViewCell.onRightClick(_:))))
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

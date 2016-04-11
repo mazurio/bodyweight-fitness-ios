@@ -48,7 +48,7 @@ class LogWorkoutController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             timerInterval,
             target: self,
-            selector: "increaseReps",
+            selector: #selector(LogWorkoutController.increaseReps),
             userInfo: nil,
             repeats: true)
     }
@@ -59,7 +59,7 @@ class LogWorkoutController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             timerInterval,
             target: self,
-            selector: "decreaseReps",
+            selector: #selector(LogWorkoutController.decreaseReps),
             userInfo: nil,
             repeats: true)
     }
@@ -70,7 +70,7 @@ class LogWorkoutController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             timerInterval,
             target: self,
-            selector: "increaseWeight",
+            selector: #selector(LogWorkoutController.increaseWeight),
             userInfo: nil,
             repeats: true)
     }
@@ -81,7 +81,7 @@ class LogWorkoutController: UIViewController {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             timerInterval,
             target: self,
-            selector: "decreaseWeight",
+            selector: #selector(LogWorkoutController.decreaseWeight),
             userInfo: nil,
             repeats: true)
     }
@@ -95,42 +95,42 @@ class LogWorkoutController: UIViewController {
         
         self.increaseRepsButton.addTarget(
             self,
-            action: "increaseRepsButtonDown:",
+            action: #selector(LogWorkoutController.increaseRepsButtonDown(_:)),
             forControlEvents: .TouchDown)
         
         self.increaseRepsButton.addTarget(
             self,
-            action: "invalidateTimer:",
+            action: #selector(LogWorkoutController.invalidateTimer(_:)),
             forControlEvents: [.TouchUpInside, .TouchUpOutside])
         
         self.decreaseRepsButton.addTarget(
             self,
-            action: "decreaseRepsButtonDown:",
+            action: #selector(LogWorkoutController.decreaseRepsButtonDown(_:)),
             forControlEvents: .TouchDown)
         
         self.decreaseRepsButton.addTarget(
             self,
-            action: "invalidateTimer:",
+            action: #selector(LogWorkoutController.invalidateTimer(_:)),
             forControlEvents: [.TouchUpInside, .TouchUpOutside])
         
         self.increaseWeightButton.addTarget(
             self,
-            action: "increaseWeightButtonDown:",
+            action: #selector(LogWorkoutController.increaseWeightButtonDown(_:)),
             forControlEvents: .TouchDown)
         
         self.increaseWeightButton.addTarget(
             self,
-            action: "invalidateTimer:",
+            action: #selector(LogWorkoutController.invalidateTimer(_:)),
             forControlEvents: [.TouchUpInside, .TouchUpOutside])
         
         self.decreaseWeightButton.addTarget(
             self,
-            action: "decreaseWeightButtonDown:",
+            action: #selector(LogWorkoutController.decreaseWeightButtonDown(_:)),
             forControlEvents: .TouchDown)
         
         self.decreaseWeightButton.addTarget(
             self,
-            action: "invalidateTimer:",
+            action: #selector(LogWorkoutController.invalidateTimer(_:)),
             forControlEvents: [.TouchUpInside, .TouchUpOutside])
         
         self.popupView.layer.borderColor = UIColor.blackColor().CGColor
@@ -268,7 +268,7 @@ class LogWorkoutController: UIViewController {
         let setView = SetView()
         setView.repositorySet = repositorySet
         
-        setView.addTarget(self, action: "pressed:", forControlEvents: .TouchUpInside)
+        setView.addTarget(self, action: #selector(LogWorkoutController.pressed(_:)), forControlEvents: .TouchUpInside)
         setView.widthAnchor.constraintEqualToConstant(70).active = true
         setView.heightAnchor.constraintEqualToConstant(70).active = true
         

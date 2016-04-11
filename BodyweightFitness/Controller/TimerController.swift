@@ -325,7 +325,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             1,
             target: self,
-            selector: Selector("updateTimer"),
+            selector: #selector(TimerController.updateTimer),
             userInfo: nil,
             repeats: true
         )
@@ -390,7 +390,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
                 if let repositoryExercise = repositoryRoutine.exercises.filter({
                     $0.exerciseId == current.exerciseId
                 }).first {
-                    var sets = repositoryExercise.sets
+                    let sets = repositoryExercise.sets
                     
                     try! realm.write {
                         if (sets.count == 1 && sets[0].seconds == 0) {

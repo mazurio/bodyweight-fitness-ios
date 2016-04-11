@@ -31,7 +31,7 @@ class DashboardSingleItemViewCell: UITableViewCell {
         
         self.view.layer.cornerRadius = self.view.frame.size.width / 2
         self.view.clipsToBounds = true
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "onClick:"))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardSingleItemViewCell.onClick(_:))))
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

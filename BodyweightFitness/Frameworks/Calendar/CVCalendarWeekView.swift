@@ -137,8 +137,8 @@ extension CVCalendarWeekView {
                     self.interactiveView = UIView(frame: self.bounds)
                     self.interactiveView.backgroundColor = .clearColor()
                     
-                    let tapRecognizer = UITapGestureRecognizer(target: self, action: "didTouchInteractiveView:")
-                    let pressRecognizer = UILongPressGestureRecognizer(target: self, action: "didPressInteractiveView:")
+                    let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.didTouchInteractiveView))
+                    let pressRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.didPressInteractiveView))
                     pressRecognizer.minimumPressDuration = 0.3
                     
                     self.interactiveView.addGestureRecognizer(pressRecognizer)

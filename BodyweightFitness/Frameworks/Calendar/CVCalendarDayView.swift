@@ -134,7 +134,7 @@ public final class CVCalendarDayView: UIView {
         var month = dateRange.month
         
         if isOut {
-            day > 20 ? month-- : month++
+            day > 20 ? (month -= 1) : (month += 1)
         }
         
         return CVDate(day: day, month: month, week: week, year: year)

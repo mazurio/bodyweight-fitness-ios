@@ -4,10 +4,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var tableView: UITableView!
     
     let routine: Routine = RoutineStream.sharedInstance.routine
-    var currentExercise: Exercise?
-    var timerController: TimerController?
     
     var currentIndexPath: NSIndexPath?
+    
+    var currentExercise: Exercise?
+    var timerController: TimerController?
     
     init() {
         super.init(nibName: "DashboardView", bundle: nil)
@@ -46,7 +47,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             landscapeImagePhone: nil,
             style: .Plain,
             target: self,
-            action: "dismiss:")
+            action: #selector(dismiss))
         
         closeItem.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
         
@@ -54,17 +55,6 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        if let currentIndexPath = currentIndexPath {
-            print(currentIndexPath.row)
-            
-            self.tableView.scrollToRowAtIndexPath(
-                currentIndexPath,
-                atScrollPosition: UITableViewScrollPosition.Middle,
-                animated: true)
-        }
-    }
-
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return routine.categoriesAndSections.count
     }
@@ -222,11 +212,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func setCurrentIndex(exercise: Exercise, indexPath: NSIndexPath) {
-        print("indexing", exercise.title)
-        print("current", currentExercise?.title)
         if let currentExercise = currentExercise {
             if currentExercise === exercise {
-                print("===")
                 self.currentIndexPath = indexPath
             }
         }

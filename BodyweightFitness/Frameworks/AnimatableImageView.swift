@@ -6,7 +6,7 @@ public class AnimatableImageView: UIImageView {
     /// An `Animator` instance that holds the frames of a specific image in memory.
     private var animator: GifuAnimator?
     /// A display link that keeps calling the `updateFrame` method on every screen refresh.
-    private lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: Selector("updateFrame"))
+    private lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: #selector(updateFrame))
     
     /// The size of the frame cache.
     public var framePreloadCount = 5

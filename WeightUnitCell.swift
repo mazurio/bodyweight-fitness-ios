@@ -14,7 +14,7 @@ class WeightUnitCell: UITableViewCell {
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
-            action: "tapResponse:")
+            action: #selector(tapResponse))
         
         tapGesture.numberOfTapsRequired = 1
 
