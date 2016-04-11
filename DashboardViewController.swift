@@ -4,7 +4,10 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet var tableView: UITableView!
     
     let routine: Routine = RoutineStream.sharedInstance.routine
+    var currentExercise: Exercise?
     var timerController: TimerController?
+    
+    var currentIndexPath: NSIndexPath?
     
     init() {
         super.init(nibName: "DashboardView", bundle: nil)
@@ -49,6 +52,17 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.navigationItem.leftBarButtonItem = closeItem
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if let currentIndexPath = currentIndexPath {
+            print(currentIndexPath.row)
+            
+            self.tableView.scrollToRowAtIndexPath(
+                currentIndexPath,
+                atScrollPosition: UITableViewScrollPosition.Middle,
+                animated: true)
+        }
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -119,12 +133,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
           
             if (section.mode == SectionMode.All) {
                 if let exercise = section.exercises[0] as? Exercise {
+                    setCurrentIndex(exercise, indexPath: indexPath)
+                    
                     cell.dashboardViewController = self
                     cell.exercise = exercise
                     cell.title?.text = exercise.title
                 }
             } else {
                 if let exercise = section.currentExercise {
+                    setCurrentIndex(exercise, indexPath: indexPath)
+                    
                     cell.dashboardViewController = self
                     cell.exercise = exercise
                     cell.title?.text = exercise.title
@@ -144,6 +162,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 cell.dashboardViewController = self
                 
                 if (nextExercise.section === exercise.section) {
+                    setCurrentIndex(exercise, indexPath: indexPath)
+                    setCurrentIndex(nextExercise, indexPath: indexPath)
+                    
                     cell.leftExercise = exercise
                     cell.rightExercise = nextExercise
                     
@@ -151,6 +172,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.rightTitle?.text = nextExercise.title
                 } else {
                     let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
+                    
+                    setCurrentIndex(exercise, indexPath: indexPath)
                     
                     cell.dashboardViewController = self
                     cell.exercise = exercise
@@ -162,6 +185,8 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
+                
+                setCurrentIndex(exercise, indexPath: indexPath)
                 
                 cell.dashboardViewController = self
                 cell.exercise = exercise
@@ -194,5 +219,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.timerController?.changeExercise(exercise)
         
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func setCurrentIndex(exercise: Exercise, indexPath: NSIndexPath) {
+        print("indexing", exercise.title)
+        print("current", currentExercise?.title)
+        if let currentExercise = currentExercise {
+            if currentExercise === exercise {
+                print("===")
+                self.currentIndexPath = indexPath
+            }
+        }
     }
 }

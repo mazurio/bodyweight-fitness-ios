@@ -17,10 +17,10 @@ class DashboardSingleItemViewCell: UITableViewCell {
             self._exercise = newValue
             
             if let exercise = newValue {
-                if (exercise.defaultSet == "weighted") {
-                    self.button.setImage(UIImage(named: "weighted"), forState: .Normal)
-                } else {
+                if (exercise.isTimed()) {
                     self.button.setImage(UIImage(named: "timed"), forState: .Normal)
+                } else {
+                    self.button.setImage(UIImage(named: "weighted"), forState: .Normal)
                 }
             }
         }

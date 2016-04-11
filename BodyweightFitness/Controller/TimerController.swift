@@ -24,6 +24,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     var isPlaying = false
     var seconds = PersistenceManager.getTimer()
     var defaultSeconds = PersistenceManager.getTimer()
+    var loggedSeconds = 0
     
     var current: Exercise?
     
@@ -35,6 +36,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     @IBAction func onClickDashboardAction(sender: AnyObject) {
         let dashboard = DashboardViewController()
+        dashboard.currentExercise = current
         dashboard.timerController = self
         
         let controller = UINavigationController(rootViewController: dashboard)
@@ -43,6 +45,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
+        self.stopTimer()
+        
         let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
     
         logWorkoutController.parentController = self.navigationController
@@ -82,6 +86,19 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         setTitle()
     }
     
+    func showNotification(seconds: Int) {
+        let notification = CWStatusBarNotification()
+        notification.notificationLabelFont = UIFont.systemFontOfSize(17)
+        notification.notificationLabelBackgroundColor = UIColor.primary()
+        notification.notificationLabelTextColor = UIColor.primaryDark()
+        
+        notification.notificationStyle = .NavigationBarNotification
+        notification.notificationAnimationInStyle = .Top
+        notification.notificationAnimationOutStyle = .Top
+        
+        notification.displayNotificationWithMessage("Logged \(seconds) seconds", forDuration: 2.0)
+    }
+    
     func setTitle() {
         let navigationBarSize = self.navigationController?.navigationBar.frame.size
         let titleView = self.navigationItem.titleView
@@ -94,6 +111,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     internal func changeExercise(currentExercise: Exercise) {
+        self.loggedSeconds = 0
+        
         self.current = currentExercise
         
         self.exerciseTitle.text = currentExercise.title
@@ -292,6 +311,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             forState: UIControlState.Normal)
         
         timer.invalidate()
+        
+        self.logSeconds()
     }
     
     func startTimer() {
@@ -312,12 +333,16 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     func restartTimer(seconds: Int) {
         stopTimer()
+        
         self.seconds = seconds
+        self.logSeconds()
+        
         updateLabel()
     }
     
     func updateTimer() {
         seconds -= 1
+        loggedSeconds += 1
         
         if(seconds <= 0) {
             restartTimer(defaultSeconds)
@@ -354,6 +379,46 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             print("AVAudioSession errors.")
         }
+    }
+    
+    func logSeconds() {
+        if let current = current {
+            if (loggedSeconds > 1 && current.isTimed()) {
+                let realm = RepositoryStream.sharedInstance.getRealm()
+                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+                
+                if let repositoryExercise = repositoryRoutine.exercises.filter({
+                    $0.exerciseId == current.exerciseId
+                }).first {
+                    var sets = repositoryExercise.sets
+                    
+                    try! realm.write {
+                        if (sets.count == 1 && sets[0].seconds == 0) {
+                            sets[0].seconds = loggedSeconds
+                            
+                            showNotification(loggedSeconds)
+                        } else if (sets.count >= 1 && sets.count < 9) {
+                            let repositorySet = RepositorySet()
+                            
+                            repositorySet.exercise = repositoryExercise
+                            repositorySet.isTimed = true
+                            repositorySet.seconds = loggedSeconds
+                            
+                            sets.append(repositorySet)
+                            
+                            repositoryRoutine.lastUpdatedTime = NSDate()
+                            
+                            showNotification(loggedSeconds)
+                        }
+                        
+                        realm.add(repositoryRoutine, update: true)
+                    }
+                }
+            }
+
+        }
+        
+        loggedSeconds = 0
     }
     
     ///

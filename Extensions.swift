@@ -2,6 +2,16 @@ import UIKit
 
 enum Direction { case In, Out }
 
+extension UIColor {
+    class func primaryDark() -> UIColor {
+        return UIColor(red:0.00, green:0.27, blue:0.24, alpha:1.00)
+    }
+    
+    class func primary() -> UIColor {
+        return UIColor(red:0.00, green:0.59, blue:0.53, alpha:1.00)
+    }
+}
+
 extension UIViewController {
     func setNavigationBar() {
         let titleDict: NSDictionary = [

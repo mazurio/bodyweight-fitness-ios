@@ -22,10 +22,10 @@ class DashboardDoubleItemViewCell: UITableViewCell {
             self._leftExercise = newValue
             
             if let exercise = newValue {
-                if (exercise.defaultSet == "weighted") {
-                    self.leftButton.setImage(UIImage(named: "weighted"), forState: .Normal)
-                } else {
+                if (exercise.isTimed()) {
                     self.leftButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                } else {
+                    self.leftButton.setImage(UIImage(named: "weighted"), forState: .Normal)
                 }
             }
         }
@@ -41,10 +41,10 @@ class DashboardDoubleItemViewCell: UITableViewCell {
             self._rightExercise = newValue
             
             if let exercise = newValue {
-                if (exercise.defaultSet == "weighted") {
-                    self.rightButton.setImage(UIImage(named: "weighted"), forState: .Normal)
-                } else {
+                if (exercise.isTimed()) {
                     self.rightButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                } else {
+                    self.rightButton.setImage(UIImage(named: "weighted"), forState: .Normal)
                 }
             }
         }

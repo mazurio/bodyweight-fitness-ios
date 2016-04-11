@@ -4,8 +4,6 @@ class LogWorkoutController: UIViewController {
     var exercise: RepositoryExercise?
     var routine: RepositoryRoutine?
     
-    @IBOutlet weak var closeButton: UIButton!
-    
     @IBOutlet weak var addSetButton: UIButton!
     @IBOutlet weak var removeSetButton: UIButton!
     
@@ -209,8 +207,6 @@ class LogWorkoutController: UIViewController {
         self.verticalStackView?.hidden = true
         self.actionView?.hidden = false
         
-        self.closeButton?.titleLabel?.text = "Back"
-        
         self.addSetButton?.hidden = true
         self.removeSetButton?.hidden = true
         
@@ -263,8 +259,6 @@ class LogWorkoutController: UIViewController {
         
         self.verticalStackView?.hidden = false
         self.actionView?.hidden = true
-        
-         self.closeButton?.titleLabel?.text = "Close"
         
         self.addSetButton?.hidden = false
         self.removeSetButton?.hidden = false
@@ -329,6 +323,7 @@ class LogWorkoutController: UIViewController {
             }
             
             self.exercise?.sets.append(repositorySet)
+            self.exercise?.sets.append(repositorySet)
             self.addSet(repositorySet)
             
             setLastUpdatedTime()
@@ -361,8 +356,10 @@ class LogWorkoutController: UIViewController {
         if isActionViewShowing {
             self.hideActionView()
         } else {
-            try! realm.write {
-                realm.add(exercise!, update: true)
+            if let exercise = exercise {
+                try! realm.write {
+                    realm.add(exercise, update: true)
+                }
             }
             
             self.parentController?.dim(.Out, alpha: 0.5, speed: 0.5)

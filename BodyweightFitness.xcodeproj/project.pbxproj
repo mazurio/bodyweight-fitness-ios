@@ -87,6 +87,7 @@
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
 		73BFEBC01CBAE19A00B9DDAE /* DevelopedByCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */; };
+		73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
@@ -270,6 +271,7 @@
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
 		73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = SOURCE_ROOT; };
 		73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopedByCell.swift; sourceTree = SOURCE_ROOT; };
+		73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -583,6 +585,7 @@
 				73BFEBBC1CBA8B4900B9DDAE /* dSYM */,
 				734B6F951C4BB72C00CFB6BD /* Calendar */,
 				E0C7E3201B5BC60600EB6389 /* Gifu */,
+				73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -924,6 +927,7 @@
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
+				73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,

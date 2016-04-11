@@ -404,7 +404,7 @@
                                                     <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="onClickButtonClose:" destination="piF-X9-gWe" eventType="touchUpInside" id="ea1-EO-3ev"/>
+                                                    <action selector="onClickButtonClose:" destination="piF-X9-gWe" eventType="touchUpInside" id="iSg-9j-5U7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sZB-Wx-n4Z">
@@ -608,7 +608,6 @@
                     <connections>
                         <outlet property="actionView" destination="oHg-5M-ZgM" id="h5F-Id-BNB"/>
                         <outlet property="addSetButton" destination="4vs-LB-4vT" id="gnY-fQ-wZl"/>
-                        <outlet property="closeButton" destination="XZm-N4-MNn" id="XmG-en-FFp"/>
                         <outlet property="contentView" destination="w6H-lY-nNy" id="BJp-Uq-Bue"/>
                         <outlet property="decreaseRepsButton" destination="yiL-IJ-NC5" id="3hQ-Dq-hJa"/>
                         <outlet property="decreaseWeightButton" destination="mAN-gO-kTD" id="mxY-EL-2e4"/>

@@ -90,6 +90,10 @@ class Exercise: LinkedRoutine {
     func getType() -> RoutineType {
         return type
     }
+    
+    func isTimed() -> Bool {
+        return self.defaultSet == "timed"
+    }
 }
 
 class Routine {
