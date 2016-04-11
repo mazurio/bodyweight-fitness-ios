@@ -44,7 +44,7 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    func setDefaultTimer(onds: Int) {
+    func setDefaultTimer(let seconds: Int) {
         if(seconds <= 5) {
             (_, self.minutes, self.seconds) = secondsToHoursMinutesSeconds(5)
         }

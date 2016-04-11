@@ -299,7 +299,9 @@ extension CVCalendarDayView {
 // MARK: - Dot marker movement
 
 extension CVCalendarDayView {
-    public func moveDotMarkerBack(unwinded: Bool, var coloring: Bool) {
+    public func moveDotMarkerBack(unwinded: Bool, coloring: Bool) {
+        var varColoring = coloring
+        
         for dotMarker in dotMarkers {
 
             if let calendarView = calendarView, let dotMarker = dotMarker {
@@ -335,24 +337,24 @@ extension CVCalendarDayView {
                         transform = unwinded ? CGAffineTransformIdentity : CGAffineTransformMakeTranslation(0, offset)
                         
                         if dotMarker.center.y + offset > CGRectGetMaxY(frame) {
-                            coloring = true
+                            varColoring = true
                         }
                     } else {
                         transform = CGAffineTransformIdentity
                     }
                     
-                    if !coloring {
+                    if !varColoring {
                         UIView.animateWithDuration(0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: UIViewAnimationOptions.CurveEaseOut, animations: {
                             dotMarker.transform = transform
                             }, completion: { _ in
                                 
                         })
                     } else {
-                        moveDotMarkerBack(unwinded, coloring: coloring)
+                        moveDotMarkerBack(unwinded, coloring: varColoring)
                     }
                 }
                 
-                if shouldMove && !coloring {
+                if shouldMove && !varColoring {
                     moveMarker()
                 } else {
                     colorMarker()

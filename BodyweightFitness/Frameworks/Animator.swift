@@ -98,12 +98,14 @@ class GifuAnimator {
         if timeSinceLastFrameChange >= frameDuration {
             timeSinceLastFrameChange -= frameDuration
             let lastFrameIndex = currentFrameIndex
-            currentFrameIndex = ++currentFrameIndex % animatedFrames.count
+            currentFrameIndex += 1
+            currentFrameIndex = currentFrameIndex % animatedFrames.count
             
             // Loads the next needed frame for progressive loading
             if animatedFrames.count < frameCount {
                 animatedFrames[lastFrameIndex] = prepareFrame(currentPreloadIndex)
-                currentPreloadIndex = ++currentPreloadIndex % frameCount
+                currentPreloadIndex += 1
+                currentPreloadIndex = currentPreloadIndex % frameCount
             }
             return true
         }

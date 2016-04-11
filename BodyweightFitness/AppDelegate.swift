@@ -34,7 +34,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
-        
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
         
         sideNavigationViewController = SideNavigationController(
