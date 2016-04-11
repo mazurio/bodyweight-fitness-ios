@@ -1,8 +1,8 @@
 import UIKit
 import Material
 import CoreData
-//import Fabric
-//import Crashlytics
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-//        Fabric.with([Crashlytics()])
+        #if DEBUG
+            Fabric.with([Crashlytics.self])
+        #endif
 
         UITabBar.appearance().backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)

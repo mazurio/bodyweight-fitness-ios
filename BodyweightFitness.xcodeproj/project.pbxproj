@@ -89,6 +89,8 @@
 		73BFEBC01CBAE19A00B9DDAE /* DevelopedByCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */; };
 		73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */; };
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
+		73BFEC061CBC2C9A00B9DDAE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */; };
+		73BFEC071CBC2C9A00B9DDAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
@@ -274,6 +276,8 @@
 		73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevelopedByCell.swift; sourceTree = SOURCE_ROOT; };
 		73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = SOURCE_ROOT; };
+		73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 				7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */,
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
 				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
+				73BFEC061CBC2C9A00B9DDAE /* Fabric.framework in Frameworks */,
+				73BFEC071CBC2C9A00B9DDAE /* Crashlytics.framework in Frameworks */,
 				7349F6A31C492729009DBE7B /* Runes.framework in Frameworks */,
 				734B6FF11C4BE86100CFB6BD /* Realm.framework in Frameworks */,
 				734B6FF21C4BE86300CFB6BD /* RealmSwift.framework in Frameworks */,
@@ -568,6 +574,8 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */,
+				73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */,
 				73BFEBB71CBA889400B9DDAE /* Material.framework */,
 				732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */,
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
@@ -722,6 +730,7 @@
 				E0C7E3481B5BD8B500EB6389 /* Embed App Extensions */,
 				73D2BCDA1C3C625A00CE6C00 /* ShellScript */,
 				73D2BCDB1C3C627200CE6C00 /* CopyFiles */,
+				73BFEBFF1CBC2B8C00B9DDAE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -851,6 +860,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		73BFEBFF1CBC2B8C00B9DDAE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 5dcec45142f2b7beb83af419bcb06344e8598390 f37f74ee55215607611bede5f6fd7baf1a2584de9167cdf7b72947665f50bff0";
+		};
 		73D2BCDA1C3C625A00CE6C00 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
