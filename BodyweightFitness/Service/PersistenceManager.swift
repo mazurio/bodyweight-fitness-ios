@@ -5,6 +5,29 @@ public extension String {
 }
 
 class PersistenceManager {
+    class func getWeightUnit() -> String {
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("weightUnit.archive")
+        
+        if(fileManager.fileExistsAtPath(dataFilePath)) {
+            if let weightUnit = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? String {
+                return weightUnit
+            }
+        }
+        
+        return "kg"
+    }
+    
+    class func setWeightUnit(weightUnit: String) {
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("weightUnit.archive")
+        
+        NSKeyedArchiver.archiveRootObject(weightUnit, toFile: dataFilePath)
+    }
+    
     class func getTimer() -> Int {
         let fileManager = NSFileManager.defaultManager()
         let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)

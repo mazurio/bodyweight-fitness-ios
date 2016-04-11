@@ -4,9 +4,9 @@ import Runes
 /// A subclass of `UIImageView` that can be animated using an image name string or raw data.
 public class AnimatableImageView: UIImageView {
     /// An `Animator` instance that holds the frames of a specific image in memory.
-    private var animator: Animator?
+    private var animator: GifuAnimator?
     /// A display link that keeps calling the `updateFrame` method on every screen refresh.
-    private lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: Selector("updateFrame"))
+    private lazy var displayLink: CADisplayLink = CADisplayLink(target: self, selector: #selector(updateFrame))
     
     /// The size of the frame cache.
     public var framePreloadCount = 5
@@ -30,7 +30,7 @@ public class AnimatableImageView: UIImageView {
     /// - parameter data: GIF image data.
     public func prepareForAnimation(imageData data: NSData) {
         image = UIImage(data: data)
-        animator = Animator(data: data, size: frame.size, contentMode: contentMode, framePreloadCount: framePreloadCount)
+        animator = GifuAnimator(data: data, size: frame.size, contentMode: contentMode, framePreloadCount: framePreloadCount)
         animator?.prepareFrames()
         attachDisplayLink()
     }

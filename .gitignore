@@ -18,8 +18,5 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Crashlytics.framework
-Fabric.framework
-
 Carthage/Checkouts
 Carthage/Build

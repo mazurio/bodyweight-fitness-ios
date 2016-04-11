@@ -4,7 +4,7 @@ import ImageIO
 import Runes
 
 /// Responsible for storing and updating the frames of a `AnimatableImageView` instance via delegation.
-class Animator {
+class GifuAnimator {
     /// Maximum duration to increment the frame timer with.
     private let maxTimeStep = 1.0
     /// An array of animated frames from a single GIF image.
@@ -98,12 +98,14 @@ class Animator {
         if timeSinceLastFrameChange >= frameDuration {
             timeSinceLastFrameChange -= frameDuration
             let lastFrameIndex = currentFrameIndex
-            currentFrameIndex = ++currentFrameIndex % animatedFrames.count
+            currentFrameIndex += 1
+            currentFrameIndex = currentFrameIndex % animatedFrames.count
             
             // Loads the next needed frame for progressive loading
             if animatedFrames.count < frameCount {
                 animatedFrames[lastFrameIndex] = prepareFrame(currentPreloadIndex)
-                currentPreloadIndex = ++currentPreloadIndex % frameCount
+                currentPreloadIndex += 1
+                currentPreloadIndex = currentPreloadIndex % frameCount
             }
             return true
         }

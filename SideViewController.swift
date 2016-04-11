@@ -1,142 +1,165 @@
 import UIKit
 
-class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class HeaderCell: UITableViewCell {
+    @IBOutlet weak var arrowButton: UIButton!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+}
+
+class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var tableView: UITableView!
     
-    let categoryCellIdentifier = "CategoryCell"
-    let sectionCellIdentifier = "SectionCell"
-    let exerciseCellIdentifier = "ExerciseCell"
+    var appDelegate: AppDelegate?
+    
+    var headerCell: UITableViewCell?
+    
+    let menuCellIdentifier = "MenuCell"
+    let headerCellIdentifier = "HeaderCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
-        let header: HeaderViewController = HeaderViewController()
-        header.view.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 150)
-
-        self.addChildViewController(header)
-        self.view.addSubview(header.view)
-
         tableView.delegate = self
         tableView.dataSource = self
     }
     
-    func notifyDataSetChanged() {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.tableView.reloadData()
-        });
-    }
-    
     func timerController() -> TimerController? {
         if let timerController =
-            (sideNavigationViewController?.mainViewController as? UINavigationController)?.viewControllers[0] as? TimerController {
+            (sideNavigationController?.rootViewController as? UINavigationController)?.viewControllers[0] as? TimerController {
                 return timerController
         } else {
             return nil
         }
     }
     
-    //
-    // Return number of sections in the view. This is the sum of categories
-    // and sections.
-    //
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return RoutineStream.sharedInstance.routine.categoriesAndSections.count
+        return 1
     }
     
-    //
-    // Return different view for different sections.
-    //
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if (section == 0) {
+            return 150
+        }
+        
+        return 45
+    }
+    
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let routinePart = RoutineStream.sharedInstance.routine.categoriesAndSections[section] as! LinkedRoutine
+        let cell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
         
-        switch(routinePart.getType()) {
-        case RoutineType.Category:
-            let cell = tableView.dequeueReusableCellWithIdentifier(categoryCellIdentifier) as UITableViewCell!
-            let category = routinePart as! Category
-            
-            cell.textLabel?.text = category.title
-            
-            return cell
-            
-        default:
-            let cell = tableView.dequeueReusableCellWithIdentifier(sectionCellIdentifier) as UITableViewCell!
-            let section = routinePart as! Section
-            
-            cell.textLabel?.text = section.title
-            cell.detailTextLabel?.text = section.desc
-            
-            return cell
-        }
-    }
-    
-    //
-    // Allows to set number of rows in each section.
-    // We set category section to have no rows.
-    // Each section have number of exercises.
-    //
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // category == 0
-        // section == number of exercises
-        
-        let routinePart = RoutineStream.sharedInstance.routine.categoriesAndSections[section] as! LinkedRoutine
-        let type = routinePart.getType()
-        
-        switch(type) {
-        case RoutineType.Category:
-            return 0
-            
-        default:
-            let section = routinePart as! Section
-            
-            if(section.mode == SectionMode.All) {
-                return section.exercises.count
-            } else {
-                return 1
-            }
-        }
-    }
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        // Recycling of cells
-        let cell = tableView.dequeueReusableCellWithIdentifier(exerciseCellIdentifier, forIndexPath: indexPath) as UITableViewCell!
-        
-        // todo: we should use (if let option) to avoid crashes
-        let currentSection = RoutineStream.sharedInstance.routine.categoriesAndSections[indexPath.section] as! Section
-        
-        if currentSection.getType() == RoutineType.Section {
-            let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
-            
-            if(currentSection.mode == SectionMode.All) {
-                cell.textLabel?.text = currentExercise.level
-                cell.detailTextLabel?.text = currentExercise.title
-            } else {
-                cell.textLabel?.text = currentSection.currentExercise?.level
-                cell.detailTextLabel?.text = currentSection.currentExercise?.title
-            }
-        }
+        cell.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+        cell.contentView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
         return cell
     }
     
-    //
-    // Delegate implementation
-    //
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-
-        // Close the drawer
-        sideNavigationViewController?.toggle()
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(menuCellIdentifier, forIndexPath: indexPath) as UITableViewCell!
         
-        // get current exercise
-        let currentSection = RoutineStream.sharedInstance.routine.categoriesAndSections[indexPath.section] as! Section
-        if currentSection.getType() == RoutineType.Section {
-            let currentExercise = currentSection.exercises[indexPath.row] as! Exercise
+        switch(indexPath.row) {
+        case 0:
+            self.tableView.selectRowAtIndexPath(indexPath, animated: false, scrollPosition: UITableViewScrollPosition.None)
             
-            if(currentSection.mode == SectionMode.All) {
-                self.timerController()?.changeExercise(currentExercise)
-            } else {
-                self.timerController()?.changeExercise(currentSection.currentExercise!)
-            }
+            cell.textLabel?.text = "Home"
+            break;
+            
+        case 1:
+            cell.textLabel?.text = "Workout Log"
+            break;
+            
+        case 2:
+            cell.textLabel?.text = "Support Developer"
+            break;
+            
+        case 3:
+            cell.textLabel?.text = "Settings"
+            break;
+            
+        default:
+            break;
         }
+        
+        return cell
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        switch(indexPath.row) {
+            case 0:
+                // Home
+                
+                if(sideNavigationController?.rootViewController == (appDelegate?.mainViewController)!) {
+                    break;
+                }
+                
+                sideNavigationController?.transitionFromRootViewController(
+                    (appDelegate?.mainViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
+                break;
+                
+            case 1:
+                // Workout Log
+                
+                if(sideNavigationController?.rootViewController == (appDelegate?.calendarViewController)!) {
+                    break;
+                }
+                
+                sideNavigationController?.transitionFromRootViewController(
+                    (appDelegate?.calendarViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
+                break;
+                
+            case 2:
+                // Support Developer
+                
+                if(sideNavigationController?.rootViewController == (appDelegate?.supportDeveloperViewController)!) {
+                    break;
+                }
+                
+                sideNavigationController?.transitionFromRootViewController(
+                    (appDelegate?.supportDeveloperViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
+                break;
+                
+            case 3:
+                // Settings
+                
+                if(sideNavigationController?.rootViewController == (appDelegate?.settingsViewController)!) {
+                    break;
+                }
+                
+                sideNavigationController?.transitionFromRootViewController(
+                    (appDelegate?.settingsViewController)!,
+                    duration: 0,
+                    options: UIViewAnimationOptions.CurveEaseIn,
+                    animations: nil,
+                    completion: nil)
+                
+                break;
+                
+            default:
+                break;
+        }
+        
+        sideNavigationController?.toggleLeftView()
     }
 }

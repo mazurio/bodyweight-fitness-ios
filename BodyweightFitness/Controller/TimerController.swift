@@ -1,8 +1,15 @@
 import UIKit
 import AVFoundation
+import SwiftCharts
 
 class TimerController: UIViewController, AVAudioPlayerDelegate {
+    @IBOutlet var exerciseTitle: UILabel!
+    @IBOutlet var sectionTitle: UILabel!
+    @IBOutlet var exerciseDescription: UILabel!
+    
     @IBOutlet var menuButton: UIBarButtonItem!
+    @IBOutlet var dashboardButton: UIBarButtonItem!
+    
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var timerMinutesButton: UIButton!
     @IBOutlet var timerButton: UIButton!
@@ -17,22 +24,44 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     var isPlaying = false
     var seconds = PersistenceManager.getTimer()
     var defaultSeconds = PersistenceManager.getTimer()
+    var loggedSeconds = 0
     
     var current: Exercise?
     
     var audioPlayer: AVAudioPlayer?
-    var actionButtonDelegate: UIActionSheetDelegate?
-    var chooseProgressionDelegate: UIActionSheetDelegate?
     
     @IBAction func onClickMenuAction(sender: AnyObject) {
-        sideNavigationViewController?.toggle()
+        self.sideNavigationController?.toggleLeftView()
     }
     
+    @IBAction func onClickDashboardAction(sender: AnyObject) {
+        let dashboard = DashboardViewController()
+        dashboard.currentExercise = current
+        dashboard.timerController = self
+        
+        let controller = UINavigationController(rootViewController: dashboard)
+        
+        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
+        self.stopTimer()
+        
+        let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
+    
+        logWorkoutController.parentController = self.navigationController
+        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+    
+        self.navigationController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
+        self.navigationController?.modalPresentationStyle = .CurrentContext
+        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.actionButtonDelegate = ActionButtonDelegate(timerController: self)
-        self.chooseProgressionDelegate = ChooseProgressionDelegate(timerController: self)
+        self.setNavigationBar()
         
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
 
@@ -41,22 +70,67 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        setTitle()
+    }
+    
+    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
+        setTitle()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        
+        setTitle()
+    }
+    
+    func showNotification(seconds: Int) {
+        let notification = CWStatusBarNotification()
+        notification.notificationLabelFont = UIFont.systemFontOfSize(17)
+        notification.notificationLabelBackgroundColor = UIColor.primary()
+        notification.notificationLabelTextColor = UIColor.primaryDark()
+        
+        notification.notificationStyle = .NavigationBarNotification
+        notification.notificationAnimationInStyle = .Top
+        notification.notificationAnimationOutStyle = .Top
+        
+        notification.displayNotificationWithMessage("Logged \(seconds) seconds", forDuration: 2.0)
+    }
+    
+    func setTitle() {
+        let navigationBarSize = self.navigationController?.navigationBar.frame.size
+        let titleView = self.navigationItem.titleView
+        var titleViewFrame = titleView?.frame
+        titleViewFrame?.size = navigationBarSize!
+        self.navigationItem.titleView?.frame = titleViewFrame!
+        
+        titleView?.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
+        titleView?.autoresizesSubviews = true
+    }
+    
     internal func changeExercise(currentExercise: Exercise) {
+        self.loggedSeconds = 0
+        
         self.current = currentExercise
         
-        setNavigationBarTitle(currentExercise.title)
+        self.exerciseTitle.text = currentExercise.title
+        self.exerciseDescription.text = currentExercise.desc
+        self.sectionTitle.text = currentExercise.section?.title
+        
         restartTimer(defaultSeconds)
         setGifImage(currentExercise.id)
         
-//        if (currentExercise.section?.mode == SectionMode.All) {
-//            if let image = UIImage(named: "plus") {
-//                actionButton.setImage(image, forState: .Normal)
-//            }
-//        } else {
-//            if let image = UIImage(named: "progression") {
-//                actionButton.setImage(image, forState: .Normal)
-//            }
-//        }
+        if (currentExercise.section?.mode == SectionMode.All) {
+            if let image = UIImage(named: "plus") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        } else {
+            if let image = UIImage(named: "progression") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        }
         
         if let _ = self.current?.previous {
             previousButton.hidden = false
@@ -80,27 +154,104 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {
-        if let _ = current?.section?.exercises {
-            let sheet = UIActionSheet(
-                title: nil,
-                delegate: actionButtonDelegate,
-                cancelButtonTitle: "Cancel",
-                destructiveButtonTitle: nil)
-            
-            sheet.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
-      
-            sheet.addButtonWithTitle("Watch on YouTube")
-            
-            addChooseProgressionButton(sheet)
-            
-            sheet.showInView(self.view)
+        guard let button = sender as? UIView else {
+            return
         }
-    }
-    
-    func addChooseProgressionButton(sheet: UIActionSheet) {
-        if(current?.section?.mode == SectionMode.Levels || current?.section?.mode == SectionMode.Pick) {
-            sheet.addButtonWithTitle("Choose Progression")
+        
+        let alertController = UIAlertController(
+            title: nil,
+            message: nil,
+            preferredStyle: .ActionSheet)
+        
+        alertController.popoverPresentationController
+        alertController.modalPresentationStyle = .Popover
+        
+        if let presenter = alertController.popoverPresentationController {
+            presenter.sourceView = button;
+            presenter.sourceRect = button.bounds;
         }
+
+        // ... Cancel Action
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        // ... Watch on YouTube Action
+        alertController.addAction(
+            UIAlertAction(title: "Watch on YouTube", style: .Default) { (action) in
+                /// ... Watch on YouTube
+                if let youTubeId = self.current?.youTubeId {
+                    if let requestUrl = NSURL(string: "https://www.youtube.com/watch?v=" + youTubeId) {
+                        UIApplication.sharedApplication().openURL(requestUrl)
+                    }
+                }
+            }
+        )
+        
+        // ... Today's Workout Action
+        alertController.addAction(UIAlertAction(title: "Today's Workout", style: .Default) { (action) in
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            
+            self.navigationItem.backBarButtonItem = backItem
+            
+            let progressViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProgressViewController") as! ProgressViewController
+            
+            progressViewController.setRoutine(NSDate(), repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+            
+            self.showViewController(progressViewController, sender: nil)
+            }
+        )
+        
+        // ... Choose Progression Action
+        if let currentSection = current?.section {
+            if (currentSection.mode == .Levels || currentSection.mode == .Pick) {
+                // ... Choose Progression
+                alertController.addAction(
+                    UIAlertAction(title: "Choose Progression", style: .Default) { (action) in
+                        if let exercises = self.current?.section?.exercises {
+                            let alertController = UIAlertController(
+                                title: "Choose Progression",
+                                message: nil,
+                                preferredStyle: .ActionSheet)
+                            
+                            alertController.modalPresentationStyle = .Popover
+                            
+                            if let presenter = alertController.popoverPresentationController {
+                                presenter.sourceView = button;
+                                presenter.sourceRect = button.bounds;
+                            }
+                            
+                            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+                            
+                            for anyExercise in exercises {
+                                if let exercise = anyExercise as? Exercise {
+                                    var title = ""
+                                    
+                                    if(exercise.section?.mode == SectionMode.Levels) {
+                                        title = "\(exercise.level): \(exercise.title)"
+                                    } else {
+                                        title = "\(exercise.title)"
+                                    }
+                                    
+                                    alertController.addAction(
+                                        UIAlertAction(title: title, style: .Default) { (action) in
+                                            RoutineStream.sharedInstance.routine.setProgression(exercise)
+                                            
+                                            self.changeExercise(exercise)
+                                            
+                                            PersistenceManager.storeRoutine(RoutineStream.sharedInstance.routine)
+                                        }
+                                    )
+                                }
+                            }
+                            
+                            self.presentViewController(alertController, animated: true, completion: nil)
+                        }
+                    }
+                )
+            }
+        }
+        
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     ///
@@ -127,7 +278,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     func setTimeAction() {
         if let seconds = self.timePickerController?.getTotalSeconds() {
             self.defaultSeconds = seconds
-            restartTimer(self.defaultSeconds)
+            self.restartTimer(seconds)
             
             PersistenceManager.storeTimer(self.defaultSeconds)
         }
@@ -179,6 +330,8 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             forState: UIControlState.Normal)
         
         timer.invalidate()
+        
+        self.logSeconds()
     }
     
     func startTimer() {
@@ -191,7 +344,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             1,
             target: self,
-            selector: Selector("updateTimer"),
+            selector: #selector(TimerController.updateTimer),
             userInfo: nil,
             repeats: true
         )
@@ -199,12 +352,16 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     func restartTimer(seconds: Int) {
         stopTimer()
+        
         self.seconds = seconds
+        self.logSeconds()
+        
         updateLabel()
     }
     
     func updateTimer() {
         seconds -= 1
+        loggedSeconds += 1
         
         if(seconds <= 0) {
             restartTimer(defaultSeconds)
@@ -241,6 +398,46 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             print("AVAudioSession errors.")
         }
+    }
+    
+    func logSeconds() {
+        if let current = current {
+            if (loggedSeconds > 1 && current.isTimed()) {
+                let realm = RepositoryStream.sharedInstance.getRealm()
+                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+                
+                if let repositoryExercise = repositoryRoutine.exercises.filter({
+                    $0.exerciseId == current.exerciseId
+                }).first {
+                    let sets = repositoryExercise.sets
+                    
+                    try! realm.write {
+                        if (sets.count == 1 && sets[0].seconds == 0) {
+                            sets[0].seconds = loggedSeconds
+                            
+                            showNotification(loggedSeconds)
+                        } else if (sets.count >= 1 && sets.count < 9) {
+                            let repositorySet = RepositorySet()
+                            
+                            repositorySet.exercise = repositoryExercise
+                            repositorySet.isTimed = true
+                            repositorySet.seconds = loggedSeconds
+                            
+                            sets.append(repositorySet)
+                            
+                            repositoryRoutine.lastUpdatedTime = NSDate()
+                            
+                            showNotification(loggedSeconds)
+                        }
+                        
+                        realm.add(repositoryRoutine, update: true)
+                    }
+                }
+            }
+
+        }
+        
+        loggedSeconds = 0
     }
     
     ///
@@ -281,30 +478,5 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     ///
     func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-    
-    ///
-    /// Set title of the navigation bar.
-    ///
-    func setNavigationBarTitle(title: String) {
-        navigationItem.title = title
-    }
-    
-    func setNavigationBar() {
-        //
-        // Apply primary dark color to the title in navigation bar.
-        //
-        let titleDict: NSDictionary = [
-            NSForegroundColorAttributeName: UIColor(red:0, green:0.27, blue:0.24, alpha:1)
-        ]
-        
-        navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
-        
-        navigationController!.navigationBar.translucent = true
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.setBackgroundImage(
-            UIImage(),
-            forBarMetrics: UIBarMetrics.Default
-        )
     }
 }

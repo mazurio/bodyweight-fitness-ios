@@ -18,11 +18,13 @@ protocol LinkedRoutine: class {
 }
 
 class Category: LinkedRoutine {
+    let categoryId: String
     let type: RoutineType = RoutineType.Category
     let title: String
     var sections: NSMutableArray = []
     
-    init(title: String) {
+    init(categoryId: String, title: String) {
+        self.categoryId = categoryId
         self.title = title
     }
     
@@ -36,6 +38,7 @@ class Category: LinkedRoutine {
 }
 
 class Section: LinkedRoutine {
+    let sectionId: String
     let type: RoutineType = RoutineType.Section
     let mode: SectionMode
     let title: String
@@ -44,7 +47,8 @@ class Section: LinkedRoutine {
     var currentExercise: Exercise?
     var exercises: NSMutableArray = []
     
-    init(title: String, desc: String, mode: SectionMode) {
+    init(sectionId: String, title: String, desc: String, mode: SectionMode) {
+        self.sectionId = sectionId
         self.title = title
         self.desc = desc
         self.mode = mode
@@ -62,25 +66,33 @@ class Section: LinkedRoutine {
 class Exercise: LinkedRoutine {
     let type: RoutineType = RoutineType.Exercise
     let id: String
+    let exerciseId: String
     let level: String
     let title: String
     let desc: String
     let youTubeId: String
+    let defaultSet: String
     var category: Category?
     var section: Section?
     var previous: Exercise?
     var next: Exercise?
     
-    init(id: String, level: String, title: String, desc: String, youTubeId: String) {
+    init(id: String, exerciseId: String, level: String, title: String, desc: String, youTubeId: String, defaultSet: String) {
         self.id = id
+        self.exerciseId = exerciseId
         self.level = level
         self.title = title
         self.desc = desc
         self.youTubeId = youTubeId
+        self.defaultSet = defaultSet
     }
     
     func getType() -> RoutineType {
         return type
+    }
+    
+    func isTimed() -> Bool {
+        return self.defaultSet == "timed"
     }
 }
 
@@ -105,7 +117,9 @@ class Routine {
         for(_, item):(String, JSON) in json["routine"] {
             switch item["type"] {
             case "category":
-                let category = Category(title: item["title"].stringValue)
+                let category = Category(
+                    categoryId: item["categoryId"].stringValue,
+                    title: item["title"].stringValue)
                 
                 categories.addObject(category)
                 categoriesAndSections.addObject(category)
@@ -114,6 +128,7 @@ class Routine {
                 currentCategory = category
             case "section":
                 let section = Section(
+                    sectionId: item["sectionId"].stringValue,
                     title: item["title"].stringValue,
                     desc: item["description"].stringValue,
                     mode: getMode(item["mode"].stringValue))
@@ -128,10 +143,12 @@ class Routine {
             case "exercise":
                 let exercise = Exercise(
                     id: item["id"].stringValue,
+                    exerciseId: item["exerciseId"].stringValue,
                     level: item["level"].stringValue,
                     title: item["title"].stringValue,
                     desc: item["description"].stringValue,
-                    youTubeId: item["youTubeId"].stringValue)
+                    youTubeId: item["youTubeId"].stringValue,
+                    defaultSet: item["defaultSet"].stringValue)
 
                 exercise.category = currentCategory
                 exercise.section = currentSection
@@ -215,10 +232,10 @@ class Routine {
     ///
     func loadRoutineFromFile() -> NSData {
         let fileRoot = NSBundle.mainBundle().pathForResource("Routine", ofType: "json")!
-        
-        if let data: AnyObject = NSData.dataWithContentsOfMappedFile(fileRoot) {
-            return data as! NSData
-        } else {
+
+        do {
+            return try NSData(contentsOfFile: fileRoot, options: .DataReadingMappedIfSafe)
+        } catch _ {
             return NSData()
         }
     }
