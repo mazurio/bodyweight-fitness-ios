@@ -34,6 +34,7 @@ class LogWorkoutController: UIViewController {
     var decreaseWeightTimer: NSTimer?
     
     let timerInterval = 0.15
+    let weightTimerInterval = 0.05
     
     var numberOfSetViews = 0
     var updateLastUpdatedTime = true
@@ -78,7 +79,7 @@ class LogWorkoutController: UIViewController {
         increaseWeight()
         
         increaseWeightTimer = NSTimer.scheduledTimerWithTimeInterval(
-            timerInterval,
+            weightTimerInterval,
             target: self,
             selector: #selector(LogWorkoutController.increaseWeight),
             userInfo: nil,
@@ -91,7 +92,7 @@ class LogWorkoutController: UIViewController {
         decreaseWeight()
         
         decreaseWeightTimer = NSTimer.scheduledTimerWithTimeInterval(
-            timerInterval,
+            weightTimerInterval,
             target: self,
             selector: #selector(LogWorkoutController.decreaseWeight),
             userInfo: nil,
@@ -399,7 +400,7 @@ class LogWorkoutController: UIViewController {
         try! realm.write {
             if let set = set {
                 if set.isTimed {
-                    if set.seconds / 60 >= 5 {
+                    if set.seconds / 60 >= 15 {
                         return;
                     }
                     
