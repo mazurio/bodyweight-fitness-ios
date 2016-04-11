@@ -41,96 +41,95 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
     @IBAction func onClickExport(sender: AnyObject) {
         let mailString = NSMutableString()
         
-        let date = repositoryRoutine!.getDate()
-        let startTime = repositoryRoutine!.getStartTime()
-        let lastUpdatedTime = repositoryRoutine!.getLastUpdatedTime()
-        
-        let exercises = repositoryRoutine?.exercises.filter { (exercise) in
-            exercise.visible == true
-        }
-        
-        mailString.appendString("Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds\n")
-        
-        for exercise in exercises! {
-            let title = exercise.title
-            let weightValue = getWeightUnit()
-            var index = 1
-            
-            for set in exercise.sets {
-                let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
-                
-                mailString.appendString(String(
-                    format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
-                    date,
-                    startTime,
-                    lastUpdatedTime,
-                    "1h 10m",
-                    "Bodyweight Fitness - Recommended Routine",
-                    title,
-                    index,
-                    set.weight,
-                    weightValue,
-                    set.reps,
-                    minutes,
-                    seconds))
-                
-                index += 1
-            }
-        }
-        
-        let content = NSMutableString()
-        
-        content.appendString("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
-        
-        var emailTitle: String = "Bodyweight Fitness Workout"
-        
         if let routine = repositoryRoutine {
-            emailTitle = "Bodyweight Fitness workout for \(routine.getStartTime(true))"
+            let helper = RepositoryRoutineHelper(repositoryRoutine: routine)
             
-            content.appendString("\n\nWorkout on \(routine.getStartTime(true)).")
-            content.appendString("\nLast Updated at \(routine.getLastUpdatedTime())")
-            content.appendString("\nWorkout length: --")
-        }
-
-        content.appendString("\n\nBodyweight Fitness\nRecommended Routine")
-        
-        let weightUnit = getWeightUnit()
-        
-        if let exercises = exercises {
-            for exercise in exercises {
-                content.appendString("\n\n\(exercise.title)")
-                
+            let date = helper.getDate()
+            let startTime = helper.getStartTime()
+            let lastUpdatedTime = helper.getLastUpdatedTime()
+            
+            let exercises = repositoryRoutine?.exercises.filter { (exercise) in
+                exercise.visible == true
+            }
+            
+            mailString.appendString("Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds\n")
+            
+            for exercise in exercises! {
+                let title = exercise.title
+                let weightValue = getWeightUnit()
                 var index = 1
+                
                 for set in exercise.sets {
                     let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
                     
-                    content.appendString("\nSet \(index)")
-                    
-                    if (set.isTimed) {
-                        content.appendString("\nMinutes: \(minutes)")
-                        content.appendString("\nSeconds: \(seconds)")
-                    } else {
-                        content.appendString("\nReps: \(set.reps)")
-                        content.appendString("\nWeight: \(set.weight) \(weightUnit)")
-                    }
+                    mailString.appendString(String(
+                        format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
+                        date,
+                        startTime,
+                        lastUpdatedTime,
+                        "1h 10m",
+                        "Bodyweight Fitness - Recommended Routine",
+                        title,
+                        index,
+                        set.weight,
+                        weightValue,
+                        set.reps,
+                        minutes,
+                        seconds))
                     
                     index += 1
                 }
             }
-
-        }
-        
-        let data = mailString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        if let c = data {
-            if !MFMailComposeViewController.canSendMail() {
-                print("Mail services are not available")
-                return
+            
+            let content = NSMutableString()
+            let emailTitle = "Bodyweight Fitness workout for \(helper.getStartTime(true))"
+            
+            content.appendString("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
+            
+            content.appendString("\n\nWorkout on \(helper.getStartTime(true)).")
+            content.appendString("\nLast Updated at \(helper.getLastUpdatedTime())")
+            content.appendString("\nWorkout length: --")
+            
+            content.appendString("\n\nBodyweight Fitness\nRecommended Routine")
+            
+            let weightUnit = getWeightUnit()
+            
+            if let exercises = exercises {
+                for exercise in exercises {
+                    content.appendString("\n\n\(exercise.title)")
+                    
+                    var index = 1
+                    for set in exercise.sets {
+                        let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
+                        
+                        content.appendString("\nSet \(index)")
+                        
+                        if (set.isTimed) {
+                            content.appendString("\nMinutes: \(minutes)")
+                            content.appendString("\nSeconds: \(seconds)")
+                        } else {
+                            content.appendString("\nReps: \(set.reps)")
+                            content.appendString("\nWeight: \(set.weight) \(weightUnit)")
+                        }
+                        
+                        index += 1
+                    }
+                }
+                
             }
             
-            let emailViewController = configuredMailComposeViewController(c, subject: emailTitle, messageBody: content as String)
-            
-            if MFMailComposeViewController.canSendMail() {
-                self.parentController?.presentViewController(emailViewController, animated: true, completion: nil)
+            let data = mailString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+            if let c = data {
+                if !MFMailComposeViewController.canSendMail() {
+                    print("Mail services are not available")
+                    return
+                }
+                
+                let emailViewController = configuredMailComposeViewController(c, subject: emailTitle, messageBody: content as String)
+                
+                if MFMailComposeViewController.canSendMail() {
+                    self.parentController?.presentViewController(emailViewController, animated: true, completion: nil)
+                }
             }
         }
     }

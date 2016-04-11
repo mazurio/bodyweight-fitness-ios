@@ -1,38 +1,18 @@
 import Foundation
 import RealmSwift
 
-func stringFromTimeInterval(interval: NSTimeInterval) -> (Int, Int) {
-    let interval = Int(interval)
+class RepositoryRoutineHelper {
+    let repositoryRoutine: RepositoryRoutine
     
-    let minutes = (interval / 60) % 60
-    let hours = (interval / 3600)
-    
-    return (hours, minutes)
-}
-
-class RepositoryRoutine: Object {
-    dynamic var id = "Routine-" + NSUUID().UUIDString
-    dynamic var routineId = "routine0"
-    dynamic var startTime = NSDate()
-    dynamic var lastUpdatedTime = NSDate()
-    
-    let categories = List<RepositoryCategory>()
-    let sections = List<RepositorySection>()
-    let exercises = List<RepositoryExercise>()
-    
-    override static func primaryKey() -> String? {
-        return "id"
-    }
-    
-    override static func indexedProperties() -> [String] {
-        return ["routineId"]
+    init(repositoryRoutine: RepositoryRoutine) {
+        self.repositoryRoutine = repositoryRoutine
     }
     
     func getDate() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "EEEE, d MMMM YYYY"
         
-        return formatter.stringFromDate(startTime)
+        return formatter.stringFromDate(repositoryRoutine.startTime)
     }
     
     func getStartTime(longFormat: Bool = false) -> String {
@@ -40,24 +20,24 @@ class RepositoryRoutine: Object {
             let formatter = NSDateFormatter()
             formatter.dateFormat = "EEEE, d MMMM YYYY - HH:mm"
             
-            return formatter.stringFromDate(startTime)
+            return formatter.stringFromDate(repositoryRoutine.startTime)
         }
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm"
         
-        return formatter.stringFromDate(startTime)
+        return formatter.stringFromDate(repositoryRoutine.startTime)
     }
     
     func getLastUpdatedTime() -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = "HH:mm"
         
-        return formatter.stringFromDate(lastUpdatedTime)
+        return formatter.stringFromDate(repositoryRoutine.lastUpdatedTime)
     }
     
     func getWorkoutLength() -> String {
-        let interval = lastUpdatedTime.timeIntervalSinceDate(startTime)
+        let interval = repositoryRoutine.lastUpdatedTime.timeIntervalSinceDate(repositoryRoutine.startTime)
         
         let (hours, minutes) = stringFromTimeInterval(interval)
         
@@ -74,7 +54,7 @@ class RepositoryRoutine: Object {
     
     func completedExercises() -> Int {
         var completed = 0
-        for exercise in exercises {
+        for exercise in repositoryRoutine.exercises {
             if exercise.visible {
                 let firstSet = exercise.sets[0]
                 
@@ -94,7 +74,7 @@ class RepositoryRoutine: Object {
     }
     
     func totalExercises() -> Int {
-        return exercises.filter({
+        return repositoryRoutine.exercises.filter({
             $0.visible == true
         }).count
     }
@@ -105,5 +85,33 @@ class RepositoryRoutine: Object {
     
     func isCompleted() -> Bool {
         return exercisesLeft() == 0
+    }
+    
+    private func stringFromTimeInterval(interval: NSTimeInterval) -> (Int, Int) {
+        let interval = Int(interval)
+        
+        let minutes = (interval / 60) % 60
+        let hours = (interval / 3600)
+        
+        return (hours, minutes)
+    }
+}
+
+class RepositoryRoutine: Object {
+    dynamic var id = "Routine-" + NSUUID().UUIDString
+    dynamic var routineId = "routine0"
+    dynamic var startTime = NSDate()
+    dynamic var lastUpdatedTime = NSDate()
+    
+    let categories = List<RepositoryCategory>()
+    let sections = List<RepositorySection>()
+    let exercises = List<RepositoryExercise>()
+    
+    override static func primaryKey() -> String? {
+        return "id"
+    }
+    
+    override static func indexedProperties() -> [String] {
+        return ["routineId"]
     }
 }

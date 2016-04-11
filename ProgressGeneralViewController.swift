@@ -68,30 +68,32 @@ class ProgressGeneralViewController: UIViewController {
         super.viewDidLoad()
         
         if let routine = self.repositoryRoutine {
-            self.startTime.text = routine.getStartTime()
-            self.endTime.text = routine.getLastUpdatedTime()
-            self.workoutLength.text = routine.getWorkoutLength()
+            let helper = RepositoryRoutineHelper(repositoryRoutine: routine)
             
-            if routine.isCompleted() {
+            self.startTime.text = helper.getStartTime()
+            self.endTime.text = helper.getLastUpdatedTime()
+            self.workoutLength.text = helper.getWorkoutLength()
+            
+            if helper.isCompleted() {
                 self.endTimeLabel.text = "End Time"
                 self.progressTextLabel.text = "Congratulations!"
                 self.progressValueLabel.text = "100%"
             } else {
                 self.endTimeLabel.text = "Last Updated Time"
                 
-                if routine.exercisesLeft() == 1 {
+                if helper.exercisesLeft() == 1 {
                     self.progressTextLabel.text = "1 exercise to go"
                 } else {
-                    self.progressTextLabel.text = "\(routine.exercisesLeft()) exercises to go"
+                    self.progressTextLabel.text = "\(helper.exercisesLeft()) exercises to go"
                 }
                 
-                let onePercent: Double = 1 / Double(routine.totalExercises()) * 100
-                let progress: Int = Int(Double(routine.completedExercises()) * onePercent)
+                let onePercent: Double = 1 / Double(helper.totalExercises()) * 100
+                let progress: Int = Int(Double(helper.completedExercises()) * onePercent)
                 
                 self.progressValueLabel.text = "\(progress)%"
             }
             
-            self.circleGraphView.endArc = 0.0476 * CGFloat(routine.completedExercises())
+            self.circleGraphView.endArc = 0.0476 * CGFloat(helper.completedExercises())
         } else {
             self.startTime.text = "--"
             self.endTime.text = "--"
