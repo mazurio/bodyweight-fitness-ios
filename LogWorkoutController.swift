@@ -323,7 +323,6 @@ class LogWorkoutController: UIViewController {
             }
             
             self.exercise?.sets.append(repositorySet)
-            self.exercise?.sets.append(repositorySet)
             self.addSet(repositorySet)
             
             setLastUpdatedTime()
