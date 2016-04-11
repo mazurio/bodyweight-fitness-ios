@@ -14,10 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var sideViewController: UIViewController?
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
-    var supportDeveloperViewController: UIViewController =
-        UINavigationController(rootViewController: SupportDeveloperViewController()
-    )
-    
+    var supportDeveloperViewController: UIViewController = UINavigationController(rootViewController: SupportDeveloperViewController())
     var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -29,9 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController")
-            as! SideViewController
         
+        sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")

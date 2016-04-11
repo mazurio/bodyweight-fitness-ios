@@ -19,5 +19,4 @@ class CardView: UIView {
         layer.shadowOpacity = shadowOpacity
         layer.shadowPath = shadowPath.CGPath
     }
-
 }

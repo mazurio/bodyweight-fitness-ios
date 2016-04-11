@@ -16,7 +16,6 @@
 		732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */; };
 		732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */; };
 		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
-		732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */; };
 		732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */; };
 		732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */; };
 		732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */; };
@@ -204,7 +203,6 @@
 		732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = SOURCE_ROOT; };
 		732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
-		732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = SOURCE_ROOT; };
 		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
 		732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCardViewCell.swift; sourceTree = SOURCE_ROOT; };
 		732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCardViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -397,6 +395,7 @@
 			isa = PBXGroup;
 			children = (
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
+				7366D8E01C51810600819790 /* Extensions.swift */,
 				E078934D1B472CCD001195AC /* Model */,
 				E078934C1B472CAF001195AC /* View */,
 				73BA31BC1CB83A9B001784F7 /* Controller */,
@@ -427,14 +426,6 @@
 			);
 			name = BodyweightFitnessTests;
 			path = TabsTestTests;
-			sourceTree = "<group>";
-		};
-		732BA0311C5BC2A500C1CDB5 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				7366D8E01C51810600819790 /* Extensions.swift */,
-			);
-			name = Extensions;
 			sourceTree = "<group>";
 		};
 		732BA0401C5E41EB00C1CDB5 /* Calendar */ = {
@@ -596,7 +587,6 @@
 			isa = PBXGroup;
 			children = (
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
-				732BA0311C5BC2A500C1CDB5 /* Extensions */,
 				732BA0401C5E41EB00C1CDB5 /* Calendar */,
 				73C8E4AC1C598888005E0248 /* Modal */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
@@ -613,7 +603,6 @@
 				E0F587331B5272F400540104 /* ActionView.swift */,
 				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
-				732BA02F1C5BA5DF00C1CDB5 /* GraphView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -939,7 +928,6 @@
 				734B6F421C4BAC6A00CFB6BD /* CalendarViewController.swift in Sources */,
 				734B6FD71C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
-				732BA0301C5BA5DF00C1CDB5 /* GraphView.swift in Sources */,
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
