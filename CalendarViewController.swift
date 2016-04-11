@@ -244,8 +244,8 @@ class CalendarViewController: UIViewController,
             cell.parentController = self
             cell.date = date
             
-            cell.title.text = "Bodyweight Fitness"
-            cell.subtitle.text = "Recommended Routine"
+            cell.title.text = repositoryRoutine.title
+            cell.subtitle.text = repositoryRoutine.subtitle
             
             cell.repositoryRoutine = repositoryRoutine
         }

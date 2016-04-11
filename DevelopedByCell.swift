@@ -6,7 +6,7 @@ class DevelopedByCell: UITableViewCell {
 
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(
             target: self,
-            action: "onClick:")
+            action: #selector(onClick))
         
         tapGesture.numberOfTapsRequired = 1
         

@@ -68,7 +68,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
                         startTime,
                         lastUpdatedTime,
                         "1h 10m",
-                        "Bodyweight Fitness - Recommended Routine",
+                        "\(routine.title) - \(routine.subtitle)",
                         title,
                         index,
                         set.weight,
@@ -82,7 +82,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
             }
             
             let content = NSMutableString()
-            let emailTitle = "Bodyweight Fitness workout for \(helper.getStartTime(true))"
+            let emailTitle = "\(routine.title) workout for \(helper.getStartTime(true))"
             
             content.appendString("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
             
@@ -90,7 +90,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
             content.appendString("\nLast Updated at \(helper.getLastUpdatedTime())")
             content.appendString("\nWorkout length: --")
             
-            content.appendString("\n\nBodyweight Fitness\nRecommended Routine")
+            content.appendString("\n\n\(routine.title)\n\(routine.subtitle)")
             
             let weightUnit = getWeightUnit()
             

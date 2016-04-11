@@ -275,7 +275,6 @@
 		73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = SOURCE_ROOT; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
-		73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MaterialKit.framework; path = Carthage/Build/iOS/MaterialKit.framework; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = SOURCE_ROOT; };
@@ -514,6 +513,8 @@
 		73AA28EB1CABE8E000DEED79 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
+				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
 				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
 				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
 			);
@@ -523,6 +524,8 @@
 		73BA31BC1CB83A9B001784F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
+				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 			);
@@ -552,18 +555,6 @@
 			name = Modal;
 			sourceTree = "<group>";
 		};
-		73C8E4AD1C5A1C99005E0248 /* Progress */ = {
-			isa = PBXGroup;
-			children = (
-				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
-				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
-				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
-				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
-				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
-			);
-			name = Progress;
-			sourceTree = "<group>";
-		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -584,7 +575,6 @@
 				734B6FE71C4BE84600CFB6BD /* Realm.framework */,
 				734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */,
 				7349F6A11C492729009DBE7B /* Runes.framework */,
-				73D2BCD81C3C625200CE6C00 /* MaterialKit.framework */,
 				73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */,
 				73BFEBBC1CBA8B4900B9DDAE /* dSYM */,
 				734B6F951C4BB72C00CFB6BD /* Calendar */,
@@ -600,8 +590,8 @@
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
 				732BA0311C5BC2A500C1CDB5 /* Extensions */,
 				732BA0401C5E41EB00C1CDB5 /* Calendar */,
-				73C8E4AD1C5A1C99005E0248 /* Progress */,
 				73C8E4AC1C598888005E0248 /* Modal */,
+				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 				E0F587381B52730000540104 /* SettingsController.swift */,

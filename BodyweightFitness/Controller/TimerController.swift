@@ -124,15 +124,15 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         restartTimer(defaultSeconds)
         setGifImage(currentExercise.id)
         
-//        if (currentExercise.section?.mode == SectionMode.All) {
-//            if let image = UIImage(named: "plus") {
-//                actionButton.setImage(image, forState: .Normal)
-//            }
-//        } else {
-//            if let image = UIImage(named: "progression") {
-//                actionButton.setImage(image, forState: .Normal)
-//            }
-//        }
+        if (currentExercise.section?.mode == SectionMode.All) {
+            if let image = UIImage(named: "plus") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        } else {
+            if let image = UIImage(named: "progression") {
+                actionButton.setImage(image, forState: .Normal)
+            }
+        }
         
         if let _ = self.current?.previous {
             previousButton.hidden = false
@@ -156,10 +156,22 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {
+        guard let button = sender as? UIView else {
+            return
+        }
+        
         let alertController = UIAlertController(
             title: nil,
             message: nil,
             preferredStyle: .ActionSheet)
+        
+        alertController.popoverPresentationController
+        alertController.modalPresentationStyle = .Popover
+        
+        if let presenter = alertController.popoverPresentationController {
+            presenter.sourceView = button;
+            presenter.sourceRect = button.bounds;
+        }
 
         // ... Cancel Action
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
@@ -202,6 +214,13 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
                                 title: "Choose Progression",
                                 message: nil,
                                 preferredStyle: .ActionSheet)
+                            
+                            alertController.modalPresentationStyle = .Popover
+                            
+                            if let presenter = alertController.popoverPresentationController {
+                                presenter.sourceView = button;
+                                presenter.sourceRect = button.bounds;
+                            }
                             
                             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
                             

@@ -24,12 +24,23 @@ class WeightUnitCell: UITableViewCell {
     }
     
     func tapResponse(recognizer: UITapGestureRecognizer) {
+        guard let button = recognizer.view else {
+            return
+        }
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let alertController = UIAlertController(
             title: nil,
             message: nil,
             preferredStyle: .ActionSheet)
+        
+        alertController.modalPresentationStyle = .Popover
+        
+        if let presenter = alertController.popoverPresentationController {
+            presenter.sourceView = button;
+            presenter.sourceRect = button.bounds;
+        }
         
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         alertController.addAction(
