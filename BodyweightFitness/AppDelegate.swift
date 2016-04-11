@@ -40,8 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             leftViewController: sideViewController!
         )
         
-        sideNavigationViewController?.setLeftViewWidth(260, hidden: false, animated: false)
-        sideNavigationViewController?.toggleLeftView()
+        sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
         
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         window?.rootViewController = sideNavigationViewController!
