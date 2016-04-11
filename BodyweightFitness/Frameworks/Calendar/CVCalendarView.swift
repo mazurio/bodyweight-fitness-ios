@@ -257,7 +257,7 @@ extension CVCalendarView {
         if let controller = contentController {
             presentedDate = dayView.date
             delegate?.didSelectDayView?(dayView, animationDidFinish: false)
-            controller.performedDayViewSelection(dayView) // TODO: Update to range selection
+            controller.performedDayViewSelection(dayView)
         }
     }
 }

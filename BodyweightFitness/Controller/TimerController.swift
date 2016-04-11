@@ -74,8 +74,6 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidAppear(animated)
         
         setTitle()
-        
-        print(RepositoryStream.sharedInstance.getRealm().configuration.path!)
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {

@@ -82,7 +82,6 @@
 		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */; };
 		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */; };
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
-		73BFEBBA1CBA8A4700B9DDAE /* Material.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
 		73BFEBC01CBAE19A00B9DDAE /* DevelopedByCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBF1CBAE19A00B9DDAE /* DevelopedByCell.swift */; };
@@ -428,21 +427,13 @@
 			path = TabsTestTests;
 			sourceTree = "<group>";
 		};
-		732BA0401C5E41EB00C1CDB5 /* Calendar */ = {
+		732BA0411C5EB6A600C1CDB5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
 				732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */,
 				732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */,
 				732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */,
 				732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */,
-			);
-			name = Calendar;
-			sourceTree = "<group>";
-		};
-		732BA0411C5EB6A600C1CDB5 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
 				732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */,
 				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
 				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
@@ -543,15 +534,6 @@
 			name = dSYM;
 			sourceTree = "<group>";
 		};
-		73C8E4AC1C598888005E0248 /* Modal */ = {
-			isa = PBXGroup;
-			children = (
-				E0F587391B52730000540104 /* TimePickerController.swift */,
-				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
-			);
-			name = Modal;
-			sourceTree = "<group>";
-		};
 		E00242CB1B4B0E370003A230 /* Layout */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,8 +569,9 @@
 			isa = PBXGroup;
 			children = (
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
-				732BA0401C5E41EB00C1CDB5 /* Calendar */,
-				73C8E4AC1C598888005E0248 /* Modal */,
+				E0F587391B52730000540104 /* TimePickerController.swift */,
+				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
+				734B6F411C4BAC6A00CFB6BD /* CalendarViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
@@ -823,7 +806,6 @@
 				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
-				73BFEBBA1CBA8A4700B9DDAE /* Material.framework.dSYM in Resources */,
 				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
 				E0F587851B52733100540104 /* cat_camel.gif in Resources */,
 				E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */,

@@ -205,7 +205,6 @@ extension CVCalendarDayView {
         }
     }
     
-    // TODO: Make this widget customizable
     public func topMarkerSetup() {
         safeExecuteBlock({
             func createMarker() {

@@ -119,13 +119,13 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
             }
             
             let data = mailString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-            if let c = data {
+            if let data = data {
                 if !MFMailComposeViewController.canSendMail() {
                     print("Mail services are not available")
                     return
                 }
                 
-                let emailViewController = configuredMailComposeViewController(c, subject: emailTitle, messageBody: content as String)
+                let emailViewController = configuredMailComposeViewController(data, subject: emailTitle, messageBody: content as String)
                 
                 if MFMailComposeViewController.canSendMail() {
                     self.parentController?.presentViewController(emailViewController, animated: true, completion: nil)
