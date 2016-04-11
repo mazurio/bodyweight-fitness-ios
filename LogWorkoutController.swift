@@ -34,7 +34,7 @@ class LogWorkoutController: UIViewController {
     var decreaseWeightTimer: NSTimer?
     
     let timerInterval = 0.15
-    let weightTimerInterval = 0.05
+    let weightTimerInterval = 0.15
     
     var numberOfSetViews = 0
     var updateLastUpdatedTime = true
