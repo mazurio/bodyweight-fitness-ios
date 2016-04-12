@@ -1,12 +1,30 @@
 import UIKit
 
-class SettingsController: UITableViewController {
+class SettingsViewController: UITableViewController {
     @IBOutlet var playAudioWhenTimerStops: UISwitch!
     
+    init() {
+        super.init(nibName: "SettingsView", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
         self.setNavigationBar()
+        
+        let menuItem = UIBarButtonItem(
+            image: UIImage(named: "menu"),
+            landscapeImagePhone: nil,
+            style: .Plain,
+            target: self,
+            action: #selector(dismiss))
+        
+        menuItem.tintColor = UIColor.primaryDark()
+        
+        self.navigationItem.leftBarButtonItem = menuItem
+        self.navigationItem.title = "Settings"
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if(defaults.objectForKey("playAudioWhenTimerStops") != nil) {
@@ -14,7 +32,7 @@ class SettingsController: UITableViewController {
         }
     }
     
-    @IBAction func onClickNavigationItem(sender: AnyObject) {
+    func dismiss(sender: UIBarButtonItem) {
         self.sideNavigationController?.toggleLeftView()
     }
     

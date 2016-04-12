@@ -13,9 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var sideViewController: UIViewController = SideViewController()
     var mainViewController: UIViewController?
-    var calendarViewController: UIViewController?
-    var supportDeveloperViewController: UIViewController = UINavigationController(rootViewController: SupportDeveloperViewController())
-    var settingsViewController: UIViewController?
+    var workoutLogViewController = UINavigationController(rootViewController: WorkoutLogViewController())
+    var supportDeveloperViewController = UINavigationController(rootViewController: SupportDeveloperViewController())
+    var settingsViewController = UINavigationController(rootViewController: SettingsViewController())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
@@ -26,9 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
-        calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
-        settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
-        
+      
         sideNavigationViewController = SideNavigationController(
             rootViewController: mainViewController!,
             leftViewController: sideViewController

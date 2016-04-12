@@ -58,7 +58,7 @@ class WeightUnitCell: UITableViewCell {
             }
         )
         
-        appDelegate.settingsViewController?.presentViewController(alertController, animated: true, completion: nil)
+        appDelegate.settingsViewController.presentViewController(alertController, animated: true, completion: nil)
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

@@ -137,12 +137,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 1:
                 // Workout Log
                 
-                if(sideNavigationController?.rootViewController == (appDelegate?.calendarViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.workoutLogViewController)!) {
                     break;
                 }
                 
                 sideNavigationController?.transitionFromRootViewController(
-                    (appDelegate?.calendarViewController)!,
+                    (appDelegate?.workoutLogViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
                     animations: nil,

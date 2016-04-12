@@ -155,7 +155,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
                     realm.delete(self.repositoryRoutine!)
                 }
                 
-                if let parent = self.parentController as? CalendarViewController {
+                if let parent = self.parentController as? WorkoutLogViewController {
                     if let date = self.date {
                         parent.showOrHideCardViewForDate(date)
                     }

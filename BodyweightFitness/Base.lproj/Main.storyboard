@@ -5,103 +5,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--CalendarViewController-->
-        <scene sceneID="ec0-Th-hqm">
-            <objects>
-                <viewController storyboardIdentifier="CalendarViewController" title="CalendarViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Yvh-PJ-X6k" customClass="CalendarViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eym-ma-zpQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="3rb-ON-dZN"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="S4i-pR-l4h">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrs-bi-mtn">
-                                <rect key="frame" x="0.0" y="64" width="600" height="106"/>
-                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="106" id="iUZ-HM-wna"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKG-te-9m9" customClass="CVCalendarMenuView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                                <rect key="frame" x="20" y="72" width="560" height="25"/>
-                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="b2j-0T-jHX"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TnS-CC-YwJ" customClass="CVCalendarView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                                <rect key="frame" x="20" y="97" width="560" height="60"/>
-                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="xh1-lv-Ile"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8Q-a1-dQz" userLabel="Bottom View">
-                                <rect key="frame" x="0.0" y="170" width="600" height="430"/>
-                                <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="45" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ftk-dn-vyU">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="430"/>
-                                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="separatorColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>
-                                        <color key="sectionIndexBackgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="Ftk-dn-vyU" secondAttribute="trailing" id="3FD-u0-yaX"/>
-                                    <constraint firstItem="Ftk-dn-vyU" firstAttribute="top" secondItem="T8Q-a1-dQz" secondAttribute="top" id="GdN-oH-g1V"/>
-                                    <constraint firstItem="Ftk-dn-vyU" firstAttribute="leading" secondItem="T8Q-a1-dQz" secondAttribute="leading" id="Lk5-VO-VDj"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ftk-dn-vyU" secondAttribute="bottom" id="lbP-vs-YL1"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yKG-te-9m9" firstAttribute="leading" secondItem="S4i-pR-l4h" secondAttribute="leadingMargin" id="3f2-Qn-tMx"/>
-                            <constraint firstItem="T8Q-a1-dQz" firstAttribute="top" secondItem="hrs-bi-mtn" secondAttribute="bottom" id="7s2-S0-9Te"/>
-                            <constraint firstItem="TnS-CC-YwJ" firstAttribute="top" secondItem="yKG-te-9m9" secondAttribute="bottom" id="Enx-dY-33k"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="yKG-te-9m9" secondAttribute="trailing" id="GFn-3p-pLc"/>
-                            <constraint firstItem="3rb-ON-dZN" firstAttribute="top" secondItem="T8Q-a1-dQz" secondAttribute="bottom" id="IAQ-xj-BXo"/>
-                            <constraint firstItem="T8Q-a1-dQz" firstAttribute="leading" secondItem="S4i-pR-l4h" secondAttribute="leadingMargin" constant="-20" id="Ta9-An-WOk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="TnS-CC-YwJ" secondAttribute="trailing" id="Zmx-zg-xoL"/>
-                            <constraint firstItem="hrs-bi-mtn" firstAttribute="top" secondItem="eym-ma-zpQ" secondAttribute="bottom" id="fNY-vn-NKb"/>
-                            <constraint firstItem="TnS-CC-YwJ" firstAttribute="leading" secondItem="S4i-pR-l4h" secondAttribute="leadingMargin" id="g4R-xp-dZ5"/>
-                            <constraint firstItem="hrs-bi-mtn" firstAttribute="leading" secondItem="S4i-pR-l4h" secondAttribute="leadingMargin" constant="-20" id="gUZ-MN-cFO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hrs-bi-mtn" secondAttribute="trailing" constant="-20" id="iqo-vj-lKy"/>
-                            <constraint firstItem="yKG-te-9m9" firstAttribute="top" secondItem="eym-ma-zpQ" secondAttribute="bottom" constant="8" id="pMz-CW-nCT"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="T8Q-a1-dQz" secondAttribute="trailing" constant="-20" id="t9V-Dw-pFj"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Workout Log" id="Qe1-VD-0NB">
-                        <barButtonItem key="leftBarButtonItem" image="menu" id="9xV-rs-8Mh">
-                            <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="onClickNavigationItem:" destination="Yvh-PJ-X6k" id="WuB-zG-6pl"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="calendar" id="kMt-qK-BEb" userLabel="Calendar">
-                            <connections>
-                                <action selector="onClickNavigationCalendar:" destination="Yvh-PJ-X6k" id="yZI-CM-CAw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="backgroundView" destination="hrs-bi-mtn" id="0QE-fk-6Hp"/>
-                        <outlet property="bottomView" destination="T8Q-a1-dQz" id="cps-pF-ixX"/>
-                        <outlet property="calendarView" destination="TnS-CC-YwJ" id="Crp-pw-ewU"/>
-                        <outlet property="menuView" destination="yKG-te-9m9" id="Tdg-GB-q9w"/>
-                        <outlet property="tableView" destination="Ftk-dn-vyU" id="kSS-On-Prc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tFB-FM-JrX" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="853" y="-1377"/>
-        </scene>
         <!--TimerController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -682,7 +585,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fTP-iG-P6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="93" y="-35"/>
+            <point key="canvasLocation" x="-215" y="-1115"/>
         </scene>
         <!--Settings-->
         <scene sceneID="eM3-6h-MeJ">
@@ -738,7 +641,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -828,32 +731,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKW-OE-7j2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="853" y="-35"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="96E-1m-839">
-            <objects>
-                <navigationController storyboardIdentifier="CalendarNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vue-dq-c6v" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="dJR-cQ-O8g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="DKm-JC-k0b">
-                        <rect key="frame" x="0.0" y="556" width="600" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.019607843829999999" green="0.270588249" blue="0.24313727020000001" alpha="1" colorSpace="deviceRGB"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="Yvh-PJ-X6k" kind="relationship" relationship="rootViewController" id="RU1-7A-jEB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bMO-0J-boo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="93" y="-1377"/>
+            <point key="canvasLocation" x="545" y="-1115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LUs-ak-VBQ">
@@ -875,7 +753,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="calendar" width="22" height="22"/>
         <image name="close" width="22" height="22"/>
         <image name="dashboard" width="22" height="22"/>
         <image name="down" width="22" height="22"/>
