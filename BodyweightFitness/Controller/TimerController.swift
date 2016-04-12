@@ -120,7 +120,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         self.sectionTitle.text = currentExercise.section?.title
         
         restartTimer(defaultSeconds)
-        setGifImage(currentExercise.id)
+//        setGifImage(currentExercise.id)
         
         if (currentExercise.section?.mode == SectionMode.All) {
             if let image = UIImage(named: "plus") {

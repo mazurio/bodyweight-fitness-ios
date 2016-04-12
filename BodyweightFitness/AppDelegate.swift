@@ -11,7 +11,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var sideNavigationViewController: SideNavigationController?
     
-    var sideViewController: UIViewController?
+    var sideViewController: UIViewController = SideViewController()
     var mainViewController: UIViewController?
     var calendarViewController: UIViewController?
     var supportDeveloperViewController: UIViewController = UINavigationController(rootViewController: SupportDeveloperViewController())
@@ -25,14 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        sideViewController = storyboard.instantiateViewControllerWithIdentifier("SideViewController") as! SideViewController
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
         calendarViewController = storyboard.instantiateViewControllerWithIdentifier("CalendarNavigationController")
         settingsViewController = storyboard.instantiateViewControllerWithIdentifier("NavigationSettingsController")
         
         sideNavigationViewController = SideNavigationController(
             rootViewController: mainViewController!,
-            leftViewController: sideViewController!
+            leftViewController: sideViewController
         )
         
         sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)

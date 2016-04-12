@@ -1,8 +1,6 @@
 import UIKit
 
 class HeaderCell: UITableViewCell {
-    @IBOutlet weak var arrowButton: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -18,13 +16,41 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     let menuCellIdentifier = "MenuCell"
     let headerCellIdentifier = "HeaderCell"
     
+    init() {
+        super.init(nibName: "SideView", bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+        self.appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        self.tableView.registerNib(
+            UINib(nibName: "HeaderCell", bundle: nil),
+            forCellReuseIdentifier: "HeaderCell")
+        
+        self.tableView.registerNib(
+            UINib(nibName: "MenuCell", bundle: nil),
+            forCellReuseIdentifier: "MenuCell")
+        
+        self.tableView.registerNib(
+            UINib(nibName: "CategoryCell", bundle: nil),
+            forCellReuseIdentifier: "CategoryCell")
+        
+        self.tableView.registerNib(
+            UINib(nibName: "SectionCell", bundle: nil),
+            forCellReuseIdentifier: "SectionCell")
+        
+        self.tableView.registerNib(
+            UINib(nibName: "ExerciseCell", bundle: nil),
+            forCellReuseIdentifier: "ExerciseCell")
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
     }
     
     func timerController() -> TimerController? {

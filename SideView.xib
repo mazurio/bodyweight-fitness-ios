@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SideViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <connections>
+                <outlet property="tableView" destination="Jwn-3B-ApD" id="R9p-1h-ORG"/>
+                <outlet property="view" destination="915-hi-K7E" id="crk-5S-1FU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="915-hi-K7E">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="48" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Jwn-3B-ApD">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Jwn-3B-ApD" secondAttribute="trailing" id="3Hg-uB-yLi"/>
+                <constraint firstItem="Jwn-3B-ApD" firstAttribute="leading" secondItem="915-hi-K7E" secondAttribute="leading" id="8CH-af-Orm"/>
+                <constraint firstAttribute="bottom" secondItem="Jwn-3B-ApD" secondAttribute="bottom" id="Inh-NW-c8L"/>
+                <constraint firstItem="Jwn-3B-ApD" firstAttribute="top" secondItem="915-hi-K7E" secondAttribute="top" id="NlK-QU-nni"/>
+                <constraint firstAttribute="trailing" secondItem="Jwn-3B-ApD" secondAttribute="trailing" id="iHw-TP-eCv"/>
+                <constraint firstItem="Jwn-3B-ApD" firstAttribute="leading" secondItem="915-hi-K7E" secondAttribute="leading" id="nvC-nM-teL"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
