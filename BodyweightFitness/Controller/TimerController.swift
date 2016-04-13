@@ -47,13 +47,14 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
         self.stopTimer()
         
-        let logWorkoutController = self.storyboard!.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
+        let logWorkoutController = LogWorkoutController()
     
         logWorkoutController.parentController = self.navigationController
         logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
     
-        self.navigationController?.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-        self.navigationController?.modalPresentationStyle = .CurrentContext
+        logWorkoutController.modalTransitionStyle = .CoverVertical
+        logWorkoutController.modalPresentationStyle = .Custom
+        
         self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
         self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }

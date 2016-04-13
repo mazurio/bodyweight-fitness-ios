@@ -94,6 +94,7 @@
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
 		73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */; };
 		73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */; };
+		73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */; };
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
@@ -293,6 +294,7 @@
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = SOURCE_ROOT; };
 		73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTextCell.xib; sourceTree = SOURCE_ROOT; };
 		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = SOURCE_ROOT; };
+		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = SOURCE_ROOT; };
 		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
 		73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = SOURCE_ROOT; };
@@ -544,6 +546,7 @@
 		737F3C7E1CBD593200251EFE /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 		73BA31BC1CB83A9B001784F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73BF3BB61CBEB0C100E0258D /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
@@ -576,6 +580,14 @@
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		73BF3BB61CBEB0C100E0258D /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
+			);
+			name = Modal;
 			sourceTree = "<group>";
 		};
 		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
@@ -627,7 +639,6 @@
 			children = (
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
 				E0F587391B52730000540104 /* TimePickerController.swift */,
-				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 			);
@@ -847,6 +858,7 @@
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
+				73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */,
 				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
