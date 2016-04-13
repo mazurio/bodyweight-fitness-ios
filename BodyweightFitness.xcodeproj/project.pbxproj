@@ -95,9 +95,9 @@
 		73BF3BB91CBEFB0E00E0258D /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB81CBEFB0E00E0258D /* RootView.xib */; };
 		73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */; };
 		73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BBE1CBF02D200E0258D /* Window.xib */; };
+		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
-		73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */; };
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
 		73BFEC061CBC2C9A00B9DDAE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */; };
 		73BFEC071CBC2C9A00B9DDAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */; };
@@ -203,27 +203,27 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = SOURCE_ROOT; };
-		46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = SOURCE_ROOT; };
+		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
 		732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageMenuFramework.framework; path = Carthage/Build/iOS/PageMenuFramework.framework; sourceTree = "<group>"; };
 		732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PageMenuFramework.framework.dSYM; path = Carthage/Build/iOS/PageMenuFramework.framework.dSYM; sourceTree = "<group>"; };
-		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = SOURCE_ROOT; };
-		732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCardCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressSectionCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCardCell.swift; sourceTree = SOURCE_ROOT; };
-		732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSectionCell.swift; sourceTree = SOURCE_ROOT; };
-		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
-		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
-		732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogCardCell.swift; sourceTree = SOURCE_ROOT; };
-		732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogCardCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogSectionCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogSectionCell.swift; sourceTree = SOURCE_ROOT; };
-		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
-		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
+		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = "<group>"; };
+		732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCardCell.xib; sourceTree = "<group>"; };
+		732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressSectionCell.xib; sourceTree = "<group>"; };
+		732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCardCell.swift; sourceTree = "<group>"; };
+		732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSectionCell.swift; sourceTree = "<group>"; };
+		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = "<group>"; };
+		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogCardCell.swift; sourceTree = "<group>"; };
+		732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogCardCell.xib; sourceTree = "<group>"; };
+		732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogSectionCell.xib; sourceTree = "<group>"; };
+		732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogSectionCell.swift; sourceTree = "<group>"; };
+		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = "<group>"; };
+		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
 		7349F6A11C492729009DBE7B /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
-		734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutController.swift; sourceTree = SOURCE_ROOT; };
+		734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutController.swift; sourceTree = "<group>"; };
 		734B6F961C4BB73D00CFB6BD /* CVAuxiliaryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVAuxiliaryView.swift; path = BodyweightFitness/Frameworks/Calendar/CVAuxiliaryView.swift; sourceTree = "<group>"; };
 		734B6F971C4BB73D00CFB6BD /* CVCalendarContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVCalendarContentViewController.swift; path = BodyweightFitness/Frameworks/Calendar/CVCalendarContentViewController.swift; sourceTree = "<group>"; };
 		734B6F981C4BB73D00CFB6BD /* CVCalendarDayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CVCalendarDayView.swift; path = BodyweightFitness/Frameworks/Calendar/CVCalendarDayView.swift; sourceTree = "<group>"; };
@@ -255,118 +255,118 @@
 		734B6FE81C4BE84600CFB6BD /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Realm.framework.dSYM; path = Carthage/Build/iOS/Realm.framework.dSYM; sourceTree = "<group>"; };
 		734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RealmSwift.framework.dSYM; path = Carthage/Build/iOS/RealmSwift.framework.dSYM; sourceTree = "<group>"; };
-		734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySet.swift; sourceTree = SOURCE_ROOT; };
-		734B70011C4BF57600CFB6BD /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = SOURCE_ROOT; };
-		734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutine.swift; sourceTree = SOURCE_ROOT; };
-		734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCategory.swift; sourceTree = SOURCE_ROOT; };
-		734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = SOURCE_ROOT; };
-		735BEA061CBD1E56003616C5 /* SideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideView.xib; sourceTree = SOURCE_ROOT; };
-		735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewHeaderCell.xib; sourceTree = SOURCE_ROOT; };
-		735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewMenuCell.xib; sourceTree = SOURCE_ROOT; };
-		7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = SOURCE_ROOT; };
-		7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = SOURCE_ROOT; };
-		7366D8E01C51810600819790 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
+		734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySet.swift; sourceTree = "<group>"; };
+		734B70011C4BF57600CFB6BD /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
+		734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutine.swift; sourceTree = "<group>"; };
+		734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCategory.swift; sourceTree = "<group>"; };
+		734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = "<group>"; };
+		735BEA061CBD1E56003616C5 /* SideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideView.xib; sourceTree = "<group>"; };
+		735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewHeaderCell.xib; sourceTree = "<group>"; };
+		735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewMenuCell.xib; sourceTree = "<group>"; };
+		7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = "<group>"; };
+		7366D8E01C51810600819790 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7366D8E31C51AD5900819790 /* SwiftCharts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftCharts.framework; path = Carthage/Build/iOS/SwiftCharts.framework; sourceTree = "<group>"; };
 		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
-		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
+		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = "<group>"; };
 		7366D8EC1C52943D00819790 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogView.xib; sourceTree = SOURCE_ROOT; };
-		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = SOURCE_ROOT; };
-		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
-		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = SOURCE_ROOT; };
-		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSectionCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCategoryCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCategoryCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSingleItemCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemCell.swift; sourceTree = SOURCE_ROOT; };
-		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTextCell.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BB81CBEFB0E00E0258D /* RootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = SOURCE_ROOT; };
-		73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = SOURCE_ROOT; };
-		73BF3BBE1CBF02D200E0258D /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = SOURCE_ROOT; };
+		737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogView.xib; sourceTree = "<group>"; };
+		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = "<group>"; };
+		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
+		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
+		73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSectionCell.swift; sourceTree = "<group>"; };
+		73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCategoryCell.swift; sourceTree = "<group>"; };
+		73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCategoryCell.xib; sourceTree = "<group>"; };
+		73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSingleItemCell.xib; sourceTree = "<group>"; };
+		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemCell.xib; sourceTree = "<group>"; };
+		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemCell.swift; sourceTree = "<group>"; };
+		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemCell.swift; sourceTree = "<group>"; };
+		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
+		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = "<group>"; };
+		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
+		73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTextCell.xib; sourceTree = "<group>"; };
+		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = "<group>"; };
+		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = "<group>"; };
+		73BF3BB81CBEFB0E00E0258D /* RootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
+		73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		73BF3BBE1CBF02D200E0258D /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
+		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
-		73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
-		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = SOURCE_ROOT; };
+		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = "<group>"; };
 		73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = SOURCE_ROOT; };
-		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = SOURCE_ROOT; };
+		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = "<group>"; };
+		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = SOURCE_ROOT; };
+		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = "<group>"; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
 		E0C7E3061B5BC12B00EB6389 /* Animator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Animator.swift; path = BodyweightFitness/Frameworks/Animator.swift; sourceTree = "<group>"; };
 		E0C7E3091B5BC12B00EB6389 /* ImageSourceHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSourceHelpers.swift; path = BodyweightFitness/Frameworks/ImageSourceHelpers.swift; sourceTree = "<group>"; };
 		E0C7E30C1B5BC12B00EB6389 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImageExtension.swift; path = BodyweightFitness/Frameworks/UIImageExtension.swift; sourceTree = "<group>"; };
-		E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistenceManager.swift; path = BodyweightFitness/Service/PersistenceManager.swift; sourceTree = SOURCE_ROOT; };
-		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = BodyweightFitness/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
-		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Routine.swift; path = BodyweightFitness/Model/Routine.swift; sourceTree = SOURCE_ROOT; };
-		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActionView.swift; path = BodyweightFitness/View/ActionView.swift; sourceTree = SOURCE_ROOT; };
-		E0F587381B52730000540104 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = BodyweightFitness/Controller/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
-		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerController.swift; path = BodyweightFitness/Controller/TimePickerController.swift; sourceTree = SOURCE_ROOT; };
-		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/TimePickerModalView.xib; sourceTree = SOURCE_ROOT; };
-		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finished.mp3; path = BodyweightFitness/Resources/finished.mp3; sourceTree = SOURCE_ROOT; };
-		E0F587491B52731C00540104 /* Routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Routine.json; path = BodyweightFitness/Resources/Routine.json; sourceTree = SOURCE_ROOT; };
-		E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = advanced_tuck_front_lever_row.gif; path = BodyweightFitness/Resources/Gifs/advanced_tuck_front_lever_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F5874E1B52733100540104 /* arch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = arch.gif; path = BodyweightFitness/Resources/Gifs/arch.gif; sourceTree = SOURCE_ROOT; };
-		E0F5874F1B52733100540104 /* assisted_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = assisted_squat.gif; path = BodyweightFitness/Resources/Gifs/assisted_squat.gif; sourceTree = SOURCE_ROOT; };
-		E0F587501B52733100540104 /* band_dislocates.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = band_dislocates.gif; path = BodyweightFitness/Resources/Gifs/band_dislocates.gif; sourceTree = SOURCE_ROOT; };
-		E0F587511B52733100540104 /* bodyweight_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = bodyweight_squat.gif; path = BodyweightFitness/Resources/Gifs/bodyweight_squat.gif; sourceTree = SOURCE_ROOT; };
-		E0F587521B52733100540104 /* burpee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = burpee.gif; path = BodyweightFitness/Resources/Gifs/burpee.gif; sourceTree = SOURCE_ROOT; };
-		E0F587531B52733100540104 /* cat_camel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = cat_camel.gif; path = BodyweightFitness/Resources/Gifs/cat_camel.gif; sourceTree = SOURCE_ROOT; };
-		E0F587541B52733100540104 /* deep_stepup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = deep_stepup.gif; path = BodyweightFitness/Resources/Gifs/deep_stepup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587551B52733100540104 /* diamond_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = diamond_pushup.gif; path = BodyweightFitness/Resources/Gifs/diamond_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587561B52733100540104 /* floor_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = floor_l_sit.gif; path = BodyweightFitness/Resources/Gifs/floor_l_sit.gif; sourceTree = SOURCE_ROOT; };
-		E0F587571B52733100540104 /* freestanding_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = freestanding_handstand.gif; path = BodyweightFitness/Resources/Gifs/freestanding_handstand.gif; sourceTree = SOURCE_ROOT; };
-		E0F587581B52733100540104 /* full_body_circles.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = full_body_circles.gif; path = BodyweightFitness/Resources/Gifs/full_body_circles.gif; sourceTree = SOURCE_ROOT; };
-		E0F587591B52733100540104 /* hollow_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = hollow_hold.gif; path = BodyweightFitness/Resources/Gifs/hollow_hold.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875A1B52733100540104 /* horizontal_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = horizontal_row.gif; path = BodyweightFitness/Resources/Gifs/horizontal_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875B1B52733100540104 /* incline_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = incline_pushup.gif; path = BodyweightFitness/Resources/Gifs/incline_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875C1B52733100540104 /* incline_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = incline_row.gif; path = BodyweightFitness/Resources/Gifs/incline_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875D1B52733100540104 /* l_ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = l_ring_dips.gif; path = BodyweightFitness/Resources/Gifs/l_ring_dips.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875E1B52733100540104 /* l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = l_sit.gif; path = BodyweightFitness/Resources/Gifs/l_sit.gif; sourceTree = SOURCE_ROOT; };
-		E0F5875F1B52733100540104 /* leg_swings.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = leg_swings.gif; path = BodyweightFitness/Resources/Gifs/leg_swings.gif; sourceTree = SOURCE_ROOT; };
-		E0F587601B52733100540104 /* lsit_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = lsit_pullup.gif; path = BodyweightFitness/Resources/Gifs/lsit_pullup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587611B52733100540104 /* negative_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = negative_pullup.gif; path = BodyweightFitness/Resources/Gifs/negative_pullup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587621B52733100540104 /* one_foot_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = one_foot_l_sit.gif; path = BodyweightFitness/Resources/Gifs/one_foot_l_sit.gif; sourceTree = SOURCE_ROOT; };
-		E0F587631B52733100540104 /* parallel_bar_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = parallel_bar_dips.gif; path = BodyweightFitness/Resources/Gifs/parallel_bar_dips.gif; sourceTree = SOURCE_ROOT; };
-		E0F587641B52733100540104 /* parallel_bar_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = parallel_bar_hold.gif; path = BodyweightFitness/Resources/Gifs/parallel_bar_hold.gif; sourceTree = SOURCE_ROOT; };
-		E0F587651B52733100540104 /* plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = plank.gif; path = BodyweightFitness/Resources/Gifs/plank.gif; sourceTree = SOURCE_ROOT; };
-		E0F587661B52733100540104 /* pseudo_planche_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pseudo_planche_pushup.gif; path = BodyweightFitness/Resources/Gifs/pseudo_planche_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587671B52733100540104 /* pseudo_planche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pseudo_planche.gif; path = BodyweightFitness/Resources/Gifs/pseudo_planche.gif; sourceTree = SOURCE_ROOT; };
-		E0F587681B52733100540104 /* pullover.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pullover.gif; path = BodyweightFitness/Resources/Gifs/pullover.gif; sourceTree = SOURCE_ROOT; };
-		E0F587691B52733100540104 /* pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pullup.gif; path = BodyweightFitness/Resources/Gifs/pullup.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876A1B52733100540104 /* pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = pushup.gif; path = BodyweightFitness/Resources/Gifs/pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876B1B52733100540104 /* reverse_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = reverse_plank.gif; path = BodyweightFitness/Resources/Gifs/reverse_plank.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876C1B52733100540104 /* ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_dips.gif; path = BodyweightFitness/Resources/Gifs/ring_dips.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876D1B52733100540104 /* ring_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_pushup.gif; path = BodyweightFitness/Resources/Gifs/ring_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876E1B52733100540104 /* ring_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = ring_support.gif; path = BodyweightFitness/Resources/Gifs/ring_support.gif; sourceTree = SOURCE_ROOT; };
-		E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = rings_turned_out_pushup.gif; path = BodyweightFitness/Resources/Gifs/rings_turned_out_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F587701B52733100540104 /* rings_turned_out_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = rings_turned_out_support.gif; path = BodyweightFitness/Resources/Gifs/rings_turned_out_support.gif; sourceTree = SOURCE_ROOT; };
-		E0F587711B52733100540104 /* scapular_shrugs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = scapular_shrugs.gif; path = BodyweightFitness/Resources/Gifs/scapular_shrugs.gif; sourceTree = SOURCE_ROOT; };
-		E0F587721B52733100540104 /* side_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = side_plank.gif; path = BodyweightFitness/Resources/Gifs/side_plank.gif; sourceTree = SOURCE_ROOT; };
-		E0F587731B52733100540104 /* squat_jumps.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = squat_jumps.gif; path = BodyweightFitness/Resources/Gifs/squat_jumps.gif; sourceTree = SOURCE_ROOT; };
-		E0F587741B52733100540104 /* tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_front_lever_row.gif; path = BodyweightFitness/Resources/Gifs/tuck_front_lever_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F587751B52733100540104 /* tuck_front_lever.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_front_lever.gif; path = BodyweightFitness/Resources/Gifs/tuck_front_lever.gif; sourceTree = SOURCE_ROOT; };
-		E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_ice_cream_maker.gif; path = BodyweightFitness/Resources/Gifs/tuck_ice_cream_maker.gif; sourceTree = SOURCE_ROOT; };
-		E0F587771B52733100540104 /* tuck_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = tuck_l_sit.gif; path = BodyweightFitness/Resources/Gifs/tuck_l_sit.gif; sourceTree = SOURCE_ROOT; };
-		E0F587781B52733100540104 /* vertical_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = vertical_row.gif; path = BodyweightFitness/Resources/Gifs/vertical_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F587791B52733100540104 /* wall_extensions.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_extensions.gif; path = BodyweightFitness/Resources/Gifs/wall_extensions.gif; sourceTree = SOURCE_ROOT; };
-		E0F5877A1B52733100540104 /* wall_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_handstand.gif; path = BodyweightFitness/Resources/Gifs/wall_handstand.gif; sourceTree = SOURCE_ROOT; };
-		E0F5877B1B52733100540104 /* wall_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_plank.gif; path = BodyweightFitness/Resources/Gifs/wall_plank.gif; sourceTree = SOURCE_ROOT; };
-		E0F5877C1B52733100540104 /* wall_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wall_pushup.gif; path = BodyweightFitness/Resources/Gifs/wall_pushup.gif; sourceTree = SOURCE_ROOT; };
-		E0F5877D1B52733100540104 /* wide_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wide_row.gif; path = BodyweightFitness/Resources/Gifs/wide_row.gif; sourceTree = SOURCE_ROOT; };
-		E0F5877E1B52733100540104 /* wrist_progression.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = wrist_progression.gif; path = BodyweightFitness/Resources/Gifs/wrist_progression.gif; sourceTree = SOURCE_ROOT; };
-		E0F587B11B52734000540104 /* Bodyweight Fitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Bodyweight Fitness.plist"; path = "BodyweightFitness/Bodyweight Fitness.plist"; sourceTree = SOURCE_ROOT; };
-		E0F587B31B52734900540104 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = BodyweightFitness/Images.xcassets; sourceTree = SOURCE_ROOT; };
+		E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
+		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
+		E0F587381B52730000540104 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerController.swift; sourceTree = "<group>"; };
+		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TimePickerModalView.xib; sourceTree = "<group>"; };
+		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = finished.mp3; sourceTree = "<group>"; };
+		E0F587491B52731C00540104 /* Routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Routine.json; sourceTree = "<group>"; };
+		E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = advanced_tuck_front_lever_row.gif; sourceTree = "<group>"; };
+		E0F5874E1B52733100540104 /* arch.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = arch.gif; sourceTree = "<group>"; };
+		E0F5874F1B52733100540104 /* assisted_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = assisted_squat.gif; sourceTree = "<group>"; };
+		E0F587501B52733100540104 /* band_dislocates.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band_dislocates.gif; sourceTree = "<group>"; };
+		E0F587511B52733100540104 /* bodyweight_squat.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = bodyweight_squat.gif; sourceTree = "<group>"; };
+		E0F587521B52733100540104 /* burpee.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = burpee.gif; sourceTree = "<group>"; };
+		E0F587531B52733100540104 /* cat_camel.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cat_camel.gif; sourceTree = "<group>"; };
+		E0F587541B52733100540104 /* deep_stepup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = deep_stepup.gif; sourceTree = "<group>"; };
+		E0F587551B52733100540104 /* diamond_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = diamond_pushup.gif; sourceTree = "<group>"; };
+		E0F587561B52733100540104 /* floor_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = floor_l_sit.gif; sourceTree = "<group>"; };
+		E0F587571B52733100540104 /* freestanding_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = freestanding_handstand.gif; sourceTree = "<group>"; };
+		E0F587581B52733100540104 /* full_body_circles.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = full_body_circles.gif; sourceTree = "<group>"; };
+		E0F587591B52733100540104 /* hollow_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hollow_hold.gif; sourceTree = "<group>"; };
+		E0F5875A1B52733100540104 /* horizontal_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = horizontal_row.gif; sourceTree = "<group>"; };
+		E0F5875B1B52733100540104 /* incline_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = incline_pushup.gif; sourceTree = "<group>"; };
+		E0F5875C1B52733100540104 /* incline_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = incline_row.gif; sourceTree = "<group>"; };
+		E0F5875D1B52733100540104 /* l_ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = l_ring_dips.gif; sourceTree = "<group>"; };
+		E0F5875E1B52733100540104 /* l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = l_sit.gif; sourceTree = "<group>"; };
+		E0F5875F1B52733100540104 /* leg_swings.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = leg_swings.gif; sourceTree = "<group>"; };
+		E0F587601B52733100540104 /* lsit_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = lsit_pullup.gif; sourceTree = "<group>"; };
+		E0F587611B52733100540104 /* negative_pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = negative_pullup.gif; sourceTree = "<group>"; };
+		E0F587621B52733100540104 /* one_foot_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = one_foot_l_sit.gif; sourceTree = "<group>"; };
+		E0F587631B52733100540104 /* parallel_bar_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = parallel_bar_dips.gif; sourceTree = "<group>"; };
+		E0F587641B52733100540104 /* parallel_bar_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = parallel_bar_hold.gif; sourceTree = "<group>"; };
+		E0F587651B52733100540104 /* plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = plank.gif; sourceTree = "<group>"; };
+		E0F587661B52733100540104 /* pseudo_planche_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pseudo_planche_pushup.gif; sourceTree = "<group>"; };
+		E0F587671B52733100540104 /* pseudo_planche.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pseudo_planche.gif; sourceTree = "<group>"; };
+		E0F587681B52733100540104 /* pullover.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pullover.gif; sourceTree = "<group>"; };
+		E0F587691B52733100540104 /* pullup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pullup.gif; sourceTree = "<group>"; };
+		E0F5876A1B52733100540104 /* pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pushup.gif; sourceTree = "<group>"; };
+		E0F5876B1B52733100540104 /* reverse_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = reverse_plank.gif; sourceTree = "<group>"; };
+		E0F5876C1B52733100540104 /* ring_dips.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_dips.gif; sourceTree = "<group>"; };
+		E0F5876D1B52733100540104 /* ring_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_pushup.gif; sourceTree = "<group>"; };
+		E0F5876E1B52733100540104 /* ring_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_support.gif; sourceTree = "<group>"; };
+		E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rings_turned_out_pushup.gif; sourceTree = "<group>"; };
+		E0F587701B52733100540104 /* rings_turned_out_support.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rings_turned_out_support.gif; sourceTree = "<group>"; };
+		E0F587711B52733100540104 /* scapular_shrugs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scapular_shrugs.gif; sourceTree = "<group>"; };
+		E0F587721B52733100540104 /* side_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = side_plank.gif; sourceTree = "<group>"; };
+		E0F587731B52733100540104 /* squat_jumps.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = squat_jumps.gif; sourceTree = "<group>"; };
+		E0F587741B52733100540104 /* tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tuck_front_lever_row.gif; sourceTree = "<group>"; };
+		E0F587751B52733100540104 /* tuck_front_lever.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tuck_front_lever.gif; sourceTree = "<group>"; };
+		E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tuck_ice_cream_maker.gif; sourceTree = "<group>"; };
+		E0F587771B52733100540104 /* tuck_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tuck_l_sit.gif; sourceTree = "<group>"; };
+		E0F587781B52733100540104 /* vertical_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vertical_row.gif; sourceTree = "<group>"; };
+		E0F587791B52733100540104 /* wall_extensions.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wall_extensions.gif; sourceTree = "<group>"; };
+		E0F5877A1B52733100540104 /* wall_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wall_handstand.gif; sourceTree = "<group>"; };
+		E0F5877B1B52733100540104 /* wall_plank.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wall_plank.gif; sourceTree = "<group>"; };
+		E0F5877C1B52733100540104 /* wall_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wall_pushup.gif; sourceTree = "<group>"; };
+		E0F5877D1B52733100540104 /* wide_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wide_row.gif; sourceTree = "<group>"; };
+		E0F5877E1B52733100540104 /* wrist_progression.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wrist_progression.gif; sourceTree = "<group>"; };
+		E0F587B11B52734000540104 /* Bodyweight Fitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bodyweight Fitness.plist"; sourceTree = "<group>"; };
+		E0F587B31B52734900540104 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -411,17 +411,16 @@
 			isa = PBXGroup;
 			children = (
 				E0F587B11B52734000540104 /* Bodyweight Fitness.plist */,
-				E0F587B31B52734900540104 /* Images.xcassets */,
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
 				7366D8E01C51810600819790 /* Extensions.swift */,
-				E078934D1B472CCD001195AC /* Model */,
-				E078934C1B472CAF001195AC /* View */,
 				73BA31BC1CB83A9B001784F7 /* Controller */,
-				73AA28EB1CABE8E000DEED79 /* UI */,
+				E078934D1B472CCD001195AC /* Model */,
 				E08139041B5270EE00390A73 /* Resources */,
+				73AA28EB1CABE8E000DEED79 /* UI */,
+				E078934C1B472CAF001195AC /* View */,
+				E0F587B31B52734900540104 /* Images.xcassets */,
 			);
-			name = BodyweightFitness;
-			path = TabsTest;
+			path = BodyweightFitness;
 			sourceTree = "<group>";
 		};
 		734B6F951C4BB72C00CFB6BD /* Calendar */ = {
@@ -461,93 +460,93 @@
 		735BEA081CBD1F29003616C5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */,
-				735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */,
-				732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */,
-				732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */,
 				73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */,
+				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */,
 				73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */,
 				73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */,
-				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */,
-				732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */,
-				732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */,
-				73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */,
+				732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */,
+				732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */,
 				73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */,
 				73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */,
 				73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */,
+				73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */,
+				735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */,
+				735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */,
+				732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */,
+				732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */,
 			);
-			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		737F3C7E1CBD593200251EFE /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				E0F587431B52730C00540104 /* TimePickerModalView.xib */,
 				73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */,
+				E0F587431B52730C00540104 /* TimePickerModalView.xib */,
 			);
-			name = Modal;
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		73AA28EB1CABE8E000DEED79 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				737F3C7E1CBD593200251EFE /* Modal */,
 				735BEA081CBD1F29003616C5 /* Cell */,
+				737F3C7E1CBD593200251EFE /* Modal */,
+				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
 				732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */,
-				73BF3BBE1CBF02D200E0258D /* Window.xib */,
-				735BEA061CBD1E56003616C5 /* SideView.xib */,
-				73BF3BB81CBEFB0E00E0258D /* RootView.xib */,
 				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
-				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
-				737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */,
-				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
+				73BF3BB81CBEFB0E00E0258D /* RootView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
+				735BEA061CBD1E56003616C5 /* SideView.xib */,
+				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
+				73BF3BBE1CBF02D200E0258D /* Window.xib */,
+				737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */,
 			);
-			name = UI;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		73BA31BC1CB83A9B001784F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E0C7E3241B5BC65000EB6389 /* Service */,
 				73BF3BB71CBEF0CC00E0258D /* Cell */,
 				73BF3BB61CBEB0C100E0258D /* Modal */,
-				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
-				73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */,
-				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
+				E0C7E3241B5BC65000EB6389 /* Service */,
+				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
 				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
-				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
-				46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */,
-				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
+				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
+				73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
+				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
+				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
+				46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		73BF3BB61CBEB0C100E0258D /* Modal */ = {
 			isa = PBXGroup;
 			children = (
-				E0F587391B52730000540104 /* TimePickerController.swift */,
 				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
+				E0F587391B52730000540104 /* TimePickerController.swift */,
 			);
-			name = Modal;
+			path = Modal;
 			sourceTree = "<group>";
 		};
 		73BF3BB71CBEF0CC00E0258D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */,
-				732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */,
 				73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */,
+				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */,
 				73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */,
 				73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */,
-				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */,
-				732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */,
+				732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */,
+				732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */,
 				732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */,
+				732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */,
 			);
-			name = Cell;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
@@ -580,7 +579,6 @@
 				73BFEBBC1CBA8B4900B9DDAE /* dSYM */,
 				734B6F951C4BB72C00CFB6BD /* Calendar */,
 				E0C7E3201B5BC60600EB6389 /* Gifu */,
-				73BFEBC11CBAEDD800B9DDAE /* SnackBar.swift */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -589,33 +587,34 @@
 			isa = PBXGroup;
 			children = (
 				E0F587331B5272F400540104 /* ActionView.swift */,
-				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
+				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
+				73BF3BC01CBF05ED00E0258D /* SnackBar.swift */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		E078934D1B472CCD001195AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E0F587301B5272E200540104 /* Routine.swift */,
-				734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */,
 				734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */,
-				734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */,
 				73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */,
+				734B70041C4BF7C700CFB6BD /* RepositoryRoutine.swift */,
+				734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */,
 				734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */,
+				E0F587301B5272E200540104 /* Routine.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		E08139041B5270EE00390A73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				E0F5874C1B52732500540104 /* Gifs */,
-				E0F587481B52731C00540104 /* finished.mp3 */,
 				E0F587491B52731C00540104 /* Routine.json */,
+				E0F587481B52731C00540104 /* finished.mp3 */,
 			);
-			name = Resources;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		E0C7E3201B5BC60600EB6389 /* Gifu */ = {
@@ -634,10 +633,10 @@
 			isa = PBXGroup;
 			children = (
 				E0CA1FC71BACA5A000FF6F8C /* PersistenceManager.swift */,
-				733876D91C4ABF88006AABA7 /* RoutineStream.swift */,
 				734B70011C4BF57600CFB6BD /* RepositoryStream.swift */,
+				733876D91C4ABF88006AABA7 /* RoutineStream.swift */,
 			);
-			name = Service;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		E0F5874C1B52732500540104 /* Gifs */ = {
@@ -668,23 +667,23 @@
 				E0F587631B52733100540104 /* parallel_bar_dips.gif */,
 				E0F587641B52733100540104 /* parallel_bar_hold.gif */,
 				E0F587651B52733100540104 /* plank.gif */,
-				E0F587661B52733100540104 /* pseudo_planche_pushup.gif */,
 				E0F587671B52733100540104 /* pseudo_planche.gif */,
+				E0F587661B52733100540104 /* pseudo_planche_pushup.gif */,
 				E0F587681B52733100540104 /* pullover.gif */,
 				E0F587691B52733100540104 /* pullup.gif */,
 				E0F5876A1B52733100540104 /* pushup.gif */,
 				E0F5876B1B52733100540104 /* reverse_plank.gif */,
 				E0F5876C1B52733100540104 /* ring_dips.gif */,
 				E0F5876D1B52733100540104 /* ring_pushup.gif */,
-				737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */,
 				E0F5876E1B52733100540104 /* ring_support.gif */,
+				737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */,
 				E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */,
 				E0F587701B52733100540104 /* rings_turned_out_support.gif */,
 				E0F587711B52733100540104 /* scapular_shrugs.gif */,
 				E0F587721B52733100540104 /* side_plank.gif */,
 				E0F587731B52733100540104 /* squat_jumps.gif */,
-				E0F587741B52733100540104 /* tuck_front_lever_row.gif */,
 				E0F587751B52733100540104 /* tuck_front_lever.gif */,
+				E0F587741B52733100540104 /* tuck_front_lever_row.gif */,
 				E0F587761B52733100540104 /* tuck_ice_cream_maker.gif */,
 				E0F587771B52733100540104 /* tuck_l_sit.gif */,
 				E0F587781B52733100540104 /* vertical_row.gif */,
@@ -695,7 +694,7 @@
 				E0F5877D1B52733100540104 /* wide_row.gif */,
 				E0F5877E1B52733100540104 /* wrist_progression.gif */,
 			);
-			name = Gifs;
+			path = Gifs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -931,7 +930,6 @@
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				732BA0431C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
-				73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */,
@@ -951,6 +949,7 @@
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
+				73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */,
 				73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */,
 				734B6FC51C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */,
 				734B6FE31C4BB73D00CFB6BD /* CVShape.swift in Sources */,
@@ -970,6 +969,7 @@
 				E0F587441B52730C00540104 /* Base */,
 			);
 			name = TimePickerModalView.xib;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
