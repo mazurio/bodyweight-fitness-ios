@@ -77,9 +77,8 @@
 		7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */; };
 		7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */; };
 		7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8EC1C52943D00819790 /* StoreKit.framework */; };
-		737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */; };
 		737F3C781CBD52AB00251EFE /* WorkoutLogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */; };
-		737F3C7B1CBD55FA00251EFE /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C7A1CBD55FA00251EFE /* SettingsView.xib */; };
+		737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */; };
@@ -90,6 +89,11 @@
 		73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */; };
 		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */; };
 		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */; };
+		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
+		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
+		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
+		73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */; };
+		73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */; };
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBBE1CBAC94300B9DDAE /* WeightUnitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */; };
@@ -272,9 +276,8 @@
 		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
 		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8EC1C52943D00819790 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = SOURCE_ROOT; };
 		737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogView.xib; sourceTree = SOURCE_ROOT; };
-		737F3C7A1CBD55FA00251EFE /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsView.xib; path = ../../../playground/SettingsView.xib; sourceTree = "<group>"; };
+		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = SOURCE_ROOT; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = SOURCE_ROOT; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -285,6 +288,11 @@
 		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
 		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
 		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = SOURCE_ROOT; };
+		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = SOURCE_ROOT; };
+		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = SOURCE_ROOT; };
+		73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTextCell.xib; sourceTree = SOURCE_ROOT; };
+		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = SOURCE_ROOT; };
 		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
 		73BFEBBD1CBAC94300B9DDAE /* WeightUnitCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightUnitCell.swift; sourceTree = SOURCE_ROOT; };
@@ -517,6 +525,10 @@
 				735BEA0D1CBD1F7C003616C5 /* CategoryCell.xib */,
 				735BEA0F1CBD1F8C003616C5 /* SectionCell.xib */,
 				735BEA111CBD1FA1003616C5 /* ExerciseCell.xib */,
+				73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */,
+				73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */,
+				73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */,
+				73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -547,7 +559,7 @@
 				73AA28EC1CABE8F800DEED79 /* DashboardView.xib */,
 				737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */,
 				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
-				737F3C7A1CBD55FA00251EFE /* SettingsView.xib */,
+				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -817,6 +829,7 @@
 				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib in Resources */,
 				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
+				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
 				735BEA101CBD1F8C003616C5 /* SectionCell.xib in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
 				E0F587461B52730C00540104 /* Main.storyboard in Resources */,
@@ -837,7 +850,7 @@
 				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
-				737F3C7B1CBD55FA00251EFE /* SettingsView.xib in Resources */,
+				73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */,
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
 				E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */,
 				737F3C781CBD52AB00251EFE /* WorkoutLogView.xib in Resources */,
@@ -851,6 +864,7 @@
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
 				E0F587471B52730C00540104 /* TimePicker.xib in Resources */,
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
+				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
@@ -863,6 +877,7 @@
 				E0F587981B52733100540104 /* pseudo_planche_pushup.gif in Resources */,
 				E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */,
 				E0F587801B52733100540104 /* arch.gif in Resources */,
+				73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */,
 				E0F587A51B52733100540104 /* squat_jumps.gif in Resources */,
 				732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */,
 				E0F587921B52733100540104 /* lsit_pullup.gif in Resources */,
@@ -877,6 +892,7 @@
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
 				732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */,
+				73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

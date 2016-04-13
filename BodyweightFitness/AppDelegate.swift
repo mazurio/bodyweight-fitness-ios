@@ -7,7 +7,6 @@ import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var mask: CALayer?
     
     var sideNavigationViewController: SideNavigationController?
     
@@ -19,24 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
-
-        UITabBar.appearance().backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
-        UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
       
-        sideNavigationViewController = SideNavigationController(
-            rootViewController: mainViewController!,
-            leftViewController: sideViewController
+        self.sideNavigationViewController = SideNavigationController(
+            rootViewController: self.mainViewController!,
+            leftViewController: self.sideViewController
         )
         
-        sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
+        self.sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        window?.rootViewController = sideNavigationViewController!
-        window?.makeKeyAndVisible()
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController = self.sideNavigationViewController!
+        self.window?.makeKeyAndVisible()
         
         return true
     }
