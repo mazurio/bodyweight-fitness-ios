@@ -71,6 +71,7 @@
 		7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */; };
 		7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */; };
 		7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7366D8EC1C52943D00819790 /* StoreKit.framework */; };
+		737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */; };
@@ -257,6 +258,7 @@
 		7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftCharts.framework.dSYM; path = Carthage/Build/iOS/SwiftCharts.framework.dSYM; sourceTree = "<group>"; };
 		7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupportDeveloperViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8EC1C52943D00819790 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = SOURCE_ROOT; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = SOURCE_ROOT; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
@@ -668,6 +670,7 @@
 				E0F5876B1B52733100540104 /* reverse_plank.gif */,
 				E0F5876C1B52733100540104 /* ring_dips.gif */,
 				E0F5876D1B52733100540104 /* ring_pushup.gif */,
+				737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */,
 				E0F5876E1B52733100540104 /* ring_support.gif */,
 				E0F5876F1B52733100540104 /* rings_turned_out_pushup.gif */,
 				E0F587701B52733100540104 /* rings_turned_out_support.gif */,
@@ -795,6 +798,7 @@
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
 				E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */,
 				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
+				737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */,
 				E0F5878E1B52733100540104 /* incline_row.gif in Resources */,
 				E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */,
 				E0F587AF1B52733100540104 /* wide_row.gif in Resources */,
@@ -1004,7 +1008,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
+				PROVISIONING_PROFILE = "e90a0093-f90a-4b16-a087-932f3053be29";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1043,7 +1047,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "604ccdb3-3d52-4a1b-83e4-0079850ade8c";
+				PROVISIONING_PROFILE = "e90a0093-f90a-4b16-a087-932f3053be29";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1067,7 +1071,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e90a0093-f90a-4b16-a087-932f3053be29";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1080,8 +1084,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1092,7 +1096,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Bodyweight Fitness";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "e90a0093-f90a-4b16-a087-932f3053be29";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

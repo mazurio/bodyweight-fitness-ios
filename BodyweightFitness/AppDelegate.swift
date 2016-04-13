@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var settingsViewController: UIViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        #if DEBUG
-            Fabric.with([Crashlytics.self])
-        #endif
+        Fabric.with([Crashlytics.self])
 
         UITabBar.appearance().backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         UITabBar.appearance().tintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
