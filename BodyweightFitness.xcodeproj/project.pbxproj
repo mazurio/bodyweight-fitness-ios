@@ -411,14 +411,13 @@
 			isa = PBXGroup;
 			children = (
 				E0F587B11B52734000540104 /* Bodyweight Fitness.plist */,
+				E0F587B31B52734900540104 /* Images.xcassets */,
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
 				7366D8E01C51810600819790 /* Extensions.swift */,
-				E0F587B31B52734900540104 /* Images.xcassets */,
 				E078934D1B472CCD001195AC /* Model */,
 				E078934C1B472CAF001195AC /* View */,
 				73BA31BC1CB83A9B001784F7 /* Controller */,
 				73AA28EB1CABE8E000DEED79 /* UI */,
-				E0C7E3241B5BC65000EB6389 /* Service */,
 				E08139041B5270EE00390A73 /* Resources */,
 			);
 			name = BodyweightFitness;
@@ -511,6 +510,7 @@
 		73BA31BC1CB83A9B001784F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E0C7E3241B5BC65000EB6389 /* Service */,
 				73BF3BB71CBEF0CC00E0258D /* Cell */,
 				73BF3BB61CBEB0C100E0258D /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
