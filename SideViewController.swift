@@ -1,6 +1,6 @@
 import UIKit
 
-class HeaderCell: UITableViewCell {
+class SideViewHeaderCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -10,11 +10,6 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet var tableView: UITableView!
     
     var appDelegate: AppDelegate?
-    
-    var headerCell: UITableViewCell?
-    
-    let menuCellIdentifier = "MenuCell"
-    let headerCellIdentifier = "HeaderCell"
     
     init() {
         super.init(nibName: "SideView", bundle: nil)
@@ -30,24 +25,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
         self.tableView.registerNib(
-            UINib(nibName: "HeaderCell", bundle: nil),
-            forCellReuseIdentifier: "HeaderCell")
+            UINib(nibName: "SideViewHeaderCell", bundle: nil),
+            forCellReuseIdentifier: "SideViewHeaderCell")
         
         self.tableView.registerNib(
-            UINib(nibName: "MenuCell", bundle: nil),
-            forCellReuseIdentifier: "MenuCell")
-        
-        self.tableView.registerNib(
-            UINib(nibName: "CategoryCell", bundle: nil),
-            forCellReuseIdentifier: "CategoryCell")
-        
-        self.tableView.registerNib(
-            UINib(nibName: "SectionCell", bundle: nil),
-            forCellReuseIdentifier: "SectionCell")
-        
-        self.tableView.registerNib(
-            UINib(nibName: "ExerciseCell", bundle: nil),
-            forCellReuseIdentifier: "ExerciseCell")
+            UINib(nibName: "SideViewMenuCell", bundle: nil),
+            forCellReuseIdentifier: "SideViewMenuCell")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -75,7 +58,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(headerCellIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("SideViewHeaderCell") as UITableViewCell!
         
         cell.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         cell.contentView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
@@ -88,7 +71,7 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(menuCellIdentifier, forIndexPath: indexPath) as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("SideViewMenuCell", forIndexPath: indexPath) as UITableViewCell!
         
         switch(indexPath.row) {
         case 0:

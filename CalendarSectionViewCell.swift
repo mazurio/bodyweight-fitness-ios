@@ -1,8 +1,6 @@
 import UIKit
 
 class CalendarSectionViewCell: UITableViewCell {
-    var parentController: UIViewController?
-    
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {

@@ -8,11 +8,11 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var seconds: Int = 15
     
     init() {
-        super.init(nibName: "TimePicker", bundle: NSBundle.mainBundle())
+        super.init(nibName: "TimePickerModalView", bundle: NSBundle.mainBundle())
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(nibName: "TimePicker", bundle: NSBundle.mainBundle())
+        super.init(nibName: "TimePickerModalView", bundle: NSBundle.mainBundle())
     }
     
     override func viewDidLoad() {

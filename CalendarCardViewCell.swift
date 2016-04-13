@@ -31,8 +31,7 @@ class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate
         
         self.parentController?.navigationItem.backBarButtonItem = backItem
         
-        let progressViewController = self.parentController?.storyboard!.instantiateViewControllerWithIdentifier("ProgressViewController") as! ProgressViewController
-        
+        let progressViewController = ProgressViewController()
         progressViewController.setRoutine(self.date!, repositoryRoutine: self.repositoryRoutine!)
         
         self.parentController?.showViewController(progressViewController, sender: nil)

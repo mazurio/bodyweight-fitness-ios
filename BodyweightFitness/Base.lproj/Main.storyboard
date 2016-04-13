@@ -303,43 +303,6 @@
             </objects>
             <point key="canvasLocation" x="93" y="-2047"/>
         </scene>
-        <!--Progress View Controller-->
-        <scene sceneID="bbc-Td-aSt">
-            <objects>
-                <viewController storyboardIdentifier="ProgressViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bTr-25-wuL" customClass="ProgressViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="51h-MK-Le2"/>
-                        <viewControllerLayoutGuide type="bottom" id="VgV-gJ-axF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bid-MT-CPU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dMt-bl-jfK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="42k-IU-Ov0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2233" y="-1377"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="LUs-ak-VBQ">
-            <objects>
-                <navigationController storyboardIdentifier="NavigationProgressViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YNY-zw-4gM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4Ct-1l-OMm">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bTr-25-wuL" kind="relationship" relationship="rootViewController" id="AWG-Q9-Fx1"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="h9t-XZ-Woc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1535" y="-1377"/>
-        </scene>
     </scenes>
     <resources>
         <image name="dashboard" width="22" height="22"/>

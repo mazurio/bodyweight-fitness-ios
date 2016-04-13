@@ -4,14 +4,14 @@ import PageMenuFramework
 class ProgressViewController: UIViewController {
     var date: NSDate?
     var repositoryRoutine: RepositoryRoutine?
-    var pageMenu : CAPSPageMenu?
+    var pageMenu: CAPSPageMenu?
     var controllerArray: [UIViewController] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBar()
-        
+        self.navigationItem.backBarButtonItem?.tintColor = UIColor.primaryDark()
         if let routine = repositoryRoutine {
             self.navigationItem.title = CVDate(date: routine.startTime).commonDescription
         }

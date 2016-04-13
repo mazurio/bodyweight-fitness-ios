@@ -65,11 +65,8 @@
 		734B70081C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */; };
 		734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */; };
 		735BEA071CBD1E56003616C5 /* SideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA061CBD1E56003616C5 /* SideView.xib */; };
-		735BEA0A1CBD1F38003616C5 /* HeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA091CBD1F38003616C5 /* HeaderCell.xib */; };
-		735BEA0C1CBD1F5E003616C5 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA0B1CBD1F5E003616C5 /* MenuCell.xib */; };
-		735BEA0E1CBD1F7C003616C5 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA0D1CBD1F7C003616C5 /* CategoryCell.xib */; };
-		735BEA101CBD1F8C003616C5 /* SectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA0F1CBD1F8C003616C5 /* SectionCell.xib */; };
-		735BEA121CBD1FA1003616C5 /* ExerciseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA111CBD1FA1003616C5 /* ExerciseCell.xib */; };
+		735BEA0A1CBD1F38003616C5 /* SideViewHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */; };
+		735BEA0C1CBD1F5E003616C5 /* SideViewMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */; };
 		7366D8D11C4EE9CC00819790 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */; };
 		7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */; };
 		7366D8E11C51810600819790 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7366D8E01C51810600819790 /* Extensions.swift */; };
@@ -118,7 +115,7 @@
 		E0F5873C1B52730000540104 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587381B52730000540104 /* SettingsViewController.swift */; };
 		E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
 		E0F587461B52730C00540104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0F587411B52730C00540104 /* Main.storyboard */; };
-		E0F587471B52730C00540104 /* TimePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePicker.xib */; };
+		E0F587471B52730C00540104 /* TimePickerModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePickerModalView.xib */; };
 		E0F5874A1B52731C00540104 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
 		E0F5874B1B52731C00540104 /* Routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* Routine.json */; };
 		E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */; };
@@ -263,11 +260,8 @@
 		734B70071C4BF7DD00CFB6BD /* RepositoryCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryCategory.swift; sourceTree = SOURCE_ROOT; };
 		734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySection.swift; sourceTree = SOURCE_ROOT; };
 		735BEA061CBD1E56003616C5 /* SideView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideView.xib; sourceTree = SOURCE_ROOT; };
-		735BEA091CBD1F38003616C5 /* HeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderCell.xib; sourceTree = SOURCE_ROOT; };
-		735BEA0B1CBD1F5E003616C5 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = SOURCE_ROOT; };
-		735BEA0D1CBD1F7C003616C5 /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = SOURCE_ROOT; };
-		735BEA0F1CBD1F8C003616C5 /* SectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionCell.xib; sourceTree = SOURCE_ROOT; };
-		735BEA111CBD1FA1003616C5 /* ExerciseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExerciseCell.xib; sourceTree = SOURCE_ROOT; };
+		735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewHeaderCell.xib; sourceTree = SOURCE_ROOT; };
+		735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SideViewMenuCell.xib; sourceTree = SOURCE_ROOT; };
 		7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressPageViewController.swift; sourceTree = SOURCE_ROOT; };
 		7366D8E01C51810600819790 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = SOURCE_ROOT; };
@@ -318,7 +312,7 @@
 		E0F587381B52730000540104 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = BodyweightFitness/Controller/SettingsViewController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimePickerController.swift; path = BodyweightFitness/Controller/TimePickerController.swift; sourceTree = SOURCE_ROOT; };
 		E0F587421B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BodyweightFitness/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
-		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/TimePicker.xib; sourceTree = SOURCE_ROOT; };
+		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = BodyweightFitness/Base.lproj/TimePickerModalView.xib; sourceTree = SOURCE_ROOT; };
 		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = finished.mp3; path = BodyweightFitness/Resources/finished.mp3; sourceTree = SOURCE_ROOT; };
 		E0F587491B52731C00540104 /* Routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Routine.json; path = BodyweightFitness/Resources/Routine.json; sourceTree = SOURCE_ROOT; };
 		E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = advanced_tuck_front_lever_row.gif; path = BodyweightFitness/Resources/Gifs/advanced_tuck_front_lever_row.gif; sourceTree = SOURCE_ROOT; };
@@ -516,11 +510,8 @@
 		735BEA081CBD1F29003616C5 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				735BEA091CBD1F38003616C5 /* HeaderCell.xib */,
-				735BEA0B1CBD1F5E003616C5 /* MenuCell.xib */,
-				735BEA0D1CBD1F7C003616C5 /* CategoryCell.xib */,
-				735BEA0F1CBD1F8C003616C5 /* SectionCell.xib */,
-				735BEA111CBD1FA1003616C5 /* ExerciseCell.xib */,
+				735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */,
+				735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */,
 				73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */,
 				73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */,
 				73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */,
@@ -540,6 +531,7 @@
 		737F3C7E1CBD593200251EFE /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				E0F587431B52730C00540104 /* TimePickerModalView.xib */,
 				73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */,
 			);
 			name = Modal;
@@ -566,6 +558,7 @@
 			children = (
 				73BF3BB61CBEB0C100E0258D /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
+				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
@@ -579,6 +572,7 @@
 		73BF3BB61CBEB0C100E0258D /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				E0F587391B52730000540104 /* TimePickerController.swift */,
 				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
 			);
 			name = Modal;
@@ -602,7 +596,6 @@
 			isa = PBXGroup;
 			children = (
 				E0F587411B52730C00540104 /* Main.storyboard */,
-				E0F587431B52730C00540104 /* TimePicker.xib */,
 			);
 			name = Layout;
 			sourceTree = "<group>";
@@ -632,8 +625,6 @@
 			isa = PBXGroup;
 			children = (
 				732BA0411C5EB6A600C1CDB5 /* Cell */,
-				E0F587391B52730000540104 /* TimePickerController.swift */,
-				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 			);
 			name = RefactorController;
@@ -835,13 +826,11 @@
 				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
-				735BEA101CBD1F8C003616C5 /* SectionCell.xib in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
 				E0F587461B52730C00540104 /* Main.storyboard in Resources */,
 				E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */,
 				E0F5879A1B52733100540104 /* pullover.gif in Resources */,
 				E0F587861B52733100540104 /* deep_stepup.gif in Resources */,
-				735BEA0E1CBD1F7C003616C5 /* CategoryCell.xib in Resources */,
 				E0F5879E1B52733100540104 /* ring_dips.gif in Resources */,
 				E0F587AD1B52733100540104 /* wall_plank.gif in Resources */,
 				E0F5879B1B52733100540104 /* pullup.gif in Resources */,
@@ -868,7 +857,7 @@
 				E0F587AE1B52733100540104 /* wall_pushup.gif in Resources */,
 				E0F587A21B52733100540104 /* rings_turned_out_support.gif in Resources */,
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
-				E0F587471B52730C00540104 /* TimePicker.xib in Resources */,
+				E0F587471B52730C00540104 /* TimePickerModalView.xib in Resources */,
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
 				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
@@ -888,11 +877,10 @@
 				732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */,
 				E0F587921B52733100540104 /* lsit_pullup.gif in Resources */,
 				E0F5878F1B52733100540104 /* l_ring_dips.gif in Resources */,
-				735BEA0A1CBD1F38003616C5 /* HeaderCell.xib in Resources */,
+				735BEA0A1CBD1F38003616C5 /* SideViewHeaderCell.xib in Resources */,
 				E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */,
-				735BEA121CBD1FA1003616C5 /* ExerciseCell.xib in Resources */,
 				E0F587AC1B52733100540104 /* wall_handstand.gif in Resources */,
-				735BEA0C1CBD1F5E003616C5 /* MenuCell.xib in Resources */,
+				735BEA0C1CBD1F5E003616C5 /* SideViewMenuCell.xib in Resources */,
 				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
@@ -1025,12 +1013,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		E0F587431B52730C00540104 /* TimePicker.xib */ = {
+		E0F587431B52730C00540104 /* TimePickerModalView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				E0F587441B52730C00540104 /* Base */,
 			);
-			name = TimePicker.xib;
+			name = TimePickerModalView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

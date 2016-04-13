@@ -6,7 +6,7 @@ class CardViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     
-    var exercise: RepositoryExercise?
+    var current: RepositoryExercise?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,21 +18,16 @@ class CardViewCell: UITableViewCell {
     
     @IBAction func onClickFullReport(sender: AnyObject) {
         if let parentController = self.parentController {
-            let logWorkoutController = parentController.storyboard?.instantiateViewControllerWithIdentifier("LogWorkoutController") as! LogWorkoutController
-            
-            logWorkoutController.setRepositoryRoutine(
-                exercise!,
-                repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
-            )
+            let logWorkoutController = LogWorkoutController()
             
             logWorkoutController.parentController = parentController
+            logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
             
-            parentController.modalTransitionStyle = UIModalTransitionStyle.CoverVertical
-            parentController.modalPresentationStyle = .CurrentContext
-            
-            parentController.presentViewController(logWorkoutController, animated: true, completion: nil)
+            logWorkoutController.modalTransitionStyle = .CoverVertical
+            logWorkoutController.modalPresentationStyle = .Custom
             
             parentController.dim(.In, alpha: 0.5, speed: 0.5)
+            parentController.presentViewController(logWorkoutController, animated: true, completion: nil)
         }
     }
 }

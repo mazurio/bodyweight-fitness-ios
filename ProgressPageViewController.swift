@@ -40,10 +40,6 @@ class ProgressPageViewController: UITableViewController {
         
         return 0
     }
-    @IBAction func onClickRemove(sender: AnyObject) {
-    }
-    @IBAction func onClickExport(sender: AnyObject) {
-    }
     
     override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 45
@@ -83,7 +79,7 @@ class ProgressPageViewController: UITableViewController {
             
             let exercise = exercises[indexPath.row]
             
-            cell.exercise = exercise
+            cell.current = exercise
             
             cell.title.text = exercise.title
             cell.subtitle.text = exercise.desc

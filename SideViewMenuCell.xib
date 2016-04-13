@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" textLabel="AGm-Z9-SNb" rowHeight="45" style="IBUITableViewCellStyleDefault" id="7ur-Gz-QEh">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideViewMenuCell" textLabel="AGm-Z9-SNb" rowHeight="45" style="IBUITableViewCellStyleDefault" id="7ur-Gz-QEh" userLabel="SideViewMenuCell">
             <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7ur-Gz-QEh" id="PfN-UM-ncM">
