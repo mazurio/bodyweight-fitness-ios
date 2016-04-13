@@ -12,16 +12,16 @@
 		732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */; };
 		732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */; };
 		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
-		732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */; };
-		732BA0281C5AE8F900C1CDB5 /* SectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */; };
-		732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */; };
-		732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */; };
+		732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */; };
+		732BA0281C5AE8F900C1CDB5 /* ProgressSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */; };
+		732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */; };
+		732BA02C1C5B76E500C1CDB5 /* ProgressSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */; };
 		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
 		732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */; };
-		732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */; };
-		732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */; };
-		732BA0471C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */; };
-		732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */; };
+		732BA0431C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */; };
+		732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */; };
+		732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */; };
+		732BA0491C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */; };
 		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
 		733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D91C4ABF88006AABA7 /* RoutineStream.swift */; };
 		733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
@@ -78,14 +78,14 @@
 		737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
-		73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */; };
-		73AA28F11CB7ABC300DEED79 /* DashboardSectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */; };
-		73AA28F31CB7ACC100DEED79 /* DashboardCategoryViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */; };
-		73AA28F51CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */; };
-		73AA28F71CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */; };
-		73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */; };
-		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */; };
-		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */; };
+		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
+		73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */; };
+		73AA28F31CB7ACC100DEED79 /* DashboardCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */; };
+		73AA28F51CB7ACCC00DEED79 /* DashboardCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */; };
+		73AA28F71CB7ACD900DEED79 /* DashboardSingleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */; };
+		73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */; };
+		73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */; };
+		73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */; };
 		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
 		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
@@ -207,16 +207,16 @@
 		732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageMenuFramework.framework; path = Carthage/Build/iOS/PageMenuFramework.framework; sourceTree = "<group>"; };
 		732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PageMenuFramework.framework.dSYM; path = Carthage/Build/iOS/PageMenuFramework.framework.dSYM; sourceTree = "<group>"; };
 		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = SOURCE_ROOT; };
-		732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = SOURCE_ROOT; };
-		732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCardCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressSectionCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCardCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSectionCell.swift; sourceTree = SOURCE_ROOT; };
 		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = SOURCE_ROOT; };
 		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = SOURCE_ROOT; };
-		732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCardViewCell.swift; sourceTree = SOURCE_ROOT; };
-		732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarCardViewCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CalendarSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarSectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogCardCell.swift; sourceTree = SOURCE_ROOT; };
+		732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogCardCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogSectionCell.xib; sourceTree = SOURCE_ROOT; };
+		732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogSectionCell.swift; sourceTree = SOURCE_ROOT; };
 		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = SOURCE_ROOT; };
 		733876D91C4ABF88006AABA7 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = SOURCE_ROOT; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
@@ -273,14 +273,14 @@
 		737F3C7F1CBE4A1800251EFE /* ring_wide_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = ring_wide_pushup.gif; sourceTree = SOURCE_ROOT; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = SOURCE_ROOT; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = SOURCE_ROOT; };
-		73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionViewCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSectionViewCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCategoryViewCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCategoryViewCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSingleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemViewCell.xib; sourceTree = SOURCE_ROOT; };
-		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
-		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemViewCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSectionCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCategoryCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardCategoryCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSingleItemCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardDoubleItemCell.xib; sourceTree = SOURCE_ROOT; };
+		73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardSingleItemCell.swift; sourceTree = SOURCE_ROOT; };
+		73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardDoubleItemCell.swift; sourceTree = SOURCE_ROOT; };
 		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = SOURCE_ROOT; };
 		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = SOURCE_ROOT; };
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = SOURCE_ROOT; };
@@ -438,29 +438,6 @@
 			path = TabsTestTests;
 			sourceTree = "<group>";
 		};
-		732BA0411C5EB6A600C1CDB5 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				732BA0421C5EB9C300C1CDB5 /* CalendarCardViewCell.swift */,
-				732BA0441C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib */,
-				732BA0481C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift */,
-				732BA0461C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib */,
-				732BA0291C5B76DD00C1CDB5 /* CardViewCell.swift */,
-				732BA0251C5AE8EF00C1CDB5 /* CardViewCell.xib */,
-				732BA02B1C5B76E500C1CDB5 /* SectionViewCell.swift */,
-				732BA0271C5AE8F900C1CDB5 /* SectionViewCell.xib */,
-				73AA28F21CB7ACC100DEED79 /* DashboardCategoryViewCell.swift */,
-				73AA28F41CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib */,
-				73AA28F01CB7ABC300DEED79 /* DashboardSectionViewCell.swift */,
-				73AA28EE1CB7ABB500DEED79 /* DashboardSectionViewCell.xib */,
-				73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift */,
-				73AA28F61CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib */,
-				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift */,
-				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib */,
-			);
-			name = Cell;
-			sourceTree = "<group>";
-		};
 		734B6F951C4BB72C00CFB6BD /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +489,14 @@
 			children = (
 				735BEA091CBD1F38003616C5 /* SideViewHeaderCell.xib */,
 				735BEA0B1CBD1F5E003616C5 /* SideViewMenuCell.xib */,
+				732BA0271C5AE8F900C1CDB5 /* ProgressSectionCell.xib */,
+				732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */,
+				73AA28F41CB7ACCC00DEED79 /* DashboardCategoryCell.xib */,
+				73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */,
+				73AA28F61CB7ACD900DEED79 /* DashboardSingleItemCell.xib */,
+				73AA28F81CB7ACE300DEED79 /* DashboardDoubleItemCell.xib */,
+				732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */,
+				732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */,
 				73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */,
 				73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */,
 				73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */,
@@ -556,6 +541,7 @@
 		73BA31BC1CB83A9B001784F7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				73BF3BB71CBEF0CC00E0258D /* Cell */,
 				73BF3BB61CBEB0C100E0258D /* Modal */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
@@ -576,6 +562,21 @@
 				734B6F3E1C4AE7E900CFB6BD /* LogWorkoutController.swift */,
 			);
 			name = Modal;
+			sourceTree = "<group>";
+		};
+		73BF3BB71CBEF0CC00E0258D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */,
+				732BA0291C5B76DD00C1CDB5 /* ProgressCardCell.swift */,
+				73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */,
+				73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */,
+				73AA28FA1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift */,
+				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */,
+				732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */,
+				732BA0421C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
@@ -624,7 +625,6 @@
 		E02BF7B01B45E2EB00D5CE52 /* RefactorController */ = {
 			isa = PBXGroup;
 			children = (
-				732BA0411C5EB6A600C1CDB5 /* Cell */,
 				E0CA1FC41BACA58D00FF6F8C /* TimerController.swift */,
 			);
 			name = RefactorController;
@@ -813,17 +813,17 @@
 				73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */,
 				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
 				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
-				73AA28EF1CB7ABB500DEED79 /* DashboardSectionViewCell.xib in Resources */,
-				732BA0471C5EBB9900C1CDB5 /* CalendarSectionViewCell.xib in Resources */,
+				73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */,
+				732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */,
 				E0F587841B52733100540104 /* burpee.gif in Resources */,
 				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
 				E0F587AA1B52733100540104 /* vertical_row.gif in Resources */,
 				E0F587AB1B52733100540104 /* wall_extensions.gif in Resources */,
 				E0F587A11B52733100540104 /* rings_turned_out_pushup.gif in Resources */,
-				732BA0281C5AE8F900C1CDB5 /* SectionViewCell.xib in Resources */,
+				732BA0281C5AE8F900C1CDB5 /* ProgressSectionCell.xib in Resources */,
 				E0F587971B52733100540104 /* plank.gif in Resources */,
-				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemViewCell.xib in Resources */,
-				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemViewCell.xib in Resources */,
+				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemCell.xib in Resources */,
+				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
@@ -837,7 +837,7 @@
 				E0F587951B52733100540104 /* parallel_bar_dips.gif in Resources */,
 				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
 				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
-				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryViewCell.xib in Resources */,
+				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryCell.xib in Resources */,
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
@@ -860,7 +860,7 @@
 				E0F587471B52730C00540104 /* TimePickerModalView.xib in Resources */,
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
 				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
-				732BA0261C5AE8EF00C1CDB5 /* CardViewCell.xib in Resources */,
+				732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */,
 				E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */,
 				E0F587A41B52733100540104 /* side_plank.gif in Resources */,
 				E0F5879D1B52733100540104 /* reverse_plank.gif in Resources */,
@@ -885,7 +885,7 @@
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
-				732BA0451C5EB9CE00C1CDB5 /* CalendarCardViewCell.xib in Resources */,
+				732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */,
 				73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,7 +948,7 @@
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
 				734B6FD31C4BB73D00CFB6BD /* CVCalendarWeekContentViewController.swift in Sources */,
 				7366D8E11C51810600819790 /* Extensions.swift in Sources */,
-				732BA02C1C5B76E500C1CDB5 /* SectionViewCell.swift in Sources */,
+				732BA02C1C5B76E500C1CDB5 /* ProgressSectionCell.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
 				734B70021C4BF57600CFB6BD /* RepositoryStream.swift in Sources */,
 				734B6FC91C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */,
@@ -956,12 +956,12 @@
 				7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */,
 				734B6FD11C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */,
 				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
-				73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemViewCell.swift in Sources */,
+				73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
-				732BA0491C5EBBA400C1CDB5 /* CalendarSectionViewCell.swift in Sources */,
+				732BA0491C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
-				73AA28F31CB7ACC100DEED79 /* DashboardCategoryViewCell.swift in Sources */,
+				73AA28F31CB7ACC100DEED79 /* DashboardCategoryCell.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
 				734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */,
@@ -970,16 +970,16 @@
 				734B6FD71C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
-				732BA0431C5EB9C300C1CDB5 /* CalendarCardViewCell.swift in Sources */,
+				732BA0431C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
 				73BFEBC21CBAEDD800B9DDAE /* SnackBar.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
-				732BA02A1C5B76DD00C1CDB5 /* CardViewCell.swift in Sources */,
+				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
-				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemViewCell.swift in Sources */,
+				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */,
 				734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
 				734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
@@ -988,7 +988,7 @@
 				734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
 				734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
 				734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
-				73AA28F11CB7ABC300DEED79 /* DashboardSectionViewCell.swift in Sources */,
+				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				E0CA1FC51BACA58D00FF6F8C /* TimerController.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,

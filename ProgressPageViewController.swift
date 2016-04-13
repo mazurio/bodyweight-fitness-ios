@@ -10,12 +10,12 @@ class ProgressPageViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.registerNib(
-            UINib(nibName: "SectionViewCell", bundle: nil),
-            forCellReuseIdentifier: "SectionViewCell")
+            UINib(nibName: "ProgressSectionCell", bundle: nil),
+            forCellReuseIdentifier: "ProgressSectionCell")
         
         self.tableView.registerNib(
-            UINib(nibName: "CardViewCell", bundle: nil),
-            forCellReuseIdentifier: "CardViewCell")
+            UINib(nibName: "ProgressCardCell", bundle: nil),
+            forCellReuseIdentifier: "ProgressCardCell")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -50,7 +50,7 @@ class ProgressPageViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier("SectionViewCell") as! SectionViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProgressSectionCell") as! ProgressSectionCell
         
         cell.parentController = parentController
         
@@ -68,7 +68,7 @@ class ProgressPageViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CardViewCell", forIndexPath: indexPath) as! CardViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("ProgressCardCell", forIndexPath: indexPath) as! ProgressCardCell
         
         cell.parentController = parentController
         

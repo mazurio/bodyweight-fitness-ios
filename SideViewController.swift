@@ -1,11 +1,5 @@
 import UIKit
 
-class SideViewHeaderCell: UITableViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-}
-
 class SideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     @IBOutlet var tableView: UITableView!
     

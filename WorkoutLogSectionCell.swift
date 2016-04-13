@@ -1,8 +1,6 @@
 import UIKit
 
-class SectionViewCell: UITableViewCell {
-    var parentController: UIViewController?
-    
+class WorkoutLogSectionCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {

@@ -74,12 +74,12 @@ class WorkoutLogViewController: UIViewController,
         self.menuView.delegate = self
 
         self.tableView.registerNib(
-        UINib(nibName: "CalendarSectionViewCell", bundle: nil),
-                forCellReuseIdentifier: "CalendarSectionViewCell")
+        UINib(nibName: "WorkoutLogSectionCell", bundle: nil),
+                forCellReuseIdentifier: "WorkoutLogSectionCell")
 
         self.tableView.registerNib(
-        UINib(nibName: "CalendarCardViewCell", bundle: nil),
-                forCellReuseIdentifier: "CalendarCardViewCell")
+        UINib(nibName: "WorkoutLogCardCell", bundle: nil),
+                forCellReuseIdentifier: "WorkoutLogCardCell")
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -256,7 +256,7 @@ class WorkoutLogViewController: UIViewController,
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueReusableCellWithIdentifier(
-        "CalendarSectionViewCell") as! CalendarSectionViewCell
+        "WorkoutLogSectionCell") as! WorkoutLogSectionCell
 
         cell.title.text = "Workout Log"
 
@@ -269,8 +269,8 @@ class WorkoutLogViewController: UIViewController,
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(
-        "CalendarCardViewCell",
-                forIndexPath: indexPath) as! CalendarCardViewCell
+        "WorkoutLogCardCell",
+                forIndexPath: indexPath) as! WorkoutLogCardCell
 
         if let routines = self.routines {
             let repositoryRoutine = routines[indexPath.row]

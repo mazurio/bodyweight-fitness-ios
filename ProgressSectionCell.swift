@@ -1,8 +1,9 @@
 import UIKit
 
-class DashboardSectionViewCell: UITableViewCell {
+class ProgressSectionCell: UITableViewCell {
+    var parentController: UIViewController?
+    
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var desc: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

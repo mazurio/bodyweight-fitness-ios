@@ -9,7 +9,7 @@ func getWeightUnit() -> String {
     }
 }
 
-class CalendarCardViewCell: UITableViewCell, MFMailComposeViewControllerDelegate {
+class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
     

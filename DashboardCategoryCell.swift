@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardCategoryViewCell: UITableViewCell {
+class DashboardCategoryCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     
     override func awakeFromNib() {

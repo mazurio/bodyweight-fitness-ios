@@ -1,6 +1,6 @@
 import UIKit
 
-class CardViewCell: UITableViewCell {
+class ProgressCardCell: UITableViewCell {
     var parentController: UIViewController?
     
     @IBOutlet weak var title: UILabel!

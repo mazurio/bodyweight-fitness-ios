@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardDoubleItemViewCell: UITableViewCell {
+class DashboardDoubleItemCell: UITableViewCell {
     @IBOutlet weak var leftTitle: UILabel!
     @IBOutlet weak var rightTitle: UILabel!
     
@@ -59,8 +59,8 @@ class DashboardDoubleItemViewCell: UITableViewCell {
         self.rightView.layer.cornerRadius = self.rightView.frame.size.width / 2
         self.rightView.clipsToBounds = true
         
-        self.leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemViewCell.onLeftClick(_:))))
-        self.rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemViewCell.onRightClick(_:))))
+        self.leftView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemCell.onLeftClick(_:))))
+        self.rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemCell.onRightClick(_:))))
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

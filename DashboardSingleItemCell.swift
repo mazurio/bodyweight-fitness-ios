@@ -1,6 +1,6 @@
 import UIKit
 
-class DashboardSingleItemViewCell: UITableViewCell {
+class DashboardSingleItemCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var view: ActionView!
     @IBOutlet weak var button: UIButton!
@@ -31,7 +31,7 @@ class DashboardSingleItemViewCell: UITableViewCell {
         
         self.view.layer.cornerRadius = self.view.frame.size.width / 2
         self.view.clipsToBounds = true
-        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardSingleItemViewCell.onClick(_:))))
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardSingleItemCell.onClick(_:))))
     }
     
     override func setSelected(selected: Bool, animated: Bool) {

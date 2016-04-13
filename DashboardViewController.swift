@@ -20,20 +20,20 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         self.tableView.registerNib(
-            UINib(nibName: "DashboardCategoryViewCell", bundle: nil),
-            forCellReuseIdentifier: "DashboardCategoryViewCell")
+            UINib(nibName: "DashboardCategoryCell", bundle: nil),
+            forCellReuseIdentifier: "DashboardCategoryCell")
         
         self.tableView.registerNib(
-            UINib(nibName: "DashboardSectionViewCell", bundle: nil),
-            forCellReuseIdentifier: "DashboardSectionViewCell")
+            UINib(nibName: "DashboardSectionCell", bundle: nil),
+            forCellReuseIdentifier: "DashboardSectionCell")
         
         self.tableView.registerNib(
-            UINib(nibName: "DashboardSingleItemViewCell", bundle: nil),
-            forCellReuseIdentifier: "DashboardSingleItemViewCell")
+            UINib(nibName: "DashboardSingleItemCell", bundle: nil),
+            forCellReuseIdentifier: "DashboardSingleItemCell")
         
         self.tableView.registerNib(
-            UINib(nibName: "DashboardDoubleItemViewCell", bundle: nil),
-            forCellReuseIdentifier: "DashboardDoubleItemViewCell")
+            UINib(nibName: "DashboardDoubleItemCell", bundle: nil),
+            forCellReuseIdentifier: "DashboardDoubleItemCell")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -83,7 +83,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let categoryOrSection = routine.categoriesAndSections[section]
         
         if let category = categoryOrSection as? Category {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardCategoryViewCell") as! DashboardCategoryViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardCategoryCell") as! DashboardCategoryCell
             
             cell.title?.text = category.title
             
@@ -96,7 +96,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if let section = categoryOrSection as? Section {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSectionViewCell") as! DashboardSectionViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSectionCell") as! DashboardSectionCell
             
             cell.title?.text = section.title
             cell.desc?.text = section.desc
@@ -117,7 +117,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let rowIndex = indexPath.row
         
         if (rowIndex == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
+            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
             
             let section = routine.categoriesAndSections[sectionIndex] as! Section
           
@@ -147,7 +147,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let exercise = section.exercises[index] as! Exercise
 
             if let nextExercise = exercise.next {
-                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardDoubleItemViewCell", forIndexPath: indexPath) as! DashboardDoubleItemViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardDoubleItemCell", forIndexPath: indexPath) as! DashboardDoubleItemCell
                 
                 cell.dashboardViewController = self
                 
@@ -161,7 +161,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.leftTitle?.text = exercise.title
                     cell.rightTitle?.text = nextExercise.title
                 } else {
-                    let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
+                    let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
                     
                     setCurrentIndex(exercise, indexPath: indexPath)
                     
@@ -174,7 +174,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemViewCell", forIndexPath: indexPath) as! DashboardSingleItemViewCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
                 
                 setCurrentIndex(exercise, indexPath: indexPath)
                 
