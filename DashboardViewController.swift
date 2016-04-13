@@ -8,7 +8,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     var currentIndexPath: NSIndexPath?
     
     var currentExercise: Exercise?
-    var timerController: TimerController?
+    var rootViewController: RootViewController?
     
     init() {
         super.init(nibName: "DashboardView", bundle: nil)
@@ -206,7 +206,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func dismissWithExercise(exercise: Exercise) {
-        self.timerController?.changeExercise(exercise)
+        self.rootViewController?.changeExercise(exercise)
         
         self.dismissViewControllerAnimated(true, completion: nil)
     }

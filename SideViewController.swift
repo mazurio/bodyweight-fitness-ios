@@ -30,15 +30,6 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.tableView.dataSource = self
     }
     
-    func timerController() -> TimerController? {
-        if let timerController =
-            (sideNavigationController?.rootViewController as? UINavigationController)?.viewControllers[0] as? TimerController {
-                return timerController
-        } else {
-            return nil
-        }
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -98,12 +89,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 0:
                 // Home
                 
-                if(sideNavigationController?.rootViewController == (appDelegate?.mainViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.rootViewController)!) {
                     break;
                 }
                 
                 sideNavigationController?.transitionFromRootViewController(
-                    (appDelegate?.mainViewController)!,
+                    (appDelegate?.rootViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
                     animations: nil,

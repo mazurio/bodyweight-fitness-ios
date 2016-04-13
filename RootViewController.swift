@@ -2,13 +2,13 @@ import UIKit
 import AVFoundation
 import SwiftCharts
 
-class TimerController: UIViewController, AVAudioPlayerDelegate {
-    @IBOutlet var exerciseTitle: UILabel!
-    @IBOutlet var sectionTitle: UILabel!
-    @IBOutlet var exerciseDescription: UILabel!
+class RootViewController: UIViewController, AVAudioPlayerDelegate {
+//    @IBOutlet var exerciseTitle: UILabel!
+//    @IBOutlet var sectionTitle: UILabel!
+//    @IBOutlet var exerciseDescription: UILabel!
     
-    @IBOutlet var menuButton: UIBarButtonItem!
-    @IBOutlet var dashboardButton: UIBarButtonItem!
+//    @IBOutlet var menuButton: UIBarButtonItem!
+//    @IBOutlet var dashboardButton: UIBarButtonItem!
     
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var timerMinutesButton: UIButton!
@@ -30,42 +30,38 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     
     var audioPlayer: AVAudioPlayer?
     
-    @IBAction func onClickMenuAction(sender: AnyObject) {
-        self.sideNavigationController?.toggleLeftView()
+    init() {
+        super.init(nibName: "RootView", bundle: nil)
     }
     
-    @IBAction func onClickDashboardAction(sender: AnyObject) {
-        let dashboard = DashboardViewController()
-        dashboard.currentExercise = current
-        dashboard.timerController = self
-        
-        let controller = UINavigationController(rootViewController: dashboard)
-        
-        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
-        self.stopTimer()
-        
-        let logWorkoutController = LogWorkoutController()
-    
-        logWorkoutController.parentController = self.navigationController
-        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
-    
-        logWorkoutController.modalTransitionStyle = .CoverVertical
-        logWorkoutController.modalPresentationStyle = .Custom
-        
-        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
-        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.setNavigationBar()
         
-        mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+        let menuItem = UIBarButtonItem(
+            image: UIImage(named: "menu"),
+            landscapeImagePhone: nil,
+            style: .Plain,
+            target: self,
+            action: #selector(dismiss))
 
+        let dashboardItem = UIBarButtonItem(
+            image: UIImage(named: "dashboard"),
+            landscapeImagePhone: nil,
+            style: .Plain,
+            target: self,
+            action: #selector(dashboard))
+        
+        self.navigationItem.leftBarButtonItem = menuItem
+        self.navigationItem.rightBarButtonItem = dashboardItem
+        
+        mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
+        
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
@@ -85,6 +81,35 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
         
         setTitle()
+    }
+    
+    func dismiss(sender: UIBarButtonItem) {
+        self.sideNavigationController?.toggleLeftView()
+    }
+    
+    func dashboard(sender: UIBarButtonItem) {
+        let dashboard = DashboardViewController()
+        dashboard.currentExercise = current
+        dashboard.rootViewController = self
+        
+        let controller = UINavigationController(rootViewController: dashboard)
+        
+        self.navigationController?.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
+        self.stopTimer()
+        
+        let logWorkoutController = LogWorkoutController()
+        
+        logWorkoutController.parentController = self.navigationController
+        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        
+        logWorkoutController.modalTransitionStyle = .CoverVertical
+        logWorkoutController.modalPresentationStyle = .Custom
+        
+        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }
     
     func showNotification(seconds: Int) {
@@ -116,12 +141,12 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         
         self.current = currentExercise
         
-        self.exerciseTitle.text = currentExercise.title
-        self.exerciseDescription.text = currentExercise.desc
-        self.sectionTitle.text = currentExercise.section?.title
+//        self.exerciseTitle.text = currentExercise.title
+//        self.exerciseDescription.text = currentExercise.desc
+//        self.sectionTitle.text = currentExercise.section?.title
         
         restartTimer(defaultSeconds)
-//        setGifImage(currentExercise.id)
+        setGifImage(currentExercise.id)
         
         if (currentExercise.section?.mode == SectionMode.All) {
             if let image = UIImage(named: "plus") {
@@ -150,7 +175,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         let imageData = NSData(contentsOfURL: NSBundle
             .mainBundle()
             .URLForResource(id, withExtension: "gif")!)
-
+        
         gifView.animateWithImageData(imageData!)
     }
     
@@ -171,7 +196,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             presenter.sourceView = button;
             presenter.sourceRect = button.bounds;
         }
-
+        
         // ... Cancel Action
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         
@@ -199,7 +224,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             progressViewController.setRoutine(NSDate(), repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
             
             self.showViewController(progressViewController, sender: nil)
-        })
+            })
         
         // ... Choose Progression Action
         if let currentSection = current?.section {
@@ -289,19 +314,19 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
     ///
     @IBAction func timerButton(sender: AnyObject) {
         stopTimer()
-            
+        
         timePickerController = TimePickerController()
         timePickerController?.setDefaultTimer(self.seconds)
-            
+        
         let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-            
+        
         let setTimeAlertAction = UIAlertAction(
             title: "Set Timer",
             style: UIAlertActionStyle.Default) { action -> Void in self.setTimeAction() }
         
         alertController.setValue(timePickerController, forKey: "contentViewController");
         alertController.addAction(setTimeAlertAction)
-            
+        
         self.parentViewController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -344,7 +369,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         timer = NSTimer.scheduledTimerWithTimeInterval(
             1,
             target: self,
-            selector: #selector(TimerController.updateTimer),
+            selector: #selector(updateTimer),
             userInfo: nil,
             repeats: true
         )
@@ -365,7 +390,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         
         if(seconds <= 0) {
             restartTimer(defaultSeconds)
-
+            
             let defaults = NSUserDefaults.standardUserDefaults()
             if(defaults.objectForKey("playAudioWhenTimerStops") != nil) {
                 let playAudioWhenTimerStops = defaults.boolForKey("playAudioWhenTimerStops")
@@ -387,7 +412,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
         let alertSound = NSURL(fileURLWithPath: NSBundle
             .mainBundle()
             .pathForResource("finished", ofType: "mp3")!)
-
+        
         do {
             try AVAudioSession.sharedInstance().setActive(true)
             
@@ -434,7 +459,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
                     }
                 }
             }
-
+            
         }
         
         loggedSeconds = 0
@@ -451,7 +476,7 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             print("AVAudioSession errors.")
         }
     }
-
+    
     ///
     /// Print label to the screen.
     ///

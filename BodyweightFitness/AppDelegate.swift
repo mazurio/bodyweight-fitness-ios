@@ -10,21 +10,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var sideNavigationViewController: SideNavigationController?
     
-    var sideViewController: UIViewController = SideViewController()
-    var mainViewController: UIViewController?
-    var workoutLogViewController = UINavigationController(rootViewController: WorkoutLogViewController())
-    var supportDeveloperViewController = UINavigationController(rootViewController: SupportDeveloperViewController())
-    var settingsViewController = UINavigationController(rootViewController: SettingsViewController())
+    let sideViewController: UIViewController =
+        SideViewController()
+    
+    let rootViewController: UIViewController =
+        UINavigationController(rootViewController: RootViewController())
+    
+    let workoutLogViewController =
+        UINavigationController(rootViewController: WorkoutLogViewController())
+    
+    let supportDeveloperViewController =
+        UINavigationController(rootViewController: SupportDeveloperViewController())
+    
+    let settingsViewController =
+        UINavigationController(rootViewController: SettingsViewController())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        mainViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
-      
+
         self.sideNavigationViewController = SideNavigationController(
-            rootViewController: self.mainViewController!,
+            rootViewController: self.rootViewController,
             leftViewController: self.sideViewController
         )
         
@@ -32,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.primaryDark()
+        self.window?.backgroundColor = UIColor.primary()
         self.window?.rootViewController = self.sideNavigationViewController!
         self.window?.makeKeyAndVisible()
         
