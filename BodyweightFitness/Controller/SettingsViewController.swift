@@ -116,8 +116,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         case 3:
             return "About"
         default:
-            return "Settings"
+            return nil
         }
+    }
+    
+    func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == 0 {
+            return "Any music playing in the background will automatically resume."
+        }
+        
+        return nil
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
