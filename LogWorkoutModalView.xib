@@ -41,7 +41,7 @@
                                         <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="onClickButtonClose:" destination="-2" eventType="touchUpInside" id="b01-Qb-gnG"/>
+                                        <action selector="onClickButtonClose:" destination="-1" eventType="touchUpInside" id="u1m-t6-8b9"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwA-T9-EZb">
@@ -49,6 +49,9 @@
                                     <state key="normal" title="Remove Last Set">
                                         <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="onClickRemoveSet:" destination="-1" eventType="touchUpInside" id="SXk-pn-6wR"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-C8-k88">
                                     <rect key="frame" x="382" y="10" width="55" height="30"/>
@@ -56,7 +59,7 @@
                                         <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
-                                        <action selector="onClickAddSet:" destination="-2" eventType="touchUpInside" id="KFY-v9-DEM"/>
+                                        <action selector="onClickAddSet:" destination="-1" eventType="touchUpInside" id="fXJ-Ie-spr"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -129,7 +132,7 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xC-gv-U4t">
-                                            <rect key="frame" x="220.5" y="152" width="80" height="50"/>
+                                            <rect key="frame" x="220" y="152" width="80" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="80" id="4zf-o9-WSS"/>
                                                 <constraint firstAttribute="height" constant="50" id="kyB-cU-7Jr"/>
@@ -139,7 +142,7 @@
                                             </state>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tCu-BT-fLC">
-                                            <rect key="frame" x="440.5" y="152" width="80" height="50"/>
+                                            <rect key="frame" x="440" y="152" width="80" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="9oI-yx-hig"/>
                                                 <constraint firstAttribute="width" constant="80" id="wcx-BH-5hP"/>

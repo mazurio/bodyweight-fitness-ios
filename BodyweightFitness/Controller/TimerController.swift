@@ -194,13 +194,12 @@ class TimerController: UIViewController, AVAudioPlayerDelegate {
             
             self.navigationItem.backBarButtonItem = backItem
             
-            let progressViewController = self.storyboard!.instantiateViewControllerWithIdentifier("ProgressViewController") as! ProgressViewController
+            let progressViewController = ProgressViewController()
             
             progressViewController.setRoutine(NSDate(), repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
             
             self.showViewController(progressViewController, sender: nil)
-            }
-        )
+        })
         
         // ... Choose Progression Action
         if let currentSection = current?.section {

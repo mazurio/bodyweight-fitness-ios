@@ -5,9 +5,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkoutLogSectionCell" customModule="Bodyweight_Fitness" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WorkoutLogSectionCell" rowHeight="44" id="w1T-Jr-gEb" userLabel="WorkoutLogSectionCell" customClass="WorkoutLogSectionCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="44" id="w1T-Jr-gEb" userLabel="WorkoutLogSectionCell" customClass="WorkoutLogSectionCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w1T-Jr-gEb" id="Efi-ES-opz">
@@ -33,7 +33,7 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
-                <outlet property="title" destination="p9G-Eb-fex" id="I3y-fO-2P8"/>
+                <outlet property="title" destination="p9G-Eb-fex" id="afJ-pl-ls4"/>
             </connections>
             <point key="canvasLocation" x="198" y="91.5"/>
         </tableViewCell>
