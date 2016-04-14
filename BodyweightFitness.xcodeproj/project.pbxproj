@@ -96,6 +96,8 @@
 		73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */; };
 		73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BBE1CBF02D200E0258D /* Window.xib */; };
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
+		73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BC61CBFF89D00E0258D /* NavigationView.xib */; };
+		73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */; };
 		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
 		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
@@ -292,6 +294,8 @@
 		73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		73BF3BBE1CBF02D200E0258D /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
+		73BF3BC61CBFF89D00E0258D /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
+		73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
 		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
 		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = "<group>"; };
@@ -496,6 +500,7 @@
 				732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */,
 				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
+				73BF3BC61CBFF89D00E0258D /* NavigationView.xib */,
 				73BF3BB81CBEFB0E00E0258D /* RootView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
 				735BEA061CBD1E56003616C5 /* SideView.xib */,
@@ -516,6 +521,7 @@
 				73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */,
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
+				73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */,
 				73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
@@ -800,6 +806,7 @@
 				73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */,
 				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
+				73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
 				73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */,
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
@@ -945,6 +952,7 @@
 				734B6FDF1C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */,
 				734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
 				734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
+				73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */,
 				734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,

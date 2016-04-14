@@ -16,6 +16,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var playButton: UIButton!
     
+    let navigationViewController: NavigationViewController = NavigationViewController()
     var timePickerController: TimePickerController?
     var timer = NSTimer()
     var isPlaying = false
@@ -56,6 +57,8 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.navigationItem.leftBarButtonItem = menuItem
         self.navigationItem.rightBarButtonItem = dashboardItem
+
+        self.navigationItem.titleView = navigationViewController.view
         
         mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         
@@ -67,7 +70,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        setTitle()
+        setTitle()  
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
@@ -138,9 +141,9 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.current = currentExercise
         
-//        self.exerciseTitle.text = currentExercise.title
-//        self.exerciseDescription.text = currentExercise.desc
-//        self.sectionTitle.text = currentExercise.section?.title
+        self.navigationViewController.topLabel?.text = currentExercise.title
+        self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
+        self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
         
         restartTimer(defaultSeconds)
         setGifImage(currentExercise.id)
