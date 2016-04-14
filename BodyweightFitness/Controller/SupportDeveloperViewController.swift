@@ -1,5 +1,6 @@
 import UIKit
 import StoreKit
+import Crashlytics
 
 extension SKProduct {
     func localizedPrice() -> String {
@@ -9,6 +10,15 @@ extension SKProduct {
         formatter.locale = self.priceLocale
         
         return formatter.stringFromNumber(self.price)!
+    }
+    
+    func currency() -> String {
+        let formatter = NSNumberFormatter()
+        
+        formatter.numberStyle = .CurrencyStyle
+        formatter.locale = self.priceLocale
+        
+        return formatter.internationalCurrencySymbol
     }
 }
 
@@ -74,6 +84,15 @@ class SupportDeveloperViewController: UIViewController, SKPaymentTransactionObse
 
             if let product = product {
                 buyButton.setTitle("Buy \(product.localizedPrice())", forState: .Normal)
+                
+                Answers.logPurchaseWithPrice(
+                    product.price,
+                    currency: product.currency(),
+                    success: true,
+                    itemName: "Bodyweight Fitness Gold",
+                    itemType: "IAP",
+                    itemId: "bodyweight.fitness.gold",
+                    customAttributes: nil)
             }
             
             self.buyButton.enabled = true
@@ -87,7 +106,22 @@ class SupportDeveloperViewController: UIViewController, SKPaymentTransactionObse
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
-            case .Purchased, .Restored:
+            case .Purchased:
+                self.purchased()
+                
+                if let product = product {
+                    Answers.logPurchaseWithPrice(
+                        product.price,
+                        currency: product.currency(),
+                        success: true,
+                        itemName: "Bodyweight Fitness Gold",
+                        itemType: "IAP",
+                        itemId: "bodyweight.fitness.gold",
+                        customAttributes: nil)
+                }
+                
+                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+            case .Restored:
                 self.purchased()
                 
                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
