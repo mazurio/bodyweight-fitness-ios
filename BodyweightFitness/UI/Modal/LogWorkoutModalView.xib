@@ -214,27 +214,13 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Vvf-jz-ldk" secondAttribute="trailing" constant="8" id="0Ll-bb-Qve"/>
                         <constraint firstAttribute="trailing" secondItem="SfM-UA-acm" secondAttribute="trailing" id="2Zh-3H-pQK"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="AIC-Ja-8hQ"/>
-                        <constraint firstAttribute="width" constant="600" id="AYR-IG-Udr"/>
                         <constraint firstAttribute="height" constant="300" id="Atx-w4-hp0"/>
                         <constraint firstItem="SfM-UA-acm" firstAttribute="top" secondItem="lcj-hG-wzU" secondAttribute="top" id="FcN-DG-eaK"/>
-                        <constraint firstItem="Vvf-jz-ldk" firstAttribute="leading" secondItem="lcj-hG-wzU" secondAttribute="leading" id="PEt-do-uGC"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="UkM-zB-aCH"/>
-                        <constraint firstAttribute="bottom" secondItem="Vvf-jz-ldk" secondAttribute="bottom" id="gCH-IJ-NkD"/>
                         <constraint firstAttribute="bottom" secondItem="Vvf-jz-ldk" secondAttribute="bottom" constant="8" id="s3L-mu-W9I"/>
                         <constraint firstItem="Vvf-jz-ldk" firstAttribute="leading" secondItem="lcj-hG-wzU" secondAttribute="leading" constant="8" id="uiV-di-RRL"/>
                         <constraint firstItem="SfM-UA-acm" firstAttribute="leading" secondItem="lcj-hG-wzU" secondAttribute="leading" id="wL3-m1-fUn"/>
-                        <constraint firstAttribute="trailing" secondItem="Vvf-jz-ldk" secondAttribute="trailing" id="ym1-Em-HvC"/>
                         <constraint firstItem="Vvf-jz-ldk" firstAttribute="top" secondItem="SfM-UA-acm" secondAttribute="bottom" constant="8" id="z6W-uj-bgq"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="AIC-Ja-8hQ"/>
-                            <exclude reference="PEt-do-uGC"/>
-                            <exclude reference="gCH-IJ-NkD"/>
-                            <exclude reference="ym1-Em-HvC"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
