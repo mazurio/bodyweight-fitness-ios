@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
         
         self.sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
-        
+ 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.primaryDark()
         self.window?.backgroundColor = UIColor.primary()

@@ -7,9 +7,6 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
 //    @IBOutlet var sectionTitle: UILabel!
 //    @IBOutlet var exerciseDescription: UILabel!
     
-//    @IBOutlet var menuButton: UIBarButtonItem!
-//    @IBOutlet var dashboardButton: UIBarButtonItem!
-    
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var timerMinutesButton: UIButton!
     @IBOutlet var timerButton: UIButton!
@@ -102,14 +99,14 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         
         let logWorkoutController = LogWorkoutController()
         
-        logWorkoutController.parentController = self.navigationController
+        logWorkoutController.parentController = self.sideNavigationController
         logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
         
         logWorkoutController.modalTransitionStyle = .CoverVertical
         logWorkoutController.modalPresentationStyle = .Custom
-        
-        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
-        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
+    
+        self.sideNavigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.sideNavigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }
     
     func showNotification(seconds: Int) {

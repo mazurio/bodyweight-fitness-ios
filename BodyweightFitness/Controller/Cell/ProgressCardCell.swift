@@ -17,17 +17,15 @@ class ProgressCardCell: UITableViewCell {
     }
     
     @IBAction func onClickFullReport(sender: AnyObject) {
-        if let parentController = self.parentController {
-            let logWorkoutController = LogWorkoutController()
-            
-            logWorkoutController.parentController = parentController
-            logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
-            
-            logWorkoutController.modalTransitionStyle = .CoverVertical
-            logWorkoutController.modalPresentationStyle = .Custom
-            
-            parentController.dim(.In, alpha: 0.5, speed: 0.5)
-            parentController.presentViewController(logWorkoutController, animated: true, completion: nil)
-        }
+        let logWorkoutController = LogWorkoutController()
+        
+        logWorkoutController.parentController = self.parentController?.sideNavigationController
+        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        
+        logWorkoutController.modalTransitionStyle = .CoverVertical
+        logWorkoutController.modalPresentationStyle = .Custom
+        
+        self.parentController?.sideNavigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.parentController?.sideNavigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }
 }
