@@ -63,8 +63,8 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         
         var totalSeconds = (minutes * 60) + seconds
         
-        if(totalSeconds < 15) {
-            totalSeconds = 15
+        if(totalSeconds < 5) {
+            totalSeconds = 5
         }
         
         return totalSeconds
