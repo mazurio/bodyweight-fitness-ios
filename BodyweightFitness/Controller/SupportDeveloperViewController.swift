@@ -84,15 +84,6 @@ class SupportDeveloperViewController: UIViewController, SKPaymentTransactionObse
 
             if let product = product {
                 buyButton.setTitle("Buy \(product.localizedPrice())", forState: .Normal)
-                
-                Answers.logPurchaseWithPrice(
-                    product.price,
-                    currency: product.currency(),
-                    success: true,
-                    itemName: "Bodyweight Fitness Gold",
-                    itemType: "IAP",
-                    itemId: "bodyweight.fitness.gold",
-                    customAttributes: nil)
             }
             
             self.buyButton.enabled = true
