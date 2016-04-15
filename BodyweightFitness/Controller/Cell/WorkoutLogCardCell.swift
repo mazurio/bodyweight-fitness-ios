@@ -87,7 +87,7 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
             
             content.appendString("\n\nWorkout on \(helper.getStartTime(true)).")
             content.appendString("\nLast Updated at \(helper.getLastUpdatedTime())")
-            content.appendString("\nWorkout length: --")
+            content.appendString("\nWorkout length: \(helper.getWorkoutLength())")
             
             content.appendString("\n\n\(routine.title)\n\(routine.subtitle)")
             
@@ -104,11 +104,17 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
                         content.appendString("\nSet \(index)")
                         
                         if (set.isTimed) {
-                            content.appendString("\nMinutes: \(minutes)")
-                            content.appendString("\nSeconds: \(seconds)")
+                            if minutes > 0 {
+                                content.appendString(", Minutes: \(minutes)")
+                            }
+                            
+                            content.appendString(", Seconds: \(seconds)")
                         } else {
-                            content.appendString("\nReps: \(set.reps)")
-                            content.appendString("\nWeight: \(set.weight) \(weightUnit)")
+                            content.appendString(", Reps: \(set.reps)")
+                            
+                            if set.weight > 0 {
+                                content.appendString(", Weight: \(set.weight) \(weightUnit)")
+                            }
                         }
                         
                         index += 1

@@ -280,29 +280,33 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 			if let v: SideNavigationView = leftView {
 				showView(v)
                 
-                dimView = UIView(frame: view.frame)
-                
-                dimView!.backgroundColor = UIColor.blackColor()
-                dimView!.alpha = 0.0
-                dimView!.userInteractionEnabled = false
-                view.addSubview(dimView!)
-                
-                dimView!.translatesAutoresizingMaskIntoConstraints = false
-                
-                view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                    "|[dimView]|",
-                    options: [],
-                    metrics: nil,
-                    views: ["dimView": dimView!]))
-                
-                view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                    "V:|[dimView]|",
-                    options: [],
-                    metrics: nil,
-                    views: ["dimView": dimView!]))
-                
-                UIView.animateWithDuration(0.5) { () -> Void in
-                    self.dimView!.alpha = 0.5
+                if (dimView == nil) {
+                    dimView?.removeFromSuperview()
+                    dimView = UIView(frame: view.frame)
+                    
+                    dimView!.backgroundColor = UIColor.blackColor()
+                    dimView!.alpha = 0.0
+                    dimView!.userInteractionEnabled = false
+                    view.addSubview(dimView!)
+                    
+                    dimView!.translatesAutoresizingMaskIntoConstraints = false
+                    
+                    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                        "|[dimView]|",
+                        options: [],
+                        metrics: nil,
+                        views: ["dimView": dimView!]))
+                    
+                    view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                        "V:|[dimView]|",
+                        options: [],
+                        metrics: nil,
+                        views: ["dimView": dimView!]))
+                    
+                    UIView.animateWithDuration(0.5) { () -> Void in
+                        self.dimView!.alpha = 0.5
+                    }
+     
                 }
                 
 				UIView.animateWithDuration(Double(0 == velocity ? animationDuration : fmax(0.1, fmin(1, Double(v.x / velocity)))), animations: {
@@ -319,6 +323,7 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
                     self.dimView?.alpha = 0
                     }, completion: { (complete) -> Void in
                         self.dimView?.removeFromSuperview()
+                        self.dimView = nil
                 })
                 
 				UIView.animateWithDuration(Double(0 == velocity ? animationDuration : fmax(0.1, fmin(1, Double(v.x / velocity)))),
