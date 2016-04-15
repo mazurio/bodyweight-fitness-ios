@@ -5,4 +5,3 @@ github "realm/realm-cocoa" ~> 0.98.5
 github "ReactiveX/RxSwift" ~> 2.0 
 github "thoughtbot/Runes"
 github "SwiftyJSON/SwiftyJSON"
-github "CosmicMind/Material"

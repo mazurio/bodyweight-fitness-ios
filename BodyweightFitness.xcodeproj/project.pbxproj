@@ -98,10 +98,10 @@
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
 		73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BC61CBFF89D00E0258D /* NavigationView.xib */; };
 		73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */; };
-		73BF3C591CC057FF00E0258D /* SideNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C101CC057FF00E0258D /* SideNavigationView.swift */; };
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
 		73BFEC061CBC2C9A00B9DDAE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */; };
 		73BFEC071CBC2C9A00B9DDAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */; };
+		73C5A6371CC12ABC006EF5C1 /* SideNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C5A6361CC12ABC006EF5C1 /* SideNavigationView.swift */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
@@ -294,10 +294,10 @@
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BF3BC61CBFF89D00E0258D /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
-		73BF3C101CC057FF00E0258D /* SideNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideNavigationView.swift; path = ../iOS/SideNavigationView.swift; sourceTree = "<group>"; };
 		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = "<group>"; };
 		73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		73C5A6361CC12ABC006EF5C1 /* SideNavigationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationView.swift; sourceTree = "<group>"; };
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -586,7 +586,7 @@
 		E078934C1B472CAF001195AC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				73BF3C101CC057FF00E0258D /* SideNavigationView.swift */,
+				73C5A6361CC12ABC006EF5C1 /* SideNavigationView.swift */,
 				E0F587331B5272F400540104 /* ActionView.swift */,
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
 				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
@@ -938,7 +938,6 @@
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
 				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
-				73BF3C591CC057FF00E0258D /* SideNavigationView.swift in Sources */,
 				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */,
 				734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
@@ -952,6 +951,7 @@
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
+				73C5A6371CC12ABC006EF5C1 /* SideNavigationView.swift in Sources */,
 				73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */,
 				73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */,
 				734B6FC51C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */,
