@@ -63,9 +63,6 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
-
-       
-
     }
     
     override func viewDidAppear(animated: Bool) {

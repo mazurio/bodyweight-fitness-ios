@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sideViewController: UIViewController =
         SideViewController()
     
-    let rootViewController =
+    let rootViewController: UINavigationController =
         UINavigationController(rootViewController: RootViewController())
     
     let workoutLogViewController =

@@ -30,6 +30,44 @@ extension UIViewController {
 }
 
 extension UIViewController {
+    func alpha(direction: Direction, color: UIColor = UIColor.blackColor(), alpha: CGFloat = 0.5, speed: Double = 0.5) {
+        switch direction {
+        case .In:
+            let frame = CGRectMake(0, -20, view.frame.width, view.frame.height + 20)
+            let dimView = UIView(frame: frame)
+            
+            dimView.backgroundColor = color
+            dimView.alpha = 0.0
+            
+            view.addSubview(dimView)
+            
+            dimView.translatesAutoresizingMaskIntoConstraints = false
+            
+            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "|[dimView]|",
+                options: [],
+                metrics: nil,
+                views: ["dimView": dimView]))
+            
+            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:|[dimView]|",
+                options: [],
+                metrics: nil,
+                views: ["dimView": dimView]))
+            
+            UIView.animateWithDuration(speed) { () -> Void in
+                dimView.alpha = alpha
+            }
+            
+        case .Out:
+            UIView.animateWithDuration(speed, animations: { () -> Void in
+                self.view.subviews.last?.alpha = alpha ?? 0
+                }, completion: { (complete) -> Void in
+                    self.view.subviews.last?.removeFromSuperview()
+            })
+        }
+    }
+    
     func dim(direction: Direction, color: UIColor = UIColor.blackColor(), alpha: CGFloat = 0.0, speed: Double = 0.0) {
         switch direction {
         case .In:

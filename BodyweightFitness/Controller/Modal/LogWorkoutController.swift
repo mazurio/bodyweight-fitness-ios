@@ -197,7 +197,7 @@ class LogWorkoutController: UIViewController {
         
         // Disable Navigation Drawer
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        appDelegate?.sideNavigationViewController?.enabledLeftView = false
+        appDelegate?.sideNavigationViewController?.enabled = false
     }
     
     func setRepositoryRoutine(repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
@@ -400,7 +400,7 @@ class LogWorkoutController: UIViewController {
             
             // Enable Navigation Drawer
             let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            appDelegate?.sideNavigationViewController?.enabledLeftView = true
+            appDelegate?.sideNavigationViewController?.enabled = true
         }
     }
     

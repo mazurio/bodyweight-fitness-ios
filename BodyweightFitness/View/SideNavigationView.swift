@@ -80,7 +80,6 @@ public class SideNavigationView: UIView {
         get {
             return layer.frame.size.height
         }
-        
         set(value) {
             layer.frame.size.height = value
         }
@@ -157,15 +156,11 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	
 	@IBInspectable public var animationDuration: CGFloat = 0.25
 	
-	@IBInspectable public var enabledLeftView: Bool = true
+	@IBInspectable public var enabled: Bool = true
 	
 	public private(set) var leftView: SideNavigationView?
 	
 	public var opened: Bool {
-		return openedLeftView
-	}
-	
-	public var openedLeftView: Bool {
 		guard nil != leftView else {
 			return false
 		}
@@ -200,6 +195,9 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 		
         addChildViewController(toViewController)
 		
+        self.dimView?.removeFromSuperview()
+        self.dimView = nil
+        
         toViewController.view.frame = rootViewController.view.frame
         
 		transitionFromViewController(rootViewController,
@@ -233,7 +231,7 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 						animations: { [unowned self] in
 							v.bounds.size.width = width
 							v.position.x = -width / 2
-							self.rootViewController.view.alpha = 1
+                            self.dimView?.alpha = 0
 						}) { [unowned self] _ in
 							v.shadowPathAutoSizeEnabled = true
 							self.layoutSubviews()
@@ -244,7 +242,7 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 						animations: { [unowned self] in
 							v.bounds.size.width = width
 							v.position.x = width / 2
-							self.rootViewController.view.alpha = 0.5
+                            self.dimView?.alpha = 0.5
 						}) { [unowned self] _ in
 							v.shadowPathAutoSizeEnabled = true
 							self.layoutSubviews()
@@ -256,13 +254,13 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 				if hidden {
 					hideView(v)
 					v.position.x = -v.width / 2
-					rootViewController.view.alpha = 1
+                    self.dimView?.alpha = 0
 				} else {
 					v.shadowPathAutoSizeEnabled = false
 					
 					showView(v)
 					v.position.x = width / 2
-					rootViewController.view.alpha = 0.5
+                    self.dimView?.alpha = 0.5
 					v.shadowPathAutoSizeEnabled = true
 				}
 				layoutSubviews()
@@ -272,14 +270,41 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	}
 	
 	public func toggleLeftView(velocity: CGFloat = 0) {
-		openedLeftView ? closeLeftView(velocity) : openLeftView(velocity)
+		opened ? closeLeftView(velocity) : openLeftView(velocity)
 	}
+    
+    var dimView: UIView? = nil
 
 	public func openLeftView(velocity: CGFloat = 0) {
-		if enabledLeftView {
+		if enabled {
 			if let v: SideNavigationView = leftView {
 				showView(v)
-				
+                
+                dimView = UIView(frame: view.frame)
+                
+                dimView!.backgroundColor = UIColor.blackColor()
+                dimView!.alpha = 0.0
+                dimView!.userInteractionEnabled = false
+                view.addSubview(dimView!)
+                
+                dimView!.translatesAutoresizingMaskIntoConstraints = false
+                
+                view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                    "|[dimView]|",
+                    options: [],
+                    metrics: nil,
+                    views: ["dimView": dimView!]))
+                
+                view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
+                    "V:|[dimView]|",
+                    options: [],
+                    metrics: nil,
+                    views: ["dimView": dimView!]))
+                
+                UIView.animateWithDuration(0.5) { () -> Void in
+                    self.dimView!.alpha = 0.5
+                }
+                
 				UIView.animateWithDuration(Double(0 == velocity ? animationDuration : fmax(0.1, fmin(1, Double(v.x / velocity)))), animations: {
                     v.position.x = v.width / 2
                 })
@@ -288,9 +313,14 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	}
 	
 	public func closeLeftView(velocity: CGFloat = 0) {
-		if enabledLeftView {
+		if enabled {
 			if let v: SideNavigationView = leftView {
-				rootViewController.view.alpha = 1
+                UIView.animateWithDuration(0.5, animations: { () -> Void in
+                    self.dimView?.alpha = 0
+                    }, completion: { (complete) -> Void in
+                        self.dimView?.removeFromSuperview()
+                })
+                
 				UIView.animateWithDuration(Double(0 == velocity ? animationDuration : fmax(0.1, fmin(1, Double(v.x / velocity)))),
 					animations: {
 						v.position.x = -v.width / 2
@@ -310,7 +340,7 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	
 	@objc(handlePanGesture:)
 	internal func handlePanGesture(recognizer: UIPanGestureRecognizer) {
-		if enabledLeftView && (openedLeftView || isPointContainedWithinLeftViewThreshold(recognizer.locationInView(view))) {
+		if enabled && (opened || isPointContainedWithinLeftViewThreshold(recognizer.locationInView(view))) {
 			if let v: SideNavigationView = leftView {
 				recognizer.locationInView(view)
 				
@@ -325,9 +355,6 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 					let translationX: CGFloat = recognizer.translationInView(v).x
 					
 					v.position.x = originalX + translationX > (w / 2) ? (w / 2) : originalX + translationX
-					
-					let a: CGFloat = 1 - v.position.x / v.width
-					rootViewController.view.alpha = 0.5 < a ? a : 0.5
 				case .Ended, .Cancelled, .Failed:
 					let p: CGPoint = recognizer.velocityInView(recognizer.view)
 					let x: CGFloat = p.x >= 1000 || p.x <= -1000 ? p.x : 0
@@ -337,7 +364,8 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 					} else {
 						openLeftView(x)
 					}
-				case .Possible:break
+				case .Possible:
+                    break
 				}
 			}
 		}
@@ -345,9 +373,9 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	
 	@objc(handleTapGesture:)
 	internal func handleTapGesture(recognizer: UITapGestureRecognizer) {
-		if openedLeftView {
+		if opened {
 			if let v: SideNavigationView = leftView {
-				if enabledLeftView && openedLeftView && !isPointContainedWithinView(v, point: recognizer.locationInView(v)) {
+				if enabled && opened && !isPointContainedWithinView(v, point: recognizer.locationInView(v)) {
 					closeLeftView()
 				}
 			}
@@ -381,7 +409,7 @@ public class SideNavigationController : UIViewController, UIGestureRecognizerDel
 	
 	private func prepareLeftView() {
 		if nil == leftViewController {
-			enabledLeftView = false
+			enabled = false
 		} else {
 			leftViewWidth = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 280 : 320
 			leftView = SideNavigationView()
