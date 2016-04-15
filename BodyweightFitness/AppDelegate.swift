@@ -33,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
 
         self.sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
-        self.sideNavigationViewController?.enableHideStatusbar = false
 
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.primaryDark()
