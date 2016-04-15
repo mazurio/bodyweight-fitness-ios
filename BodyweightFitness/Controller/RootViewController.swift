@@ -35,7 +35,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,17 +60,18 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
 
         self.navigationItem.titleView = navigationViewController.view
         
-        mainView.backgroundColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
-        
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
+
+       
+
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        setTitle()  
+        setTitle()
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {

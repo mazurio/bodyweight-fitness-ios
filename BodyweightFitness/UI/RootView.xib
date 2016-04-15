@@ -133,6 +133,7 @@
                                     </connections>
                                 </button>
                             </subviews>
+                            <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="0yK-1W-1Ty" firstAttribute="top" secondItem="hx5-Ni-twx" secondAttribute="bottom" constant="15" id="0uM-jn-dbY"/>
                                 <constraint firstAttribute="height" constant="200" id="17h-Ns-5SN"/>
@@ -216,7 +217,6 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.57233116610000001" blue="0.53333333329999999" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstItem="Kfq-Sz-1sY" firstAttribute="top" secondItem="rSf-6t-0lW" secondAttribute="top" id="0O9-Wa-maj"/>
                         <constraint firstItem="Kfq-Sz-1sY" firstAttribute="top" secondItem="YSj-CS-QWw" secondAttribute="top" constant="-200" id="0gr-Xt-aRm"/>
@@ -235,7 +235,6 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="rSf-6t-0lW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2jH-Ow-euP"/>
                 <constraint firstAttribute="trailing" secondItem="rSf-6t-0lW" secondAttribute="trailing" id="Rys-du-Bcf"/>
@@ -245,6 +244,8 @@
                 <constraint firstAttribute="bottom" secondItem="rSf-6t-0lW" secondAttribute="bottom" id="wwG-2T-kMo"/>
                 <constraint firstItem="rSf-6t-0lW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xOU-rC-ok5"/>
             </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="-137" y="-253"/>
         </view>
     </objects>

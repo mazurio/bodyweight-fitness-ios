@@ -1,5 +1,4 @@
 import UIKit
-import Material
 import CoreData
 import Fabric
 import Crashlytics
@@ -13,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sideViewController: UIViewController =
         SideViewController()
     
-    let rootViewController: UIViewController =
+    let rootViewController =
         UINavigationController(rootViewController: RootViewController())
     
     let workoutLogViewController =
@@ -27,14 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
-
+        
         self.sideNavigationViewController = SideNavigationController(
             rootViewController: self.rootViewController,
             leftViewController: self.sideViewController
         )
-        
+
         self.sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
- 
+        self.sideNavigationViewController?.enableHideStatusbar = false
+
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.primaryDark()
         self.window?.backgroundColor = UIColor.primary()

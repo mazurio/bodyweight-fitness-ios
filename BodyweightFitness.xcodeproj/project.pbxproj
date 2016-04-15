@@ -98,8 +98,58 @@
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
 		73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BC61CBFF89D00E0258D /* NavigationView.xib */; };
 		73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */; };
-		73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEBB71CBA889400B9DDAE /* Material.framework */; };
-		73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */; };
+		73BF3C1C1CC057FF00E0258D /* CapturePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BD31CC057FF00E0258D /* CapturePreview.swift */; };
+		73BF3C1D1CC057FF00E0258D /* CaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BD41CC057FF00E0258D /* CaptureSession.swift */; };
+		73BF3C1E1CC057FF00E0258D /* CaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BD51CC057FF00E0258D /* CaptureView.swift */; };
+		73BF3C211CC057FF00E0258D /* FabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BD81CC057FF00E0258D /* FabButton.swift */; };
+		73BF3C221CC057FF00E0258D /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BD91CC057FF00E0258D /* FlatButton.swift */; };
+		73BF3C241CC057FF00E0258D /* ImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BDB1CC057FF00E0258D /* ImageCardView.swift */; };
+		73BF3C261CC057FF00E0258D /* Material+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BDD1CC057FF00E0258D /* Material+String.swift */; };
+		73BF3C271CC057FF00E0258D /* Material+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BDE1CC057FF00E0258D /* Material+UIFont.swift */; };
+		73BF3C281CC057FF00E0258D /* Material+UIImage+Blank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BDF1CC057FF00E0258D /* Material+UIImage+Blank.swift */; };
+		73BF3C291CC057FF00E0258D /* Material+UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE01CC057FF00E0258D /* Material+UIImage+Color.swift */; };
+		73BF3C2A1CC057FF00E0258D /* Material+UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE11CC057FF00E0258D /* Material+UIImage+Crop.swift */; };
+		73BF3C2B1CC057FF00E0258D /* Material+UIImage+FilterBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE21CC057FF00E0258D /* Material+UIImage+FilterBlur.swift */; };
+		73BF3C2C1CC057FF00E0258D /* Material+UIImage+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE31CC057FF00E0258D /* Material+UIImage+Network.swift */; };
+		73BF3C2D1CC057FF00E0258D /* Material+UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE41CC057FF00E0258D /* Material+UIImage+Resize.swift */; };
+		73BF3C2E1CC057FF00E0258D /* Material+UIImage+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE51CC057FF00E0258D /* Material+UIImage+Size.swift */; };
+		73BF3C2F1CC057FF00E0258D /* Material+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE61CC057FF00E0258D /* Material+UIImage.swift */; };
+		73BF3C301CC057FF00E0258D /* MaterialAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE71CC057FF00E0258D /* MaterialAnimation.swift */; };
+		73BF3C311CC057FF00E0258D /* MaterialBasicAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE81CC057FF00E0258D /* MaterialBasicAnimation.swift */; };
+		73BF3C321CC057FF00E0258D /* MaterialBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BE91CC057FF00E0258D /* MaterialBorder.swift */; };
+		73BF3C331CC057FF00E0258D /* MaterialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BEA1CC057FF00E0258D /* MaterialButton.swift */; };
+		73BF3C391CC057FF00E0258D /* MaterialColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF01CC057FF00E0258D /* MaterialColor.swift */; };
+		73BF3C3A1CC057FF00E0258D /* MaterialDataSourceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF11CC057FF00E0258D /* MaterialDataSourceItem.swift */; };
+		73BF3C3B1CC057FF00E0258D /* MaterialDepth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF21CC057FF00E0258D /* MaterialDepth.swift */; };
+		73BF3C3C1CC057FF00E0258D /* MaterialDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF31CC057FF00E0258D /* MaterialDevice.swift */; };
+		73BF3C3D1CC057FF00E0258D /* MaterialEdgeInset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF41CC057FF00E0258D /* MaterialEdgeInset.swift */; };
+		73BF3C3E1CC057FF00E0258D /* MaterialFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF51CC057FF00E0258D /* MaterialFont.swift */; };
+		73BF3C3F1CC057FF00E0258D /* MaterialGravity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF61CC057FF00E0258D /* MaterialGravity.swift */; };
+		73BF3C401CC057FF00E0258D /* MaterialIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF71CC057FF00E0258D /* MaterialIcon.swift */; };
+		73BF3C411CC057FF00E0258D /* MaterialKeyframeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF81CC057FF00E0258D /* MaterialKeyframeAnimation.swift */; };
+		73BF3C421CC057FF00E0258D /* MaterialLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BF91CC057FF00E0258D /* MaterialLabel.swift */; };
+		73BF3C431CC057FF00E0258D /* MaterialLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFA1CC057FF00E0258D /* MaterialLayer.swift */; };
+		73BF3C441CC057FF00E0258D /* MaterialLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFB1CC057FF00E0258D /* MaterialLayout.swift */; };
+		73BF3C451CC057FF00E0258D /* MaterialPulseAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFC1CC057FF00E0258D /* MaterialPulseAnimation.swift */; };
+		73BF3C461CC057FF00E0258D /* MaterialPulseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFD1CC057FF00E0258D /* MaterialPulseView.swift */; };
+		73BF3C471CC057FF00E0258D /* MaterialRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFE1CC057FF00E0258D /* MaterialRadius.swift */; };
+		73BF3C481CC057FF00E0258D /* MaterialShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BFF1CC057FF00E0258D /* MaterialShape.swift */; };
+		73BF3C491CC057FF00E0258D /* MaterialSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C001CC057FF00E0258D /* MaterialSpacing.swift */; };
+		73BF3C4A1CC057FF00E0258D /* MaterialSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C011CC057FF00E0258D /* MaterialSwitch.swift */; };
+		73BF3C4B1CC057FF00E0258D /* MaterialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C021CC057FF00E0258D /* MaterialTableViewCell.swift */; };
+		73BF3C4C1CC057FF00E0258D /* MaterialTextLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C031CC057FF00E0258D /* MaterialTextLayer.swift */; };
+		73BF3C4D1CC057FF00E0258D /* MaterialTransitionAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C041CC057FF00E0258D /* MaterialTransitionAnimation.swift */; };
+		73BF3C4E1CC057FF00E0258D /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C051CC057FF00E0258D /* MaterialView.swift */; };
+		73BF3C4F1CC057FF00E0258D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C061CC057FF00E0258D /* Menu.swift */; };
+		73BF3C501CC057FF00E0258D /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C071CC057FF00E0258D /* MenuView.swift */; };
+		73BF3C511CC057FF00E0258D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C081CC057FF00E0258D /* MenuViewController.swift */; };
+		73BF3C551CC057FF00E0258D /* RaisedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C0C1CC057FF00E0258D /* RaisedButton.swift */; };
+		73BF3C561CC057FF00E0258D /* RobotoFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C0D1CC057FF00E0258D /* RobotoFont.swift */; };
+		73BF3C591CC057FF00E0258D /* SideNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C101CC057FF00E0258D /* SideNavigationController.swift */; };
+		73BF3C5D1CC057FF00E0258D /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C141CC057FF00E0258D /* Text.swift */; };
+		73BF3C5E1CC057FF00E0258D /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C151CC057FF00E0258D /* TextField.swift */; };
+		73BF3C5F1CC057FF00E0258D /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C161CC057FF00E0258D /* TextStorage.swift */; };
+		73BF3C601CC057FF00E0258D /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3C171CC057FF00E0258D /* TextView.swift */; };
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
 		73BFEC061CBC2C9A00B9DDAE /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */; };
 		73BFEC071CBC2C9A00B9DDAE /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */; };
@@ -181,7 +231,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
-				73BFEBBB1CBA8A5F00B9DDAE /* Material.framework.dSYM in CopyFiles */,
 				732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */,
 				7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */,
 				734B6FF91C4BE8CB00CFB6BD /* Realm.framework.dSYM in CopyFiles */,
@@ -296,8 +345,58 @@
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BF3BC61CBFF89D00E0258D /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
 		73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
-		73BFEBB71CBA889400B9DDAE /* Material.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Material.framework; path = Carthage/Build/iOS/Material.framework; sourceTree = "<group>"; };
-		73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Material.framework.dSYM; path = Carthage/Build/iOS/Material.framework.dSYM; sourceTree = "<group>"; };
+		73BF3BD31CC057FF00E0258D /* CapturePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapturePreview.swift; sourceTree = "<group>"; };
+		73BF3BD41CC057FF00E0258D /* CaptureSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureSession.swift; sourceTree = "<group>"; };
+		73BF3BD51CC057FF00E0258D /* CaptureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureView.swift; sourceTree = "<group>"; };
+		73BF3BD81CC057FF00E0258D /* FabButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FabButton.swift; sourceTree = "<group>"; };
+		73BF3BD91CC057FF00E0258D /* FlatButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
+		73BF3BDB1CC057FF00E0258D /* ImageCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCardView.swift; sourceTree = "<group>"; };
+		73BF3BDD1CC057FF00E0258D /* Material+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+String.swift"; sourceTree = "<group>"; };
+		73BF3BDE1CC057FF00E0258D /* Material+UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIFont.swift"; sourceTree = "<group>"; };
+		73BF3BDF1CC057FF00E0258D /* Material+UIImage+Blank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Blank.swift"; sourceTree = "<group>"; };
+		73BF3BE01CC057FF00E0258D /* Material+UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Color.swift"; sourceTree = "<group>"; };
+		73BF3BE11CC057FF00E0258D /* Material+UIImage+Crop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Crop.swift"; sourceTree = "<group>"; };
+		73BF3BE21CC057FF00E0258D /* Material+UIImage+FilterBlur.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+FilterBlur.swift"; sourceTree = "<group>"; };
+		73BF3BE31CC057FF00E0258D /* Material+UIImage+Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Network.swift"; sourceTree = "<group>"; };
+		73BF3BE41CC057FF00E0258D /* Material+UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Resize.swift"; sourceTree = "<group>"; };
+		73BF3BE51CC057FF00E0258D /* Material+UIImage+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage+Size.swift"; sourceTree = "<group>"; };
+		73BF3BE61CC057FF00E0258D /* Material+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Material+UIImage.swift"; sourceTree = "<group>"; };
+		73BF3BE71CC057FF00E0258D /* MaterialAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialAnimation.swift; sourceTree = "<group>"; };
+		73BF3BE81CC057FF00E0258D /* MaterialBasicAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialBasicAnimation.swift; sourceTree = "<group>"; };
+		73BF3BE91CC057FF00E0258D /* MaterialBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialBorder.swift; sourceTree = "<group>"; };
+		73BF3BEA1CC057FF00E0258D /* MaterialButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialButton.swift; sourceTree = "<group>"; };
+		73BF3BF01CC057FF00E0258D /* MaterialColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialColor.swift; sourceTree = "<group>"; };
+		73BF3BF11CC057FF00E0258D /* MaterialDataSourceItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDataSourceItem.swift; sourceTree = "<group>"; };
+		73BF3BF21CC057FF00E0258D /* MaterialDepth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDepth.swift; sourceTree = "<group>"; };
+		73BF3BF31CC057FF00E0258D /* MaterialDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialDevice.swift; sourceTree = "<group>"; };
+		73BF3BF41CC057FF00E0258D /* MaterialEdgeInset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialEdgeInset.swift; sourceTree = "<group>"; };
+		73BF3BF51CC057FF00E0258D /* MaterialFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialFont.swift; sourceTree = "<group>"; };
+		73BF3BF61CC057FF00E0258D /* MaterialGravity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialGravity.swift; sourceTree = "<group>"; };
+		73BF3BF71CC057FF00E0258D /* MaterialIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialIcon.swift; sourceTree = "<group>"; };
+		73BF3BF81CC057FF00E0258D /* MaterialKeyframeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialKeyframeAnimation.swift; sourceTree = "<group>"; };
+		73BF3BF91CC057FF00E0258D /* MaterialLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialLabel.swift; sourceTree = "<group>"; };
+		73BF3BFA1CC057FF00E0258D /* MaterialLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialLayer.swift; sourceTree = "<group>"; };
+		73BF3BFB1CC057FF00E0258D /* MaterialLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialLayout.swift; sourceTree = "<group>"; };
+		73BF3BFC1CC057FF00E0258D /* MaterialPulseAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPulseAnimation.swift; sourceTree = "<group>"; };
+		73BF3BFD1CC057FF00E0258D /* MaterialPulseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialPulseView.swift; sourceTree = "<group>"; };
+		73BF3BFE1CC057FF00E0258D /* MaterialRadius.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialRadius.swift; sourceTree = "<group>"; };
+		73BF3BFF1CC057FF00E0258D /* MaterialShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialShape.swift; sourceTree = "<group>"; };
+		73BF3C001CC057FF00E0258D /* MaterialSpacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialSpacing.swift; sourceTree = "<group>"; };
+		73BF3C011CC057FF00E0258D /* MaterialSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialSwitch.swift; sourceTree = "<group>"; };
+		73BF3C021CC057FF00E0258D /* MaterialTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTableViewCell.swift; sourceTree = "<group>"; };
+		73BF3C031CC057FF00E0258D /* MaterialTextLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTextLayer.swift; sourceTree = "<group>"; };
+		73BF3C041CC057FF00E0258D /* MaterialTransitionAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialTransitionAnimation.swift; sourceTree = "<group>"; };
+		73BF3C051CC057FF00E0258D /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		73BF3C061CC057FF00E0258D /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		73BF3C071CC057FF00E0258D /* MenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		73BF3C081CC057FF00E0258D /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		73BF3C0C1CC057FF00E0258D /* RaisedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RaisedButton.swift; sourceTree = "<group>"; };
+		73BF3C0D1CC057FF00E0258D /* RobotoFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RobotoFont.swift; sourceTree = "<group>"; };
+		73BF3C101CC057FF00E0258D /* SideNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideNavigationController.swift; sourceTree = "<group>"; };
+		73BF3C141CC057FF00E0258D /* Text.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
+		73BF3C151CC057FF00E0258D /* TextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		73BF3C161CC057FF00E0258D /* TextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
+		73BF3C171CC057FF00E0258D /* TextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SupportDeveloperView.xib; sourceTree = "<group>"; };
 		73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
@@ -378,7 +477,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BFEBB81CBA889400B9DDAE /* Material.framework in Frameworks */,
 				732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */,
 				7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */,
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
@@ -423,6 +521,7 @@
 				73AA28EB1CABE8E000DEED79 /* UI */,
 				E078934C1B472CAF001195AC /* View */,
 				E0F587B31B52734900540104 /* Images.xcassets */,
+				73BF3BD01CC057FE00E0258D /* iOS */,
 			);
 			path = BodyweightFitness;
 			sourceTree = "<group>";
@@ -555,6 +654,65 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		73BF3BD01CC057FE00E0258D /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73BF3BD31CC057FF00E0258D /* CapturePreview.swift */,
+				73BF3BD41CC057FF00E0258D /* CaptureSession.swift */,
+				73BF3BD51CC057FF00E0258D /* CaptureView.swift */,
+				73BF3BD81CC057FF00E0258D /* FabButton.swift */,
+				73BF3BD91CC057FF00E0258D /* FlatButton.swift */,
+				73BF3BDB1CC057FF00E0258D /* ImageCardView.swift */,
+				73BF3BDD1CC057FF00E0258D /* Material+String.swift */,
+				73BF3BDE1CC057FF00E0258D /* Material+UIFont.swift */,
+				73BF3BDF1CC057FF00E0258D /* Material+UIImage+Blank.swift */,
+				73BF3BE01CC057FF00E0258D /* Material+UIImage+Color.swift */,
+				73BF3BE11CC057FF00E0258D /* Material+UIImage+Crop.swift */,
+				73BF3BE21CC057FF00E0258D /* Material+UIImage+FilterBlur.swift */,
+				73BF3BE31CC057FF00E0258D /* Material+UIImage+Network.swift */,
+				73BF3BE41CC057FF00E0258D /* Material+UIImage+Resize.swift */,
+				73BF3BE51CC057FF00E0258D /* Material+UIImage+Size.swift */,
+				73BF3BE61CC057FF00E0258D /* Material+UIImage.swift */,
+				73BF3BE71CC057FF00E0258D /* MaterialAnimation.swift */,
+				73BF3BE81CC057FF00E0258D /* MaterialBasicAnimation.swift */,
+				73BF3BE91CC057FF00E0258D /* MaterialBorder.swift */,
+				73BF3BEA1CC057FF00E0258D /* MaterialButton.swift */,
+				73BF3BF01CC057FF00E0258D /* MaterialColor.swift */,
+				73BF3BF11CC057FF00E0258D /* MaterialDataSourceItem.swift */,
+				73BF3BF21CC057FF00E0258D /* MaterialDepth.swift */,
+				73BF3BF31CC057FF00E0258D /* MaterialDevice.swift */,
+				73BF3BF41CC057FF00E0258D /* MaterialEdgeInset.swift */,
+				73BF3BF51CC057FF00E0258D /* MaterialFont.swift */,
+				73BF3BF61CC057FF00E0258D /* MaterialGravity.swift */,
+				73BF3BF71CC057FF00E0258D /* MaterialIcon.swift */,
+				73BF3BF81CC057FF00E0258D /* MaterialKeyframeAnimation.swift */,
+				73BF3BF91CC057FF00E0258D /* MaterialLabel.swift */,
+				73BF3BFA1CC057FF00E0258D /* MaterialLayer.swift */,
+				73BF3BFB1CC057FF00E0258D /* MaterialLayout.swift */,
+				73BF3BFC1CC057FF00E0258D /* MaterialPulseAnimation.swift */,
+				73BF3BFD1CC057FF00E0258D /* MaterialPulseView.swift */,
+				73BF3BFE1CC057FF00E0258D /* MaterialRadius.swift */,
+				73BF3BFF1CC057FF00E0258D /* MaterialShape.swift */,
+				73BF3C001CC057FF00E0258D /* MaterialSpacing.swift */,
+				73BF3C011CC057FF00E0258D /* MaterialSwitch.swift */,
+				73BF3C021CC057FF00E0258D /* MaterialTableViewCell.swift */,
+				73BF3C031CC057FF00E0258D /* MaterialTextLayer.swift */,
+				73BF3C041CC057FF00E0258D /* MaterialTransitionAnimation.swift */,
+				73BF3C051CC057FF00E0258D /* MaterialView.swift */,
+				73BF3C061CC057FF00E0258D /* Menu.swift */,
+				73BF3C071CC057FF00E0258D /* MenuView.swift */,
+				73BF3C081CC057FF00E0258D /* MenuViewController.swift */,
+				73BF3C0C1CC057FF00E0258D /* RaisedButton.swift */,
+				73BF3C0D1CC057FF00E0258D /* RobotoFont.swift */,
+				73BF3C101CC057FF00E0258D /* SideNavigationController.swift */,
+				73BF3C141CC057FF00E0258D /* Text.swift */,
+				73BF3C151CC057FF00E0258D /* TextField.swift */,
+				73BF3C161CC057FF00E0258D /* TextStorage.swift */,
+				73BF3C171CC057FF00E0258D /* TextView.swift */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
 		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
 			isa = PBXGroup;
 			children = (
@@ -562,7 +720,6 @@
 				732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */,
 				7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */,
 				733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */,
-				73BFEBB91CBA8A4700B9DDAE /* Material.framework.dSYM */,
 				734B6FF71C4BE8CB00CFB6BD /* Realm.framework.dSYM */,
 				734B6FF81C4BE8CB00CFB6BD /* RealmSwift.framework.dSYM */,
 			);
@@ -574,7 +731,6 @@
 			children = (
 				73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */,
 				73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */,
-				73BFEBB71CBA889400B9DDAE /* Material.framework */,
 				732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */,
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
 				7366D8E31C51AD5900819790 /* SwiftCharts.framework */,
@@ -877,7 +1033,6 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Material.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
@@ -899,15 +1054,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				734B6FCF1C4BB73D00CFB6BD /* CVCalendarViewDelegate.swift in Sources */,
+				73BF3C271CC057FF00E0258D /* Material+UIFont.swift in Sources */,
 				734B6FE11C4BB73D00CFB6BD /* CVSet.swift in Sources */,
+				73BF3C3E1CC057FF00E0258D /* MaterialFont.swift in Sources */,
+				73BF3C391CC057FF00E0258D /* MaterialColor.swift in Sources */,
+				73BF3C1D1CC057FF00E0258D /* CaptureSession.swift in Sources */,
 				734B70051C4BF7C700CFB6BD /* RepositoryRoutine.swift in Sources */,
 				7366D8D11C4EE9CC00819790 /* ProgressViewController.swift in Sources */,
+				73BF3C2D1CC057FF00E0258D /* Material+UIImage+Resize.swift in Sources */,
+				73BF3C311CC057FF00E0258D /* MaterialBasicAnimation.swift in Sources */,
+				73BF3C3B1CC057FF00E0258D /* MaterialDepth.swift in Sources */,
+				73BF3C471CC057FF00E0258D /* MaterialRadius.swift in Sources */,
 				734B6FB11C4BB73D00CFB6BD /* CVAuxiliaryView.swift in Sources */,
+				73BF3C511CC057FF00E0258D /* MenuViewController.swift in Sources */,
+				73BF3C241CC057FF00E0258D /* ImageCardView.swift in Sources */,
+				73BF3C4D1CC057FF00E0258D /* MaterialTransitionAnimation.swift in Sources */,
 				E0F587351B5272F400540104 /* ActionView.swift in Sources */,
 				734B70081C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */,
 				734B6FDB1C4BB73D00CFB6BD /* CVRange.swift in Sources */,
 				E0C7E3171B5BC12B00EB6389 /* ImageSourceHelpers.swift in Sources */,
 				734B6FBF1C4BB73D00CFB6BD /* CVCalendarMonthContentViewController.swift in Sources */,
+				73BF3C451CC057FF00E0258D /* MaterialPulseAnimation.swift in Sources */,
+				73BF3C1E1CC057FF00E0258D /* CaptureView.swift in Sources */,
 				E0C7E31D1B5BC12B00EB6389 /* UIImageExtension.swift in Sources */,
 				734B6FBB1C4BB73D00CFB6BD /* CVCalendarMenuView.swift in Sources */,
 				E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */,
@@ -915,56 +1083,95 @@
 				7366D8E11C51810600819790 /* Extensions.swift in Sources */,
 				732BA02C1C5B76E500C1CDB5 /* ProgressSectionCell.swift in Sources */,
 				E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */,
+				73BF3C551CC057FF00E0258D /* RaisedButton.swift in Sources */,
+				73BF3C2F1CC057FF00E0258D /* Material+UIImage.swift in Sources */,
+				73BF3C491CC057FF00E0258D /* MaterialSpacing.swift in Sources */,
 				734B70021C4BF57600CFB6BD /* RepositoryStream.swift in Sources */,
+				73BF3C331CC057FF00E0258D /* MaterialButton.swift in Sources */,
 				734B6FC91C4BB73D00CFB6BD /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
 				7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */,
 				734B6FD11C4BB73D00CFB6BD /* CVCalendarViewPresentationMode.swift in Sources */,
+				73BF3C3A1CC057FF00E0258D /* MaterialDataSourceItem.swift in Sources */,
+				73BF3C2B1CC057FF00E0258D /* Material+UIImage+FilterBlur.swift in Sources */,
 				733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */,
+				73BF3C2E1CC057FF00E0258D /* Material+UIImage+Size.swift in Sources */,
+				73BF3C1C1CC057FF00E0258D /* CapturePreview.swift in Sources */,
 				73AA28FD1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift in Sources */,
 				734B6FFF1C4BF46400CFB6BD /* RepositorySet.swift in Sources */,
 				734B6FB71C4BB73D00CFB6BD /* CVCalendarDayViewControlCoordinator.swift in Sources */,
+				73BF3C2C1CC057FF00E0258D /* Material+UIImage+Network.swift in Sources */,
 				732BA0491C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift in Sources */,
 				E0CA1FC81BACA5A000FF6F8C /* PersistenceManager.swift in Sources */,
+				73BF3C3D1CC057FF00E0258D /* MaterialEdgeInset.swift in Sources */,
+				73BF3C301CC057FF00E0258D /* MaterialAnimation.swift in Sources */,
 				73AA28F31CB7ACC100DEED79 /* DashboardCategoryCell.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
+				73BF3C461CC057FF00E0258D /* MaterialPulseView.swift in Sources */,
+				73BF3C4A1CC057FF00E0258D /* MaterialSwitch.swift in Sources */,
+				73BF3C441CC057FF00E0258D /* MaterialLayout.swift in Sources */,
+				73BF3C291CC057FF00E0258D /* Material+UIImage+Color.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
 				734B6FD91C4BB73D00CFB6BD /* CVDate.swift in Sources */,
 				734B6FBD1C4BB73D00CFB6BD /* CVCalendarMenuViewDelegate.swift in Sources */,
 				E0F5873C1B52730000540104 /* SettingsViewController.swift in Sources */,
+				73BF3C5F1CC057FF00E0258D /* TextStorage.swift in Sources */,
 				734B6FD71C4BB73D00CFB6BD /* CVCalendarWeekView.swift in Sources */,
 				E0C7E3111B5BC12B00EB6389 /* Animator.swift in Sources */,
+				73BF3C5D1CC057FF00E0258D /* Text.swift in Sources */,
 				734B6FCD1C4BB73D00CFB6BD /* CVCalendarViewAppearanceDelegate.swift in Sources */,
 				732BA0431C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
+				73BF3C431CC057FF00E0258D /* MaterialLayer.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
+				73BF3C261CC057FF00E0258D /* Material+String.swift in Sources */,
+				73BF3C2A1CC057FF00E0258D /* Material+UIImage+Crop.swift in Sources */,
+				73BF3C321CC057FF00E0258D /* MaterialBorder.swift in Sources */,
 				73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
+				73BF3C481CC057FF00E0258D /* MaterialShape.swift in Sources */,
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
+				73BF3C5E1CC057FF00E0258D /* TextField.swift in Sources */,
 				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
+				73BF3C4C1CC057FF00E0258D /* MaterialTextLayer.swift in Sources */,
+				73BF3C591CC057FF00E0258D /* SideNavigationController.swift in Sources */,
 				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */,
+				73BF3C4E1CC057FF00E0258D /* MaterialView.swift in Sources */,
 				734B6FD51C4BB73D00CFB6BD /* CVCalendarWeekday.swift in Sources */,
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
 				734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
+				73BF3C4B1CC057FF00E0258D /* MaterialTableViewCell.swift in Sources */,
 				734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */,
 				734B6FDF1C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */,
+				73BF3C401CC057FF00E0258D /* MaterialIcon.swift in Sources */,
+				73BF3C281CC057FF00E0258D /* Material+UIImage+Blank.swift in Sources */,
 				734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
 				734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
 				73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */,
+				73BF3C211CC057FF00E0258D /* FabButton.swift in Sources */,
+				73BF3C411CC057FF00E0258D /* MaterialKeyframeAnimation.swift in Sources */,
+				73BF3C3C1CC057FF00E0258D /* MaterialDevice.swift in Sources */,
 				734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
+				73BF3C3F1CC057FF00E0258D /* MaterialGravity.swift in Sources */,
+				73BF3C421CC057FF00E0258D /* MaterialLabel.swift in Sources */,
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
+				73BF3C221CC057FF00E0258D /* FlatButton.swift in Sources */,
 				73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */,
 				73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */,
+				73BF3C561CC057FF00E0258D /* RobotoFont.swift in Sources */,
 				734B6FC51C4BB73D00CFB6BD /* CVCalendarView.swift in Sources */,
+				73BF3C4F1CC057FF00E0258D /* Menu.swift in Sources */,
 				734B6FE31C4BB73D00CFB6BD /* CVShape.swift in Sources */,
 				734B6FB51C4BB73D00CFB6BD /* CVCalendarDayView.swift in Sources */,
 				734B6F3F1C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */,
 				46B02780EEC08B16FB384A4F /* CardView.swift in Sources */,
+				73BF3C601CC057FF00E0258D /* TextView.swift in Sources */,
 				46B021B6A56C2000CA08000B /* WorkoutLogViewController.swift in Sources */,
+				73BF3C501CC057FF00E0258D /* MenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
