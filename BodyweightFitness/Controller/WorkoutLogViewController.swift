@@ -125,10 +125,7 @@ class WorkoutLogViewController: UIViewController,
 
             for (_, weekView) in weekContentViewController.weekViews {
                 for dayView in weekView.dayViews {
-                    let order = NSCalendar.currentCalendar().compareDate(
-                    date!,
-                            toDate: dayView.date.date,
-                            toUnitGranularity: .Day)
+                    let order = NSCalendar.currentCalendar().compareDate(date!, toDate: dayView.date.date, toUnitGranularity: .Day)
 
                     if (order == .OrderedSame) {
                         dayView.setSelectedWithType(.Single)
