@@ -117,7 +117,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     
     func showNotification(seconds: Int) {
         let notification = CWStatusBarNotification()
-        notification.notificationLabelFont = UIFont.systemFontOfSize(17)
+        notification.notificationLabelFont = UIFont.boldSystemFontOfSize(17)
         notification.notificationLabelBackgroundColor = UIColor.primary()
         notification.notificationLabelTextColor = UIColor.primaryDark()
         

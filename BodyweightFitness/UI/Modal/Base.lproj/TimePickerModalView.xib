@@ -21,12 +21,10 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="8XD-Xd-h2g" secondAttribute="trailing" id="6Yg-m3-B5s"/>
-                <constraint firstItem="8XD-Xd-h2g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AE4-eN-iLK"/>
-                <constraint firstItem="8XD-Xd-h2g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BEe-dU-xiA"/>
-                <constraint firstItem="8XD-Xd-h2g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="CNL-og-keo"/>
-                <constraint firstAttribute="bottom" secondItem="8XD-Xd-h2g" secondAttribute="bottom" id="ozg-Rk-xhk"/>
-                <constraint firstItem="8XD-Xd-h2g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xtt-Dx-q10"/>
+                <constraint firstAttribute="bottom" secondItem="8XD-Xd-h2g" secondAttribute="bottom" id="4U4-as-bsg"/>
+                <constraint firstItem="8XD-Xd-h2g" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="S4W-AC-1cs"/>
+                <constraint firstAttribute="trailing" secondItem="8XD-Xd-h2g" secondAttribute="trailing" id="dB8-UB-PwO"/>
+                <constraint firstItem="8XD-Xd-h2g" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kxo-PP-U2r"/>
             </constraints>
         </view>
     </objects>
