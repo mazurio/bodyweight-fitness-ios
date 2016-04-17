@@ -63,6 +63,11 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         setNavigationBar()
         updateLabel()
         changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
+        
+        let rate = RateMyApp.sharedInstance
+        
+        rate.appID = "1018863605"
+        rate.trackAppUsage()
     }
     
     override func viewDidAppear(animated: Bool) {

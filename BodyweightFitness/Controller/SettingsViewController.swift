@@ -100,6 +100,8 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             return 2
+        } else if (section == 3) {
+            return 2
         }
         
         return 1
@@ -145,7 +147,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 toggle.addTarget(self, action: #selector(playAudioWhenTimerStops), forControlEvents: UIControlEvents.ValueChanged)
             } else {
                 cell.textLabel?.text = "Automatic Logging"
-                cell.detailTextLabel?.text = "Automatically logs timed exercises"
+                cell.detailTextLabel?.text = "Automatically log timed exercises"
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 if (defaults.objectForKey("automaticallyLogTimedExercises") != nil) {
@@ -179,6 +181,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             cell.detailTextLabel?.text = "github.com/mazurio"
             
             return cell
+        }
+        
+        if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
+                
+                cell.textLabel?.text = "Rate the app in iTunes Store"
+                
+                return cell
+            }
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier("SettingsTextCell", forIndexPath: indexPath) as UITableViewCell!
@@ -235,6 +247,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         if indexPath.section == 2 {
+            if indexPath.row == 0 {
+                if let requestUrl = NSURL(string: "https://www.github.com/mazurio") {
+                    UIApplication.sharedApplication().openURL(requestUrl)
+                }
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
+        
+        if indexPath.section == 3 {
             if indexPath.row == 0 {
                 if let requestUrl = NSURL(string: "https://www.github.com/mazurio") {
                     UIApplication.sharedApplication().openURL(requestUrl)
