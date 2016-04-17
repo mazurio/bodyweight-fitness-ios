@@ -1,32 +1,15 @@
 import UIKit
-import AVFoundation
-import SwiftCharts
 
-class RootViewController: UIViewController, AVAudioPlayerDelegate {
-//    @IBOutlet var exerciseTitle: UILabel!
-//    @IBOutlet var sectionTitle: UILabel!
-//    @IBOutlet var exerciseDescription: UILabel!
-    
+class RootViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
-    @IBOutlet var timerMinutesButton: UIButton!
-    @IBOutlet var timerButton: UIButton!
+    @IBOutlet var topView: UIView!
     @IBOutlet var mainView: UIView!
     @IBOutlet var gifView: AnimatableImageView!
-    @IBOutlet var previousButton: UIButton!
-    @IBOutlet var nextButton: UIButton!
-    @IBOutlet var playButton: UIButton!
     
     let navigationViewController: NavigationViewController = NavigationViewController()
-    var timePickerController: TimePickerController?
-    var timer = NSTimer()
-    var isPlaying = false
-    var seconds = PersistenceManager.getTimer()
-    var defaultSeconds = PersistenceManager.getTimer()
-    var loggedSeconds = 0
+    let timedViewController: TimedViewController = TimedViewController()
     
     var current: Exercise?
-    
-    var audioPlayer: AVAudioPlayer?
     
     init() {
         super.init(nibName: "RootView", bundle: nil)
@@ -39,7 +22,16 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.timedViewController.rootViewController = self
         self.setNavigationBar()
+        
+        self.timedViewController.view.frame = self.topView.frame
+        self.timedViewController.willMoveToParentViewController(self)
+        
+        self.topView.addSubview(self.timedViewController.view)
+        
+        self.addChildViewController(self.timedViewController)
+        self.timedViewController.didMoveToParentViewController(self)
         
         let menuItem = UIBarButtonItem(
             image: UIImage(named: "menu"),
@@ -57,12 +49,10 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.navigationItem.leftBarButtonItem = menuItem
         self.navigationItem.rightBarButtonItem = dashboardItem
-
         self.navigationItem.titleView = navigationViewController.view
         
-        setNavigationBar()
-        updateLabel()
-        changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
+        self.timedViewController.updateLabel()
+        self.changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
         
         let rate = RateMyApp.sharedInstance
         
@@ -101,7 +91,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
-        self.stopTimer()
+        self.timedViewController.stopTimer()
         
         let logWorkoutController = LogWorkoutController()
         
@@ -113,19 +103,6 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     
         self.sideNavigationController?.dim(.In, alpha: 0.5, speed: 0.5)
         self.sideNavigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
-    }
-    
-    func showNotification(seconds: Int) {
-        let notification = CWStatusBarNotification()
-        notification.notificationLabelFont = UIFont.boldSystemFontOfSize(17)
-        notification.notificationLabelBackgroundColor = UIColor.primary()
-        notification.notificationLabelTextColor = UIColor.primaryDark()
-        
-        notification.notificationStyle = .NavigationBarNotification
-        notification.notificationAnimationInStyle = .Top
-        notification.notificationAnimationOutStyle = .Top
-        
-        notification.displayNotificationWithMessage("Logged \(seconds) seconds", forDuration: 2.0)
     }
     
     func setTitle() {
@@ -140,7 +117,7 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     internal func changeExercise(currentExercise: Exercise) {
-        self.loggedSeconds = 0
+        self.timedViewController.loggedSeconds = 0
         
         self.current = currentExercise
         
@@ -148,8 +125,8 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
         self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
         
-        restartTimer(defaultSeconds)
-        setGifImage(currentExercise.id)
+        self.timedViewController.restartTimer(self.timedViewController.defaultSeconds)
+        self.setGifImage(currentExercise.id)
         
         if (currentExercise.section?.mode == SectionMode.All) {
             if let image = UIImage(named: "plus") {
@@ -162,15 +139,15 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         }
         
         if let _ = self.current?.previous {
-            previousButton.hidden = false
+            self.timedViewController.previousButton.hidden = false
         } else {
-            previousButton.hidden = true
+            self.timedViewController.previousButton.hidden = true
         }
         
         if let _ = self.current?.next {
-            nextButton.hidden = false
+            self.timedViewController.nextButton.hidden = false
         } else {
-            nextButton.hidden = true
+            self.timedViewController.nextButton.hidden = true
         }
     }
     
@@ -281,230 +258,16 @@ class RootViewController: UIViewController, AVAudioPlayerDelegate {
         
         self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-    ///
-    /// Previous exercise button.
-    ///
+
     @IBAction func previousButtonClicked(sender: AnyObject) {
         if let previous = self.current?.previous {
             changeExercise(previous)
         }
     }
-    
-    ///
-    /// Next exercise button.
-    ///
+ 
     @IBAction func nextButtonClicked(sender: AnyObject) {
         if let next = self.current?.next {
             changeExercise(next)
         }
     }
-    
-    ///
-    /// Callback from alert action that time has been set.
-    ///
-    func setTimeAction() {
-        if let seconds = self.timePickerController?.getTotalSeconds() {
-            self.defaultSeconds = seconds
-            self.restartTimer(seconds)
-            
-            PersistenceManager.storeTimer(self.defaultSeconds)
-        }
-    }
-    
-    ///
-    /// Timer button that opens popup picker.
-    ///
-    @IBAction func timerButton(sender: AnyObject) {
-        stopTimer()
-        
-        timePickerController = TimePickerController()
-        timePickerController?.setDefaultTimer(self.seconds)
-        
-        let alertController = UIAlertController(title: "", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        
-        let setTimeAlertAction = UIAlertAction(
-            title: "Set Timer",
-            style: UIAlertActionStyle.Default) { action -> Void in self.setTimeAction() }
-        
-        alertController.setValue(timePickerController, forKey: "contentViewController");
-        alertController.addAction(setTimeAlertAction)
-        
-        self.parentViewController?.presentViewController(alertController, animated: true, completion: nil)
-    }
-    
-    @IBAction func increaseButton(sender: AnyObject) {
-        seconds += 5
-        updateLabel()
-    }
-    
-    @IBAction func playButton(sender: AnyObject) {
-        if(isPlaying) {
-            stopTimer()
-        } else {
-            startTimer()
-        }
-    }
-    
-    @IBAction func restartButton(sender: AnyObject) {
-        restartTimer(defaultSeconds)
-    }
-    
-    func stopTimer() {
-        isPlaying = false
-        
-        playButton.setImage(
-            UIImage(named: "play") as UIImage?,
-            forState: UIControlState.Normal)
-        
-        timer.invalidate()
-        
-        self.logSeconds()
-    }
-    
-    func startTimer() {
-        isPlaying = true
-        
-        playButton.setImage(
-            UIImage(named: "pause") as UIImage?,
-            forState: UIControlState.Normal)
-        
-        timer = NSTimer.scheduledTimerWithTimeInterval(
-            1,
-            target: self,
-            selector: #selector(updateTimer),
-            userInfo: nil,
-            repeats: true
-        )
-    }
-    
-    func restartTimer(seconds: Int) {
-        stopTimer()
-        
-        self.seconds = seconds
-        self.logSeconds()
-        
-        updateLabel()
-    }
-    
-    func updateTimer() {
-        seconds -= 1
-        loggedSeconds += 1
-        
-        if(seconds <= 0) {
-            restartTimer(defaultSeconds)
-            
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if(defaults.objectForKey("playAudioWhenTimerStops") != nil) {
-                let playAudioWhenTimerStops = defaults.boolForKey("playAudioWhenTimerStops")
-                if(playAudioWhenTimerStops) {
-                    audioPlayerStart()
-                }
-            } else {
-                audioPlayerStart()
-            }
-        }
-        
-        updateLabel()
-    }
-    
-    ///
-    /// Play Audio.
-    ///
-    func audioPlayerStart() {
-        let alertSound = NSURL(fileURLWithPath: NSBundle
-            .mainBundle()
-            .pathForResource("finished", ofType: "mp3")!)
-        
-        do {
-            try AVAudioSession.sharedInstance().setActive(true)
-            
-            audioPlayer = try AVAudioPlayer(contentsOfURL: alertSound, fileTypeHint: nil)
-            audioPlayer?.delegate = self
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
-        } catch {
-            print("AVAudioSession errors.")
-        }
-    }
-    
-    func logSeconds() {
-        if let current = current {
-            if (loggedSeconds > 1 && current.isTimed()) {
-                let realm = RepositoryStream.sharedInstance.getRealm()
-                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
-                
-                if let repositoryExercise = repositoryRoutine.exercises.filter({
-                    $0.exerciseId == current.exerciseId
-                }).first {
-                    let sets = repositoryExercise.sets
-                    
-                    try! realm.write {
-                        if (sets.count == 1 && sets[0].seconds == 0) {
-                            sets[0].seconds = loggedSeconds
-                            
-                            showNotification(loggedSeconds)
-                        } else if (sets.count >= 1 && sets.count < 9) {
-                            let repositorySet = RepositorySet()
-                            
-                            repositorySet.exercise = repositoryExercise
-                            repositorySet.isTimed = true
-                            repositorySet.seconds = loggedSeconds
-                            
-                            sets.append(repositorySet)
-                            
-                            repositoryRoutine.lastUpdatedTime = NSDate()
-                            
-                            showNotification(loggedSeconds)
-                        }
-                        
-                        realm.add(repositoryRoutine, update: true)
-                    }
-                }
-            }
-            
-        }
-        
-        loggedSeconds = 0
-    }
-    
-    ///
-    /// Notify others that audio has finished playing so they can resume (e.g. Music Player like iTunes or Spotify).
-    ///
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
-        do {
-            try AVAudioSession.sharedInstance().setActive(false, withOptions:
-                AVAudioSessionSetActiveOptions.NotifyOthersOnDeactivation)
-        } catch {
-            print("AVAudioSession errors.")
-        }
-    }
-    
-    ///
-    /// Print label to the screen.
-    ///
-    func updateLabel() {
-        let (_, m, s) = secondsToHoursMinutesSeconds(seconds)
-        
-        timerMinutesButton.setTitle(printTimerValue(m), forState: UIControlState.Normal)
-        timerButton.setTitle(printTimerValue(s), forState: UIControlState.Normal)
-    }
-    
-    ///
-    /// Allows to format timer value e.g. 1 as 01
-    ///
-    func printTimerValue(value: Int) -> String {
-        if(value > 9) {
-            return String(value)
-        } else {
-            return "0" + String(value)
-        }
-    }
-    
-    ///
-    /// Converts value in seconds to hours, minutes and seconds.
-    ///
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
-        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
-}
+  }
