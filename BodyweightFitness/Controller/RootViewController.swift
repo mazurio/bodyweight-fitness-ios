@@ -3,11 +3,14 @@ import UIKit
 class RootViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var topView: UIView!
+    @IBOutlet var middleView: UIView!
+    @IBOutlet var viewControl: UISegmentedControl!
     @IBOutlet var mainView: UIView!
     @IBOutlet var gifView: AnimatableImageView!
     
     let navigationViewController: NavigationViewController = NavigationViewController()
     let timedViewController: TimedViewController = TimedViewController()
+    let weightedViewController: WeightedViewController = WeightedViewController()
     
     var current: Exercise?
     
@@ -22,16 +25,36 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         self.timedViewController.rootViewController = self
-        self.setNavigationBar()
+        self.weightedViewController.rootViewController = self
+        
+        
         
         self.timedViewController.view.frame = self.topView.frame
         self.timedViewController.willMoveToParentViewController(self)
         
+        self.addChildViewController(self.timedViewController)
+        
         self.topView.addSubview(self.timedViewController.view)
         
-        self.addChildViewController(self.timedViewController)
         self.timedViewController.didMoveToParentViewController(self)
+        
+        
+        
+        self.weightedViewController.view.frame = self.topView.frame
+        self.weightedViewController.willMoveToParentViewController(self)
+        
+        self.addChildViewController(self.weightedViewController)
+        
+        self.topView.addSubview(self.weightedViewController.view)
+        
+        self.weightedViewController.didMoveToParentViewController(self)
+        
+        
+        
+        self.setNavigationBar()
         
         let menuItem = UIBarButtonItem(
             image: UIImage(named: "menu"),
@@ -90,6 +113,19 @@ class RootViewController: UIViewController {
         self.navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
     
+    @IBAction func indexChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.timedViewController.view.hidden = false
+            self.weightedViewController.view.hidden = true
+        case 1:
+            self.timedViewController.view.hidden = true
+            self.weightedViewController.view.hidden = false
+        default:
+            break;
+        }
+    }
+    
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
         self.timedViewController.stopTimer()
         
@@ -140,14 +176,36 @@ class RootViewController: UIViewController {
         
         if let _ = self.current?.previous {
             self.timedViewController.previousButton.hidden = false
+            self.weightedViewController.previousButton.hidden = false
         } else {
             self.timedViewController.previousButton.hidden = true
+            self.weightedViewController.previousButton.hidden = true
         }
         
         if let _ = self.current?.next {
             self.timedViewController.nextButton.hidden = false
+            self.weightedViewController.nextButton.hidden = false
         } else {
             self.timedViewController.nextButton.hidden = true
+            self.weightedViewController.nextButton.hidden = true
+        }
+        
+        if let current = self.current {
+            if current.isTimed() {
+                self.viewControl.selectedSegmentIndex = 0
+                self.viewControl.setEnabled(false, forSegmentAtIndex: 1)
+                self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+                
+                self.timedViewController.view.hidden = false
+                self.weightedViewController.view.hidden = true
+            } else {
+                self.viewControl.selectedSegmentIndex = 1
+                self.viewControl.setEnabled(true, forSegmentAtIndex: 1)
+                self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+                
+                self.timedViewController.view.hidden = true
+                self.weightedViewController.view.hidden = false
+            }
         }
     }
     

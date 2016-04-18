@@ -89,6 +89,8 @@
 		73BADE151CC3DC26001ACEDC /* RateMyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE141CC3DC26001ACEDC /* RateMyApp.swift */; };
 		73BADE171CC3E2F9001ACEDC /* TimedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE161CC3E2F9001ACEDC /* TimedView.xib */; };
 		73BADE191CC3E347001ACEDC /* TimedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE181CC3E347001ACEDC /* TimedViewController.swift */; };
+		73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */; };
+		73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */; };
 		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
 		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
@@ -288,6 +290,8 @@
 		73BADE141CC3DC26001ACEDC /* RateMyApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateMyApp.swift; path = BodyweightFitness/Vendor/RateMyApp.swift; sourceTree = "<group>"; };
 		73BADE161CC3E2F9001ACEDC /* TimedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimedView.xib; sourceTree = "<group>"; };
 		73BADE181CC3E347001ACEDC /* TimedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedViewController.swift; sourceTree = "<group>"; };
+		73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedViewController.swift; sourceTree = "<group>"; };
+		73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightedView.xib; sourceTree = "<group>"; };
 		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = "<group>"; };
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
@@ -505,6 +509,7 @@
 				73BF3BC61CBFF89D00E0258D /* NavigationView.xib */,
 				73BF3BB81CBEFB0E00E0258D /* RootView.xib */,
 				73BADE161CC3E2F9001ACEDC /* TimedView.xib */,
+				73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
 				735BEA061CBD1E56003616C5 /* SideView.xib */,
 				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
@@ -527,6 +532,7 @@
 				73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */,
 				73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */,
 				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
+				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
@@ -792,6 +798,7 @@
 				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemCell.xib in Resources */,
 				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
+				73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */,
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
 				E0F587901B52733100540104 /* l_sit.gif in Resources */,
 				E0F587941B52733100540104 /* one_foot_l_sit.gif in Resources */,
@@ -942,6 +949,7 @@
 				73BADE151CC3DC26001ACEDC /* RateMyApp.swift in Sources */,
 				732BA0431C5EB9C300C1CDB5 /* WorkoutLogCardCell.swift in Sources */,
 				734B6FB91C4BB73D00CFB6BD /* CVCalendarManager.swift in Sources */,
+				73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
 				73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */,

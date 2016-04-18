@@ -52,10 +52,9 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-yT-mcq" userLabel="Timer Minutes Button">
-                            <rect key="frame" x="216" y="8" width="85" height="110"/>
+                            <rect key="frame" x="215" y="8" width="85" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="85" id="pIy-7N-xip"/>
-                                <constraint firstAttribute="height" constant="110" id="upq-zQ-gBU"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,21 +64,6 @@
                             </state>
                             <connections>
                                 <action selector="timerButton:" destination="-1" eventType="touchUpInside" id="XN2-FZ-Xrg"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR2-Zg-PPc" userLabel="Timer Seconds Button">
-                            <rect key="frame" x="301" y="8" width="85" height="110"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="110" id="Y4t-lb-kwP"/>
-                                <constraint firstAttribute="width" constant="85" id="odJ-OU-Ogk"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="63"/>
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="00">
-                                <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="timerButton:" destination="-1" eventType="touchUpInside" id="liQ-mz-2Mf"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-ku-WQk" userLabel="Play Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
@@ -126,29 +110,53 @@
                                 <action selector="increaseButton:" destination="-1" eventType="touchUpInside" id="Y8w-Xb-T7X"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpD-xo-7BY">
+                            <rect key="frame" x="300" y="8" width="0.0" height="110"/>
+                            <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="110" id="1cL-tf-Alf"/>
+                                <constraint firstAttribute="width" id="nBg-z7-7Qp"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR2-Zg-PPc" userLabel="Timer Seconds Button">
+                            <rect key="frame" x="300" y="8" width="85" height="110"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="85" id="odJ-OU-Ogk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="63"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="00">
+                                <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="timerButton:" destination="-1" eventType="touchUpInside" id="liQ-mz-2Mf"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="leading" secondItem="1VB-yT-mcq" secondAttribute="trailing" id="0iH-bD-tdk"/>
+                        <constraint firstItem="tpD-xo-7BY" firstAttribute="leading" secondItem="1VB-yT-mcq" secondAttribute="trailing" id="16z-Or-eb5"/>
                         <constraint firstAttribute="height" constant="200" id="5Hg-gE-FXs"/>
-                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" constant="8" id="9Le-Pc-sGd"/>
                         <constraint firstAttribute="width" constant="600" id="Bh0-mP-q4w"/>
+                        <constraint firstItem="hw4-ku-WQk" firstAttribute="top" secondItem="tpD-xo-7BY" secondAttribute="bottom" constant="8" id="DXV-8S-99S"/>
                         <constraint firstItem="hw4-ku-WQk" firstAttribute="leading" secondItem="Fs7-HS-adP" secondAttribute="trailing" constant="8" id="F2b-bP-eEX"/>
+                        <constraint firstItem="1VB-yT-mcq" firstAttribute="centerY" secondItem="tpD-xo-7BY" secondAttribute="centerY" id="ISv-hO-TrZ"/>
                         <constraint firstItem="c6q-At-9iv" firstAttribute="leading" secondItem="hw4-ku-WQk" secondAttribute="trailing" constant="8" id="JNR-5M-OGe"/>
-                        <constraint firstItem="Fs7-HS-adP" firstAttribute="top" secondItem="1VB-yT-mcq" secondAttribute="bottom" constant="15" id="KvJ-Gs-V0h"/>
+                        <constraint firstItem="Fs7-HS-adP" firstAttribute="centerY" secondItem="hw4-ku-WQk" secondAttribute="centerY" id="LbV-Rw-WfA"/>
+                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="height" secondItem="tpD-xo-7BY" secondAttribute="height" id="M05-7g-Gch"/>
+                        <constraint firstItem="1VB-yT-mcq" firstAttribute="height" secondItem="tpD-xo-7BY" secondAttribute="height" id="Osm-dp-ti9"/>
                         <constraint firstItem="cRs-Vv-tAj" firstAttribute="leading" secondItem="sfc-Xd-dVc" secondAttribute="leadingMargin" constant="8" id="Swo-p2-PZz"/>
-                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="leading" secondItem="1VB-yT-mcq" secondAttribute="trailing" id="duZ-At-yBY"/>
                         <constraint firstItem="cRs-Vv-tAj" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" id="e0j-qp-lG7"/>
-                        <constraint firstAttribute="centerX" secondItem="WR2-Zg-PPc" secondAttribute="centerX" constant="-43.5" id="gXN-2H-vop"/>
-                        <constraint firstItem="c6q-At-9iv" firstAttribute="top" secondItem="WR2-Zg-PPc" secondAttribute="bottom" constant="15" id="kzU-S6-SkX"/>
+                        <constraint firstItem="tpD-xo-7BY" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" constant="8" id="e0t-Oj-ia4"/>
                         <constraint firstAttribute="bottom" secondItem="n9u-zu-AZQ" secondAttribute="bottom" id="nmS-Qu-bAV"/>
                         <constraint firstItem="n9u-zu-AZQ" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" id="o5e-wV-Zo1"/>
+                        <constraint firstItem="c6q-At-9iv" firstAttribute="centerY" secondItem="hw4-ku-WQk" secondAttribute="centerY" id="p0Y-j4-qsn"/>
                         <constraint firstAttribute="bottom" secondItem="cRs-Vv-tAj" secondAttribute="bottom" id="qBd-xr-3ZV"/>
                         <constraint firstAttribute="centerX" secondItem="hw4-ku-WQk" secondAttribute="centerX" id="qX4-nE-GZ8"/>
-                        <constraint firstAttribute="centerX" secondItem="1VB-yT-mcq" secondAttribute="centerX" constant="41.5" id="qev-7i-SiI"/>
+                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="centerY" secondItem="tpD-xo-7BY" secondAttribute="centerY" id="rBh-hR-MRa"/>
+                        <constraint firstItem="tpD-xo-7BY" firstAttribute="centerX" secondItem="sfc-Xd-dVc" secondAttribute="centerX" id="rHa-fh-l3b"/>
+                        <constraint firstItem="WR2-Zg-PPc" firstAttribute="leading" secondItem="tpD-xo-7BY" secondAttribute="trailing" id="vxu-EZ-8xa"/>
                         <constraint firstAttribute="trailingMargin" secondItem="n9u-zu-AZQ" secondAttribute="trailing" constant="8" id="w4W-Ll-0Gd"/>
-                        <constraint firstItem="1VB-yT-mcq" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" constant="8" id="x8b-iK-Fix"/>
-                        <constraint firstItem="hw4-ku-WQk" firstAttribute="top" secondItem="WR2-Zg-PPc" secondAttribute="bottom" constant="8" id="zQ9-Cf-bCq"/>
                     </constraints>
                 </view>
             </subviews>
