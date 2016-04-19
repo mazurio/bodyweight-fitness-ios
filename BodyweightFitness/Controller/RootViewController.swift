@@ -153,16 +153,14 @@ class RootViewController: UIViewController {
     }
     
     internal func changeExercise(currentExercise: Exercise) {
-        self.timedViewController.loggedSeconds = 0
-        
         self.current = currentExercise
+        
+        self.timedViewController.changeExercise(currentExercise)
+        self.weightedViewController.changeExercise(currentExercise)
         
         self.navigationViewController.topLabel?.text = currentExercise.title
         self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
         self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
-
-        self.timedViewController.restartTimer(self.timedViewController.defaultSeconds)
-        self.weightedViewController.updateLabels()
 
         self.setGifImage(currentExercise.id)
         
@@ -174,22 +172,6 @@ class RootViewController: UIViewController {
             if let image = UIImage(named: "progression") {
                 actionButton.setImage(image, forState: .Normal)
             }
-        }
-        
-        if let _ = self.current?.previous {
-            self.timedViewController.previousButton.hidden = false
-            self.weightedViewController.previousButton.hidden = false
-        } else {
-            self.timedViewController.previousButton.hidden = true
-            self.weightedViewController.previousButton.hidden = true
-        }
-        
-        if let _ = self.current?.next {
-            self.timedViewController.nextButton.hidden = false
-            self.weightedViewController.nextButton.hidden = false
-        } else {
-            self.timedViewController.nextButton.hidden = true
-            self.weightedViewController.nextButton.hidden = true
         }
         
         if let current = self.current {

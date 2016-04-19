@@ -11,14 +11,15 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var nextButton: UIButton!
     
     var rootViewController: RootViewController? = nil
+    var current: Exercise? = nil
     
     var audioPlayer: AVAudioPlayer?
     var timePickerController: TimePickerController?
     var timer = NSTimer()
     var isPlaying = false
     
-    var seconds = PersistenceManager.getTimer()
-    var defaultSeconds = PersistenceManager.getTimer()
+    var seconds = 60
+    var defaultSeconds = 60
     var loggedSeconds = 0
     
     init() {
@@ -31,6 +32,29 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func changeExercise(currentExercise: Exercise) {
+        self.current = currentExercise
+        
+        let savedSeconds = PersistenceManager.getTimer(currentExercise.id)
+        
+        self.loggedSeconds = 0
+        self.defaultSeconds = savedSeconds
+        
+        self.restartTimer(savedSeconds)
+        
+        if let _ = self.current?.previous {
+            self.previousButton.hidden = false
+        } else {
+            self.previousButton.hidden = true
+        }
+        
+        if let _ = self.current?.next {
+            self.nextButton.hidden = false
+        } else {
+            self.nextButton.hidden = true
+        }
     }
     
     func updateLabel() {
@@ -114,7 +138,9 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
             self.defaultSeconds = seconds
             self.restartTimer(seconds)
             
-            PersistenceManager.storeTimer(self.defaultSeconds)
+            if let current = self.current {
+                PersistenceManager.storeTimer(current.id, seconds: self.defaultSeconds)
+            }
         }
     }
     

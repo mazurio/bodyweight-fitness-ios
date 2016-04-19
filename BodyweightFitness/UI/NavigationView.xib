@@ -40,7 +40,7 @@
             <constraints>
                 <constraint firstItem="k6v-6B-STF" firstAttribute="centerY" secondItem="BuT-tB-rZZ" secondAttribute="centerY" id="DIg-lf-Sd3"/>
                 <constraint firstItem="FFM-4z-fCU" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Ibx-49-5Vs"/>
-                <constraint firstItem="BuT-tB-rZZ" firstAttribute="top" secondItem="FFM-4z-fCU" secondAttribute="bottom" constant="2" id="LCP-0E-cJV"/>
+                <constraint firstItem="BuT-tB-rZZ" firstAttribute="top" secondItem="FFM-4z-fCU" secondAttribute="bottom" constant="1" id="LCP-0E-cJV"/>
                 <constraint firstAttribute="trailing" secondItem="FFM-4z-fCU" secondAttribute="trailing" constant="32" id="c1e-vF-yg0"/>
                 <constraint firstItem="k6v-6B-STF" firstAttribute="leading" secondItem="BuT-tB-rZZ" secondAttribute="trailing" constant="4" id="e1l-mp-vff"/>
                 <constraint firstItem="BuT-tB-rZZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kiG-Go-qMr"/>

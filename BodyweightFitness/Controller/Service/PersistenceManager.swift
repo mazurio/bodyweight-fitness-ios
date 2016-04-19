@@ -28,11 +28,11 @@ class PersistenceManager {
         NSKeyedArchiver.archiveRootObject(weightUnit, toFile: dataFilePath)
     }
     
-    class func getTimer() -> Int {
+    class func getTimer(id: String) -> Int {
         let fileManager = NSFileManager.defaultManager()
         let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = directoryPath[0]
-        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("timer.archive")
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("timer.\(id).archive")
         
         if(fileManager.fileExistsAtPath(dataFilePath)) {
             if let seconds = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? Int {
@@ -43,10 +43,10 @@ class PersistenceManager {
         return 60
     }
     
-    class func storeTimer(seconds: Int) {
+    class func storeTimer(id: String, seconds: Int) {
         let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
         let documentsDirectory = directoryPath[0] 
-        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("timer.archive")
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("timer.\(id).archive")
         
         NSKeyedArchiver.archiveRootObject(seconds, toFile: dataFilePath)
     }

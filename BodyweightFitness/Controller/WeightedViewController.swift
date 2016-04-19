@@ -12,6 +12,7 @@ class WeightedViewController: UIViewController {
     // set number when loading to the number of exercise
     var numberOfReps: Int = 5
     var rootViewController: RootViewController? = nil
+    var current: Exercise? = nil
     
     init() {
         super.init(nibName: "WeightedView", bundle: nil)
@@ -25,6 +26,24 @@ class WeightedViewController: UIViewController {
         super.viewDidLoad()
         
         self.updateLabels()
+    }
+    
+    func changeExercise(currentExercise: Exercise) {
+        self.current = currentExercise
+        
+        self.updateLabels()
+        
+        if let _ = self.current?.previous {
+            self.previousButton.hidden = false
+        } else {
+            self.previousButton.hidden = true
+        }
+        
+        if let _ = self.current?.next {
+            self.nextButton.hidden = false
+        } else {
+            self.nextButton.hidden = true
+        }
     }
     
     func updateLabels() {
@@ -56,7 +75,6 @@ class WeightedViewController: UIViewController {
         updateLabels()
     }
 
-    // Format: 5-5-X
     func printSets() -> String {
         var numberOfSets = 0
         var isEmpty = false

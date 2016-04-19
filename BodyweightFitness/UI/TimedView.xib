@@ -51,7 +51,7 @@
                                 <action selector="previousButtonClicked:" destination="-1" eventType="touchUpInside" id="czl-aR-DAo"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-yT-mcq" userLabel="Timer Minutes Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-yT-mcq" userLabel="Timer Minutes Button">
                             <rect key="frame" x="215" y="8" width="85" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="85" id="pIy-7N-xip"/>
@@ -118,7 +118,7 @@
                                 <constraint firstAttribute="width" id="nBg-z7-7Qp"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR2-Zg-PPc" userLabel="Timer Seconds Button">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR2-Zg-PPc" userLabel="Timer Seconds Button">
                             <rect key="frame" x="300" y="8" width="85" height="110"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="85" id="odJ-OU-Ogk"/>
