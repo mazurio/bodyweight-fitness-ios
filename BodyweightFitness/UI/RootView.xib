@@ -29,10 +29,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Gx-8Pe" userLabel="Middle View">
-                    <rect key="frame" x="0.0" y="201" width="600" height="35"/>
+                    <rect key="frame" x="0.0" y="201" width="600" height="45"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uEF-Py-fjO">
-                            <rect key="frame" x="209" y="0.0" width="183" height="29"/>
+                            <rect key="frame" x="209" y="8.5" width="183" height="29"/>
                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                             <segments>
                                 <segment title="Timer"/>
@@ -46,26 +46,20 @@
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="35" id="1Jo-cO-wIX"/>
+                        <constraint firstAttribute="height" constant="45" id="1Jo-cO-wIX"/>
                         <constraint firstItem="uEF-Py-fjO" firstAttribute="centerX" secondItem="y1k-Gx-8Pe" secondAttribute="centerX" id="6CH-hV-4tj"/>
-                        <constraint firstItem="uEF-Py-fjO" firstAttribute="top" secondItem="y1k-Gx-8Pe" secondAttribute="top" id="Kcv-VI-1ed"/>
-                        <constraint firstItem="uEF-Py-fjO" firstAttribute="centerY" secondItem="y1k-Gx-8Pe" secondAttribute="centerY" id="sX2-F6-Qgt"/>
+                        <constraint firstItem="uEF-Py-fjO" firstAttribute="centerY" secondItem="y1k-Gx-8Pe" secondAttribute="centerY" id="AVS-8m-VpQ"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="sX2-F6-Qgt"/>
-                        </mask>
-                    </variation>
                 </view>
                 <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-CS-QWw" userLabel="Bottom View">
-                    <rect key="frame" x="0.0" y="236" width="600" height="364"/>
+                    <rect key="frame" x="0.0" y="246" width="600" height="354"/>
                     <subviews>
                         <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nme-84-8Ul" customClass="AnimatableImageView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="600" height="364"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="354"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03a-uQ-Iq9" userLabel="Log Button" customClass="LogWorkoutButton" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="528" y="220" width="60" height="60"/>
+                            <rect key="frame" x="528" y="210" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="3m2-WE-s4D"/>
                                 <constraint firstAttribute="width" constant="60" id="RqZ-99-IP7"/>
@@ -78,7 +72,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-az-v2N" userLabel="Action Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="528" y="292" width="60" height="60"/>
+                            <rect key="frame" x="528" y="282" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="DoJ-M6-AEG"/>
                                 <constraint firstAttribute="width" constant="60" id="Hid-jW-zWZ"/>

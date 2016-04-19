@@ -5,7 +5,8 @@ class WeightedViewController: UIViewController {
     @IBOutlet var nextButton: UIButton!
     @IBOutlet var logButton: UIButton!
     
-    @IBOutlet var repsValueLabel: UILabel!
+    @IBOutlet var sets: UILabel!
+    @IBOutlet var reps: UIButton!
     
     // remember numberOfReps per exercise
     // set number when loading to the number of exercise
@@ -23,7 +24,20 @@ class WeightedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.repsValueLabel.text = String(self.numberOfReps)
+        self.updateLabels()
+    }
+    
+    func updateLabels() {
+        self.sets.text = "5-5-2-X"
+        self.reps.setTitle(printValue(self.numberOfReps), forState: .Normal)
+    }
+    
+    func printValue(value: Int) -> String {
+        if(value > 9) {
+            return String(value)
+        } else {
+            return "0" + String(value)
+        }
     }
     
     func showNotification(set: Int, reps: Int) {
@@ -37,7 +51,23 @@ class WeightedViewController: UIViewController {
         notification.notificationAnimationInStyle = .Top
         notification.notificationAnimationOutStyle = .Top
         
-        notification.displayNotificationWithMessage("Logged Set \(set), Reps \(reps)", forDuration: 2.0)
+        notification.displayNotificationWithMessage("Logged Set \(set) with \(reps) reps. Moving to Set \(set + 1).", forDuration: 2.0)
+        
+        updateLabels()
+    }
+    
+    func numberOfSets() -> Int {
+        if let current = self.rootViewController?.current {
+            let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+            
+            if let repositoryExercise = repositoryRoutine.exercises.filter({
+                $0.exerciseId == current.exerciseId
+            }).first {
+                return repositoryExercise.sets.count + 1
+            }
+        }
+        
+        return 1
     }
     
     @IBAction func previousButtonClicked(sender: AnyObject) {
@@ -52,7 +82,7 @@ class WeightedViewController: UIViewController {
         if self.numberOfReps < 25 {
             self.numberOfReps += 1
             
-            self.repsValueLabel.text = String(self.numberOfReps)
+            self.updateLabels()
         }
     }
     
@@ -60,7 +90,7 @@ class WeightedViewController: UIViewController {
         if self.numberOfReps > 1 {
             self.numberOfReps -= 1
             
-            self.repsValueLabel.text = String(self.numberOfReps)
+            self.updateLabels()
         }
     }
     
