@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationController(rootViewController: SettingsViewController())
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Fabric.with([Crashlytics.self])
+//        Fabric.with([Crashlytics.self])
         
         self.sideNavigationViewController = SideNavigationController(
             rootViewController: self.rootViewController,

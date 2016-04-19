@@ -1,4 +1,5 @@
 import UIKit
+import StoreKit
 
 class SettingsToggleCell: UITableViewCell {
     @IBOutlet var label: UILabel!
@@ -33,7 +34,7 @@ extension UIViewController {
     }
 }
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, SKStoreProductViewControllerDelegate {
     @IBOutlet var tableView: UITableView!
     
     init() {
@@ -92,15 +93,28 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             defaults.setBool(false, forKey: "automaticallyLogTimedExercises")
         }
     }
+
+    func openStoreProductWithiTunesItemIdentifier(identifier: String) {
+        let storeViewController = SKStoreProductViewController()
+        storeViewController.delegate = self
+
+        let parameters = [ SKStoreProductParameterITunesItemIdentifier : identifier]
+        storeViewController.loadProductWithParameters(parameters) { [weak self] (loaded, error) -> Void in
+            if loaded {
+                // Parent class of self is UIViewContorller
+                self?.presentViewController(storeViewController, animated: true, completion: nil)
+            }
+        }
+    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 6
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if (section == 0) {
             return 2
-        } else if (section == 3) {
+        } else if (section == 4) {
             return 2
         }
         
@@ -116,7 +130,11 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         case 2:
             return "Developed by"
         case 3:
+            return "Credits"
+        case 4:
             return "About"
+        case 5:
+            return "Version"
         default:
             return nil
         }
@@ -182,13 +200,32 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             return cell
         }
-        
+
         if indexPath.section == 3 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionSubtitleCell", forIndexPath: indexPath) as UITableViewCell!
+
+                cell.textLabel?.text = "Ruben Dantuma"
+                cell.detailTextLabel?.text = "Logo Design"
+
+                return cell
+            }
+        }
+        
+        if indexPath.section == 4 {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
                 
                 cell.textLabel?.text = "Rate the app in iTunes Store"
                 
+                return cell
+            }
+
+            if indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
+
+                cell.textLabel?.text = "Frequently Asked Questions"
+
                 return cell
             }
         }
@@ -245,7 +282,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             
             self.presentViewController(alertController, animated: true, completion: nil)
         }
-        
+
         if indexPath.section == 2 {
             if indexPath.row == 0 {
                 if let requestUrl = NSURL(string: "https://www.github.com/mazurio") {
@@ -255,17 +292,37 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
         }
-        
+
         if indexPath.section == 3 {
             if indexPath.row == 0 {
-                if let requestUrl = NSURL(string: "https://www.github.com/mazurio") {
+                if let requestUrl = NSURL(string: "http://dantuma.co.za") {
                     UIApplication.sharedApplication().openURL(requestUrl)
                 }
+
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+        }
+
+        if indexPath.section == 4 {
+            if indexPath.row == 0 {
+                self.openStoreProductWithiTunesItemIdentifier("id1018863605")
                 
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            }
+
+            if indexPath.row == 1 {
+                if let requestUrl = NSURL(string: "http://www.reddit.com/r/bodyweightfitness/wiki/faq") {
+                    UIApplication.sharedApplication().openURL(requestUrl)
+                }
+
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
         }
         
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+
+    func productViewControllerDidFinish(viewController: SKStoreProductViewController) {
+        viewController.dismissViewControllerAnimated(true, completion: nil)
     }
 }

@@ -166,8 +166,7 @@ class RateMyApp : UIViewController,UIAlertViewDelegate{
             return true
         }
         
-//        return false
-        return true
+        return false
     }
     
     
