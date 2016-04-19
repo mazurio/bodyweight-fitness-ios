@@ -32,7 +32,7 @@ class ProgressPageViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let category = self.category {
             let exercises = category.sections[section].exercises.filter { (exercise) in
-                exercise.visible == true
+                isVisible(exercise)
             }
             
             return exercises.count
@@ -74,7 +74,7 @@ class ProgressPageViewController: UITableViewController {
         
         if let category = self.category {
             let exercises = category.sections[indexPath.section].exercises.filter { (exercise) in
-                exercise.visible == true
+                isVisible(exercise)
             }
             
             let exercise = exercises[indexPath.row]
@@ -86,5 +86,19 @@ class ProgressPageViewController: UITableViewController {
         }
         
         return cell
+    }
+
+    func isVisible(exercise: RepositoryExercise) -> Bool {
+        let firstSet = exercise.sets[0]
+
+        if (exercise.sets.count > 1) {
+            return true
+        } else {
+            if (firstSet.seconds > 0 || firstSet.reps > 0) {
+                return true
+            }
+        }
+
+        return exercise.visible
     }
 }
