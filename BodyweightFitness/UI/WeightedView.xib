@@ -98,7 +98,7 @@
                                 <action selector="decreaseRepsClicked:" destination="-1" eventType="touchUpInside" id="31U-ge-fXe"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAT-ar-fa3" userLabel="Reps Counter">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAT-ar-fa3" userLabel="Reps Counter">
                             <rect key="frame" x="208" y="38" width="185" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="JcM-0t-KXS"/>
@@ -121,7 +121,7 @@
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="gwn-gN-NNg"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="thin" pointSize="18"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                             <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
