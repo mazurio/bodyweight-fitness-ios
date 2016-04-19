@@ -28,7 +28,7 @@ class WeightedViewController: UIViewController {
     }
     
     func updateLabels() {
-        self.sets.text = "5-5-2-X"
+        self.sets.text = self.printSets()
         self.reps.setTitle(printValue(self.numberOfReps), forState: .Normal)
     }
     
@@ -51,23 +51,47 @@ class WeightedViewController: UIViewController {
         notification.notificationAnimationInStyle = .Top
         notification.notificationAnimationOutStyle = .Top
         
-        notification.displayNotificationWithMessage("Logged Set \(set) with \(reps) reps. Moving to Set \(set + 1).", forDuration: 2.0)
+        notification.displayNotificationWithMessage("Logged Set \(set) - \(reps) reps", forDuration: 2.0)
         
         updateLabels()
     }
-    
-    func numberOfSets() -> Int {
+
+    // Format: 5-5-X
+    func printSets() -> String {
+        var numberOfSets = 0
+        var isEmpty = false
+
+        let asString = NSMutableString()
+
         if let current = self.rootViewController?.current {
             let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
             
             if let repositoryExercise = repositoryRoutine.exercises.filter({
                 $0.exerciseId == current.exerciseId
             }).first {
-                return repositoryExercise.sets.count + 1
+                for set in repositoryExercise.sets {
+                    if (repositoryExercise.sets.count == 1 && set.reps == 0) {
+                        isEmpty = true
+                    }
+
+                    asString.appendString("\(set.reps)-")
+
+                    numberOfSets += 1
+                }
+
+                asString.appendString("X")
             }
         }
-        
-        return 1
+
+        if (isEmpty) {
+            return "First Set"
+        } else if (numberOfSets >= 9) {
+            return "Move on"
+        } else if (numberOfSets >= 5) {
+            return "Set \(numberOfSets + 1)"
+        }
+
+        return asString as String
     }
     
     @IBAction func previousButtonClicked(sender: AnyObject) {

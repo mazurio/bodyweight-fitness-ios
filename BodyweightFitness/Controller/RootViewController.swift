@@ -160,8 +160,10 @@ class RootViewController: UIViewController {
         self.navigationViewController.topLabel?.text = currentExercise.title
         self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
         self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
-        
+
         self.timedViewController.restartTimer(self.timedViewController.defaultSeconds)
+        self.weightedViewController.updateLabels()
+
         self.setGifImage(currentExercise.id)
         
         if (currentExercise.section?.mode == SectionMode.All) {

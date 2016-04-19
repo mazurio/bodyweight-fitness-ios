@@ -393,7 +393,15 @@ class LogWorkoutController: UIViewController {
                     realm.add(exercise, update: true)
                 }
             }
-            
+
+            if let sideNavigationController = self.parentController as? SideNavigationController {
+                if let navigationController = sideNavigationController.rootViewController as? UINavigationController {
+                    if let rootViewController = navigationController.viewControllers.first as? RootViewController {
+                        rootViewController.weightedViewController.updateLabels()
+                    }
+                }
+            }
+
             self.parentController?.dim(.Out, alpha: 0.5, speed: 0.5)
             
             self.dismissViewControllerAnimated(true, completion: nil)
