@@ -194,11 +194,12 @@ class RootViewController: UIViewController {
     }
     
     func setGifImage(id: String) {
-        let imageData = NSData(contentsOfURL: NSBundle
-            .mainBundle()
-            .URLForResource(id, withExtension: "gif")!)
-        
-        gifView.animateWithImageData(imageData!)
+        if let bundle = NSBundle.mainBundle().URLForResource(id, withExtension: "gif") {
+            if let imageData = NSData(contentsOfURL: bundle) {
+                
+                gifView.animateWithImageData(imageData)
+            }
+        }
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {

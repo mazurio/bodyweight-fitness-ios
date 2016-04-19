@@ -91,6 +91,9 @@
 		73BADE191CC3E347001ACEDC /* TimedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE181CC3E347001ACEDC /* TimedViewController.swift */; };
 		73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */; };
 		73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */; };
+		73BADE251CC6EE94001ACEDC /* shoulder_rolls.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE241CC6EE94001ACEDC /* shoulder_rolls.gif */; };
+		73BADE271CC6F19E001ACEDC /* band_pull_downs.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */; };
+		73BADE291CC6F480001ACEDC /* band_chest_flies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE281CC6F480001ACEDC /* band_chest_flies.gif */; };
 		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
 		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
@@ -136,7 +139,6 @@
 		E0F587871B52733100540104 /* diamond_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587551B52733100540104 /* diamond_pushup.gif */; };
 		E0F587881B52733100540104 /* floor_l_sit.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587561B52733100540104 /* floor_l_sit.gif */; };
 		E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587571B52733100540104 /* freestanding_handstand.gif */; };
-		E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587581B52733100540104 /* full_body_circles.gif */; };
 		E0F5878B1B52733100540104 /* hollow_hold.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F587591B52733100540104 /* hollow_hold.gif */; };
 		E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875A1B52733100540104 /* horizontal_row.gif */; };
 		E0F5878D1B52733100540104 /* incline_pushup.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5875B1B52733100540104 /* incline_pushup.gif */; };
@@ -292,6 +294,9 @@
 		73BADE181CC3E347001ACEDC /* TimedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedViewController.swift; sourceTree = "<group>"; };
 		73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedViewController.swift; sourceTree = "<group>"; };
 		73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightedView.xib; sourceTree = "<group>"; };
+		73BADE241CC6EE94001ACEDC /* shoulder_rolls.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shoulder_rolls.gif; sourceTree = "<group>"; };
+		73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band_pull_downs.gif; sourceTree = "<group>"; };
+		73BADE281CC6F480001ACEDC /* band_chest_flies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band_chest_flies.gif; sourceTree = "<group>"; };
 		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = "<group>"; };
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
@@ -337,7 +342,6 @@
 		E0F587551B52733100540104 /* diamond_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = diamond_pushup.gif; sourceTree = "<group>"; };
 		E0F587561B52733100540104 /* floor_l_sit.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = floor_l_sit.gif; sourceTree = "<group>"; };
 		E0F587571B52733100540104 /* freestanding_handstand.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = freestanding_handstand.gif; sourceTree = "<group>"; };
-		E0F587581B52733100540104 /* full_body_circles.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = full_body_circles.gif; sourceTree = "<group>"; };
 		E0F587591B52733100540104 /* hollow_hold.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hollow_hold.gif; sourceTree = "<group>"; };
 		E0F5875A1B52733100540104 /* horizontal_row.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = horizontal_row.gif; sourceTree = "<group>"; };
 		E0F5875B1B52733100540104 /* incline_pushup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = incline_pushup.gif; sourceTree = "<group>"; };
@@ -658,6 +662,9 @@
 		E0F5874C1B52732500540104 /* Gifs */ = {
 			isa = PBXGroup;
 			children = (
+				73BADE281CC6F480001ACEDC /* band_chest_flies.gif */,
+				73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */,
+				73BADE241CC6EE94001ACEDC /* shoulder_rolls.gif */,
 				E0F5874D1B52733100540104 /* advanced_tuck_front_lever_row.gif */,
 				E0F5874E1B52733100540104 /* arch.gif */,
 				E0F5874F1B52733100540104 /* assisted_squat.gif */,
@@ -669,7 +676,6 @@
 				E0F587551B52733100540104 /* diamond_pushup.gif */,
 				E0F587561B52733100540104 /* floor_l_sit.gif */,
 				E0F587571B52733100540104 /* freestanding_handstand.gif */,
-				E0F587581B52733100540104 /* full_body_circles.gif */,
 				E0F587591B52733100540104 /* hollow_hold.gif */,
 				E0F5875A1B52733100540104 /* horizontal_row.gif */,
 				E0F5875B1B52733100540104 /* incline_pushup.gif */,
@@ -783,6 +789,7 @@
 			files = (
 				E0F587991B52733100540104 /* pseudo_planche.gif in Resources */,
 				E0F587A31B52733100540104 /* scapular_shrugs.gif in Resources */,
+				73BADE271CC6F19E001ACEDC /* band_pull_downs.gif in Resources */,
 				73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */,
 				E0F587911B52733100540104 /* leg_swings.gif in Resources */,
 				E0F587821B52733100540104 /* band_dislocates.gif in Resources */,
@@ -816,7 +823,6 @@
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
 				73BADE171CC3E2F9001ACEDC /* TimedView.xib in Resources */,
 				73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */,
-				E0F5878A1B52733100540104 /* full_body_circles.gif in Resources */,
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
@@ -825,6 +831,7 @@
 				E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */,
 				737F3C781CBD52AB00251EFE /* WorkoutLogView.xib in Resources */,
 				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
+				73BADE291CC6F480001ACEDC /* band_chest_flies.gif in Resources */,
 				737F3C801CBE4A1800251EFE /* ring_wide_pushup.gif in Resources */,
 				E0F5878E1B52733100540104 /* incline_row.gif in Resources */,
 				E0F587891B52733100540104 /* freestanding_handstand.gif in Resources */,
@@ -860,6 +867,7 @@
 				735BEA0C1CBD1F5E003616C5 /* SideViewMenuCell.xib in Resources */,
 				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
+				73BADE251CC6EE94001ACEDC /* shoulder_rolls.gif in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
 				732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */,
