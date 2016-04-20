@@ -94,6 +94,7 @@
 		73BADE251CC6EE94001ACEDC /* shoulder_rolls.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE241CC6EE94001ACEDC /* shoulder_rolls.gif */; };
 		73BADE271CC6F19E001ACEDC /* band_pull_downs.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */; };
 		73BADE291CC6F480001ACEDC /* band_chest_flies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE281CC6F480001ACEDC /* band_chest_flies.gif */; };
+		73BADE6E1CC78356001ACEDC /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */; };
 		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
 		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
@@ -179,6 +180,16 @@
 		E0F587B01B52733100540104 /* wrist_progression.gif in Resources */ = {isa = PBXBuildFile; fileRef = E0F5877E1B52733100540104 /* wrist_progression.gif */; };
 		E0F587B41B52734900540104 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B31B52734900540104 /* Images.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73BADE701CC78356001ACEDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2BD2CA7B1B458FFD00841AB7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2BD2CA821B458FFD00841AB7;
+			remoteInfo = "Bodyweight Fitness";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		73D2BCDB1C3C627200CE6C00 /* CopyFiles */ = {
@@ -297,6 +308,9 @@
 		73BADE241CC6EE94001ACEDC /* shoulder_rolls.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = shoulder_rolls.gif; sourceTree = "<group>"; };
 		73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band_pull_downs.gif; sourceTree = "<group>"; };
 		73BADE281CC6F480001ACEDC /* band_chest_flies.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = band_chest_flies.gif; sourceTree = "<group>"; };
+		73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
+		73BADE6F1CC78356001ACEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = "<group>"; };
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
@@ -401,6 +415,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73BADE681CC78356001ACEDC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -408,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD2CA851B458FFD00841AB7 /* BodyweightFitness */,
+				73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */,
 				E00242FB1B4F1CFD0003A230 /* Frameworks */,
 				2BD2CA841B458FFD00841AB7 /* Products */,
 			);
@@ -417,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
+				73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -543,6 +566,15 @@
 				46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */,
+				73BADE6F1CC78356001ACEDC /* Info.plist */,
+			);
+			path = BodyweightFitnessTests;
 			sourceTree = "<group>";
 		};
 		73BF3BB61CBEB0C100E0258D /* Modal */ = {
@@ -743,13 +775,31 @@
 			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
+		73BADE6A1CC78356001ACEDC /* BodyweightFitnessTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73BADE721CC78356001ACEDC /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */;
+			buildPhases = (
+				73BADE671CC78356001ACEDC /* Sources */,
+				73BADE681CC78356001ACEDC /* Frameworks */,
+				73BADE691CC78356001ACEDC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73BADE711CC78356001ACEDC /* PBXTargetDependency */,
+			);
+			name = BodyweightFitnessTests;
+			productName = BodyweightFitnessTests;
+			productReference = 73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		2BD2CA7B1B458FFD00841AB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Damian Mazurkiewicz";
 				TargetAttributes = {
@@ -761,6 +811,10 @@
 								enabled = 1;
 							};
 						};
+					};
+					73BADE6A1CC78356001ACEDC = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 2BD2CA821B458FFD00841AB7;
 					};
 				};
 			};
@@ -778,6 +832,7 @@
 			projectRoot = "";
 			targets = (
 				2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */,
+				73BADE6A1CC78356001ACEDC /* BodyweightFitnessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -872,6 +927,13 @@
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
 				732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */,
 				73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73BADE691CC78356001ACEDC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -991,7 +1053,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73BADE671CC78356001ACEDC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73BADE6E1CC78356001ACEDC /* BodyweightFitnessTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73BADE711CC78356001ACEDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */;
+			targetProxy = 73BADE701CC78356001ACEDC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E0F587431B52730C00540104 /* TimePickerModalView.xib */ = {
@@ -1077,6 +1155,7 @@
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -1101,6 +1180,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Damian Mazurkiewicz (2HYG5VX9N6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Damian Mazurkiewicz (2HYG5VX9N6)";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1126,6 +1206,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Damian Mazurkiewicz (32UU4L8Z8S)";
+				DEFINES_MODULE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1140,6 +1221,43 @@
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		73BADE731CC78356001ACEDC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BodyweightFitnessTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				"SWIFT_INCLUDE_PATHS[arch=*]" = "$(inherited)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
+			};
+			name = Debug;
+		};
+		73BADE741CC78356001ACEDC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = BodyweightFitnessTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
 			};
 			name = Release;
 		};
@@ -1160,6 +1278,15 @@
 			buildConfigurations = (
 				2BD2CAA61B458FFE00841AB7 /* Debug */,
 				2BD2CAA71B458FFE00841AB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73BADE721CC78356001ACEDC /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73BADE731CC78356001ACEDC /* Debug */,
+				73BADE741CC78356001ACEDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
