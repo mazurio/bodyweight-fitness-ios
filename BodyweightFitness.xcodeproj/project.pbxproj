@@ -95,6 +95,7 @@
 		73BADE271CC6F19E001ACEDC /* band_pull_downs.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE261CC6F19E001ACEDC /* band_pull_downs.gif */; };
 		73BADE291CC6F480001ACEDC /* band_chest_flies.gif in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE281CC6F480001ACEDC /* band_chest_flies.gif */; };
 		73BADE6E1CC78356001ACEDC /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */; };
+		73BADE7D1CC79648001ACEDC /* TestRoutine.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE7C1CC79648001ACEDC /* TestRoutine.json */; };
 		73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BA81CBE643200E0258D /* SettingsView.xib */; };
 		73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */; };
 		73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */; };
@@ -311,6 +312,7 @@
 		73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
 		73BADE6F1CC78356001ACEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		73BADE7C1CC79648001ACEDC /* TestRoutine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestRoutine.json; sourceTree = "<group>"; };
 		73BF3BA81CBE643200E0258D /* SettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsView.xib; sourceTree = "<group>"; };
 		73BF3BAC1CBE6A5D00E0258D /* SettingsToggleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsToggleCell.xib; sourceTree = "<group>"; };
 		73BF3BAE1CBE6A7000E0258D /* SettingsActionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionCell.xib; sourceTree = "<group>"; };
@@ -665,6 +667,7 @@
 				E0F5874C1B52732500540104 /* Gifs */,
 				E0F587491B52731C00540104 /* Routine.json */,
 				E0F587481B52731C00540104 /* finished.mp3 */,
+				73BADE7C1CC79648001ACEDC /* TestRoutine.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				E0F587A61B52733100540104 /* tuck_front_lever_row.gif in Resources */,
 				E0F587AC1B52733100540104 /* wall_handstand.gif in Resources */,
 				735BEA0C1CBD1F5E003616C5 /* SideViewMenuCell.xib in Resources */,
+				73BADE7D1CC79648001ACEDC /* TestRoutine.json in Resources */,
 				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				73BADE251CC6EE94001ACEDC /* shoulder_rolls.gif in Resources */,
