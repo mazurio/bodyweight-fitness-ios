@@ -666,8 +666,8 @@
 			children = (
 				E0F5874C1B52732500540104 /* Gifs */,
 				E0F587491B52731C00540104 /* Routine.json */,
-				E0F587481B52731C00540104 /* finished.mp3 */,
 				73BADE7C1CC79648001ACEDC /* TestRoutine.json */,
+				E0F587481B52731C00540104 /* finished.mp3 */,
 			);
 			path = Resources;
 			sourceTree = "<group>";

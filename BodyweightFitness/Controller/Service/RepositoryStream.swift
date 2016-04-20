@@ -25,6 +25,24 @@ class RepositoryStream {
         return realm
     }
     
+    func repositoryRoutineForTodayExists() -> Bool {
+        let startOfDay = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+        
+        let components = NSDateComponents()
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        
+        let endOfDay = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions(rawValue: 0))
+        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
+        
+        if let _ = getRealm().objects(RepositoryRoutine).filter(predicate).first {
+            return true
+        } else {
+            return false
+        }
+    }
+    
     func getRepositoryRoutineForToday() -> RepositoryRoutine {
         // If you want to get objects after a date, use greater-than (>), for dates before, use less-than (<).
         let startOfDay = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
