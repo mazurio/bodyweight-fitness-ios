@@ -93,6 +93,15 @@ class BodyweightFitnessTests: XCTestCase {
         let currentRoutine = Routine(fileName: "TestRoutine")
         
         let currentSchema = buildRoutine(currentRoutine)
+        
+        currentSchema.exercises[0].sets[0].reps = 5
+        currentSchema.exercises[0].sets[0].seconds = 25
+        currentSchema.exercises[1].sets[0].reps = 2
+        currentSchema.exercises[2].sets[0].reps = 3
+        currentSchema.exercises[3].sets[0].reps = 2
+        currentSchema.exercises[3].sets[0].seconds = 12
+        currentSchema.exercises[4].sets[0].reps = 10
+        
         let migratedSchema = migrateDatabaseIfNeeded(newRoutine, currentSchema: currentSchema)
         
         let fakeSchema = buildRoutine(newRoutine)
@@ -101,6 +110,17 @@ class BodyweightFitnessTests: XCTestCase {
         
         XCTAssert(migratedSchema.startTime == fakeSchema.startTime)
         XCTAssert(migratedSchema.lastUpdatedTime == fakeSchema.lastUpdatedTime)
+        
+        for (_, exercise) in migratedSchema.exercises.enumerate() {
+            for (_, set) in exercise.sets.enumerate() {
+                if let oldExercise = currentSchema.exercises.filter({
+                    $0.exerciseId == exercise.exerciseId
+                }).first {
+                    XCTAssertEqual(set.reps, oldExercise.sets[0].reps)
+                    XCTAssertEqual(set.seconds, oldExercise.sets[0].seconds)
+                }
+            }
+        }
     }
     
     func migrateDatabaseIfNeeded(routine: Routine, currentSchema: TestRoutine) -> TestRoutine {
