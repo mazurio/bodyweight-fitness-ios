@@ -136,8 +136,6 @@
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="tpD-xo-7BY" firstAttribute="leading" secondItem="1VB-yT-mcq" secondAttribute="trailing" id="16z-Or-eb5"/>
-                        <constraint firstAttribute="height" constant="200" id="5Hg-gE-FXs"/>
-                        <constraint firstAttribute="width" constant="600" id="Bh0-mP-q4w"/>
                         <constraint firstItem="hw4-ku-WQk" firstAttribute="top" secondItem="tpD-xo-7BY" secondAttribute="bottom" constant="8" id="DXV-8S-99S"/>
                         <constraint firstItem="hw4-ku-WQk" firstAttribute="leading" secondItem="Fs7-HS-adP" secondAttribute="trailing" constant="8" id="F2b-bP-eEX"/>
                         <constraint firstItem="1VB-yT-mcq" firstAttribute="centerY" secondItem="tpD-xo-7BY" secondAttribute="centerY" id="ISv-hO-TrZ"/>
@@ -165,6 +163,7 @@
                 <constraint firstItem="sfc-Xd-dVc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="567-vY-mh4"/>
                 <constraint firstItem="sfc-Xd-dVc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EgF-OS-t6R"/>
                 <constraint firstAttribute="trailing" secondItem="sfc-Xd-dVc" secondAttribute="trailing" id="mZ3-JY-rXJ"/>
+                <constraint firstAttribute="bottom" secondItem="sfc-Xd-dVc" secondAttribute="bottom" id="wDE-lW-eN4"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="384" y="303"/>

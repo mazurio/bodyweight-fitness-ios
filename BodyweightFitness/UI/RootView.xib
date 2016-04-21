@@ -26,7 +26,6 @@
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="200" id="924-MA-rLu"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="ZYW-HW-R97"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y1k-Gx-8Pe" userLabel="Middle View">
@@ -92,18 +91,11 @@
                         <constraint firstAttribute="trailing" secondItem="03a-uQ-Iq9" secondAttribute="trailing" constant="12" id="BnK-Uk-dF1"/>
                         <constraint firstAttribute="bottom" secondItem="cR0-az-v2N" secondAttribute="bottom" constant="12" id="HMl-Li-eDF"/>
                         <constraint firstAttribute="trailing" secondItem="cR0-az-v2N" secondAttribute="trailing" constant="12" id="a2g-vG-5Pk"/>
-                        <constraint firstAttribute="height" constant="328" id="aqG-PM-5YQ"/>
                         <constraint firstAttribute="bottom" secondItem="nme-84-8Ul" secondAttribute="bottom" id="cfm-K4-1kb"/>
-                        <constraint firstAttribute="width" constant="600" id="drA-dz-BR9"/>
                         <constraint firstAttribute="trailing" secondItem="nme-84-8Ul" secondAttribute="trailing" id="eKh-Wo-gxR"/>
                         <constraint firstItem="cR0-az-v2N" firstAttribute="top" secondItem="03a-uQ-Iq9" secondAttribute="bottom" constant="12" id="r8s-wA-qPI"/>
                         <constraint firstItem="nme-84-8Ul" firstAttribute="top" secondItem="YSj-CS-QWw" secondAttribute="top" id="uDa-sf-whH"/>
                     </constraints>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="aqG-PM-5YQ"/>
-                        </mask>
-                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
