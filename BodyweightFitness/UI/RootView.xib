@@ -10,6 +10,7 @@
                 <outlet property="gifView" destination="nme-84-8Ul" id="kJ4-po-RXQ"/>
                 <outlet property="mainView" destination="Kfq-Sz-1sY" id="vcw-p3-5qe"/>
                 <outlet property="middleView" destination="y1k-Gx-8Pe" id="grS-ke-UWw"/>
+                <outlet property="middleViewHeightConstraint" destination="1Jo-cO-wIX" id="RMC-fi-Mqr"/>
                 <outlet property="topView" destination="Kfq-Sz-1sY" id="c5G-to-tfv"/>
                 <outlet property="view" destination="iN0-l3-epB" id="RUD-XD-GnQ"/>
                 <outlet property="viewControl" destination="uEF-Py-fjO" id="ey8-Es-zAI"/>

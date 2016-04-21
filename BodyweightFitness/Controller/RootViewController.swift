@@ -8,6 +8,8 @@ class RootViewController: UIViewController {
     @IBOutlet var mainView: UIView!
     @IBOutlet var gifView: AnimatableImageView!
     
+    @IBOutlet weak var middleViewHeightConstraint: NSLayoutConstraint!
+    
     let navigationViewController: NavigationViewController = NavigationViewController()
     let timedViewController: TimedViewController = TimedViewController()
     let weightedViewController: WeightedViewController = WeightedViewController()
@@ -25,7 +27,13 @@ class RootViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //
+        // Hide switcher in iPhone 4S
+        //
+        if (UIScreen.mainScreen().bounds.size.height == 480) {
+            middleViewHeightConstraint.constant = 0
+            middleView.hidden = true
+        }
         
         self.timedViewController.rootViewController = self
         self.weightedViewController.rootViewController = self
