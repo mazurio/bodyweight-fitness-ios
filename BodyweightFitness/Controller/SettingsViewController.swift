@@ -283,7 +283,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 
         if indexPath.section == 4 {
             if indexPath.row == 0 {
-                self.openStoreProductWithiTunesItemIdentifier("id1018863605")
+                self.openStoreProductWithiTunesItemIdentifier("1018863605")
                 
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
             }
