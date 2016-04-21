@@ -162,7 +162,6 @@ class BodyweightFitnessTests: XCTestCase {
     
     func buildRoutine(routine: Routine) -> TestRoutine {
         let testRoutine = TestRoutine()
-        // TODO: This will change when more routines are added.
         testRoutine.routineId = "routine0"
         testRoutine.startTime = NSDate()
         testRoutine.lastUpdatedTime = NSDate()
