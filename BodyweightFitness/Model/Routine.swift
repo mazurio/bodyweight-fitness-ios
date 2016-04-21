@@ -104,12 +104,19 @@ class Routine {
     var linkedExercises: NSMutableArray = []
     var linkedRoutine: NSMutableArray = []
     
-    ///
-    /// Parse JSON file.
-    ///
     init(dictionary: Dictionary<String, String> = Dictionary<String, String>()) {
         let json = JSON(data: loadRoutineFromFile())
         
+        self.build(json, dictionary: dictionary)
+    }
+    
+    init(fileName: String) {
+        let json = JSON(data: loadRoutineFromFile(fileName))
+        
+        self.build(json)
+    }
+    
+    func build(json: JSON, dictionary: Dictionary<String, String> = Dictionary<String, String>()) {
         var currentCategory: Category?
         var currentSection: Section?
         var currentExercise: Exercise?
@@ -149,7 +156,7 @@ class Routine {
                     desc: item["description"].stringValue,
                     youTubeId: item["youTubeId"].stringValue,
                     defaultSet: item["defaultSet"].stringValue)
-
+                
                 exercise.category = currentCategory
                 exercise.section = currentSection
                 
@@ -175,7 +182,7 @@ class Routine {
                             
                             currentSection?.currentExercise = exercise
                         }
-
+                        
                     }
                 } else {
                     linkedExercises.addObject(exercise)
@@ -191,9 +198,6 @@ class Routine {
         }
     }
     
-    ///
-    /// Returns section mode from string.
-    ///
     func getMode(mode: String) -> SectionMode {
         if(mode == "pick") {
             return SectionMode.Pick
@@ -204,17 +208,10 @@ class Routine {
         }
     }
     
-    ///
-    /// Returns first exercise in the routine. 
-    /// All exercises are linked together.
-    ///
     func getFirstExercise() -> Exercise {
         return linkedExercises[0] as! Exercise
     }
-    
-    ///
-    /// Set progression in given section.
-    ///
+
     func setProgression(exercise: Exercise) {
         let currentSectionExercise = exercise.section?.currentExercise
         
@@ -227,11 +224,8 @@ class Routine {
         exercise.section?.currentExercise = exercise
     }
     
-    ///
-    /// Load JSON from file.
-    ///
-    func loadRoutineFromFile() -> NSData {
-        let fileRoot = NSBundle.mainBundle().pathForResource("Routine", ofType: "json")!
+    func loadRoutineFromFile(fileName: String = "Routine") -> NSData {
+        let fileRoot = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")!
 
         do {
             return try NSData(contentsOfFile: fileRoot, options: .DataReadingMappedIfSafe)

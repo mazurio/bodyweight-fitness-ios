@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardSectionCell" rowHeight="65" id="frv-Ee-xx3" userLabel="DashboardSectionCell" customClass="DashboardSectionCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="frv-Ee-xx3" id="zlU-VH-iDf">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="64.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Section Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDH-nf-gI1">
+                        <rect key="frame" x="126" y="36.5" width="68.5" height="15.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXi-Wm-YQr">
+                        <rect key="frame" x="152" y="28.5" width="16" height="8"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="8" id="scz-Z6-2bV"/>
+                            <constraint firstAttribute="width" constant="16" id="yoC-3i-keI"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fA0-pr-DD6">
+                        <rect key="frame" x="142" y="11" width="37" height="17.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="GXi-Wm-YQr" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="Nd4-Sv-Lsb"/>
+                    <constraint firstItem="TDH-nf-gI1" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="SDv-Fn-7i4"/>
+                    <constraint firstItem="TDH-nf-gI1" firstAttribute="top" secondItem="GXi-Wm-YQr" secondAttribute="bottom" id="d6p-dG-zRV"/>
+                    <constraint firstItem="GXi-Wm-YQr" firstAttribute="top" secondItem="fA0-pr-DD6" secondAttribute="bottom" id="khZ-Xo-w7v"/>
+                    <constraint firstItem="GXi-Wm-YQr" firstAttribute="centerY" secondItem="zlU-VH-iDf" secondAttribute="centerY" id="ogK-s9-vBZ"/>
+                    <constraint firstItem="fA0-pr-DD6" firstAttribute="centerX" secondItem="zlU-VH-iDf" secondAttribute="centerX" id="ou3-a9-E0m"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+            <connections>
+                <outlet property="desc" destination="TDH-nf-gI1" id="dqH-tp-dx4"/>
+                <outlet property="title" destination="fA0-pr-DD6" id="HCX-G0-aYl"/>
+            </connections>
+            <point key="canvasLocation" x="516" y="221"/>
+        </tableViewCell>
+    </objects>
+</document>

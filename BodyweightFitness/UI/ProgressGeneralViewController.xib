@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressGeneralViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <connections>
+                <outlet property="circleGraphView" destination="qjT-YO-XIK" id="ZI9-jp-srX"/>
+                <outlet property="endTime" destination="9d1-NQ-Shi" id="beu-6e-PW7"/>
+                <outlet property="endTimeLabel" destination="tzj-x9-zQO" id="eib-wU-fEl"/>
+                <outlet property="progressTextLabel" destination="zzg-JY-xp9" id="HtL-0l-XGw"/>
+                <outlet property="progressValueLabel" destination="fex-A9-ZPb" id="hbt-hV-5Cv"/>
+                <outlet property="startTime" destination="5Xv-t3-N4v" id="f9C-Dw-g1W"/>
+                <outlet property="view" destination="iN0-l3-epB" id="lVK-i2-Yal"/>
+                <outlet property="workoutLength" destination="xaW-YI-dtg" id="sLA-Is-JYl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="UIScrollView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="78k-LI-gA8">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1h 10m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaW-YI-dtg" userLabel="Workout Length Value">
+                            <rect key="frame" x="16" y="115" width="89.5" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Length" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEE-3w-gZg" userLabel="Workout Length Label">
+                            <rect key="frame" x="16" y="90" width="102" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9d1-NQ-Shi" userLabel="End Time Value">
+                            <rect key="frame" x="239" y="41" width="67.5" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Updated Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tzj-x9-zQO">
+                            <rect key="frame" x="239" y="16" width="122" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xv-t3-N4v" userLabel="Start Time Value">
+                            <rect key="frame" x="16" y="41" width="67" height="33.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                            <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX1-WU-dn6" userLabel="Start Time Label">
+                            <rect key="frame" x="16" y="16" width="66.5" height="17"/>
+                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-YO-XIK" customClass="CircleGraphView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="180" y="156" width="240" height="240"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fex-A9-ZPb">
+                                    <rect key="frame" x="75" y="102" width="90" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="Hec-sx-8yK"/>
+                                        <constraint firstAttribute="height" constant="35" id="YCs-yy-i9v"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                    <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 exercises to go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zzg-JY-xp9">
+                                    <rect key="frame" x="63" y="145" width="114.5" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="fex-A9-ZPb" firstAttribute="centerY" secondItem="qjT-YO-XIK" secondAttribute="centerY" id="3EJ-gG-yf9"/>
+                                <constraint firstAttribute="width" constant="240" id="5hU-CL-ITS"/>
+                                <constraint firstItem="fex-A9-ZPb" firstAttribute="centerX" secondItem="qjT-YO-XIK" secondAttribute="centerX" id="NyR-9J-f5Y"/>
+                                <constraint firstAttribute="height" constant="240" id="XdY-np-SXc"/>
+                                <constraint firstItem="zzg-JY-xp9" firstAttribute="top" secondItem="fex-A9-ZPb" secondAttribute="bottom" constant="8" id="hhi-FT-T7E"/>
+                                <constraint firstItem="zzg-JY-xp9" firstAttribute="centerX" secondItem="qjT-YO-XIK" secondAttribute="centerX" id="wkW-AB-C8d"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="tzj-x9-zQO" firstAttribute="centerX" secondItem="78k-LI-gA8" secondAttribute="centerX" id="DOt-rf-w5i"/>
+                        <constraint firstItem="WX1-WU-dn6" firstAttribute="top" secondItem="78k-LI-gA8" secondAttribute="top" constant="16" id="Fqa-cN-yCZ"/>
+                        <constraint firstItem="qjT-YO-XIK" firstAttribute="centerX" secondItem="78k-LI-gA8" secondAttribute="centerX" id="K7M-S3-3dN"/>
+                        <constraint firstItem="5Xv-t3-N4v" firstAttribute="leading" secondItem="78k-LI-gA8" secondAttribute="leading" constant="16" id="KM0-yp-jog"/>
+                        <constraint firstItem="WX1-WU-dn6" firstAttribute="leading" secondItem="78k-LI-gA8" secondAttribute="leading" constant="16" id="Rac-Ey-KxJ"/>
+                        <constraint firstItem="9d1-NQ-Shi" firstAttribute="top" secondItem="tzj-x9-zQO" secondAttribute="bottom" constant="8" id="T0P-AH-1Yt"/>
+                        <constraint firstItem="9d1-NQ-Shi" firstAttribute="leading" secondItem="tzj-x9-zQO" secondAttribute="leading" id="csI-ik-PQ4"/>
+                        <constraint firstItem="tzj-x9-zQO" firstAttribute="top" secondItem="78k-LI-gA8" secondAttribute="top" constant="16" id="el9-7N-rbK"/>
+                        <constraint firstItem="xaW-YI-dtg" firstAttribute="leading" secondItem="78k-LI-gA8" secondAttribute="leading" constant="16" id="fsH-QE-2ij"/>
+                        <constraint firstItem="vEE-3w-gZg" firstAttribute="top" secondItem="5Xv-t3-N4v" secondAttribute="bottom" constant="16" id="iK5-Q9-Law"/>
+                        <constraint firstItem="qjT-YO-XIK" firstAttribute="top" secondItem="xaW-YI-dtg" secondAttribute="bottom" constant="8" id="iVQ-NT-sGb"/>
+                        <constraint firstItem="5Xv-t3-N4v" firstAttribute="top" secondItem="WX1-WU-dn6" secondAttribute="bottom" constant="8" id="qjg-1x-plh"/>
+                        <constraint firstItem="xaW-YI-dtg" firstAttribute="top" secondItem="vEE-3w-gZg" secondAttribute="bottom" constant="8" id="tHd-SD-Zol"/>
+                        <constraint firstItem="vEE-3w-gZg" firstAttribute="leading" secondItem="78k-LI-gA8" secondAttribute="leading" constant="16" id="yxL-ex-DTa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="78k-LI-gA8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="0LX-bt-0oS"/>
+                <constraint firstItem="78k-LI-gA8" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="55H-Lm-hob"/>
+                <constraint firstItem="78k-LI-gA8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="5xJ-jD-5zp"/>
+                <constraint firstAttribute="bottom" secondItem="78k-LI-gA8" secondAttribute="bottom" id="LUD-sf-5CX"/>
+                <constraint firstAttribute="trailing" secondItem="78k-LI-gA8" secondAttribute="trailing" id="ZVh-T2-GQI"/>
+                <constraint firstItem="78k-LI-gA8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="y9m-pR-Q8f"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+</document>

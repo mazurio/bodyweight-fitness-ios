@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DashboardSingleItemCell" rowHeight="150" id="x61-sD-7NA" userLabel="DashboardSingleItemCell" customClass="DashboardSingleItemCell" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x61-sD-7NA" id="Mwv-O9-Or2">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="149.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Front and Side Leg Swings" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yri-qx-3M2">
+                        <rect key="frame" x="100" y="92" width="120" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="fYN-3m-e3A"/>
+                            <constraint firstAttribute="width" constant="120" id="nkG-TG-m7n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lll-Bd-c16" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                        <rect key="frame" x="130" y="24" width="60" height="60"/>
+                        <subviews>
+                            <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhC-kZ-D44">
+                                <rect key="frame" x="19" y="19" width="22" height="22"/>
+                                <state key="normal" image="timed"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="BhC-kZ-D44" firstAttribute="centerX" secondItem="lll-Bd-c16" secondAttribute="centerX" id="Qni-y3-twW"/>
+                            <constraint firstItem="BhC-kZ-D44" firstAttribute="centerY" secondItem="lll-Bd-c16" secondAttribute="centerY" id="TfX-LD-grV"/>
+                            <constraint firstAttribute="width" constant="60" id="cNg-ry-gFw"/>
+                            <constraint firstAttribute="height" constant="60" id="ioz-et-cyQ"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="yri-qx-3M2" firstAttribute="centerX" secondItem="Mwv-O9-Or2" secondAttribute="centerX" id="05S-ck-KZP"/>
+                    <constraint firstItem="lll-Bd-c16" firstAttribute="centerX" secondItem="Mwv-O9-Or2" secondAttribute="centerX" id="GPB-eZ-eWw"/>
+                    <constraint firstItem="lll-Bd-c16" firstAttribute="top" secondItem="Mwv-O9-Or2" secondAttribute="topMargin" constant="16" id="QUc-Ou-576"/>
+                    <constraint firstItem="yri-qx-3M2" firstAttribute="top" secondItem="lll-Bd-c16" secondAttribute="bottom" constant="8" id="kIZ-2k-b4l"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="button" destination="BhC-kZ-D44" id="QTV-rg-gjm"/>
+                <outlet property="title" destination="yri-qx-3M2" id="98X-pC-4Xu"/>
+                <outlet property="view" destination="lll-Bd-c16" id="y54-Ea-W9T"/>
+            </connections>
+            <point key="canvasLocation" x="286" y="235"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="timed" width="22" height="22"/>
+    </resources>
+</document>
