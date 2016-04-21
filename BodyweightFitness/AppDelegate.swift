@@ -27,7 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
 //        Fabric.with([Crashlytics.self])
         
-        self.shouldMigrateSchemaIfNeeded()
+        self.migrateSchemaIfNeeded()
+        self.setDefaultSettings()
         
         self.sideNavigationViewController = SideNavigationController(
             rootViewController: self.rootViewController,
@@ -53,30 +54,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.sharedApplication().idleTimerDisabled = true
     }
     
-    func shouldMigrateSchemaIfNeeded() {
-        print("shouldMigrateSchemaIfNeeded")
+    func setDefaultSettings() {
+        let defaults = NSUserDefaults.standardUserDefaults()
         
+        if(defaults.objectForKey("playAudioWhenTimerStops") == nil) {
+            defaults.setBool(true, forKey: "playAudioWhenTimerStops")
+        }
+    }
+    
+    func migrateSchemaIfNeeded() {
         if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
-            print("repositoryRoutineForTodayExists")
-            
             let routine = RoutineStream.sharedInstance.routine
             let currentSchema = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
             
             let (shouldRemoveCurrentSchema, newSchema) = migrateSchemaIfNeeded(routine, currentSchema: currentSchema)
             
             if shouldRemoveCurrentSchema {
-                print("shouldRemoveCurrentSchema")
-                
                 let realm = RepositoryStream.sharedInstance.getRealm()
                 
                 try! realm.write {
-                    print("realm.write")
-                    
                     realm.add(newSchema, update: false)
                     realm.delete(currentSchema)
                 }
-            } else {
-                print("shouldNotRemoveCurrentSchema")
             }
         }
     }

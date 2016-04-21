@@ -8,8 +8,6 @@ class WeightedViewController: UIViewController {
     @IBOutlet var sets: UILabel!
     @IBOutlet var reps: UIButton!
     
-    // remember numberOfReps per exercise
-    // set number when loading to the number of exercise
     var numberOfReps: Int = 5
     var rootViewController: RootViewController? = nil
     var current: Exercise? = nil
@@ -31,6 +29,8 @@ class WeightedViewController: UIViewController {
     func changeExercise(currentExercise: Exercise) {
         self.current = currentExercise
         
+        self.numberOfReps = PersistenceManager.getNumberOfReps(currentExercise.id)
+        
         self.updateLabels()
         
         if let _ = self.current?.previous {
@@ -47,6 +47,10 @@ class WeightedViewController: UIViewController {
     }
     
     func updateLabels() {
+        if let current = current {
+            PersistenceManager.storeNumberOfReps(current.id, numberOfReps: self.numberOfReps)
+        }
+        
         self.sets.text = self.printSets()
         self.reps.setTitle(printValue(self.numberOfReps), forState: .Normal)
     }
@@ -72,7 +76,7 @@ class WeightedViewController: UIViewController {
         
         notification.displayNotificationWithMessage("Logged Set \(set) - \(reps) reps", forDuration: 2.0)
         
-        updateLabels()
+        self.updateLabels()
     }
 
     func printSets() -> String {
@@ -162,11 +166,11 @@ class WeightedViewController: UIViewController {
                             sets.append(repositorySet)
                             
                             repositoryRoutine.lastUpdatedTime = NSDate()
-                            
-                            showNotification(sets.count, reps: self.numberOfReps)
                         }
                         
                         realm.add(repositoryRoutine, update: true)
+                        
+                        self.showNotification(sets.count, reps: self.numberOfReps)
                     }
                 }
             }

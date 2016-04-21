@@ -83,16 +83,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             defaults.setBool(false, forKey: "playAudioWhenTimerStops")
         }
     }
-    
-    func automaticallyLogTimedExercises(sender: UISwitch) {
-        if sender.on {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setBool(true, forKey: "automaticallyLogTimedExercises")
-        } else {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setBool(false, forKey: "automaticallyLogTimedExercises")
-        }
-    }
 
     func openStoreProductWithiTunesItemIdentifier(identifier: String) {
         let storeViewController = SKStoreProductViewController()
@@ -112,9 +102,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0) {
-            return 2
-        } else if (section == 4) {
+        if (section == 4) {
             return 2
         }
         
@@ -163,16 +151,6 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
                 }
                 
                 toggle.addTarget(self, action: #selector(playAudioWhenTimerStops), forControlEvents: UIControlEvents.ValueChanged)
-            } else {
-                cell.textLabel?.text = "Automatic Logging"
-                cell.detailTextLabel?.text = "Automatically log timed exercises"
-                
-                let defaults = NSUserDefaults.standardUserDefaults()
-                if (defaults.objectForKey("automaticallyLogTimedExercises") != nil) {
-                    toggle.on = defaults.boolForKey("automaticallyLogTimedExercises")
-                }
-                
-                toggle.addTarget(self, action: #selector(automaticallyLogTimedExercises), forControlEvents: UIControlEvents.ValueChanged)
             }
             
             cell.accessoryView = toggle

@@ -124,6 +124,8 @@ class RootViewController: UIViewController {
     @IBAction func indexChanged(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
+            self.timedViewController.stopTimer()
+            
             self.timedViewController.view.hidden = false
             self.weightedViewController.view.hidden = true
         case 1:

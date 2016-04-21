@@ -566,14 +566,14 @@ class SetView: UIButton {
                 
                 if minutes == 0 {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
                     self.centerLabel?.textAlignment = NSTextAlignment.Center
                     self.centerLabel?.text = "\(seconds)s"
                     
                     self.addSubview(self.centerLabel!)
                 } else if (minutes > 0 && seconds == 0) {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
                     self.centerLabel?.textAlignment = NSTextAlignment.Center
                     self.centerLabel?.text = "\(minutes)m"
                     
@@ -595,7 +595,7 @@ class SetView: UIButton {
             } else {
                 if set.weight == 0 {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(14.0)
+                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
                     self.centerLabel?.textAlignment = NSTextAlignment.Center
                     self.centerLabel?.text = "\(set.reps)"
                     

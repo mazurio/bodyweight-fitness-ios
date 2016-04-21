@@ -28,6 +28,29 @@ class PersistenceManager {
         NSKeyedArchiver.archiveRootObject(weightUnit, toFile: dataFilePath)
     }
     
+    class func getNumberOfReps(id: String) -> Int {
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("reps.\(id).archive")
+        
+        if(fileManager.fileExistsAtPath(dataFilePath)) {
+            if let seconds = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? Int {
+                return seconds
+            }
+        }
+        
+        return 5
+    }
+    
+    class func storeNumberOfReps(id: String, numberOfReps: Int) {
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("reps.\(id).archive")
+        
+        NSKeyedArchiver.archiveRootObject(numberOfReps, toFile: dataFilePath)
+    }
+    
     class func getTimer(id: String) -> Int {
         let fileManager = NSFileManager.defaultManager()
         let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
