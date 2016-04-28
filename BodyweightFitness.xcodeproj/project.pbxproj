@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		46B021B6A56C2000CA08000B /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
+		731526961CCA4EA5001848AC /* Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526951CCA4EA5001848AC /* Plank.mp4 */; };
+		731526981CCA5288001848AC /* Side Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526971CCA5288001848AC /* Side Plank.mp4 */; };
+		7315269A1CCA5379001848AC /* Reverse Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526991CCA5379001848AC /* Reverse Plank.mp4 */; };
+		7315269C1CCA6E71001848AC /* Arch.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7315269B1CCA6E71001848AC /* Arch.mp4 */; };
+		7315269E1CCA6FD2001848AC /* Hollow Hold.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7315269D1CCA6FD2001848AC /* Hollow Hold.mp4 */; };
+		731526A11CCA744A001848AC /* Scapular Shrugs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */; };
+		731526A31CCA77C0001848AC /* Shoulder Rolls.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */; };
 		732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */; };
 		732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */; };
 		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
@@ -224,6 +231,13 @@
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
+		731526951CCA4EA5001848AC /* Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plank.mp4; sourceTree = "<group>"; };
+		731526971CCA5288001848AC /* Side Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Side Plank.mp4"; sourceTree = "<group>"; };
+		731526991CCA5379001848AC /* Reverse Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reverse Plank.mp4"; sourceTree = "<group>"; };
+		7315269B1CCA6E71001848AC /* Arch.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Arch.mp4; sourceTree = "<group>"; };
+		7315269D1CCA6FD2001848AC /* Hollow Hold.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hollow Hold.mp4"; sourceTree = "<group>"; };
+		731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scapular Shrugs.mp4"; sourceTree = "<group>"; };
+		731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shoulder Rolls.mp4"; sourceTree = "<group>"; };
 		732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageMenuFramework.framework; path = Carthage/Build/iOS/PageMenuFramework.framework; sourceTree = "<group>"; };
 		732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PageMenuFramework.framework.dSYM; path = Carthage/Build/iOS/PageMenuFramework.framework.dSYM; sourceTree = "<group>"; };
 		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = "<group>"; };
@@ -462,6 +476,27 @@
 			path = BodyweightFitness;
 			sourceTree = "<group>";
 		};
+		731526941CCA4E99001848AC /* Bodyline Drills */ = {
+			isa = PBXGroup;
+			children = (
+				731526951CCA4EA5001848AC /* Plank.mp4 */,
+				731526971CCA5288001848AC /* Side Plank.mp4 */,
+				731526991CCA5379001848AC /* Reverse Plank.mp4 */,
+				7315269D1CCA6FD2001848AC /* Hollow Hold.mp4 */,
+				7315269B1CCA6E71001848AC /* Arch.mp4 */,
+			);
+			name = "Bodyline Drills";
+			sourceTree = "<group>";
+		};
+		7315269F1CCA743E001848AC /* Dynamic Stretches */ = {
+			isa = PBXGroup;
+			children = (
+				731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */,
+				731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */,
+			);
+			name = "Dynamic Stretches";
+			sourceTree = "<group>";
+		};
 		734B6F951C4BB72C00CFB6BD /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,6 +699,8 @@
 		E08139041B5270EE00390A73 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7315269F1CCA743E001848AC /* Dynamic Stretches */,
+				731526941CCA4E99001848AC /* Bodyline Drills */,
 				E0F5874C1B52732500540104 /* Gifs */,
 				E0F587491B52731C00540104 /* Routine.json */,
 				73BADE7C1CC79648001ACEDC /* TestRoutine.json */,
@@ -876,6 +913,8 @@
 				E0F587A81B52733100540104 /* tuck_ice_cream_maker.gif in Resources */,
 				E0F587A01B52733100540104 /* ring_support.gif in Resources */,
 				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryCell.xib in Resources */,
+				731526981CCA5288001848AC /* Side Plank.mp4 in Resources */,
+				7315269A1CCA5379001848AC /* Reverse Plank.mp4 in Resources */,
 				E0F5878C1B52733100540104 /* horizontal_row.gif in Resources */,
 				E0F587871B52733100540104 /* diamond_pushup.gif in Resources */,
 				E0F587A71B52733100540104 /* tuck_front_lever.gif in Resources */,
@@ -884,9 +923,11 @@
 				E0F5879C1B52733100540104 /* pushup.gif in Resources */,
 				73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */,
 				E0F587931B52733100540104 /* negative_pullup.gif in Resources */,
+				7315269E1CCA6FD2001848AC /* Hollow Hold.mp4 in Resources */,
 				73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */,
 				E0F587B01B52733100540104 /* wrist_progression.gif in Resources */,
 				E0F587A91B52733100540104 /* tuck_l_sit.gif in Resources */,
+				731526961CCA4EA5001848AC /* Plank.mp4 in Resources */,
 				737F3C781CBD52AB00251EFE /* WorkoutLogView.xib in Resources */,
 				E0F587811B52733100540104 /* assisted_squat.gif in Resources */,
 				73BADE291CC6F480001ACEDC /* band_chest_flies.gif in Resources */,
@@ -899,6 +940,7 @@
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
 				E0F587471B52730C00540104 /* TimePickerModalView.xib in Resources */,
 				E0F587881B52733100540104 /* floor_l_sit.gif in Resources */,
+				7315269C1CCA6E71001848AC /* Arch.mp4 in Resources */,
 				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
 				73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */,
@@ -910,6 +952,7 @@
 				E0F5879F1B52733100540104 /* ring_pushup.gif in Resources */,
 				73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */,
 				73BF3BB91CBEFB0E00E0258D /* RootView.xib in Resources */,
+				731526A31CCA77C0001848AC /* Shoulder Rolls.mp4 in Resources */,
 				E0F5878D1B52733100540104 /* incline_pushup.gif in Resources */,
 				E0F587981B52733100540104 /* pseudo_planche_pushup.gif in Resources */,
 				E0F587961B52733100540104 /* parallel_bar_hold.gif in Resources */,
@@ -928,6 +971,7 @@
 				E0F587B41B52734900540104 /* Images.xcassets in Resources */,
 				73BADE251CC6EE94001ACEDC /* shoulder_rolls.gif in Resources */,
 				E0F5877F1B52733100540104 /* advanced_tuck_front_lever_row.gif in Resources */,
+				731526A11CCA744A001848AC /* Scapular Shrugs.mp4 in Resources */,
 				E0F587831B52733100540104 /* bodyweight_squat.gif in Resources */,
 				732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */,
 				73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */,

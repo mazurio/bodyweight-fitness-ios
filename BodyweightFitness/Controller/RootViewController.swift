@@ -1,12 +1,17 @@
 import UIKit
+import AVFoundation
 
 class RootViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var topView: UIView!
     @IBOutlet var middleView: UIView!
+
     @IBOutlet var viewControl: UISegmentedControl!
     @IBOutlet var mainView: UIView!
-    @IBOutlet var gifView: AnimatableImageView!
+    @IBOutlet var videoView: UIView!
+    
+    var player: AVPlayer?
+    var playerLayer: AVPlayerLayer?
     
     @IBOutlet weak var middleViewHeightConstraint: NSLayoutConstraint!
     
@@ -14,7 +19,7 @@ class RootViewController: UIViewController {
     let timedViewController: TimedViewController = TimedViewController()
     let weightedViewController: WeightedViewController = WeightedViewController()
     
-    var current: Exercise?
+    var current: Exercise = RoutineStream.sharedInstance.routine.getFirstExercise()
     
     init() {
         super.init(nibName: "RootView", bundle: nil)
@@ -83,7 +88,6 @@ class RootViewController: UIViewController {
         self.navigationItem.titleView = navigationViewController.view
         
         self.timedViewController.updateLabel()
-        self.changeExercise(RoutineStream.sharedInstance.routine.getFirstExercise())
         
         let rate = RateMyApp.sharedInstance
         
@@ -95,6 +99,10 @@ class RootViewController: UIViewController {
         super.viewDidAppear(animated)
         
         setTitle()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.changeExercise(current)
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
@@ -142,7 +150,7 @@ class RootViewController: UIViewController {
         let logWorkoutController = LogWorkoutController()
         
         logWorkoutController.parentController = self.sideNavigationController
-        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        logWorkoutController.setRepositoryRoutine(current, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
         
         logWorkoutController.modalTransitionStyle = .CoverVertical
         logWorkoutController.modalPresentationStyle = .Custom
@@ -172,7 +180,7 @@ class RootViewController: UIViewController {
         self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
         self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
 
-        self.setGifImage(currentExercise.id)
+        self.setVideo(currentExercise.videoId)
         
         if (currentExercise.section?.mode == SectionMode.All) {
             if let image = UIImage(named: "plus") {
@@ -184,7 +192,6 @@ class RootViewController: UIViewController {
             }
         }
         
-        if let current = self.current {
             if current.isTimed() {
                 self.viewControl.selectedSegmentIndex = 0
                 self.viewControl.setEnabled(false, forSegmentAtIndex: 1)
@@ -200,16 +207,60 @@ class RootViewController: UIViewController {
                 self.timedViewController.view.hidden = true
                 self.weightedViewController.view.hidden = false
             }
+        
+    }
+    
+    func setVideo(videoId: String) {
+        // if contains videoId then
+        
+        if !videoId.isEmpty {
+            if let player = self.player {
+                player.pause()
+                self.player = nil
+                
+            }
+            if let layer = self.playerLayer {
+                layer.removeFromSuperlayer()
+                self.playerLayer = nil
+            }
+            
+            self.videoView.layer.sublayers?.removeAll()
+            
+            let path = NSBundle.mainBundle().pathForResource(videoId, ofType: "mp4")
+            
+            player = AVPlayer(URL: NSURL(fileURLWithPath: path!))
+            player!.actionAtItemEnd = AVPlayerActionAtItemEnd.None;
+            
+            let playerLayer = AVPlayerLayer(player: player)
+            playerLayer.frame = videoView.bounds
+            
+            self.videoView.layer.insertSublayer(playerLayer, atIndex: 0)
+            
+            NSNotificationCenter.defaultCenter().addObserver(
+                self,
+                selector: #selector(RootViewController.playerItemDidReachEnd),
+                name: AVPlayerItemDidPlayToEndTimeNotification,
+                object: player!.currentItem)
+            
+            player!.seekToTime(kCMTimeZero)
+            player!.play()
+        } else {
+            if let player = self.player {
+                player.pause()
+                self.player = nil
+                
+            }
+            if let layer = self.playerLayer {
+                layer.removeFromSuperlayer()
+                self.playerLayer = nil
+            }
+            
+            self.videoView.layer.sublayers?.removeAll()
         }
     }
     
-    func setGifImage(id: String) {
-        if let bundle = NSBundle.mainBundle().URLForResource(id, withExtension: "gif") {
-            if let imageData = NSData(contentsOfURL: bundle) {
-                
-                gifView.animateWithImageData(imageData)
-            }
-        }
+    func playerItemDidReachEnd() {
+        player!.seekToTime(kCMTimeZero)
     }
     
     @IBAction func actionButtonClicked(sender: AnyObject) {
@@ -230,22 +281,15 @@ class RootViewController: UIViewController {
             presenter.sourceRect = button.bounds;
         }
         
-        // ... Cancel Action
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
-        // ... Watch on YouTube Action
-        alertController.addAction(
-            UIAlertAction(title: "Watch on YouTube", style: .Default) { (action) in
-                /// ... Watch on YouTube
-                if let youTubeId = self.current?.youTubeId {
-                    if let requestUrl = NSURL(string: "https://www.youtube.com/watch?v=" + youTubeId) {
-                        UIApplication.sharedApplication().openURL(requestUrl)
-                    }
+        alertController.addAction(UIAlertAction(title: "Watch Full Video", style: .Default) { (action) in
+  
+                if let requestUrl = NSURL(string: "https://www.youtube.com/watch?v=" + self.current.youTubeId) {
+                    UIApplication.sharedApplication().openURL(requestUrl)
                 }
-            }
-        )
+            
+        })
         
-        // ... Today's Workout Action
         alertController.addAction(UIAlertAction(title: "Today's Workout", style: .Default) { (action) in
             let backItem = UIBarButtonItem()
             backItem.title = "Back"
@@ -257,15 +301,14 @@ class RootViewController: UIViewController {
             progressViewController.setRoutine(NSDate(), repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
             
             self.showViewController(progressViewController, sender: nil)
-            })
+        })
         
-        // ... Choose Progression Action
-        if let currentSection = current?.section {
+        if let currentSection = current.section {
             if (currentSection.mode == .Levels || currentSection.mode == .Pick) {
                 // ... Choose Progression
                 alertController.addAction(
                     UIAlertAction(title: "Choose Progression", style: .Default) { (action) in
-                        if let exercises = self.current?.section?.exercises {
+                        if let exercises = self.current.section?.exercises {
                             let alertController = UIAlertController(
                                 title: "Choose Progression",
                                 message: nil,
@@ -313,13 +356,13 @@ class RootViewController: UIViewController {
     }
 
     @IBAction func previousButtonClicked(sender: AnyObject) {
-        if let previous = self.current?.previous {
+        if let previous = self.current.previous {
             changeExercise(previous)
         }
     }
  
     @IBAction func nextButtonClicked(sender: AnyObject) {
-        if let next = self.current?.next {
+        if let next = self.current.next {
             changeExercise(next)
         }
     }

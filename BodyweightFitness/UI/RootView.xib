@@ -7,11 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
             <connections>
                 <outlet property="actionButton" destination="cR0-az-v2N" id="iaB-WG-RE0"/>
-                <outlet property="gifView" destination="nme-84-8Ul" id="kJ4-po-RXQ"/>
                 <outlet property="mainView" destination="Kfq-Sz-1sY" id="vcw-p3-5qe"/>
                 <outlet property="middleView" destination="y1k-Gx-8Pe" id="grS-ke-UWw"/>
                 <outlet property="middleViewHeightConstraint" destination="1Jo-cO-wIX" id="RMC-fi-Mqr"/>
                 <outlet property="topView" destination="Kfq-Sz-1sY" id="c5G-to-tfv"/>
+                <outlet property="videoView" destination="yek-lf-ijy" id="bBy-VU-jOO"/>
                 <outlet property="view" destination="iN0-l3-epB" id="RUD-XD-GnQ"/>
                 <outlet property="viewControl" destination="uEF-Py-fjO" id="ey8-Es-zAI"/>
             </connections>
@@ -32,7 +32,7 @@
                     <rect key="frame" x="0.0" y="201" width="600" height="45"/>
                     <subviews>
                         <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uEF-Py-fjO">
-                            <rect key="frame" x="209" y="8.5" width="183" height="29"/>
+                            <rect key="frame" x="209" y="8" width="183" height="29"/>
                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                             <segments>
                                 <segment title="Timer"/>
@@ -54,10 +54,10 @@
                 <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-CS-QWw" userLabel="Bottom View">
                     <rect key="frame" x="0.0" y="246" width="600" height="354"/>
                     <subviews>
-                        <imageView autoresizesSubviews="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nme-84-8Ul" customClass="AnimatableImageView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yek-lf-ijy">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="354"/>
                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        </imageView>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03a-uQ-Iq9" userLabel="Log Button" customClass="LogWorkoutButton" customModule="Bodyweight_Fitness" customModuleProvider="target">
                             <rect key="frame" x="528" y="210" width="60" height="60"/>
                             <constraints>
@@ -87,15 +87,21 @@
                     </subviews>
                     <color key="backgroundColor" red="0.019607843829999999" green="0.011764707040000001" blue="0.015686275440000001" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
-                        <constraint firstItem="nme-84-8Ul" firstAttribute="leading" secondItem="YSj-CS-QWw" secondAttribute="leading" id="7hK-ZC-3dP"/>
+                        <constraint firstAttribute="trailing" secondItem="yek-lf-ijy" secondAttribute="trailing" id="5mq-N8-3cy"/>
                         <constraint firstAttribute="trailing" secondItem="03a-uQ-Iq9" secondAttribute="trailing" constant="12" id="BnK-Uk-dF1"/>
+                        <constraint firstItem="yek-lf-ijy" firstAttribute="top" secondItem="YSj-CS-QWw" secondAttribute="top" id="CQO-87-CIE"/>
                         <constraint firstAttribute="bottom" secondItem="cR0-az-v2N" secondAttribute="bottom" constant="12" id="HMl-Li-eDF"/>
+                        <constraint firstItem="yek-lf-ijy" firstAttribute="leading" secondItem="YSj-CS-QWw" secondAttribute="leading" id="TLE-ma-dss"/>
+                        <constraint firstItem="03a-uQ-Iq9" firstAttribute="leading" secondItem="yek-lf-ijy" secondAttribute="trailing" id="YWn-Qs-J8A"/>
                         <constraint firstAttribute="trailing" secondItem="cR0-az-v2N" secondAttribute="trailing" constant="12" id="a2g-vG-5Pk"/>
-                        <constraint firstAttribute="bottom" secondItem="nme-84-8Ul" secondAttribute="bottom" id="cfm-K4-1kb"/>
-                        <constraint firstAttribute="trailing" secondItem="nme-84-8Ul" secondAttribute="trailing" id="eKh-Wo-gxR"/>
+                        <constraint firstAttribute="bottom" secondItem="yek-lf-ijy" secondAttribute="bottom" id="lUh-97-54X"/>
                         <constraint firstItem="cR0-az-v2N" firstAttribute="top" secondItem="03a-uQ-Iq9" secondAttribute="bottom" constant="12" id="r8s-wA-qPI"/>
-                        <constraint firstItem="nme-84-8Ul" firstAttribute="top" secondItem="YSj-CS-QWw" secondAttribute="top" id="uDa-sf-whH"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="YWn-Qs-J8A"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>

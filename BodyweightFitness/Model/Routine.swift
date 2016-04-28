@@ -71,19 +71,21 @@ class Exercise: LinkedRoutine {
     let title: String
     let desc: String
     let youTubeId: String
+    let videoId: String
     let defaultSet: String
     var category: Category?
     var section: Section?
     var previous: Exercise?
     var next: Exercise?
     
-    init(id: String, exerciseId: String, level: String, title: String, desc: String, youTubeId: String, defaultSet: String) {
+    init(id: String, exerciseId: String, level: String, title: String, desc: String, youTubeId: String, videoId: String, defaultSet: String) {
         self.id = id
         self.exerciseId = exerciseId
         self.level = level
         self.title = title
         self.desc = desc
         self.youTubeId = youTubeId
+        self.videoId = videoId
         self.defaultSet = defaultSet
     }
     
@@ -155,6 +157,7 @@ class Routine {
                     title: item["title"].stringValue,
                     desc: item["description"].stringValue,
                     youTubeId: item["youTubeId"].stringValue,
+                    videoId: item["videoId"].stringValue,
                     defaultSet: item["defaultSet"].stringValue)
                 
                 exercise.category = currentCategory

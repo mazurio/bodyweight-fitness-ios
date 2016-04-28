@@ -31,6 +31,7 @@
       "description": "1x(5-10)",
       "type": "exercise",
       "youTubeId": "H01oGIS1C_g",
+      "videoId": "Shoulder Rolls",
       "defaultSet": "weighted"
     },
     {
@@ -40,6 +41,7 @@
       "description": "1x(5-10)",
       "type": "exercise",
       "youTubeId": "akgQbxhrhOc",
+      "videoId": "Scapular Shrugs",
       "defaultSet": "weighted"
     },
     {
@@ -109,7 +111,8 @@
       "title": "Plank",
       "description": "1x(10-60s) hold",
       "type": "exercise",
-      "youTubeId": "PLu6k-uKOJ0",
+      "youTubeId": "44ScXWFaVBs",
+      "videoId": "Plank",
       "defaultSet": "timed"
     },
     {
@@ -118,7 +121,8 @@
       "title": "Side Plank (Both Sides)",
       "description": "1x(10-60s) hold",
       "type": "exercise",
-      "youTubeId": "xIFWxQgFMiE",
+      "youTubeId": "44ScXWFaVBs",
+      "videoId": "Side Plank",
       "defaultSet": "timed"
     },
     {
@@ -127,7 +131,8 @@
       "title": "Reverse Plank",
       "description": "1x(10-60s) hold",
       "type": "exercise",
-      "youTubeId": "1s1bPYBPERU",
+      "youTubeId": "44ScXWFaVBs",
+      "videoId": "Reverse Plank",
       "defaultSet": "timed"
     },
     {
@@ -136,7 +141,8 @@
       "title": "Hollow Hold",
       "description": "1x(10-60s) hold",
       "type": "exercise",
-      "youTubeId": "wrzjVTK2brk",
+      "youTubeId": "44ScXWFaVBs",
+      "videoId": "Hollow Hold",
       "defaultSet": "timed"
     },
     {
@@ -145,7 +151,8 @@
       "title": "Arch",
       "description": "1x(10-60s) hold",
       "type": "exercise",
-      "youTubeId": "wrzjVTK2brk",
+      "youTubeId": "44ScXWFaVBs",
+      "videoId": "Arch",
       "defaultSet": "timed"
     },
     {

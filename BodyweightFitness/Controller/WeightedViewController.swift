@@ -86,6 +86,7 @@ class WeightedViewController: UIViewController {
         let asString = NSMutableString()
 
         if let current = self.rootViewController?.current {
+            // TODO: THIS MUST CHECK IF REPOSITORY EXISTS OTHERWISE IF WE DELETED -> IT'S GOING TO RECREATE AUTOMATICALLY.
             let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
             
             if let repositoryExercise = repositoryRoutine.exercises.filter({
