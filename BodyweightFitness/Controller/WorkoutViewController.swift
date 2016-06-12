@@ -22,7 +22,7 @@ class WorkoutViewController: UIViewController {
     var current: Exercise = RoutineStream.sharedInstance.routine.getFirstExercise()
     
     init() {
-        super.init(nibName: "RootView", bundle: nil)
+        super.init(nibName: "WorkoutView", bundle: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

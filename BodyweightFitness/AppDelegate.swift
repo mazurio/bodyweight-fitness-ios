@@ -12,6 +12,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let sideViewController: UIViewController =
         SideViewController()
     
+    let homeViewController: UINavigationController =
+        UINavigationController(rootViewController: HomeViewController())
+    
     let workoutViewController: UINavigationController =
         UINavigationController(rootViewController: WorkoutViewController())
     
@@ -31,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.setDefaultSettings()
         
         self.sideNavigationViewController = SideNavigationController(
-            rootViewController: self.workoutViewController,
+            rootViewController: self.homeViewController,
             leftViewController: self.sideViewController
         )
 

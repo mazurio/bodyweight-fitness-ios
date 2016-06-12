@@ -16,6 +16,8 @@
 		7315269E1CCA6FD2001848AC /* Hollow Hold.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 7315269D1CCA6FD2001848AC /* Hollow Hold.mp4 */; };
 		731526A11CCA744A001848AC /* Scapular Shrugs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */; };
 		731526A31CCA77C0001848AC /* Shoulder Rolls.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */; };
+		7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329B68B1D0D8476005F5F74 /* HomeViewController.swift */; };
+		7329B68E1D0D84E4005F5F74 /* HomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7329B68D1D0D84E4005F5F74 /* HomeView.xib */; };
 		732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */; };
 		732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */; };
 		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
@@ -105,7 +107,7 @@
 		73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */; };
 		73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */; };
 		73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */; };
-		73BF3BB91CBEFB0E00E0258D /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB81CBEFB0E00E0258D /* RootView.xib */; };
+		73BF3BB91CBEFB0E00E0258D /* WorkoutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB81CBEFB0E00E0258D /* WorkoutView.xib */; };
 		73BF3BBB1CBEFB1E00E0258D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */; };
 		73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BBE1CBF02D200E0258D /* Window.xib */; };
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
@@ -185,6 +187,8 @@
 		7315269D1CCA6FD2001848AC /* Hollow Hold.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Hollow Hold.mp4"; sourceTree = "<group>"; };
 		731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Scapular Shrugs.mp4"; sourceTree = "<group>"; };
 		731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Shoulder Rolls.mp4"; sourceTree = "<group>"; };
+		7329B68B1D0D8476005F5F74 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7329B68D1D0D84E4005F5F74 /* HomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeView.xib; sourceTree = "<group>"; };
 		732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PageMenuFramework.framework; path = Carthage/Build/iOS/PageMenuFramework.framework; sourceTree = "<group>"; };
 		732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = PageMenuFramework.framework.dSYM; path = Carthage/Build/iOS/PageMenuFramework.framework.dSYM; sourceTree = "<group>"; };
 		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = "<group>"; };
@@ -276,7 +280,7 @@
 		73BF3BB01CBE6A8000E0258D /* SettingsTextCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTextCell.xib; sourceTree = "<group>"; };
 		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = "<group>"; };
 		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = "<group>"; };
-		73BF3BB81CBEFB0E00E0258D /* RootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
+		73BF3BB81CBEFB0E00E0258D /* WorkoutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutView.xib; sourceTree = "<group>"; };
 		73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		73BF3BBE1CBF02D200E0258D /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
@@ -465,13 +469,14 @@
 				732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */,
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
 				73BF3BC61CBFF89D00E0258D /* NavigationView.xib */,
-				73BF3BB81CBEFB0E00E0258D /* RootView.xib */,
+				7329B68D1D0D84E4005F5F74 /* HomeView.xib */,
 				73BADE161CC3E2F9001ACEDC /* TimedView.xib */,
 				73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
 				735BEA061CBD1E56003616C5 /* SideView.xib */,
 				73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */,
 				73BF3BBE1CBF02D200E0258D /* Window.xib */,
+				73BF3BB81CBEFB0E00E0258D /* WorkoutView.xib */,
 				737F3C771CBD52AB00251EFE /* WorkoutLogView.xib */,
 			);
 			path = UI;
@@ -488,12 +493,13 @@
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */,
-				73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */,
+				7329B68B1D0D8476005F5F74 /* HomeViewController.swift */,
 				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
 				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
 				73D2BCE51C3C633200CE6C00 /* SideViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
+				73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */,
 				46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */,
 			);
 			path = Controller;
@@ -715,6 +721,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7329B68E1D0D84E4005F5F74 /* HomeView.xib in Resources */,
 				73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */,
 				73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */,
 				732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */,
@@ -743,7 +750,7 @@
 				732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */,
 				735BEA071CBD1E56003616C5 /* SideView.xib in Resources */,
 				73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */,
-				73BF3BB91CBEFB0E00E0258D /* RootView.xib in Resources */,
+				73BF3BB91CBEFB0E00E0258D /* WorkoutView.xib in Resources */,
 				731526A31CCA77C0001848AC /* Shoulder Rolls.mp4 in Resources */,
 				73BF3BA91CBE643200E0258D /* SettingsView.xib in Resources */,
 				732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */,
@@ -866,6 +873,7 @@
 				73BF3BC91CBFFF0A00E0258D /* NavigationViewController.swift in Sources */,
 				734B6FCB1C4BB73D00CFB6BD /* CVCalendarViewAppearance.swift in Sources */,
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
+				7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */,
 				734B6FC71C4BB73D00CFB6BD /* CVCalendarViewAnimator.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
 				73C5A6371CC12ABC006EF5C1 /* SideNavigationView.swift in Sources */,
