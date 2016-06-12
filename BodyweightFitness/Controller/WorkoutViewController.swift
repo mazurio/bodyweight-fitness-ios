@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class RootViewController: UIViewController {
+class WorkoutViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var topView: UIView!
     @IBOutlet var middleView: UIView!
@@ -238,7 +238,7 @@ class RootViewController: UIViewController {
             
             NSNotificationCenter.defaultCenter().addObserver(
                 self,
-                selector: #selector(RootViewController.playerItemDidReachEnd),
+                selector: #selector(WorkoutViewController.playerItemDidReachEnd),
                 name: AVPlayerItemDidPlayToEndTimeNotification,
                 object: player!.currentItem)
             

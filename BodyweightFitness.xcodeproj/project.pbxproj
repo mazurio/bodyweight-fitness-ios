@@ -106,7 +106,7 @@
 		73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */; };
 		73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */; };
 		73BF3BB91CBEFB0E00E0258D /* RootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB81CBEFB0E00E0258D /* RootView.xib */; };
-		73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */; };
+		73BF3BBB1CBEFB1E00E0258D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */; };
 		73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BBE1CBF02D200E0258D /* Window.xib */; };
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
 		73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BC61CBFF89D00E0258D /* NavigationView.xib */; };
@@ -277,7 +277,7 @@
 		73BF3BB21CBE819B00E0258D /* SettingsActionSubtitleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsActionSubtitleCell.xib; sourceTree = "<group>"; };
 		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = "<group>"; };
 		73BF3BB81CBEFB0E00E0258D /* RootView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootView.xib; sourceTree = "<group>"; };
-		73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		73BF3BBE1CBF02D200E0258D /* Window.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Window.xib; sourceTree = "<group>"; };
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BF3BC61CBFF89D00E0258D /* NavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavigationView.xib; sourceTree = "<group>"; };
@@ -488,7 +488,7 @@
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				73BF3BC81CBFFF0A00E0258D /* NavigationViewController.swift */,
-				73BF3BBA1CBEFB1E00E0258D /* RootViewController.swift */,
+				73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */,
 				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
 				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
@@ -850,7 +850,7 @@
 				73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */,
 				734B6FE51C4BB73D00CFB6BD /* CVWeekdaySymbolType.swift in Sources */,
 				733876DA1C4ABF88006AABA7 /* RoutineStream.swift in Sources */,
-				73BF3BBB1CBEFB1E00E0258D /* RootViewController.swift in Sources */,
+				73BF3BBB1CBEFB1E00E0258D /* WorkoutViewController.swift in Sources */,
 				73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */,
 				734B6FB31C4BB73D00CFB6BD /* CVCalendarContentViewController.swift in Sources */,
 				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,

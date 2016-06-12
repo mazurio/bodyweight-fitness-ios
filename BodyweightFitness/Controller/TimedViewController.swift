@@ -10,7 +10,7 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     
-    var rootViewController: RootViewController? = nil
+    var rootViewController: WorkoutViewController? = nil
     var current: Exercise? = nil
     
     var audioPlayer: AVAudioPlayer?

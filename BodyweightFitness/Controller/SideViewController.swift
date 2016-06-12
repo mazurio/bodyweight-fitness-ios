@@ -89,12 +89,12 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
             case 0:
                 // Home
                 
-                if(sideNavigationController?.rootViewController == (appDelegate?.rootViewController)!) {
+                if(sideNavigationController?.rootViewController == (appDelegate?.workoutViewController)!) {
                     break;
                 }
                 
                 sideNavigationController?.transitionFromRootViewController(
-                    (appDelegate?.rootViewController)!,
+                    (appDelegate?.workoutViewController)!,
                     duration: 0,
                     options: UIViewAnimationOptions.CurveEaseIn,
                     animations: nil,

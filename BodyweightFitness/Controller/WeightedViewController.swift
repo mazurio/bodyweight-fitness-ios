@@ -9,7 +9,7 @@ class WeightedViewController: UIViewController {
     @IBOutlet var reps: UIButton!
     
     var numberOfReps: Int = 5
-    var rootViewController: RootViewController? = nil
+    var rootViewController: WorkoutViewController? = nil
     var current: Exercise? = nil
     
     init() {
