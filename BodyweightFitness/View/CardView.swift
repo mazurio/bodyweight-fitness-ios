@@ -20,3 +20,12 @@ class CardView: UIView {
         layer.shadowPath = shadowPath.CGPath
     }
 }
+
+@IBDesignable
+class ProgressView: UIView {
+    @IBInspectable var cornerRadius: CGFloat = 2
+    
+    override func layoutSubviews() {
+        layer.cornerRadius = cornerRadius
+    }
+}
