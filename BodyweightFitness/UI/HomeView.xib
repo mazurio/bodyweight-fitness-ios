@@ -144,6 +144,9 @@
                                             <state key="normal" title="Start Workout">
                                                 <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="startWorkout:" destination="-1" eventType="touchUpInside" id="VAl-v7-w3v"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
