@@ -151,6 +151,7 @@
 		738B96C71D761BB1009A8625 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C41D761BB1009A8625 /* RxBlocking.framework */; };
 		738B96C81D761BB1009A8625 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C51D761BB1009A8625 /* RxCocoa.framework */; };
 		738B96C91D761BB1009A8625 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C61D761BB1009A8625 /* RxSwift.framework */; };
+		738B96CB1D762931009A8625 /* SideViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CA1D762931009A8625 /* SideViewHeaderCell.swift */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -392,6 +393,7 @@
 		738B96C41D761BB1009A8625 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		738B96C51D761BB1009A8625 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		738B96C61D761BB1009A8625 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		738B96CA1D762931009A8625 /* SideViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewHeaderCell.swift; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -482,9 +484,6 @@
 		2BD2CA7A1B458FFD00841AB7 = {
 			isa = PBXGroup;
 			children = (
-				738B96BE1D761B77009A8625 /* RxBlocking.framework.dSYM */,
-				738B96BF1D761B77009A8625 /* RxCocoa.framework.dSYM */,
-				738B96C01D761B78009A8625 /* RxSwift.framework.dSYM */,
 				2BD2CA851B458FFD00841AB7 /* BodyweightFitness */,
 				73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */,
 				E00242FB1B4F1CFD0003A230 /* Frameworks */,
@@ -729,6 +728,7 @@
 		73BF3BB71CBEF0CC00E0258D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				738B96CA1D762931009A8625 /* SideViewHeaderCell.swift */,
 				73AA28F21CB7ACC100DEED79 /* DashboardCategoryCell.swift */,
 				73AA28FC1CB7ACF500DEED79 /* DashboardDoubleItemCell.swift */,
 				73AA28F01CB7ABC300DEED79 /* DashboardSectionCell.swift */,
@@ -744,6 +744,9 @@
 		73BFEBBC1CBA8B4900B9DDAE /* dSYM */ = {
 			isa = PBXGroup;
 			children = (
+				738B96BE1D761B77009A8625 /* RxBlocking.framework.dSYM */,
+				738B96BF1D761B77009A8625 /* RxCocoa.framework.dSYM */,
+				738B96C01D761B78009A8625 /* RxSwift.framework.dSYM */,
 				733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */,
 				732BA0211C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM */,
 				7366D8E61C51AD9600819790 /* SwiftCharts.framework.dSYM */,
@@ -1138,6 +1141,7 @@
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
 				734B6FDD1C4BB73D00CFB6BD /* CVScrollDirection.swift in Sources */,
 				734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */,
+				738B96CB1D762931009A8625 /* SideViewHeaderCell.swift in Sources */,
 				734B6FDF1C4BB73D00CFB6BD /* CVSelectionType.swift in Sources */,
 				734B6FC11C4BB73D00CFB6BD /* CVCalendarMonthView.swift in Sources */,
 				734B6FC31C4BB73D00CFB6BD /* CVCalendarTouchController.swift in Sources */,
