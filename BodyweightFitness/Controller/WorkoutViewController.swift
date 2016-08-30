@@ -93,6 +93,11 @@ class WorkoutViewController: UIViewController {
         
         rate.appID = "1018863605"
         rate.trackAppUsage()
+        
+        _ = RoutineStream.sharedInstance.routineObservable().subscribe(onNext: {
+            self.current = $0.getFirstExercise()
+            self.changeExercise(self.current)
+        })
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -192,22 +197,21 @@ class WorkoutViewController: UIViewController {
             }
         }
         
-            if current.isTimed() {
-                self.viewControl.selectedSegmentIndex = 0
-                self.viewControl.setEnabled(false, forSegmentAtIndex: 1)
-                self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
-                
-                self.timedViewController.view.hidden = false
-                self.weightedViewController.view.hidden = true
-            } else {
-                self.viewControl.selectedSegmentIndex = 1
-                self.viewControl.setEnabled(true, forSegmentAtIndex: 1)
-                self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
-                
-                self.timedViewController.view.hidden = true
-                self.weightedViewController.view.hidden = false
-            }
-        
+        if current.isTimed() {
+            self.viewControl.selectedSegmentIndex = 0
+            self.viewControl.setEnabled(false, forSegmentAtIndex: 1)
+            self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+            
+            self.timedViewController.view.hidden = false
+            self.weightedViewController.view.hidden = true
+        } else {
+            self.viewControl.selectedSegmentIndex = 1
+            self.viewControl.setEnabled(true, forSegmentAtIndex: 1)
+            self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
+            
+            self.timedViewController.view.hidden = true
+            self.weightedViewController.view.hidden = false
+        }
     }
     
     func setVideo(videoId: String) {

@@ -55,8 +55,12 @@ class RepositoryStream {
         let endOfDay = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions(rawValue: 0))
         let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
   
-        if let firstRoutine = getRealm().objects(RepositoryRoutine).filter(predicate).first {
-            return firstRoutine
+        if let firstRoutine = getRealm()
+            .objects(RepositoryRoutine)
+            .filter(predicate)
+            .filter(NSPredicate(format: "routineId == %@", RoutineStream.sharedInstance.routine.routineId))
+            .first {
+                return firstRoutine
         } else {
             return buildRoutine(RoutineStream.sharedInstance.routine)
         }
@@ -97,8 +101,8 @@ class RepositoryStream {
     
     func buildRoutine(routine: Routine) -> RepositoryRoutine {
         let repositoryRoutine = RepositoryRoutine()
-        // TODO: This will change when more routines are added.
-        repositoryRoutine.routineId = "routine0"
+        
+        repositoryRoutine.routineId = routine.routineId
         repositoryRoutine.startTime = NSDate()
         repositoryRoutine.lastUpdatedTime = NSDate()
         
