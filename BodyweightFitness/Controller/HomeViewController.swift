@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = "Bodyweight Fitness"
         
         _ = RoutineStream.sharedInstance.routineObservable().subscribe(onNext: {
-            print($0.routineId + "\n" + $0.title + "\n" + $0.subtitle)
+            self.navigationItem.title = $0.title
         })
     }
     
