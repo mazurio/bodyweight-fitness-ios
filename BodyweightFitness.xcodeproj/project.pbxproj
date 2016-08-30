@@ -152,6 +152,8 @@
 		738B96C81D761BB1009A8625 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C51D761BB1009A8625 /* RxCocoa.framework */; };
 		738B96C91D761BB1009A8625 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C61D761BB1009A8625 /* RxSwift.framework */; };
 		738B96CB1D762931009A8625 /* SideViewHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CA1D762931009A8625 /* SideViewHeaderCell.swift */; };
+		738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738B96CC1D763319009A8625 /* HomeBarView.xib */; };
+		738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CE1D76337C009A8625 /* HomeBarView.swift */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -394,6 +396,8 @@
 		738B96C51D761BB1009A8625 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		738B96C61D761BB1009A8625 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		738B96CA1D762931009A8625 /* SideViewHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewHeaderCell.swift; sourceTree = "<group>"; };
+		738B96CC1D763319009A8625 /* HomeBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeBarView.xib; sourceTree = "<group>"; };
+		738B96CE1D76337C009A8625 /* HomeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBarView.swift; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -672,6 +676,7 @@
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
 				73BF3BC61CBFF89D00E0258D /* NavigationView.xib */,
 				7329B68D1D0D84E4005F5F74 /* HomeView.xib */,
+				738B96CC1D763319009A8625 /* HomeBarView.xib */,
 				73BADE161CC3E2F9001ACEDC /* TimedView.xib */,
 				73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
@@ -788,6 +793,7 @@
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
 				733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */,
 				73BF3BC01CBF05ED00E0258D /* SnackBar.swift */,
+				738B96CE1D76337C009A8625 /* HomeBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -996,6 +1002,7 @@
 				738B96B91D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 in Resources */,
 				735BEA071CBD1E56003616C5 /* SideView.xib in Resources */,
 				738B96B41D760F66009A8625 /* bodyweight_fitness_hollow_hold.mp4 in Resources */,
+				738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */,
 				73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */,
 				738B96871D760F66009A8625 /* bodyweight_fitness_pullover.mp4 in Resources */,
 				73BF3BB91CBEFB0E00E0258D /* WorkoutView.xib in Resources */,
@@ -1161,6 +1168,7 @@
 				734B6F3F1C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */,
 				46B02780EEC08B16FB384A4F /* CardView.swift in Sources */,
 				46B021B6A56C2000CA08000B /* WorkoutLogViewController.swift in Sources */,
+				738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

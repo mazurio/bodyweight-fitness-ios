@@ -2,6 +2,9 @@ import Foundation
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var cardView: UIView!
+    
     init() {
         super.init(nibName: "HomeView", bundle: nil)
     }
@@ -33,8 +36,26 @@ class HomeViewController: UIViewController {
         
         self.navigationItem.title = "Bodyweight Fitness"
         
+        self.stackView.axis = UILayoutConstraintAxis.Vertical;
+        self.stackView.distribution = UIStackViewDistribution.EqualSpacing;
+        self.stackView.alignment = UIStackViewAlignment.Top;
+        self.stackView.spacing = 0;
+        
         _ = RoutineStream.sharedInstance.routineObservable().subscribe(onNext: {
+            self.stackView.removeAllSubviews()
+            
             self.navigationItem.title = $0.title
+            
+            for category in $0.categories {
+                if let c = category as? Category {
+                    let homeBarView = HomeBarView()
+                    
+                    homeBarView.categoryTitle.text = c.title
+                    homeBarView.progressRate.text = "10%"
+                    
+                    self.stackView.addArrangedSubview(homeBarView)
+                }
+            }
         })
     }
     
