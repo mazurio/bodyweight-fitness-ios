@@ -87,8 +87,8 @@
                                             </userDefinedRuntimeAttributes>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="QeX-Ic-bxN"/>
                                                     <exclude reference="4QK-Wb-CYu"/>
+                                                    <exclude reference="QeX-Ic-bxN"/>
                                                 </mask>
                                             </variation>
                                         </view>

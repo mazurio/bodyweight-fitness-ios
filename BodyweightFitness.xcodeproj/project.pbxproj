@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46B021B6A56C2000CA08000B /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
+		73132C9F1D117D8500581C89 /* camel_bends.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73132C9E1D117D8500581C89 /* camel_bends.mp4 */; };
 		731526961CCA4EA5001848AC /* Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526951CCA4EA5001848AC /* Plank.mp4 */; };
 		731526981CCA5288001848AC /* Side Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526971CCA5288001848AC /* Side Plank.mp4 */; };
 		7315269A1CCA5379001848AC /* Reverse Plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 731526991CCA5379001848AC /* Reverse Plank.mp4 */; };
@@ -180,6 +181,7 @@
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
+		73132C9E1D117D8500581C89 /* camel_bends.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = camel_bends.mp4; sourceTree = "<group>"; };
 		731526951CCA4EA5001848AC /* Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Plank.mp4; sourceTree = "<group>"; };
 		731526971CCA5288001848AC /* Side Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Side Plank.mp4"; sourceTree = "<group>"; };
 		731526991CCA5379001848AC /* Reverse Plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Reverse Plank.mp4"; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 			children = (
 				731526A21CCA77C0001848AC /* Shoulder Rolls.mp4 */,
 				731526A01CCA744A001848AC /* Scapular Shrugs.mp4 */,
+				73132C9E1D117D8500581C89 /* camel_bends.mp4 */,
 			);
 			name = "Dynamic Stretches";
 			sourceTree = "<group>";
@@ -734,6 +737,7 @@
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
 				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryCell.xib in Resources */,
 				731526981CCA5288001848AC /* Side Plank.mp4 in Resources */,
+				73132C9F1D117D8500581C89 /* camel_bends.mp4 in Resources */,
 				7315269A1CCA5379001848AC /* Reverse Plank.mp4 in Resources */,
 				73BADE171CC3E2F9001ACEDC /* TimedView.xib in Resources */,
 				73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */,

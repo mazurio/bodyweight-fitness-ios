@@ -244,11 +244,7 @@ class WorkoutLogViewController: UIViewController,
     }
 
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (indexPath.row == 0) {
-            return 166
-        }
-
-        return 166
+        return 200
     }
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -257,8 +253,8 @@ class WorkoutLogViewController: UIViewController,
 
         cell.title.text = "Workout Log"
 
-        cell.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
-        cell.contentView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
+        cell.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
+        cell.contentView.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
 
         return cell
 
