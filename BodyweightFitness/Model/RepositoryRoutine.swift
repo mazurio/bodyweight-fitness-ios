@@ -99,9 +99,9 @@ class RepositoryRoutineHelper {
 
 class RepositoryRoutine: Object {
     dynamic var id = "Routine-" + NSUUID().UUIDString
-    dynamic var routineId = "routine0"
-    dynamic var title = "Bodyweight Fitness"
-    dynamic var subtitle = "Recommended Routine"
+    dynamic var routineId = ""
+    dynamic var title = ""
+    dynamic var subtitle = ""
     dynamic var startTime = NSDate()
     dynamic var lastUpdatedTime = NSDate()
     

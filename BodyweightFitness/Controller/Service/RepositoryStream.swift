@@ -103,6 +103,8 @@ class RepositoryStream {
         let repositoryRoutine = RepositoryRoutine()
         
         repositoryRoutine.routineId = routine.routineId
+        repositoryRoutine.title = routine.title
+        repositoryRoutine.subtitle = routine.subtitle
         repositoryRoutine.startTime = NSDate()
         repositoryRoutine.lastUpdatedTime = NSDate()
         
