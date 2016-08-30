@@ -32,6 +32,10 @@ class HomeViewController: UIViewController {
         )
         
         self.navigationItem.title = "Bodyweight Fitness"
+        
+        RoutineStream.sharedInstance.routineObservable().subscribeNext { routine in
+            print(routine)
+        }
     }
     
     func dismiss(sender: UIBarButtonItem) {

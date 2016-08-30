@@ -145,6 +145,12 @@
 		738B96B81D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96751D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 */; };
 		738B96B91D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96761D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 */; };
 		738B96BD1D761192009A8625 /* molding_mobility_flexibility_routine.json in Resources */ = {isa = PBXBuildFile; fileRef = 738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */; };
+		738B96C11D761B78009A8625 /* RxBlocking.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 738B96BE1D761B77009A8625 /* RxBlocking.framework.dSYM */; };
+		738B96C21D761B78009A8625 /* RxCocoa.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 738B96BF1D761B77009A8625 /* RxCocoa.framework.dSYM */; };
+		738B96C31D761B78009A8625 /* RxSwift.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 738B96C01D761B78009A8625 /* RxSwift.framework.dSYM */; };
+		738B96C71D761BB1009A8625 /* RxBlocking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C41D761BB1009A8625 /* RxBlocking.framework */; };
+		738B96C81D761BB1009A8625 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C51D761BB1009A8625 /* RxCocoa.framework */; };
+		738B96C91D761BB1009A8625 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 738B96C61D761BB1009A8625 /* RxSwift.framework */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -216,6 +222,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				738B96C11D761B78009A8625 /* RxBlocking.framework.dSYM in CopyFiles */,
+				738B96C21D761B78009A8625 /* RxCocoa.framework.dSYM in CopyFiles */,
+				738B96C31D761B78009A8625 /* RxSwift.framework.dSYM in CopyFiles */,
 				732BA0221C5ADC3100C1CDB5 /* PageMenuFramework.framework.dSYM in CopyFiles */,
 				7366D8E81C51AD9C00819790 /* SwiftCharts.framework.dSYM in CopyFiles */,
 				734B6FF91C4BE8CB00CFB6BD /* Realm.framework.dSYM in CopyFiles */,
@@ -377,6 +386,12 @@
 		738B96751D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_shoulder_rolls.mp4; sourceTree = "<group>"; };
 		738B96761D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_side_plank.mp4; sourceTree = "<group>"; };
 		738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = molding_mobility_flexibility_routine.json; sourceTree = "<group>"; };
+		738B96BE1D761B77009A8625 /* RxBlocking.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxBlocking.framework.dSYM; path = Carthage/Build/iOS/RxBlocking.framework.dSYM; sourceTree = "<group>"; };
+		738B96BF1D761B77009A8625 /* RxCocoa.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxCocoa.framework.dSYM; path = Carthage/Build/iOS/RxCocoa.framework.dSYM; sourceTree = "<group>"; };
+		738B96C01D761B78009A8625 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		738B96C41D761BB1009A8625 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
+		738B96C51D761BB1009A8625 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		738B96C61D761BB1009A8625 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -439,6 +454,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				738B96C71D761BB1009A8625 /* RxBlocking.framework in Frameworks */,
+				738B96C81D761BB1009A8625 /* RxCocoa.framework in Frameworks */,
+				738B96C91D761BB1009A8625 /* RxSwift.framework in Frameworks */,
 				732BA01F1C5ADC1200C1CDB5 /* PageMenuFramework.framework in Frameworks */,
 				7366D8E51C51AD6C00819790 /* SwiftCharts.framework in Frameworks */,
 				73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */,
@@ -464,6 +482,9 @@
 		2BD2CA7A1B458FFD00841AB7 = {
 			isa = PBXGroup;
 			children = (
+				738B96BE1D761B77009A8625 /* RxBlocking.framework.dSYM */,
+				738B96BF1D761B77009A8625 /* RxCocoa.framework.dSYM */,
+				738B96C01D761B78009A8625 /* RxSwift.framework.dSYM */,
 				2BD2CA851B458FFD00841AB7 /* BodyweightFitness */,
 				73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */,
 				E00242FB1B4F1CFD0003A230 /* Frameworks */,
@@ -736,6 +757,9 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				738B96C41D761BB1009A8625 /* RxBlocking.framework */,
+				738B96C51D761BB1009A8625 /* RxCocoa.framework */,
+				738B96C61D761BB1009A8625 /* RxSwift.framework */,
 				73BFEC041CBC2C9A00B9DDAE /* Fabric.framework */,
 				73BFEC051CBC2C9A00B9DDAE /* Crashlytics.framework */,
 				732BA01E1C5ADC1200C1CDB5 /* PageMenuFramework.framework */,
@@ -1044,6 +1068,9 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftCharts.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/PageMenuFramework.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputPaths = (
 			);

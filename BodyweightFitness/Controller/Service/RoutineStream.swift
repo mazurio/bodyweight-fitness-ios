@@ -1,4 +1,5 @@
 import Foundation
+import RxSwift
 
 class RoutineStream {
     class var sharedInstance: RoutineStream {
@@ -15,8 +16,17 @@ class RoutineStream {
     }
     
     var routine: Routine
+    var routineSubject = PublishSubject<Routine>()
     
     init() {
         routine = PersistenceManager.getRoutine()
+        routineSubject.onNext(routine)
+    }
+    
+    func routineObservable() -> Observable<Routine> {
+        return Observable.of(Observable.just(routine).publish().refCount(), routineSubject)
+            .merge()
+            .publish()
+            .refCount()
     }
 }
