@@ -34,9 +34,12 @@ class RepositoryStream {
         components.second = 59
         
         let endOfDay = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions(rawValue: 0))
-        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
-        
-        if let _ = getRealm().objects(RepositoryRoutine).filter(predicate).first {
+      
+        if let _ = getRealm()
+            .objects(RepositoryRoutine)
+            .filter(NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!))
+            .filter(NSPredicate(format: "routineId == %@", RoutineStream.sharedInstance.routine.routineId))
+            .first {
             return true
         } else {
             return false
@@ -53,11 +56,10 @@ class RepositoryStream {
         components.second = 59
         
         let endOfDay = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions(rawValue: 0))
-        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
-  
+
         if let firstRoutine = getRealm()
             .objects(RepositoryRoutine)
-            .filter(predicate)
+            .filter(NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!))
             .filter(NSPredicate(format: "routineId == %@", RoutineStream.sharedInstance.routine.routineId))
             .first {
                 return firstRoutine
@@ -82,21 +84,6 @@ class RepositoryStream {
         let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
         
         return getRealm().objects(RepositoryRoutine).filter(predicate)
-    }
-    
-    func getRepositoryRoutineForDate(date: NSDate) -> RepositoryRoutine? {
-        // If you want to get objects after a date, use greater-than (>), for dates before, use less-than (<).
-        let startOfDay = NSCalendar.currentCalendar().startOfDayForDate(date)
-        
-        let components = NSDateComponents()
-        components.hour = 23
-        components.minute = 59
-        components.second = 59
-        
-        let endOfDay = NSCalendar.currentCalendar().dateByAddingComponents(components, toDate: startOfDay, options: NSCalendarOptions(rawValue: 0))
-        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", startOfDay, endOfDay!)
-        
-        return getRealm().objects(RepositoryRoutine).filter(predicate).first
     }
     
     func buildRoutine(routine: Routine) -> RepositoryRoutine {
