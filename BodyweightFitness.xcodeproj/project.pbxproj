@@ -201,7 +201,7 @@
 		E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587391B52730000540104 /* TimePickerController.swift */; };
 		E0F587471B52730C00540104 /* TimePickerModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E0F587431B52730C00540104 /* TimePickerModalView.xib */; };
 		E0F5874A1B52731C00540104 /* finished.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E0F587481B52731C00540104 /* finished.mp3 */; };
-		E0F5874B1B52731C00540104 /* Routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* Routine.json */; };
+		E0F5874B1B52731C00540104 /* bodyweight_fitness_recommended_routine.json in Resources */ = {isa = PBXBuildFile; fileRef = E0F587491B52731C00540104 /* bodyweight_fitness_recommended_routine.json */; };
 		E0F587B41B52734900540104 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0F587B31B52734900540104 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -444,7 +444,7 @@
 		E0F587391B52730000540104 /* TimePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerController.swift; sourceTree = "<group>"; };
 		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TimePickerModalView.xib; sourceTree = "<group>"; };
 		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = finished.mp3; sourceTree = "<group>"; };
-		E0F587491B52731C00540104 /* Routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Routine.json; sourceTree = "<group>"; };
+		E0F587491B52731C00540104 /* bodyweight_fitness_recommended_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyweight_fitness_recommended_routine.json; sourceTree = "<group>"; };
 		E0F587B11B52734000540104 /* Bodyweight Fitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bodyweight Fitness.plist"; sourceTree = "<group>"; };
 		E0F587B31B52734900540104 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -807,7 +807,7 @@
 			children = (
 				738B96BA1D760F92009A8625 /* Bodyweight Fitness - Recommended Routine */,
 				738B96BB1D760FB8009A8625 /* Molding Mobility - Flexibility Routine */,
-				E0F587491B52731C00540104 /* Routine.json */,
+				E0F587491B52731C00540104 /* bodyweight_fitness_recommended_routine.json */,
 				738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */,
 				73BADE7C1CC79648001ACEDC /* TestRoutine.json */,
 				E0F587481B52731C00540104 /* finished.mp3 */,
@@ -942,7 +942,7 @@
 				738B96A01D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 in Resources */,
 				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemCell.xib in Resources */,
 				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemCell.xib in Resources */,
-				E0F5874B1B52731C00540104 /* Routine.json in Resources */,
+				E0F5874B1B52731C00540104 /* bodyweight_fitness_recommended_routine.json in Resources */,
 				738B96AB1D760F66009A8625 /* molding_mobility_knee_rotations.mp4 in Resources */,
 				73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */,
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,

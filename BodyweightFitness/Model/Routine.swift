@@ -99,6 +99,10 @@ class Exercise: LinkedRoutine {
 }
 
 class Routine {
+    var routineId: String = "routine0"
+    var title: String = ""
+    var subtitle: String = ""
+    
     var categories: NSMutableArray = []
     var sections: NSMutableArray = []
     var exercises: NSMutableArray = []
@@ -106,16 +110,24 @@ class Routine {
     var linkedExercises: NSMutableArray = []
     var linkedRoutine: NSMutableArray = []
     
-    init(dictionary: Dictionary<String, String> = Dictionary<String, String>()) {
-        let json = JSON(data: loadRoutineFromFile())
-        
-        self.build(json, dictionary: dictionary)
-    }
-    
     init(fileName: String) {
         let json = JSON(data: loadRoutineFromFile(fileName))
         
+        self.routineId = json["routineId"].stringValue
+        self.title = json["title"].stringValue
+        self.subtitle = json["subtitle"].stringValue
+        
         self.build(json)
+    }
+    
+    init(fileName: String, dictionary: Dictionary<String, String>) {
+        let json = JSON(data: loadRoutineFromFile(fileName))
+        
+        self.routineId = json["routineId"].stringValue
+        self.title = json["title"].stringValue
+        self.subtitle = json["subtitle"].stringValue
+        
+        self.build(json, dictionary: dictionary)
     }
     
     func build(json: JSON, dictionary: Dictionary<String, String> = Dictionary<String, String>()) {
@@ -227,7 +239,7 @@ class Routine {
         exercise.section?.currentExercise = exercise
     }
     
-    func loadRoutineFromFile(fileName: String = "Routine") -> NSData {
+    func loadRoutineFromFile(fileName: String) -> NSData {
         let fileRoot = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")!
 
         do {

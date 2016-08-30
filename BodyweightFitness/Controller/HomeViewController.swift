@@ -34,7 +34,7 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = "Bodyweight Fitness"
         
         RoutineStream.sharedInstance.routineObservable().subscribeNext { routine in
-            print(routine)
+            print(routine.routineId + "\n" + routine.title + "\n" + routine.subtitle)
         }
     }
     
@@ -54,11 +54,11 @@ class HomeViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         
         alertController.addAction(UIAlertAction(title: "Bodyweight Fitness", style: .Default) { (action) in
-            print("Test")
+            RoutineStream.sharedInstance.setRoutine("routine0")
         })
         
         alertController.addAction(UIAlertAction(title: "Molding Mobility", style: .Default) { (action) in
-            print("Test")
+            RoutineStream.sharedInstance.setRoutine("e73593f4-ee17-4b9b-912a-87fa3625f63d")
         })
         
         alertController.addAction(UIAlertAction(title: "Starting Stretching", style: .Default) { (action) in

@@ -19,7 +19,12 @@ class RoutineStream {
     var routineSubject = PublishSubject<Routine>()
     
     init() {
-        routine = PersistenceManager.getRoutine()
+        routine = PersistenceManager.getRoutine("routine0")
+        routineSubject.onNext(routine)
+    }
+    
+    func setRoutine(id: String) {
+        routine = PersistenceManager.getRoutine(id)
         routineSubject.onNext(routine)
     }
     

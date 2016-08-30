@@ -74,22 +74,33 @@ class PersistenceManager {
         NSKeyedArchiver.archiveRootObject(seconds, toFile: dataFilePath)
     }
     
-    class func getRoutine() -> Routine {
+    class func getRoutine(routineId: String) -> Routine {
         let fileManager = NSFileManager.defaultManager()
         let directoryPath = NSSearchPathForDirectoriesInDomains(
             .DocumentDirectory,
             .UserDomainMask,
             true)
+        
+        var fileName = ""
+        var id = ""
+        if (routineId == "routine0") {
+            fileName = "bodyweight_fitness_recommended_routine"
+            id = "routine"
+        } else {
+            fileName = "molding_mobility_flexibility_routine"
+            id = "e73593f4-ee17-4b9b-912a-87fa3625f63d"
+        }
+        
         let documentsDirectory = directoryPath[0]
-        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("routine.archive")
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent(id + ".archive")
         
         if(fileManager.fileExistsAtPath(dataFilePath)) {
             if let currentExercises = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? Dictionary<String, String> {
-                return Routine(dictionary: currentExercises)
+                return Routine(fileName: fileName, dictionary: currentExercises)
             }
         }
         
-        return Routine()
+        return Routine(fileName: fileName)
     }
     
     class func storeRoutine(routine: Routine) {
@@ -97,8 +108,17 @@ class PersistenceManager {
             .DocumentDirectory,
             .UserDomainMask,
             true)
+        
+        var id = ""
+        
+        if (routine.routineId == "routine0") {
+            id = "routine"
+        } else {
+            id = routine.routineId
+        }
+        
         let documentsDirectory = directoryPath[0]
-        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("routine.archive")
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent(id + ".archive")
         
         var currentExercises = Dictionary<String, String>()
         for anySection in routine.sections {
