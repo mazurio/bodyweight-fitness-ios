@@ -45,15 +45,30 @@ class HomeViewController: UIViewController {
             self.stackView.removeAllSubviews()
             
             self.navigationItem.title = $0.title
-            
-            for category in $0.categories {
-                if let c = category as? Category {
+
+            if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
+                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+
+                for category in repositoryRoutine.categories {
+                    let completionRate = RepositoryCategoryHelper.getCompletionRate(category)
+
                     let homeBarView = HomeBarView()
-                    
-                    homeBarView.categoryTitle.text = c.title
-                    homeBarView.progressRate.text = "10%"
-                    
+
+                    homeBarView.categoryTitle.text = category.title
+                    homeBarView.progressRate.text = completionRate.label
+
                     self.stackView.addArrangedSubview(homeBarView)
+                }
+            } else {
+                for category in $0.categories {
+                    if let c = category as? Category {
+                        let homeBarView = HomeBarView()
+
+                        homeBarView.categoryTitle.text = c.title
+                        homeBarView.progressRate.text = "0%"
+
+                        self.stackView.addArrangedSubview(homeBarView)
+                    }
                 }
             }
         })
