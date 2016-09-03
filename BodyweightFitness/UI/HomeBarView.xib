@@ -20,16 +20,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-5S-6gv" customClass="ProgressView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="29" width="60" height="20"/>
+                            <rect key="frame" x="0.0" y="29" width="250" height="20"/>
                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="60" id="9Ki-gO-Ptj"/>
+                                <constraint firstAttribute="width" constant="250" id="9Ki-gO-Ptj"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="10"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="widthConstraint" destination="9Ki-gO-Ptj" id="dSr-1E-4Yq"/>
+                            </connections>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx5-UN-crg">
                             <rect key="frame" x="0.0" y="0.0" width="33.5" height="21"/>
@@ -38,7 +41,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-dr-Fa0" userLabel="Progress Rate">
-                            <rect key="frame" x="68" y="29" width="50" height="20"/>
+                            <rect key="frame" x="258" y="29" width="50" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="jjR-To-ba2"/>
                             </constraints>

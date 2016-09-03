@@ -29,7 +29,6 @@ import UIKit
     }
     
     func loadViewFromNib() -> UIView {
-        
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: "HomeBarView", bundle: bundle)
         let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView

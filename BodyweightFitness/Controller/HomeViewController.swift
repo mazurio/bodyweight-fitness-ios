@@ -77,6 +77,7 @@ class HomeViewController: UIViewController {
                 let homeBarView = HomeBarView()
 
                 homeBarView.categoryTitle.text = category.title
+                homeBarView.progressView.setCompletionRate(completionRate)
                 homeBarView.progressRate.text = completionRate.label
 
                 self.stackView.addArrangedSubview(homeBarView)
@@ -84,10 +85,12 @@ class HomeViewController: UIViewController {
         } else {
             for category in routine.categories {
                 if let c = category as? Category {
+                    let completionRate = CompletionRate(percentage: 0, label: "0%")
                     let homeBarView = HomeBarView()
 
                     homeBarView.categoryTitle.text = c.title
-                    homeBarView.progressRate.text = "0%"
+                    homeBarView.progressView.setCompletionRate(completionRate)
+                    homeBarView.progressRate.text = completionRate.label
 
                     self.stackView.addArrangedSubview(homeBarView)
                 }
