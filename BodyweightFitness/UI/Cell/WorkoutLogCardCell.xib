@@ -29,6 +29,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="widthConstraint" destination="aec-WF-5FE" id="BI4-YL-9gd"/>
+                                </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5C-Fp-mHv">
                                 <rect key="frame" x="16" y="20" width="39" height="24"/>
@@ -123,6 +126,8 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="progressRate" destination="Yux-l7-cbY" id="DmZ-cd-iEO"/>
+                <outlet property="progressView" destination="rXI-5r-3hP" id="S3x-2n-PdC"/>
                 <outlet property="subtitle" destination="kGn-aD-2Fl" id="SWO-Gn-49i"/>
                 <outlet property="title" destination="i5C-Fp-mHv" id="tyM-GJ-NPQ"/>
             </connections>

@@ -248,8 +248,7 @@ class WorkoutLogViewController: UIViewController,
     }
 
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-        "WorkoutLogSectionCell") as! WorkoutLogSectionCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutLogSectionCell") as! WorkoutLogSectionCell
 
         cell.title.text = "Workout Log"
 
@@ -261,18 +260,19 @@ class WorkoutLogViewController: UIViewController,
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(
-        "WorkoutLogCardCell",
-                forIndexPath: indexPath) as! WorkoutLogCardCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WorkoutLogCardCell", forIndexPath: indexPath) as! WorkoutLogCardCell
 
         if let routines = self.routines {
             let repositoryRoutine = routines[indexPath.row]
+            let completionRate = RepositoryRoutineHelper.getCompletionRate(repositoryRoutine)
 
             cell.parentController = self
             cell.date = date
 
             cell.title.text = repositoryRoutine.title
             cell.subtitle.text = repositoryRoutine.subtitle
+            cell.progressView.setCompletionRate(completionRate)
+            cell.progressRate.text = completionRate.label
 
             cell.repositoryRoutine = repositoryRoutine
         }

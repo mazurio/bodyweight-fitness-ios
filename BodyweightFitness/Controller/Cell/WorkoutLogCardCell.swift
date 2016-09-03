@@ -12,6 +12,8 @@ func getWeightUnit() -> String {
 class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subtitle: UILabel!
+    @IBOutlet weak var progressView: ProgressView!
+    @IBOutlet weak var progressRate: UILabel!
     
     var parentController: UIViewController?
     var date: NSDate?
