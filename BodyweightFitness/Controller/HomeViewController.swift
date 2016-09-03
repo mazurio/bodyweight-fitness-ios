@@ -58,6 +58,10 @@ class HomeViewController: UIViewController {
         })
     }
 
+    //
+    // ProgressBar for Home
+    // ProgressBar for Workout Log
+    //
     func renderWorkoutProgressView() {
         let routine = RoutineStream.sharedInstance.routine
 
@@ -93,18 +97,18 @@ class HomeViewController: UIViewController {
 
     func renderStatisticsView() {
         let numberOfWorkouts = RepositoryStream.sharedInstance.getNumberOfWorkouts()
-//        let lastWorkout = RepositoryStream.sharedInstance.getLastWorkout()
+        let lastWorkout = RepositoryStream.sharedInstance.getLastWorkout()
 
         let numberOfWorkoutsLast7Days = RepositoryStream.sharedInstance.getNumberOfWorkouts(-7)
         let numberOfWorkoutsLast31Days = RepositoryStream.sharedInstance.getNumberOfWorkouts(-31)
 
         self.totalWorkouts.text = String(numberOfWorkouts) + getNumberOfWorkoutsPostfix(numberOfWorkouts)
 
-//        if let workout = lastWorkout {
-//            self.lastWorkout.text = String("TT")
-//        } else {
-//            self.lastWorkout.text = String("Never")
-//        }
+        if let w = lastWorkout {
+            self.lastWorkout.text = String(NSDate.timeAgoSince(w.startTime))
+        } else {
+            self.lastWorkout.text = String("Never")
+        }
 
         self.last7Days.text = String(numberOfWorkoutsLast7Days) + getNumberOfWorkoutsPostfix(numberOfWorkoutsLast7Days)
         self.last31Days.text = String(numberOfWorkoutsLast31Days) + getNumberOfWorkoutsPostfix(numberOfWorkoutsLast31Days)
