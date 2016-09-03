@@ -152,13 +152,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func startWorkout(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        
-        // TODO this does not select menu item on the left (in the navigation drawer)
-        sideNavigationController?.transitionFromRootViewController(
-            (appDelegate?.workoutViewController)!,
-            duration: 0,
-            options: UIViewAnimationOptions.CurveEaseIn,
-            animations: nil,
-            completion: nil)
+
+        appDelegate?.main!.setViewControllers([(appDelegate?.workoutViewController)!], animated: false)
     }
 }

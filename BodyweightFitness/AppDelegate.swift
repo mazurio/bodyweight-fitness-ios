@@ -6,35 +6,28 @@ import Crashlytics
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+
+    var main: UINavigationController? = nil
+
     var sideNavigationViewController: SideNavigationController?
-    
-    let sideViewController: UIViewController =
-        SideViewController()
-    
-    let homeViewController: UINavigationController =
-        UINavigationController(rootViewController: HomeViewController())
-    
-    let workoutViewController: UINavigationController =
-        UINavigationController(rootViewController: WorkoutViewController())
-    
-    let workoutLogViewController =
-        UINavigationController(rootViewController: WorkoutLogViewController())
-    
-    let supportDeveloperViewController =
-        UINavigationController(rootViewController: SupportDeveloperViewController())
-    
-    let settingsViewController =
-        UINavigationController(rootViewController: SettingsViewController())
+    let sideViewController = SideViewController()
+
+    let homeViewController = HomeViewController()
+    let workoutViewController = WorkoutViewController()
+    let workoutLogViewController = WorkoutLogViewController()
+    let supportDeveloperViewController = SupportDeveloperViewController()
+    let settingsViewController = SettingsViewController()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
-        
+
+        self.main = UINavigationController(rootViewController: homeViewController)
+
         self.migrateSchemaIfNeeded()
         self.setDefaultSettings()
         
         self.sideNavigationViewController = SideNavigationController(
-            rootViewController: self.homeViewController,
+            rootViewController: self.main!,
             leftViewController: self.sideViewController
         )
 

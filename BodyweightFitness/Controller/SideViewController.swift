@@ -91,85 +91,20 @@ class SideViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         switch(indexPath.row) {
         case 0:
-            // Home
-        
-            if(sideNavigationController?.rootViewController == (appDelegate?.homeViewController)!) {
-                break;
-            }
-            
-            sideNavigationController?.transitionFromRootViewController(
-                (appDelegate?.homeViewController)!,
-                duration: 0,
-                options: UIViewAnimationOptions.CurveEaseIn,
-                animations: nil,
-                completion: nil)
-        
+            appDelegate?.main!.setViewControllers([(appDelegate?.homeViewController)!], animated: false)
         break;
-        
         case 1:
-            // Workout
-            
-            if(sideNavigationController?.rootViewController == (appDelegate?.workoutViewController)!) {
-                break;
-            }
-            
-            sideNavigationController?.transitionFromRootViewController(
-                (appDelegate?.workoutViewController)!,
-                duration: 0,
-                options: UIViewAnimationOptions.CurveEaseIn,
-                animations: nil,
-                completion: nil)
-            
+            appDelegate?.main!.setViewControllers([(appDelegate?.workoutViewController)!], animated: false)
             break;
-            
         case 2:
-            // Workout Log
-            
-            if(sideNavigationController?.rootViewController == (appDelegate?.workoutLogViewController)!) {
-                break;
-            }
-            
-            sideNavigationController?.transitionFromRootViewController(
-                (appDelegate?.workoutLogViewController)!,
-                duration: 0,
-                options: UIViewAnimationOptions.CurveEaseIn,
-                animations: nil,
-                completion: nil)
-            
+            appDelegate?.main!.setViewControllers([(appDelegate?.workoutLogViewController)!], animated: false)
             break;
-            
         case 3:
-            // Support Developer
-            
-            if(sideNavigationController?.rootViewController == (appDelegate?.supportDeveloperViewController)!) {
-                break;
-            }
-            
-            sideNavigationController?.transitionFromRootViewController(
-                (appDelegate?.supportDeveloperViewController)!,
-                duration: 0,
-                options: UIViewAnimationOptions.CurveEaseIn,
-                animations: nil,
-                completion: nil)
-            
+            appDelegate?.main!.setViewControllers([(appDelegate?.supportDeveloperViewController)!], animated: false)
             break;
-            
         case 4:
-            // Settings
-            
-            if(sideNavigationController?.rootViewController == (appDelegate?.settingsViewController)!) {
-                break;
-            }
-            
-            sideNavigationController?.transitionFromRootViewController(
-                (appDelegate?.settingsViewController)!,
-                duration: 0,
-                options: UIViewAnimationOptions.CurveEaseIn,
-                animations: nil,
-                completion: nil)
-            
+            appDelegate?.main!.setViewControllers([(appDelegate?.settingsViewController)!], animated: false)
             break;
-            
         default:
             break;
         }

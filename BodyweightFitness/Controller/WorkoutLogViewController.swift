@@ -74,11 +74,11 @@ class WorkoutLogViewController: UIViewController,
         self.menuView.delegate = self
 
         self.tableView.registerNib(
-        UINib(nibName: "WorkoutLogSectionCell", bundle: nil),
+                UINib(nibName: "WorkoutLogSectionCell", bundle: nil),
                 forCellReuseIdentifier: "WorkoutLogSectionCell")
 
         self.tableView.registerNib(
-        UINib(nibName: "WorkoutLogCardCell", bundle: nil),
+                UINib(nibName: "WorkoutLogCardCell", bundle: nil),
                 forCellReuseIdentifier: "WorkoutLogCardCell")
 
         tableView.delegate = self
