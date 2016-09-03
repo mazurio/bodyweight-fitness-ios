@@ -24,6 +24,10 @@ class WeightedViewController: UIViewController {
         super.viewDidLoad()
         
         self.updateLabels()
+
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribeNext({ (it) in
+            self.sets.text = self.printSets()
+        })
     }
     
     func changeExercise(currentExercise: Exercise) {

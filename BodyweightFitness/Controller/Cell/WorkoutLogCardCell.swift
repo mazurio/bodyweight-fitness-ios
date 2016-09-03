@@ -165,6 +165,8 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
                         parent.showOrHideCardViewForDate(date)
                     }
                 }
+
+                RoutineStream.sharedInstance.setRepository()
         }))
         
         self.parentController?.presentViewController(alertController, animated: true, completion: nil)
