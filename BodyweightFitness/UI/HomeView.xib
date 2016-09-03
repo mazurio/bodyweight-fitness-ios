@@ -7,7 +7,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
             <connections>
                 <outlet property="cardView" destination="m2Q-aR-HWw" id="9AP-6k-ays"/>
+                <outlet property="last31Days" destination="laB-5o-3OL" id="X8f-N9-cXF"/>
+                <outlet property="last7Days" destination="7RC-u1-Ipt" id="ufy-bX-L3o"/>
+                <outlet property="lastWorkout" destination="IWj-kA-sOP" id="7Pu-eb-jFh"/>
                 <outlet property="stackView" destination="qZ0-KZ-hl5" id="3FM-rF-BJF"/>
+                <outlet property="totalWorkouts" destination="tNN-bI-bcr" id="HJz-4h-Pjh"/>
                 <outlet property="view" destination="d6c-cj-gOS" id="Ydm-Q2-o7R"/>
             </connections>
         </placeholder>

@@ -1,6 +1,15 @@
 import Foundation
 import RealmSwift
 
+extension NSDate {
+    static func changeDaysBy(days : Int) -> NSDate {
+        let currentDate = NSDate()
+        let dateComponents = NSDateComponents()
+        dateComponents.day = days
+        return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
+    }
+}
+
 class RepositoryStream {
     class var sharedInstance: RepositoryStream {
         struct Static {
@@ -24,7 +33,30 @@ class RepositoryStream {
         
         return realm
     }
-    
+
+    func getNumberOfWorkouts() -> Int {
+        return getRealm().objects(RepositoryRoutine).count
+    }
+
+    func getNumberOfWorkouts(days: Int) -> Int {
+        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", NSDate.changeDaysBy(-7), NSDate())
+
+        return getRealm()
+            .objects(RepositoryRoutine)
+            .filter(predicate)
+            .count
+    }
+
+    func getLastWorkout() -> RepositoryRoutine? {
+        let date = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+        let predicate = NSPredicate(format: "startTime < %@", date)
+
+        return getRealm()
+            .objects(RepositoryRoutine)
+            .filter(predicate)
+            .last
+    }
+
     func repositoryRoutineForTodayExists() -> Bool {
         let startOfDay = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
         

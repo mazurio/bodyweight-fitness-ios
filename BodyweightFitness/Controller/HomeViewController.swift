@@ -5,6 +5,11 @@ import RxSwift
 class HomeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var cardView: UIView!
+
+    @IBOutlet weak var totalWorkouts: UILabel!
+    @IBOutlet weak var lastWorkout: UILabel!
+    @IBOutlet weak var last7Days: UILabel!
+    @IBOutlet weak var last31Days: UILabel!
     
     init() {
         super.init(nibName: "HomeView", bundle: nil)
@@ -44,10 +49,12 @@ class HomeViewController: UIViewController {
 
         _ = RoutineStream.sharedInstance.repositoryObservable().subscribeNext({ (it) in
             self.renderWorkoutProgressView()
+            self.renderStatisticsView()
         })
 
         _ = RoutineStream.sharedInstance.routineObservable().subscribeNext({ (it) in
             self.renderWorkoutProgressView()
+            self.renderStatisticsView()
         })
     }
 
@@ -81,6 +88,33 @@ class HomeViewController: UIViewController {
                     self.stackView.addArrangedSubview(homeBarView)
                 }
             }
+        }
+    }
+
+    func renderStatisticsView() {
+        let numberOfWorkouts = RepositoryStream.sharedInstance.getNumberOfWorkouts()
+//        let lastWorkout = RepositoryStream.sharedInstance.getLastWorkout()
+
+        let numberOfWorkoutsLast7Days = RepositoryStream.sharedInstance.getNumberOfWorkouts(-7)
+        let numberOfWorkoutsLast31Days = RepositoryStream.sharedInstance.getNumberOfWorkouts(-31)
+
+        self.totalWorkouts.text = String(numberOfWorkouts) + getNumberOfWorkoutsPostfix(numberOfWorkouts)
+
+//        if let workout = lastWorkout {
+//            self.lastWorkout.text = String("TT")
+//        } else {
+//            self.lastWorkout.text = String("Never")
+//        }
+
+        self.last7Days.text = String(numberOfWorkoutsLast7Days) + getNumberOfWorkoutsPostfix(numberOfWorkoutsLast7Days)
+        self.last31Days.text = String(numberOfWorkoutsLast31Days) + getNumberOfWorkoutsPostfix(numberOfWorkoutsLast31Days)
+    }
+
+    func getNumberOfWorkoutsPostfix(count: Int) -> String {
+        if (count == 1) {
+            return " Workout"
+        } else {
+            return " Workouts"
         }
     }
     
@@ -117,7 +151,7 @@ class HomeViewController: UIViewController {
     @IBAction func startWorkout(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
         
-        // TODO this does not select menu item on the left
+        // TODO this does not select menu item on the left (in the navigation drawer)
         sideNavigationController?.transitionFromRootViewController(
             (appDelegate?.workoutViewController)!,
             duration: 0,
