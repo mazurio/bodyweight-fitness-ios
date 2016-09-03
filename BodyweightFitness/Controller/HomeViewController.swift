@@ -58,10 +58,6 @@ class HomeViewController: UIViewController {
         })
     }
 
-    //
-    // ProgressBar for Home
-    // ProgressBar for Workout Log
-    //
     func renderWorkoutProgressView() {
         let routine = RoutineStream.sharedInstance.routine
 
@@ -73,7 +69,6 @@ class HomeViewController: UIViewController {
 
             for category in repositoryRoutine.categories {
                 let completionRate = RepositoryCategoryHelper.getCompletionRate(category)
-
                 let homeBarView = HomeBarView()
 
                 homeBarView.categoryTitle.text = category.title

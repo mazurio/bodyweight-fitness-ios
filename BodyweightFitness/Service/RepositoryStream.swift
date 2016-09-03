@@ -3,10 +3,22 @@ import RealmSwift
 
 extension NSDate {
     static func changeDaysBy(days : Int) -> NSDate {
-        let currentDate = NSDate()
+        let startOfDay = NSCalendar.currentCalendar().startOfDayForDate(NSDate())
+
+        let components = NSDateComponents()
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+
+        let currentDate = NSCalendar.currentCalendar().dateByAddingComponents(
+                components,
+                toDate: startOfDay,
+                options: NSCalendarOptions(rawValue: 0))!
+
         let dateComponents = NSDateComponents()
         dateComponents.day = days
-        return NSCalendar.currentCalendar().dateByAddingComponents(dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
+        return NSCalendar.currentCalendar().dateByAddingComponents(
+                dateComponents, toDate: currentDate, options: NSCalendarOptions(rawValue: 0))!
     }
 
     static func timeAgoSince(date: NSDate) -> String {
