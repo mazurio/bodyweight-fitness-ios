@@ -65,7 +65,6 @@ class Section: LinkedRoutine {
 
 class Exercise: LinkedRoutine {
     let type: RoutineType = RoutineType.Exercise
-    let id: String
     let exerciseId: String
     let level: String
     let title: String
@@ -78,8 +77,7 @@ class Exercise: LinkedRoutine {
     var previous: Exercise?
     var next: Exercise?
     
-    init(id: String, exerciseId: String, level: String, title: String, desc: String, youTubeId: String, videoId: String, defaultSet: String) {
-        self.id = id
+    init(exerciseId: String, level: String, title: String, desc: String, youTubeId: String, videoId: String, defaultSet: String) {
         self.exerciseId = exerciseId
         self.level = level
         self.title = title
@@ -163,7 +161,6 @@ class Routine {
                 currentSection = section
             case "exercise":
                 let exercise = Exercise(
-                    id: item["id"].stringValue,
                     exerciseId: item["exerciseId"].stringValue,
                     level: item["level"].stringValue,
                     title: item["title"].stringValue,
@@ -179,8 +176,8 @@ class Routine {
                 exercises.addObject(exercise)
                 
                 if(currentSection?.mode == SectionMode.Levels || currentSection?.mode == SectionMode.Pick) {
-                    if let currentExerciseSaved = dictionary[currentSection!.title] as String? {
-                        if(exercise.id == currentExerciseSaved) {
+                    if let currentExerciseSaved = dictionary[currentSection!.sectionId] as String? {
+                        if(exercise.exerciseId == currentExerciseSaved) {
                             linkedExercises.addObject(exercise)
                             exercise.previous = currentExercise
                             currentExercise?.next = exercise
@@ -197,7 +194,6 @@ class Routine {
                             
                             currentSection?.currentExercise = exercise
                         }
-                        
                     }
                 } else {
                     linkedExercises.addObject(exercise)

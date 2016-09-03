@@ -10,7 +10,7 @@ class WeightedViewController: UIViewController {
     
     var numberOfReps: Int = 5
     var rootViewController: WorkoutViewController? = nil
-    var current: Exercise? = nil
+    var current: Exercise = RoutineStream.sharedInstance.routine.getFirstExercise()
     
     init() {
         super.init(nibName: "WeightedView", bundle: nil)
@@ -33,17 +33,17 @@ class WeightedViewController: UIViewController {
     func changeExercise(currentExercise: Exercise) {
         self.current = currentExercise
         
-        self.numberOfReps = PersistenceManager.getNumberOfReps(currentExercise.id)
+        self.numberOfReps = PersistenceManager.getNumberOfReps(currentExercise.exerciseId)
         
         self.updateLabels()
         
-        if let _ = self.current?.previous {
+        if let _ = self.current.previous {
             self.previousButton.hidden = false
         } else {
             self.previousButton.hidden = true
         }
         
-        if let _ = self.current?.next {
+        if let _ = self.current.next {
             self.nextButton.hidden = false
         } else {
             self.nextButton.hidden = true
@@ -51,9 +51,7 @@ class WeightedViewController: UIViewController {
     }
     
     func updateLabels() {
-        if let current = current {
-            PersistenceManager.storeNumberOfReps(current.id, numberOfReps: self.numberOfReps)
-        }
+        PersistenceManager.storeNumberOfReps(current.exerciseId, numberOfReps: self.numberOfReps)
         
         self.sets.text = self.printSets()
         self.reps.setTitle(printValue(self.numberOfReps), forState: .Normal)

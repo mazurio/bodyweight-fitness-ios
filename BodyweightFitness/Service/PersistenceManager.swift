@@ -124,7 +124,7 @@ class PersistenceManager {
         for anySection in routine.sections {
             if let section = anySection as? Section {
                 if(section.mode == SectionMode.Pick || section.mode == SectionMode.Levels) {
-                    currentExercises[section.title] = section.currentExercise?.id
+                    currentExercises[section.sectionId] = section.currentExercise?.exerciseId
                 }
             }
         }
