@@ -16,8 +16,10 @@ class RoutineStream {
     }
     
     var routine: Routine
-    var routineSubject = PublishSubject<Routine>()
-    
+
+    let routineSubject = PublishSubject<Routine>()
+    let repositorySubject = PublishSubject<Bool>()
+
     init() {
         routine = PersistenceManager.getRoutine("routine0")
         routineSubject.onNext(routine)
@@ -27,10 +29,20 @@ class RoutineStream {
         routine = PersistenceManager.getRoutine(id)
         routineSubject.onNext(routine)
     }
+
+    func setRepository() {
+        repositorySubject.onNext(true)
+    }
     
     func routineObservable() -> Observable<Routine> {
         return Observable.of(Observable.just(routine).publish().refCount(), routineSubject)
             .merge()
+            .publish()
+            .refCount()
+    }
+
+    func repositoryObservable() -> Observable<Bool> {
+        return repositorySubject
             .publish()
             .refCount()
     }

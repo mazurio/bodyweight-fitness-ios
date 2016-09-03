@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import RxSwift
 
 class HomeViewController: UIViewController {
     @IBOutlet weak var stackView: UIStackView!
@@ -40,38 +41,47 @@ class HomeViewController: UIViewController {
         self.stackView.distribution = UIStackViewDistribution.EqualSpacing;
         self.stackView.alignment = UIStackViewAlignment.Top;
         self.stackView.spacing = 0;
-        
-        _ = RoutineStream.sharedInstance.routineObservable().subscribe(onNext: {
-            self.stackView.removeAllSubviews()
-            
-            self.navigationItem.title = $0.title
 
-            if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
-                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribeNext({ (it) in
+            self.renderWorkoutProgressView()
+        })
 
-                for category in repositoryRoutine.categories {
-                    let completionRate = RepositoryCategoryHelper.getCompletionRate(category)
+        _ = RoutineStream.sharedInstance.routineObservable().subscribeNext({ (it) in
+            self.renderWorkoutProgressView()
+        })
+    }
 
+    func renderWorkoutProgressView() {
+        let routine = RoutineStream.sharedInstance.routine
+
+        self.stackView.removeAllSubviews()
+        self.navigationItem.title = routine.title
+
+        if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
+            let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+
+            for category in repositoryRoutine.categories {
+                let completionRate = RepositoryCategoryHelper.getCompletionRate(category)
+
+                let homeBarView = HomeBarView()
+
+                homeBarView.categoryTitle.text = category.title
+                homeBarView.progressRate.text = completionRate.label
+
+                self.stackView.addArrangedSubview(homeBarView)
+            }
+        } else {
+            for category in routine.categories {
+                if let c = category as? Category {
                     let homeBarView = HomeBarView()
 
-                    homeBarView.categoryTitle.text = category.title
-                    homeBarView.progressRate.text = completionRate.label
+                    homeBarView.categoryTitle.text = c.title
+                    homeBarView.progressRate.text = "0%"
 
                     self.stackView.addArrangedSubview(homeBarView)
                 }
-            } else {
-                for category in $0.categories {
-                    if let c = category as? Category {
-                        let homeBarView = HomeBarView()
-
-                        homeBarView.categoryTitle.text = c.title
-                        homeBarView.progressRate.text = "0%"
-
-                        self.stackView.addArrangedSubview(homeBarView)
-                    }
-                }
             }
-        })
+        }
     }
     
     func dismiss(sender: UIBarButtonItem) {

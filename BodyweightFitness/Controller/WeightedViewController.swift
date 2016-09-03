@@ -86,23 +86,26 @@ class WeightedViewController: UIViewController {
         let asString = NSMutableString()
 
         if let current = self.rootViewController?.current {
-            // TODO: THIS MUST CHECK IF REPOSITORY EXISTS OTHERWISE IF WE DELETED -> IT'S GOING TO RECREATE AUTOMATICALLY.
-            let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
-            
-            if let repositoryExercise = repositoryRoutine.exercises.filter({
-                $0.exerciseId == current.exerciseId
-            }).first {
-                for set in repositoryExercise.sets {
-                    if (repositoryExercise.sets.count == 1 && set.reps == 0) {
-                        isEmpty = true
+            if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
+                let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+
+                if let repositoryExercise = repositoryRoutine.exercises.filter({
+                    $0.exerciseId == current.exerciseId
+                }).first {
+                    for set in repositoryExercise.sets {
+                        if (repositoryExercise.sets.count == 1 && set.reps == 0) {
+                            isEmpty = true
+                        }
+
+                        asString.appendString("\(set.reps)-")
+
+                        numberOfSets += 1
                     }
 
-                    asString.appendString("\(set.reps)-")
-
-                    numberOfSets += 1
+                    asString.appendString("X")
                 }
-
-                asString.appendString("X")
+            } else {
+                isEmpty = true
             }
         }
 
@@ -173,6 +176,8 @@ class WeightedViewController: UIViewController {
                         
                         self.showNotification(sets.count, reps: self.numberOfReps)
                     }
+
+                    RoutineStream.sharedInstance.setRepository()
                 }
             }
         }

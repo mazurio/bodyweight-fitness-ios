@@ -158,7 +158,7 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                     try! realm.write {
                         if (sets.count == 1 && sets[0].seconds == 0) {
                             sets[0].seconds = loggedSeconds
-                            
+
                             showNotification(loggedSeconds)
                         } else if (sets.count >= 1 && sets.count < 9) {
                             let repositorySet = RepositorySet()
@@ -176,6 +176,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                         
                         realm.add(repositoryRoutine, update: true)
                     }
+
+                    RoutineStream.sharedInstance.setRepository()
                 }
             }
             
