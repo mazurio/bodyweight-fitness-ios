@@ -1,22 +1,222 @@
 import UIKit
 import RealmSwift
 
+import UIKit
+
+extension NSDate {
+    public var globalDescription: String {
+        get {
+            let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
+            let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
+
+            return "\(month), \(year)"
+        }
+    }
+
+    public var commonDescription: String {
+        get {
+            let day = dateFormattedStringWithFormat("dd", fromDate: self)
+            let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
+            let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
+
+            return "\(day) \(month), \(year)"
+        }
+    }
+}
+
+private extension NSDate {
+    func dateFormattedStringWithFormat(format: String, fromDate date: NSDate) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = format
+        return formatter.stringFromDate(date)
+    }
+}
+
+class HeaderView: JTAppleHeaderView {
+    @IBOutlet var title: UILabel!
+}
+
+class CellView: JTAppleDayCellView {
+    @IBInspectable var todayColor: UIColor!// = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.3)
+    @IBInspectable var normalDayColor: UIColor! //UIColor(white: 0.0, alpha: 0.1)
+
+    @IBOutlet var selectedView: AnimationView!
+    @IBOutlet var dayLabel: UILabel!
+
+    let textSelectedColor = UIColor.blackColor()
+    let textDeselectedColor = UIColor.blackColor()
+    let previousMonthTextColor = UIColor.darkGrayColor()
+
+    lazy var todayDate : String = {
+        [weak self] in
+        let aString = self!.c.stringFromDate(NSDate())
+        return aString
+    }()
+
+    lazy var c : NSDateFormatter = {
+        let f = NSDateFormatter()
+        f.dateFormat = "yyyy-MM-dd"
+
+        return f
+    }()
+
+    func setupCellBeforeDisplay(cellState: CellState, date: NSDate) {
+        self.selectedView.layer.cornerRadius =  self.selectedView.frame.width / 2
+
+        // Setup Cell text
+        self.dayLabel.text = cellState.text
+        self.backgroundColor = UIColor.primary()
+
+        // Mark todays date
+        if (c.stringFromDate(date) == todayDate) {
+            selectedView.hidden = false
+            selectedView.backgroundColor = UIColor.primaryDark()
+
+            dayLabel.textColor = UIColor.whiteColor()
+        } else {
+            // Setup text color
+            configureTextColor(cellState)
+
+            // Setup cell selection status
+            delayRunOnMainThread(0.0) {
+                self.configureViewIntoBubbleView(cellState)
+            }
+        }
+    }
+
+    func configureTextColor(cellState: CellState) {
+        if cellState.isSelected {
+            dayLabel.textColor = textSelectedColor
+        } else if cellState.dateBelongsTo == .ThisMonth {
+            dayLabel.textColor = textDeselectedColor
+        } else {
+            dayLabel.textColor = previousMonthTextColor
+        }
+    }
+
+    func cellSelectionChanged(cellState: CellState) {
+        if cellState.isSelected == true {
+            if (c.stringFromDate(cellState.date) == todayDate) {
+
+            } else {
+                if selectedView.hidden == true {
+                    configureViewIntoBubbleView(cellState)
+                    selectedView.animateWithBounceEffect(withCompletionHandler: {})
+                }
+            }
+        } else {
+            if (c.stringFromDate(cellState.date) == todayDate) {
+
+            } else {
+                configureViewIntoBubbleView(cellState, animateDeselection: true)
+            }
+        }
+    }
+
+    private func configureViewIntoBubbleView(cellState: CellState, animateDeselection: Bool = false) {
+        if cellState.isSelected {
+            self.selectedView.hidden = false
+
+            configureTextColor(cellState)
+        } else {
+            if animateDeselection {
+                configureTextColor(cellState)
+
+                if selectedView.hidden == false {
+                    selectedView.animateWithFadeEffect(withCompletionHandler: { () -> Void in
+                        self.selectedView.hidden = true
+                        self.selectedView.alpha = 1
+                    })
+                }
+            } else {
+                selectedView.hidden = true
+            }
+        }
+    }
+}
+
+class AnimationClass {
+
+    class func BounceEffect() -> (UIView, Bool -> Void) -> () {
+        return {
+            view, completion in
+            view.transform = CGAffineTransformMakeScale(0.5, 0.5)
+
+            UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0.1, options: UIViewAnimationOptions.BeginFromCurrentState, animations: {
+                view.transform = CGAffineTransformMakeScale(1, 1)
+            }, completion: completion)
+        }
+    }
+
+    class func FadeOutEffect() -> (UIView, Bool -> Void) -> () {
+        return {
+            view, completion in
+
+            UIView.animateWithDuration(0.6, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0, options: [], animations: {
+                view.alpha = 0
+            },
+                    completion: completion)
+        }
+    }
+
+    private class func get3DTransformation(angle: Double) -> CATransform3D {
+
+        var transform = CATransform3DIdentity
+        transform.m34 = -1.0 / 500.0
+        transform = CATransform3DRotate(transform, CGFloat(angle * M_PI / 180.0), 0, 1, 0.0)
+
+        return transform
+    }
+
+    class func flipAnimation(view: UIView, completion: (() -> Void)?) {
+
+        let angle = 180.0
+        view.layer.transform = get3DTransformation(angle)
+
+        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0, options: .TransitionNone, animations: { () -> Void in
+            view.layer.transform = CATransform3DIdentity
+        }) { (finished) -> Void in
+            completion?()
+        }
+    }
+}
+
+class AnimationView: UIView {
+
+    func animateWithFlipEffect(withCompletionHandler completionHandler:(()->Void)?) {
+        AnimationClass.flipAnimation(self, completion: completionHandler)
+    }
+    func animateWithBounceEffect(withCompletionHandler completionHandler:(()->Void)?) {
+        let viewAnimation = AnimationClass.BounceEffect()
+        viewAnimation(self){ _ in
+            completionHandler?()
+        }
+    }
+    func animateWithFadeEffect(withCompletionHandler completionHandler:(()->Void)?) {
+        let viewAnimation = AnimationClass.FadeOutEffect()
+        viewAnimation(self) { _ in
+            completionHandler?()
+        }
+    }
+}
+
 class WorkoutLogViewController: UIViewController,
-        CVCalendarViewDelegate,
-        CVCalendarMenuViewDelegate,
-        CVCalendarViewAppearanceDelegate,
         UITableViewDataSource,
-        UITableViewDelegate {
+        UITableViewDelegate,
+        JTAppleCalendarViewDataSource,
+        JTAppleCalendarViewDelegate {
+
+    var numberOfRows = 6
 
     @IBOutlet weak var backgroundView: UIView!
-
-    @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var menuView: CVCalendarMenuView!
-
+    @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet var tableView: UITableView!
 
-    var date: NSDate? = NSDate()
+    var date: NSDate = NSDate()
     var routines: Results<RepositoryRoutine>?
+
+    let formatter = NSDateFormatter()
+    let testCalendar: NSCalendar! = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
 
     init() {
         super.init(nibName: "WorkoutLogView", bundle: nil)
@@ -35,7 +235,6 @@ class WorkoutLogViewController: UIViewController,
                 style: .Plain,
                 target: self,
                 action: #selector(dismiss))
-
         
         menuItem.tintColor = UIColor.primaryDark()
 
@@ -50,10 +249,9 @@ class WorkoutLogViewController: UIViewController,
         
         self.navigationItem.leftBarButtonItem = menuItem
         self.navigationItem.rightBarButtonItem = calendarItem
-        
-        self.navigationItem.title = CVDate(date: date!).commonDescription
 
-        // add the bottom border to the view
+        self.navigationItem.title = date.commonDescription
+
         let border = CALayer()
         let width = CGFloat(0.5)
 
@@ -69,10 +267,6 @@ class WorkoutLogViewController: UIViewController,
         self.backgroundView.layer.addSublayer(border)
         self.backgroundView.layer.masksToBounds = true
 
-        self.calendarView.delegate = self
-        self.calendarView.appearance.delegate = self
-        self.menuView.delegate = self
-
         self.tableView.registerNib(
                 UINib(nibName: "WorkoutLogSectionCell", bundle: nil),
                 forCellReuseIdentifier: "WorkoutLogSectionCell")
@@ -83,6 +277,26 @@ class WorkoutLogViewController: UIViewController,
 
         tableView.delegate = self
         tableView.dataSource = self
+
+        formatter.dateFormat = "yyyy MM dd"
+        testCalendar.timeZone = NSTimeZone(abbreviation: "GMT")!
+
+        calendarView.delegate = self
+        calendarView.dataSource = self
+        calendarView.registerCellViewXib(fileName: "CellView")
+        calendarView.direction = .Horizontal
+        calendarView.allowsMultipleSelection = false
+        calendarView.firstDayOfWeek = .Monday
+        calendarView.scrollEnabled = true
+        calendarView.scrollingMode = .StopAtEachCalendarFrameWidth
+        calendarView.itemSize = nil
+        calendarView.rangeSelectionWillBeUsed = false
+
+        calendarView.reloadData()
+
+        calendarView.scrollToDate(NSDate(), triggerScrollToDateDelegate: false, animateScroll: false) {
+            self.calendarView.selectDates([NSDate()])
+        }
     }
 
     func dismiss(sender: UIBarButtonItem) {
@@ -90,49 +304,14 @@ class WorkoutLogViewController: UIViewController,
     }
     
     func toggleCurrentDayView(sender: UIBarButtonItem) {
-        self.calendarView.toggleCurrentDayView()
+        self.calendarView.scrollToDate(NSDate())
+        self.calendarView.selectDates([NSDate()])
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.showOrHideCardViewForDate(date!)
-
-        self.calendarView.contentController.refreshPresentedMonth()
-    }
-
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
-
-            for (_, weekView) in weekContentViewController.weekViews {
-                for dayView in weekView.dayViews {
-                    dayView.setDeselectedWithClearing(true)
-                    dayView.selectionView = nil
-                }
-            }
-
-            self.calendarView.validated = false
-        }
-
-        self.calendarView.commitCalendarViewUpdate()
-        self.menuView.commitMenuViewUpdate()
-
-        if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            let weekContentViewController = self.calendarView.contentController as! CVCalendarWeekContentViewController
-
-            for (_, weekView) in weekContentViewController.weekViews {
-                for dayView in weekView.dayViews {
-                    let order = NSCalendar.currentCalendar().compareDate(date!, toDate: dayView.date.date, toUnitGranularity: .Day)
-
-                    if (order == .OrderedSame) {
-                        dayView.setSelectedWithType(.Single)
-                    }
-                }
-            }
-        }
+        self.showOrHideCardViewForDate(date)
     }
 
     func showOrHideCardViewForDate(date: NSDate) {
@@ -155,72 +334,6 @@ class WorkoutLogViewController: UIViewController,
         }
 
         self.tableView.reloadData()
-    }
-
-    func didSelectDayView(dayView: DayView, animationDidFinish: Bool) {
-        self.showOrHideCardViewForDate(dayView.date.date)
-    }
-
-    func presentedDateUpdated(date: CVDate) {
-        self.navigationItem.title = date.commonDescription
-    }
-
-    func presentationMode() -> CalendarMode {
-        return .WeekView
-    }
-
-    func firstWeekday() -> Weekday {
-        return .Monday
-    }
-
-    func shouldShowWeekdaysOut() -> Bool {
-        return false
-    }
-
-    func shouldAnimateResizing() -> Bool {
-        return false
-    }
-
-    func dotMarker(shouldMoveOnHighlightingOnDayView dayView: DayView) -> Bool {
-        return false
-    }
-
-    func dotMarker(shouldShowOnDayView dayView: DayView) -> Bool {
-        let routines = RepositoryStream.sharedInstance.getRoutinesForDate(dayView.date.date)
-
-        return (routines.count > 0)
-    }
-
-    func dotMarker(colorOnDayView dayView: DayView) -> [UIColor] {
-        return [UIColor.whiteColor()]
-    }
-
-    func dayLabelWeekdayOutTextColor() -> UIColor {
-        return UIColor.whiteColor()
-    }
-
-    func dayLabelWeekdaySelectedBackgroundColor() -> UIColor {
-        return UIColor(red:0, green:0.27, blue:0.24, alpha:1)
-    }
-
-    func dayLabelPresentWeekdaySelectedBackgroundColor() -> UIColor {
-        return UIColor.whiteColor()
-    }
-
-    func dayLabelPresentWeekdaySelectedBackgroundAlpha() -> CGFloat {
-        return 1
-    }
-
-    func dayLabelPresentWeekdaySelectedTextColor() -> UIColor {
-        return UIColor.blackColor()
-    }
-
-    func dayLabelPresentWeekdayTextColor() -> UIColor {
-        return UIColor.blackColor()
-    }
-
-    func dayOfWeekTextColor() -> UIColor {
-        return UIColor(red:0, green: 0.27, blue: 0.24, alpha: 1)
     }
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -278,5 +391,38 @@ class WorkoutLogViewController: UIViewController,
         }
 
         return cell
+    }
+
+    func configureCalendar(calendar: JTAppleCalendarView) -> (startDate: NSDate, endDate: NSDate, numberOfRows: Int, calendar: NSCalendar) {
+        let firstDate = formatter.dateFromString("2014 01 01")
+        let secondDate = NSDate()
+        let aCalendar = NSCalendar.currentCalendar()
+
+        return (startDate: firstDate!, endDate: secondDate, numberOfRows: numberOfRows, calendar: aCalendar)
+    }
+
+    func calendar(calendar: JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date: NSDate, cellState: CellState) {
+        (cell as? CellView)?.setupCellBeforeDisplay(cellState, date: date)
+    }
+
+    func calendar(calendar: JTAppleCalendarView, didDeselectDate date: NSDate, cell: JTAppleDayCellView?, cellState: CellState) {
+        (cell as? CellView)?.cellSelectionChanged(cellState)
+    }
+
+    func calendar(calendar: JTAppleCalendarView, didSelectDate date: NSDate, cell: JTAppleDayCellView?, cellState: CellState) {
+        (cell as? CellView)?.cellSelectionChanged(cellState)
+
+        self.date = cellState.date
+        self.navigationItem.title = self.date.commonDescription
+
+        showOrHideCardViewForDate(self.date)
+    }
+
+    func calendar(calendar: JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView) {
+        (cell as? CellView)?.selectedView.hidden = true
+    }
+
+    func calendar(calendar: JTAppleCalendarView, didScrollToDateSegmentStartingWithdate startDate: NSDate, endingWithDate endDate: NSDate) {
+
     }
 }
