@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		46B020A6940D5C36E142CDC6 /* JTAppleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02EF894232CD71B4F1352 /* JTAppleCollectionReusableView.swift */; };
 		46B021B6A56C2000CA08000B /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* WorkoutLogViewController.swift */; };
-		46B02416FFD215E19FFED638 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46B020A0419BD0DF4BB03C2B /* HeaderView.xib */; };
 		46B025EA7291A0DA0B274075 /* JTAppleDayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02DB9A207D649D56E092E /* JTAppleDayCell.swift */; };
 		46B0266269F9AF2987F8DD20 /* JTAppleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02F1180EE611DCE533929 /* JTAppleCalendarView.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
@@ -235,7 +234,6 @@
 
 /* Begin PBXFileReference section */
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		46B020A0419BD0DF4BB03C2B /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B0214B21F48BB91551C084 /* JTCalendarProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JTCalendarProtocols.swift; path = BodyweightFitness/Vendor/JTCalendarProtocols.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
@@ -517,7 +515,6 @@
 				732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */,
 				732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */,
 				46B023EDCEC03B772C0541C3 /* CellView.xib */,
-				46B020A0419BD0DF4BB03C2B /* HeaderView.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -985,7 +982,6 @@
 				738B96911D760F66009A8625 /* bodyweight_fitness_rings_wide_pushup.mp4 in Resources */,
 				73BF3BAD1CBE6A5D00E0258D /* SettingsToggleCell.xib in Resources */,
 				46B02BB2537A1F6A3B5768B8 /* CellView.xib in Resources */,
-				46B02416FFD215E19FFED638 /* HeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

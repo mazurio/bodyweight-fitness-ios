@@ -69,10 +69,6 @@ extension NSDate {
     }
 }
 
-class HeaderView: JTAppleHeaderView {
-    @IBOutlet var title: UILabel!
-}
-
 class CellView: JTAppleDayCellView {
     @IBInspectable var todayColor: UIColor!// = UIColor(red: 254.0/255.0, green: 73.0/255.0, blue: 64.0/255.0, alpha: 0.3)
     @IBInspectable var normalDayColor: UIColor! //UIColor(white: 0.0, alpha: 0.1)
@@ -120,6 +116,16 @@ class CellView: JTAppleDayCellView {
 
         delayRunOnMainThread(0.0) {
             self.configureViewIntoBubbleView(cellState)
+        }
+
+        configureVisibility(cellState)
+    }
+
+    func configureVisibility(cellState: CellState) {
+        if cellState.dateBelongsTo == .ThisMonth {
+            self.hidden = false
+        } else {
+            self.hidden = true
         }
     }
 
@@ -431,7 +437,7 @@ class WorkoutLogViewController: UIViewController,
     }
 
     func configureCalendar(calendar: JTAppleCalendarView) -> (startDate: NSDate, endDate: NSDate, numberOfRows: Int, calendar: NSCalendar) {
-        let firstDate = formatter.dateFromString("2014 01 01")
+        let firstDate = formatter.dateFromString("2015 01 01")
         let secondDate = NSDate()
         let aCalendar = NSCalendar.currentCalendar()
 
