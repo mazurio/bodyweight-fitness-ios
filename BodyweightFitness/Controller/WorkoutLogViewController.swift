@@ -32,6 +32,48 @@ private extension NSDate {
     }
 }
 
+extension NSDate {
+    func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isGreater = false
+
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedDescending {
+            isGreater = true
+        }
+
+        //Return Result
+        return isGreater
+    }
+
+    func isLessThanDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isLess = false
+
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedAscending {
+            isLess = true
+        }
+
+        //Return Result
+        return isLess
+    }
+
+    func equalToDate(dateToCompare: NSDate) -> Bool {
+        //Declare Variables
+        var isEqualTo = false
+
+        //Compare Values
+        if self.compare(dateToCompare) == NSComparisonResult.OrderedSame {
+            isEqualTo = true
+        }
+
+        //Return Result
+        return isEqualTo
+    }
+}
+
+
 class HeaderView: JTAppleHeaderView {
     @IBOutlet var title: UILabel!
 }
@@ -422,7 +464,18 @@ class WorkoutLogViewController: UIViewController,
         (cell as? CellView)?.selectedView.hidden = true
     }
 
-    func calendar(calendar: JTAppleCalendarView, didScrollToDateSegmentStartingWithdate startDate: NSDate, endingWithDate endDate: NSDate) {
+    func calendar(calendar: JTAppleCalendarView,
+                  didScrollToDateSegmentStartingWithdate startDate: NSDate,
+                  endingWithDate endDate: NSDate) {
 
+        let todayDate = NSDate()
+
+        if (todayDate.isGreaterThanDate(startDate) && todayDate.isLessThanDate(endDate)) {
+            calendar.selectDates([todayDate])
+        } else if (todayDate.isEqualToDate(startDate) || todayDate.isEqualToDate(endDate)) {
+            calendar.selectDates([todayDate])
+        } else {
+            calendar.selectDates([startDate])
+        }
     }
 }
