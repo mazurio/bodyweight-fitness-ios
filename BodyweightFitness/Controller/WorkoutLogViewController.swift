@@ -22,17 +22,13 @@ extension NSDate {
             return "\(day) \(month), \(year)"
         }
     }
-}
 
-private extension NSDate {
     func dateFormattedStringWithFormat(format: String, fromDate date: NSDate) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
         return formatter.stringFromDate(date)
     }
-}
 
-extension NSDate {
     func isGreaterThanDate(dateToCompare: NSDate) -> Bool {
         //Declare Variables
         var isGreater = false
@@ -73,7 +69,6 @@ extension NSDate {
     }
 }
 
-
 class HeaderView: JTAppleHeaderView {
     @IBOutlet var title: UILabel!
 }
@@ -84,10 +79,6 @@ class CellView: JTAppleDayCellView {
 
     @IBOutlet var selectedView: AnimationView!
     @IBOutlet var dayLabel: UILabel!
-
-    let textSelectedColor = UIColor.blackColor()
-    let textDeselectedColor = UIColor.blackColor()
-    let previousMonthTextColor = UIColor.darkGrayColor()
 
     lazy var todayDate : String = {
         [weak self] in
@@ -107,56 +98,49 @@ class CellView: JTAppleDayCellView {
 
         // Setup Cell text
         self.dayLabel.text = cellState.text
-        self.backgroundColor = UIColor.primary()
 
         // Mark todays date
         if (c.stringFromDate(date) == todayDate) {
-            selectedView.hidden = false
             selectedView.backgroundColor = UIColor.primaryDark()
-
-            dayLabel.textColor = UIColor.whiteColor()
         } else {
-            // Setup text color
-            configureTextColor(cellState)
+            selectedView.backgroundColor = UIColor.whiteColor()
+        }
 
-            // Setup cell selection status
-            delayRunOnMainThread(0.0) {
-                self.configureViewIntoBubbleView(cellState)
-            }
+        configureTextColor(cellState)
+
+        delayRunOnMainThread(0.0) {
+            self.configureViewIntoBubbleView(cellState)
         }
     }
 
     func configureTextColor(cellState: CellState) {
         if cellState.isSelected {
-            dayLabel.textColor = textSelectedColor
+            if (c.stringFromDate(cellState.date) == todayDate) {
+                dayLabel.textColor = UIColor.whiteColor()
+            } else {
+                dayLabel.textColor = UIColor.blackColor()
+            }
         } else if cellState.dateBelongsTo == .ThisMonth {
-            dayLabel.textColor = textDeselectedColor
+            dayLabel.textColor = UIColor.blackColor()
         } else {
-            dayLabel.textColor = previousMonthTextColor
+            dayLabel.textColor = UIColor.primaryDark()
         }
     }
 
     func cellSelectionChanged(cellState: CellState) {
         if cellState.isSelected == true {
-            if (c.stringFromDate(cellState.date) == todayDate) {
-
-            } else {
-                if selectedView.hidden == true {
-                    configureViewIntoBubbleView(cellState)
-                    selectedView.animateWithBounceEffect(withCompletionHandler: {})
-                }
+            if selectedView.hidden == true {
+                configureViewIntoBubbleView(cellState)
+                selectedView.animateWithBounceEffect(withCompletionHandler: nil)
             }
         } else {
-            if (c.stringFromDate(cellState.date) == todayDate) {
-
-            } else {
-                configureViewIntoBubbleView(cellState, animateDeselection: true)
-            }
+            configureViewIntoBubbleView(cellState, animateDeselection: true)
         }
     }
 
     private func configureViewIntoBubbleView(cellState: CellState, animateDeselection: Bool = false) {
         if cellState.isSelected {
+            self.selectedView.layer.cornerRadius =  self.selectedView.frame.width  / 2
             self.selectedView.hidden = false
 
             configureTextColor(cellState)
@@ -327,6 +311,7 @@ class WorkoutLogViewController: UIViewController,
         calendarView.dataSource = self
         calendarView.registerCellViewXib(fileName: "CellView")
         calendarView.direction = .Horizontal
+        calendarView.cellInset = CGPoint(x: 0, y: 0)
         calendarView.allowsMultipleSelection = false
         calendarView.firstDayOfWeek = .Monday
         calendarView.scrollEnabled = true
