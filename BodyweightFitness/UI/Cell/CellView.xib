@@ -12,7 +12,7 @@
             <rect key="frame" x="0.0" y="0.0" width="181" height="144"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbV-Fp-hR6" customClass="AnimationView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EbV-Fp-hR6" customClass="AnimationView" customModule="Bodyweight_Fitness" customModuleProvider="target">
                     <rect key="frame" x="40" y="21" width="101" height="101"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -31,6 +31,14 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R5C-c7-wmq">
+                    <rect key="frame" x="88.5" y="85" width="3" height="3"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="3" id="2Yi-qE-cef"/>
+                        <constraint firstAttribute="width" constant="3" id="gtO-u9-jPu"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -38,12 +46,15 @@
                 <constraint firstItem="EbV-Fp-hR6" firstAttribute="height" secondItem="S0w-C3-aBs" secondAttribute="height" multiplier="0.7" id="H3q-bV-NcR"/>
                 <constraint firstItem="EbV-Fp-hR6" firstAttribute="width" secondItem="S0w-C3-aBs" secondAttribute="height" multiplier="0.7" id="WBq-0C-fme"/>
                 <constraint firstItem="EbV-Fp-hR6" firstAttribute="centerY" secondItem="S0w-C3-aBs" secondAttribute="centerY" id="Xd4-Jh-UKm"/>
+                <constraint firstItem="R5C-c7-wmq" firstAttribute="top" secondItem="A7s-8j-sxm" secondAttribute="bottom" constant="1" id="bSE-jA-FXF"/>
                 <constraint firstItem="A7s-8j-sxm" firstAttribute="centerY" secondItem="S0w-C3-aBs" secondAttribute="centerY" id="iKC-Wd-Ag7"/>
                 <constraint firstItem="A7s-8j-sxm" firstAttribute="centerX" secondItem="S0w-C3-aBs" secondAttribute="centerX" id="iet-GD-Hki"/>
+                <constraint firstItem="R5C-c7-wmq" firstAttribute="centerX" secondItem="S0w-C3-aBs" secondAttribute="centerX" id="pej-XD-MDP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="dayLabel" destination="A7s-8j-sxm" id="E0b-AV-IO5"/>
+                <outlet property="dot" destination="R5C-c7-wmq" id="CpZ-LU-5jr"/>
                 <outlet property="selectedView" destination="EbV-Fp-hR6" id="HWQ-0g-Hhq"/>
             </connections>
             <point key="canvasLocation" x="-246.5" y="445"/>

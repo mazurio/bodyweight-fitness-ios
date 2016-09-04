@@ -78,6 +78,7 @@ class CellView: JTAppleDayCellView {
     @IBInspectable var normalDayColor: UIColor! //UIColor(white: 0.0, alpha: 0.1)
 
     @IBOutlet var selectedView: AnimationView!
+    @IBOutlet var dot: UIView!
     @IBOutlet var dayLabel: UILabel!
 
     lazy var todayDate : String = {
@@ -94,7 +95,16 @@ class CellView: JTAppleDayCellView {
     }()
 
     func setupCellBeforeDisplay(cellState: CellState, date: NSDate) {
-        self.selectedView.layer.cornerRadius =  self.selectedView.frame.width / 2
+        let routines = RepositoryStream.sharedInstance.getRoutinesForDate(cellState.date)
+
+        if (routines.count > 0) {
+            self.dot.hidden = false
+        } else {
+            self.dot.hidden = true
+        }
+
+        self.dot.layer.cornerRadius = self.dot.frame.width / 2
+        self.selectedView.layer.cornerRadius = self.selectedView.frame.width / 2
 
         // Setup Cell text
         self.dayLabel.text = cellState.text
