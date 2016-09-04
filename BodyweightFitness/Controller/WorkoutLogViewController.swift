@@ -145,11 +145,21 @@ class CellView: JTAppleDayCellView {
 
     func cellSelectionChanged(cellState: CellState) {
         if cellState.isSelected == true {
+            self.dot.hidden = true
+
             if selectedView.hidden == true {
                 configureViewIntoBubbleView(cellState)
                 selectedView.animateWithBounceEffect(withCompletionHandler: nil)
             }
         } else {
+            let routines = RepositoryStream.sharedInstance.getRoutinesForDate(cellState.date)
+
+            if (routines.count > 0) {
+                self.dot.hidden = false
+            } else {
+                self.dot.hidden = true
+            }
+
             configureViewIntoBubbleView(cellState, animateDeselection: true)
         }
     }
