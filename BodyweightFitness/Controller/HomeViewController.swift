@@ -153,6 +153,11 @@ class HomeViewController: UIViewController {
     @IBAction func startWorkout(sender: AnyObject) {
         let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
 
+        appDelegate?.sideViewController.tableView.selectRowAtIndexPath(
+                NSIndexPath(forRow: 1, inSection: 0),
+                animated: false,
+                scrollPosition: UITableViewScrollPosition.None)
+        
         appDelegate?.main!.setViewControllers([(appDelegate?.workoutViewController)!], animated: false)
     }
 }
