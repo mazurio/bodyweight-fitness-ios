@@ -145,21 +145,11 @@ class CellView: JTAppleDayCellView {
 
     func cellSelectionChanged(cellState: CellState) {
         if cellState.isSelected == true {
-            self.dot.hidden = true
-
             if selectedView.hidden == true {
                 configureViewIntoBubbleView(cellState)
                 selectedView.animateWithBounceEffect(withCompletionHandler: nil)
             }
         } else {
-            let routines = RepositoryStream.sharedInstance.getRoutinesForDate(cellState.date)
-
-            if (routines.count > 0) {
-                self.dot.hidden = false
-            } else {
-                self.dot.hidden = true
-            }
-
             configureViewIntoBubbleView(cellState, animateDeselection: true)
         }
     }
@@ -168,20 +158,29 @@ class CellView: JTAppleDayCellView {
         if cellState.isSelected {
             self.selectedView.layer.cornerRadius =  self.selectedView.frame.width  / 2
             self.selectedView.hidden = false
+            self.dot.hidden = true
 
-            configureTextColor(cellState)
+            self.configureTextColor(cellState)
         } else {
             if animateDeselection {
-                configureTextColor(cellState)
+                self.configureTextColor(cellState)
 
-                if selectedView.hidden == false {
-                    selectedView.animateWithFadeEffect(withCompletionHandler: { () -> Void in
+                if self.selectedView.hidden == false {
+                    self.selectedView.animateWithFadeEffect(withCompletionHandler: { () -> Void in
                         self.selectedView.hidden = true
                         self.selectedView.alpha = 1
                     })
                 }
             } else {
-                selectedView.hidden = true
+                self.selectedView.hidden = true
+            }
+
+            let routines = RepositoryStream.sharedInstance.getRoutinesForDate(cellState.date)
+
+            if (routines.count > 0) {
+                self.dot.hidden = false
+            } else {
+                self.dot.hidden = true
             }
         }
     }
