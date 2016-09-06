@@ -125,7 +125,7 @@ class CellView: JTAppleDayCellView {
         if cellState.dateBelongsTo == .ThisMonth {
             self.hidden = false
         } else {
-            self.hidden = true
+            self.hidden = false
         }
     }
 
@@ -356,7 +356,7 @@ class WorkoutLogViewController: UIViewController,
     }
     
     func toggleCurrentDayView(sender: UIBarButtonItem) {
-        self.calendarView.scrollToDate(NSDate())
+        self.calendarView.scrollToDate(NSDate(), animateScroll: false)
         self.calendarView.selectDates([NSDate()])
     }
 
