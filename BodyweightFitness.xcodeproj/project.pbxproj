@@ -37,6 +37,11 @@
 		732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */; };
 		732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */; };
 		732BA0491C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */; };
+		732CDDEF1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */; };
+		732CDDF01D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */; };
+		732CDDF11D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */; };
+		732CDDF21D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDED1D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 */; };
+		732CDDF31D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEE1D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 */; };
 		733876D51C4AB163006AABA7 /* LogWorkoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */; };
 		733876DE1C4AC829006AABA7 /* Runes.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */; };
 		733876DF1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM in CopyFiles */ = {isa = PBXBuildFile; fileRef = 733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */; };
@@ -264,6 +269,11 @@
 		732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogCardCell.xib; sourceTree = "<group>"; };
 		732BA0461C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogSectionCell.xib; sourceTree = "<group>"; };
 		732BA0481C5EBBA400C1CDB5 /* WorkoutLogSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogSectionCell.swift; sourceTree = "<group>"; };
+		732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_foot_supported_l_sit.mp4; sourceTree = "<group>"; };
+		732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_l_sit.mp4; sourceTree = "<group>"; };
+		732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_one_leg_foot_supported_l_sit.mp4; sourceTree = "<group>"; };
+		732CDDED1D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_tuck_l_sit.mp4; sourceTree = "<group>"; };
+		732CDDEE1D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_wrist_mobility.mp4; sourceTree = "<group>"; };
 		733876D41C4AB163006AABA7 /* LogWorkoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogWorkoutButton.swift; sourceTree = "<group>"; };
 		733876DC1C4AC829006AABA7 /* Runes.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = Runes.framework.dSYM; path = Carthage/Build/iOS/Runes.framework.dSYM; sourceTree = "<group>"; };
 		733876DD1C4AC829006AABA7 /* SwiftyJSON.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = SwiftyJSON.framework.dSYM; path = Carthage/Build/iOS/SwiftyJSON.framework.dSYM; sourceTree = "<group>"; };
@@ -531,6 +541,11 @@
 		738B96BA1D760F92009A8625 /* Bodyweight Fitness - Recommended Routine */ = {
 			isa = PBXGroup;
 			children = (
+				732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */,
+				732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */,
+				732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */,
+				732CDDED1D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 */,
+				732CDDEE1D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 */,
 				738B966F1D760F66009A8625 /* bodyweight_fitness_arch.mp4 */,
 				738B96701D760F66009A8625 /* bodyweight_fitness_camel_bends.mp4 */,
 				738B96711D760F66009A8625 /* bodyweight_fitness_hollow_hold.mp4 */,
@@ -897,6 +912,7 @@
 				73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */,
 				73BF3BB11CBE6A8000E0258D /* SettingsTextCell.xib in Resources */,
 				738B96961D760F66009A8625 /* bodyweight_fitness_straight_arm_chest_flies.mp4 in Resources */,
+				732CDDF21D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 in Resources */,
 				738B96B61D760F66009A8625 /* bodyweight_fitness_reverse_plank.mp4 in Resources */,
 				738B969C1D760F66009A8625 /* bodyweight_fitness_wall_plank.mp4 in Resources */,
 				738B96851D760F66009A8625 /* bodyweight_fitness_parallel_bar_support.mp4 in Resources */,
@@ -921,7 +937,9 @@
 				73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */,
 				738B96B01D760F66009A8625 /* molding_mobility_torso_twists.mp4 in Resources */,
 				738B969E1D760F66009A8625 /* bodyweight_fitness_wide_row.mp4 in Resources */,
+				732CDDF31D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 in Resources */,
 				73BF3BC71CBFF89D00E0258D /* NavigationView.xib in Resources */,
+				732CDDF01D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 in Resources */,
 				73BF3BAF1CBE6A7000E0258D /* SettingsActionCell.xib in Resources */,
 				737F3C781CBD52AB00251EFE /* WorkoutLogView.xib in Resources */,
 				E0F5874A1B52731C00540104 /* finished.mp3 in Resources */,
@@ -948,6 +966,7 @@
 				738B96871D760F66009A8625 /* bodyweight_fitness_pullover.mp4 in Resources */,
 				73BF3BB91CBEFB0E00E0258D /* WorkoutView.xib in Resources */,
 				738B967C1D760F66009A8625 /* bodyweight_fitness_diamond_pushup.mp4 in Resources */,
+				732CDDF11D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 in Resources */,
 				738B968B1D760F66009A8625 /* bodyweight_fitness_ring_dips.mp4 in Resources */,
 				738B967A1D760F66009A8625 /* bodyweight_fitness_burpees.mp4 in Resources */,
 				738B967E1D760F66009A8625 /* bodyweight_fitness_front_leg_swings.mp4 in Resources */,
@@ -964,6 +983,7 @@
 				738B96A51D760F66009A8625 /* molding_mobility_circular_shrugs.mp4 in Resources */,
 				738B96841D760F66009A8625 /* bodyweight_fitness_parallel_bar_dips.mp4 in Resources */,
 				735BEA0C1CBD1F5E003616C5 /* SideViewMenuCell.xib in Resources */,
+				732CDDEF1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 in Resources */,
 				73BADE7D1CC79648001ACEDC /* TestRoutine.json in Resources */,
 				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				738B96881D760F66009A8625 /* bodyweight_fitness_pullup.mp4 in Resources */,
