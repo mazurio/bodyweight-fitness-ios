@@ -157,7 +157,7 @@ class HomeViewController: UIViewController {
                 NSIndexPath(forRow: 1, inSection: 0),
                 animated: false,
                 scrollPosition: UITableViewScrollPosition.None)
-        
+
         appDelegate?.main!.setViewControllers([(appDelegate?.workoutViewController)!], animated: false)
     }
 }
