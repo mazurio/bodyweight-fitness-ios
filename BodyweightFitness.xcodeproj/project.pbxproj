@@ -106,9 +106,6 @@
 		738B969C1D760F66009A8625 /* bodyweight_fitness_wall_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96591D760F66009A8625 /* bodyweight_fitness_wall_plank.mp4 */; };
 		738B969D1D760F66009A8625 /* bodyweight_fitness_wall_pushup.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965A1D760F66009A8625 /* bodyweight_fitness_wall_pushup.mp4 */; };
 		738B969E1D760F66009A8625 /* bodyweight_fitness_wide_row.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965B1D760F66009A8625 /* bodyweight_fitness_wide_row.mp4 */; };
-		738B969F1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965C1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_1.mp4 */; };
-		738B96A01D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965D1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 */; };
-		738B96A11D760F66009A8625 /* molding_mobility_3_plane_neck_movement_3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965E1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_3.mp4 */; };
 		738B96A21D760F66009A8625 /* molding_mobility_ankle_circles.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B965F1D760F66009A8625 /* molding_mobility_ankle_circles.mp4 */; };
 		738B96A31D760F66009A8625 /* molding_mobility_ankle_tilts.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96601D760F66009A8625 /* molding_mobility_ankle_tilts.mp4 */; };
 		738B96A41D760F66009A8625 /* molding_mobility_butt_kicks.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96611D760F66009A8625 /* molding_mobility_butt_kicks.mp4 */; };
@@ -179,6 +176,7 @@
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D2BCE61C3C633200CE6C00 /* SideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D2BCE51C3C633200CE6C00 /* SideViewController.swift */; };
 		73D2BCED1C3C6D6600CE6C00 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */; };
+		73D508D61DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
 		E0C7E30D1B5BC12B00EB6389 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */; };
 		E0C7E30F1B5BC12B00EB6389 /* AnimatedFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */; };
@@ -338,9 +336,6 @@
 		738B96591D760F66009A8625 /* bodyweight_fitness_wall_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_wall_plank.mp4; sourceTree = "<group>"; };
 		738B965A1D760F66009A8625 /* bodyweight_fitness_wall_pushup.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_wall_pushup.mp4; sourceTree = "<group>"; };
 		738B965B1D760F66009A8625 /* bodyweight_fitness_wide_row.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_wide_row.mp4; sourceTree = "<group>"; };
-		738B965C1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement_1.mp4; sourceTree = "<group>"; };
-		738B965D1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement_2.mp4; sourceTree = "<group>"; };
-		738B965E1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement_3.mp4; sourceTree = "<group>"; };
 		738B965F1D760F66009A8625 /* molding_mobility_ankle_circles.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_ankle_circles.mp4; sourceTree = "<group>"; };
 		738B96601D760F66009A8625 /* molding_mobility_ankle_tilts.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_ankle_tilts.mp4; sourceTree = "<group>"; };
 		738B96611D760F66009A8625 /* molding_mobility_butt_kicks.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_butt_kicks.mp4; sourceTree = "<group>"; };
@@ -413,6 +408,7 @@
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = "<group>"; };
 		73D2BCE51C3C633200CE6C00 /* SideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewController.swift; sourceTree = "<group>"; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement.mp4; sourceTree = "<group>"; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = "<group>"; };
 		E0C7E3041B5BC12B00EB6389 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = BodyweightFitness/Frameworks/AnimatableImageView.swift; sourceTree = "<group>"; };
 		E0C7E3051B5BC12B00EB6389 /* AnimatedFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatedFrame.swift; path = BodyweightFitness/Frameworks/AnimatedFrame.swift; sourceTree = "<group>"; };
@@ -601,9 +597,7 @@
 		738B96BB1D760FB8009A8625 /* Molding Mobility - Flexibility Routine */ = {
 			isa = PBXGroup;
 			children = (
-				738B965C1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_1.mp4 */,
-				738B965D1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 */,
-				738B965E1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_3.mp4 */,
+				73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */,
 				738B965F1D760F66009A8625 /* molding_mobility_ankle_circles.mp4 */,
 				738B96601D760F66009A8625 /* molding_mobility_ankle_tilts.mp4 */,
 				738B96611D760F66009A8625 /* molding_mobility_butt_kicks.mp4 */,
@@ -901,10 +895,10 @@
 				73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */,
 				738B96AE1D760F66009A8625 /* molding_mobility_side_bends.mp4 in Resources */,
 				732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */,
+				73D508D61DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 in Resources */,
 				738B96811D760F66009A8625 /* bodyweight_fitness_incline_row.mp4 in Resources */,
 				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
 				732BA0281C5AE8F900C1CDB5 /* ProgressSectionCell.xib in Resources */,
-				738B96A01D760F66009A8625 /* molding_mobility_3_plane_neck_movement_2.mp4 in Resources */,
 				73AA28F71CB7ACD900DEED79 /* DashboardSingleItemCell.xib in Resources */,
 				73AA28F91CB7ACE300DEED79 /* DashboardDoubleItemCell.xib in Resources */,
 				E0F5874B1B52731C00540104 /* bodyweight_fitness_recommended_routine.json in Resources */,
@@ -918,7 +912,6 @@
 				738B96851D760F66009A8625 /* bodyweight_fitness_parallel_bar_support.mp4 in Resources */,
 				738B96A41D760F66009A8625 /* molding_mobility_butt_kicks.mp4 in Resources */,
 				73AA28F51CB7ACCC00DEED79 /* DashboardCategoryCell.xib in Resources */,
-				738B96A11D760F66009A8625 /* molding_mobility_3_plane_neck_movement_3.mp4 in Resources */,
 				738B968C1D760F66009A8625 /* bodyweight_fitness_ring_support.mp4 in Resources */,
 				738B96A21D760F66009A8625 /* molding_mobility_ankle_circles.mp4 in Resources */,
 				73BADE171CC3E2F9001ACEDC /* TimedView.xib in Resources */,
@@ -952,7 +945,6 @@
 				738B96791D760F66009A8625 /* bodyweight_fitness_band_dislocates.mp4 in Resources */,
 				738B96971D760F66009A8625 /* bodyweight_fitness_straight_arm_overhead_pull_downs.mp4 in Resources */,
 				738B96B21D760F66009A8625 /* bodyweight_fitness_arch.mp4 in Resources */,
-				738B969F1D760F66009A8625 /* molding_mobility_3_plane_neck_movement_1.mp4 in Resources */,
 				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
 				73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */,
