@@ -122,11 +122,7 @@ class CellView: JTAppleDayCellView {
     }
 
     func configureVisibility(cellState: CellState) {
-        if cellState.dateBelongsTo == .ThisMonth {
-            self.hidden = false
-        } else {
-            self.hidden = false
-        }
+        self.hidden = false
     }
 
     func configureTextColor(cellState: CellState) {
@@ -257,7 +253,7 @@ class WorkoutLogViewController: UIViewController,
         JTAppleCalendarViewDataSource,
         JTAppleCalendarViewDelegate {
 
-    var numberOfRows = 6
+    var numberOfRows = 1
 
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
@@ -445,12 +441,20 @@ class WorkoutLogViewController: UIViewController,
         return cell
     }
 
-    func configureCalendar(calendar: JTAppleCalendarView) -> (startDate: NSDate, endDate: NSDate, numberOfRows: Int, calendar: NSCalendar) {
+    func configureCalendar(calendar: JTAppleCalendarView) -> (
+            startDate: NSDate,
+            endDate: NSDate,
+            numberOfRows: Int,
+            calendar: NSCalendar) {
+
         let firstDate = formatter.dateFromString("2015 01 01")
         let secondDate = NSDate()
         let aCalendar = NSCalendar.currentCalendar()
 
-        return (startDate: firstDate!, endDate: secondDate, numberOfRows: numberOfRows, calendar: aCalendar)
+        return (startDate: firstDate!,
+                endDate: secondDate,
+                numberOfRows: numberOfRows,
+                calendar: aCalendar)
     }
 
     func calendar(calendar: JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date: NSDate, cellState: CellState) {

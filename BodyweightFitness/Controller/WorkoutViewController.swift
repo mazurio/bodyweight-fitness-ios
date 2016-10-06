@@ -4,9 +4,7 @@ import AVFoundation
 class WorkoutViewController: UIViewController {
     @IBOutlet var actionButton: UIButton!
     @IBOutlet var topView: UIView!
-    @IBOutlet var middleView: UIView!
 
-    @IBOutlet var viewControl: UISegmentedControl!
     @IBOutlet var mainView: UIView!
     @IBOutlet var videoView: UIView!
     
@@ -31,14 +29,6 @@ class WorkoutViewController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //
-        // Hide switcher in iPhone 4S
-        //
-        if (UIScreen.mainScreen().bounds.size.height == 480) {
-            middleViewHeightConstraint.constant = 0
-            middleView.hidden = true
-        }
         
         self.timedViewController.rootViewController = self
         self.weightedViewController.rootViewController = self
@@ -134,21 +124,6 @@ class WorkoutViewController: UIViewController {
         self.navigationController?.presentViewController(controller, animated: true, completion: nil)
     }
     
-    @IBAction func indexChanged(sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case 0:
-            self.timedViewController.stopTimer()
-            
-            self.timedViewController.view.hidden = false
-            self.weightedViewController.view.hidden = true
-        case 1:
-            self.timedViewController.view.hidden = true
-            self.weightedViewController.view.hidden = false
-        default:
-            break;
-        }
-    }
-    
     @IBAction func onClickLogWorkoutAction(sender: AnyObject) {
         self.timedViewController.stopTimer()
         
@@ -198,17 +173,9 @@ class WorkoutViewController: UIViewController {
         }
         
         if current.isTimed() {
-            self.viewControl.selectedSegmentIndex = 0
-            self.viewControl.setEnabled(false, forSegmentAtIndex: 1)
-            self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
-            
             self.timedViewController.view.hidden = false
             self.weightedViewController.view.hidden = true
         } else {
-            self.viewControl.selectedSegmentIndex = 1
-            self.viewControl.setEnabled(true, forSegmentAtIndex: 1)
-            self.viewControl.sendActionsForControlEvents(UIControlEvents.ValueChanged)
-            
             self.timedViewController.view.hidden = true
             self.weightedViewController.view.hidden = false
         }

@@ -1,13 +1,5 @@
-//
-//  JTAppleCalendarLayout.swift
-//  JTAppleCalendar
-//
-//  Created by JayT on 2016-03-01.
-//  Copyright © 2016 OS-Tech. All rights reserved.
-//
-
 import UIKit
-/// Base class for the Horizontal layout
+
 public class JTAppleCalendarLayout: UICollectionViewLayout, JTAppleCalendarLayoutProtocol {
     let errorDelta: CGFloat = 0.0000001
     var itemSize: CGSize = CGSizeZero

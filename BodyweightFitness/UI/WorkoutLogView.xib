@@ -18,10 +18,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBm-b3-Q5K">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="125"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or0-9A-zi9" customClass="JTAppleCalendarView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="10" y="48" width="580" height="244"/>
+                            <rect key="frame" x="10" y="48" width="580" height="69"/>
                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-J5-KfF">
@@ -81,14 +81,14 @@
                         <constraint firstItem="xzw-J5-KfF" firstAttribute="top" secondItem="jBm-b3-Q5K" secondAttribute="top" constant="8" id="Vd6-SF-Rll"/>
                         <constraint firstAttribute="bottom" secondItem="Or0-9A-zi9" secondAttribute="bottom" constant="8" id="dVL-IB-Z9s"/>
                         <constraint firstItem="Or0-9A-zi9" firstAttribute="leading" secondItem="jBm-b3-Q5K" secondAttribute="leading" constant="10" id="f8w-WM-ukI"/>
-                        <constraint firstAttribute="height" constant="300" id="k7h-Db-JQn"/>
+                        <constraint firstAttribute="height" constant="125" id="k7h-Db-JQn"/>
                         <constraint firstAttribute="trailing" secondItem="Or0-9A-zi9" secondAttribute="trailing" constant="10" id="kMK-ex-TYU"/>
                         <constraint firstAttribute="trailing" secondItem="xzw-J5-KfF" secondAttribute="trailing" constant="8" id="qY9-In-rbo"/>
                         <constraint firstItem="xzw-J5-KfF" firstAttribute="leading" secondItem="jBm-b3-Q5K" secondAttribute="leading" constant="8" id="tVG-lL-nht"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="45" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="bVK-Iq-XKM">
-                    <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                    <rect key="frame" x="0.0" y="125" width="600" height="475"/>
                     <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="separatorColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <inset key="separatorInset" minX="8" minY="0.0" maxX="8" maxY="0.0"/>

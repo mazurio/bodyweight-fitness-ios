@@ -5,7 +5,9 @@
 //  Created by JayT on 2016-06-26.
 //
 //
+
 import UIKit
+
 func delayRunOnMainThread(delay:Double, closure:()->()) {
     dispatch_after(
         dispatch_time(

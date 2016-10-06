@@ -1,10 +1,3 @@
-//
-//  JTCalendarProtocols.swift
-//  Pods
-//
-//  Created by JayT on 2016-06-07.
-//
-//
 import UIKit
 
 enum JTAppleCalendarViewSource {
@@ -40,7 +33,7 @@ public extension JTAppleCalendarViewDelegate {
     func calendar(calendar : JTAppleCalendarView, isAboutToDisplayCell cell: JTAppleDayCellView, date:NSDate, cellState: CellState) {}
     func calendar(calendar : JTAppleCalendarView, isAboutToResetCell cell: JTAppleDayCellView){}
     func calendar(calendar : JTAppleCalendarView, isAboutToDisplaySectionHeader header: JTAppleHeaderView, dateRange: (start: NSDate, end: NSDate), identifier: String) {}
-    func calendar(calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: NSDate, end: NSDate), belongingTo month: Int) -> String? {return nil}
+    func calendar(calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: NSDate, end: NSDate), belongingTo month: Int) -> String {return ""}
     func calendar(calendar : JTAppleCalendarView, sectionHeaderSizeForDate dateRange:(start: NSDate, end: NSDate), belongingTo month: Int) -> CGSize {return CGSizeZero}
 }
 
@@ -113,7 +106,7 @@ public protocol JTAppleCalendarViewDelegate: class {
     ///     - date: Contains the startDate and endDate for the header that is about to be displayed
     /// - Returns:
     ///   String: Provide the registered header you wish to show for this date
-    func calendar(calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: NSDate, end: NSDate), belongingTo month: Int) -> String?
+    func calendar(calendar : JTAppleCalendarView, sectionHeaderIdentifierForDate dateRange: (start: NSDate, end: NSDate), belongingTo month: Int) -> String
     /// Implement this function to use headers in your project. Return the size for the header you wish to present
     /// - Parameters:
     ///     - date: Contains the startDate and endDate for the header that is about to be displayed
@@ -167,11 +160,21 @@ extension JTAppleReusableViewProtocolTrait {
         switch cellSource {
         case let .fromXib(xibName):
             let viewObject = NSBundle.mainBundle().loadNibNamed(xibName, owner: self, options: [:])
-            guard let view = viewObject[0] as? ViewType else {
+            
+            #if swift(>=2.3)
+                guard let view = viewObject?[0] as? ViewType else {
+                    print("xib: \(xibName),  file class does not conform to the JTAppleViewProtocol")
+                    assert(false)
+                    return
+                }
+            #else
+                guard let view = viewObject[0] as? ViewType else {
                 print("xib: \(xibName),  file class does not conform to the JTAppleViewProtocol")
                 assert(false)
                 return
-            }
+                }
+            #endif
+            
             self.view = view
             break
         case let .fromClassName(className):

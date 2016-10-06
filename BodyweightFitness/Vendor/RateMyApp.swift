@@ -1,6 +1,5 @@
 import UIKit
 
-
 class RateMyApp : UIViewController,UIAlertViewDelegate{
     
     private let kTrackingAppVersion     = "kRateMyApp_TrackingAppVersion"

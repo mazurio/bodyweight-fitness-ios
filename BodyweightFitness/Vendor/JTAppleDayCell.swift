@@ -1,11 +1,5 @@
-//
-//  JTAppleDayCell.swift
-//  JTAppleCalendar
-//
-//  Created by JayT on 2016-03-01.
-//  Copyright © 2016 OS-Tech. All rights reserved.
-//
 import UIKit
+
 /// The JTAppleDayCell class defines the attributes and behavior of the cells that appear in JTAppleCalendarView objects.
 public class JTAppleDayCell: UICollectionViewCell, JTAppleReusableViewProtocolTrait {
 	var view: JTAppleDayCellView?

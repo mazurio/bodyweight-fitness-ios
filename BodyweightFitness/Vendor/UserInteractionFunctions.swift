@@ -1,12 +1,4 @@
-//
-//  UserInteractionFunctions.swift
-//  Pods
-//
-//  Created by JayT on 2016-05-12.
-//
-//
 import UIKit
-import Foundation
 
 extension JTAppleCalendarView {
     /// Returns the cellStatus of a date that is visible on the screen. If the row and column for the date cannot be found, then nil is returned
@@ -102,7 +94,19 @@ extension JTAppleCalendarView {
     /// Reload the date of specified date-cells on the calendar-view
     /// - Parameter dates: Date-cells with these specified dates will be reloaded
     public func reloadDates(dates: [NSDate]) {
-        batchReloadIndexPaths(pathsFromDates(dates))
+        var paths = [NSIndexPath]()
+        for date in dates {
+            let aPath = pathsFromDates([date])
+            
+            if aPath.count > 0 && !paths.contains(aPath[0]) {
+                paths.append(aPath[0])
+                let cellState = cellStateFromIndexPath(aPath[0], withDate: date)
+                if let validCounterPartCell = indexPathOfdateCellCounterPart(date, indexPath: aPath[0], dateOwner: cellState.dateBelongsTo) {
+                    paths.append(validCounterPartCell)
+                }
+            }
+        }
+        batchReloadIndexPaths(paths)
     }
     
     /// Select a date-cell range

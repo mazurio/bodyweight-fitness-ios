@@ -1,12 +1,5 @@
-//
-//  JTAppleCalendarDelegates.swift
-//  Pods
-//
-//  Created by JayT on 2016-05-12.
-//
-//
 import UIKit
-// MARK: CollectionView delegates
+
 extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDelegate {
     /// Asks your data source object to provide a supplementary view to display in the collection view.
     
@@ -26,7 +19,7 @@ extension JTAppleCalendarView: UICollectionViewDataSource, UICollectionViewDeleg
             case let .fromType(classType): reuseIdentifier = classType.description()
             }
         } else {
-            reuseIdentifier = delegate!.calendar(self, sectionHeaderIdentifierForDate: validDate.dateRange, belongingTo: validDate.month)!
+            reuseIdentifier = delegate!.calendar(self, sectionHeaderIdentifierForDate: validDate.dateRange, belongingTo: validDate.month)
             for item in registeredHeaderViews {
                 switch item {
                 case let .fromXib(xibName) where xibName == reuseIdentifier:

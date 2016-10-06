@@ -1,13 +1,5 @@
-//
-//  JTAppleCollectionReusableView.swift
-//  Pods
-//
-//  Created by JayT on 2016-05-11.
-//
-//
-import Foundation
 import UIKit
-/// The header view class of the calendar
+
 public class JTAppleCollectionReusableView: UICollectionReusableView, JTAppleReusableViewProtocolTrait {
     var view: JTAppleHeaderView?
     func update() {
