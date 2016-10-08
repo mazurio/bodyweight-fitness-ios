@@ -821,7 +821,7 @@
 				TargetAttributes = {
 					2BD2CA821B458FFD00841AB7 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = F2262GQ94A;
+						DevelopmentTeam = 32UU4L8Z8S;
 						LastSwiftMigration = 0800;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
@@ -1009,8 +1009,8 @@
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 1;
-			shellPath = "/usr/local/bin/carthage copy-frameworks";
-			shellScript = "";
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
 /* End PBXShellScriptBuildPhase section */
 
