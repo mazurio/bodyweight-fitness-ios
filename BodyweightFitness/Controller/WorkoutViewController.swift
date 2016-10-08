@@ -13,7 +13,6 @@ class WorkoutViewController: UIViewController {
     
     @IBOutlet weak var middleViewHeightConstraint: NSLayoutConstraint!
     
-    let navigationViewController: NavigationViewController = NavigationViewController()
     let timedViewController: TimedViewController = TimedViewController()
     let weightedViewController: WeightedViewController = WeightedViewController()
     
@@ -32,55 +31,21 @@ class WorkoutViewController: UIViewController {
         
         self.timedViewController.rootViewController = self
         self.weightedViewController.rootViewController = self
-        
-        
-        
         self.timedViewController.view.frame = self.topView.frame
         self.timedViewController.willMoveToParentViewController(self)
-        
         self.addChildViewController(self.timedViewController)
-        
         self.topView.addSubview(self.timedViewController.view)
-        
         self.timedViewController.didMoveToParentViewController(self)
-        
-        
-        
         self.weightedViewController.view.frame = self.topView.frame
         self.weightedViewController.willMoveToParentViewController(self)
-        
         self.addChildViewController(self.weightedViewController)
-        
         self.topView.addSubview(self.weightedViewController.view)
-        
         self.weightedViewController.didMoveToParentViewController(self)
         
-        
-        
         self.setNavigationBar()
-        
-        let menuItem = UIBarButtonItem(
-            image: UIImage(named: "menu"),
-            landscapeImagePhone: nil,
-            style: .Plain,
-            target: self,
-            action: #selector(dismiss))
-
-        let dashboardItem = UIBarButtonItem(
-            image: UIImage(named: "dashboard"),
-            landscapeImagePhone: nil,
-            style: .Plain,
-            target: self,
-            action: #selector(dashboard))
-        
-        self.navigationItem.leftBarButtonItem = menuItem
-        self.navigationItem.rightBarButtonItem = dashboardItem
-        self.navigationItem.titleView = navigationViewController.view
-        
         self.timedViewController.updateLabel()
         
         let rate = RateMyApp.sharedInstance
-        
         rate.appID = "1018863605"
         rate.trackAppUsage()
         
@@ -88,30 +53,56 @@ class WorkoutViewController: UIViewController {
             self.current = $0.getFirstExercise()
             self.changeExercise(self.current)
         })
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
+
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(named: "dashboard"),
+                landscapeImagePhone: nil,
+                style: .Plain,
+                target: self,
+                action: #selector(dashboard))
         
-        setTitle()
+        self.setTitle()
     }
     
     override func viewDidLayoutSubviews() {
-        self.changeExercise(current)
-    }
-    
-    override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval) {
-        setTitle()
-    }
-    
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        super.viewDidLayoutSubviews()
         
-        setTitle()
+        self.changeExercise(current, updateTitle: false)
     }
     
-    func dismiss(sender: UIBarButtonItem) {
-        self.sideNavigationController?.toggleLeftView()
+    func setTitle() {
+        let titleLabel = UILabel(frame: CGRectMake(0, 0, 0, 0))
+
+        titleLabel.backgroundColor = UIColor.clearColor()
+        titleLabel.textColor = UIColor.blackColor()
+        titleLabel.font = UIFont.systemFontOfSize(16)
+        titleLabel.text = self.current.title
+        titleLabel.sizeToFit()
+
+        let subtitleLabel = UILabel(frame: CGRectMake(0, 20, 0, 0))
+
+        subtitleLabel.backgroundColor = UIColor.clearColor()
+        subtitleLabel.textColor = UIColor.primaryDark()
+        subtitleLabel.font = UIFont.systemFontOfSize(13)
+        subtitleLabel.text = self.current.section!.title + ", " + self.current.desc
+        subtitleLabel.sizeToFit()
+
+        let titleView = UIView(frame: CGRectMake(0, 0, max(titleLabel.frame.size.width, subtitleLabel.frame.size.width), 30))
+
+        if titleLabel.frame.width >= subtitleLabel.frame.width {
+            var adjustment = subtitleLabel.frame
+            adjustment.origin.x = titleView.frame.origin.x + (titleView.frame.width/2) - (subtitleLabel.frame.width/2)
+            subtitleLabel.frame = adjustment
+        } else {
+            var adjustment = titleLabel.frame
+            adjustment.origin.x = titleView.frame.origin.x + (titleView.frame.width/2) - (titleLabel.frame.width/2)
+            titleLabel.frame = adjustment
+        }
+
+        titleView.addSubview(titleLabel)
+        titleView.addSubview(subtitleLabel)
+        
+        self.navigationItem.titleView = titleView
     }
     
     func dashboard(sender: UIBarButtonItem) {
@@ -129,37 +120,24 @@ class WorkoutViewController: UIViewController {
         
         let logWorkoutController = LogWorkoutController()
         
-        logWorkoutController.parentController = self.sideNavigationController
-        logWorkoutController.setRepositoryRoutine(current, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        logWorkoutController.parentController = self.navigationController
+        logWorkoutController.setRepositoryRoutine(
+            current,
+            repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
         
         logWorkoutController.modalTransitionStyle = .CoverVertical
         logWorkoutController.modalPresentationStyle = .Custom
     
-        self.sideNavigationController?.dim(.In, alpha: 0.5, speed: 0.5)
-        self.sideNavigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
+        self.navigationController?.dim(.In, alpha: 0.5, speed: 0.5)
+        self.navigationController?.presentViewController(logWorkoutController, animated: true, completion: nil)
     }
-    
-    func setTitle() {
-        let navigationBarSize = self.navigationController?.navigationBar.frame.size
-        let titleView = self.navigationItem.titleView
-        var titleViewFrame = titleView?.frame
-        titleViewFrame?.size = navigationBarSize!
-        self.navigationItem.titleView?.frame = titleViewFrame!
-        
-        titleView?.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleLeftMargin, UIViewAutoresizing.FlexibleRightMargin]
-        titleView?.autoresizesSubviews = true
-    }
-    
-    internal func changeExercise(currentExercise: Exercise) {
+
+    internal func changeExercise(currentExercise: Exercise, updateTitle: Bool = true) {
         self.current = currentExercise
         
         self.timedViewController.changeExercise(currentExercise)
         self.weightedViewController.changeExercise(currentExercise)
         
-        self.navigationViewController.topLabel?.text = currentExercise.title
-        self.navigationViewController.bottomLeftLabel?.text = currentExercise.section?.title
-        self.navigationViewController.bottomRightLabel?.text = currentExercise.desc
-
         self.setVideo(currentExercise.videoId)
         
         if (currentExercise.section?.mode == SectionMode.All) {
@@ -179,11 +157,13 @@ class WorkoutViewController: UIViewController {
             self.timedViewController.view.hidden = true
             self.weightedViewController.view.hidden = false
         }
+
+        if (updateTitle) {
+            self.setTitle()
+        }
     }
     
     func setVideo(videoId: String) {
-        // if contains videoId then
-        
         if !videoId.isEmpty {
             if let player = self.player {
                 player.pause()
@@ -264,8 +244,8 @@ class WorkoutViewController: UIViewController {
         alertController.addAction(UIAlertAction(title: "Today's Workout", style: .Default) { (action) in
             let backItem = UIBarButtonItem()
             backItem.title = "Back"
-            
-            self.navigationItem.backBarButtonItem = backItem
+
+            self.tabBarController?.navigationItem.backBarButtonItem = backItem
             
             let progressViewController = ProgressViewController()
             

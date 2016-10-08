@@ -1,7 +1,5 @@
-github "uacaps/PageMenu"
-github "i-schuetz/SwiftCharts" ~> 0.3
-github "kitasuke/PagingMenuController"
-github "realm/realm-cocoa" ~> 0.98.5
-github "ReactiveX/RxSwift" ~> 2.0 
+github "kitasuke/PagingMenuController" == 1.2.0
+github "realm/realm-cocoa"
+github "ReactiveX/RxSwift"
 github "thoughtbot/Runes"
-github "SwiftyJSON/SwiftyJSON"
+github "SwiftyJSON/SwiftyJSON" "swift2"

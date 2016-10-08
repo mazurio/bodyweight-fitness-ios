@@ -56,24 +56,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        let menuItem = UIBarButtonItem(
-            image: UIImage(named: "menu"),
-            landscapeImagePhone: nil,
-            style: .Plain,
-            target: self,
-            action: #selector(dismiss))
-        
-        menuItem.tintColor = UIColor.primaryDark()
-        
-        self.navigationItem.leftBarButtonItem = menuItem
-        self.navigationItem.title = "Settings"
     }
-    
-    func dismiss(sender: UIBarButtonItem) {
-        self.sideNavigationController?.toggleLeftView()
+
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        self.tabBarController?.title = "Settings"
     }
-    
+
     func playAudioWhenTimerStops(sender: UISwitch) {
         if sender.on {
             let defaults = NSUserDefaults.standardUserDefaults()

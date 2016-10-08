@@ -1,6 +1,5 @@
 import Foundation
 import UIKit
-import SwiftCharts
 
 import UIKit
 
@@ -35,15 +34,15 @@ class CircleGraphView: UIView {
         
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetLineWidth(context, arcWidth)
-        CGContextSetLineCap(context, CGLineCap.Round)
-        CGContextSetStrokeColorWithColor(context, arcBackgroundColor.CGColor)
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, 0, fullCircle, 0)
-        CGContextStrokePath(context)
-        CGContextSetStrokeColorWithColor(context, arcColor.CGColor)
-        CGContextSetLineWidth(context, arcWidth * 0.8 )
-        CGContextAddArc(context, centerPoint.x, centerPoint.y, radius, start, end, 0)
-        CGContextStrokePath(context)
+        CGContextSetLineWidth(context!, arcWidth)
+        CGContextSetLineCap(context!, CGLineCap.Round)
+        CGContextSetStrokeColorWithColor(context!, arcBackgroundColor.CGColor)
+        CGContextAddArc(context!, centerPoint.x, centerPoint.y, radius, 0, fullCircle, 0)
+        CGContextStrokePath(context!)
+        CGContextSetStrokeColorWithColor(context!, arcColor.CGColor)
+        CGContextSetLineWidth(context!, arcWidth * 0.8 )
+        CGContextAddArc(context!, centerPoint.x, centerPoint.y, radius, start, end, 0)
+        CGContextStrokePath(context!)
     }
 }
 

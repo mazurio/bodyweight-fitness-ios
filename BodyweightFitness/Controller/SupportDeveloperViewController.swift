@@ -40,25 +40,14 @@ class SupportDeveloperViewController: UIViewController, SKPaymentTransactionObse
     override func viewDidLoad() {
         self.setNavigationBar()
         
-        let menuItem = UIBarButtonItem(
-            image: UIImage(named: "menu"),
-            landscapeImagePhone: nil,
-            style: .Plain,
-            target: self,
-            action: #selector(dismiss))
         
-        menuItem.tintColor = UIColor.primaryDark()
-        
-        self.navigationItem.leftBarButtonItem = menuItem
-        self.navigationItem.title = "Support Developer"
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItem = nil
+        self.tabBarController?.title = "Support Developer"
         
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         
         self.getProductInfo()
-    }
-    
-    func dismiss(sender: UIBarButtonItem) {
-        self.sideNavigationController?.toggleLeftView()
     }
     
     func getProductInfo() {

@@ -276,29 +276,6 @@ class WorkoutLogViewController: UIViewController,
     override func viewDidLoad() {
         self.setNavigationBar()
 
-        let menuItem = UIBarButtonItem(
-                image: UIImage(named: "menu"),
-                landscapeImagePhone: nil,
-                style: .Plain,
-                target: self,
-                action: #selector(dismiss))
-        
-        menuItem.tintColor = UIColor.primaryDark()
-
-        let calendarItem = UIBarButtonItem(
-            image: UIImage(named: "calendar"),
-            landscapeImagePhone: nil,
-            style: .Plain,
-            target: self,
-            action: #selector(toggleCurrentDayView))
-        
-        calendarItem.tintColor = UIColor.primaryDark()
-        
-        self.navigationItem.leftBarButtonItem = menuItem
-        self.navigationItem.rightBarButtonItem = calendarItem
-
-        self.navigationItem.title = date.commonDescription
-
         let border = CALayer()
         let width = CGFloat(0.5)
 
@@ -346,10 +323,6 @@ class WorkoutLogViewController: UIViewController,
             self.calendarView.selectDates([NSDate()])
         }
     }
-
-    func dismiss(sender: UIBarButtonItem) {
-        self.sideNavigationController?.toggleLeftView()
-    }
     
     func toggleCurrentDayView(sender: UIBarButtonItem) {
         self.calendarView.scrollToDate(NSDate(), animateScroll: false)
@@ -358,6 +331,17 @@ class WorkoutLogViewController: UIViewController,
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+
+        self.tabBarController?.navigationItem.titleView = nil
+        self.tabBarController?.navigationItem.leftBarButtonItem = nil
+        self.tabBarController?.navigationItem.rightBarButtonItem = UIBarButtonItem(
+                image: UIImage(named: "calendar"),
+                landscapeImagePhone: nil,
+                style: .Plain,
+                target: self,
+                action: #selector(toggleCurrentDayView))
+
+        self.tabBarController?.title = date.commonDescription
 
         self.showOrHideCardViewForDate(date)
     }
@@ -469,7 +453,7 @@ class WorkoutLogViewController: UIViewController,
         (cell as? CellView)?.cellSelectionChanged(cellState)
 
         self.date = cellState.date
-        self.navigationItem.title = self.date.commonDescription
+        self.tabBarController?.navigationItem.title = self.date.commonDescription
 
         showOrHideCardViewForDate(self.date)
     }

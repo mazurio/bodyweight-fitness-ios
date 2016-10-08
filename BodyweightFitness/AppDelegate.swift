@@ -3,40 +3,60 @@ import CoreData
 import Fabric
 import Crashlytics
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
-
-    var main: UINavigationController? = nil
-
-    var sideNavigationViewController: SideNavigationController?
-    let sideViewController = SideViewController()
-
+class TabBarController: UITabBarController {
     let homeViewController = HomeViewController()
-    let workoutViewController = WorkoutViewController()
     let workoutLogViewController = WorkoutLogViewController()
     let supportDeveloperViewController = SupportDeveloperViewController()
     let settingsViewController = SettingsViewController()
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.tabBar.tintColor = UIColor.primary()
+        self.tabBar.barTintColor = UIColor.whiteColor()
+
+        self.homeViewController.tabBarItem = UITabBarItem(
+                title: "Home",
+                image: UIImage(named: "tab_home"),
+                selectedImage: UIImage(named: "tab_home"))
+
+        self.workoutLogViewController.tabBarItem = UITabBarItem(
+            title: "Workout Log",
+            image: UIImage(named: "tab_workout_log"),
+            selectedImage: UIImage(named: "tab_workout_log"))
+        
+        self.supportDeveloperViewController.tabBarItem = UITabBarItem(
+            title: "Support Developer",
+            image: UIImage(named: "tab_support_developer"),
+            selectedImage: UIImage(named: "tab_support_developer"))
+
+        self.settingsViewController.tabBarItem = UITabBarItem(
+                title: "Settings",
+                image: UIImage(named: "tab_settings"),
+                selectedImage: UIImage(named: "tab_settings"))
+
+        self.viewControllers = [
+            self.homeViewController,
+            self.workoutLogViewController,
+            self.supportDeveloperViewController,
+            self.settingsViewController]
+    }
+}
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+    var window: UIWindow?
+
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Fabric.with([Crashlytics.self])
-
-        self.main = UINavigationController(rootViewController: homeViewController)
 
         self.migrateSchemaIfNeeded()
         self.setDefaultSettings()
         
-        self.sideNavigationViewController = SideNavigationController(
-            rootViewController: self.main!,
-            leftViewController: self.sideViewController
-        )
-
-        self.sideNavigationViewController?.setLeftViewWidth(260, hidden: true, animated: false)
-
         self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
         self.window?.tintColor = UIColor.primaryDark()
         self.window?.backgroundColor = UIColor.primary()
-        self.window?.rootViewController = self.sideNavigationViewController!
+        self.window?.rootViewController = UINavigationController(rootViewController: TabBarController())
         self.window?.makeKeyAndVisible()
         
         return true

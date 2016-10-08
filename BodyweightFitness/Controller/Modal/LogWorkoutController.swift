@@ -196,8 +196,8 @@ class LogWorkoutController: UIViewController {
         }
         
         // Disable Navigation Drawer
-        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-        appDelegate?.sideNavigationViewController?.enabled = false
+//        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
+//        appDelegate?.sideNavigationViewController?.enabled = false
     }
     
     func setRepositoryRoutine(repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
@@ -393,22 +393,11 @@ class LogWorkoutController: UIViewController {
                     realm.add(exercise, update: true)
                 }
             }
-
-            if let sideNavigationController = self.parentController as? SideNavigationController {
-                if let navigationController = sideNavigationController.rootViewController as? UINavigationController {
-                    if let rootViewController = navigationController.viewControllers.first as? WorkoutViewController {
-                        rootViewController.weightedViewController.updateLabels()
-                    }
-                }
-            }
+            
+            RoutineStream.sharedInstance.setRepository()
 
             self.parentController?.dim(.Out, alpha: 0.5, speed: 0.5)
-            
             self.dismissViewControllerAnimated(true, completion: nil)
-            
-            // Enable Navigation Drawer
-            let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-            appDelegate?.sideNavigationViewController?.enabled = true
         }
     }
     

@@ -19,6 +19,6 @@ DerivedData
 *.ipa
 *.xcuserstate
 
-Carthage/Checkouts
+Carthage/
 Carthage/Build
 Cartfile.resolved

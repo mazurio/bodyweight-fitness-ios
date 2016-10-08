@@ -13,7 +13,7 @@ extension UIImage {
         self.drawInRect(CGRect(origin: CGPointZero, size: size))
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return newImage
+        return newImage!
     }
     
     /// Resizes an image instance to fit inside a constraining size while keeping the aspect ratio.
