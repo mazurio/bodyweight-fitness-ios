@@ -12,8 +12,9 @@ class ProgressViewController: UIViewController {
         
         self.setNavigationBar()
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.primaryDark()
+
         if let routine = repositoryRoutine {
-            self.navigationItem.title = CVDate(date: routine.startTime).commonDescription
+            self.navigationItem.title = routine.startTime.commonDescription
         }
         
         let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(

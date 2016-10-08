@@ -10,8 +10,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet var previousButton: UIButton!
     @IBOutlet var nextButton: UIButton!
     
-    var rootViewController: RootViewController? = nil
-    var current: Exercise? = nil
+    var rootViewController: WorkoutViewController? = nil
+    var current: Exercise = RoutineStream.sharedInstance.routine.getFirstExercise()
     
     var audioPlayer: AVAudioPlayer?
     var timePickerController: TimePickerController?
@@ -37,20 +37,20 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
     func changeExercise(currentExercise: Exercise) {
         self.current = currentExercise
         
-        let savedSeconds = PersistenceManager.getTimer(currentExercise.id)
+        let savedSeconds = PersistenceManager.getTimer(currentExercise.exerciseId)
         
         self.loggedSeconds = 0
         self.defaultSeconds = savedSeconds
         
         self.restartTimer(savedSeconds)
         
-        if let _ = self.current?.previous {
+        if let _ = self.current.previous {
             self.previousButton.hidden = false
         } else {
             self.previousButton.hidden = true
         }
         
-        if let _ = self.current?.next {
+        if let _ = self.current.next {
             self.nextButton.hidden = false
         } else {
             self.nextButton.hidden = true
@@ -137,10 +137,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
         if let seconds = self.timePickerController?.getTotalSeconds() {
             self.defaultSeconds = seconds
             self.restartTimer(seconds)
-            
-            if let current = self.current {
-                PersistenceManager.storeTimer(current.id, seconds: self.defaultSeconds)
-            }
+
+            PersistenceManager.storeTimer(current.exerciseId, seconds: self.defaultSeconds)
         }
     }
     
@@ -158,7 +156,7 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                     try! realm.write {
                         if (sets.count == 1 && sets[0].seconds == 0) {
                             sets[0].seconds = loggedSeconds
-                            
+
                             showNotification(loggedSeconds)
                         } else if (sets.count >= 1 && sets.count < 9) {
                             let repositorySet = RepositorySet()
@@ -176,6 +174,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                         
                         realm.add(repositoryRoutine, update: true)
                     }
+
+                    RoutineStream.sharedInstance.setRepository()
                 }
             }
             

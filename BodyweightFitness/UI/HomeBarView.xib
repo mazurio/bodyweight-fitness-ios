@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeBarView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryTitle" destination="qx5-UN-crg" id="y25-4J-ij7"/>
+                <outlet property="progressRate" destination="LYC-dr-Fa0" id="KTq-F8-jd2"/>
+                <outlet property="progressView" destination="SF5-5S-6gv" id="3h8-0k-zFN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="SOG-dX-A1h">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lll-jz-9Ut">
+                    <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SF5-5S-6gv" customClass="ProgressView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="29" width="250" height="20"/>
+                            <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="250" id="9Ki-gO-Ptj"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <outlet property="widthConstraint" destination="9Ki-gO-Ptj" id="dSr-1E-4Yq"/>
+                            </connections>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qx5-UN-crg">
+                            <rect key="frame" x="0.0" y="0.0" width="33.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" red="0.46666666670000001" green="0.46666666670000001" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LYC-dr-Fa0" userLabel="Progress Rate">
+                            <rect key="frame" x="258" y="29" width="50" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="jjR-To-ba2"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="A5c-CC-ww1"/>
+                        <constraint firstItem="qx5-UN-crg" firstAttribute="leading" secondItem="lll-jz-9Ut" secondAttribute="leading" id="BVs-AO-9U1"/>
+                        <constraint firstAttribute="bottom" secondItem="SF5-5S-6gv" secondAttribute="bottom" constant="11" id="TEu-Tt-j34"/>
+                        <constraint firstItem="LYC-dr-Fa0" firstAttribute="centerY" secondItem="SF5-5S-6gv" secondAttribute="centerY" id="eK5-yv-RTt"/>
+                        <constraint firstItem="LYC-dr-Fa0" firstAttribute="leading" secondItem="SF5-5S-6gv" secondAttribute="trailing" constant="8" id="igb-JQ-x9f"/>
+                        <constraint firstItem="SF5-5S-6gv" firstAttribute="top" secondItem="qx5-UN-crg" secondAttribute="bottom" constant="8" id="rYc-2R-tvv"/>
+                        <constraint firstItem="qx5-UN-crg" firstAttribute="top" secondItem="lll-jz-9Ut" secondAttribute="top" id="tmn-XU-m9n"/>
+                        <constraint firstItem="SF5-5S-6gv" firstAttribute="leading" secondItem="lll-jz-9Ut" secondAttribute="leading" id="uK0-ha-7u5"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="lll-jz-9Ut" secondAttribute="trailing" id="KHi-36-bhF"/>
+                <constraint firstItem="lll-jz-9Ut" firstAttribute="leading" secondItem="SOG-dX-A1h" secondAttribute="leading" id="hLj-fr-t0N"/>
+                <constraint firstAttribute="bottom" secondItem="lll-jz-9Ut" secondAttribute="bottom" id="hat-VP-duc"/>
+                <constraint firstItem="lll-jz-9Ut" firstAttribute="top" secondItem="SOG-dX-A1h" secondAttribute="top" id="xce-1f-hUg"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="94" y="149.5"/>
+        </view>
+    </objects>
+</document>

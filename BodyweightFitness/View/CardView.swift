@@ -20,3 +20,28 @@ class CardView: UIView {
         layer.shadowPath = shadowPath.CGPath
     }
 }
+
+@IBDesignable
+class ProgressView: UIView {
+    @IBInspectable var cornerRadius: CGFloat = 2
+
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    
+    override func layoutSubviews() {
+        layer.cornerRadius = cornerRadius
+    }
+
+    func setCompletionRate(completionRate: CompletionRate) {
+        if (completionRate.percentage <= 10) {
+            widthConstraint.constant = 20
+        } else {
+            let percentage = completionRate.percentage * 2
+
+            if (percentage >= 250) {
+                widthConstraint.constant = 250
+            } else {
+                widthConstraint.constant = CGFloat(percentage)
+            }
+        }
+    }
+}

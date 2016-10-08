@@ -2,6 +2,14 @@ import UIKit
 
 enum Direction { case In, Out }
 
+extension UIView {
+    public func removeAllSubviews() {
+        for subview in subviews {
+            subview.removeFromSuperview()
+        }
+    }
+}
+
 extension UIColor {
     class func primaryDark() -> UIColor {
         return UIColor(red:0.00, green:0.27, blue:0.24, alpha:1.00)

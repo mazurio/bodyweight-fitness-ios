@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+            <connections>
+                <outlet property="actionButton" destination="cR0-az-v2N" id="iaB-WG-RE0"/>
+                <outlet property="mainView" destination="Kfq-Sz-1sY" id="vcw-p3-5qe"/>
+                <outlet property="topView" destination="Kfq-Sz-1sY" id="c5G-to-tfv"/>
+                <outlet property="videoView" destination="yek-lf-ijy" id="bBy-VU-jOO"/>
+                <outlet property="view" destination="iN0-l3-epB" id="RUD-XD-GnQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kfq-Sz-1sY" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                    <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="924-MA-rLu"/>
+                    </constraints>
+                </view>
+                <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="YSj-CS-QWw" userLabel="Bottom View">
+                    <rect key="frame" x="0.0" y="200" width="600" height="400"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yek-lf-ijy">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03a-uQ-Iq9" userLabel="Log Button" customClass="LogWorkoutButton" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="528" y="256" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="3m2-WE-s4D"/>
+                                <constraint firstAttribute="width" constant="60" id="RqZ-99-IP7"/>
+                            </constraints>
+                            <state key="normal" image="log">
+                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="onClickLogWorkoutAction:" destination="-1" eventType="touchUpInside" id="wPS-ua-AJC"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR0-az-v2N" userLabel="Action Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="528" y="328" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="DoJ-M6-AEG"/>
+                                <constraint firstAttribute="width" constant="60" id="Hid-jW-zWZ"/>
+                            </constraints>
+                            <state key="normal" image="plus">
+                                <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="actionButtonClicked:" destination="-1" eventType="touchUpInside" id="bPS-F9-QHP"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.019607843829999999" green="0.011764707040000001" blue="0.015686275440000001" alpha="1" colorSpace="deviceRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="yek-lf-ijy" secondAttribute="trailing" id="5mq-N8-3cy"/>
+                        <constraint firstAttribute="trailing" secondItem="03a-uQ-Iq9" secondAttribute="trailing" constant="12" id="BnK-Uk-dF1"/>
+                        <constraint firstItem="yek-lf-ijy" firstAttribute="top" secondItem="YSj-CS-QWw" secondAttribute="top" id="CQO-87-CIE"/>
+                        <constraint firstAttribute="bottom" secondItem="cR0-az-v2N" secondAttribute="bottom" constant="12" id="HMl-Li-eDF"/>
+                        <constraint firstItem="yek-lf-ijy" firstAttribute="leading" secondItem="YSj-CS-QWw" secondAttribute="leading" id="TLE-ma-dss"/>
+                        <constraint firstItem="03a-uQ-Iq9" firstAttribute="leading" secondItem="yek-lf-ijy" secondAttribute="trailing" id="YWn-Qs-J8A"/>
+                        <constraint firstAttribute="trailing" secondItem="cR0-az-v2N" secondAttribute="trailing" constant="12" id="a2g-vG-5Pk"/>
+                        <constraint firstAttribute="bottom" secondItem="yek-lf-ijy" secondAttribute="bottom" id="lUh-97-54X"/>
+                        <constraint firstItem="cR0-az-v2N" firstAttribute="top" secondItem="03a-uQ-Iq9" secondAttribute="bottom" constant="12" id="r8s-wA-qPI"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="YWn-Qs-J8A"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="YSj-CS-QWw" secondAttribute="bottom" id="8X3-Wx-LmV"/>
+                <constraint firstAttribute="trailing" secondItem="YSj-CS-QWw" secondAttribute="trailing" id="HUi-WI-Bzg"/>
+                <constraint firstItem="YSj-CS-QWw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K9r-bR-e19"/>
+                <constraint firstItem="Kfq-Sz-1sY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QZc-uZ-KrT"/>
+                <constraint firstItem="Kfq-Sz-1sY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="TVi-D2-aXA"/>
+                <constraint firstItem="YSj-CS-QWw" firstAttribute="top" secondItem="Kfq-Sz-1sY" secondAttribute="bottom" id="TXj-X3-Yg3"/>
+                <constraint firstAttribute="trailing" secondItem="Kfq-Sz-1sY" secondAttribute="trailing" id="sM4-kw-VJD"/>
+            </constraints>
+            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-137" y="-253"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="log" width="22" height="22"/>
+        <image name="plus" width="22" height="22"/>
+    </resources>
+</document>

@@ -396,7 +396,7 @@ class LogWorkoutController: UIViewController {
 
             if let sideNavigationController = self.parentController as? SideNavigationController {
                 if let navigationController = sideNavigationController.rootViewController as? UINavigationController {
-                    if let rootViewController = navigationController.viewControllers.first as? RootViewController {
+                    if let rootViewController = navigationController.viewControllers.first as? WorkoutViewController {
                         rootViewController.weightedViewController.updateLabels()
                     }
                 }

@@ -57,7 +57,7 @@ public class SideNavigationView: UIView {
             layer.frame.origin.x = value
         }
     }
-    
+
     @IBInspectable public var y: CGFloat {
         get {
             return layer.frame.origin.y
@@ -84,7 +84,7 @@ public class SideNavigationView: UIView {
             layer.frame.size.height = value
         }
     }
-    
+
     @IBInspectable public var position: CGPoint {
         get {
             return layer.position

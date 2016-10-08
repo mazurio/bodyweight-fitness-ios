@@ -8,7 +8,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     var currentIndexPath: NSIndexPath?
     
     var currentExercise: Exercise?
-    var rootViewController: RootViewController?
+    var rootViewController: WorkoutViewController?
     
     init() {
         super.init(nibName: "DashboardView", bundle: nil)
