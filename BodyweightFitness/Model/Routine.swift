@@ -100,6 +100,8 @@ class Routine {
     var routineId: String = "routine0"
     var title: String = ""
     var subtitle: String = ""
+    var shortDescription: String = ""
+    var url: String = ""
     
     var categories: NSMutableArray = []
     var sections: NSMutableArray = []
@@ -114,6 +116,8 @@ class Routine {
         self.routineId = json["routineId"].stringValue
         self.title = json["title"].stringValue
         self.subtitle = json["subtitle"].stringValue
+        self.shortDescription = json["shortDescription"].stringValue
+        self.url = json["url"].stringValue
         
         self.build(json)
     }
@@ -124,6 +128,8 @@ class Routine {
         self.routineId = json["routineId"].stringValue
         self.title = json["title"].stringValue
         self.subtitle = json["subtitle"].stringValue
+        self.shortDescription = json["shortDescription"].stringValue
+        self.url = json["url"].stringValue
         
         self.build(json, dictionary: dictionary)
     }

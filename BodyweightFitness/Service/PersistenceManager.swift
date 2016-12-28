@@ -83,9 +83,13 @@ class PersistenceManager {
         
         var fileName = ""
         var id = ""
+        
         if (routineId == "routine0") {
             fileName = "bodyweight_fitness_recommended_routine"
             id = "routine"
+        } else if (routineId == "d8a722a0-fae2-4e7e-a751-430348c659fe") {
+            fileName = "starting_stretching_flexibility_routine"
+            id = "d8a722a0-fae2-4e7e-a751-430348c659fe"
         } else {
             fileName = "molding_mobility_flexibility_routine"
             id = "e73593f4-ee17-4b9b-912a-87fa3625f63d"

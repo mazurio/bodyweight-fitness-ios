@@ -113,7 +113,7 @@ class RepositoryStream {
     }
 
     func getNumberOfWorkouts(days: Int) -> Int {
-        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", NSDate.changeDaysBy(-7), NSDate())
+        let predicate = NSPredicate(format: "startTime > %@ AND startTime < %@", NSDate.changeDaysBy(days), NSDate())
 
         return getRealm()
             .objects(RepositoryRoutine)

@@ -10,6 +10,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var last7Days: UILabel!
     @IBOutlet weak var last31Days: UILabel!
     
+    @IBOutlet weak var routineCardView: CardView!
+    @IBOutlet weak var routineTitle: UILabel!
+    @IBOutlet weak var routineShortDescription: UITextView!
+    
     init() {
         super.init(nibName: "HomeView", bundle: nil)
     }
@@ -38,6 +42,8 @@ class HomeViewController: UIViewController {
             self.renderStatisticsView()
             
             self.tabBarController?.title = it.title
+            self.routineTitle.text = it.title
+            self.routineShortDescription.text = it.shortDescription
         })
     }
 
@@ -52,7 +58,7 @@ class HomeViewController: UIViewController {
                 target: self,
                 action: #selector(routine))
 
-        self.tabBarController?.title = "Bodyweight Fitness"
+        self.tabBarController?.title = RoutineStream.sharedInstance.routine.title
     }
 
     func renderWorkoutProgressView() {
@@ -132,6 +138,10 @@ class HomeViewController: UIViewController {
             RoutineStream.sharedInstance.setRoutine("routine0")
         })
         
+        alertController.addAction(UIAlertAction(title: "Starting Stretching", style: .Default) { (action) in
+            RoutineStream.sharedInstance.setRoutine("d8a722a0-fae2-4e7e-a751-430348c659fe")
+        })
+        
         alertController.addAction(UIAlertAction(title: "Molding Mobility", style: .Default) { (action) in
             RoutineStream.sharedInstance.setRoutine("e73593f4-ee17-4b9b-912a-87fa3625f63d")
         })
@@ -145,5 +155,11 @@ class HomeViewController: UIViewController {
 
         self.tabBarController?.navigationItem.backBarButtonItem = backItem
         self.showViewController(WorkoutViewController(), sender: nil)
+    }
+    
+    @IBAction func readMore(sender: AnyObject) {
+        if let requestUrl = NSURL(string: RoutineStream.sharedInstance.routine.url) {
+            UIApplication.sharedApplication().openURL(requestUrl)
+        }
     }
 }

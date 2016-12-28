@@ -286,10 +286,19 @@ class WorkoutViewController: UIViewController {
                                     
                                     alertController.addAction(
                                         UIAlertAction(title: title, style: .Default) { (action) in
+                                            let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+                                            let currentExerciseId = currentSection.currentExercise?.exerciseId
+                                            let exerciseId = exercise.exerciseId
+                                            
+                                            let realm = RepositoryStream.sharedInstance.getRealm()
+                                            
+                                            try! realm.write {
+                                                repositoryRoutine.exercises.filter { $0.exerciseId == currentExerciseId }.first?.visible = false
+                                                repositoryRoutine.exercises.filter { $0.exerciseId == exerciseId }.first?.visible = true
+                                            }
+                                            
                                             RoutineStream.sharedInstance.routine.setProgression(exercise)
-                                            
                                             self.changeExercise(exercise)
-                                            
                                             PersistenceManager.storeRoutine(RoutineStream.sharedInstance.routine)
                                         }
                                     )
