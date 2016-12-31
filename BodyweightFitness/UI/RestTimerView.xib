@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimedViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RestTimerViewController" customModule="Bodyweight_Fitness" customModuleProvider="target">
             <connections>
                 <outlet property="nextButton" destination="n9u-zu-AZQ" id="UfG-CB-Fgh"/>
                 <outlet property="previousButton" destination="cRs-Vv-tAj" id="tkR-V6-hvy"/>
@@ -38,7 +38,7 @@
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="nextButtonClicked:" destination="-1" eventType="touchUpInside" id="t5w-Vw-J5Q"/>
+                                <action selector="nextButtonClicked:" destination="-1" eventType="touchUpInside" id="I8Y-Ql-JHp"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRs-Vv-tAj" userLabel="Left Button">
@@ -52,11 +52,11 @@
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
-                                <action selector="previousButtonClicked:" destination="-1" eventType="touchUpInside" id="czl-aR-DAo"/>
+                                <action selector="previousButtonClicked:" destination="-1" eventType="touchUpInside" id="nd1-tu-8I0"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1VB-yT-mcq" userLabel="Timer Minutes Button">
-                            <rect key="frame" x="215" y="8" width="85" height="110"/>
+                            <rect key="frame" x="215" y="38" width="85" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="85" id="pIy-7N-xip"/>
                             </constraints>
@@ -66,9 +66,6 @@
                                 <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <connections>
-                                <action selector="timerButton:" destination="-1" eventType="touchUpInside" id="XN2-FZ-Xrg"/>
-                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hw4-ku-WQk" userLabel="Play Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
                             <rect key="frame" x="270" y="126" width="60" height="60"/>
@@ -78,7 +75,7 @@
                                 <constraint firstAttribute="height" constant="60" id="y8g-yH-Eeq"/>
                             </constraints>
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" image="play"/>
+                            <state key="normal" image="pause"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="30"/>
@@ -88,69 +85,19 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>
-                                <action selector="playButton:" destination="-1" eventType="touchUpInside" id="ydC-nY-I0g"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6q-At-9iv" userLabel="Restart Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="338" y="133.5" width="45" height="45"/>
-                            <color key="backgroundColor" red="0.0" green="0.27058823529411763" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="45" id="V0q-LQ-bxA"/>
-                                <constraint firstAttribute="width" constant="45" id="Vjj-3D-eZC"/>
-                            </constraints>
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" image="restart">
-                                <color key="titleColor" red="0.039672236889600754" green="0.2115483283996582" blue="0.18531444668769836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="23"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" red="0.0" green="0.27058823529999998" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="restartButton:" destination="-1" eventType="touchUpInside" id="WB4-ZK-bgX"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fs7-HS-adP" userLabel="Plus Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
-                            <rect key="frame" x="217" y="133.5" width="45" height="45"/>
-                            <color key="backgroundColor" red="0.0" green="0.27058823529411763" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="45" id="Ac8-Aj-sDr"/>
-                                <constraint firstAttribute="height" constant="45" id="JoT-ZG-aZ2"/>
-                            </constraints>
-                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <state key="normal" image="plus">
-                                <color key="titleColor" red="0.039672236889600754" green="0.2115483283996582" blue="0.18531444668769836" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <state key="selected">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="23"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" red="0.0" green="0.27058823529999998" blue="0.23921568630000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="increaseButton:" destination="-1" eventType="touchUpInside" id="Y8w-Xb-T7X"/>
+                                <action selector="stopButtonClicked:" destination="-1" eventType="touchUpInside" id="3Ij-rZ-AQB"/>
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpD-xo-7BY">
-                            <rect key="frame" x="300" y="8" width="0.0" height="110"/>
+                            <rect key="frame" x="300" y="38" width="0.0" height="80"/>
                             <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="110" id="1cL-tf-Alf"/>
+                                <constraint firstAttribute="height" constant="80" id="1cL-tf-Alf"/>
                                 <constraint firstAttribute="width" id="nBg-z7-7Qp"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WR2-Zg-PPc" userLabel="Timer Seconds Button">
-                            <rect key="frame" x="300" y="8" width="85" height="110"/>
+                            <rect key="frame" x="300" y="38" width="85" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="85" id="odJ-OU-Ogk"/>
                             </constraints>
@@ -159,33 +106,38 @@
                             <state key="normal" title="00">
                                 <color key="titleColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
-                            <connections>
-                                <action selector="timerButton:" destination="-1" eventType="touchUpInside" id="liQ-mz-2Mf"/>
-                            </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWD-8h-V76" userLabel="Rest">
+                            <rect key="frame" x="208" y="16" width="185" height="20"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20" id="TTV-Mg-0aK"/>
+                                <constraint firstAttribute="width" constant="185" id="YXN-DC-1dx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="tpD-xo-7BY" firstAttribute="leading" secondItem="1VB-yT-mcq" secondAttribute="trailing" id="16z-Or-eb5"/>
+                        <constraint firstItem="vWD-8h-V76" firstAttribute="top" secondItem="tpD-xo-7BY" secondAttribute="top" constant="-22" id="2On-Vf-mKi"/>
                         <constraint firstItem="hw4-ku-WQk" firstAttribute="top" secondItem="tpD-xo-7BY" secondAttribute="bottom" constant="8" id="DXV-8S-99S"/>
-                        <constraint firstItem="hw4-ku-WQk" firstAttribute="leading" secondItem="Fs7-HS-adP" secondAttribute="trailing" constant="8" id="F2b-bP-eEX"/>
                         <constraint firstItem="1VB-yT-mcq" firstAttribute="centerY" secondItem="tpD-xo-7BY" secondAttribute="centerY" id="ISv-hO-TrZ"/>
-                        <constraint firstItem="c6q-At-9iv" firstAttribute="leading" secondItem="hw4-ku-WQk" secondAttribute="trailing" constant="8" id="JNR-5M-OGe"/>
-                        <constraint firstItem="Fs7-HS-adP" firstAttribute="centerY" secondItem="hw4-ku-WQk" secondAttribute="centerY" id="LbV-Rw-WfA"/>
                         <constraint firstItem="WR2-Zg-PPc" firstAttribute="height" secondItem="tpD-xo-7BY" secondAttribute="height" id="M05-7g-Gch"/>
                         <constraint firstItem="1VB-yT-mcq" firstAttribute="height" secondItem="tpD-xo-7BY" secondAttribute="height" id="Osm-dp-ti9"/>
+                        <constraint firstItem="vWD-8h-V76" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" constant="16" id="Qao-Q3-yZF"/>
                         <constraint firstItem="cRs-Vv-tAj" firstAttribute="leading" secondItem="sfc-Xd-dVc" secondAttribute="leadingMargin" constant="8" id="Swo-p2-PZz"/>
                         <constraint firstItem="cRs-Vv-tAj" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" id="e0j-qp-lG7"/>
-                        <constraint firstItem="tpD-xo-7BY" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" constant="8" id="e0t-Oj-ia4"/>
                         <constraint firstAttribute="bottom" secondItem="n9u-zu-AZQ" secondAttribute="bottom" id="nmS-Qu-bAV"/>
                         <constraint firstItem="n9u-zu-AZQ" firstAttribute="top" secondItem="sfc-Xd-dVc" secondAttribute="top" id="o5e-wV-Zo1"/>
-                        <constraint firstItem="c6q-At-9iv" firstAttribute="centerY" secondItem="hw4-ku-WQk" secondAttribute="centerY" id="p0Y-j4-qsn"/>
                         <constraint firstAttribute="bottom" secondItem="cRs-Vv-tAj" secondAttribute="bottom" id="qBd-xr-3ZV"/>
                         <constraint firstAttribute="centerX" secondItem="hw4-ku-WQk" secondAttribute="centerX" id="qX4-nE-GZ8"/>
                         <constraint firstItem="WR2-Zg-PPc" firstAttribute="centerY" secondItem="tpD-xo-7BY" secondAttribute="centerY" id="rBh-hR-MRa"/>
                         <constraint firstItem="tpD-xo-7BY" firstAttribute="centerX" secondItem="sfc-Xd-dVc" secondAttribute="centerX" id="rHa-fh-l3b"/>
                         <constraint firstItem="WR2-Zg-PPc" firstAttribute="leading" secondItem="tpD-xo-7BY" secondAttribute="trailing" id="vxu-EZ-8xa"/>
                         <constraint firstAttribute="trailingMargin" secondItem="n9u-zu-AZQ" secondAttribute="trailing" constant="8" id="w4W-Ll-0Gd"/>
+                        <constraint firstItem="vWD-8h-V76" firstAttribute="centerX" secondItem="sfc-Xd-dVc" secondAttribute="centerX" id="ycE-02-Uhp"/>
                     </constraints>
                 </view>
             </subviews>
@@ -202,9 +154,7 @@
     </objects>
     <resources>
         <image name="next" width="33" height="33"/>
-        <image name="play" width="33" height="33"/>
-        <image name="plus" width="22" height="22"/>
+        <image name="pause" width="33" height="33"/>
         <image name="previous" width="33" height="33"/>
-        <image name="restart" width="22" height="22"/>
     </resources>
 </document>

@@ -76,6 +76,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if(defaults.objectForKey("playAudioWhenTimerStops") == nil) {
             defaults.setBool(true, forKey: "playAudioWhenTimerStops")
         }
+        
+        if(defaults.objectForKey("showRestTimer") == nil) {
+            defaults.setBool(true, forKey: "showRestTimer")
+        }
+        
+        if(defaults.objectForKey("showRestTimerAfterWarmup") == nil) {
+            defaults.setBool(false, forKey: "showRestTimerAfterWarmup")
+        }
+        
+        if(defaults.objectForKey("showRestTimerAfterBodylineDrills") == nil) {
+            defaults.setBool(true, forKey: "showRestTimerAfterBodylineDrills")
+        }
+        
+        if(defaults.objectForKey("showRestTimerAfterFlexibilityExercises") == nil) {
+            defaults.setBool(false, forKey: "showRestTimerAfterFlexibilityExercises")
+        }
     }
     
     func migrateSchemaIfNeeded() {

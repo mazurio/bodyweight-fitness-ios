@@ -42,6 +42,8 @@
 		732CDDF11D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */; };
 		732CDDF21D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDED1D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 */; };
 		732CDDF31D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEE1D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 */; };
+		73374A8E1E167A6300EBC47B /* RestTimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73374A8D1E167A6300EBC47B /* RestTimerViewController.swift */; };
+		73374A901E167AEF00EBC47B /* RestTimerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73374A8F1E167AEF00EBC47B /* RestTimerView.xib */; };
 		734132E51E130FAE00BAEFD2 /* starting_stretching_flexibility_routine.json in Resources */ = {isa = PBXBuildFile; fileRef = 734132E41E130FAE00BAEFD2 /* starting_stretching_flexibility_routine.json */; };
 		734132FA1E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_intermediate.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 734132E71E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_intermediate.mp4 */; };
 		734132FB1E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_beginner.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 734132E81E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_beginner.mp4 */; };
@@ -259,6 +261,8 @@
 		732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_one_leg_foot_supported_l_sit.mp4; sourceTree = "<group>"; };
 		732CDDED1D84485D004C6607 /* bodyweight_fitness_tuck_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_tuck_l_sit.mp4; sourceTree = "<group>"; };
 		732CDDEE1D84485D004C6607 /* bodyweight_fitness_wrist_mobility.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_wrist_mobility.mp4; sourceTree = "<group>"; };
+		73374A8D1E167A6300EBC47B /* RestTimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestTimerViewController.swift; sourceTree = "<group>"; };
+		73374A8F1E167AEF00EBC47B /* RestTimerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestTimerView.xib; sourceTree = "<group>"; };
 		734132E41E130FAE00BAEFD2 /* starting_stretching_flexibility_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = starting_stretching_flexibility_routine.json; sourceTree = "<group>"; };
 		734132E71E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_intermediate.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = starting_stretching_underarm_shoulder_stretch_intermediate.mp4; sourceTree = "<group>"; };
 		734132E81E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_beginner.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = starting_stretching_underarm_shoulder_stretch_beginner.mp4; sourceTree = "<group>"; };
@@ -638,6 +642,7 @@
 				732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */,
 				7329B68D1D0D84E4005F5F74 /* HomeView.xib */,
 				738B96CC1D763319009A8625 /* HomeBarView.xib */,
+				73374A8F1E167AEF00EBC47B /* RestTimerView.xib */,
 				73BADE161CC3E2F9001ACEDC /* TimedView.xib */,
 				73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */,
 				73BF3BA81CBE643200E0258D /* SettingsView.xib */,
@@ -659,6 +664,7 @@
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				7366D8D01C4EE9CC00819790 /* ProgressViewController.swift */,
 				7329B68B1D0D8476005F5F74 /* HomeViewController.swift */,
+				73374A8D1E167A6300EBC47B /* RestTimerViewController.swift */,
 				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
 				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 				E0F587381B52730000540104 /* SettingsViewController.swift */,
@@ -960,6 +966,7 @@
 				734132E51E130FAE00BAEFD2 /* starting_stretching_flexibility_routine.json in Resources */,
 				732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */,
 				738B96821D760F66009A8625 /* bodyweight_fitness_l_sit_pullup.mp4 in Resources */,
+				73374A901E167AEF00EBC47B /* RestTimerView.xib in Resources */,
 				735BEA0A1CBD1F38003616C5 /* SideViewHeaderCell.xib in Resources */,
 				738B969D1D760F66009A8625 /* bodyweight_fitness_wall_pushup.mp4 in Resources */,
 				738B96A51D760F66009A8625 /* molding_mobility_circular_shrugs.mp4 in Resources */,
@@ -1063,6 +1070,7 @@
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
 				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */,
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
+				73374A8E1E167A6300EBC47B /* RestTimerViewController.swift in Sources */,
 				734B700B1C4BF7E900CFB6BD /* RepositorySection.swift in Sources */,
 				73AA28F11CB7ABC300DEED79 /* DashboardSectionCell.swift in Sources */,
 				7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */,

@@ -65,6 +65,10 @@ class WeightedViewController: UIViewController {
         }
     }
     
+    func showRestTimer() {
+        self.rootViewController?.restTimerShouldStart()
+    }
+    
     func showNotification(set: Int, reps: Int) {
         let notification = CWStatusBarNotification()
         
@@ -161,7 +165,8 @@ class WeightedViewController: UIViewController {
                         if (sets.count == 1 && sets[0].reps == 0) {
                             sets[0].reps = self.numberOfReps
                             
-                            showNotification(1, reps: self.numberOfReps)
+                            self.showNotification(1, reps: self.numberOfReps)
+                            self.showRestTimer()
                         } else if (sets.count >= 1 && sets.count < 9) {
                             let repositorySet = RepositorySet()
                             
@@ -177,6 +182,7 @@ class WeightedViewController: UIViewController {
                         realm.add(repositoryRoutine, update: true)
                         
                         self.showNotification(sets.count, reps: self.numberOfReps)
+                        self.showRestTimer()
                     }
 
                     RoutineStream.sharedInstance.setRepository()

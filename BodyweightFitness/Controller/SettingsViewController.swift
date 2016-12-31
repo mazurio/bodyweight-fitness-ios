@@ -66,6 +66,48 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         self.tabBarController?.title = "Settings"
     }
 
+    func showRestTimer(sender: UISwitch) {
+        if sender.on {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(true, forKey: "showRestTimer")
+        } else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(false, forKey: "showRestTimer")
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    func showRestTimerAfterWarmup(sender: UISwitch) {
+        if sender.on {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(true, forKey: "showRestTimerAfterWarmup")
+        } else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(false, forKey: "showRestTimerAfterWarmup")
+        }
+    }
+    
+    func showRestTimerAfterBodylineDrills(sender: UISwitch) {
+        if sender.on {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(true, forKey: "showRestTimerAfterBodylineDrills")
+        } else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(false, forKey: "showRestTimerAfterBodylineDrills")
+        }
+    }
+    
+    func showRestTimerAfterFlexibilityExercises(sender: UISwitch) {
+        if sender.on {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(true, forKey: "showRestTimerAfterFlexibilityExercises")
+        } else {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setBool(false, forKey: "showRestTimerAfterFlexibilityExercises")
+        }
+    }
+    
     func playAudioWhenTimerStops(sender: UISwitch) {
         if sender.on {
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -90,11 +132,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 6
+        return 7
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 4) {
+        if (section == 1) {
+            return 5
+        }
+        if (section == 5) {
             return 2
         }
         
@@ -106,14 +151,16 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         case 0:
             return "General"
         case 1:
-            return "Weight Measurement"
+            return "Rest Timer"
         case 2:
-            return "Developed by"
+            return "Weight Measurement"
         case 3:
-            return "Credits"
+            return "Developed by"
         case 4:
-            return "About"
+            return "Credits"
         case 5:
+            return "About"
+        case 6:
             return "Version"
         default:
             return nil
@@ -126,6 +173,10 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         return nil
+    }
+    
+    func restTimerEnabled() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey("showRestTimer")
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -151,6 +202,124 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsToggleCell", forIndexPath: indexPath) as! SettingsToggleCell
+                let toggle = UISwitch()
+                
+                cell.textLabel?.text = "Show rest timer"
+                cell.detailTextLabel?.text = "Shows rest timer after logging any exercise"
+                    
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if (defaults.objectForKey("showRestTimer") != nil) {
+                    toggle.on = defaults.boolForKey("showRestTimer")
+                }
+                
+                toggle.addTarget(self, action: #selector(showRestTimer), forControlEvents: UIControlEvents.ValueChanged)
+                
+                cell.accessoryView = toggle
+                
+                return cell
+            }
+            
+            if indexPath.row == 1 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
+                
+                cell.textLabel?.text = "Default Rest Time"
+                
+                if (!restTimerEnabled()) {
+                    cell.userInteractionEnabled = false
+                    cell.contentView.alpha = 0.5
+                } else {
+                    cell.userInteractionEnabled = true
+                    cell.contentView.alpha = 1.0
+                }
+                
+                return cell
+            }
+            
+            if indexPath.row == 2 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsToggleCell", forIndexPath: indexPath) as! SettingsToggleCell
+                let toggle = UISwitch()
+                
+                cell.textLabel?.text = "Show rest timer after Warmup"
+                cell.detailTextLabel?.text = "Bodyweight Fitness - Warmup"
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if (defaults.objectForKey("showRestTimerAfterWarmup") != nil) {
+                    toggle.on = defaults.boolForKey("showRestTimerAfterWarmup")
+                }
+                
+                toggle.addTarget(self, action: #selector(showRestTimerAfterWarmup), forControlEvents: UIControlEvents.ValueChanged)
+                
+                cell.accessoryView = toggle
+                
+                if (!restTimerEnabled()) {
+                    cell.userInteractionEnabled = false
+                    cell.contentView.alpha = 0.5
+                } else {
+                    cell.userInteractionEnabled = true
+                    cell.contentView.alpha = 1.0
+                }
+                
+                return cell
+            }
+            
+            if indexPath.row == 3 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsToggleCell", forIndexPath: indexPath) as! SettingsToggleCell
+                let toggle = UISwitch()
+                
+                cell.textLabel?.text = "Show rest timer after Bodyline Drills"
+                cell.detailTextLabel?.text = "Bodyweight Fitness - Bodyline Drills"
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if (defaults.objectForKey("showRestTimerAfterBodylineDrills") != nil) {
+                    toggle.on = defaults.boolForKey("showRestTimerAfterBodylineDrills")
+                }
+                
+                toggle.addTarget(self, action: #selector(showRestTimerAfterBodylineDrills), forControlEvents: UIControlEvents.ValueChanged)
+                
+                cell.accessoryView = toggle
+                
+                if (!restTimerEnabled()) {
+                    cell.userInteractionEnabled = false
+                    cell.contentView.alpha = 0.5
+                } else {
+                    cell.userInteractionEnabled = true
+                    cell.contentView.alpha = 1.0
+                }
+                
+                return cell
+            }
+            
+            if indexPath.row == 4 {
+                let cell = tableView.dequeueReusableCellWithIdentifier("SettingsToggleCell", forIndexPath: indexPath) as! SettingsToggleCell
+                let toggle = UISwitch()
+                
+                cell.textLabel?.text = "Show rest timer after Flexibility Exercises"
+                cell.detailTextLabel?.text = "Starting Stretching and Molding Mobility"
+                
+                let defaults = NSUserDefaults.standardUserDefaults()
+                if (defaults.objectForKey("showRestTimerAfterFlexibilityExercises") != nil) {
+                    toggle.on = defaults.boolForKey("showRestTimerAfterFlexibilityExercises")
+                }
+                
+                toggle.addTarget(self, action: #selector(showRestTimerAfterFlexibilityExercises), forControlEvents: UIControlEvents.ValueChanged)
+                
+                cell.accessoryView = toggle
+                
+                if (!restTimerEnabled()) {
+                    cell.userInteractionEnabled = false
+                    cell.contentView.alpha = 0.5
+                } else {
+                    cell.userInteractionEnabled = true
+                    cell.contentView.alpha = 1.0
+                }
+                
+                return cell
+            }
+        }
+        
+        if indexPath.section == 2 {
             let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
             
             if PersistenceManager.getWeightUnit() == "lbs" {
@@ -162,7 +331,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
         
-        if indexPath.section == 2 {
+        if indexPath.section == 3 {
             let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionSubtitleCell", forIndexPath: indexPath) as UITableViewCell!
             
             cell.textLabel?.text = "Damian Mazurkiewicz"
@@ -171,7 +340,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             return cell
         }
 
-        if indexPath.section == 3 {
+        if indexPath.section == 4 {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionSubtitleCell", forIndexPath: indexPath) as UITableViewCell!
 
@@ -182,7 +351,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
         
-        if indexPath.section == 4 {
+        if indexPath.section == 5 {
             if indexPath.row == 0 {
                 let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
                 
@@ -215,7 +384,62 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 1 && indexPath.row == 0 {
+        if indexPath.section == 1 && indexPath.row == 1 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
+            
+            let alertController = UIAlertController(
+                title: nil,
+                message: nil,
+                preferredStyle: .ActionSheet)
+            
+            alertController.modalPresentationStyle = .Popover
+            
+            if let presenter = alertController.popoverPresentationController {
+                presenter.sourceView = cell;
+                presenter.sourceRect = cell.bounds;
+            }
+            
+            alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            
+            alertController.addAction(UIAlertAction(title: "30 Seconds", style: .Default) { (action) in
+                PersistenceManager.setRestTime(30)
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.reloadData()
+            })
+            
+            alertController.addAction(UIAlertAction(title: "1 Minute", style: .Default) { (action) in
+                PersistenceManager.setRestTime(60)
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.reloadData()
+            })
+            
+            alertController.addAction(UIAlertAction(title: "1 Minute 30 Seconds", style: .Default) { (action) in
+                PersistenceManager.setRestTime(90)
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.reloadData()
+            })
+            
+            alertController.addAction(UIAlertAction(title: "2 Minutes", style: .Default) { (action) in
+                PersistenceManager.setRestTime(120)
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.reloadData()
+            })
+            
+            alertController.addAction(UIAlertAction(title: "2 Minutes 30 Seconds", style: .Default) { (action) in
+                PersistenceManager.setRestTime(150)
+                
+                self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.tableView.reloadData()
+            })
+            
+            self.presentViewController(alertController, animated: true, completion: nil)
+        }
+        
+        if indexPath.section == 2 && indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("SettingsActionCell", forIndexPath: indexPath) as UITableViewCell!
             
             if PersistenceManager.getWeightUnit() == "lbs" {
@@ -237,12 +461,14 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             
             alertController.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            
             alertController.addAction(UIAlertAction(title: "Kilograms (kg)", style: .Default) { (action) in
                 PersistenceManager.setWeightUnit("kg")
                 
                 self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
                 self.tableView.reloadData()
             })
+            
             alertController.addAction(UIAlertAction(title: "Pounds (lbs)", style: .Default) { (action) in
                 PersistenceManager.setWeightUnit("lbs")
                 
@@ -253,7 +479,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             self.presentViewController(alertController, animated: true, completion: nil)
         }
 
-        if indexPath.section == 2 {
+        if indexPath.section == 3 {
             if indexPath.row == 0 {
                 if let requestUrl = NSURL(string: "https://www.github.com/mazurio") {
                     UIApplication.sharedApplication().openURL(requestUrl)
@@ -263,7 +489,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
 
-        if indexPath.section == 3 {
+        if indexPath.section == 4 {
             if indexPath.row == 0 {
                 if let requestUrl = NSURL(string: "http://dantuma.co.za") {
                     UIApplication.sharedApplication().openURL(requestUrl)
@@ -273,7 +499,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
             }
         }
 
-        if indexPath.section == 4 {
+        if indexPath.section == 5 {
             if indexPath.row == 0 {
                 self.openStoreProductWithiTunesItemIdentifier("1018863605")
                 

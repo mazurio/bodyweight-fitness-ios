@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,8 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HLY-Tk-1Nz" userLabel="Top View">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="Next Exercise" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nrq-X3-cBE" userLabel="Right Button">
+                            <rect key="frame" x="539" y="0.0" width="45" height="200"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="bd7-Uj-9iJ"/>
                             </constraints>
@@ -37,6 +42,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBN-v0-px6" userLabel="Left Button">
+                            <rect key="frame" x="16" y="0.0" width="45" height="200"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="2qY-hp-efL"/>
                             </constraints>
@@ -50,6 +56,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g1Z-fA-buL" userLabel="Plus Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="338" y="133.5" width="45" height="45"/>
                             <color key="backgroundColor" red="0.0" green="0.27058823529411763" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="oOk-Jt-CXu"/>
@@ -75,6 +82,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNb-eu-Yms" userLabel="Log Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="270" y="126" width="60" height="60"/>
                             <color key="backgroundColor" red="0.0" green="0.27058823529411763" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="frD-5l-e8g"/>
@@ -98,6 +106,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIF-OF-qab" userLabel="Minus Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                            <rect key="frame" x="217" y="133.5" width="45" height="45"/>
                             <color key="backgroundColor" red="0.0" green="0.27058823529411763" blue="0.24313725490196078" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="45" id="Dcb-EM-o6R"/>
@@ -121,6 +130,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAT-ar-fa3" userLabel="Reps Counter">
+                            <rect key="frame" x="207.5" y="38" width="185" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="JcM-0t-KXS"/>
                                 <constraint firstAttribute="width" constant="185" id="NSL-gB-zrE"/>
@@ -138,6 +148,7 @@
                             </variation>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NVY-Vz-yrZ">
+                            <rect key="frame" x="207.5" y="18" width="185" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="gwn-gN-NNg"/>
                             </constraints>

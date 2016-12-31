@@ -4,6 +4,24 @@ public extension String {
     var NS: NSString { return (self as NSString) }
 }
 
+class UserDefaults {
+    func showRestTimer() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey("showRestTimer")
+    }
+    
+    func showRestTimerAfterWarmup() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey("showRestTimerAfterWarmup")
+    }
+    
+    func showRestTimerAfterBodylineDrills() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey("showRestTimerAfterBodylineDrills")
+    }
+    
+    func showRestTimerAfterFlexibilityExercises() -> Bool {
+        return NSUserDefaults.standardUserDefaults().boolForKey("showRestTimerAfterFlexibilityExercises")
+    }
+}
+
 class PersistenceManager {
     class func getWeightUnit() -> String {
         let fileManager = NSFileManager.defaultManager()
@@ -26,6 +44,29 @@ class PersistenceManager {
         let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("weightUnit.archive")
         
         NSKeyedArchiver.archiveRootObject(weightUnit, toFile: dataFilePath)
+    }
+    
+    class func getRestTime() -> Int {
+        let fileManager = NSFileManager.defaultManager()
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("restTime.archive")
+        
+        if(fileManager.fileExistsAtPath(dataFilePath)) {
+            if let restTime = NSKeyedUnarchiver.unarchiveObjectWithFile(dataFilePath) as? Int {
+                return restTime
+            }
+        }
+        
+        return 60
+    }
+    
+    class func setRestTime(restTime: Int) {
+        let directoryPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
+        let documentsDirectory = directoryPath[0]
+        let dataFilePath = documentsDirectory.NS.stringByAppendingPathComponent("restTime.archive")
+        
+        NSKeyedArchiver.archiveRootObject(restTime, toFile: dataFilePath)
     }
     
     class func getNumberOfReps(id: String) -> Int {

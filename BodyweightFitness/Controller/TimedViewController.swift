@@ -157,7 +157,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                         if (sets.count == 1 && sets[0].seconds == 0) {
                             sets[0].seconds = loggedSeconds
 
-                            showNotification(loggedSeconds)
+                            self.showNotification(loggedSeconds)
+                            self.showRestTimer()
                         } else if (sets.count >= 1 && sets.count < 9) {
                             let repositorySet = RepositorySet()
                             
@@ -169,7 +170,8 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
                             
                             repositoryRoutine.lastUpdatedTime = NSDate()
                             
-                            showNotification(loggedSeconds)
+                            self.showNotification(loggedSeconds)
+                            self.showRestTimer()
                         }
                         
                         realm.add(repositoryRoutine, update: true)
@@ -208,6 +210,10 @@ class TimedViewController: UIViewController, AVAudioPlayerDelegate {
         } catch {
             print("AVAudioSession errors.")
         }
+    }
+    
+    func showRestTimer() {
+        self.rootViewController?.restTimerShouldStart()
     }
     
     func showNotification(seconds: Int) {
