@@ -147,7 +147,6 @@
 		738B96B61D760F66009A8625 /* bodyweight_fitness_reverse_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96731D760F66009A8625 /* bodyweight_fitness_reverse_plank.mp4 */; };
 		738B96B71D760F66009A8625 /* bodyweight_fitness_scapular_shrugs.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96741D760F66009A8625 /* bodyweight_fitness_scapular_shrugs.mp4 */; };
 		738B96B81D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96751D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 */; };
-		738B96B91D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 738B96761D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 */; };
 		738B96BD1D761192009A8625 /* molding_mobility_flexibility_routine.json in Resources */ = {isa = PBXBuildFile; fileRef = 738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */; };
 		738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738B96CC1D763319009A8625 /* HomeBarView.xib */; };
 		738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CE1D76337C009A8625 /* HomeBarView.swift */; };
@@ -181,6 +180,8 @@
 		73BFEBC41CBBFA3900B9DDAE /* SupportDeveloperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BFEBC31CBBFA3900B9DDAE /* SupportDeveloperView.xib */; };
 		73C8E4AF1C5A1D30005E0248 /* ProgressGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */; };
 		73D508D61DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */; };
+		73E8F4551E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73E8F4531E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 */; };
+		73E8F4561E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
 		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
 		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
@@ -361,7 +362,6 @@
 		738B96731D760F66009A8625 /* bodyweight_fitness_reverse_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_reverse_plank.mp4; sourceTree = "<group>"; };
 		738B96741D760F66009A8625 /* bodyweight_fitness_scapular_shrugs.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_scapular_shrugs.mp4; sourceTree = "<group>"; };
 		738B96751D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_shoulder_rolls.mp4; sourceTree = "<group>"; };
-		738B96761D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_side_plank.mp4; sourceTree = "<group>"; };
 		738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = molding_mobility_flexibility_routine.json; sourceTree = "<group>"; };
 		738B96C41D761BB1009A8625 /* RxBlocking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxBlocking.framework; path = Carthage/Build/iOS/RxBlocking.framework; sourceTree = "<group>"; };
 		738B96C51D761BB1009A8625 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -403,6 +403,8 @@
 		73C8E4AE1C5A1D30005E0248 /* ProgressGeneralViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressGeneralViewController.swift; sourceTree = "<group>"; };
 		73D2BCEC1C3C6D6600CE6C00 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
 		73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement.mp4; sourceTree = "<group>"; };
+		73E8F4531E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_left_side_plank.mp4; sourceTree = "<group>"; };
+		73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_right_side_plank.mp4; sourceTree = "<group>"; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = "<group>"; };
 		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -550,6 +552,8 @@
 		738B96BA1D760F92009A8625 /* Bodyweight Fitness - Recommended Routine */ = {
 			isa = PBXGroup;
 			children = (
+				73E8F4531E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 */,
+				73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */,
 				732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */,
 				732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */,
 				732CDDEC1D84485D004C6607 /* bodyweight_fitness_one_leg_foot_supported_l_sit.mp4 */,
@@ -562,7 +566,6 @@
 				738B96731D760F66009A8625 /* bodyweight_fitness_reverse_plank.mp4 */,
 				738B96741D760F66009A8625 /* bodyweight_fitness_scapular_shrugs.mp4 */,
 				738B96751D760F66009A8625 /* bodyweight_fitness_shoulder_rolls.mp4 */,
-				738B96761D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 */,
 				738B96501D760F66009A8625 /* bodyweight_fitness_squat_jumps.mp4 */,
 				738B96521D760F66009A8625 /* bodyweight_fitness_stomach_to_wall_handstand.mp4 */,
 				738B96541D760F66009A8625 /* bodyweight_fitness_straight_arm_overhead_pull_downs.mp4 */,
@@ -877,6 +880,7 @@
 				738B96AE1D760F66009A8625 /* molding_mobility_side_bends.mp4 in Resources */,
 				732BA0471C5EBB9900C1CDB5 /* WorkoutLogSectionCell.xib in Resources */,
 				73D508D61DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 in Resources */,
+				73E8F4561E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 in Resources */,
 				734133021E130FE900BAEFD2 /* starting_stretching_rear_hand_clasp_beginner.mp4 in Resources */,
 				738B96811D760F66009A8625 /* bodyweight_fitness_incline_row.mp4 in Resources */,
 				732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */,
@@ -937,13 +941,13 @@
 				738B96B21D760F66009A8625 /* bodyweight_fitness_arch.mp4 in Resources */,
 				73BF3BB31CBE819B00E0258D /* SettingsActionSubtitleCell.xib in Resources */,
 				734133031E130FE900BAEFD2 /* starting_stretching_lying_twist_intermediate.mp4 in Resources */,
+				73E8F4551E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 in Resources */,
 				73BF3BBF1CBF02D200E0258D /* Window.xib in Resources */,
 				732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */,
 				738B96B11D760F66009A8625 /* molding_mobility_wrist_circles.mp4 in Resources */,
 				734132FC1E130FE900BAEFD2 /* starting_stretching_underarm_shoulder_stretch_advanced.mp4 in Resources */,
 				7341330B1E130FE900BAEFD2 /* starting_stretching_butterfly_intermediate.mp4 in Resources */,
 				738B96801D760F66009A8625 /* bodyweight_fitness_incline_pushup.mp4 in Resources */,
-				738B96B91D760F66009A8625 /* bodyweight_fitness_side_plank.mp4 in Resources */,
 				738B96B41D760F66009A8625 /* bodyweight_fitness_hollow_hold.mp4 in Resources */,
 				734133051E130FE900BAEFD2 /* starting_stretching_kneeling_lunge_intermediate.mp4 in Resources */,
 				738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */,
