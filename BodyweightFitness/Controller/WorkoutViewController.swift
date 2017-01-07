@@ -32,6 +32,8 @@ class WorkoutViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        _ = try? AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryAmbient)
+        
         self.restTimerViewController.rootViewController = self
         self.timedViewController.rootViewController = self
         self.weightedViewController.rootViewController = self
