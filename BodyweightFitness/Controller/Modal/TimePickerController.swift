@@ -8,11 +8,11 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
     var seconds: Int = 15
     
     init() {
-        super.init(nibName: "TimePickerModalView", bundle: NSBundle.mainBundle())
+        super.init(nibName: "TimePickerModalView", bundle: Bundle.main)
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(nibName: "TimePickerModalView", bundle: NSBundle.mainBundle())
+        super.init(nibName: "TimePickerModalView", bundle: Bundle.main)
     }
     
     override func viewDidLoad() {
@@ -25,11 +25,11 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         self.timePickerView.selectRow(seconds, inComponent: 1, animated: true)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 2
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 0) {
             return 16
         } else {
@@ -37,7 +37,7 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if(component == 0) {
             return String(row)
         } else {
@@ -45,7 +45,7 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         }
     }
     
-    func setDefaultTimer(let seconds: Int) {
+    func setDefaultTimer(_ seconds: Int) {
         if(seconds <= 5) {
             (_, self.minutes, self.seconds) = secondsToHoursMinutesSeconds(5)
         }
@@ -53,13 +53,13 @@ class TimePickerController: UIViewController, UIPickerViewDataSource, UIPickerVi
         (_, self.minutes, self.seconds) = secondsToHoursMinutesSeconds(seconds)
     }
     
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+    func secondsToHoursMinutesSeconds (_ seconds : Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
     func getTotalSeconds() -> Int {
-        let minutes = self.timePickerView.selectedRowInComponent(0)
-        let seconds = self.timePickerView.selectedRowInComponent(1)
+        let minutes = self.timePickerView.selectedRow(inComponent: 0)
+        let seconds = self.timePickerView.selectedRow(inComponent: 1)
         
         var totalSeconds = (minutes * 60) + seconds
         

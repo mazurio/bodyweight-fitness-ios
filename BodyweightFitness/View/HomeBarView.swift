@@ -19,19 +19,19 @@ import UIKit
         self.commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         view = loadViewFromNib()
         
         view.frame = bounds
-        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         
         addSubview(view)
     }
     
     func loadViewFromNib() -> UIView {
-        let bundle = NSBundle(forClass: self.dynamicType)
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: "HomeBarView", bundle: bundle)
-        let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        let view = nib.instantiate(withOwner: self, options: nil)[0] as! UIView
         
         return view
     }

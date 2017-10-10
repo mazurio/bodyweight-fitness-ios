@@ -1,6 +1,6 @@
 import UIKit
 
-enum Direction { case In, Out }
+enum Direction { case `in`, out }
 
 extension UIView {
     public func removeAllSubviews() {
@@ -28,20 +28,20 @@ extension UIViewController {
         
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
         self.navigationController?.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
-        self.navigationController?.navigationBar.translucent = false
+        self.navigationController?.navigationBar.isTranslucent = false
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.setBackgroundImage(
             UIImage(),
-            forBarMetrics: UIBarMetrics.Default
+            for: UIBarMetrics.default
         )
     }
 }
 
 extension UIViewController {
-    func alpha(direction: Direction, color: UIColor = UIColor.blackColor(), alpha: CGFloat = 0.5, speed: Double = 0.5) {
+    func alpha(_ direction: Direction, color: UIColor = UIColor.black, alpha: CGFloat = 0.5, speed: Double = 0.5) {
         switch direction {
-        case .In:
-            let frame = CGRectMake(0, -20, view.frame.width, view.frame.height + 20)
+        case .in:
+            let frame = CGRect(x: 0, y: -20, width: view.frame.width, height: view.frame.height + 20)
             let dimView = UIView(frame: frame)
             
             dimView.backgroundColor = color
@@ -51,34 +51,34 @@ extension UIViewController {
             
             dimView.translatesAutoresizingMaskIntoConstraints = false
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "|[dimView]|",
+            view.addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "|[dimView]|",
                 options: [],
                 metrics: nil,
                 views: ["dimView": dimView]))
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|[dimView]|",
+            view.addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|[dimView]|",
                 options: [],
                 metrics: nil,
                 views: ["dimView": dimView]))
             
-            UIView.animateWithDuration(speed) { () -> Void in
+            UIView.animate(withDuration: speed, animations: { () -> Void in
                 dimView.alpha = alpha
-            }
+            }) 
             
-        case .Out:
-            UIView.animateWithDuration(speed, animations: { () -> Void in
-                self.view.subviews.last?.alpha = alpha ?? 0
+        case .out:
+            UIView.animate(withDuration: speed, animations: { () -> Void in
+                self.view.subviews.last?.alpha = alpha
                 }, completion: { (complete) -> Void in
                     self.view.subviews.last?.removeFromSuperview()
             })
         }
     }
     
-    func dim(direction: Direction, color: UIColor = UIColor.blackColor(), alpha: CGFloat = 0.0, speed: Double = 0.0) {
+    func dim(_ direction: Direction, color: UIColor = UIColor.black, alpha: CGFloat = 0.0, speed: Double = 0.0) {
         switch direction {
-        case .In:
+        case .in:
             let dimView = UIView(frame: view.frame)
             
             dimView.backgroundColor = color
@@ -88,25 +88,25 @@ extension UIViewController {
             
             dimView.translatesAutoresizingMaskIntoConstraints = false
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "|[dimView]|",
+            view.addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "|[dimView]|",
                 options: [],
                 metrics: nil,
                 views: ["dimView": dimView]))
             
-            view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat(
-                "V:|[dimView]|",
+            view.addConstraints(NSLayoutConstraint.constraints(
+                withVisualFormat: "V:|[dimView]|",
                 options: [],
                 metrics: nil,
                 views: ["dimView": dimView]))
             
-            UIView.animateWithDuration(speed) { () -> Void in
+            UIView.animate(withDuration: speed, animations: { () -> Void in
                 dimView.alpha = alpha
-            }
+            }) 
             
-        case .Out:
-            UIView.animateWithDuration(speed, animations: { () -> Void in
-                self.view.subviews.last?.alpha = alpha ?? 0
+        case .out:
+            UIView.animate(withDuration: speed, animations: { () -> Void in
+                self.view.subviews.last?.alpha = alpha
                 }, completion: { (complete) -> Void in
                     self.view.subviews.last?.removeFromSuperview()
             })

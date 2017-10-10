@@ -7,7 +7,7 @@ class DashboardSingleItemCell: UITableViewCell {
     
     var dashboardViewController: DashboardViewController?
     
-    private var _exercise: Exercise? = nil
+    fileprivate var _exercise: Exercise? = nil
     var exercise: Exercise? {
         get {
             return _exercise
@@ -18,9 +18,9 @@ class DashboardSingleItemCell: UITableViewCell {
             
             if let exercise = newValue {
                 if (exercise.isTimed()) {
-                    self.button.setImage(UIImage(named: "timed"), forState: .Normal)
+                    self.button.setImage(UIImage(named: "timed"), for: UIControlState())
                 } else {
-                    self.button.setImage(UIImage(named: "weighted"), forState: .Normal)
+                    self.button.setImage(UIImage(named: "weighted"), for: UIControlState())
                 }
             }
         }
@@ -34,11 +34,11 @@ class DashboardSingleItemCell: UITableViewCell {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardSingleItemCell.onClick(_:))))
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func onClick(sender: UITapGestureRecognizer) {
+    func onClick(_ sender: UITapGestureRecognizer) {
         self.dashboardViewController?.dismissWithExercise(exercise!)
     }
 }

@@ -3,94 +3,50 @@ import CoreData
 import Fabric
 import Crashlytics
 
-class TabBarController: UITabBarController {
-    let homeViewController = HomeViewController()
-    let workoutLogViewController = WorkoutLogViewController()
-    let supportDeveloperViewController = SupportDeveloperViewController()
-    let settingsViewController = SettingsViewController()
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-
-        self.tabBar.tintColor = UIColor.primary()
-        self.tabBar.barTintColor = UIColor.whiteColor()
-
-        self.homeViewController.tabBarItem = UITabBarItem(
-                title: "Home",
-                image: UIImage(named: "tab_home"),
-                selectedImage: UIImage(named: "tab_home"))
-
-        self.workoutLogViewController.tabBarItem = UITabBarItem(
-            title: "Workout Log",
-            image: UIImage(named: "tab_workout_log"),
-            selectedImage: UIImage(named: "tab_workout_log"))
-        
-        self.supportDeveloperViewController.tabBarItem = UITabBarItem(
-            title: "Support Developer",
-            image: UIImage(named: "tab_support_developer"),
-            selectedImage: UIImage(named: "tab_support_developer"))
-
-        self.settingsViewController.tabBarItem = UITabBarItem(
-                title: "Settings",
-                image: UIImage(named: "tab_settings"),
-                selectedImage: UIImage(named: "tab_settings"))
-
-        self.viewControllers = [
-            self.homeViewController,
-            self.workoutLogViewController,
-            self.supportDeveloperViewController,
-            self.settingsViewController]
-    }
-}
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         Fabric.with([Crashlytics.self])
 
         self.migrateSchemaIfNeeded()
         self.setDefaultSettings()
-        
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        self.window?.tintColor = UIColor.primaryDark()
-        self.window?.backgroundColor = UIColor.primary()
-        self.window?.rootViewController = UINavigationController(rootViewController: TabBarController())
-        self.window?.makeKeyAndVisible()
-        
+
         return true
     }
 
-    func applicationDidEnterBackground(application: UIApplication) {
-        UIApplication.sharedApplication().idleTimerDisabled = false
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        UIApplication.shared.isIdleTimerDisabled = false
     }
     
-    func applicationDidBecomeActive(application: UIApplication) {
-        UIApplication.sharedApplication().idleTimerDisabled = true
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        UIApplication.shared.isIdleTimerDisabled = true
     }
     
     func setDefaultSettings() {
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = Foundation.UserDefaults.standard
         
-        if(defaults.objectForKey("playAudioWhenTimerStops") == nil) {
-            defaults.setBool(true, forKey: "playAudioWhenTimerStops")
+        if(defaults.object(forKey: "playAudioWhenTimerStops") == nil) {
+            defaults.set(true, forKey: "playAudioWhenTimerStops")
         }
         
-        if(defaults.objectForKey("showRestTimer") == nil) {
-            defaults.setBool(true, forKey: "showRestTimer")
+        if(defaults.object(forKey: "showRestTimer") == nil) {
+            defaults.set(true, forKey: "showRestTimer")
         }
         
-        if(defaults.objectForKey("showRestTimerAfterWarmup") == nil) {
-            defaults.setBool(false, forKey: "showRestTimerAfterWarmup")
+        if(defaults.object(forKey: "showRestTimerAfterWarmup") == nil) {
+            defaults.set(false, forKey: "showRestTimerAfterWarmup")
         }
         
-        if(defaults.objectForKey("showRestTimerAfterBodylineDrills") == nil) {
-            defaults.setBool(true, forKey: "showRestTimerAfterBodylineDrills")
+        if(defaults.object(forKey: "showRestTimerAfterBodylineDrills") == nil) {
+            defaults.set(true, forKey: "showRestTimerAfterBodylineDrills")
         }
         
-        if(defaults.objectForKey("showRestTimerAfterFlexibilityExercises") == nil) {
-            defaults.setBool(false, forKey: "showRestTimerAfterFlexibilityExercises")
+        if(defaults.object(forKey: "showRestTimerAfterFlexibilityExercises") == nil) {
+            defaults.set(false, forKey: "showRestTimerAfterFlexibilityExercises")
         }
     }
     
@@ -112,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    func migrateSchemaIfNeeded(routine: Routine, currentSchema: RepositoryRoutine) -> (Bool, RepositoryRoutine) {
+    func migrateSchemaIfNeeded(_ routine: Routine, currentSchema: RepositoryRoutine) -> (Bool, RepositoryRoutine) {
         if (!isValidSchema(routine, currentSchema: currentSchema)) {
             let newSchema = RepositoryStream.sharedInstance.buildRoutine(routine)
             
@@ -137,10 +93,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return (false, currentSchema)
     }
     
-    func isValidSchema(routine: Routine, currentSchema: RepositoryRoutine) -> Bool {
+    func isValidSchema(_ routine: Routine, currentSchema: RepositoryRoutine) -> Bool {
         for exercise in routine.exercises {
             if let exercise = exercise as? Exercise {
-                let containsExercise = currentSchema.exercises.contains({
+                let containsExercise = currentSchema.exercises.contains(where: {
                     $0.exerciseId == exercise.exerciseId
                 })
                 

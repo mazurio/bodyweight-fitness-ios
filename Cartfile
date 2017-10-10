@@ -1,4 +1,0 @@
-github "kitasuke/PagingMenuController" == 1.2.0
-github "realm/realm-cocoa"
-github "ReactiveX/RxSwift" ~> 2.0
-github "SwiftyJSON/SwiftyJSON" "swift2"

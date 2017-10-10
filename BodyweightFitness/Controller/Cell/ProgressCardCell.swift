@@ -12,20 +12,20 @@ class ProgressCardCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    @IBAction func onClickFullReport(sender: AnyObject) {
+    @IBAction func onClickFullReport(_ sender: AnyObject) {
         let logWorkoutController = LogWorkoutController()
         
         logWorkoutController.parentController = self.parentController
         logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
         
-        logWorkoutController.modalTransitionStyle = .CoverVertical
-        logWorkoutController.modalPresentationStyle = .Custom
+        logWorkoutController.modalTransitionStyle = .coverVertical
+        logWorkoutController.modalPresentationStyle = .custom
         
-        self.parentController?.dim(.In, alpha: 0.5, speed: 0.5)
-        self.parentController?.presentViewController(logWorkoutController, animated: true, completion: nil)
+        self.parentController?.dim(.in, alpha: 0.5, speed: 0.5)
+        self.parentController?.present(logWorkoutController, animated: true, completion: nil)
     }
 }

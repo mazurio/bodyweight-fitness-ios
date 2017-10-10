@@ -12,7 +12,7 @@ class DashboardDoubleItemCell: UITableViewCell {
     
     var dashboardViewController: DashboardViewController?
     
-    private var _leftExercise: Exercise? = nil
+    fileprivate var _leftExercise: Exercise? = nil
     var leftExercise: Exercise? {
         get {
             return _leftExercise
@@ -23,15 +23,15 @@ class DashboardDoubleItemCell: UITableViewCell {
             
             if let exercise = newValue {
                 if (exercise.isTimed()) {
-                    self.leftButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                    self.leftButton.setImage(UIImage(named: "timed"), for: UIControlState())
                 } else {
-                    self.leftButton.setImage(UIImage(named: "weighted"), forState: .Normal)
+                    self.leftButton.setImage(UIImage(named: "weighted"), for: UIControlState())
                 }
             }
         }
     }
     
-    private var _rightExercise: Exercise? = nil
+    fileprivate var _rightExercise: Exercise? = nil
     var rightExercise: Exercise? {
         get {
             return _rightExercise
@@ -42,9 +42,9 @@ class DashboardDoubleItemCell: UITableViewCell {
             
             if let exercise = newValue {
                 if (exercise.isTimed()) {
-                    self.rightButton.setImage(UIImage(named: "timed"), forState: .Normal)
+                    self.rightButton.setImage(UIImage(named: "timed"), for: UIControlState())
                 } else {
-                    self.rightButton.setImage(UIImage(named: "weighted"), forState: .Normal)
+                    self.rightButton.setImage(UIImage(named: "weighted"), for: UIControlState())
                 }
             }
         }
@@ -63,15 +63,15 @@ class DashboardDoubleItemCell: UITableViewCell {
         self.rightView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(DashboardDoubleItemCell.onRightClick(_:))))
     }
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
     
-    func onLeftClick(sender: UITapGestureRecognizer) {
+    func onLeftClick(_ sender: UITapGestureRecognizer) {
         self.dashboardViewController?.dismissWithExercise(leftExercise!)
     }
     
-    func onRightClick(sender: UITapGestureRecognizer) {
+    func onRightClick(_ sender: UITapGestureRecognizer) {
         self.dashboardViewController?.dismissWithExercise(rightExercise!)
     }
 }

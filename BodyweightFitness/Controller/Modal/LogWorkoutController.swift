@@ -28,10 +28,10 @@ class LogWorkoutController: UIViewController {
     var verticalStackView: UIStackView?
     var horizontalStackView: UIStackView?
     
-    var increaseRepsTimer: NSTimer?
-    var decreaseRepsTimer: NSTimer?
-    var increaseWeightTimer: NSTimer?
-    var decreaseWeightTimer: NSTimer?
+    var increaseRepsTimer: Timer?
+    var decreaseRepsTimer: Timer?
+    var increaseWeightTimer: Timer?
+    var decreaseWeightTimer: Timer?
     
     let timerInterval = 0.15
     let weightTimerInterval = 0.15
@@ -47,59 +47,59 @@ class LogWorkoutController: UIViewController {
     
     var parentController: UIViewController?
     
-    func increaseRepsButtonDown(sender: AnyObject) {
+    func increaseRepsButtonDown(_ sender: AnyObject) {
         self.invalidateTimer(sender)
         
         increaseReps()
         
-        increaseRepsTimer = NSTimer.scheduledTimerWithTimeInterval(
-            timerInterval,
+        increaseRepsTimer = Timer.scheduledTimer(
+            timeInterval: timerInterval,
             target: self,
             selector: #selector(LogWorkoutController.increaseReps),
             userInfo: nil,
             repeats: true)
     }
     
-    func decreaseRepsButtonDown(sender: AnyObject) {
+    func decreaseRepsButtonDown(_ sender: AnyObject) {
         self.invalidateTimer(sender)
         
         decreaseReps()
         
-        decreaseRepsTimer = NSTimer.scheduledTimerWithTimeInterval(
-            timerInterval,
+        decreaseRepsTimer = Timer.scheduledTimer(
+            timeInterval: timerInterval,
             target: self,
             selector: #selector(LogWorkoutController.decreaseReps),
             userInfo: nil,
             repeats: true)
     }
     
-    func increaseWeightButtonDown(sender: AnyObject) {
+    func increaseWeightButtonDown(_ sender: AnyObject) {
         self.invalidateTimer(sender)
         
         increaseWeight()
         
-        increaseWeightTimer = NSTimer.scheduledTimerWithTimeInterval(
-            weightTimerInterval,
+        increaseWeightTimer = Timer.scheduledTimer(
+            timeInterval: weightTimerInterval,
             target: self,
             selector: #selector(LogWorkoutController.increaseWeight),
             userInfo: nil,
             repeats: true)
     }
     
-    func decreaseWeightButtonDown(sender: AnyObject) {
+    func decreaseWeightButtonDown(_ sender: AnyObject) {
         self.invalidateTimer(sender)
         
         decreaseWeight()
         
-        decreaseWeightTimer = NSTimer.scheduledTimerWithTimeInterval(
-            weightTimerInterval,
+        decreaseWeightTimer = Timer.scheduledTimer(
+            timeInterval: weightTimerInterval,
             target: self,
             selector: #selector(LogWorkoutController.decreaseWeight),
             userInfo: nil,
             repeats: true)
     }
     
-    func invalidateTimer(sender: AnyObject) {
+    func invalidateTimer(_ sender: AnyObject) {
         increaseRepsTimer?.invalidate()
         decreaseRepsTimer?.invalidate()
         
@@ -119,77 +119,77 @@ class LogWorkoutController: UIViewController {
         super.viewDidLoad()
         
         let controlEvents: UIControlEvents = [
-            UIControlEvents.TouchUpInside,
-            UIControlEvents.TouchUpOutside,
-            UIControlEvents.TouchDragOutside,
-            UIControlEvents.TouchDragExit,
-            UIControlEvents.TouchCancel
+            UIControlEvents.touchUpInside,
+            UIControlEvents.touchUpOutside,
+            UIControlEvents.touchDragOutside,
+            UIControlEvents.touchDragExit,
+            UIControlEvents.touchCancel
         ]
         
         self.increaseRepsButton.addTarget(
             self,
             action: #selector(LogWorkoutController.increaseRepsButtonDown),
-            forControlEvents: .TouchDown)
+            for: .touchDown)
         
         self.increaseRepsButton.addTarget(
             self,
             action: #selector(LogWorkoutController.invalidateTimer),
-            forControlEvents: controlEvents)
+            for: controlEvents)
         
         self.decreaseRepsButton.addTarget(
             self,
             action: #selector(LogWorkoutController.decreaseRepsButtonDown),
-            forControlEvents: .TouchDown)
+            for: .touchDown)
         
         self.decreaseRepsButton.addTarget(
             self,
             action: #selector(LogWorkoutController.invalidateTimer),
-            forControlEvents: controlEvents)
+            for: controlEvents)
         
         self.increaseWeightButton.addTarget(
             self,
             action: #selector(LogWorkoutController.increaseWeightButtonDown),
-            forControlEvents: .TouchDown)
+            for: .touchDown)
         
         self.increaseWeightButton.addTarget(
             self,
             action: #selector(LogWorkoutController.invalidateTimer),
-            forControlEvents: controlEvents)
+            for: controlEvents)
         
         self.decreaseWeightButton.addTarget(
             self,
             action: #selector(LogWorkoutController.decreaseWeightButtonDown),
-            forControlEvents: .TouchDown)
+            for: .touchDown)
         
         self.decreaseWeightButton.addTarget(
             self,
             action: #selector(LogWorkoutController.invalidateTimer),
-            forControlEvents: controlEvents)
+            for: controlEvents)
         
-        self.popupView.layer.borderColor = UIColor.blackColor().CGColor
+        self.popupView.layer.borderColor = UIColor.black.cgColor
         self.popupView.layer.borderWidth = 0.25
-        self.popupView.layer.shadowColor = UIColor.blackColor().CGColor
+        self.popupView.layer.shadowColor = UIColor.black.cgColor
         self.popupView.layer.shadowOpacity = 0.4
         self.popupView.layer.shadowRadius = 15
         self.popupView.layer.shadowOffset = CGSize(width: 5, height: 5)
         self.popupView.layer.masksToBounds = false
         
         self.isActionViewShowing = false
-        self.actionView?.hidden = true
+        self.actionView?.isHidden = true
         
         self.verticalStackView = UIStackView()
-        self.verticalStackView?.axis = UILayoutConstraintAxis.Vertical;
-        self.verticalStackView?.distribution = UIStackViewDistribution.EqualSpacing;
-        self.verticalStackView?.alignment = UIStackViewAlignment.Center;
+        self.verticalStackView?.axis = UILayoutConstraintAxis.vertical;
+        self.verticalStackView?.distribution = UIStackViewDistribution.equalSpacing;
+        self.verticalStackView?.alignment = UIStackViewAlignment.center;
         self.verticalStackView?.spacing = 8;
         
         self.verticalStackView?.translatesAutoresizingMaskIntoConstraints = false
         
         self.contentView.addSubview(self.verticalStackView!)
         
-        self.verticalStackView?.centerXAnchor.constraintEqualToAnchor(self.contentView.centerXAnchor).active = true
-        self.verticalStackView?.centerYAnchor.constraintEqualToAnchor(self.contentView.centerYAnchor).active = true
-        self.verticalStackView?.hidden = false
+        self.verticalStackView?.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        self.verticalStackView?.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        self.verticalStackView?.isHidden = false
         
         for set in (self.exercise?.sets)! {
             self.addSet(set)
@@ -200,12 +200,12 @@ class LogWorkoutController: UIViewController {
 //        appDelegate?.sideNavigationViewController?.enabled = false
     }
     
-    func setRepositoryRoutine(repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
+    func setRepositoryRoutine(_ repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
         self.exercise = repositoryExercise
         self.routine = repositoryRoutine
     }
     
-    func setRepositoryRoutine(exercise: Exercise, repositoryRoutine: RepositoryRoutine) {
+    func setRepositoryRoutine(_ exercise: Exercise, repositoryRoutine: RepositoryRoutine) {
         if let repositoryExercise = repositoryRoutine.exercises.filter({
             $0.exerciseId == exercise.exerciseId
         }).first {
@@ -217,9 +217,9 @@ class LogWorkoutController: UIViewController {
     func addHorizontalStackViewIfNeeded() {
         if(numberOfSetViews == 0 || numberOfSetViews == 3 || numberOfSetViews == 6 || numberOfSetViews == 9) {
             self.horizontalStackView = UIStackView()
-            self.horizontalStackView?.axis = UILayoutConstraintAxis.Horizontal;
-            self.horizontalStackView?.distribution = UIStackViewDistribution.EqualSpacing;
-            self.horizontalStackView?.alignment = UIStackViewAlignment.Center;
+            self.horizontalStackView?.axis = UILayoutConstraintAxis.horizontal;
+            self.horizontalStackView?.distribution = UIStackViewDistribution.equalSpacing;
+            self.horizontalStackView?.alignment = UIStackViewAlignment.center;
             self.horizontalStackView?.spacing = 8;
             
             self.horizontalStackView?.translatesAutoresizingMaskIntoConstraints = false
@@ -228,20 +228,20 @@ class LogWorkoutController: UIViewController {
         }
     }
     
-    func pressed(setView: SetView!) {
+    func pressed(_ setView: SetView!) {
         showActionView(setView)
     }
     
-    func showActionView(setView: SetView) {
+    func showActionView(_ setView: SetView) {
         self.setView = setView
         self.set = setView.repositorySet
         self.isActionViewShowing = true
         
-        self.verticalStackView?.hidden = true
-        self.actionView?.hidden = false
+        self.verticalStackView?.isHidden = true
+        self.actionView?.isHidden = false
         
-        self.addSetButton?.hidden = true
-        self.removeSetButton?.hidden = true
+        self.addSetButton?.isHidden = true
+        self.removeSetButton?.isHidden = true
         
         updateActionView()
     }
@@ -250,7 +250,7 @@ class LogWorkoutController: UIViewController {
         if let set = set {
             if set.isTimed {
                 if let setView = self.setView {
-                    if let index = self.exercise?.sets.indexOf(setView.repositorySet!) {
+                    if let index = self.exercise?.sets.index(of: setView.repositorySet!) {
                         self.setNumber.text = "\(index + 1)"
                     } else {
                         self.setNumber.text = ""
@@ -266,7 +266,7 @@ class LogWorkoutController: UIViewController {
                 self.weightLabel.text = "Seconds"
             } else {
                 if let setView = self.setView {
-                    if let index = self.exercise?.sets.indexOf(setView.repositorySet!) {
+                    if let index = self.exercise?.sets.index(of: setView.repositorySet!) {
                         self.setNumber.text = "\(index + 1)"
                     } else {
                         self.setNumber.text = ""
@@ -290,20 +290,20 @@ class LogWorkoutController: UIViewController {
     func hideActionView() {
         self.isActionViewShowing = false
         
-        self.verticalStackView?.hidden = false
-        self.actionView?.hidden = true
+        self.verticalStackView?.isHidden = false
+        self.actionView?.isHidden = true
         
-        self.addSetButton?.hidden = false
-        self.removeSetButton?.hidden = false
+        self.addSetButton?.isHidden = false
+        self.removeSetButton?.isHidden = false
     }
     
-    func addSet(repositorySet: RepositorySet) {
+    func addSet(_ repositorySet: RepositorySet) {
         let setView = SetView()
         setView.repositorySet = repositorySet
         
-        setView.addTarget(self, action: #selector(LogWorkoutController.pressed(_:)), forControlEvents: .TouchUpInside)
-        setView.widthAnchor.constraintEqualToConstant(70).active = true
-        setView.heightAnchor.constraintEqualToConstant(70).active = true
+        setView.addTarget(self, action: #selector(LogWorkoutController.pressed(_:)), for: .touchUpInside)
+        setView.widthAnchor.constraint(equalToConstant: 70).isActive = true
+        setView.heightAnchor.constraint(equalToConstant: 70).isActive = true
         
         self.addHorizontalStackViewIfNeeded()
         self.horizontalStackView?.addArrangedSubview(setView)
@@ -321,17 +321,17 @@ class LogWorkoutController: UIViewController {
     func setLastUpdatedTime() {
         if updateLastUpdatedTime {
             if let routine = self.routine {
-                let elapsedTime = routine.startTime.timeIntervalSinceDate(routine.lastUpdatedTime)
+                let elapsedTime = routine.startTime.timeIntervalSince(routine.lastUpdatedTime as Date)
                 let minutes = (NSInteger(elapsedTime) % 3600) / 60;
                 
                 if (minutes < 120) {
-                    routine.lastUpdatedTime = NSDate()
+                    routine.lastUpdatedTime = Date()
                 }
             }
         }
     }
     
-    @IBAction func onClickAddSet(sender: AnyObject) {
+    @IBAction func onClickAddSet(_ sender: AnyObject) {
         if self.numberOfSetViews >= 9 {
             return;
         }
@@ -362,7 +362,7 @@ class LogWorkoutController: UIViewController {
         }
     }
     
-    @IBAction func onClickRemoveSet(sender: AnyObject) {
+    @IBAction func onClickRemoveSet(_ sender: AnyObject) {
         if (numberOfSetViews == 1) {
             return;
         }
@@ -384,7 +384,7 @@ class LogWorkoutController: UIViewController {
         numberOfSetViews -= 1
     }
     
-    @IBAction func onClickButtonClose(sender: AnyObject) {
+    @IBAction func onClickButtonClose(_ sender: AnyObject) {
         if isActionViewShowing {
             self.hideActionView()
         } else {
@@ -396,8 +396,8 @@ class LogWorkoutController: UIViewController {
             
             RoutineStream.sharedInstance.setRepository()
 
-            self.parentController?.dim(.Out, alpha: 0.5, speed: 0.5)
-            self.dismissViewControllerAnimated(true, completion: nil)
+            self.parentController?.dim(.out, alpha: 0.5, speed: 0.5)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
@@ -499,7 +499,7 @@ class LogWorkoutController: UIViewController {
         }
     }
     
-    func secondsToHoursMinutesSeconds (seconds: Int) -> (Int, Int, Int) {
+    func secondsToHoursMinutesSeconds (_ seconds: Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 }
@@ -525,21 +525,21 @@ class SetView: UIButton {
         customizeAppearance()
     }
     
-    override func drawRect(rect: CGRect) {
-        layer.borderColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1).CGColor
-        layer.backgroundColor = UIColor.whiteColor().CGColor
+    override func draw(_ rect: CGRect) {
+        layer.borderColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1).cgColor
+        layer.backgroundColor = UIColor.white.cgColor
         
-        setTitleColor(tintColor, forState: UIControlState.Normal)
-        setTitleColor(UIColor.whiteColor(), forState: UIControlState.Selected)
+        setTitleColor(tintColor, for: UIControlState())
+        setTitleColor(UIColor.white, for: UIControlState.selected)
     }
     
     func customizeAppearance() {
-        let containsEdgeInsets = !UIEdgeInsetsEqualToEdgeInsets(contentEdgeInsets, UIEdgeInsetsZero)
+        let containsEdgeInsets = !UIEdgeInsetsEqualToEdgeInsets(contentEdgeInsets, UIEdgeInsets.zero)
         
         contentEdgeInsets = containsEdgeInsets ? contentEdgeInsets : UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         
         layer.borderWidth = 0.2
-        layer.borderColor = UIColor.blackColor().CGColor
+        layer.borderColor = UIColor.black.cgColor
         layer.cornerRadius = 70 / 2.0
         layer.masksToBounds = false
         
@@ -555,27 +555,27 @@ class SetView: UIButton {
                 
                 if minutes == 0 {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
-                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.center
                     self.centerLabel?.text = "\(seconds)s"
                     
                     self.addSubview(self.centerLabel!)
                 } else if (minutes > 0 && seconds == 0) {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
-                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.center
                     self.centerLabel?.text = "\(minutes)m"
                     
                     self.addSubview(self.centerLabel!)
                 } else {
                     self.topLabel = UILabel(frame: CGRect.init(x: 0, y: 20, width: 70, height: 15))
-                    self.topLabel?.font = UIFont.boldSystemFontOfSize(12.0)
-                    self.topLabel?.textAlignment = NSTextAlignment.Center
+                    self.topLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
+                    self.topLabel?.textAlignment = NSTextAlignment.center
                     self.topLabel?.text = "\(minutes)m"
                     
                     self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
-                    self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
-                    self.bottomLabel?.textAlignment = NSTextAlignment.Center
+                    self.bottomLabel?.font = UIFont.systemFont(ofSize: 12.0)
+                    self.bottomLabel?.textAlignment = NSTextAlignment.center
                     self.bottomLabel?.text = "\(seconds)s"
                     
                     self.addSubview(self.topLabel!)
@@ -584,20 +584,20 @@ class SetView: UIButton {
             } else {
                 if set.weight == 0 {
                     self.centerLabel = UILabel(frame: CGRect.init(x: 0, y: 25, width: 70, height: 20))
-                    self.centerLabel?.font = UIFont.boldSystemFontOfSize(16.0)
-                    self.centerLabel?.textAlignment = NSTextAlignment.Center
+                    self.centerLabel?.font = UIFont.boldSystemFont(ofSize: 16.0)
+                    self.centerLabel?.textAlignment = NSTextAlignment.center
                     self.centerLabel?.text = "\(set.reps)"
                     
                     self.addSubview(self.centerLabel!)
                 } else {
                     self.topLabel = UILabel(frame: CGRect.init(x: 0, y: 20, width: 70, height: 15))
-                    self.topLabel?.font = UIFont.boldSystemFontOfSize(12.0)
-                    self.topLabel?.textAlignment = NSTextAlignment.Center
+                    self.topLabel?.font = UIFont.boldSystemFont(ofSize: 12.0)
+                    self.topLabel?.textAlignment = NSTextAlignment.center
                     self.topLabel?.text = "\(set.reps) x"
                     
                     self.bottomLabel = UILabel(frame: CGRect.init(x: 0, y: 38, width: 70, height: 15))
-                    self.bottomLabel?.font = UIFont.systemFontOfSize(12.0)
-                    self.bottomLabel?.textAlignment = NSTextAlignment.Center
+                    self.bottomLabel?.font = UIFont.systemFont(ofSize: 12.0)
+                    self.bottomLabel?.textAlignment = NSTextAlignment.center
                     
                     if PersistenceManager.getWeightUnit() == "lbs" {
                         self.bottomLabel?.text = "\(set.weight) lbs"
@@ -612,7 +612,7 @@ class SetView: UIButton {
         }
     }
     
-    func secondsToHoursMinutesSeconds (seconds: Int) -> (Int, Int, Int) {
+    func secondsToHoursMinutesSeconds (_ seconds: Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 }

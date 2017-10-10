@@ -25,12 +25,12 @@ class WeightedViewController: UIViewController {
         
         self.updateLabels()
 
-        _ = RoutineStream.sharedInstance.repositoryObservable().subscribeNext({ (it) in
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribe(onNext: { (it) in
             self.sets.text = self.printSets()
         })
     }
     
-    func changeExercise(currentExercise: Exercise) {
+    func changeExercise(_ currentExercise: Exercise) {
         self.current = currentExercise
         
         self.numberOfReps = PersistenceManager.getNumberOfReps(currentExercise.exerciseId)
@@ -38,15 +38,15 @@ class WeightedViewController: UIViewController {
         self.updateLabels()
         
         if let _ = self.current.previous {
-            self.previousButton.hidden = false
+            self.previousButton.isHidden = false
         } else {
-            self.previousButton.hidden = true
+            self.previousButton.isHidden = true
         }
         
         if let _ = self.current.next {
-            self.nextButton.hidden = false
+            self.nextButton.isHidden = false
         } else {
-            self.nextButton.hidden = true
+            self.nextButton.isHidden = true
         }
     }
     
@@ -54,10 +54,10 @@ class WeightedViewController: UIViewController {
         PersistenceManager.storeNumberOfReps(current.exerciseId, numberOfReps: self.numberOfReps)
         
         self.sets.text = self.printSets()
-        self.reps.setTitle(printValue(self.numberOfReps), forState: .Normal)
+        self.reps.setTitle(printValue(self.numberOfReps), for: UIControlState())
     }
     
-    func printValue(value: Int) -> String {
+    func printValue(_ value: Int) -> String {
         if(value > 9) {
             return String(value)
         } else {
@@ -69,16 +69,16 @@ class WeightedViewController: UIViewController {
         self.rootViewController?.restTimerShouldStart()
     }
     
-    func showNotification(set: Int, reps: Int) {
+    func showNotification(_ set: Int, reps: Int) {
         let notification = CWStatusBarNotification()
         
-        notification.notificationLabelFont = UIFont.boldSystemFontOfSize(17)
+        notification.notificationLabelFont = UIFont.boldSystemFont(ofSize: 17)
         notification.notificationLabelBackgroundColor = UIColor.primary()
         notification.notificationLabelTextColor = UIColor.primaryDark()
         
-        notification.notificationStyle = .NavigationBarNotification
-        notification.notificationAnimationInStyle = .Top
-        notification.notificationAnimationOutStyle = .Top
+        notification.notificationStyle = .navigationBarNotification
+        notification.notificationAnimationInStyle = .top
+        notification.notificationAnimationOutStyle = .top
         
         notification.displayNotificationWithMessage("Logged Set \(set) - \(reps) reps", forDuration: 2.0)
         
@@ -103,12 +103,12 @@ class WeightedViewController: UIViewController {
                             isEmpty = true
                         }
 
-                        asString.appendString("\(set.reps)-")
+                        asString.append("\(set.reps)-")
 
                         numberOfSets += 1
                     }
 
-                    asString.appendString("X")
+                    asString.append("X")
                 }
             } else {
                 isEmpty = true
@@ -126,15 +126,15 @@ class WeightedViewController: UIViewController {
         return asString as String
     }
     
-    @IBAction func previousButtonClicked(sender: AnyObject) {
+    @IBAction func previousButtonClicked(_ sender: AnyObject) {
         self.rootViewController?.previousButtonClicked(sender)
     }
     
-    @IBAction func nextButtonClicked(sender: AnyObject) {
+    @IBAction func nextButtonClicked(_ sender: AnyObject) {
         self.rootViewController?.nextButtonClicked(sender)
     }
     
-    @IBAction func increaseRepsClicked(sender: AnyObject) {
+    @IBAction func increaseRepsClicked(_ sender: AnyObject) {
         if self.numberOfReps < 25 {
             self.numberOfReps += 1
             
@@ -142,7 +142,7 @@ class WeightedViewController: UIViewController {
         }
     }
     
-    @IBAction func decreaseRepsClicked(sender: AnyObject) {
+    @IBAction func decreaseRepsClicked(_ sender: AnyObject) {
         if self.numberOfReps > 1 {
             self.numberOfReps -= 1
             
@@ -150,7 +150,7 @@ class WeightedViewController: UIViewController {
         }
     }
     
-    @IBAction func logReps(sender: AnyObject) {
+    @IBAction func logReps(_ sender: AnyObject) {
         if let current = self.rootViewController?.current {
             if (self.numberOfReps >= 1 && self.numberOfReps <= 25 && !current.isTimed()) {
                 let realm = RepositoryStream.sharedInstance.getRealm()
@@ -176,7 +176,7 @@ class WeightedViewController: UIViewController {
                             
                             sets.append(repositorySet)
                             
-                            repositoryRoutine.lastUpdatedTime = NSDate()
+                            repositoryRoutine.lastUpdatedTime = NSDate() as Date
                         }
                         
                         realm.add(repositoryRoutine, update: true)

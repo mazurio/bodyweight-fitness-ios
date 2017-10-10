@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Workout View Controller-->
+        <scene sceneID="blT-bN-pYB">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6KR-FU-4qc" customClass="WorkoutViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tPA-De-anY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7a-gM-Cyu" userLabel="Top View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="oph-xq-w5A"/>
+                                </constraints>
+                            </view>
+                            <view autoresizesSubviews="NO" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1b2-WW-HET" userLabel="Bottom View">
+                                <rect key="frame" x="0.0" y="200" width="375" height="403"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCQ-tN-kkH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="403"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YOy-AT-6Uz" userLabel="Log Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                                        <rect key="frame" x="303" y="259" width="60" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="R2P-Wg-wH9"/>
+                                            <constraint firstAttribute="width" constant="60" id="TI2-8u-tgN"/>
+                                        </constraints>
+                                        <state key="normal" image="log">
+                                            <color key="titleShadowColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onClickLogWorkoutAction:" destination="6KR-FU-4qc" eventType="touchUpInside" id="SuR-pQ-zCq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rj-ZI-Fvw" userLabel="Action Button" customClass="ActionView" customModule="Bodyweight_Fitness" customModuleProvider="target">
+                                        <rect key="frame" x="303" y="331" width="60" height="60"/>
+                                        <color key="backgroundColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="Mqo-9T-YaW"/>
+                                            <constraint firstAttribute="height" constant="60" id="y8o-3E-nmj"/>
+                                        </constraints>
+                                        <state key="normal" image="plus">
+                                            <color key="titleShadowColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                                <color key="value" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionButtonClicked:" destination="6KR-FU-4qc" eventType="touchUpInside" id="MmN-29-0eT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.024027539420000001" green="0.01420802157" blue="0.019426042210000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="1rj-ZI-Fvw" firstAttribute="top" secondItem="YOy-AT-6Uz" secondAttribute="bottom" constant="12" id="1H0-kr-IBP"/>
+                                    <constraint firstAttribute="trailing" secondItem="YOy-AT-6Uz" secondAttribute="trailing" constant="12" id="8Vp-0u-L1m"/>
+                                    <constraint firstItem="XCQ-tN-kkH" firstAttribute="leading" secondItem="1b2-WW-HET" secondAttribute="leading" id="FTl-F0-e06"/>
+                                    <constraint firstAttribute="trailing" secondItem="1rj-ZI-Fvw" secondAttribute="trailing" constant="12" id="HqW-t6-1G4"/>
+                                    <constraint firstItem="XCQ-tN-kkH" firstAttribute="top" secondItem="1b2-WW-HET" secondAttribute="top" id="N3z-f7-wdf"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCQ-tN-kkH" secondAttribute="trailing" id="V0s-Rm-qKK"/>
+                                    <constraint firstAttribute="bottom" secondItem="XCQ-tN-kkH" secondAttribute="bottom" id="aKD-KC-oO2"/>
+                                    <constraint firstAttribute="bottom" secondItem="1rj-ZI-Fvw" secondAttribute="bottom" constant="12" id="tTj-2G-sSE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="x7a-gM-Cyu" secondAttribute="trailing" id="2En-5P-ZLX"/>
+                            <constraint firstAttribute="bottom" secondItem="1b2-WW-HET" secondAttribute="bottom" id="Qzt-0z-vy0"/>
+                            <constraint firstItem="1b2-WW-HET" firstAttribute="leading" secondItem="tPA-De-anY" secondAttribute="leading" id="UQJ-pB-9BN"/>
+                            <constraint firstItem="x7a-gM-Cyu" firstAttribute="top" secondItem="tPA-De-anY" secondAttribute="top" id="dY2-G4-jCR"/>
+                            <constraint firstAttribute="trailing" secondItem="1b2-WW-HET" secondAttribute="trailing" id="qVC-Hb-Mey"/>
+                            <constraint firstItem="x7a-gM-Cyu" firstAttribute="leading" secondItem="tPA-De-anY" secondAttribute="leading" id="uTP-Uc-OdF"/>
+                            <constraint firstItem="1b2-WW-HET" firstAttribute="top" secondItem="x7a-gM-Cyu" secondAttribute="bottom" id="yFd-ND-51e"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4G7-i8-zTd"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" id="52B-nx-Phk">
+                        <barButtonItem key="leftBarButtonItem" image="close" id="eCB-SN-mOx">
+                            <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="close:" destination="6KR-FU-4qc" id="4IY-6l-v14"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="dashboard" id="xm2-xn-IqA">
+                            <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="dashboard:" destination="6KR-FU-4qc" id="3Vy-xD-2s7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="actionButton" destination="1rj-ZI-Fvw" id="nYQ-iO-LO8"/>
+                        <outlet property="mainView" destination="1b2-WW-HET" id="a3i-UW-Q3p"/>
+                        <outlet property="topView" destination="x7a-gM-Cyu" id="RFd-Gs-kPx"/>
+                        <outlet property="videoView" destination="XCQ-tN-kkH" id="6Re-kn-t2h"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lwc-dO-xjf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42" y="-278"/>
+        </scene>
+        <!--Workout Navigation Controller-->
+        <scene sceneID="l2x-Mh-emN">
+            <objects>
+                <navigationController storyboardIdentifier="WorkoutNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RnR-5a-6dx" customClass="WorkoutNavigationController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W8K-8j-y0M">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6KR-FU-4qc" kind="relationship" relationship="rootViewController" id="Lo6-vF-M6o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gn4-gf-ezq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-875.20000000000005" y="-277.06146926536735"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="close" width="22" height="22"/>
+        <image name="dashboard" width="22" height="22"/>
+        <image name="log" width="22" height="22"/>
+        <image name="plus" width="22" height="22"/>
+    </resources>
+    <color key="tintColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+</document>

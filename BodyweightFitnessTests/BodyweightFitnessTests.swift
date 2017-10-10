@@ -4,12 +4,12 @@ import XCTest
 @testable import Bodyweight_Fitness
 
 class TestRoutine {
-    var id = "Routine-" + NSUUID().UUIDString
+    var id = "Routine-" + UUID().uuidString
     var routineId = "routine0"
     var title = "Bodyweight Fitness"
     var subtitle = "Recommended Routine"
-    var startTime = NSDate()
-    var lastUpdatedTime = NSDate()
+    var startTime = Date()
+    var lastUpdatedTime = Date()
     
     var categories = [TestCategory]()
     var sections = [TestSection]()
@@ -17,7 +17,7 @@ class TestRoutine {
 }
 
 class TestCategory {
-    var id = "Category-" + NSUUID().UUIDString
+    var id = "Category-" + UUID().uuidString
     var categoryId = ""
     var title = ""
     var routine: TestRoutine? = nil
@@ -27,7 +27,7 @@ class TestCategory {
 }
 
 class TestExercise {
-    var id = "Exercise-" + NSUUID().UUIDString
+    var id = "Exercise-" + UUID().uuidString
     var exerciseId = ""
     var title = ""
     var desc = ""
@@ -42,7 +42,7 @@ class TestExercise {
 }
 
 class TestSection {
-    var id = "Section-" + NSUUID().UUIDString
+    var id = "Section-" + UUID().uuidString
     var sectionId = ""
     var title = ""
     var mode = ""
@@ -53,7 +53,7 @@ class TestSection {
 }
 
 class TestSet {
-    var id = "Set-" + NSUUID().UUIDString
+    var id = "Set-" + UUID().uuidString
     var isTimed = false
     var weight = 0.0
     var reps = 0
@@ -123,7 +123,7 @@ class BodyweightFitnessTests: XCTestCase {
         }
     }
     
-    func migrateDatabaseIfNeeded(routine: Routine, currentSchema: TestRoutine) -> TestRoutine {
+    func migrateDatabaseIfNeeded(_ routine: Routine, currentSchema: TestRoutine) -> TestRoutine {
         if (!isValidSchema(routine, currentSchema: currentSchema)) {
             let newSchema = buildRoutine(routine)
             
@@ -144,7 +144,7 @@ class BodyweightFitnessTests: XCTestCase {
         return currentSchema
     }
     
-    func isValidSchema(routine: Routine, currentSchema: TestRoutine) -> Bool {
+    func isValidSchema(_ routine: Routine, currentSchema: TestRoutine) -> Bool {
         for exercise in routine.exercises {
             if let exercise = exercise as? Exercise {
                 let containsExercise = currentSchema.exercises.contains({
@@ -160,11 +160,11 @@ class BodyweightFitnessTests: XCTestCase {
         return true
     }
     
-    func buildRoutine(routine: Routine) -> TestRoutine {
+    func buildRoutine(_ routine: Routine) -> TestRoutine {
         let testRoutine = TestRoutine()
         testRoutine.routineId = "routine0"
-        testRoutine.startTime = NSDate()
-        testRoutine.lastUpdatedTime = NSDate()
+        testRoutine.startTime = Date()
+        testRoutine.lastUpdatedTime = Date()
         
         var testCategory: TestCategory?
         var testSection: TestSection?

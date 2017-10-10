@@ -6,7 +6,7 @@ class CardView: UIView {
 
     @IBInspectable var shadowOffsetWidth: Int = 0
     @IBInspectable var shadowOffsetHeight: Int = 2
-    @IBInspectable var shadowColor: UIColor? = UIColor.blackColor()
+    @IBInspectable var shadowColor: UIColor? = UIColor.black
     @IBInspectable var shadowOpacity: Float = 0.2
 
     override func layoutSubviews() {
@@ -14,10 +14,10 @@ class CardView: UIView {
         let shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
 
         layer.masksToBounds = false
-        layer.shadowColor = shadowColor?.CGColor
+        layer.shadowColor = shadowColor?.cgColor
         layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
         layer.shadowOpacity = shadowOpacity
-        layer.shadowPath = shadowPath.CGPath
+        layer.shadowPath = shadowPath.cgPath
     }
 }
 
@@ -31,7 +31,7 @@ class ProgressView: UIView {
         layer.cornerRadius = cornerRadius
     }
 
-    func setCompletionRate(completionRate: CompletionRate) {
+    func setCompletionRate(_ completionRate: CompletionRate) {
         if (completionRate.percentage <= 10) {
             widthConstraint.constant = 20
         } else {

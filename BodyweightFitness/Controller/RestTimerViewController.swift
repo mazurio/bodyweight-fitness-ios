@@ -14,7 +14,7 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
     var current: Exercise = RoutineStream.sharedInstance.routine.getFirstExercise()
     
     var audioPlayer: AVAudioPlayer?
-    var timer = NSTimer()
+    var timer = Timer()
     var isPlaying = false
     
     var seconds = PersistenceManager.getRestTime()
@@ -32,31 +32,31 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         super.viewDidLoad()
     }
     
-    func changeExercise(currentExercise: Exercise) {
+    func changeExercise(_ currentExercise: Exercise) {
         self.current = currentExercise
         self.defaultSeconds = PersistenceManager.getRestTime()
         
         if let _ = self.current.previous {
-            self.previousButton.hidden = false
+            self.previousButton.isHidden = false
         } else {
-            self.previousButton.hidden = true
+            self.previousButton.isHidden = true
         }
         
         if let _ = self.current.next {
-            self.nextButton.hidden = false
+            self.nextButton.isHidden = false
         } else {
-            self.nextButton.hidden = true
+            self.nextButton.isHidden = true
         }
     }
     
     func updateLabel() {
         let (_, m, s) = secondsToHoursMinutesSeconds(seconds)
         
-        timerMinutesButton.setTitle(printTimerValue(m), forState: UIControlState.Normal)
-        timerSecondsButton.setTitle(printTimerValue(s), forState: UIControlState.Normal)
+        timerMinutesButton.setTitle(printTimerValue(m), for: UIControlState())
+        timerSecondsButton.setTitle(printTimerValue(s), for: UIControlState())
     }
     
-    func printTimerValue(value: Int) -> String {
+    func printTimerValue(_ value: Int) -> String {
         if(value > 9) {
             return String(value)
         } else {
@@ -64,7 +64,7 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func secondsToHoursMinutesSeconds (seconds : Int) -> (Int, Int, Int) {
+    func secondsToHoursMinutesSeconds (_ seconds : Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
@@ -79,8 +79,8 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         
         isPlaying = true
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(
-            1,
+        timer = Timer.scheduledTimer(
+            timeInterval: 1,
             target: self,
             selector: #selector(updateTimer),
             userInfo: nil,
@@ -88,7 +88,7 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         )
     }
     
-    func restartTimer(seconds: Int) {
+    func restartTimer(_ seconds: Int) {
         stopTimer()
         
         self.seconds = seconds
@@ -102,9 +102,9 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         if(seconds <= 0) {
             self.rootViewController?.restTimerStopped()
             
-            let defaults = NSUserDefaults.standardUserDefaults()
-            if(defaults.objectForKey("playAudioWhenTimerStops") != nil) {
-                let playAudioWhenTimerStops = defaults.boolForKey("playAudioWhenTimerStops")
+            let defaults = Foundation.UserDefaults.standard
+            if(defaults.object(forKey: "playAudioWhenTimerStops") != nil) {
+                let playAudioWhenTimerStops = defaults.bool(forKey: "playAudioWhenTimerStops")
                 if(playAudioWhenTimerStops) {
                     audioPlayerStart()
                 }
@@ -117,14 +117,13 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     func audioPlayerStart() {
-        let alertSound = NSURL(fileURLWithPath: NSBundle
-            .mainBundle()
-            .pathForResource("finished", ofType: "mp3")!)
+        let alertSound = URL(fileURLWithPath: Bundle.main
+            .path(forResource: "finished", ofType: "mp3")!)
         
         do {
             try AVAudioSession.sharedInstance().setActive(true)
             
-            audioPlayer = try AVAudioPlayer(contentsOfURL: alertSound, fileTypeHint: nil)
+            audioPlayer = try AVAudioPlayer(contentsOf: alertSound, fileTypeHint: nil)
             audioPlayer?.delegate = self
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
@@ -133,24 +132,24 @@ class RestTimerViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    func audioPlayerDidFinishPlaying(player: AVAudioPlayer, successfully flag: Bool) {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         do {
-            try AVAudioSession.sharedInstance().setActive(false, withOptions:
-                AVAudioSessionSetActiveOptions.NotifyOthersOnDeactivation)
+            try AVAudioSession.sharedInstance().setActive(false, with:
+                AVAudioSessionSetActiveOptions.notifyOthersOnDeactivation)
         } catch {
             print("AVAudioSession errors.")
         }
     }
     
-    @IBAction func stopButtonClicked(sender: AnyObject) {
+    @IBAction func stopButtonClicked(_ sender: AnyObject) {
         self.rootViewController?.restTimerStopped()
     }
     
-    @IBAction func previousButtonClicked(sender: AnyObject) {
+    @IBAction func previousButtonClicked(_ sender: AnyObject) {
         self.rootViewController?.previousButtonClicked(sender)
     }
     
-    @IBAction func nextButtonClicked(sender: AnyObject) {
+    @IBAction func nextButtonClicked(_ sender: AnyObject) {
         self.rootViewController?.nextButtonClicked(sender)
     }
 }

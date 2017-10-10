@@ -5,7 +5,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     
     let routine: Routine = RoutineStream.sharedInstance.routine
     
-    var currentIndexPath: NSIndexPath?
+    var currentIndexPath: IndexPath?
     
     var currentExercise: Exercise?
     var rootViewController: WorkoutViewController?
@@ -19,25 +19,25 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     override func viewDidLoad() {
-        self.tableView.registerNib(
+        self.tableView.register(
             UINib(nibName: "DashboardCategoryCell", bundle: nil),
             forCellReuseIdentifier: "DashboardCategoryCell")
         
-        self.tableView.registerNib(
+        self.tableView.register(
             UINib(nibName: "DashboardSectionCell", bundle: nil),
             forCellReuseIdentifier: "DashboardSectionCell")
         
-        self.tableView.registerNib(
+        self.tableView.register(
             UINib(nibName: "DashboardSingleItemCell", bundle: nil),
             forCellReuseIdentifier: "DashboardSingleItemCell")
         
-        self.tableView.registerNib(
+        self.tableView.register(
             UINib(nibName: "DashboardDoubleItemCell", bundle: nil),
             forCellReuseIdentifier: "DashboardDoubleItemCell")
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.separatorStyle = .None
+        self.tableView.separatorStyle = .none
         self.tableView.sectionFooterHeight = 0
         self.tableView.sectionHeaderHeight = 0
         self.tableView.backgroundColor = UIColor(red:0.88, green:0.88, blue:0.88, alpha:1)
@@ -45,9 +45,9 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         let closeItem = UIBarButtonItem(
             image: UIImage(named: "close"),
             landscapeImagePhone: nil,
-            style: .Plain,
+            style: .plain,
             target: self,
-            action: #selector(dismiss))
+            action: #selector(dismissAnimated))
         
         closeItem.tintColor = UIColor(red:0, green:0.27, blue:0.24, alpha:1)
         
@@ -55,11 +55,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0, green:0.59, blue:0.53, alpha:1)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return routine.categoriesAndSections.count
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let categoryOrSection = routine.categoriesAndSections[section]
         
         if let _ = categoryOrSection as? Category {
@@ -67,7 +67,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if let section = categoryOrSection as? Section {
-            if (section.mode == SectionMode.All) {
+            if (section.mode == SectionMode.all) {
                 let numberOfExercises = section.exercises.count
                 
                 return ((numberOfExercises - 1) / 2) + 1
@@ -79,11 +79,11 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         return 0
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let categoryOrSection = routine.categoriesAndSections[section]
         
         if let category = categoryOrSection as? Category {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardCategoryCell") as! DashboardCategoryCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardCategoryCell") as! DashboardCategoryCell
             
             cell.title?.text = category.title
             
@@ -96,7 +96,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         
         if let section = categoryOrSection as? Section {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSectionCell") as! DashboardSectionCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardSectionCell") as! DashboardSectionCell
             
             cell.title?.text = section.title
             cell.desc?.text = section.desc
@@ -112,16 +112,16 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         return nil
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let sectionIndex = indexPath.section
         let rowIndex = indexPath.row
         
         if (rowIndex == 0) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardSingleItemCell", for: indexPath) as! DashboardSingleItemCell
             
             let section = routine.categoriesAndSections[sectionIndex] as! Section
           
-            if (section.mode == SectionMode.All) {
+            if (section.mode == SectionMode.all) {
                 if let exercise = section.exercises[0] as? Exercise {
                     setCurrentIndex(exercise, indexPath: indexPath)
                     
@@ -147,7 +147,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
             let exercise = section.exercises[index] as! Exercise
 
             if let nextExercise = exercise.next {
-                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardDoubleItemCell", forIndexPath: indexPath) as! DashboardDoubleItemCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardDoubleItemCell", for: indexPath) as! DashboardDoubleItemCell
                 
                 cell.dashboardViewController = self
                 
@@ -161,7 +161,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                     cell.leftTitle?.text = exercise.title
                     cell.rightTitle?.text = nextExercise.title
                 } else {
-                    let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardSingleItemCell", for: indexPath) as! DashboardSingleItemCell
                     
                     setCurrentIndex(exercise, indexPath: indexPath)
                     
@@ -174,7 +174,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 return cell
             } else {
-                let cell = tableView.dequeueReusableCellWithIdentifier("DashboardSingleItemCell", forIndexPath: indexPath) as! DashboardSingleItemCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardSingleItemCell", for: indexPath) as! DashboardSingleItemCell
                 
                 setCurrentIndex(exercise, indexPath: indexPath)
                 
@@ -187,7 +187,7 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let categoryOrSection = routine.categoriesAndSections[section]
         
         if let _ = categoryOrSection as? Category {
@@ -197,21 +197,21 @@ class DashboardViewController: UIViewController, UITableViewDelegate, UITableVie
         return 65
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
     }
     
-    func dismiss(sender: UIBarButtonItem) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func dismissAnimated(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func dismissWithExercise(exercise: Exercise) {
+    func dismissWithExercise(_ exercise: Exercise) {
         self.rootViewController?.changeExercise(exercise)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    func setCurrentIndex(exercise: Exercise, indexPath: NSIndexPath) {
+    func setCurrentIndex(_ exercise: Exercise, indexPath: IndexPath) {
         if let currentExercise = currentExercise {
             if currentExercise === exercise {
                 self.currentIndexPath = indexPath
