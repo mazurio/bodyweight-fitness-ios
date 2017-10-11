@@ -12,7 +12,16 @@ target 'Bodyweight Fitness' do
   pod 'RxCocoa',         '~> 3.0'
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'Eureka',          '~> 4.0.1'
-  
   pod 'Fabric'
   pod 'Crashlytics'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+  	if ['Eureka'].include? target.name
+  		target.build_configurations.each do |config|
+  			config.build_settings['SWIFT_VERSION'] = '4.0'
+  		end
+  	end
+  end
 end
