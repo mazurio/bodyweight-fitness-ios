@@ -13,7 +13,7 @@ target 'Bodyweight Fitness' do
   pod 'JTAppleCalendar', '~> 7.0'
   pod 'Eureka', '~> 4.0.1'
   pod 'Charts', '~> 3.0.4'
-  pod 'SnapKit', '~> 4.0.0'
+  pod 'SnapKit', '~> 3.2.0'
   pod 'Fabric'
   pod 'Crashlytics'
 end
@@ -27,12 +27,6 @@ post_install do |installer|
   	end
     
     if ['Charts'].include? target.name
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '4.0'
-        end
-    end
-    
-    if ['SnapKit'].include? target.name
         target.build_configurations.each do |config|
             config.build_settings['SWIFT_VERSION'] = '4.0'
         end
