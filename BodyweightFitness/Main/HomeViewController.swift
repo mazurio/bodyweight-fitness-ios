@@ -44,6 +44,16 @@ class HomeViewController: UIViewController {
         super.viewDidAppear(animated)
 
         self.tabBarController?.title = RoutineStream.sharedInstance.routine.title
+        
+        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
+        
+        let p = storyboard.instantiateViewController(
+            withIdentifier: "WorkoutLogViewController"
+        ) as! WorkoutLogViewController
+        
+        p.hidesBottomBarWhenPushed = true
+        
+        self.navigationController?.pushViewController(p, animated: true)
     }
 
     func renderWorkoutProgressView() {

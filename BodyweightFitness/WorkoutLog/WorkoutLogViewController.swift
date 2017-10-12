@@ -17,30 +17,40 @@ class WorkoutLogViewController: UIViewController {
             self.navigationItem.title = routine.startTime.commonDescription
         }
         
-        let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
-            nibName: "ProgressGeneralViewController",
-            bundle: nil)
+        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
         
-        generalViewController.parentController = self.navigationController
-        generalViewController.title = "General"
-        generalViewController.date = date
-        generalViewController.repositoryRoutine = self.repositoryRoutine
+        let p = storyboard.instantiateViewController(
+            withIdentifier: "WorkoutLogGeneralViewController"
+        ) as! WorkoutLogGeneralViewController
         
-        controllerArray.append(generalViewController)
+        controllerArray.append(p)
         
-        if let routine = repositoryRoutine {
-            for category in routine.categories {
-                let viewController: ProgressPageViewController = ProgressPageViewController(
-                    nibName: "ProgressPageViewController",
-                    bundle: nil)
-                
-                viewController.parentController = self.navigationController
-                viewController.title = category.title
-                viewController.category = category
-                
-                controllerArray.append(viewController)
-            }
-        }
+//        let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
+//            nibName: "ProgressGeneralViewController",
+//            bundle: nil
+//        )
+//
+//        generalViewController.parentController = self.navigationController
+//        generalViewController.title = "General"
+//        generalViewController.date = date
+//        generalViewController.repositoryRoutine = self.repositoryRoutine
+        
+       // controllerArray.append(generalViewController)
+        
+//        if let routine = repositoryRoutine {
+//            for category in routine.categories {
+//                let viewController: ProgressPageViewController = ProgressPageViewController(
+//                    nibName: "ProgressPageViewController",
+//                    bundle: nil
+//                )
+//
+//                viewController.parentController = self.navigationController
+//                viewController.title = category.title
+//                viewController.category = category
+//
+//                controllerArray.append(viewController)
+//            }
+//        }
         
         let parameters: [CAPSPageMenuOption] = [
             .scrollMenuBackgroundColor(

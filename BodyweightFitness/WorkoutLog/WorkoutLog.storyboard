@@ -26,7 +26,40 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LQj-qE-ypR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="854" y="127"/>
+            <point key="canvasLocation" x="924" y="127"/>
+        </scene>
+        <!--Workout Log General View Controller-->
+        <scene sceneID="ZTV-3W-eGM">
+            <objects>
+                <viewController storyboardIdentifier="WorkoutLogGeneralViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Kaf-dv-Vbb" customClass="WorkoutLogGeneralViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jPE-BO-RuK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U2D-qX-D6q" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="83" width="375" height="500"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="5Qx-8X-fcO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="U2D-qX-D6q" firstAttribute="centerY" secondItem="jPE-BO-RuK" secondAttribute="centerY" id="7pJ-Ux-uYo"/>
+                            <constraint firstItem="U2D-qX-D6q" firstAttribute="centerX" secondItem="jPE-BO-RuK" secondAttribute="centerX" id="C9d-aS-ZGu"/>
+                            <constraint firstItem="U2D-qX-D6q" firstAttribute="leading" secondItem="inA-5A-s38" secondAttribute="leading" id="YfA-ZB-7al"/>
+                            <constraint firstItem="inA-5A-s38" firstAttribute="trailing" secondItem="U2D-qX-D6q" secondAttribute="trailing" id="vdB-nf-8hR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="inA-5A-s38"/>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="U2D-qX-D6q" id="f6D-1K-0Bq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dpu-ch-sa6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2012" y="-247"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NMJ-ao-xu3">
