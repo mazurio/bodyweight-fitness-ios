@@ -10,7 +10,12 @@ class WorkoutLogGeneralViewController: UIViewController {
         
         let unitsSold = [20.0, 4.0, 6.0, 3.0, 12.0, 16.0]
         
-        lineChartView.backgroundColor = UIColor.darkGray
+        setupChart()
+        setChart(unitsSold)
+    }
+    
+    func setupChart() {
+        lineChartView.backgroundColor = UIColor.white
         lineChartView.chartDescription?.enabled = false
         lineChartView.dragEnabled = false
         lineChartView.drawGridBackgroundEnabled = false
@@ -21,7 +26,7 @@ class WorkoutLogGeneralViewController: UIViewController {
             yAxisDuration: 1.0,
             easingOption: .easeInSine
         )
-
+        
         lineChartView.xAxis.enabled = false
         lineChartView.xAxis.drawLabelsEnabled = false
         lineChartView.xAxis.drawGridLinesEnabled = false
@@ -34,7 +39,6 @@ class WorkoutLogGeneralViewController: UIViewController {
         lineChartView.rightAxis.drawLabelsEnabled = false
         lineChartView.rightAxis.drawGridLinesEnabled = false
 
-        setChart(unitsSold)
     }
     
     func setChart(_ values: [Double]) {

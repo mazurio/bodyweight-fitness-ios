@@ -20,8 +20,8 @@ class WorkoutLogViewController: UIViewController {
         let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
         
         let p = storyboard.instantiateViewController(
-            withIdentifier: "WorkoutLogGeneralViewController"
-        ) as! WorkoutLogGeneralViewController
+            withIdentifier: "WorkoutLogGeneralSnapKitViewController"
+        ) as! WorkoutLogGeneralSnapKitViewController
         
         controllerArray.append(p)
         

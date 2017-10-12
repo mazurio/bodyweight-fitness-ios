@@ -13,6 +13,7 @@
 		46B02827BB8DE1BAFE67526A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */; };
 		46B02FDDA16C9D54DBC1A61D /* RepositoryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02F2362EA8A9111571B02 /* RepositoryStream.swift */; };
 		7328DCBA1F8FDAD900BD96CD /* WorkoutLogGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328DCB91F8FDAD900BD96CD /* WorkoutLogGeneralViewController.swift */; };
+		7328DCBE1F8FF56700BD96CD /* WorkoutLogGeneralSnapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralSnapKitViewController.swift */; };
 		7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329B68B1D0D8476005F5F74 /* HomeViewController.swift */; };
 		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
 		732BA0261C5AE8EF00C1CDB5 /* ProgressCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */; };
@@ -186,6 +187,7 @@
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		46B02F2362EA8A9111571B02 /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
 		7328DCB91F8FDAD900BD96CD /* WorkoutLogGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogGeneralViewController.swift; sourceTree = "<group>"; };
+		7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralSnapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogGeneralSnapKitViewController.swift; sourceTree = "<group>"; };
 		7329B68B1D0D8476005F5F74 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = "<group>"; };
 		732BA0251C5AE8EF00C1CDB5 /* ProgressCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressCardCell.xib; sourceTree = "<group>"; };
@@ -406,6 +408,13 @@
 			path = BodyweightFitness;
 			sourceTree = "<group>";
 		};
+		7328DCBC1F8FF40800BD96CD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		734132E61E130FC300BAEFD2 /* Starting Stretching - Flexibility Routine */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,6 +444,7 @@
 		7347DC2E1F8D3CD8001E1BE5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7328DCBC1F8FF40800BD96CD /* Shared */,
 				73D3932A1F8D4E4000D9F4DD /* View */,
 				7329B68B1D0D8476005F5F74 /* HomeViewController.swift */,
 				46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */,
@@ -631,6 +641,7 @@
 				7366D8DC1C4EEFD500819790 /* ProgressPageViewController.swift */,
 				73D393281F8D4BAE00D9F4DD /* WorkoutLogViewController.swift */,
 				7328DCB91F8FDAD900BD96CD /* WorkoutLogGeneralViewController.swift */,
+				7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralSnapKitViewController.swift */,
 				73D393261F8D4B7D00D9F4DD /* WorkoutLog.storyboard */,
 			);
 			path = WorkoutLog;
@@ -974,6 +985,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -985,6 +997,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1003,6 +1016,7 @@
 				E0F587351B5272F400540104 /* ActionView.swift in Sources */,
 				734B70081C4BF7DD00CFB6BD /* RepositoryCategory.swift in Sources */,
 				7366D8E11C51810600819790 /* Extensions.swift in Sources */,
+				7328DCBE1F8FF56700BD96CD /* WorkoutLogGeneralSnapKitViewController.swift in Sources */,
 				732BA02C1C5B76E500C1CDB5 /* ProgressSectionCell.swift in Sources */,
 				E0F5873D1B52730000540104 /* TimePickerController.swift in Sources */,
 				7366D8DD1C4EEFD500819790 /* ProgressPageViewController.swift in Sources */,
