@@ -63,20 +63,17 @@ class CardButton: UIButton {
 }
 
 class WorkoutLogGeneralSnapKitViewController: UIViewController {
-    lazy var card = CardView()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor.darkGray
+    func first() {
+        let card = CardView()
         
         self.view.addSubview(card)
         
         card.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(view).offset(20)
             make.left.equalTo(view).offset(20)
-            make.bottom.equalTo(view).offset(-20)
             make.right.equalTo(view).offset(-20)
+            make.bottom.equalTo(view).offset(-20)
         }
         
         let label = TitleLabel()
@@ -94,18 +91,20 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         let textView = DescriptionTextView()
         textView.text = "Many people want to improve overall flexibility, but do not know where to begin. This routine should serve as a general jumping-off point for beginners."
         card.addSubview(textView)
-
+        
         let cardButton = CardButton()
         cardButton.setTitle("Read More", for: .normal)
         card.addSubview(cardButton)
-
+        
         textView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(label.snp.bottom).offset(8)
             make.left.equalTo(card).offset(12)
             make.right.equalTo(card).offset(-12)
             make.bottom.equalTo(cardButton.snp.top).offset(8)
+            
+            make.height.equalTo(100)
         }
-
+        
         cardButton.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
@@ -113,6 +112,15 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             
             make.height.equalTo(36)
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.darkGray
+        
+        
+        first()
         
     }
 }
