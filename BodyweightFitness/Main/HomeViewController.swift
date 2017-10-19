@@ -173,6 +173,7 @@ class HomeViewController: UIViewController {
         
         let cardButton = CardButton()
         cardButton.setTitle("Read More", for: .normal)
+        cardButton.addTarget(self, action: #selector(readMore), for: .touchUpInside)
         card.addSubview(cardButton)
         
         routineTitleLabel.snp.makeConstraints { (make) -> Void in
@@ -329,7 +330,6 @@ class HomeViewController: UIViewController {
             make.left.equalTo(bottomLeftValue.snp.right)
             
             make.bottom.equalTo(card).offset(-20)
-            
         }
         
         return card
@@ -407,7 +407,7 @@ class HomeViewController: UIViewController {
     
     @IBAction func readMore(_ sender: AnyObject) {
         if let requestUrl = URL(string: RoutineStream.sharedInstance.routine.url) {
-            UIApplication.shared.openURL(requestUrl)
+            UIApplication.shared.open(requestUrl, options: [:], completionHandler: nil)
         }
     }
 }
