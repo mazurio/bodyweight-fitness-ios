@@ -12,7 +12,6 @@
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
 		46B02827BB8DE1BAFE67526A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */; };
 		46B02FDDA16C9D54DBC1A61D /* RepositoryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02F2362EA8A9111571B02 /* RepositoryStream.swift */; };
-		731A41E81F926E5700C44922 /* ScrollableStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41E71F926E5700C44922 /* ScrollableStackView.swift */; };
 		731A41EA1F991B1600C44922 /* WorkoutLogCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */; };
 		731A41EC1F991B3400C44922 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41EB1F991B3400C44922 /* Views.swift */; };
 		7328DCBE1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift */; };
@@ -186,7 +185,6 @@
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		46B02F2362EA8A9111571B02 /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
-		731A41E71F926E5700C44922 /* ScrollableStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableStackView.swift; sourceTree = "<group>"; };
 		731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogCategoryViewController.swift; sourceTree = "<group>"; };
 		731A41EB1F991B3400C44922 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogGeneralViewController.swift; sourceTree = "<group>"; };
@@ -670,7 +668,6 @@
 				46B020C26FAF7645B926FA26 /* CardView.swift */,
 				73BF3BC01CBF05ED00E0258D /* SnackBar.swift */,
 				738B96CE1D76337C009A8625 /* HomeBarView.swift */,
-				731A41E71F926E5700C44922 /* ScrollableStackView.swift */,
 				731A41EB1F991B3400C44922 /* Views.swift */,
 			);
 			path = View;
@@ -1040,7 +1037,6 @@
 				7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */,
 				73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */,
 				73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */,
-				731A41E81F926E5700C44922 /* ScrollableStackView.swift in Sources */,
 				73BADE191CC3E347001ACEDC /* TimedViewController.swift in Sources */,
 				734B6F3F1C4AE7E900CFB6BD /* LogWorkoutController.swift in Sources */,
 				46B02780EEC08B16FB384A4F /* CardView.swift in Sources */,

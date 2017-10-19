@@ -26,17 +26,24 @@ class WorkoutLogCategoryViewController: UIViewController {
             make.left.right.equalTo(self.view)
         }
         
+        self.createBackgroundView()
+        
         self.contentStackView.axis = .vertical
         self.contentStackView.distribution = .fill
         self.contentStackView.alignment = .fill
         self.contentStackView.spacing = 16
         self.contentStackView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.contentStackView)
+        
+        self.contentStackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(contentView).offset(8)
+            make.left.equalTo(contentView).offset(8)
+            make.right.equalTo(contentView).offset(-8)
+            make.bottom.equalTo(contentView).offset(-8)
+        }
     }
     
     func initializeContent() {
-//        self.createBackgroundView()
-
         self.contentStackView.addArrangedSubview(
             self.createStatisticsCard()
         )
@@ -72,13 +79,6 @@ class WorkoutLogCategoryViewController: UIViewController {
         self.contentStackView.addArrangedSubview(
             self.createCompletionRateHistoryCard()
         )
-        
-        self.contentStackView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.equalTo(contentView).offset(8)
-            make.right.equalTo(contentView).offset(-8)
-            make.bottom.equalTo(contentView).offset(-8)
-        }
     }
     
     func createBackgroundView(height: Int = 50) {
