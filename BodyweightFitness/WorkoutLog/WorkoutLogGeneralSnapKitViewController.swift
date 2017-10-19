@@ -115,6 +115,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         let card2 = self.createTodaysProgressCard()
         let card3 = self.createWorkoutLengthHistoryCard()
         let card4 = self.createCompletionRateHistoryCard()
+        let card5 = self.createMissedExercisesCard()
         
         view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView)
@@ -141,6 +142,11 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         card4.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card3.snp.bottom).offset(8)
             make.left.right.equalTo(contentView).inset(8)
+        }
+        
+        card5.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card4.snp.bottom).offset(8)
+            make.left.right.equalTo(contentView).inset(8)
 
             make.bottom.equalTo(contentView).offset(-8)
         }
@@ -151,6 +157,33 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         
         view.backgroundColor = UIColor.primary()
         self.contentView.addSubview(view)
+        
+        return view
+    }
+    
+    func createTitleValueView(labelText: String, valueText: String) -> UIView {
+        let view = UIView()
+        
+        let label = TitleLabel()
+        label.text = labelText
+        view.addSubview(label)
+        
+        let value = ValueLabel()
+        value.text = valueText
+        view.addSubview(value)
+        
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(view)
+            make.left.equalTo(view)
+            make.right.equalTo(view)
+        }
+        
+        value.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(label.snp.bottom).offset(8)
+            make.left.equalTo(view)
+            make.right.equalTo(view)
+            make.bottom.equalTo(view)
+        }
         
         return view
     }
@@ -385,6 +418,40 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
             make.bottom.equalTo(card).offset(-20)
+        }
+        
+        return card
+    }
+    
+    func createMissedExercisesCard() -> CardView {
+        let card = CardView()
+        self.contentView.addSubview(card)
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 16
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(stackView)
+        
+        stackView.addArrangedSubview(
+            createTitleValueView(labelText: "Pushup", valueText: "Test")
+        )
+        
+        stackView.addArrangedSubview(
+            createTitleValueView(labelText: "Pushup", valueText: "Test")
+        )
+        
+        stackView.addArrangedSubview(
+            createTitleValueView(labelText: "Pushup", valueText: "Test")
+        )
+        
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
         }
         
         return card
