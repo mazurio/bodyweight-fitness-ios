@@ -120,7 +120,6 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         cardButton.setTitle("Start Workout", for: .normal)
         card.addSubview(cardButton)
         
-        
         let homeBarView = HomeBarView()
         homeBarView.categoryTitle.text = "Text"
         homeBarView.progressView.setCompletionRate(
@@ -128,6 +127,14 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         )
         homeBarView.progressRate.text = "90%"
         stackView.addArrangedSubview(homeBarView)
+        
+        let homeBarView2 = HomeBarView()
+        homeBarView2.categoryTitle.text = "Text"
+        homeBarView2.progressView.setCompletionRate(
+            CompletionRate(percentage: 90, label: "90%")
+        )
+        homeBarView2.progressRate.text = "90%"
+        stackView.addArrangedSubview(homeBarView2)
 
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
