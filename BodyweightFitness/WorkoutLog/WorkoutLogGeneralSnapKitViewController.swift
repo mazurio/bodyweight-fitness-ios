@@ -296,7 +296,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.darkGray
+        self.view.backgroundColor = UIColor.darkGray
         
         self.initializeScrollView()
         
@@ -305,22 +305,20 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         let card3 = self.createStatisticsCard()
 
         card.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(16)
-
-            make.left.right.equalTo(contentView).inset(16)
+            make.top.equalTo(contentView).offset(8)
+            make.left.right.equalTo(contentView).inset(8)
         }
         
         card2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card.snp.bottom).offset(16)
-            make.bottom.equalTo(card3.snp.top).offset(-16)
+            make.top.equalTo(card.snp.bottom).offset(8)
+            make.bottom.equalTo(card3.snp.top).offset(-8)
             
-            make.left.right.equalTo(contentView).inset(16)
+            make.left.right.equalTo(contentView).inset(8)
         }
         
         card3.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalTo(contentView).offset(-16)
-
-            make.left.right.equalTo(contentView).inset(16)
+            make.bottom.equalTo(contentView).offset(-8)
+            make.left.right.equalTo(contentView).inset(8)
         }
     }
 }
