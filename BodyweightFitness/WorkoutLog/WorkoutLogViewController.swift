@@ -18,8 +18,12 @@ class WorkoutLogViewController: UIViewController {
         }
         
         let p = WorkoutLogGeneralViewController()
-        
+        p.title = "General"
         controllerArray.append(p)
+        
+        let section1 = WorkoutLogSectionViewController()
+        section1.title = "Warmup"
+        controllerArray.append(section1)
         
 //        let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
 //            nibName: "ProgressGeneralViewController",
@@ -79,7 +83,8 @@ class WorkoutLogViewController: UIViewController {
         pageMenu = CAPSPageMenu(
             viewControllers: controllerArray,
             frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height),
-            pageMenuOptions: parameters)
+            pageMenuOptions: parameters
+        )
         
         self.view.addSubview(pageMenu!.view)
     }
