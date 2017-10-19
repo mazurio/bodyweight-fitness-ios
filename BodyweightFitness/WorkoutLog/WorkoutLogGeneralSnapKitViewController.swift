@@ -59,6 +59,7 @@ class DescriptionTextView: UITextView {
         self.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
         self.isEditable = false
         self.isSelectable = false
+        self.isScrollEnabled = false
     }
 }
 
