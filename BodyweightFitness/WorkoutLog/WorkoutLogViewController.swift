@@ -17,40 +17,17 @@ class WorkoutLogViewController: UIViewController {
             self.navigationItem.title = routine.startTime.commonDescription
         }
         
-        let p = WorkoutLogGeneralViewController()
-        p.title = "General"
-        controllerArray.append(p)
+        let generalViewController = WorkoutLogGeneralViewController()
+        generalViewController.title = "General"
+        controllerArray.append(generalViewController)
         
-        let section1 = WorkoutLogSectionViewController()
-        section1.title = "Warmup"
-        controllerArray.append(section1)
-        
-//        let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
-//            nibName: "ProgressGeneralViewController",
-//            bundle: nil
-//        )
-//
-//        generalViewController.parentController = self.navigationController
-//        generalViewController.title = "General"
-//        generalViewController.date = date
-//        generalViewController.repositoryRoutine = self.repositoryRoutine
-        
-       // controllerArray.append(generalViewController)
-        
-//        if let routine = repositoryRoutine {
-//            for category in routine.categories {
-//                let viewController: ProgressPageViewController = ProgressPageViewController(
-//                    nibName: "ProgressPageViewController",
-//                    bundle: nil
-//                )
-//
-//                viewController.parentController = self.navigationController
-//                viewController.title = category.title
-//                viewController.category = category
-//
-//                controllerArray.append(viewController)
-//            }
-//        }
+        if let routine = repositoryRoutine {
+            for category in routine.categories {
+                let categoryViewController = WorkoutLogCategoryViewController()
+                categoryViewController.title = category.title
+                controllerArray.append(categoryViewController)
+            }
+        }
         
         let parameters: [CAPSPageMenuOption] = [
             .scrollMenuBackgroundColor(

@@ -1,6 +1,6 @@
 import SnapKit
 
-class WorkoutLogSectionViewController: UIViewController {
+class WorkoutLogCategoryViewController: UIViewController {
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -74,23 +74,23 @@ class WorkoutLogSectionViewController: UIViewController {
         
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = "19:34"
+        topLeftLabel.text = "1 out of 3"
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
         topLeftValue.textAlignment = .left
-        topLeftValue.text = "Start Time"
+        topLeftValue.text = "Completed Exercises"
         card.addSubview(topLeftValue)
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = "19:34"
+        topRightLabel.text = "33%"
         
         card.addSubview(topRightLabel)
         
         let topRightValue = ValueLabel()
         topRightValue.textAlignment = .right
-        topRightValue.text = "Last Updated"
+        topRightValue.text = "Completion Rate"
         card.addSubview(topRightValue)
         
         topLeftLabel.snp.makeConstraints { (make) -> Void in
