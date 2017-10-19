@@ -183,17 +183,11 @@ class HomeViewController: UIViewController {
             make.height.equalTo(24)
         }
         
-        let sizeThatFits = routineShortDescriptionLabel.sizeThatFits(
-            CGSize(width: self.view.frame.width, height: CGFloat(MAXFLOAT))
-        )
-        
         routineShortDescriptionLabel.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(routineTitleLabel.snp.bottom).offset(8)
+            make.top.equalTo(routineTitleLabel.snp.bottom) //.offset(8)
             make.left.equalTo(card).offset(12)
             make.right.equalTo(card).offset(-12)
             make.bottom.equalTo(cardButton.snp.top).offset(-12)
-            
-            make.height.equalTo(sizeThatFits)
         }
         
         cardButton.snp.makeConstraints { (make) -> Void in
