@@ -36,7 +36,7 @@ class ValueLabel: UILabel {
     func commonInit() {
         self.textAlignment = .left
         self.font = UIFont.systemFont(ofSize: 17)
-        self.textColor = UIColor(red:0.47, green:0.47, blue:0.47, alpha:1.00)
+        self.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
     }
 }
 
@@ -90,7 +90,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.darkGray
+        self.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
         
         self.initializeScrollView()
         self.initializeContent()
@@ -116,6 +116,22 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         let card3 = self.createWorkoutLengthHistoryCard()
         let card4 = self.createCompletionRateHistoryCard()
         let card5 = self.createMissedExercisesCard()
+
+        let card2Title = ValueLabel()
+        card2Title.text = "Workout Progress"
+        self.contentView.addSubview(card2Title)
+        
+        let card3Title = ValueLabel()
+        card3Title.text = "Workout Length History"
+        self.contentView.addSubview(card3Title)
+        
+        let card4Title = ValueLabel()
+        card4Title.text = "Completion Rate History"
+        self.contentView.addSubview(card4Title)
+        
+        let card5Title = ValueLabel()
+        card5Title.text = "Missed Exercises"
+        self.contentView.addSubview(card5Title)
         
         view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView)
@@ -129,25 +145,44 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             make.left.right.equalTo(contentView).inset(8)
         }
         
+        card2Title.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card1.snp.bottom).offset(16)
+            make.left.right.equalTo(contentView).inset(16)
+            make.bottom.equalTo(card2.snp.top).offset(-16)
+        }
+        
         card2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card1.snp.bottom).offset(8)
             make.left.right.equalTo(contentView).inset(8)
+        }
+        
+        card3Title.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card2.snp.bottom).offset(16)
+            make.left.right.equalTo(contentView).inset(16)
+            make.bottom.equalTo(card3.snp.top).offset(-16)
         }
         
         card3.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card2.snp.bottom).offset(8)
             make.left.right.equalTo(contentView).inset(8)
+        }
+        
+        card4Title.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card3.snp.bottom).offset(16)
+            make.left.right.equalTo(contentView).inset(16)
+            make.bottom.equalTo(card4.snp.top).offset(-16)
         }
         
         card4.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card3.snp.bottom).offset(8)
             make.left.right.equalTo(contentView).inset(8)
         }
         
+        card5Title.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card4.snp.bottom).offset(16)
+            make.left.right.equalTo(contentView).inset(16)
+            make.bottom.equalTo(card5.snp.top).offset(-16)
+        }
+        
         card5.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card4.snp.bottom).offset(8)
             make.left.right.equalTo(contentView).inset(8)
-
             make.bottom.equalTo(contentView).offset(-8)
         }
     }
