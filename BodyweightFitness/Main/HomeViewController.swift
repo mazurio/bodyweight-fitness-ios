@@ -31,7 +31,6 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        self.tabBarController?.title = RoutineStream.sharedInstance.routine.title
 //
 //        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
 //
@@ -58,8 +57,8 @@ class HomeViewController: UIViewController {
     }
     
     func initializeContent() {
-        self.tabBarController?.title = self.routine?.title
-        
+        self.navigationItem.title = self.routine?.title
+
         self.contentView.removeAllSubviews()
         
         let card1 = self.createTodaysProgressCard()
