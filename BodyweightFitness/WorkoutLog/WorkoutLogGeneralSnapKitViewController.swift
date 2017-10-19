@@ -87,6 +87,15 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
     let scrollView = UIScrollView()
     let contentView = UIView()
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.darkGray
+        
+        self.initializeScrollView()
+        self.initializeContent()
+    }
+    
     func initializeScrollView() {
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { (make) -> Void in
@@ -100,111 +109,38 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         }
     }
     
-    func createTodaysProgressCard() -> CardView {
-        let card = CardView()
-        self.contentView.addSubview(card)
+    func initializeContent() {
+        let view = self.createBackgroundView()
+        let card1 = self.createStatisticsCard()
+        let card2 = self.createTodaysProgressCard()
         
-        let label = TitleLabel()
-        label.text = "Today's Progress"
-        card.addSubview(label)
+        view.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(contentView)
+            make.left.equalTo(contentView)
+            make.right.equalTo(contentView)
+            make.height.equalTo(100)
+        }
         
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .fill
-        stackView.spacing = 0
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        card.addSubview(stackView)
+        card1.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(contentView).offset(8)
+            make.left.right.equalTo(contentView).inset(8)
+        }
         
-        let cardButton = CardButton()
-        cardButton.setTitle("Start Workout", for: .normal)
-        card.addSubview(cardButton)
-        
-        let homeBarView = HomeBarView()
-        homeBarView.categoryTitle.text = "Text"
-        homeBarView.progressView.setCompletionRate(
-            CompletionRate(percentage: 90, label: "90%")
-        )
-        homeBarView.progressRate.text = "90%"
-        stackView.addArrangedSubview(homeBarView)
-        
-        let homeBarView2 = HomeBarView()
-        homeBarView2.categoryTitle.text = "Text"
-        homeBarView2.progressView.setCompletionRate(
-            CompletionRate(percentage: 90, label: "90%")
-        )
-        homeBarView2.progressRate.text = "90%"
-        stackView.addArrangedSubview(homeBarView2)
+        card2.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card1.snp.bottom).offset(8)
+            make.bottom.equalTo(contentView).offset(-8)
 
-        label.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card).offset(20)
-            make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
-            
-            make.height.equalTo(24)
+            make.left.right.equalTo(contentView).inset(8)
         }
-        
-        stackView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(label.snp.bottom).offset(16)
-            make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
-        }
-        
-        cardButton.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(stackView.snp.bottom).offset(16)
-            make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
-            make.bottom.equalTo(card).offset(-16)
-            
-            make.height.equalTo(36)
-        }
-        
-        return card
     }
     
-    func createAboutRoutineCard() -> CardView {
-        let card = CardView()
-        self.contentView.addSubview(card)
+    func createBackgroundView() -> UIView {
+        let view = UIView()
         
-        let label = TitleLabel()
-        label.text = "Bodyweight Fitness"
-        card.addSubview(label)
+        view.backgroundColor = UIColor.primary()
+        self.contentView.addSubview(view)
         
-        label.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card).offset(20)
-            make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
-            
-            make.height.equalTo(24)
-        }
-        
-        let textView = DescriptionTextView()
-        textView.text = "Many people want to improve overall flexibility, but do not know where to begin. This routine should serve as a general jumping-off point for beginners."
-        let sizeThatFits = textView.sizeThatFits(CGSize(width: view.frame.width, height: CGFloat(MAXFLOAT)))
-        card.addSubview(textView)
-        
-        let cardButton = CardButton()
-        cardButton.setTitle("Read More", for: .normal)
-        card.addSubview(cardButton)
-        
-        textView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(label.snp.bottom).offset(8)
-            make.left.equalTo(card).offset(12)
-            make.right.equalTo(card).offset(-12)
-            make.bottom.equalTo(cardButton.snp.top).offset(-12)
-            
-            make.height.equalTo(sizeThatFits)
-        }
-        
-        cardButton.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
-            make.bottom.equalTo(card).offset(-16)
-            
-            make.height.equalTo(36)
-        }
-        
-        return card
+        return view
     }
     
     func createStatisticsCard() -> CardView {
@@ -213,42 +149,43 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = "44 Workouts"
+        topLeftLabel.text = "19:34"
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
         topLeftValue.textAlignment = .left
-        topLeftValue.text = "Total Workouts"
+        topLeftValue.text = "Start Time"
         card.addSubview(topLeftValue)
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = "Yesterday"
+        topRightLabel.text = "19:34"
+        
         card.addSubview(topRightLabel)
         
         let topRightValue = ValueLabel()
         topRightValue.textAlignment = .right
-        topRightValue.text = "Last Workout"
+        topRightValue.text = "Last Updated"
         card.addSubview(topRightValue)
         
         let bottomLeftLabel = TitleLabel()
         bottomLeftLabel.textAlignment = .left
-        bottomLeftLabel.text = "2 Workouts"
+        bottomLeftLabel.text = "--"
         card.addSubview(bottomLeftLabel)
         
         let bottomLeftValue = ValueLabel()
         bottomLeftValue.textAlignment = .left
-        bottomLeftValue.text = "Last 7 Days"
+        bottomLeftValue.text = "Workout Length"
         card.addSubview(bottomLeftValue)
         
         let bottomRightLabel = TitleLabel()
         bottomRightLabel.textAlignment = .right
-        bottomRightLabel.text = "8 Workouts"
+        bottomRightLabel.text = "1"
         card.addSubview(bottomRightLabel)
         
         let bottomRightValue = ValueLabel()
         bottomRightValue.textAlignment = .right
-        bottomRightValue.text = "Last 31 Days"
+        bottomRightValue.text = "1"
         card.addSubview(bottomRightValue)
         
         topLeftLabel.snp.makeConstraints { (make) -> Void in
@@ -279,7 +216,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         topRightValue.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(topRightLabel.snp.bottom).offset(8)
             make.trailing.equalTo(card).offset(-16)
-
+            
             make.left.equalTo(topLeftValue.snp.right)
         }
         
@@ -317,38 +254,91 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             make.left.equalTo(bottomLeftValue.snp.right)
             
             make.bottom.equalTo(card).offset(-20)
-
         }
         
         return card
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func createTodaysProgressCard() -> CardView {
+        let card = CardView()
+        self.contentView.addSubview(card)
         
-        self.view.backgroundColor = UIColor.darkGray
+        let topLeftLabel = TitleLabel()
+        topLeftLabel.textAlignment = .left
+        topLeftLabel.text = "1 out of 9"
+        card.addSubview(topLeftLabel)
         
-        self.initializeScrollView()
+        let topLeftValue = ValueLabel()
+        topLeftValue.textAlignment = .left
+        topLeftValue.text = "Completed Exercises"
+        card.addSubview(topLeftValue)
         
-        let card = self.createTodaysProgressCard()
-        let card2 = self.createAboutRoutineCard()
-        let card3 = self.createStatisticsCard()
-
-        card.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.right.equalTo(contentView).inset(8)
-        }
+        let topRightLabel = TitleLabel()
+        topRightLabel.textAlignment = .right
+        topRightLabel.text = "11%"
         
-        card2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card.snp.bottom).offset(8)
-            make.bottom.equalTo(card3.snp.top).offset(-8)
+        card.addSubview(topRightLabel)
+        
+        let topRightValue = ValueLabel()
+        topRightValue.textAlignment = .right
+        topRightValue.text = "Completion Rate"
+        card.addSubview(topRightValue)
+        
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(stackView)
+        
+        let homeBarView = HomeBarView()
+        homeBarView.categoryTitle.text = "Title"
+        homeBarView.progressView.setCompletionRate(CompletionRate(percentage: 90, label: "90%"))
+        homeBarView.progressRate.text = "90%"
+        
+        stackView.addArrangedSubview(homeBarView)
+        
+        topLeftLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.leading.equalTo(card).offset(16)
             
-            make.left.right.equalTo(contentView).inset(8)
+            make.right.equalTo(topRightLabel.snp.left)
+            
+            make.height.equalTo(24)
         }
         
-        card3.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalTo(contentView).offset(-8)
-            make.left.right.equalTo(contentView).inset(8)
+        topRightLabel.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.trailing.equalTo(card).offset(-16)
+            
+            make.left.equalTo(topLeftLabel.snp.right)
+            
+            make.height.equalTo(24)
         }
+        
+        topLeftValue.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(topLeftLabel.snp.bottom).offset(8)
+            make.leading.equalTo(card).offset(16)
+            
+            make.right.equalTo(topRightValue.snp.left)
+        }
+        
+        topRightValue.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(topRightLabel.snp.bottom).offset(8)
+            make.trailing.equalTo(card).offset(-16)
+            
+            make.left.equalTo(topLeftValue.snp.right)
+        }
+        
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(topLeftValue.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
+
+        }
+        
+        return card
     }
 }

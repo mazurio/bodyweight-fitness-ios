@@ -331,7 +331,7 @@
             </objects>
             <point key="canvasLocation" x="-2562" y="1160"/>
         </scene>
-        <!--Bodyweight Fitness-->
+        <!--Home-->
         <scene sceneID="zPA-2W-i4F">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0fB-kv-Ao9" customClass="HomeViewController" customModule="Bodyweight_Fitness" customModuleProvider="target" sceneMemberID="viewController">
@@ -342,7 +342,7 @@
                         <viewLayoutGuide key="safeArea" id="YR0-Ew-fEi"/>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="Bodyweight Fitness" id="trb-IL-i5N">
+                    <navigationItem key="navigationItem" title="Home" id="trb-IL-i5N">
                         <barButtonItem key="rightBarButtonItem" image="plus" id="DHT-m5-Nrs">
                             <color key="tintColor" red="0.0" green="0.27058823529999998" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

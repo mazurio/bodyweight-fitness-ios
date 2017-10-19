@@ -30,16 +30,16 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-//
-//        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
-//
-//        let p = storyboard.instantiateViewController(
-//            withIdentifier: "WorkoutLogViewController"
-//        ) as! WorkoutLogViewController
-//
-//        p.hidesBottomBarWhenPushed = true
-//
-//        self.navigationController?.pushViewController(p, animated: true)
+
+        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
+
+        let p = storyboard.instantiateViewController(
+            withIdentifier: "WorkoutLogViewController"
+        ) as! WorkoutLogViewController
+
+        p.hidesBottomBarWhenPushed = true
+
+        self.navigationController?.pushViewController(p, animated: true)
     }
 
     func initializeScrollView() {
