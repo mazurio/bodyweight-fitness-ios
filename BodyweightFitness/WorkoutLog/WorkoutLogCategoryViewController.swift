@@ -1,98 +1,24 @@
 import SnapKit
 
-class WorkoutLogCategoryViewController: UIViewController {
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    let contentStackView = UIStackView()
-    
+class WorkoutLogCategoryViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
-        
-        self.initializeScrollView()
         self.initializeContent()
     }
     
-    func initializeScrollView() {
-        self.view.addSubview(self.scrollView)
-        self.scrollView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(self.view)
-        }
-        
-        self.scrollView.addSubview(self.contentView)
-        self.contentView.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(self.scrollView)
-            make.left.right.equalTo(self.view)
-        }
-        
-        self.createBackgroundView()
-        
-        self.contentStackView.axis = .vertical
-        self.contentStackView.distribution = .fill
-        self.contentStackView.alignment = .fill
-        self.contentStackView.spacing = 16
-        self.contentStackView.translatesAutoresizingMaskIntoConstraints = false
-        self.contentView.addSubview(self.contentStackView)
-        
-        self.contentStackView.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.equalTo(contentView).offset(8)
-            make.right.equalTo(contentView).offset(-8)
-            make.bottom.equalTo(contentView).offset(-8)
-        }
-    }
-    
     func initializeContent() {
-        self.contentStackView.addArrangedSubview(
+        self.addView(
             self.createStatisticsCard()
         )
         
-        self.contentStackView.addArrangedSubview(
+        self.addView(
             ValueLabel.create(text: "Category Completion Rate")
         )
         
-        self.contentStackView.addArrangedSubview(
+        self.addView(
             self.createCompletionRateHistoryCard()
         )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-        
-        self.contentStackView.addArrangedSubview(
-            self.createCompletionRateHistoryCard()
-        )
-    }
-    
-    func createBackgroundView(height: Int = 50) {
-        let view = UIView()
-        view.backgroundColor = UIColor.primary()
-        
-        self.contentView.addSubview(view)
-        
-        view.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView)
-            make.left.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.height.equalTo(height)
-        }
     }
     
     func createStatisticsCard() -> CardView {

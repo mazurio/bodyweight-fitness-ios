@@ -14,6 +14,7 @@
 		46B02FDDA16C9D54DBC1A61D /* RepositoryStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02F2362EA8A9111571B02 /* RepositoryStream.swift */; };
 		731A41EA1F991B1600C44922 /* WorkoutLogCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */; };
 		731A41EC1F991B3400C44922 /* Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41EB1F991B3400C44922 /* Views.swift */; };
+		731A41EE1F99300A00C44922 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 731A41ED1F99300A00C44922 /* AbstractViewController.swift */; };
 		7328DCBE1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift */; };
 		7329B68C1D0D8476005F5F74 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7329B68B1D0D8476005F5F74 /* HomeViewController.swift */; };
 		732BA0241C5AE75900C1CDB5 /* ProgressPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */; };
@@ -187,6 +188,7 @@
 		46B02F2362EA8A9111571B02 /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
 		731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogCategoryViewController.swift; sourceTree = "<group>"; };
 		731A41EB1F991B3400C44922 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
+		731A41ED1F99300A00C44922 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogGeneralViewController.swift; sourceTree = "<group>"; };
 		7329B68B1D0D8476005F5F74 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		732BA0231C5AE75900C1CDB5 /* ProgressPageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressPageViewController.xib; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
 				7366D8E01C51810600819790 /* Extensions.swift */,
 				73737FF61F8D064000C616B8 /* Date+Extensions.swift */,
+				731A41ED1F99300A00C44922 /* AbstractViewController.swift */,
 				7347DC2E1F8D3CD8001E1BE5 /* Main */,
 				7347DC2F1F8D3CF1001E1BE5 /* Workout */,
 				73D393251F8D474E00D9F4DD /* WorkoutLog */,
@@ -1028,6 +1031,7 @@
 				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,
 				E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */,
 				73AA28FB1CB7ACEB00DEED79 /* DashboardSingleItemCell.swift in Sources */,
+				731A41EE1F99300A00C44922 /* AbstractViewController.swift in Sources */,
 				73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */,
 				73D393291F8D4BAE00D9F4DD /* WorkoutLogViewController.swift in Sources */,
 				7347DC2B1F8D2091001E1BE5 /* SettingsViewController.swift in Sources */,
