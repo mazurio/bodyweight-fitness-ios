@@ -4,7 +4,6 @@ import StoreKit
 import SnapKit
 
 class HomeViewController: UIViewController {
-
     var routine: Routine? = nil
     
     let scrollView = UIScrollView()
@@ -60,6 +59,16 @@ class HomeViewController: UIViewController {
         self.navigationItem.title = self.routine?.title
 
         self.contentView.removeAllSubviews()
+        
+        let view = UIView()
+        view.backgroundColor = UIColor.primary()
+        self.contentView.addSubview(view)
+        view.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(contentView)
+            make.left.equalTo(contentView)
+            make.right.equalTo(contentView)
+            make.height.equalTo(150)
+        }
         
         let card1 = self.createTodaysProgressCard()
         let card2 = self.createAboutRoutineCard()
