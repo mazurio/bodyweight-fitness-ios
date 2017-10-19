@@ -60,19 +60,17 @@ class HomeViewController: UIViewController {
 
         self.contentView.removeAllSubviews()
         
-        let view = UIView()
-        view.backgroundColor = UIColor.primary()
-        self.contentView.addSubview(view)
+        let view = self.createBackgroundView()
+        let card1 = self.createTodaysProgressCard()
+        let card2 = self.createAboutRoutineCard()
+        let card3 = self.createStatisticsCard()
+        
         view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView)
             make.left.equalTo(contentView)
             make.right.equalTo(contentView)
             make.height.equalTo(150)
         }
-        
-        let card1 = self.createTodaysProgressCard()
-        let card2 = self.createAboutRoutineCard()
-        let card3 = self.createStatisticsCard()
         
         card1.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView).offset(8)
@@ -90,6 +88,15 @@ class HomeViewController: UIViewController {
             make.bottom.equalTo(contentView).offset(-8)
             make.left.right.equalTo(contentView).inset(8)
         }
+    }
+    
+    func createBackgroundView() -> UIView {
+        let view = UIView()
+        
+        view.backgroundColor = UIColor.primary()
+        self.contentView.addSubview(view)
+        
+        return view
     }
     
     func createTodaysProgressCard() -> CardView {
