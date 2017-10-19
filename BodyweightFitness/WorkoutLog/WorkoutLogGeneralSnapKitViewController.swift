@@ -108,6 +108,27 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         label.text = "Today's Progress"
         card.addSubview(label)
         
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(stackView)
+        
+        let cardButton = CardButton()
+        cardButton.setTitle("Start Workout", for: .normal)
+        card.addSubview(cardButton)
+        
+        
+        let homeBarView = HomeBarView()
+        homeBarView.categoryTitle.text = "Text"
+        homeBarView.progressView.setCompletionRate(
+            CompletionRate(percentage: 90, label: "90%")
+        )
+        homeBarView.progressRate.text = "90%"
+        stackView.addArrangedSubview(homeBarView)
+
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.left.equalTo(card).offset(16)
@@ -116,12 +137,14 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             make.height.equalTo(24)
         }
         
-        let cardButton = CardButton()
-        cardButton.setTitle("Start Workout", for: .normal)
-        card.addSubview(cardButton)
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(label.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+        }
         
         cardButton.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(label.snp.bottom).offset(16)
+            make.top.equalTo(stackView.snp.bottom).offset(16)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
             make.bottom.equalTo(card).offset(-16)
