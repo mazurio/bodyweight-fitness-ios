@@ -113,6 +113,8 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         let view = self.createBackgroundView()
         let card1 = self.createStatisticsCard()
         let card2 = self.createTodaysProgressCard()
+        let card3 = self.createWorkoutLengthHistoryCard()
+        let card4 = self.createCompletionRateHistoryCard()
         
         view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView)
@@ -128,9 +130,19 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         
         card2.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card1.snp.bottom).offset(8)
-            make.bottom.equalTo(contentView).offset(-8)
-
             make.left.right.equalTo(contentView).inset(8)
+        }
+        
+        card3.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card2.snp.bottom).offset(8)
+            make.left.right.equalTo(contentView).inset(8)
+        }
+        
+        card4.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card3.snp.bottom).offset(8)
+            make.left.right.equalTo(contentView).inset(8)
+
+            make.bottom.equalTo(contentView).offset(-8)
         }
     }
     
@@ -337,6 +349,42 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             make.right.equalTo(card).offset(-16)
             make.bottom.equalTo(card).offset(-16)
 
+        }
+        
+        return card
+    }
+    
+    func createWorkoutLengthHistoryCard() -> CardView {
+        let card = CardView()
+        self.contentView.addSubview(card)
+        
+        let label = TitleLabel()
+        label.text = "12 October 2017"
+        card.addSubview(label)
+
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-20)
+        }
+        
+        return card
+    }
+    
+    func createCompletionRateHistoryCard() -> CardView {
+        let card = CardView()
+        self.contentView.addSubview(card)
+        
+        let label = TitleLabel()
+        label.text = "12 October 2017"
+        card.addSubview(label)
+        
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-20)
         }
         
         return card
