@@ -6,7 +6,7 @@ extension Date {
             let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
             let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
             
-            return "\(month), \(year)"
+            return "\(month) \(year)"
         }
     }
     
@@ -16,7 +16,7 @@ extension Date {
             let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
             let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
             
-            return "\(day) \(month), \(year)"
+            return "\(day) \(month) \(year)"
         }
     }
     
