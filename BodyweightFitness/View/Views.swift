@@ -38,6 +38,12 @@ class ValueLabel: UILabel {
         self.font = UIFont.systemFont(ofSize: 17)
         self.textColor = UIColor(red: 0.47, green: 0.47, blue: 0.47, alpha: 1.00)
     }
+    
+    class func create(text: String) -> UILabel {
+        let label = ValueLabel()
+        label.text = text
+        return label
+    }
 }
 
 class DescriptionTextView: UITextView {

@@ -3,6 +3,7 @@ import SnapKit
 class WorkoutLogCategoryViewController: UIViewController {
     let scrollView = UIScrollView()
     let contentView = UIView()
+    let contentStackView = UIStackView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,61 +17,86 @@ class WorkoutLogCategoryViewController: UIViewController {
     func initializeScrollView() {
         self.view.addSubview(self.scrollView)
         self.scrollView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view)
+            make.edges.equalTo(self.view)
         }
         
         self.scrollView.addSubview(self.contentView)
         self.contentView.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(scrollView)
-            make.left.right.equalTo(view)
+            make.top.bottom.equalTo(self.scrollView)
+            make.left.right.equalTo(self.view)
         }
+        
+        self.contentStackView.axis = .vertical
+        self.contentStackView.distribution = .fill
+        self.contentStackView.alignment = .fill
+        self.contentStackView.spacing = 16
+        self.contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        self.contentView.addSubview(self.contentStackView)
     }
     
     func initializeContent() {
-        let view = self.createBackgroundView()
-        let card1 = self.createStatisticsCard()
-        let card2 = self.createCompletionRateHistoryCard()
-       
-        let card2Title = ValueLabel()
-        card2Title.text = "Category Completion Rate"
-        self.contentView.addSubview(card2Title)
+//        self.createBackgroundView()
+
+        self.contentStackView.addArrangedSubview(
+            self.createStatisticsCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            ValueLabel.create(text: "Category Completion Rate")
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.addArrangedSubview(
+            self.createCompletionRateHistoryCard()
+        )
+        
+        self.contentStackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(contentView).offset(8)
+            make.left.equalTo(contentView).offset(8)
+            make.right.equalTo(contentView).offset(-8)
+            make.bottom.equalTo(contentView).offset(-8)
+        }
+    }
+    
+    func createBackgroundView(height: Int = 50) {
+        let view = UIView()
+        view.backgroundColor = UIColor.primary()
+        
+        self.contentView.addSubview(view)
         
         view.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView)
             make.left.equalTo(contentView)
             make.right.equalTo(contentView)
-            make.height.equalTo(50)
+            make.height.equalTo(height)
         }
-        
-        card1.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card2Title.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card1.snp.bottom).offset(16)
-            make.left.right.equalTo(contentView).inset(16)
-            make.bottom.equalTo(card2.snp.top).offset(-16)
-        }
-        
-        card2.snp.makeConstraints { (make) -> Void in
-            make.left.right.equalTo(contentView).inset(8)
-            make.bottom.equalTo(contentView).offset(-8)
-        }
-    }
-    
-    func createBackgroundView() -> UIView {
-        let view = UIView()
-        
-        view.backgroundColor = UIColor.primary()
-        self.contentView.addSubview(view)
-        
-        return view
     }
     
     func createStatisticsCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
         
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
