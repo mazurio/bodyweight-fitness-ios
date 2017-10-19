@@ -8,17 +8,9 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     }
     
     func initializeContent() {
-        self.addView(
-            self.createStatisticsCard()
-        )
-        
-        self.addView(
-            ValueLabel.create(text: "Category Completion Rate")
-        )
-        
-        self.addView(
-            self.createCompletionRateHistoryCard()
-        )
+        self.addView(self.createStatisticsCard())
+        self.addView(ValueLabel.create(text: "Category Completion Rate"))
+        self.addView(self.createCompletionRateHistoryCard())
     }
     
     func createStatisticsCard() -> CardView {

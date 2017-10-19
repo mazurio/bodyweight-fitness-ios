@@ -1,116 +1,22 @@
 import SnapKit
 
-class WorkoutLogGeneralViewController: UIViewController {
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    
+class WorkoutLogGeneralViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
-        
-        self.initializeScrollView()
+
         self.initializeContent()
     }
     
-    func initializeScrollView() {
-        self.view.addSubview(self.scrollView)
-        self.scrollView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view)
-        }
-        
-        self.scrollView.addSubview(self.contentView)
-        self.contentView.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(scrollView)
-            make.left.right.equalTo(view)
-        }
-    }
-    
     func initializeContent() {
-        let view = self.createBackgroundView()
-        let card1 = self.createStatisticsCard()
-        let card2 = self.createTodaysProgressCard()
-        let card3 = self.createWorkoutLengthHistoryCard()
-        let card4 = self.createCompletionRateHistoryCard()
-        let card5 = self.createMissedExercisesCard()
-
-        let card2Title = ValueLabel()
-        card2Title.text = "Workout Progress"
-        self.contentView.addSubview(card2Title)
-        
-        let card3Title = ValueLabel()
-        card3Title.text = "Workout Length History"
-        self.contentView.addSubview(card3Title)
-        
-        let card4Title = ValueLabel()
-        card4Title.text = "Completion Rate History"
-        self.contentView.addSubview(card4Title)
-        
-        let card5Title = ValueLabel()
-        card5Title.text = "Missed Exercises"
-        self.contentView.addSubview(card5Title)
-        
-        view.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView)
-            make.left.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.height.equalTo(50)
-        }
-        
-        card1.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card2Title.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card1.snp.bottom).offset(16)
-            make.left.right.equalTo(contentView).inset(16)
-            make.bottom.equalTo(card2.snp.top).offset(-16)
-        }
-        
-        card2.snp.makeConstraints { (make) -> Void in
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card3Title.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card2.snp.bottom).offset(16)
-            make.left.right.equalTo(contentView).inset(16)
-            make.bottom.equalTo(card3.snp.top).offset(-16)
-        }
-        
-        card3.snp.makeConstraints { (make) -> Void in
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card4Title.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card3.snp.bottom).offset(16)
-            make.left.right.equalTo(contentView).inset(16)
-            make.bottom.equalTo(card4.snp.top).offset(-16)
-        }
-        
-        card4.snp.makeConstraints { (make) -> Void in
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card5Title.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card4.snp.bottom).offset(16)
-            make.left.right.equalTo(contentView).inset(16)
-            make.bottom.equalTo(card5.snp.top).offset(-16)
-        }
-        
-        card5.snp.makeConstraints { (make) -> Void in
-            make.left.right.equalTo(contentView).inset(8)
-            make.bottom.equalTo(contentView).offset(-8)
-        }
-    }
-    
-    func createBackgroundView() -> UIView {
-        let view = UIView()
-        
-        view.backgroundColor = UIColor.primary()
-        self.contentView.addSubview(view)
-        
-        return view
+        self.addView(self.createStatisticsCard())
+        self.addView(ValueLabel.create(text: "Workout Progress"))
+        self.addView(self.createTodaysProgressCard())
+        self.addView(ValueLabel.create(text: "Workout Length History"))
+        self.addView(self.createWorkoutLengthHistoryCard())
+        self.addView(ValueLabel.create(text: "Completion Rate History"))
+        self.addView(self.createCompletionRateHistoryCard())
+        self.addView(ValueLabel.create(text: "Missed Exercises"))
+        self.addView(self.createMissedExercisesCard())
     }
     
     func createTitleValueView(labelText: String, valueText: String) -> UIView {
