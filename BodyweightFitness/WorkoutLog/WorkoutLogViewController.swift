@@ -17,11 +17,7 @@ class WorkoutLogViewController: UIViewController {
             self.navigationItem.title = routine.startTime.commonDescription
         }
         
-        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
-        
-        let p = storyboard.instantiateViewController(
-            withIdentifier: "WorkoutLogGeneralSnapKitViewController"
-        ) as! WorkoutLogGeneralSnapKitViewController
+        let p = WorkoutLogGeneralViewController()
         
         controllerArray.append(p)
         
