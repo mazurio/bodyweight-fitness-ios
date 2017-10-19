@@ -276,7 +276,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             
             make.right.equalTo(bottomRightValue.snp.left)
             
-            make.bottom.equalTo(card).offset(20)
+            make.bottom.equalTo(card).offset(-20)
         }
         
         bottomRightValue.snp.makeConstraints { (make) -> Void in
@@ -285,7 +285,7 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
             
             make.left.equalTo(bottomLeftValue.snp.right)
             
-            make.bottom.equalTo(card).offset(20)
+            make.bottom.equalTo(card).offset(-20)
 
         }
         
