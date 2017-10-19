@@ -25,6 +25,7 @@ class WorkoutLogViewController: UIViewController {
             for category in routine.categories {
                 let categoryViewController = WorkoutLogCategoryViewController()
                 categoryViewController.title = category.title
+                categoryViewController.category = category
                 controllerArray.append(categoryViewController)
             }
         }

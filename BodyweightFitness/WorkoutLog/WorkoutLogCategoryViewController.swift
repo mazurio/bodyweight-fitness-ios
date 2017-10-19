@@ -1,6 +1,8 @@
 import SnapKit
 
 class WorkoutLogCategoryViewController: AbstractViewController {
+     var category: RepositoryCategory?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -11,6 +13,16 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         self.addView(self.createStatisticsCard())
         self.addView(ValueLabel.create(text: "Category Completion Rate"))
         self.addView(self.createCompletionRateHistoryCard())
+        
+        if let category = self.category {
+            for section in category.sections {
+                self.addView(ValueLabel.create(text: section.title))
+                
+                for exercise in section.exercises {
+                    self.addView(ValueLabel.create(text: exercise.title))
+                }
+            }
+        }
     }
     
     func createStatisticsCard() -> CardView {
