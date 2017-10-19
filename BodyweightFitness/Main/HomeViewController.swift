@@ -62,17 +62,17 @@ class HomeViewController: UIViewController {
         
         self.contentView.removeAllSubviews()
         
-        let card = self.createTodaysProgressCard()
+        let card1 = self.createTodaysProgressCard()
         let card2 = self.createAboutRoutineCard()
         let card3 = self.createStatisticsCard()
         
-        card.snp.makeConstraints { (make) -> Void in
+        card1.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(contentView).offset(8)
             make.left.right.equalTo(contentView).inset(8)
         }
         
         card2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card.snp.bottom).offset(8)
+            make.top.equalTo(card1.snp.bottom).offset(8)
             make.bottom.equalTo(card3.snp.top).offset(-8)
             
             make.left.right.equalTo(contentView).inset(8)
@@ -132,6 +132,7 @@ class HomeViewController: UIViewController {
         
         let cardButton = CardButton()
         cardButton.setTitle("Start Workout", for: .normal)
+        cardButton.addTarget(self, action: #selector(startWorkout), for: .touchUpInside)
         card.addSubview(cardButton)
         
         label.snp.makeConstraints { (make) -> Void in
