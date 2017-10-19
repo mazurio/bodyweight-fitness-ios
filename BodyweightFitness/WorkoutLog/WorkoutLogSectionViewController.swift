@@ -93,26 +93,6 @@ class WorkoutLogSectionViewController: UIViewController {
         topRightValue.text = "Last Updated"
         card.addSubview(topRightValue)
         
-        let bottomLeftLabel = TitleLabel()
-        bottomLeftLabel.textAlignment = .left
-        bottomLeftLabel.text = "--"
-        card.addSubview(bottomLeftLabel)
-        
-        let bottomLeftValue = ValueLabel()
-        bottomLeftValue.textAlignment = .left
-        bottomLeftValue.text = "Workout Length"
-        card.addSubview(bottomLeftValue)
-        
-        let bottomRightLabel = TitleLabel()
-        bottomRightLabel.textAlignment = .right
-        bottomRightLabel.text = "1"
-        card.addSubview(bottomRightLabel)
-        
-        let bottomRightValue = ValueLabel()
-        bottomRightValue.textAlignment = .right
-        bottomRightValue.text = "1"
-        card.addSubview(bottomRightValue)
-        
         topLeftLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.leading.equalTo(card).offset(16)
@@ -136,6 +116,8 @@ class WorkoutLogSectionViewController: UIViewController {
             make.leading.equalTo(card).offset(16)
             
             make.right.equalTo(topRightValue.snp.left)
+            
+            make.bottom.equalTo(card).offset(-20)
         }
         
         topRightValue.snp.makeConstraints { (make) -> Void in
@@ -143,40 +125,6 @@ class WorkoutLogSectionViewController: UIViewController {
             make.trailing.equalTo(card).offset(-16)
             
             make.left.equalTo(topLeftValue.snp.right)
-        }
-        
-        bottomLeftLabel.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(topLeftValue.snp.bottom).offset(20)
-            make.leading.equalTo(card).offset(16)
-            
-            make.right.equalTo(bottomRightLabel.snp.left)
-            
-            make.height.equalTo(24)
-        }
-        
-        bottomRightLabel.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(topRightValue.snp.bottom).offset(20)
-            make.trailing.equalTo(card).offset(-16)
-            
-            make.left.equalTo(bottomLeftLabel.snp.right)
-            
-            make.height.equalTo(24)
-        }
-        
-        bottomLeftValue.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(bottomLeftLabel.snp.bottom).offset(8)
-            make.leading.equalTo(card).offset(16)
-            
-            make.right.equalTo(bottomRightValue.snp.left)
-            
-            make.bottom.equalTo(card).offset(-20)
-        }
-        
-        bottomRightValue.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(bottomRightLabel.snp.bottom).offset(8)
-            make.trailing.equalTo(card).offset(-16)
-            
-            make.left.equalTo(bottomLeftValue.snp.right)
             
             make.bottom.equalTo(card).offset(-20)
         }
