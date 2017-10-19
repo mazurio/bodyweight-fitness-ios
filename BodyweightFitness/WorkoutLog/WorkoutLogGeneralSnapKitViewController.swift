@@ -66,14 +66,34 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
     
     func first() {
         let card = CardView()
+        let secondCard = CardView()
         
-        self.view.addSubview(card)
+        let stackView = UIStackView()
+        self.view.addSubview(stackView)
+        
+        stackView.axis = UILayoutConstraintAxis.vertical
+        stackView.distribution = UIStackViewDistribution.equalSpacing
+        stackView.alignment = UIStackViewAlignment.top
+        stackView.spacing = 16.0
+        
+        stackView.addArrangedSubview(card)
+        stackView.addArrangedSubview(secondCard)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.width.equalTo(self.view)
+            make.height.equalTo(self.view)
+            make.center.equalTo(self.view)
+        }
         
         card.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(view).offset(20)
-            make.left.equalTo(view).offset(20)
-            make.right.equalTo(view).offset(-20)
-            make.bottom.equalTo(view).offset(-20)
+            make.width.equalTo(stackView)
+            make.height.equalTo(100)
+        }
+        
+        secondCard.snp.makeConstraints { (make) -> Void in
+            make.width.equalTo(stackView)
+            make.height.equalTo(100)
         }
         
         let label = TitleLabel()
@@ -114,13 +134,63 @@ class WorkoutLogGeneralSnapKitViewController: UIViewController {
         }
     }
     
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
+    func initializeScrollView() {
+        self.view.addSubview(self.scrollView)
+        self.scrollView.snp.makeConstraints { (make) -> Void in
+            make.edges.equalTo(view)
+        }
+        
+        self.scrollView.addSubview(self.contentView)
+        self.contentView.snp.makeConstraints { (make) -> Void in
+            make.top.bottom.equalTo(scrollView)
+            make.left.right.equalTo(view)
+        }
+    }
+    
+    func createTodaysProgressCard() -> CardView {
+        let card = CardView()
+        self.contentView.addSubview(card)
+        
+        let label = TitleLabel()
+        label.text = "Today's Progress"
+        
+        card.addSubview(label)
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            
+            make.height.equalTo(24)
+        }
+        
+        return card
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.darkGray
+        view.backgroundColor = UIColor.darkGray
         
+        self.initializeScrollView()
         
-        first()
+        let card = self.createTodaysProgressCard()
+        card.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(150)
+            make.left.right.equalTo(contentView).inset(20)
+            make.top.equalTo(contentView).offset(20)
+        }
         
+        let card2 = CardView()
+        contentView.addSubview(card2)
+        
+        card2.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(150)
+            make.left.right.equalTo(contentView).inset(20)
+            make.top.equalTo(card.snp.bottom).offset(20)
+            make.bottom.equalTo(contentView).offset(-20)
+        }
     }
 }

@@ -260,6 +260,50 @@
             </objects>
             <point key="canvasLocation" x="2012" y="-247.82608695652175"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="HlB-cX-QWb">
+            <objects>
+                <viewController id="g2h-Eg-GP9" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0hB-TI-ghc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yb6-Th-Ubj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="us7-jc-a6n">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="97.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hpU-X5-fXu">
+                                        <rect key="frame" x="0.0" y="113.5" width="375" height="113.5"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0aS-Vc-MTp">
+                                        <rect key="frame" x="0.0" y="243" width="375" height="104.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y3v-Q5-6ys">
+                                        <rect key="frame" x="0.0" y="363.5" width="375" height="283.5"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RhU-zq-k6r" firstAttribute="bottom" secondItem="yb6-Th-Ubj" secondAttribute="bottom" id="Bff-eb-Faz"/>
+                            <constraint firstItem="yb6-Th-Ubj" firstAttribute="top" secondItem="RhU-zq-k6r" secondAttribute="top" id="F5g-Cw-byU"/>
+                            <constraint firstItem="RhU-zq-k6r" firstAttribute="trailing" secondItem="yb6-Th-Ubj" secondAttribute="trailing" id="dKr-d9-HSH"/>
+                            <constraint firstItem="yb6-Th-Ubj" firstAttribute="leading" secondItem="RhU-zq-k6r" secondAttribute="leading" id="uG3-g4-i88"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="RhU-zq-k6r"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eIe-si-j5B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2975.1999999999998" y="-325.18740629685158"/>
+        </scene>
         <!--Workout Log General Snap Kit View Controller-->
         <scene sceneID="x5O-cY-33x">
             <objects>
