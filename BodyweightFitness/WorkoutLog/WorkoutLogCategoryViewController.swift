@@ -19,7 +19,9 @@ class WorkoutLogCategoryViewController: AbstractViewController {
                 self.addView(ValueLabel.create(text: section.title))
                 
                 for exercise in section.exercises {
-                    self.addView(ValueLabel.create(text: exercise.title))
+                    self.addView(
+                        createExerciseCard(exercise: exercise)
+                    )
                 }
             }
         }
@@ -98,6 +100,33 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-20)
+        }
+        
+        return card
+    }
+    
+    func createExerciseCard(exercise: RepositoryExercise) -> CardView {
+        let card = CardView()
+        
+        let label = TitleLabel()
+        label.text = exercise.title
+        card.addSubview(label)
+        
+        let value = ValueLabel()
+        value.text = "1 Set, 3 Seconds"
+        card.addSubview(value)
+        
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(20)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+        }
+        
+        value.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(label.snp.bottom).offset(8)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
             make.bottom.equalTo(card).offset(-20)
