@@ -36,10 +36,20 @@ class RepositoryRoutineCompanion {
         return formatter.string(from: self.repositoryRoutine.lastUpdatedTime)
     }
 
-    func workoutLength() -> String {
-        let interval = repositoryRoutine.lastUpdatedTime.timeIntervalSince(repositoryRoutine.startTime)
+    func lastUpdatedTimeLabel() -> String {
+        let companion = ListOfRepositoryExercisesCompanion(self.repositoryRoutine.exercises)
 
-        let (hours, minutes) = stringFromTimeInterval(interval)
+        if (companion.allExercisesCompleted()) {
+            return "End Time"
+        } else {
+            return "Last Updated Time"
+        }
+    }
+
+    func workoutLength() -> String {
+        let interval = self.repositoryRoutine.lastUpdatedTime.timeIntervalSince(repositoryRoutine.startTime)
+
+        let (hours, minutes) = self.stringFromTimeInterval(interval)
 
         if (hours > 0 || minutes > 10) {
             if (hours > 0 && minutes == 0) {
@@ -122,23 +132,6 @@ class RepositoryExerciseCompanion {
         }
 
         return false
-    }
-}
-
-class RepositoryRoutineHelper {
-    let repositoryRoutine: RepositoryRoutine
-    
-    init(repositoryRoutine: RepositoryRoutine) {
-        self.repositoryRoutine = repositoryRoutine
-    }
-
-    func getLastUpdatedTimeLabel() -> String {
-        return ""
-//        if (isCompleted()) {
-//            return "End Time"
-//        } else {
-//            return "Last Updated Time"
-//        }
     }
 }
 

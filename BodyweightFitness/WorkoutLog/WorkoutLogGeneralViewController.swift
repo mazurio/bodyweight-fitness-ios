@@ -55,7 +55,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         self.contentView.addSubview(card)
 
         let companion = RepositoryRoutineCompanion(repositoryRoutine)
-        let helper = RepositoryRoutineHelper(repositoryRoutine: repositoryRoutine)
 
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
@@ -75,7 +74,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let topRightValue = ValueLabel()
         topRightValue.textAlignment = .right
-        topRightValue.text = helper.getLastUpdatedTimeLabel()
+        topRightValue.text = companion.lastUpdatedTimeLabel()
         card.addSubview(topRightValue)
         
         let bottomLeftLabel = TitleLabel()
