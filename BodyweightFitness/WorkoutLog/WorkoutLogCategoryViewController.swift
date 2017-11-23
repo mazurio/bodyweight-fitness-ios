@@ -1,7 +1,7 @@
 import SnapKit
 
 class WorkoutLogCategoryViewController: AbstractViewController {
-     var category: RepositoryCategory?
+    var category: RepositoryCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()

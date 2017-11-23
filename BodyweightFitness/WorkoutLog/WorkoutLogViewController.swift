@@ -19,6 +19,7 @@ class WorkoutLogViewController: UIViewController {
         
         let generalViewController = WorkoutLogGeneralViewController()
         generalViewController.title = "General"
+        generalViewController.repositoryRoutine = repositoryRoutine
         controllerArray.append(generalViewController)
         
         if let routine = repositoryRoutine {

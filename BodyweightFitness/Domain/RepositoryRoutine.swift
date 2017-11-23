@@ -36,6 +36,14 @@ class RepositoryRoutineHelper {
         return formatter.string(from: repositoryRoutine.lastUpdatedTime)
     }
     
+    func getLastUpdatedTimeLabel() -> String {
+        if (isCompleted()) {
+            return "End Time"
+        } else {
+            return "Last Updated Time"
+        }
+    }
+    
     func getWorkoutLength() -> String {
         let interval = repositoryRoutine.lastUpdatedTime.timeIntervalSince(repositoryRoutine.startTime)
         

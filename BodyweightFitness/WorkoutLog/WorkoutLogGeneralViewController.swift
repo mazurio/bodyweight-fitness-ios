@@ -1,6 +1,8 @@
 import SnapKit
 
 class WorkoutLogGeneralViewController: AbstractViewController {
+    var repositoryRoutine: RepositoryRoutine?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -8,15 +10,17 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     }
     
     func initializeContent() {
-        self.addView(self.createStatisticsCard())
-        self.addView(ValueLabel.create(text: "Workout Progress"))
-        self.addView(self.createTodaysProgressCard())
-        self.addView(ValueLabel.create(text: "Workout Length History"))
-        self.addView(self.createWorkoutLengthHistoryCard())
-        self.addView(ValueLabel.create(text: "Completion Rate History"))
-        self.addView(self.createCompletionRateHistoryCard())
-        self.addView(ValueLabel.create(text: "Missed Exercises"))
-        self.addView(self.createMissedExercisesCard())
+        if let repositoryRoutine = self.repositoryRoutine {
+            self.addView(self.createStatisticsCard(repositoryRoutine: repositoryRoutine))
+            self.addView(ValueLabel.create(text: "Workout Progress"))
+            self.addView(self.createTodaysProgressCard())
+            self.addView(ValueLabel.create(text: "Workout Length History"))
+            self.addView(self.createWorkoutLengthHistoryCard())
+            self.addView(ValueLabel.create(text: "Completion Rate History"))
+            self.addView(self.createCompletionRateHistoryCard())
+            self.addView(ValueLabel.create(text: "Missed Exercises"))
+            self.addView(self.createMissedExercisesCard())
+        }
     }
     
     func createTitleValueView(labelText: String, valueText: String) -> UIView {
@@ -46,13 +50,15 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return view
     }
     
-    func createStatisticsCard() -> CardView {
+    func createStatisticsCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
         self.contentView.addSubview(card)
         
+        let helper = RepositoryRoutineHelper(repositoryRoutine: repositoryRoutine)
+        
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = "19:34"
+        topLeftLabel.text = helper.getStartTime()
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
@@ -62,18 +68,18 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = "19:34"
+        topRightLabel.text = helper.getLastUpdatedTime()
         
         card.addSubview(topRightLabel)
         
         let topRightValue = ValueLabel()
         topRightValue.textAlignment = .right
-        topRightValue.text = "Last Updated"
+        topRightValue.text = helper.getLastUpdatedTimeLabel()
         card.addSubview(topRightValue)
         
         let bottomLeftLabel = TitleLabel()
         bottomLeftLabel.textAlignment = .left
-        bottomLeftLabel.text = "--"
+        bottomLeftLabel.text = helper.getWorkoutLength()
         card.addSubview(bottomLeftLabel)
         
         let bottomLeftValue = ValueLabel()
@@ -83,12 +89,12 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let bottomRightLabel = TitleLabel()
         bottomRightLabel.textAlignment = .right
-        bottomRightLabel.text = "1"
+        bottomRightLabel.text = " "
         card.addSubview(bottomRightLabel)
         
         let bottomRightValue = ValueLabel()
         bottomRightValue.textAlignment = .right
-        bottomRightValue.text = "1"
+        bottomRightValue.text = " "
         card.addSubview(bottomRightValue)
         
         topLeftLabel.snp.makeConstraints { (make) -> Void in
