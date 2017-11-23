@@ -15,11 +15,88 @@ class DomainTests: QuickSpec {
         }
         
         describe("Repository Category Companion") {
-            it("initializes") {
-                let repositoryCategory = RepositoryCategory()
-                let companion = RepositoryCategoryCompanion(repositoryCategory)
+            context("numberOfCompletedExercises()") {
+                it("does not count invisible exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
 
-                expect(companion.repositoryCategory).to(equal(repositoryCategory))
+                    let repositorySet = RepositorySet()
+                    repositorySet.isTimed = true
+                    repositorySet.seconds = 0
+
+                    let repositoryExercise = RepositoryExercise()
+                    repositoryExercise.visible = false
+                    repositoryExercise.sets.append(repositorySet)
+
+                    repositoryCategory.exercises.append(repositoryExercise)
+
+                    expect(companion.numberOfCompletedExercises()).to(equal(0))
+                }
+
+                it("does not count incomplete exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let repositorySet = RepositorySet()
+                    repositorySet.isTimed = true
+                    repositorySet.seconds = 0
+
+                    let repositoryExercise = RepositoryExercise()
+                    repositoryExercise.visible = true
+                    repositoryExercise.sets.append(repositorySet)
+
+                    repositoryCategory.exercises.append(repositoryExercise)
+
+                    expect(companion.numberOfCompletedExercises()).to(equal(0))
+                }
+
+                it("counts visible and completed exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let repositorySet = RepositorySet()
+                    repositorySet.isTimed = true
+                    repositorySet.seconds = 10
+
+                    let repositoryExercise = RepositoryExercise()
+                    repositoryExercise.visible = true
+                    repositoryExercise.sets.append(repositorySet)
+
+                    repositoryCategory.exercises.append(repositoryExercise)
+
+                    expect(companion.numberOfCompletedExercises()).to(equal(1))
+                }
+
+                it("counts multiple visible and completed exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 10
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(completedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(completedSet)
+
+                    let thirdExercise = RepositoryExercise()
+                    thirdExercise.visible = true
+                    thirdExercise.sets.append(notCompletedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+                    repositoryCategory.exercises.append(thirdExercise)
+
+                    expect(companion.numberOfCompletedExercises()).to(equal(2))
+                }
             }
         }
 

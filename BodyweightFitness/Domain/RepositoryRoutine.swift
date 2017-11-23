@@ -15,6 +15,12 @@ class RepositoryCategoryCompanion {
     init(_ repositoryCategory: RepositoryCategory) {
         self.repositoryCategory = repositoryCategory
     }
+
+    func numberOfCompletedExercises() -> Int {
+        return self.repositoryCategory.exercises.filter({
+            $0.visible && RepositoryExerciseCompanion($0).isCompleted()
+        }).count
+    }
 }
 
 class RepositoryExerciseCompanion {
