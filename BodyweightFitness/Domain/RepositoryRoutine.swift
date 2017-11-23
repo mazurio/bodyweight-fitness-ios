@@ -23,6 +23,20 @@ class RepositoryExerciseCompanion {
     init(_ repositoryExercise: RepositoryExercise) {
         self.repositoryExercise = repositoryExercise
     }
+    
+    func isCompleted() -> Bool {
+        let size = self.repositoryExercise.sets.count
+        if (size == 0) {
+            return false
+        }
+        
+        let firstSet = self.repositoryExercise.sets[0] as RepositorySet
+        if (size == 1 && firstSet.seconds == 0 && firstSet.reps == 0) {
+            return false
+        }
+        
+        return true
+    }
 }
 
 class RepositoryRoutineHelper {
