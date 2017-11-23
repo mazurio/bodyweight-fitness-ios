@@ -25,17 +25,19 @@ class RepositoryExerciseCompanion {
     }
     
     func isCompleted() -> Bool {
-        let size = self.repositoryExercise.sets.count
-        if (size == 0) {
-            return false
+        if let firstSet = self.repositoryExercise.sets.first as RepositorySet? {
+            if (firstSet.isTimed) {
+                let totalTime = self.repositoryExercise.sets.map({ $0.seconds }).reduce(0, +)
+
+                return (totalTime > 0)
+            } else {
+                let totalNumberOfReps = self.repositoryExercise.sets.map({ $0.reps }).reduce(0, +)
+
+                return (totalNumberOfReps > 0)
+            }
         }
-        
-        let firstSet = self.repositoryExercise.sets[0] as RepositorySet
-        if (size == 1 && firstSet.seconds == 0 && firstSet.reps == 0) {
-            return false
-        }
-        
-        return true
+
+        return false
     }
 }
 
