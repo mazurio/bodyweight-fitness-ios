@@ -15,6 +15,52 @@ class DomainTests: QuickSpec {
         }
         
         describe("Repository Category Companion") {
+            context("numberOfExercises()") {
+                it("does not count invisible exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let repositoryExercise = RepositoryExercise()
+                    repositoryExercise.visible = false
+
+                    repositoryCategory.exercises.append(repositoryExercise)
+
+                    expect(companion.numberOfExercises()).to(equal(0))
+                }
+
+                it("counts visible exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let repositoryExercise = RepositoryExercise()
+                    repositoryExercise.visible = true
+
+                    repositoryCategory.exercises.append(repositoryExercise)
+
+                    expect(companion.numberOfExercises()).to(equal(1))
+                }
+
+                it("counts multiple visible exercises") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+
+                    let thirdExercise = RepositoryExercise()
+                    thirdExercise.visible = false
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+                    repositoryCategory.exercises.append(thirdExercise)
+
+                    expect(companion.numberOfExercises()).to(equal(2))
+                }
+            }
+
             context("numberOfCompletedExercises()") {
                 it("does not count invisible exercises") {
                     let repositoryCategory = RepositoryCategory()
@@ -96,6 +142,160 @@ class DomainTests: QuickSpec {
                     repositoryCategory.exercises.append(thirdExercise)
 
                     expect(companion.numberOfCompletedExercises()).to(equal(2))
+                }
+            }
+
+            context("getCompletionRate()") {
+                it("should return 0% if number of exercises is 0") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(0))
+                    expect(completionRate.label).to(equal("0%"))
+                }
+
+                it("should return 0% if number of completed exercises is 0") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(notCompletedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(0))
+                    expect(completionRate.label).to(equal("0%"))
+                }
+
+                it("should return 50% if number of completed exercises is 1 out of 2") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 30
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(notCompletedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(completedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(50))
+                    expect(completionRate.label).to(equal("50%"))
+                }
+
+                it("should return 100% if number of completed exercises is 2 out of 2") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 30
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(completedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(completedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(100))
+                    expect(completionRate.label).to(equal("100%"))
+                }
+
+                it("should return 33% if number of completed exercises is 1 out of 3") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 30
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(completedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(notCompletedSet)
+
+                    let thirdExercise = RepositoryExercise()
+                    thirdExercise.visible = true
+                    thirdExercise.sets.append(notCompletedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+                    repositoryCategory.exercises.append(thirdExercise)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(33))
+                    expect(completionRate.label).to(equal("33%"))
+                }
+
+                it("should return 66% if number of completed exercises is 2 out of 3") {
+                    let repositoryCategory = RepositoryCategory()
+                    let companion = RepositoryCategoryCompanion(repositoryCategory)
+
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 30
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(completedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(completedSet)
+
+                    let thirdExercise = RepositoryExercise()
+                    thirdExercise.visible = true
+                    thirdExercise.sets.append(notCompletedSet)
+
+                    repositoryCategory.exercises.append(firstExercise)
+                    repositoryCategory.exercises.append(secondExercise)
+                    repositoryCategory.exercises.append(thirdExercise)
+
+                    let completionRate = companion.getCompletionRate()
+
+                    expect(completionRate.percentage).to(equal(66))
+                    expect(completionRate.label).to(equal("66%"))
                 }
             }
         }

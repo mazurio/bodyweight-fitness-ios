@@ -16,10 +16,29 @@ class RepositoryCategoryCompanion {
         self.repositoryCategory = repositoryCategory
     }
 
+    func numberOfExercises() -> Int {
+        return self.repositoryCategory.exercises.filter({
+            $0.visible
+        }).count
+    }
+
     func numberOfCompletedExercises() -> Int {
         return self.repositoryCategory.exercises.filter({
             $0.visible && RepositoryExerciseCompanion($0).isCompleted()
         }).count
+    }
+
+    func getCompletionRate() -> CompletionRate {
+        let numberOfExercises = self.numberOfExercises()
+        let numberOfCompletedExercises = self.numberOfCompletedExercises()
+
+        if (numberOfExercises == 0 || numberOfCompletedExercises == 0) {
+            return CompletionRate(percentage: 0, label: "0%")
+        }
+
+        let value = numberOfCompletedExercises * 100 / numberOfExercises
+
+        return CompletionRate(percentage: value, label: "\(value)%")
     }
 }
 
