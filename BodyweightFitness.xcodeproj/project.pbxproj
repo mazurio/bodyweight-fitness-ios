@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		423D42F127962525CF9E5A06 /* Pods_BodyweightFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */; };
 		46B021B6A56C2000CA08000B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
@@ -160,6 +161,7 @@
 		73E8F4561E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
 		78163125961ED33EEAA36EA0 /* Pods_Bodyweight_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */; };
+		7B377FF5F57E8F1E5374D256 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */; };
 		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
 		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
 		E0F587351B5272F400540104 /* ActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587331B5272F400540104 /* ActionView.swift */; };
@@ -181,12 +183,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness_BodyweightFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		46B02F2362EA8A9111571B02 /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
+		57E3C9E9DB8DAC7C6AEAF13D /* Pods-BodyweightFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness.debug.xcconfig"; sourceTree = "<group>"; };
+		628DF7CC1CBCA3E8CB0633B9 /* Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
 		731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogCategoryViewController.swift; sourceTree = "<group>"; };
 		731A41EB1F991B3400C44922 /* Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Views.swift; sourceTree = "<group>"; };
 		731A41ED1F99300A00C44922 /* AbstractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
@@ -339,6 +346,7 @@
 		8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bodyweight_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6439A24ABCBB97852E0D5D1 /* Pods-Bodyweight Fitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodyweight Fitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness.debug.xcconfig"; sourceTree = "<group>"; };
 		BA7457843B13F20696FA3BA8 /* Pods-Bodyweight Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodyweight Fitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness.release.xcconfig"; sourceTree = "<group>"; };
+		BAEC71510B6C5949149A65E0 /* Pods-BodyweightFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness.release.xcconfig"; sourceTree = "<group>"; };
 		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
 		E0F587331B5272F400540104 /* ActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionView.swift; sourceTree = "<group>"; };
@@ -357,6 +365,7 @@
 			files = (
 				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
 				78163125961ED33EEAA36EA0 /* Pods_Bodyweight_Fitness.framework in Frameworks */,
+				423D42F127962525CF9E5A06 /* Pods_BodyweightFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +373,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B377FF5F57E8F1E5374D256 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +673,8 @@
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
 				8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */,
 				73C328311F3C81D60076AF19 /* CAPSPageMenu.swift */,
+				252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */,
+				1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -715,6 +727,10 @@
 			children = (
 				A6439A24ABCBB97852E0D5D1 /* Pods-Bodyweight Fitness.debug.xcconfig */,
 				BA7457843B13F20696FA3BA8 /* Pods-Bodyweight Fitness.release.xcconfig */,
+				57E3C9E9DB8DAC7C6AEAF13D /* Pods-BodyweightFitness.debug.xcconfig */,
+				BAEC71510B6C5949149A65E0 /* Pods-BodyweightFitness.release.xcconfig */,
+				0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */,
+				628DF7CC1CBCA3E8CB0633B9 /* Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -746,9 +762,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 738C24891FC7461A00036005 /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */;
 			buildPhases = (
+				B37D0496848DCB1BD3E36A26 /* [CP] Check Pods Manifest.lock */,
 				738C247E1FC7461A00036005 /* Sources */,
 				738C247F1FC7461A00036005 /* Frameworks */,
 				738C24801FC7461A00036005 /* Resources */,
+				860343D414AAEC2E26D09818 /* [CP] Embed Pods Frameworks */,
+				22C8D8C14C320DE843C6A896 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -941,6 +960,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22C8D8C14C320DE843C6A896 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2E14369486F78F9BAF8C8A2F /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -953,7 +987,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3C4F1FC485B7DDDCB3D34864 /* [CP] Check Pods Manifest.lock */ = {
@@ -967,7 +1001,63 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bodyweight Fitness-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-BodyweightFitness-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		860343D414AAEC2E26D09818 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
+				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B37D0496848DCB1BD3E36A26 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BodyweightFitness-BodyweightFitnessTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -980,7 +1070,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
@@ -1005,7 +1095,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1201,7 +1291,7 @@
 		};
 		2BD2CAA61B458FFE00841AB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6439A24ABCBB97852E0D5D1 /* Pods-Bodyweight Fitness.debug.xcconfig */;
+			baseConfigurationReference = 57E3C9E9DB8DAC7C6AEAF13D /* Pods-BodyweightFitness.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1230,7 +1320,7 @@
 		};
 		2BD2CAA71B458FFE00841AB7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA7457843B13F20696FA3BA8 /* Pods-Bodyweight Fitness.release.xcconfig */;
+			baseConfigurationReference = BAEC71510B6C5949149A65E0 /* Pods-BodyweightFitness.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -1258,6 +1348,7 @@
 		};
 		738C248A1FC7461A00036005 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1275,7 +1366,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
 			};
@@ -1283,6 +1374,7 @@
 		};
 		738C248B1FC7461A00036005 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 628DF7CC1CBCA3E8CB0633B9 /* Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
@@ -1299,7 +1391,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
 			};

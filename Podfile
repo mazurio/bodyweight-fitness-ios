@@ -17,10 +17,7 @@ target 'BodyweightFitness' do
   pod 'Fabric'
   pod 'Crashlytics'
   
-  abstract_target 'Tests' do
-      inherit! :search_paths
-      target "BodyweightFitnessTests"
-      
+  target 'BodyweightFitnessTests' do
       pod 'Quick'
       pod 'Nimble'
   end
