@@ -656,9 +656,9 @@
 			isa = PBXGroup;
 			children = (
 				73CD7B331FC759ED00A7306D /* Pods_BodyweightFitness.framework */,
+				1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */,
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
 				73C328311F3C81D60076AF19 /* CAPSPageMenu.swift */,
-				1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
