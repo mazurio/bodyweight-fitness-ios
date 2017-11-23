@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		423D42F127962525CF9E5A06 /* Pods_BodyweightFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */; };
 		46B021B6A56C2000CA08000B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
@@ -133,7 +132,7 @@
 		738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738B96CC1D763319009A8625 /* HomeBarView.xib */; };
 		738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CE1D76337C009A8625 /* HomeBarView.swift */; };
 		738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */; };
-		738C248F1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */; };
+		738C248F1FC74B5300036005 /* DomainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C248E1FC74B5300036005 /* DomainTests.swift */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -316,7 +315,7 @@
 		738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
 		738C24861FC7461A00036005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionTests.swift; sourceTree = "<group>"; };
+		738C248E1FC74B5300036005 /* DomainTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainTests.swift; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -365,7 +364,6 @@
 			files = (
 				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
 				78163125961ED33EEAA36EA0 /* Pods_Bodyweight_Fitness.framework in Frameworks */,
-				423D42F127962525CF9E5A06 /* Pods_BodyweightFitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -580,19 +578,11 @@
 		738C24831FC7461A00036005 /* BodyweightFitnessTests */ = {
 			isa = PBXGroup;
 			children = (
-				738C248D1FC74B3500036005 /* Domain */,
+				738C248E1FC74B5300036005 /* DomainTests.swift */,
 				738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */,
 				738C24861FC7461A00036005 /* Info.plist */,
 			);
 			path = BodyweightFitnessTests;
-			sourceTree = "<group>";
-		};
-		738C248D1FC74B3500036005 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */,
-			);
-			path = Domain;
 			sourceTree = "<group>";
 		};
 		73AA28EB1CABE8E000DEED79 /* UI */ = {
@@ -1154,7 +1144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */,
-				738C248F1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift in Sources */,
+				738C248F1FC74B5300036005 /* DomainTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

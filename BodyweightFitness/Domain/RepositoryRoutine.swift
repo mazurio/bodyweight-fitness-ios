@@ -9,6 +9,22 @@ class RepositoryRoutineCompanion {
     }
 }
 
+class RepositoryCategoryCompanion {
+    let repositoryCategory: RepositoryCategory
+    
+    init(_ repositoryCategory: RepositoryCategory) {
+        self.repositoryCategory = repositoryCategory
+    }
+}
+
+class RepositoryExerciseCompanion {
+    let repositoryExercise: RepositoryExercise
+    
+    init(_ repositoryExercise: RepositoryExercise) {
+        self.repositoryExercise = repositoryExercise
+    }
+}
+
 class RepositoryRoutineHelper {
     let repositoryRoutine: RepositoryRoutine
     
