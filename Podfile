@@ -18,8 +18,8 @@ target 'BodyweightFitness' do
   pod 'Crashlytics'
   
   target 'BodyweightFitnessTests' do
-      pod 'Quick'
-      pod 'Nimble'
+    pod 'Quick'
+    pod 'Nimble'
   end
 end
 
@@ -32,9 +32,9 @@ post_install do |installer|
   	end
     
     if ['Charts'].include? target.name
-        target.build_configurations.each do |config|
-            config.build_settings['SWIFT_VERSION'] = '4.0'
-        end
+      target.build_configurations.each do |config|
+        config.build_settings['SWIFT_VERSION'] = '4.0'
+      end
     end
   end
 end

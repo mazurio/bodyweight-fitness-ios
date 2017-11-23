@@ -153,13 +153,13 @@
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
 		73BF63801F3CAAE2007F37C8 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF637F1F3CAAE2007F37C8 /* CellView.swift */; };
 		73C328321F3C81D60076AF19 /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C328311F3C81D60076AF19 /* CAPSPageMenu.swift */; };
+		73CD7B321FC759ED00A7306D /* Pods_BodyweightFitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73CD7B331FC759ED00A7306D /* Pods_BodyweightFitness.framework */; };
 		73D393271F8D4B7D00D9F4DD /* WorkoutLog.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73D393261F8D4B7D00D9F4DD /* WorkoutLog.storyboard */; };
 		73D393291F8D4BAE00D9F4DD /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D393281F8D4BAE00D9F4DD /* WorkoutLogViewController.swift */; };
 		73D508D61DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */; };
 		73E8F4551E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73E8F4531E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 */; };
 		73E8F4561E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */; };
 		73FE1F5B1C4BF82A0047C97A /* RepositoryExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */; };
-		78163125961ED33EEAA36EA0 /* Pods_Bodyweight_Fitness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */; };
 		7B377FF5F57E8F1E5374D256 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */; };
 		E0F5872E1B5272C400540104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F5872C1B5272C400540104 /* AppDelegate.swift */; };
 		E0F587311B5272E200540104 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F587301B5272E200540104 /* Routine.swift */; };
@@ -184,8 +184,6 @@
 /* Begin PBXFileReference section */
 		0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness_BodyweightFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -336,15 +334,13 @@
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
 		73BF637F1F3CAAE2007F37C8 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 		73C328311F3C81D60076AF19 /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		73CD7B331FC759ED00A7306D /* Pods_BodyweightFitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_BodyweightFitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73D393261F8D4B7D00D9F4DD /* WorkoutLog.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WorkoutLog.storyboard; sourceTree = "<group>"; };
 		73D393281F8D4BAE00D9F4DD /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
 		73D508D51DA6C76500D98F20 /* molding_mobility_3_plane_neck_movement.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = molding_mobility_3_plane_neck_movement.mp4; sourceTree = "<group>"; };
 		73E8F4531E21724F00D544A0 /* bodyweight_fitness_left_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_left_side_plank.mp4; sourceTree = "<group>"; };
 		73E8F4541E21724F00D544A0 /* bodyweight_fitness_right_side_plank.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_right_side_plank.mp4; sourceTree = "<group>"; };
 		73FE1F5A1C4BF82A0047C97A /* RepositoryExercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExercise.swift; sourceTree = "<group>"; };
-		8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bodyweight_Fitness.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A6439A24ABCBB97852E0D5D1 /* Pods-Bodyweight Fitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodyweight Fitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness.debug.xcconfig"; sourceTree = "<group>"; };
-		BA7457843B13F20696FA3BA8 /* Pods-Bodyweight Fitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodyweight Fitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bodyweight Fitness/Pods-Bodyweight Fitness.release.xcconfig"; sourceTree = "<group>"; };
 		BAEC71510B6C5949149A65E0 /* Pods-BodyweightFitness.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness.release.xcconfig"; sourceTree = "<group>"; };
 		E0F5872C1B5272C400540104 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0F587301B5272E200540104 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
@@ -362,8 +358,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CD7B321FC759ED00A7306D /* Pods_BodyweightFitness.framework in Frameworks */,
 				7366D8ED1C52943D00819790 /* StoreKit.framework in Frameworks */,
-				78163125961ED33EEAA36EA0 /* Pods_Bodyweight_Fitness.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,7 +388,6 @@
 		2BD2CA841B458FFD00841AB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
 				738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */,
 			);
 			name = Products;
@@ -660,10 +655,9 @@
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				73CD7B331FC759ED00A7306D /* Pods_BodyweightFitness.framework */,
 				7366D8EC1C52943D00819790 /* StoreKit.framework */,
-				8AD935083C2986D423F02E75 /* Pods_Bodyweight_Fitness.framework */,
 				73C328311F3C81D60076AF19 /* CAPSPageMenu.swift */,
-				252FA0BEFD5386FBFD7FF04A /* Pods_BodyweightFitness.framework */,
 				1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */,
 			);
 			name = Frameworks;
@@ -715,8 +709,6 @@
 		F15ECA1986EEE14D78F646EB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A6439A24ABCBB97852E0D5D1 /* Pods-Bodyweight Fitness.debug.xcconfig */,
-				BA7457843B13F20696FA3BA8 /* Pods-Bodyweight Fitness.release.xcconfig */,
 				57E3C9E9DB8DAC7C6AEAF13D /* Pods-BodyweightFitness.debug.xcconfig */,
 				BAEC71510B6C5949149A65E0 /* Pods-BodyweightFitness.release.xcconfig */,
 				0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */,
@@ -745,7 +737,6 @@
 			);
 			name = BodyweightFitness;
 			productName = TabsTest;
-			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
 		738C24811FC7461A00036005 /* BodyweightFitnessTests */ = {

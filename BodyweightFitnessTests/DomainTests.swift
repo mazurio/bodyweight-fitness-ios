@@ -65,7 +65,7 @@ class DomainTests: QuickSpec {
                     expect(companion.isCompleted()).to(equal(false))
                 }
                 
-                it("is not completed when first set is timed and time is bigger than 0") {
+                it("is completed when first set is timed and time is bigger than 0") {
                     let repositorySet = RepositorySet()
                     repositorySet.isTimed = true
                     repositorySet.seconds = 10
