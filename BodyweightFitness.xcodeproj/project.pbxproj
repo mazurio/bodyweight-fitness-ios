@@ -409,13 +409,6 @@
 			path = BodyweightFitness;
 			sourceTree = "<group>";
 		};
-		7328DCBC1F8FF40800BD96CD /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Shared;
-			sourceTree = "<group>";
-		};
 		734132E61E130FC300BAEFD2 /* Starting Stretching - Flexibility Routine */ = {
 			isa = PBXGroup;
 			children = (
@@ -445,7 +438,6 @@
 		7347DC2E1F8D3CD8001E1BE5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				7328DCBC1F8FF40800BD96CD /* Shared */,
 				73D3932A1F8D4E4000D9F4DD /* View */,
 				7329B68B1D0D8476005F5F74 /* HomeViewController.swift */,
 				46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */,

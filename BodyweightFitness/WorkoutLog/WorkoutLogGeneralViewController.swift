@@ -13,7 +13,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         if let repositoryRoutine = self.repositoryRoutine {
             self.addView(self.createStatisticsCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Progress"))
-            self.addView(self.createTodaysProgressCard())
+            self.addView(self.createWorkoutProgressCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Length History"))
             self.addView(self.createWorkoutLengthHistoryCard())
             self.addView(ValueLabel.create(text: "Completion Rate History"))
@@ -168,13 +168,15 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createTodaysProgressCard() -> CardView {
+    func createWorkoutProgressCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
         self.contentView.addSubview(card)
         
+        let helper = RepositoryRoutineHelper(repositoryRoutine: repositoryRoutine)
+
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = "1 out of 9"
+        topLeftLabel.text = helper.numberOfCompletedExercisesLabel()
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
@@ -184,7 +186,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = "11%"
+        topRightLabel.text = helper.completionRateLabel()
         
         card.addSubview(topRightLabel)
         
@@ -201,12 +203,16 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         card.addSubview(stackView)
         
-        let homeBarView = HomeBarView()
-        homeBarView.categoryTitle.text = "Title"
-        homeBarView.progressView.setCompletionRate(CompletionRate(percentage: 90, label: "90%"))
-        homeBarView.progressRate.text = "90%"
-        
-        stackView.addArrangedSubview(homeBarView)
+        for repositoryCategory in repositoryRoutine.categories {
+            let completionRate = helper.getCompletionRate(repositoryCategory: repositoryCategory)
+            
+            let homeBarView = HomeBarView()
+            homeBarView.categoryTitle.text = repositoryCategory.title
+            homeBarView.progressView.setCompletionRate(completionRate)
+            homeBarView.progressRate.text = completionRate.label
+            
+            stackView.addArrangedSubview(homeBarView)
+        }
         
         topLeftLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
