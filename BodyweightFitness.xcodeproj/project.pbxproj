@@ -132,6 +132,7 @@
 		738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738B96CC1D763319009A8625 /* HomeBarView.xib */; };
 		738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CE1D76337C009A8625 /* HomeBarView.swift */; };
 		738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */; };
+		738C248F1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -308,6 +309,7 @@
 		738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
 		738C24861FC7461A00036005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionTests.swift; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -344,7 +346,7 @@
 		E0F587441B52730C00540104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TimePickerModalView.xib; sourceTree = "<group>"; };
 		E0F587481B52731C00540104 /* finished.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = finished.mp3; sourceTree = "<group>"; };
 		E0F587491B52731C00540104 /* bodyweight_fitness_recommended_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyweight_fitness_recommended_routine.json; sourceTree = "<group>"; };
-		E0F587B11B52734000540104 /* Bodyweight Fitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Bodyweight Fitness.plist"; sourceTree = "<group>"; };
+		E0F587B11B52734000540104 /* BodyweightFitness.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BodyweightFitness.plist; sourceTree = "<group>"; };
 		E0F587B31B52734900540104 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,7 +393,7 @@
 		2BD2CA851B458FFD00841AB7 /* BodyweightFitness */ = {
 			isa = PBXGroup;
 			children = (
-				E0F587B11B52734000540104 /* Bodyweight Fitness.plist */,
+				E0F587B11B52734000540104 /* BodyweightFitness.plist */,
 				E0F5872C1B5272C400540104 /* AppDelegate.swift */,
 				7366D8E01C51810600819790 /* Extensions.swift */,
 				73737FF61F8D064000C616B8 /* Date+Extensions.swift */,
@@ -568,10 +570,19 @@
 		738C24831FC7461A00036005 /* BodyweightFitnessTests */ = {
 			isa = PBXGroup;
 			children = (
+				738C248D1FC74B3500036005 /* Domain */,
 				738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */,
 				738C24861FC7461A00036005 /* Info.plist */,
 			);
 			path = BodyweightFitnessTests;
+			sourceTree = "<group>";
+		};
+		738C248D1FC74B3500036005 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				738C248E1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		73AA28EB1CABE8E000DEED79 /* UI */ = {
@@ -711,9 +722,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */ = {
+		2BD2CA821B458FFD00841AB7 /* BodyweightFitness */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness" */;
+			buildConfigurationList = 2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "BodyweightFitness" */;
 			buildPhases = (
 				3C4F1FC485B7DDDCB3D34864 /* [CP] Check Pods Manifest.lock */,
 				2BD2CA7F1B458FFD00841AB7 /* Sources */,
@@ -726,7 +737,7 @@
 			);
 			dependencies = (
 			);
-			name = "Bodyweight Fitness";
+			name = BodyweightFitness;
 			productName = TabsTest;
 			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
@@ -790,7 +801,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */,
+				2BD2CA821B458FFD00841AB7 /* BodyweightFitness */,
 				738C24811FC7461A00036005 /* BodyweightFitnessTests */,
 			);
 		};
@@ -1053,6 +1064,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */,
+				738C248F1FC74B5300036005 /* RepositoryRoutineCompanionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1061,7 +1073,7 @@
 /* Begin PBXTargetDependency section */
 		738C24881FC7461A00036005 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */;
+			target = 2BD2CA821B458FFD00841AB7 /* BodyweightFitness */;
 			targetProxy = 738C24871FC7461A00036005 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1201,7 +1213,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/BodyweightFitness.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1230,7 +1242,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/Bodyweight Fitness.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BodyweightFitness/BodyweightFitness.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.mazur.$(PRODUCT_NAME:rfc1034identifier)";
@@ -1305,7 +1317,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "Bodyweight Fitness" */ = {
+		2BD2CAA51B458FFE00841AB7 /* Build configuration list for PBXNativeTarget "BodyweightFitness" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2BD2CAA61B458FFE00841AB7 /* Debug */,
