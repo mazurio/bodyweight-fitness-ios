@@ -1,7 +1,7 @@
 import SnapKit
 
 class WorkoutLogCategoryViewController: AbstractViewController {
-    var category: RepositoryCategory?
+    var repositoryCategory: RepositoryCategory?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,24 +10,24 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     }
     
     func initializeContent() {
-        self.addView(self.createStatisticsCard())
-        self.addView(ValueLabel.create(text: "Category Completion Rate"))
-        self.addView(self.createCompletionRateHistoryCard())
-        
-        if let category = self.category {
-            for section in category.sections {
-                self.addView(ValueLabel.create(text: section.title))
+        if let repositoryCategory = self.repositoryCategory {
+            self.addView(self.createStatisticsCard(repositoryCategory: repositoryCategory))
+            self.addView(ValueLabel.create(text: "Category Completion Rate"))
+            self.addView(self.createCompletionRateHistoryCard())
+            
+            for repositorySection in repositoryCategory.sections {
+                self.addView(ValueLabel.create(text: repositorySection.title))
                 
-                for exercise in section.exercises {
+                for repositoryExercise in repositorySection.exercises {
                     self.addView(
-                        createExerciseCard(exercise: exercise)
+                        createExerciseCard(repositoryExercise: repositoryExercise)
                     )
                 }
             }
         }
     }
     
-    func createStatisticsCard() -> CardView {
+    func createStatisticsCard(repositoryCategory: RepositoryCategory) -> CardView {
         let card = CardView()
         
         let topLeftLabel = TitleLabel()
@@ -108,11 +108,11 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         return card
     }
     
-    func createExerciseCard(exercise: RepositoryExercise) -> CardView {
+    func createExerciseCard(repositoryExercise: RepositoryExercise) -> CardView {
         let card = CardView()
         
         let label = TitleLabel()
-        label.text = exercise.title
+        label.text = repositoryExercise.title
         card.addSubview(label)
         
         let value = ValueLabel()

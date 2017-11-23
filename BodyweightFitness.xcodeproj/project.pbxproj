@@ -131,6 +131,7 @@
 		738B96BD1D761192009A8625 /* molding_mobility_flexibility_routine.json in Resources */ = {isa = PBXBuildFile; fileRef = 738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */; };
 		738B96CD1D763319009A8625 /* HomeBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 738B96CC1D763319009A8625 /* HomeBarView.xib */; };
 		738B96CF1D76337C009A8625 /* HomeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B96CE1D76337C009A8625 /* HomeBarView.swift */; };
+		738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */; };
 		73AA28EA1CABE69200DEED79 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AA28E91CABE69200DEED79 /* DashboardViewController.swift */; };
 		73AA28ED1CABE8F800DEED79 /* DashboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EC1CABE8F800DEED79 /* DashboardView.xib */; };
 		73AA28EF1CB7ABB500DEED79 /* DashboardSectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */; };
@@ -145,8 +146,7 @@
 		73BADE191CC3E347001ACEDC /* TimedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE181CC3E347001ACEDC /* TimedViewController.swift */; };
 		73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */; };
 		73BADE1D1CC3F98D001ACEDC /* WeightedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */; };
-		73BADE6E1CC78356001ACEDC /* BodyweightFitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */; };
-		73BADE7D1CC79648001ACEDC /* TestRoutine.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE7C1CC79648001ACEDC /* TestRoutine.json */; };
+		73BADE7D1CC79648001ACEDC /* bodyweight_fitness_recommended_routine_unit_test.json in Resources */ = {isa = PBXBuildFile; fileRef = 73BADE7C1CC79648001ACEDC /* bodyweight_fitness_recommended_routine_unit_test.json */; };
 		73BF3BB51CBEB08B00E0258D /* LogWorkoutModalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */; };
 		73BF3BBB1CBEFB1E00E0258D /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */; };
 		73BF3BC11CBF05ED00E0258D /* SnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BF3BC01CBF05ED00E0258D /* SnackBar.swift */; };
@@ -170,7 +170,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		73BADE701CC78356001ACEDC /* PBXContainerItemProxy */ = {
+		738C24871FC7461A00036005 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2BD2CA7B1B458FFD00841AB7 /* Project object */;
 			proxyType = 1;
@@ -305,6 +305,9 @@
 		738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = molding_mobility_flexibility_routine.json; sourceTree = "<group>"; };
 		738B96CC1D763319009A8625 /* HomeBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeBarView.xib; sourceTree = "<group>"; };
 		738B96CE1D76337C009A8625 /* HomeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBarView.swift; sourceTree = "<group>"; };
+		738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
+		738C24861FC7461A00036005 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73AA28E91CABE69200DEED79 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		73AA28EC1CABE8F800DEED79 /* DashboardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardView.xib; sourceTree = "<group>"; };
 		73AA28EE1CB7ABB500DEED79 /* DashboardSectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DashboardSectionCell.xib; sourceTree = "<group>"; };
@@ -319,10 +322,7 @@
 		73BADE181CC3E347001ACEDC /* TimedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimedViewController.swift; sourceTree = "<group>"; };
 		73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeightedViewController.swift; sourceTree = "<group>"; };
 		73BADE1C1CC3F98D001ACEDC /* WeightedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeightedView.xib; sourceTree = "<group>"; };
-		73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodyweightFitnessTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyweightFitnessTests.swift; sourceTree = "<group>"; };
-		73BADE6F1CC78356001ACEDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73BADE7C1CC79648001ACEDC /* TestRoutine.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestRoutine.json; sourceTree = "<group>"; };
+		73BADE7C1CC79648001ACEDC /* bodyweight_fitness_recommended_routine_unit_test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bodyweight_fitness_recommended_routine_unit_test.json; sourceTree = "<group>"; };
 		73BF3BB41CBEB08B00E0258D /* LogWorkoutModalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LogWorkoutModalView.xib; sourceTree = "<group>"; };
 		73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
 		73BF3BC01CBF05ED00E0258D /* SnackBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnackBar.swift; sourceTree = "<group>"; };
@@ -358,7 +358,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73BADE681CC78356001ACEDC /* Frameworks */ = {
+		738C247F1FC7461A00036005 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,7 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD2CA851B458FFD00841AB7 /* BodyweightFitness */,
-				73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */,
+				738C24831FC7461A00036005 /* BodyweightFitnessTests */,
 				E00242FB1B4F1CFD0003A230 /* Frameworks */,
 				2BD2CA841B458FFD00841AB7 /* Products */,
 				F15ECA1986EEE14D78F646EB /* Pods */,
@@ -383,7 +383,7 @@
 			isa = PBXGroup;
 			children = (
 				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
-				73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */,
+				738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,6 +565,15 @@
 			name = "Molding Mobility - Flexibility Routine";
 			sourceTree = "<group>";
 		};
+		738C24831FC7461A00036005 /* BodyweightFitnessTests */ = {
+			isa = PBXGroup;
+			children = (
+				738C24841FC7461A00036005 /* BodyweightFitnessTests.swift */,
+				738C24861FC7461A00036005 /* Info.plist */,
+			);
+			path = BodyweightFitnessTests;
+			sourceTree = "<group>";
+		};
 		73AA28EB1CABE8E000DEED79 /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,15 +602,6 @@
 				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		73BADE6C1CC78356001ACEDC /* BodyweightFitnessTests */ = {
-			isa = PBXGroup;
-			children = (
-				73BADE6D1CC78356001ACEDC /* BodyweightFitnessTests.swift */,
-				73BADE6F1CC78356001ACEDC /* Info.plist */,
-			);
-			path = BodyweightFitnessTests;
 			sourceTree = "<group>";
 		};
 		73BF3BB61CBEB0C100E0258D /* Modal */ = {
@@ -693,7 +693,7 @@
 				E0F587491B52731C00540104 /* bodyweight_fitness_recommended_routine.json */,
 				734132E41E130FAE00BAEFD2 /* starting_stretching_flexibility_routine.json */,
 				738B96BC1D761192009A8625 /* molding_mobility_flexibility_routine.json */,
-				73BADE7C1CC79648001ACEDC /* TestRoutine.json */,
+				73BADE7C1CC79648001ACEDC /* bodyweight_fitness_recommended_routine_unit_test.json */,
 				E0F587481B52731C00540104 /* finished.mp3 */,
 			);
 			path = Resources;
@@ -731,22 +731,22 @@
 			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
-		73BADE6A1CC78356001ACEDC /* BodyweightFitnessTests */ = {
+		738C24811FC7461A00036005 /* BodyweightFitnessTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73BADE721CC78356001ACEDC /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */;
+			buildConfigurationList = 738C24891FC7461A00036005 /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */;
 			buildPhases = (
-				73BADE671CC78356001ACEDC /* Sources */,
-				73BADE681CC78356001ACEDC /* Frameworks */,
-				73BADE691CC78356001ACEDC /* Resources */,
+				738C247E1FC7461A00036005 /* Sources */,
+				738C247F1FC7461A00036005 /* Frameworks */,
+				738C24801FC7461A00036005 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				73BADE711CC78356001ACEDC /* PBXTargetDependency */,
+				738C24881FC7461A00036005 /* PBXTargetDependency */,
 			);
 			name = BodyweightFitnessTests;
 			productName = BodyweightFitnessTests;
-			productReference = 73BADE6B1CC78356001ACEDC /* BodyweightFitnessTests.xctest */;
+			productReference = 738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -755,7 +755,7 @@
 		2BD2CA7B1B458FFD00841AB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Damian Mazurkiewicz";
 				TargetAttributes = {
@@ -770,9 +770,9 @@
 							};
 						};
 					};
-					73BADE6A1CC78356001ACEDC = {
-						CreatedOnToolsVersion = 7.3;
-						LastSwiftMigration = 0830;
+					738C24811FC7461A00036005 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 2BD2CA821B458FFD00841AB7;
 					};
 				};
@@ -791,7 +791,7 @@
 			projectRoot = "";
 			targets = (
 				2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */,
-				73BADE6A1CC78356001ACEDC /* BodyweightFitnessTests */,
+				738C24811FC7461A00036005 /* BodyweightFitnessTests */,
 			);
 		};
 /* End PBXProject section */
@@ -898,7 +898,7 @@
 				738B96A51D760F66009A8625 /* molding_mobility_circular_shrugs.mp4 in Resources */,
 				738B96841D760F66009A8625 /* bodyweight_fitness_parallel_bar_dips.mp4 in Resources */,
 				732CDDEF1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 in Resources */,
-				73BADE7D1CC79648001ACEDC /* TestRoutine.json in Resources */,
+				73BADE7D1CC79648001ACEDC /* bodyweight_fitness_recommended_routine_unit_test.json in Resources */,
 				734133001E130FE900BAEFD2 /* starting_stretching_shoulder_extension_beginner.mp4 in Resources */,
 				732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */,
 				738B96881D760F66009A8625 /* bodyweight_fitness_pullup.mp4 in Resources */,
@@ -920,7 +920,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73BADE691CC78356001ACEDC /* Resources */ = {
+		738C24801FC7461A00036005 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1048,21 +1048,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		73BADE671CC78356001ACEDC /* Sources */ = {
+		738C247E1FC7461A00036005 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73BADE6E1CC78356001ACEDC /* BodyweightFitnessTests.swift in Sources */,
+				738C24851FC7461A00036005 /* BodyweightFitnessTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		73BADE711CC78356001ACEDC /* PBXTargetDependency */ = {
+		738C24881FC7461A00036005 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 2BD2CA821B458FFD00841AB7 /* Bodyweight Fitness */;
-			targetProxy = 73BADE701CC78356001ACEDC /* PBXContainerItemProxy */;
+			targetProxy = 738C24871FC7461A00036005 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1244,41 +1244,51 @@
 			};
 			name = Release;
 		};
-		73BADE731CC78356001ACEDC /* Debug */ = {
+		738C248A1FC7461A00036005 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BodyweightFitnessTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				"SWIFT_INCLUDE_PATHS[arch=*]" = "$(inherited)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
 			};
 			name = Debug;
 		};
-		73BADE741CC78356001ACEDC /* Release */ = {
+		738C248B1FC7461A00036005 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
-				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = BodyweightFitnessTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.mazur.BodyweightFitnessTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bodyweight Fitness.app/Bodyweight Fitness";
 			};
 			name = Release;
@@ -1304,11 +1314,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		73BADE721CC78356001ACEDC /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */ = {
+		738C24891FC7461A00036005 /* Build configuration list for PBXNativeTarget "BodyweightFitnessTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				73BADE731CC78356001ACEDC /* Debug */,
-				73BADE741CC78356001ACEDC /* Release */,
+				738C248A1FC7461A00036005 /* Debug */,
+				738C248B1FC7461A00036005 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

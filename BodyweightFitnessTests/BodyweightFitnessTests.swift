@@ -67,9 +67,9 @@ class BodyweightFitnessTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-
-        oldSchema = Routine(fileName: "TestRoutine")
-        newSchema = Routine(fileName: "Routine")
+        
+        oldSchema = Routine(fileName: "bodyweight_fitness_recommended_routine_unit_test")
+        newSchema = Routine(fileName: "bodyweight_fitness_recommended_routine")
     }
     
     override func tearDown() {
@@ -89,8 +89,8 @@ class BodyweightFitnessTests: XCTestCase {
     }
     
     func testDifferentSchemaMigrationShouldSucceed() {
-        let newRoutine = Routine(fileName: "Routine")
-        let currentRoutine = Routine(fileName: "TestRoutine")
+        let newRoutine = Routine(fileName: "bodyweight_fitness_recommended_routine")
+        let currentRoutine = Routine(fileName: "bodyweight_fitness_recommended_routine_unit_test")
         
         let currentSchema = buildRoutine(currentRoutine)
         
@@ -111,8 +111,8 @@ class BodyweightFitnessTests: XCTestCase {
         XCTAssert(migratedSchema.startTime == fakeSchema.startTime)
         XCTAssert(migratedSchema.lastUpdatedTime == fakeSchema.lastUpdatedTime)
         
-        for (_, exercise) in migratedSchema.exercises.enumerate() {
-            for (_, set) in exercise.sets.enumerate() {
+        for (_, exercise) in migratedSchema.exercises.enumerated() {
+            for (_, set) in exercise.sets.enumerated() {
                 if let oldExercise = currentSchema.exercises.filter({
                     $0.exerciseId == exercise.exerciseId
                 }).first {
@@ -147,7 +147,7 @@ class BodyweightFitnessTests: XCTestCase {
     func isValidSchema(_ routine: Routine, currentSchema: TestRoutine) -> Bool {
         for exercise in routine.exercises {
             if let exercise = exercise as? Exercise {
-                let containsExercise = currentSchema.exercises.contains({
+                let containsExercise = currentSchema.exercises.contains(where: {
                     $0.exerciseId == exercise.exerciseId
                 })
                 
@@ -207,9 +207,9 @@ class BodyweightFitnessTests: XCTestCase {
                     testSection?.sectionId = section.sectionId
                     testSection?.title = section.title
                     
-                    if (section.mode == SectionMode.All) {
+                    if (section.mode == SectionMode.all) {
                         testSection?.mode = "all"
-                    } else if (section.mode == SectionMode.Pick) {
+                    } else if (section.mode == SectionMode.pick) {
                         testSection?.mode = "pick"
                     } else {
                         testSection?.mode = "levels"
@@ -226,7 +226,7 @@ class BodyweightFitnessTests: XCTestCase {
                 testExercise.category = testCategory!
                 testExercise.section = testSection!
                 
-                if(exercise.section?.mode == SectionMode.All) {
+                if(exercise.section?.mode == SectionMode.all) {
                     testExercise.visible = true
                 } else {
                     if let currentExercise = exercise.section?.currentExercise {
@@ -249,3 +249,4 @@ class BodyweightFitnessTests: XCTestCase {
         return testRoutine
     }
 }
+

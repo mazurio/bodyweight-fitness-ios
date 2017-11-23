@@ -22,11 +22,11 @@ class WorkoutLogViewController: UIViewController {
         generalViewController.repositoryRoutine = repositoryRoutine
         controllerArray.append(generalViewController)
         
-        if let routine = repositoryRoutine {
-            for category in routine.categories {
+        if let repositoryRoutine = repositoryRoutine {
+            for repositoryCategory in repositoryRoutine.categories {
                 let categoryViewController = WorkoutLogCategoryViewController()
-                categoryViewController.title = category.title
-                categoryViewController.category = category
+                categoryViewController.title = repositoryCategory.title
+                categoryViewController.repositoryCategory = repositoryCategory
                 controllerArray.append(categoryViewController)
             }
         }

@@ -1,6 +1,14 @@
 import Foundation
 import RealmSwift
 
+class RepositoryRoutineCompanion {
+    let repositoryRoutine: RepositoryRoutine
+    
+    init(_ repositoryRoutine: RepositoryRoutine) {
+        self.repositoryRoutine = repositoryRoutine
+    }
+}
+
 class RepositoryRoutineHelper {
     let repositoryRoutine: RepositoryRoutine
     
