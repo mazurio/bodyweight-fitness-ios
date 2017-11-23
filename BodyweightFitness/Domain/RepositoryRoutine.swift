@@ -9,21 +9,21 @@ class RepositoryRoutineCompanion {
     }
 }
 
-class RepositoryCategoryCompanion {
-    let repositoryCategory: RepositoryCategory
+class ListOfRepositoryExercisesCompanion {
+    let repositoryExercises: List<RepositoryExercise>
     
-    init(_ repositoryCategory: RepositoryCategory) {
-        self.repositoryCategory = repositoryCategory
+    init(_ repositoryExercises: List<RepositoryExercise>) {
+        self.repositoryExercises = repositoryExercises
     }
 
     func numberOfExercises() -> Int {
-        return self.repositoryCategory.exercises.filter({
+        return self.repositoryExercises.filter({
             $0.visible
         }).count
     }
 
     func numberOfCompletedExercises() -> Int {
-        return self.repositoryCategory.exercises.filter({
+        return self.repositoryExercises.filter({
             $0.visible && RepositoryExerciseCompanion($0).isCompleted()
         }).count
     }
