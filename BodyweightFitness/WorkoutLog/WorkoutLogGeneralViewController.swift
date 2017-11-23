@@ -53,12 +53,13 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     func createStatisticsCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
         self.contentView.addSubview(card)
-        
+
+        let companion = RepositoryRoutineCompanion(repositoryRoutine)
         let helper = RepositoryRoutineHelper(repositoryRoutine: repositoryRoutine)
-        
+
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = helper.getStartTime()
+        topLeftLabel.text = companion.startTime()
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
@@ -68,7 +69,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = helper.getLastUpdatedTime()
+        topRightLabel.text = companion.lastUpdatedTime()
         
         card.addSubview(topRightLabel)
         
@@ -79,7 +80,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let bottomLeftLabel = TitleLabel()
         bottomLeftLabel.textAlignment = .left
-        bottomLeftLabel.text = helper.getWorkoutLength()
+        bottomLeftLabel.text = companion.workoutLength()
         card.addSubview(bottomLeftLabel)
         
         let bottomLeftValue = ValueLabel()
@@ -171,12 +172,13 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     func createWorkoutProgressCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
         self.contentView.addSubview(card)
-        
-        let helper = RepositoryRoutineHelper(repositoryRoutine: repositoryRoutine)
+
+        let companion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
+        let completionRate = companion.completionRate()
 
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = helper.numberOfCompletedExercisesLabel()
+        topLeftLabel.text = "\(companion.numberOfCompletedExercises()) out of \(companion.numberOfExercises())"
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
@@ -186,7 +188,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = helper.completionRateLabel()
+        topRightLabel.text = completionRate.label
         
         card.addSubview(topRightLabel)
         
@@ -204,7 +206,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         card.addSubview(stackView)
         
         for repositoryCategory in repositoryRoutine.categories {
-            let completionRate = helper.getCompletionRate(repositoryCategory: repositoryCategory)
+            let companion = ListOfRepositoryExercisesCompanion(repositoryCategory.exercises)
+            let completionRate = companion.completionRate()
             
             let homeBarView = HomeBarView()
             homeBarView.categoryTitle.text = repositoryCategory.title

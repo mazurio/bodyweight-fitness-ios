@@ -134,7 +134,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
         
         if let routines = self.routines {
             let repositoryRoutine = routines[indexPath.row]
-            let completionRate = RepositoryRoutineHelper.getCompletionRate(repositoryRoutine)
+
+            let companion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
+            let completionRate = companion.completionRate()
             
             cell.parentController = self
             cell.date = date

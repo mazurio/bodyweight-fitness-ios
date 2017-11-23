@@ -46,12 +46,8 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
         let mailString = NSMutableString()
         
         if let routine = repositoryRoutine {
-            let helper = RepositoryRoutineHelper(repositoryRoutine: routine)
-            
-            let date = helper.getDate()
-            let startTime = helper.getStartTime()
-            let lastUpdatedTime = helper.getLastUpdatedTime()
-            
+            let companion = RepositoryRoutineCompanion(routine)
+
             let exercises = repositoryRoutine?.exercises.filter { (exercise) in
                 exercise.visible == true
             }
@@ -68,10 +64,10 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
                     
                     mailString.append(String(
                         format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
-                        date,
-                        startTime,
-                        lastUpdatedTime,
-                        "1h 10m",
+                        companion.date(),
+                        companion.startTime(),
+                        companion.lastUpdatedTime(),
+                        companion.workoutLength(),
                         "\(routine.title) - \(routine.subtitle)",
                         title,
                         index,
@@ -79,20 +75,21 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
                         weightValue,
                         set.reps,
                         minutes,
-                        seconds))
+                        seconds
+                    ))
                     
                     index += 1
                 }
             }
             
             let content = NSMutableString()
-            let emailTitle = "\(routine.title) workout for \(helper.getStartTime(true))"
+            let emailTitle = "\(routine.title) workout for \(companion.dateWithTime())"
             
             content.append("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
             
-            content.append("\n\nWorkout on \(helper.getStartTime(true)).")
-            content.append("\nLast Updated at \(helper.getLastUpdatedTime())")
-            content.append("\nWorkout length: \(helper.getWorkoutLength())")
+            content.append("\n\nWorkout on \(companion.dateWithTime()).")
+            content.append("\nLast Updated at \(companion.lastUpdatedTime())")
+            content.append("\nWorkout length: \(companion.workoutLength())")
             
             content.append("\n\n\(routine.title)\n\(routine.subtitle)")
             
