@@ -1,4 +1,15 @@
 import SnapKit
+import Charts
+
+extension WorkoutLogGeneralViewController: ChartViewDelegate {
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        NSLog("chartValueSelected");
+    }
+
+    func chartValueNothingSelected(_ chartView: ChartViewBase) {
+        NSLog("chartValueNothingSelected");
+    }
+}
 
 class WorkoutLogGeneralViewController: AbstractViewController {
     var repositoryRoutine: RepositoryRoutine?
@@ -259,18 +270,98 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     func createWorkoutLengthHistoryCard() -> CardView {
         let card = CardView()
 
+        let graph = LineChartView()
+        card.addSubview(graph)
+
+        let values = [0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0]
+
+        setupChart(graph)
+        setChart(values, lineChartView: graph)
+
         let label = TitleLabel()
-        label.text = "12 October 2017"
+        label.text = "{{date}}"
         card.addSubview(label)
+
+        let value = ValueLabel()
+        value.text = "11%"
+        card.addSubview(value)
 
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
-            make.bottom.equalTo(card).offset(-20)
+        }
+
+        value.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(label.snp.bottom).offset(8)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+        }
+
+        graph.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(value.snp.bottom).offset(8)
+            make.left.equalTo(card).offset(0)
+            make.right.equalTo(card).offset(0)
+            make.bottom.equalTo(card).offset(0)
+
+            make.height.equalTo(200)
         }
         
         return card
+    }
+
+    func setupChart(_ lineChartView: LineChartView) {
+        lineChartView.delegate = self
+        lineChartView.backgroundColor = UIColor.white
+        lineChartView.chartDescription?.enabled = false
+        lineChartView.dragEnabled = true
+        lineChartView.drawGridBackgroundEnabled = false
+        lineChartView.drawMarkers = false
+        lineChartView.legend.enabled = false
+        lineChartView.animate(
+                xAxisDuration: 1.0,
+                yAxisDuration: 1.0,
+                easingOption: .easeInSine
+        )
+
+        lineChartView.xAxis.enabled = false
+        lineChartView.xAxis.drawLabelsEnabled = false
+        lineChartView.xAxis.drawGridLinesEnabled = false
+
+        lineChartView.leftAxis.enabled = false
+        lineChartView.leftAxis.drawLabelsEnabled = false
+        lineChartView.leftAxis.drawGridLinesEnabled = false
+
+        lineChartView.rightAxis.enabled = false
+        lineChartView.rightAxis.drawLabelsEnabled = false
+        lineChartView.rightAxis.drawGridLinesEnabled = false
+    }
+
+    func setChart(_ values: [Double], lineChartView: LineChartView) {
+        var dataEntries: [ChartDataEntry] = []
+
+        for i in 0..<values.count {
+            let dataEntry = ChartDataEntry(
+                    x: Double(i),
+                    y: Double(values[i])
+            )
+
+            dataEntries.append(dataEntry)
+        }
+
+        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: nil)
+        lineChartDataSet.lineWidth = 1.8
+        lineChartDataSet.mode = .cubicBezier
+        lineChartDataSet.cubicIntensity = 0.2
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.drawValuesEnabled = false
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.colors = [UIColor.primary()]
+
+        let lineChartData = LineChartData()
+        lineChartData.addDataSet(lineChartDataSet)
+
+        lineChartView.data = lineChartData
     }
     
     func createCompletionRateHistoryCard() -> CardView {
