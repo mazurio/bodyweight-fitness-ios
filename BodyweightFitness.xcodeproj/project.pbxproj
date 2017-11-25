@@ -393,6 +393,7 @@
 		2BD2CA841B458FFD00841AB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */,
 				738C24821FC7461A00036005 /* BodyweightFitnessTests.xctest */,
 			);
 			name = Products;
