@@ -251,7 +251,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
             make.bottom.equalTo(card).offset(-16)
-
         }
         
         return card

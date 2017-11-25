@@ -53,7 +53,27 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         topRightValue.textAlignment = .right
         topRightValue.text = "Completion Rate"
         card.addSubview(topRightValue)
-        
+
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.spacing = 0
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(stackView)
+
+        for repositorySection in repositoryCategory.sections {
+            let companion = ListOfRepositoryExercisesCompanion(repositorySection.exercises)
+            let completionRate = companion.completionRate()
+
+            let homeBarView = HomeBarView()
+            homeBarView.categoryTitle.text = repositorySection.title
+            homeBarView.progressView.setCompletionRate(completionRate)
+            homeBarView.progressRate.text = completionRate.label
+
+            stackView.addArrangedSubview(homeBarView)
+        }
+
         topLeftLabel.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.leading.equalTo(card).offset(16)
@@ -77,8 +97,6 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             make.leading.equalTo(card).offset(16)
             
             make.right.equalTo(topRightValue.snp.left)
-            
-            make.bottom.equalTo(card).offset(-20)
         }
         
         topRightValue.snp.makeConstraints { (make) -> Void in
@@ -86,8 +104,13 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             make.trailing.equalTo(card).offset(-16)
             
             make.left.equalTo(topLeftValue.snp.right)
-            
-            make.bottom.equalTo(card).offset(-20)
+        }
+
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(topLeftValue.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
         }
         
         return card
