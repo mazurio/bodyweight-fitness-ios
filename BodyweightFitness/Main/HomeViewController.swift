@@ -35,17 +35,17 @@ class HomeViewController: UIViewController {
         
         
         
-        // TEMPORARY
-        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
-        let p = storyboard.instantiateViewController(
-            withIdentifier: "WorkoutLogViewController"
-        ) as! WorkoutLogViewController
-
-        p.repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
-        p.hidesBottomBarWhenPushed = true
-        
-        self.navigationController?.pushViewController(p, animated: true)
-        // TEMPORARY
+        // TEMPORARY TEST
+//        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
+//        let p = storyboard.instantiateViewController(
+//            withIdentifier: "WorkoutLogViewController"
+//        ) as! WorkoutLogViewController
+//
+//        p.repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
+//        p.hidesBottomBarWhenPushed = true
+//
+//        self.navigationController?.pushViewController(p, animated: true)
+        // TEMPORARY TEST
         
         
         

@@ -28,7 +28,6 @@ class WorkoutLogCardCell: UITableViewCell, MFMailComposeViewControllerDelegate {
     }
     
     @IBAction func onClickView(_ sender: AnyObject) {
-        
         let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
         
         let p = storyboard.instantiateViewController(
