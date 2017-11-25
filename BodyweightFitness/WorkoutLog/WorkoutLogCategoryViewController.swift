@@ -17,8 +17,10 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             
             for repositorySection in repositoryCategory.sections {
                 self.addView(ValueLabel.create(text: repositorySection.title))
-                
-                for repositoryExercise in repositorySection.exercises {
+
+                let companion = ListOfRepositoryExercisesCompanion(repositorySection.exercises)
+
+                for repositoryExercise in companion.visibleOrCompletedExercises() {
                     self.addView(
                         createExerciseCard(repositoryExercise: repositoryExercise)
                     )
