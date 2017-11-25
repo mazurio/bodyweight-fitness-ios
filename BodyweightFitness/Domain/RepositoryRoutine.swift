@@ -145,6 +145,46 @@ class RepositoryExerciseCompanion {
 
         return false
     }
+
+    func setSummaryLabel() -> String {
+        let totalNumberOfSets = self.repositoryExercise.sets.count
+        let setLabel = (totalNumberOfSets > 1) ? "Sets" : "Set"
+
+        if let firstSet = self.repositoryExercise.sets.first as RepositorySet? {
+            if (firstSet.isTimed) {
+                let totalTime = self.repositoryExercise.sets.map({ $0.seconds }).reduce(0, +)
+
+                let (hours, minutes, seconds) = secondsToHoursMinutesSeconds(totalTime)
+
+                let minutesLabel = (minutes == 1) ? "Minute" : "Minutes"
+                let secondsLabel = (seconds == 1) ? "Second" : "Seconds"
+
+                if (totalTime == 0) {
+                    return "--"
+                } else if (minutes == 0) {
+                    return "\(totalNumberOfSets) \(setLabel), \(seconds) \(secondsLabel)"
+                } else if (seconds == 0) {
+                    return "\(totalNumberOfSets) \(setLabel), \(minutes) \(minutesLabel)"
+                } else {
+                    return "\(totalNumberOfSets) \(setLabel), \(minutes) \(minutesLabel), \(seconds) \(secondsLabel)"
+                }
+
+                return "--"
+            } else {
+                let totalNumberOfReps = self.repositoryExercise.sets.map({ $0.reps }).reduce(0, +)
+
+                let repLabel = (totalNumberOfReps > 1) ? "Reps" : "Rep"
+
+                if (totalNumberOfReps == 0) {
+                    return "--"
+                } else {
+                    return "\(totalNumberOfSets) \(setLabel), \(totalNumberOfReps) \(repLabel)"
+                }
+            }
+        }
+
+        return "--"
+    }
 }
 
 class RepositoryRoutine: Object {

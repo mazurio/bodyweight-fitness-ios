@@ -135,11 +135,13 @@ class HomeViewController: UIViewController {
         if (RepositoryStream.sharedInstance.repositoryRoutineForTodayExists()) {
             let repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
             
-            for category in repositoryRoutine.categories {
-                let completionRate = RepositoryCategoryHelper.getCompletionRate(category)
+            for repositoryCategory in repositoryRoutine.categories {
+                let companion = ListOfRepositoryExercisesCompanion(repositoryCategory.exercises)
+                let completionRate = companion.completionRate()
+
                 let homeBarView = HomeBarView()
                 
-                homeBarView.categoryTitle.text = category.title
+                homeBarView.categoryTitle.text = repositoryCategory.title
                 homeBarView.progressView.setCompletionRate(completionRate)
                 homeBarView.progressRate.text = completionRate.label
                 

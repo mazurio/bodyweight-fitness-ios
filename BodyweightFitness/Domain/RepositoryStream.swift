@@ -140,7 +140,6 @@ final class RepositoryStream {
     }
     
     func getRepositoryRoutineForToday() -> RepositoryRoutine {
-        // If you want to get objects after a date, use greater-than (>), for dates before, use less-than (<).
         let startOfDay = Calendar.current.startOfDay(for: Date())
         
         var components = DateComponents()

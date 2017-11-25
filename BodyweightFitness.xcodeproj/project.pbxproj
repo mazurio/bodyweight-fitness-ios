@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		46B021B6A56C2000CA08000B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */; };
+		46B023C64AF59B2DAAC02813 /* CompletionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B026D8FF35A60FEA72641A /* CompletionRate.swift */; };
 		46B0249136D6147956309E7B /* RepositoryExerciseCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */; };
 		46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
@@ -184,12 +185,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness_BodyweightFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExerciseCompanionSpec.swift; sourceTree = "<group>"; };
+		46B026D8FF35A60FEA72641A /* CompletionRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionRate.swift; sourceTree = "<group>"; };
 		46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
@@ -703,6 +705,7 @@
 				734B700A1C4BF7E900CFB6BD /* RepositorySection.swift */,
 				734B6FFE1C4BF46400CFB6BD /* RepositorySet.swift */,
 				E0F587301B5272E200540104 /* Routine.swift */,
+				46B026D8FF35A60FEA72641A /* CompletionRate.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1144,6 +1147,7 @@
 				46B0271B985965324463B90C /* RoutineStream.swift in Sources */,
 				73C328321F3C81D60076AF19 /* CAPSPageMenu.swift in Sources */,
 				73BF63801F3CAAE2007F37C8 /* CellView.swift in Sources */,
+				46B023C64AF59B2DAAC02813 /* CompletionRate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
