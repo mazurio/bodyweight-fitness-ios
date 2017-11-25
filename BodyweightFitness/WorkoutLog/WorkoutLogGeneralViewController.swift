@@ -18,8 +18,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(self.createWorkoutLengthHistoryCard())
             self.addView(ValueLabel.create(text: "Completion Rate History"))
             self.addView(self.createCompletionRateHistoryCard())
-            self.addView(ValueLabel.create(text: "Missed Exercises"))
-            self.addView(self.createMissedExercisesCard(repositoryRoutine: repositoryRoutine))
+            self.addView(ValueLabel.create(text: "Not Completed Exercises"))
+            self.addView(self.createNotCompletedExercisesCard(repositoryRoutine: repositoryRoutine))
         }
     }
     
@@ -290,7 +290,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createMissedExercisesCard(repositoryRoutine: RepositoryRoutine) -> CardView {
+    func createNotCompletedExercisesCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
 
         let stackView = UIStackView()

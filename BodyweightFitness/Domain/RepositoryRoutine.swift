@@ -147,6 +147,7 @@ class RepositoryExerciseCompanion {
     }
 
     func setSummaryLabel() -> String {
+        let defaultLabel = "Not Completed"
         let totalNumberOfSets = self.repositoryExercise.sets.count
         let setLabel = (totalNumberOfSets > 1) ? "Sets" : "Set"
 
@@ -160,7 +161,7 @@ class RepositoryExerciseCompanion {
                 let secondsLabel = (seconds == 1) ? "Second" : "Seconds"
 
                 if (totalTime == 0) {
-                    return "--"
+                    return defaultLabel
                 } else if (minutes == 0) {
                     return "\(totalNumberOfSets) \(setLabel), \(seconds) \(secondsLabel)"
                 } else if (seconds == 0) {
@@ -169,21 +170,21 @@ class RepositoryExerciseCompanion {
                     return "\(totalNumberOfSets) \(setLabel), \(minutes) \(minutesLabel), \(seconds) \(secondsLabel)"
                 }
 
-                return "--"
+                return defaultLabel
             } else {
                 let totalNumberOfReps = self.repositoryExercise.sets.map({ $0.reps }).reduce(0, +)
 
                 let repLabel = (totalNumberOfReps > 1) ? "Reps" : "Rep"
 
                 if (totalNumberOfReps == 0) {
-                    return "--"
+                    return defaultLabel
                 } else {
                     return "\(totalNumberOfSets) \(setLabel), \(totalNumberOfReps) \(repLabel)"
                 }
             }
         }
 
-        return "--"
+        return defaultLabel
     }
 }
 

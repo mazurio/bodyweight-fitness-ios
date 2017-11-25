@@ -135,13 +135,15 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     
     func createExerciseCard(repositoryExercise: RepositoryExercise) -> CardView {
         let card = CardView()
-        
+
+        let companion = RepositoryExerciseCompanion(repositoryExercise)
+
         let label = TitleLabel()
         label.text = repositoryExercise.title
         card.addSubview(label)
         
         let value = ValueLabel()
-        value.text = "1 Set, 3 Seconds"
+        value.text = companion.setSummaryLabel()
         card.addSubview(value)
         
         label.snp.makeConstraints { (make) -> Void in

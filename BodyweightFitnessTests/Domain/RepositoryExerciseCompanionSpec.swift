@@ -116,7 +116,7 @@ class RepositoryExerciseCompanionSpec: QuickSpec {
 
                         let companion = RepositoryExerciseCompanion(repositoryExercise)
 
-                        expect(companion.setSummaryLabel()).to(equal("--"))
+                        expect(companion.setSummaryLabel()).to(equal("Not Completed"))
                     }
 
                     it("returns 1 Set, 1 Second") {
@@ -209,7 +209,7 @@ class RepositoryExerciseCompanionSpec: QuickSpec {
 
                         let companion = RepositoryExerciseCompanion(repositoryExercise)
 
-                        expect(companion.setSummaryLabel()).to(equal("--"))
+                        expect(companion.setSummaryLabel()).to(equal("Not Completed"))
                     }
 
                     it("returns 1 Set, 1 Rep") {
