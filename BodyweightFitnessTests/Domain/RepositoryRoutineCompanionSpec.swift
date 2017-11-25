@@ -171,6 +171,48 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
                     expect(companion.workoutLength()).to(equal("--"))
                 }
             }
+
+            context("workoutLengthInMinutes()") {
+                it("should return 50") {
+                    let repositoryRoutine = RepositoryRoutine()
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:00:00Z")
+                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T13:50:00Z")
+
+                    let companion = RepositoryRoutineCompanion(repositoryRoutine)
+
+                    expect(companion.workoutLengthInMinutes()).to(equal(50))
+                }
+
+                it("should return 60") {
+                    let repositoryRoutine = RepositoryRoutine()
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:00:00Z")
+                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T14:00:00Z")
+
+                    let companion = RepositoryRoutineCompanion(repositoryRoutine)
+
+                    expect(companion.workoutLengthInMinutes()).to(equal(60))
+                }
+
+                it("should return 70") {
+                    let repositoryRoutine = RepositoryRoutine()
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:00:00Z")
+                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T14:10:00Z")
+
+                    let companion = RepositoryRoutineCompanion(repositoryRoutine)
+
+                    expect(companion.workoutLengthInMinutes()).to(equal(70))
+                }
+
+                it("should return 215") {
+                    let repositoryRoutine = RepositoryRoutine()
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:00:00Z")
+                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T16:35:00Z")
+
+                    let companion = RepositoryRoutineCompanion(repositoryRoutine)
+
+                    expect(companion.workoutLengthInMinutes()).to(equal(215))
+                }
+            }
         }
     }
 }
