@@ -753,6 +753,7 @@
 			);
 			name = BodyweightFitness;
 			productName = TabsTest;
+			productReference = 2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */;
 			productType = "com.apple.product-type.application";
 		};
 		738C24811FC7461A00036005 /* BodyweightFitnessTests */ = {
