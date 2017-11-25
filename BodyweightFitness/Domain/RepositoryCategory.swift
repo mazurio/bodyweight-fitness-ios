@@ -39,15 +39,19 @@ class RepositoryCategoryHelper {
     }
 
     class func numberOfCompletedExercises(_ repositoryCategory: RepositoryCategory) -> Int {
-        return repositoryCategory.exercises.filter({
+        let filtered = repositoryCategory.exercises.filter({
             $0.visible && isCompleted($0)
-        }).count
+        })
+        
+        return filtered.count
     }
 
     class func numberOfExercises(_ repositoryCategory: RepositoryCategory) -> Int {
-        return repositoryCategory.exercises.filter({
+        let filtered = repositoryCategory.exercises.filter({
             $0.visible
-        }).count
+        })
+        
+        return filtered.count
     }
 }
 

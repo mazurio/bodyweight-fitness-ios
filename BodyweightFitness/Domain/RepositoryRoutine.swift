@@ -82,15 +82,19 @@ class ListOfRepositoryExercisesCompanion {
     }
 
     func numberOfExercises() -> Int {
-        return self.repositoryExercises.filter({
+        let filtered = self.repositoryExercises.filter({
             $0.visible
-        }).count
+        })
+        
+        return filtered.count
     }
 
     func numberOfCompletedExercises() -> Int {
-        return self.repositoryExercises.filter({
+        let filtered = self.repositoryExercises.filter({
             $0.visible && RepositoryExerciseCompanion($0).isCompleted()
-        }).count
+        })
+        
+        return filtered.count
     }
 
     func allExercisesCompleted() -> Bool {
