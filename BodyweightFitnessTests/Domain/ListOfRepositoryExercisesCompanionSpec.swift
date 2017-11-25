@@ -347,6 +347,45 @@ class ListOfRepositoryExercisesCompanionSpec: QuickSpec {
                     expect(completionRate.label).to(equal("66%"))
                 }
             }
+
+            context("notCompletedExercises()") {
+                it("should return not completed and visible exercises") {
+                    let completedSet = RepositorySet()
+                    completedSet.isTimed = true
+                    completedSet.seconds = 30
+
+                    let notCompletedSet = RepositorySet()
+                    notCompletedSet.isTimed = true
+                    notCompletedSet.seconds = 0
+
+                    let firstExercise = RepositoryExercise()
+                    firstExercise.visible = true
+                    firstExercise.sets.append(completedSet)
+
+                    let secondExercise = RepositoryExercise()
+                    secondExercise.visible = true
+                    secondExercise.sets.append(completedSet)
+
+                    let thirdExercise = RepositoryExercise()
+                    thirdExercise.visible = true
+                    thirdExercise.sets.append(notCompletedSet)
+
+                    let fourthExercise = RepositoryExercise()
+                    fourthExercise.visible = false
+                    fourthExercise.sets.append(completedSet)
+
+                    let repositoryExercises = List<RepositoryExercise>()
+                    repositoryExercises.append(firstExercise)
+                    repositoryExercises.append(secondExercise)
+                    repositoryExercises.append(thirdExercise)
+                    repositoryExercises.append(fourthExercise)
+
+                    let companion = ListOfRepositoryExercisesCompanion(repositoryExercises)
+                    let notCompletedExercises = companion.notCompletedExercises()
+
+                    expect(notCompletedExercises.count).to(equal(1))
+                }
+            }
         }
     }
 }

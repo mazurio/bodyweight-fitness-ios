@@ -113,6 +113,14 @@ class ListOfRepositoryExercisesCompanion {
 
         return CompletionRate(percentage: value, label: "\(value)%")
     }
+
+    func notCompletedExercises() -> [RepositoryExercise] {
+        let filtered = Array(self.repositoryExercises).filter({
+            $0.visible && !RepositoryExerciseCompanion($0).isCompleted()
+        })
+
+        return filtered
+    }
 }
 
 class RepositoryExerciseCompanion {
