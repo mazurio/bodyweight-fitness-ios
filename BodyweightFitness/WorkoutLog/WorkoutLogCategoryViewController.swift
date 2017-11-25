@@ -11,7 +11,7 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     
     func initializeContent() {
         if let repositoryCategory = self.repositoryCategory {
-            self.addView(self.createStatisticsCard(repositoryCategory: repositoryCategory))
+            self.addView(self.createProgressCard(repositoryCategory: repositoryCategory))
             self.addView(ValueLabel.create(text: "Category Completion Rate"))
             self.addView(self.createCompletionRateHistoryCard())
             
@@ -27,12 +27,15 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         }
     }
     
-    func createStatisticsCard(repositoryCategory: RepositoryCategory) -> CardView {
+    func createProgressCard(repositoryCategory: RepositoryCategory) -> CardView {
         let card = CardView()
-        
+
+        let companion = ListOfRepositoryExercisesCompanion(repositoryCategory.exercises)
+        let completionRate = companion.completionRate()
+
         let topLeftLabel = TitleLabel()
         topLeftLabel.textAlignment = .left
-        topLeftLabel.text = "1 out of 3"
+        topLeftLabel.text = "\(companion.numberOfCompletedExercises()) out of \(companion.numberOfExercises())"
         card.addSubview(topLeftLabel)
         
         let topLeftValue = ValueLabel()
@@ -42,7 +45,7 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         
         let topRightLabel = TitleLabel()
         topRightLabel.textAlignment = .right
-        topRightLabel.text = "33%"
+        topRightLabel.text = completionRate.label
         
         card.addSubview(topRightLabel)
         
@@ -92,8 +95,7 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     
     func createCompletionRateHistoryCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
-        
+
         let label = TitleLabel()
         label.text = "12 October 2017"
         card.addSubview(label)

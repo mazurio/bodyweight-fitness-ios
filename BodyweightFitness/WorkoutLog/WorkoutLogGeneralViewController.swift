@@ -13,7 +13,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         if let repositoryRoutine = self.repositoryRoutine {
             self.addView(self.createStatisticsCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Progress"))
-            self.addView(self.createWorkoutProgressCard(repositoryRoutine: repositoryRoutine))
+            self.addView(self.createProgressCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Length History"))
             self.addView(self.createWorkoutLengthHistoryCard())
             self.addView(ValueLabel.create(text: "Completion Rate History"))
@@ -52,7 +52,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     
     func createStatisticsCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
 
         let companion = RepositoryRoutineCompanion(repositoryRoutine)
 
@@ -168,9 +167,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createWorkoutProgressCard(repositoryRoutine: RepositoryRoutine) -> CardView {
+    func createProgressCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
 
         let companion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
         let completionRate = companion.completionRate()
@@ -261,8 +259,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     
     func createWorkoutLengthHistoryCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
-        
+
         let label = TitleLabel()
         label.text = "12 October 2017"
         card.addSubview(label)
@@ -279,8 +276,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     
     func createCompletionRateHistoryCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
-        
+
         let label = TitleLabel()
         label.text = "12 October 2017"
         card.addSubview(label)
@@ -297,8 +293,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     
     func createMissedExercisesCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
-        
+
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.distribution = .fill
