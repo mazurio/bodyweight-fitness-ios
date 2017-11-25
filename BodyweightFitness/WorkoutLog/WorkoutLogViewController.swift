@@ -42,7 +42,7 @@ class WorkoutLogViewController: UIViewController {
                 UIColor(red:0.02, green:0.21, blue:0.18, alpha:1)
             ),
             .bottomMenuHairlineColor(
-                UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+                UIColor.primary()
             ),
             .selectedMenuItemLabelColor(
                 UIColor(red:0, green:0.33, blue:0.29, alpha:1)
