@@ -19,7 +19,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(ValueLabel.create(text: "Completion Rate History"))
             self.addView(self.createCompletionRateHistoryCard())
             self.addView(ValueLabel.create(text: "Missed Exercises"))
-            self.addView(self.createMissedExercisesCard())
+            self.addView(self.createMissedExercisesCard(repositoryRoutine: repositoryRoutine))
         }
     }
     
@@ -295,7 +295,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createMissedExercisesCard() -> CardView {
+    func createMissedExercisesCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
         self.contentView.addSubview(card)
         
@@ -306,18 +306,19 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         stackView.spacing = 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         card.addSubview(stackView)
-        
-        stackView.addArrangedSubview(
-            createTitleValueView(labelText: "Pushup", valueText: "Test")
-        )
-        
-        stackView.addArrangedSubview(
-            createTitleValueView(labelText: "Pushup", valueText: "Test")
-        )
-        
-        stackView.addArrangedSubview(
-            createTitleValueView(labelText: "Pushup", valueText: "Test")
-        )
+
+        let companion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
+
+        for repositoryExercise in companion.notCompletedExercises() {
+            if let category = repositoryExercise.category, let section = repositoryExercise.section {
+                stackView.addArrangedSubview(
+                        createTitleValueView(
+                                labelText: "\(repositoryExercise.title)",
+                                valueText: "\(category.title) - \(section.title)"
+                        )
+                )
+            }
+        }
         
         stackView.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(16)
