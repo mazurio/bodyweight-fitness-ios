@@ -64,10 +64,10 @@ class RepositoryRoutineCompanion {
         }
     }
 
-    func workoutLengthInMinutes() -> Int {
+    func workoutLengthInMinutes() -> Double {
         let interval = self.repositoryRoutine.lastUpdatedTime.timeIntervalSince(repositoryRoutine.startTime)
 
-        return Int(interval) / 60
+        return Double(Int(interval) / 60)
     }
 
     fileprivate func stringFromTimeInterval(_ interval: TimeInterval) -> (Int, Int) {

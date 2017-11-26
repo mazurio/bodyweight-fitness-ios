@@ -1,13 +1,12 @@
 import SnapKit
 import Charts
+import RealmSwift
 
 extension WorkoutLogGeneralViewController: ChartViewDelegate {
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        NSLog("chartValueSelected");
-    }
-
-    func chartValueNothingSelected(_ chartView: ChartViewBase) {
-        NSLog("chartValueNothingSelected");
+        if let data = repositoryRoutine as? RepositoryRoutine {
+            print("\(entry.x) \(entry.y) with data \(data.startTime)")
+        }
     }
 }
 
@@ -26,7 +25,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(ValueLabel.create(text: "Workout Progress"))
             self.addView(self.createProgressCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Length History"))
-            self.addView(self.createWorkoutLengthHistoryCard())
+            self.addView(self.createWorkoutLengthHistoryCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Completion Rate History"))
             self.addView(self.createCompletionRateHistoryCard())
             self.addView(ValueLabel.create(text: "Not Completed Exercises"))
@@ -267,13 +266,19 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createWorkoutLengthHistoryCard() -> CardView {
+    func createWorkoutLengthHistoryCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
+
+        let realm = try! Realm()
+
+        let allWorkouts = realm.objects(RepositoryRoutine.self)
+
+        let values = Array(allWorkouts).map({
+            (repositoryRoutine: $0, workoutLength: RepositoryRoutineCompanion($0).workoutLengthInMinutes())
+        })
 
         let graph = LineChartView()
         card.addSubview(graph)
-
-        let values = [0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0,0.0, 0.0, 99.0, 75.0, 45.0, 100.0]
 
         setupChart(graph)
         setChart(values, lineChartView: graph)
@@ -337,13 +342,14 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         lineChartView.rightAxis.drawGridLinesEnabled = false
     }
 
-    func setChart(_ values: [Double], lineChartView: LineChartView) {
+    func setChart(_ values: [(repositoryRoutine: RepositoryRoutine, workoutLength: Double)], lineChartView: LineChartView) {
         var dataEntries: [ChartDataEntry] = []
 
-        for i in 0..<values.count {
+        for (index, entry) in values.enumerated() {
             let dataEntry = ChartDataEntry(
-                    x: Double(i),
-                    y: Double(values[i])
+                    x: Double(index),
+                    y: entry.workoutLength,
+                    data: entry.repositoryRoutine
             )
 
             dataEntries.append(dataEntry)
