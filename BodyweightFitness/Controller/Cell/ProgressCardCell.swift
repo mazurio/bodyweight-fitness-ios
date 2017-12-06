@@ -20,7 +20,7 @@ class ProgressCardCell: UITableViewCell {
         let logWorkoutController = LogWorkoutController()
         
         logWorkoutController.parentController = self.parentController
-        logWorkoutController.setRepositoryRoutine(current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
+        logWorkoutController.setRepositoryRoutine(repositoryExercise: current!, repositoryRoutine: RepositoryStream.sharedInstance.getRepositoryRoutineForToday())
         
         logWorkoutController.modalTransitionStyle = .coverVertical
         logWorkoutController.modalPresentationStyle = .custom

@@ -26,6 +26,7 @@ class WorkoutLogViewController: UIViewController {
             for repositoryCategory in repositoryRoutine.categories {
                 let categoryViewController = WorkoutLogCategoryViewController()
                 categoryViewController.title = repositoryCategory.title
+                categoryViewController.repositoryRoutine = repositoryRoutine
                 categoryViewController.repositoryCategory = repositoryCategory
                 controllerArray.append(categoryViewController)
             }
@@ -64,7 +65,9 @@ class WorkoutLogViewController: UIViewController {
             frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height),
             pageMenuOptions: parameters
         )
-        
+
+        self.addChildViewController(pageMenu!)
         self.view.addSubview(pageMenu!.view)
+        self.pageMenu!.didMove(toParentViewController: self)
     }
 }

@@ -1,4 +1,5 @@
 import UIKit
+import RealmSwift
 
 class LogWorkoutController: UIViewController {
     var exercise: RepositoryExercise?
@@ -42,9 +43,9 @@ class LogWorkoutController: UIViewController {
     
     var setView: SetView?
     var set: RepositorySet?
-    
-    let realm = RepositoryStream.sharedInstance.getRealm()
-    
+
+    let realm = try! Realm()
+
     var parentController: UIViewController?
     
     func increaseRepsButtonDown(_ sender: AnyObject) {
@@ -190,17 +191,15 @@ class LogWorkoutController: UIViewController {
         self.verticalStackView?.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
         self.verticalStackView?.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
         self.verticalStackView?.isHidden = false
-        
-        for set in (self.exercise?.sets)! {
-            self.addSet(set)
+
+        if let e = exercise {
+            for set in e.sets {
+                self.addSet(set)
+            }
         }
-        
-        // Disable Navigation Drawer
-//        let appDelegate = UIApplication.sharedApplication().delegate as? AppDelegate
-//        appDelegate?.sideNavigationViewController?.enabled = false
     }
     
-    func setRepositoryRoutine(_ repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
+    func setRepositoryRoutine(repositoryExercise: RepositoryExercise, repositoryRoutine: RepositoryRoutine) {
         self.exercise = repositoryExercise
         self.routine = repositoryRoutine
     }

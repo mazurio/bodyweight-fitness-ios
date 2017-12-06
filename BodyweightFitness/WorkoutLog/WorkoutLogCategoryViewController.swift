@@ -1,6 +1,7 @@
 import SnapKit
 
 class WorkoutLogCategoryViewController: AbstractViewController {
+    var repositoryRoutine: RepositoryRoutine?
     var repositoryCategory: RepositoryCategory?
     
     override func viewDidLoad() {
@@ -147,7 +148,13 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         let value = ValueLabel()
         value.text = companion.setSummaryLabel()
         card.addSubview(value)
-        
+
+        let button = CardButton()
+        button.repositoryExercise = repositoryExercise
+        button.setTitle("Edit", for: .normal)
+        button.addTarget(self, action: #selector(edit(_:)), for: .touchUpInside)
+        card.addSubview(button)
+
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.left.equalTo(card).offset(16)
@@ -158,10 +165,36 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             make.top.equalTo(label.snp.bottom).offset(8)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
-            make.bottom.equalTo(card).offset(-20)
+        }
+
+        button.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(value.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
+
+            make.height.equalTo(36)
         }
         
         return card
+    }
+
+    @IBAction func edit(_ sender: CardButton) {
+        let controller = self.parent!
+
+        if let exercise = sender.repositoryExercise {
+            let logWorkoutController = LogWorkoutController()
+            
+            logWorkoutController.parentController = controller
+            logWorkoutController.exercise = exercise
+            logWorkoutController.routine = repositoryRoutine
+            
+            logWorkoutController.modalTransitionStyle = .coverVertical
+            logWorkoutController.modalPresentationStyle = .custom
+            
+            controller.dim(.in, alpha: 0.5, speed: 0.5)
+            controller.present(logWorkoutController, animated: true, completion: nil)
+        }
     }
 }
 

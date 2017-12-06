@@ -70,6 +70,9 @@ class DescriptionTextView: UITextView {
 }
 
 class CardButton: UIButton {
+    // This is here only because we need to pass it to a selector method, maybe there is a better way?
+    var repositoryExercise: RepositoryExercise?
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         

@@ -6,7 +6,7 @@ target 'BodyweightFitness' do
   use_frameworks!
 
   # Pods for Bodyweight Fitness
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 3.0.2'
   pod 'SwiftyJSON'
   pod 'RxSwift', '~> 3.0'
   pod 'RxCocoa', '~> 3.0'
