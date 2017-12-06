@@ -59,4 +59,10 @@ class AbstractViewController: UIViewController {
     func addView(_ view: UIView) {
         self.contentStackView.addArrangedSubview(view)
     }
+    
+    func removeAllViews() {
+        for view in self.contentStackView.subviews {
+            view.removeFromSuperview()
+        }
+    }
 }

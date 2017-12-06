@@ -3,12 +3,9 @@ import RxSwift
 import StoreKit
 import SnapKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: AbstractViewController {
     var routine: Routine? = nil
     
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,98 +24,18 @@ class HomeViewController: UIViewController {
         self.requestReviewIfAllowed()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-
-
-        
-        
-        
-        
-        // TEMPORARY TEST
-//        let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
-//        let p = storyboard.instantiateViewController(
-//            withIdentifier: "WorkoutLogViewController"
-//        ) as! WorkoutLogViewController
-//
-//        p.repositoryRoutine = RepositoryStream.sharedInstance.getRepositoryRoutineForToday()
-//        p.hidesBottomBarWhenPushed = true
-//
-//        self.navigationController?.pushViewController(p, animated: true)
-        // TEMPORARY TEST
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    }
-
-    func initializeScrollView() {
-        self.view.addSubview(self.scrollView)
-        self.scrollView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(view)
-        }
-        
-        self.scrollView.addSubview(self.contentView)
-        self.contentView.snp.makeConstraints { (make) -> Void in
-            make.top.bottom.equalTo(scrollView)
-            make.left.right.equalTo(view)
-        }
-    }
-    
     func initializeContent() {
         self.navigationItem.title = self.routine?.title
 
-        self.contentView.removeAllSubviews()
+        self.removeAllViews()
         
-        let view = self.createBackgroundView()
-        let card1 = self.createTodaysProgressCard()
-        let card2 = self.createAboutRoutineCard()
-        let card3 = self.createStatisticsCard()
-        
-        view.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView)
-            make.left.equalTo(contentView)
-            make.right.equalTo(contentView)
-            make.height.equalTo(150)
-        }
-        
-        card1.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(contentView).offset(8)
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card2.snp.makeConstraints { (make) -> Void in
-            make.top.equalTo(card1.snp.bottom).offset(8)
-            make.bottom.equalTo(card3.snp.top).offset(-8)
-            
-            make.left.right.equalTo(contentView).inset(8)
-        }
-        
-        card3.snp.makeConstraints { (make) -> Void in
-            make.bottom.equalTo(contentView).offset(-8)
-            make.left.right.equalTo(contentView).inset(8)
-        }
-    }
-    
-    func createBackgroundView() -> UIView {
-        let view = UIView()
-        
-        view.backgroundColor = UIColor.primary()
-        self.contentView.addSubview(view)
-        
-        return view
+        self.addView(self.createTodaysProgressCard())
+        self.addView(self.createAboutRoutineCard())
+        self.addView(self.createStatisticsCard())
     }
     
     func createTodaysProgressCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
         
         let label = TitleLabel()
         label.text = "Today's Progress"
@@ -195,7 +112,6 @@ class HomeViewController: UIViewController {
     
     func createAboutRoutineCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
         
         let routineTitleLabel = TitleLabel()
         routineTitleLabel.text = routine?.title
@@ -238,7 +154,6 @@ class HomeViewController: UIViewController {
     
     func createStatisticsCard() -> CardView {
         let card = CardView()
-        self.contentView.addSubview(card)
         
         let numberOfWorkouts = RepositoryStream.sharedInstance.getNumberOfWorkouts()
         let lastWorkout = RepositoryStream.sharedInstance.getLastWorkout()
