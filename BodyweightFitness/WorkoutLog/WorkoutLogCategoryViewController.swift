@@ -7,10 +7,16 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribe(onNext: { (it) in
+            self.initializeContent()
+        })
+        
         self.initializeContent()
     }
     
     func initializeContent() {
+        self.removeAllViews()
+        
         if let repositoryCategory = self.repositoryCategory {
             self.addView(self.createProgressCard(repositoryCategory: repositoryCategory))
             self.addView(ValueLabel.create(text: "Category Completion Rate"))

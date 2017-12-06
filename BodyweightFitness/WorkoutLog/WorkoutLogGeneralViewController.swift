@@ -16,10 +16,16 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribe(onNext: { (it) in
+            self.initializeContent()
+        })
+        
         self.initializeContent()
     }
     
     func initializeContent() {
+        self.removeAllViews()
+
         if let repositoryRoutine = self.repositoryRoutine {
             self.addView(self.createStatisticsCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Progress"))
