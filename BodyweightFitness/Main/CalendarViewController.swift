@@ -70,7 +70,9 @@ class CalendarViewController: AbstractViewController {
         stackView.addArrangedSubview(homeBarView)
 
         let viewButton = CardButton()
+        viewButton.repositoryRoutine = repositoryRoutine
         viewButton.setTitle("View", for: .normal)
+        viewButton.addTarget(self, action: #selector(viewWorkout), for: .touchUpInside)
         card.addSubview(viewButton)
 
         let exportButton = CardButton()
@@ -79,8 +81,8 @@ class CalendarViewController: AbstractViewController {
 
         let deleteButton = CardButton()
         deleteButton.repositoryRoutine = repositoryRoutine
-        deleteButton.setTitleColor(UIColor.red, for: .normal)
         deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.setTitleColor(UIColor.red, for: .normal)
         deleteButton.addTarget(self, action: #selector(removeLoggedWorkout), for: .touchUpInside)
         card.addSubview(deleteButton)
 
@@ -126,6 +128,20 @@ class CalendarViewController: AbstractViewController {
     @IBAction func toggleCurrentDayView(_ sender: UIBarButtonItem) {
         self.calendarView.scrollToDate(Date(), animateScroll: false)
         self.calendarView.selectDates([Date()])
+    }
+
+    @IBAction func viewWorkout(_ sender: CardButton) {
+        if let repositoryRoutine = sender.repositoryRoutine {
+            let storyboard = UIStoryboard(name: "WorkoutLog", bundle: Bundle.main)
+
+            let p = storyboard.instantiateViewController(withIdentifier: "WorkoutLogViewController") as! WorkoutLogViewController
+
+            p.date = date
+            p.repositoryRoutine = repositoryRoutine
+            p.hidesBottomBarWhenPushed = true
+
+            self.navigationController?.pushViewController(p, animated: true)
+        }
     }
 
     @IBAction func removeLoggedWorkout(_ sender: CardButton) {
