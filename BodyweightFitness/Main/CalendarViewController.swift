@@ -7,11 +7,6 @@ class CalendarViewController: AbstractViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var listView: UIView!
 
-    var routines: Results<RepositoryRoutine>?
-
-    let formatter = DateFormatter()
-    var testCalendar: Calendar! = Calendar.current
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -211,13 +206,16 @@ class CalendarViewController: AbstractViewController {
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
+        let formatter = DateFormatter()
+        let testCalendar = Calendar.current
+
         formatter.dateFormat = "yyyy MM dd"
         formatter.timeZone = testCalendar.timeZone
         formatter.locale = testCalendar.locale
         
         let startDate = formatter.date(from: "2015 01 01")
         let endDate = Date()
-        
+
         return ConfigurationParameters(
                 startDate: startDate!,
                 endDate: endDate,
