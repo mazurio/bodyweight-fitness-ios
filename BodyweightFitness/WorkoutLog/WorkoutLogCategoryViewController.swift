@@ -14,8 +14,8 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         self.initializeContent()
     }
     
-    func initializeContent() {
-        self.removeAllViews()
+    override func initializeContent() {
+        super.initializeContent()
         
         if let repositoryCategory = self.repositoryCategory {
             self.addView(self.createProgressCard(repositoryCategory: repositoryCategory))

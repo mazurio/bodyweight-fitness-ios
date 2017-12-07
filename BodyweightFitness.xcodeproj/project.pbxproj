@@ -480,6 +480,9 @@
 		7347DC2F1F8D3CF1001E1BE5 /* Workout */ = {
 			isa = PBXGroup;
 			children = (
+				73374A8D1E167A6300EBC47B /* RestTimerViewController.swift */,
+				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
+				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 				73BF3BBA1CBEFB1E00E0258D /* WorkoutViewController.swift */,
 				7347DC2C1F8D3243001E1BE5 /* Workout.storyboard */,
 			);
@@ -627,9 +630,6 @@
 				73BF3BB71CBEF0CC00E0258D /* Cell */,
 				73BF3BB61CBEB0C100E0258D /* Modal */,
 				73AA28E91CABE69200DEED79 /* DashboardViewController.swift */,
-				73374A8D1E167A6300EBC47B /* RestTimerViewController.swift */,
-				73BADE181CC3E347001ACEDC /* TimedViewController.swift */,
-				73BADE1A1CC3F956001ACEDC /* WeightedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

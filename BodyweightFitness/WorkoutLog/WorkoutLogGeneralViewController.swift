@@ -23,8 +23,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         self.initializeContent()
     }
     
-    func initializeContent() {
-        self.removeAllViews()
+    override func initializeContent() {
+        super.initializeContent()
 
         if let repositoryRoutine = self.repositoryRoutine {
             self.addView(self.createStatisticsCard(repositoryRoutine: repositoryRoutine))

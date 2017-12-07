@@ -7,22 +7,26 @@ class AbstractViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.view.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
-        
-        self.initializeScrollView()
+
+        self.initializeScrollView(attachToView: mainView())
+    }
+
+    func mainView() -> UIView {
+        return self.view
     }
     
-    func initializeScrollView() {
-        self.view.addSubview(self.scrollView)
+    func initializeScrollView(attachToView: UIView) {
+        attachToView.backgroundColor = UIColor(red:0.96, green:0.96, blue:0.97, alpha:1.00)
+        attachToView.addSubview(self.scrollView)
+
         self.scrollView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(self.view)
+            make.edges.equalTo(attachToView)
         }
         
         self.scrollView.addSubview(self.contentView)
         self.contentView.snp.makeConstraints { (make) -> Void in
             make.top.bottom.equalTo(self.scrollView)
-            make.left.right.equalTo(self.view)
+            make.left.right.equalTo(attachToView)
         }
         
         self.createBackgroundView()
@@ -40,6 +44,10 @@ class AbstractViewController: UIViewController {
             make.right.equalTo(contentView).offset(-8)
             make.bottom.equalTo(contentView).offset(-8)
         }
+    }
+
+    func initializeContent() {
+        self.removeAllViews()
     }
     
     func createBackgroundView(height: Int = 50) {

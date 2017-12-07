@@ -10,7 +10,6 @@ class HomeViewController: AbstractViewController {
         super.viewDidLoad()
         
         self.setNavigationBar()
-        self.initializeScrollView()
         
         _ = RoutineStream.sharedInstance.repositoryObservable().subscribe(onNext: { (it) in
             self.initializeContent()
@@ -24,10 +23,10 @@ class HomeViewController: AbstractViewController {
         self.requestReviewIfAllowed()
     }
 
-    func initializeContent() {
-        self.navigationItem.title = self.routine?.title
+    override func initializeContent() {
+        super.initializeContent()
 
-        self.removeAllViews()
+        self.navigationItem.title = self.routine?.title
         
         self.addView(self.createTodaysProgressCard())
         self.addView(self.createAboutRoutineCard())
