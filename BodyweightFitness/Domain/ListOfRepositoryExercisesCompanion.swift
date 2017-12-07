@@ -49,6 +49,14 @@ class ListOfRepositoryExercisesCompanion {
         return filtered
     }
 
+    func visibleExercises() -> [RepositoryExercise] {
+        let filtered = Array(self.repositoryExercises).filter({
+            $0.visible
+        })
+
+        return filtered
+    }
+
     func visibleOrCompletedExercises() -> [RepositoryExercise] {
         let filtered = Array(self.repositoryExercises).filter({
             $0.visible || RepositoryExerciseCompanion($0).isCompleted()

@@ -31,7 +31,6 @@
 		732BA02C1C5B76E500C1CDB5 /* ProgressSectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */; };
 		732BA02E1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */; };
 		732BA03D1C5BC9D400C1CDB5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */; };
-		732BA0431C5EB9C300C1CDB5 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732BA0421C5EB9C300C1CDB5 /* CalendarCell.swift */; };
 		732BA0451C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */; };
 		732CDDEF1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */; };
 		732CDDF01D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */; };
@@ -217,7 +216,6 @@
 		732BA02B1C5B76E500C1CDB5 /* ProgressSectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressSectionCell.swift; sourceTree = "<group>"; };
 		732BA02D1C5B7A8D00C1CDB5 /* ProgressGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProgressGeneralViewController.xib; sourceTree = "<group>"; };
 		732BA03C1C5BC9D400C1CDB5 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		732BA0421C5EB9C300C1CDB5 /* CalendarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		732BA0441C5EB9CE00C1CDB5 /* WorkoutLogCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkoutLogCardCell.xib; sourceTree = "<group>"; };
 		732CDDEA1D84485D004C6607 /* bodyweight_fitness_foot_supported_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_foot_supported_l_sit.mp4; sourceTree = "<group>"; };
 		732CDDEB1D84485D004C6607 /* bodyweight_fitness_l_sit.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = bodyweight_fitness_l_sit.mp4; sourceTree = "<group>"; };
@@ -467,7 +465,6 @@
 		7347DC2E1F8D3CD8001E1BE5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				73D3932A1F8D4E4000D9F4DD /* View */,
 				7329B68B1D0D8476005F5F74 /* HomeViewController.swift */,
 				46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */,
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
@@ -666,14 +663,6 @@
 				73D393261F8D4B7D00D9F4DD /* WorkoutLog.storyboard */,
 			);
 			path = WorkoutLog;
-			sourceTree = "<group>";
-		};
-		73D3932A1F8D4E4000D9F4DD /* View */ = {
-			isa = PBXGroup;
-			children = (
-				732BA0421C5EB9C300C1CDB5 /* CalendarCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		E00242FB1B4F1CFD0003A230 /* Frameworks */ = {
@@ -1128,7 +1117,6 @@
 				73AA28F31CB7ACC100DEED79 /* DashboardCategoryCell.swift in Sources */,
 				E0F587311B5272E200540104 /* Routine.swift in Sources */,
 				7366D8EA1C52416C00819790 /* SupportDeveloperViewController.swift in Sources */,
-				732BA0431C5EB9C300C1CDB5 /* CalendarCell.swift in Sources */,
 				73BADE1B1CC3F956001ACEDC /* WeightedViewController.swift in Sources */,
 				73BF3BBB1CBEFB1E00E0258D /* WorkoutViewController.swift in Sources */,
 				732BA02A1C5B76DD00C1CDB5 /* ProgressCardCell.swift in Sources */,

@@ -1,8 +1,9 @@
 import UIKit
 import RealmSwift
 import JTAppleCalendar
+import MessageUI
 
-class CalendarViewController: AbstractViewController {
+class CalendarViewController: AbstractViewController, MFMailComposeViewControllerDelegate {
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var listView: UIView!
@@ -76,7 +77,9 @@ class CalendarViewController: AbstractViewController {
         card.addSubview(viewButton)
 
         let exportButton = CardButton()
+        exportButton.repositoryRoutine = repositoryRoutine
         exportButton.setTitle("Export", for: .normal)
+        exportButton.addTarget(self, action: #selector(exportWorkout), for: .touchUpInside)
         card.addSubview(exportButton)
 
         let deleteButton = CardButton()
@@ -144,6 +147,99 @@ class CalendarViewController: AbstractViewController {
         }
     }
 
+    @IBAction func exportWorkout(_ sender: CardButton) {
+        let mailString = NSMutableString()
+
+        if let repositoryRoutine = sender.repositoryRoutine {
+            let companion = RepositoryRoutineCompanion(repositoryRoutine)
+            let exercisesCompanion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
+
+            mailString.append("Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds\n")
+
+            for exercise in exercisesCompanion.visibleExercises() {
+                let title = exercise.title
+                let weightValue = getWeightUnit()
+                var index = 1
+
+                for set in exercise.sets {
+                    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
+
+                    mailString.append(String(
+                            format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
+                            companion.date(),
+                            companion.startTime(),
+                            companion.lastUpdatedTime(),
+                            companion.workoutLength(),
+                            "\(repositoryRoutine.title) - \(repositoryRoutine.subtitle)",
+                            title,
+                            index,
+                            set.weight,
+                            weightValue,
+                            set.reps,
+                            minutes,
+                            seconds
+                    ))
+
+                    index += 1
+                }
+            }
+
+            let content = NSMutableString()
+            let emailTitle = "\(repositoryRoutine.title) workout for \(companion.dateWithTime())"
+
+            content.append("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
+
+            content.append("\n\nWorkout on \(companion.dateWithTime()).")
+            content.append("\nLast Updated at \(companion.lastUpdatedTime())")
+            content.append("\nWorkout length: \(companion.workoutLength())")
+
+            content.append("\n\n\(repositoryRoutine.title)\n\(repositoryRoutine.subtitle)")
+
+            let weightUnit = getWeightUnit()
+
+            for exercise in exercisesCompanion.visibleExercises() {
+                content.append("\n\n\(exercise.title)")
+
+                var index = 1
+                for set in exercise.sets {
+                    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
+
+                    content.append("\nSet \(index)")
+
+                    if (set.isTimed) {
+                        if minutes > 0 {
+                            content.append(", Minutes: \(minutes)")
+                        }
+
+                        content.append(", Seconds: \(seconds)")
+                    } else {
+                        content.append(", Reps: \(set.reps)")
+
+                        if set.weight > 0 {
+                            content.append(", Weight: \(set.weight) \(weightUnit)")
+                        }
+                    }
+
+                    index += 1
+                }
+            }
+
+            let data = mailString.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)
+            if let data = data {
+                if !MFMailComposeViewController.canSendMail() {
+                    print("Mail services are not available")
+                    return
+                }
+
+                let emailViewController = configuredMailComposeViewController(data, subject: emailTitle, messageBody: content as String)
+
+                if MFMailComposeViewController.canSendMail() {
+                    self.present(emailViewController, animated: true, completion: nil)
+                }
+            }
+        }
+    }
+
     @IBAction func removeLoggedWorkout(_ sender: CardButton) {
         if let repositoryRoutine = sender.repositoryRoutine {
             let alertController = UIAlertController(
@@ -182,85 +278,29 @@ class CalendarViewController: AbstractViewController {
         }
     }
 
-    func showOrHideCardViewForDate(_ date: Date) {
-        self.initializeContent()
-//        self.date = date
-//
-//        self.navigationItem.title = date.commonDescription
-//
-//        let routines = RepositoryStream.sharedInstance.getRoutinesForDate(date)
-//        if (routines.count > 0) {
-//            self.routines = routines
-//            self.tableView?.backgroundView = nil
-//        } else {
-//            let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
-//
-//            label.text = "When you log a workout, you'll see it here."
-//            label.font = UIFont(name: "Helvetica Neue", size: 15)
-//            label.textAlignment = .center
-//            label.sizeToFit()
-//
-//            self.routines = nil
-//            self.tableView?.backgroundView = label
-//        }
-//
-//        self.tableView.reloadData()
+    func configuredMailComposeViewController(_ data: Data, subject: String, messageBody: String) -> MFMailComposeViewController {
+        let emailController = MFMailComposeViewController()
+
+        emailController.mailComposeDelegate = self
+        emailController.setSubject(subject)
+        emailController.setMessageBody(messageBody, isHTML: false)
+        emailController.addAttachmentData(data, mimeType: "text/csv", fileName: "Workout.csv")
+
+        return emailController
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+    func getWeightUnit() -> String {
+        if PersistenceManager.getWeightUnit() == "lbs" {
+            return "lbs"
+        } else {
+            return "kg"
+        }
     }
 }
-// to be rewritten
-
-//extension CalendarViewController: UITableViewDataSource, UITableViewDelegate {
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        if let _ = self.routines {
-//            return 1
-//        } else {
-//            return 0
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if let routines = self.routines {
-//            return routines.count
-//        } else {
-//            return 0
-//        }
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 0
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 200
-//    }
-//
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        return nil
-//    }
-//
-//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "WorkoutLogCardCell", for: indexPath) as! WorkoutLogCardCell
-//
-//        if let routines = self.routines {
-//            let repositoryRoutine = routines[indexPath.row]
-//
-//            let companion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
-//            let completionRate = companion.completionRate()
-//
-//            cell.parentController = self
-//            cell.date = date
-//
-//            cell.title.text = repositoryRoutine.title
-//            cell.subtitle.text = repositoryRoutine.subtitle
-//            cell.progressView.setCompletionRate(completionRate)
-//            cell.progressRate.text = completionRate.label
-//
-//            cell.repositoryRoutine = repositoryRoutine
-//        }
-//
-//        return cell
-//    }
-//}
 
 extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
