@@ -7,6 +7,8 @@ class CalendarViewController: AbstractViewController {
     @IBOutlet weak var calendarView: JTAppleCalendarView!
     @IBOutlet weak var listView: UIView!
 
+    var date: Date = Date()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +25,7 @@ class CalendarViewController: AbstractViewController {
             self.calendarView.selectDates([Date()])
         }
 
-        self.initializeContent(contentForDate: Date())
+        self.initializeContent(contentForDate: date)
     }
 
     override func mainView() -> UIView {
@@ -76,8 +78,10 @@ class CalendarViewController: AbstractViewController {
         card.addSubview(exportButton)
 
         let deleteButton = CardButton()
+        deleteButton.repositoryRoutine = repositoryRoutine
         deleteButton.setTitleColor(UIColor.red, for: .normal)
         deleteButton.setTitle("Delete", for: .normal)
+        deleteButton.addTarget(self, action: #selector(removeLoggedWorkout), for: .touchUpInside)
         card.addSubview(deleteButton)
 
         label.snp.makeConstraints { (make) -> Void in
@@ -122,6 +126,44 @@ class CalendarViewController: AbstractViewController {
     @IBAction func toggleCurrentDayView(_ sender: UIBarButtonItem) {
         self.calendarView.scrollToDate(Date(), animateScroll: false)
         self.calendarView.selectDates([Date()])
+    }
+
+    @IBAction func removeLoggedWorkout(_ sender: CardButton) {
+        if let repositoryRoutine = sender.repositoryRoutine {
+            let alertController = UIAlertController(
+                    title: "Remove Workout",
+                    message: "Are you sure you want to remove this workout?",
+                    preferredStyle: UIAlertControllerStyle.alert
+            )
+
+            alertController.addAction(
+                    UIAlertAction(
+                            title: "Cancel",
+                            style: UIAlertActionStyle.cancel,
+                            handler: nil
+                    )
+            )
+
+            alertController.addAction(
+                    UIAlertAction(
+                            title: "Remove",
+                            style: UIAlertActionStyle.destructive,
+                            handler: { (action: UIAlertAction!) in
+                                let realm = try! Realm()
+
+                                try! realm.write {
+                                    realm.delete(repositoryRoutine)
+                                }
+
+                                self.initializeContent(contentForDate: self.date)
+
+                                RoutineStream.sharedInstance.setRepository()
+                            }
+                    )
+            )
+
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
 
     func showOrHideCardViewForDate(_ date: Date) {
@@ -248,6 +290,7 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         (cell as? CellView)?.setupCellBeforeDisplay(cellState, date: date)
 
+        self.date = date
         self.initializeContent(contentForDate: date)
     }
     
