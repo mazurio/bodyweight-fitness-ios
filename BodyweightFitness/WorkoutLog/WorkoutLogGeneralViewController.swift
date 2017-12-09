@@ -154,7 +154,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(ValueLabel.create(text: "Workout Length History"))
             self.addView(self.createWorkoutLengthHistoryCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Completion Rate History"))
-            self.addView(self.createCompletionRateHistoryCard())
+            self.addView(self.createCompletionRateHistoryCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Not Completed Exercises"))
             self.addView(self.createNotCompletedExercisesCard(repositoryRoutine: repositoryRoutine))
         }
@@ -401,7 +401,11 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let allWorkouts = realm.objects(RepositoryRoutine.self)
 
         let label = TitleLabel()
+        label.text = RepositoryRoutineCompanion(repositoryRoutine).date()
+
         let value = ValueLabel()
+        value.text = RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
+
         let graph = WorkoutChartView()
 
         graph.workoutChartType = .WorkoutLength
@@ -438,7 +442,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         return card
     }
     
-    func createCompletionRateHistoryCard() -> CardView {
+    func createCompletionRateHistoryCard(repositoryRoutine: RepositoryRoutine) -> CardView {
         let card = CardView()
 
         let realm = try! Realm()
@@ -446,7 +450,11 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let allWorkouts = realm.objects(RepositoryRoutine.self)
 
         let label = TitleLabel()
+        label.text = RepositoryRoutineCompanion(repositoryRoutine).date()
+
         let value = ValueLabel()
+        value.text = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().label
+
         let graph = WorkoutChartView()
 
         graph.workoutChartType = .CompletionRate
