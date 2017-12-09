@@ -39,9 +39,33 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
         self.navigationItem.title = contentForDate.commonDescription
 
         let repositoryRoutines = RepositoryStream.sharedInstance.getRoutinesForDate(contentForDate)
-        for repositoryRoutine in repositoryRoutines {
-            self.addView(self.createLogCard(repositoryRoutine: repositoryRoutine))
+
+        if repositoryRoutines.isEmpty {
+            self.addView(self.createEmptyStateCard())
+        } else {
+            for repositoryRoutine in repositoryRoutines {
+                self.addView(self.createLogCard(repositoryRoutine: repositoryRoutine))
+            }
         }
+    }
+
+    func createEmptyStateCard() -> CardView {
+        let card = CardView()
+
+        let label = ValueLabel()
+        label.text = "No Logged Workouts"
+        label.numberOfLines = 2
+        label.textAlignment = .center
+        card.addSubview(label)
+
+        label.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(card).offset(80)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-80)
+        }
+
+        return card
     }
 
     func createLogCard(repositoryRoutine: RepositoryRoutine) -> CardView {
