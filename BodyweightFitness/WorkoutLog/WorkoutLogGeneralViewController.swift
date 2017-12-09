@@ -2,6 +2,11 @@ import SnapKit
 import Charts
 import RealmSwift
 
+enum WorkoutChartType {
+    case WorkoutLength
+    case CompletionRate
+}
+
 class WorkoutDataEntry: ChartDataEntry {
     var repositoryRoutine: RepositoryRoutine?
 
@@ -17,6 +22,8 @@ class WorkoutDataEntry: ChartDataEntry {
 }
 
 class WorkoutChartView: LineChartView, ChartViewDelegate {
+    var workoutChartType: WorkoutChartType = .WorkoutLength
+
     var titleLabel: UILabel?
     var valueLabel: UILabel?
 
@@ -62,14 +69,14 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
     func setValues(values: Array<RepositoryRoutine>) {
         var dataEntries: [WorkoutDataEntry] = []
 
-        for (index, entry) in values.enumerated() {
-            let dataEntry = WorkoutDataEntry(
-                    x: Double(index),
-                    y: RepositoryRoutineCompanion(entry).workoutLengthInMinutes(),
-                    repositoryRoutine: entry
+        for (index, repositoryRoutine) in values.enumerated() {
+            dataEntries.append(
+                    WorkoutDataEntry(
+                            x: Double(index),
+                            y: getYValue(repositoryRoutine: repositoryRoutine),
+                            repositoryRoutine: repositoryRoutine
+                    )
             )
-
-            dataEntries.append(dataEntry)
         }
 
         self.data = self.createDataSetFromDataEntries(values: dataEntries)
@@ -94,10 +101,32 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
 
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
         if let data = entry as? WorkoutDataEntry {
-            let companion = RepositoryRoutineCompanion(data.repositoryRoutine!)
+            if let repositoryRoutine = data.repositoryRoutine {
+                titleLabel?.text = getYTitle(repositoryRoutine: repositoryRoutine)
+                valueLabel?.text = getYLabel(repositoryRoutine: repositoryRoutine)
+            }
+        }
+    }
 
-            titleLabel?.text = companion.date()
-            valueLabel?.text = companion.workoutLength()
+    func getYValue(repositoryRoutine: RepositoryRoutine) -> Double {
+        switch workoutChartType {
+        case .WorkoutLength:
+            return RepositoryRoutineCompanion(repositoryRoutine).workoutLengthInMinutes()
+        case .CompletionRate:
+            return Double(ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().percentage)
+        }
+    }
+
+    func getYTitle(repositoryRoutine: RepositoryRoutine) -> String {
+        return RepositoryRoutineCompanion(repositoryRoutine).date()
+    }
+
+    func getYLabel(repositoryRoutine: RepositoryRoutine) -> String {
+        switch workoutChartType {
+        case .WorkoutLength:
+            return RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
+        case .CompletionRate:
+            return ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().label
         }
     }
 }
@@ -124,8 +153,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(self.createProgressCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Length History"))
             self.addView(self.createWorkoutLengthHistoryCard(repositoryRoutine: repositoryRoutine))
-//            self.addView(ValueLabel.create(text: "Completion Rate History"))
-//            self.addView(self.createCompletionRateHistoryCard())
+            self.addView(ValueLabel.create(text: "Completion Rate History"))
+            self.addView(self.createCompletionRateHistoryCard())
             self.addView(ValueLabel.create(text: "Not Completed Exercises"))
             self.addView(self.createNotCompletedExercisesCard(repositoryRoutine: repositoryRoutine))
         }
@@ -373,8 +402,9 @@ class WorkoutLogGeneralViewController: AbstractViewController {
 
         let label = TitleLabel()
         let value = ValueLabel()
-
         let graph = WorkoutChartView()
+
+        graph.workoutChartType = .WorkoutLength
         graph.titleLabel = label
         graph.valueLabel = value
 
@@ -411,17 +441,45 @@ class WorkoutLogGeneralViewController: AbstractViewController {
     func createCompletionRateHistoryCard() -> CardView {
         let card = CardView()
 
+        let realm = try! Realm()
+
+        let allWorkouts = realm.objects(RepositoryRoutine.self)
+
         let label = TitleLabel()
-        label.text = "12 October 2017"
+        let value = ValueLabel()
+        let graph = WorkoutChartView()
+
+        graph.workoutChartType = .CompletionRate
+        graph.titleLabel = label
+        graph.valueLabel = value
+
+        graph.setValues(values: Array(allWorkouts))
+        card.addSubview(graph)
+
         card.addSubview(label)
-        
+        card.addSubview(value)
+
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
-            make.bottom.equalTo(card).offset(-20)
         }
-        
+
+        value.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(label.snp.bottom).offset(8)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+        }
+
+        graph.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(value.snp.bottom).offset(8)
+            make.left.equalTo(card).offset(0)
+            make.right.equalTo(card).offset(0)
+            make.bottom.equalTo(card).offset(0)
+
+            make.height.equalTo(200)
+        }
+
         return card
     }
     
