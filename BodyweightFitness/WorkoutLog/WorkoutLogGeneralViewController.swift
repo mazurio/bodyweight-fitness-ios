@@ -2,10 +2,102 @@ import SnapKit
 import Charts
 import RealmSwift
 
-extension WorkoutLogGeneralViewController: ChartViewDelegate {
+class WorkoutDataEntry: ChartDataEntry {
+    var repositoryRoutine: RepositoryRoutine?
+
+    public required init() {
+        super.init()
+    }
+
+    init(x: Double, y: Double, repositoryRoutine: RepositoryRoutine) {
+        super.init(x: x, y: y)
+
+        self.repositoryRoutine = repositoryRoutine
+    }
+}
+
+class WorkoutChartView: LineChartView, ChartViewDelegate {
+    var titleLabel: UILabel?
+    var valueLabel: UILabel?
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+
+        self.commonInit()
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        self.commonInit()
+    }
+
+    func commonInit() {
+        self.delegate = self
+        self.backgroundColor = UIColor.white
+        self.chartDescription?.enabled = false
+        self.dragEnabled = true
+        self.drawGridBackgroundEnabled = false
+        self.drawMarkers = false
+        self.legend.enabled = false
+        self.animate(
+                xAxisDuration: 1.0,
+                yAxisDuration: 1.0,
+                easingOption: .easeInSine
+        )
+
+        self.xAxis.enabled = false
+        self.xAxis.drawLabelsEnabled = false
+        self.xAxis.drawGridLinesEnabled = false
+
+        self.leftAxis.enabled = false
+        self.leftAxis.drawLabelsEnabled = false
+        self.leftAxis.drawGridLinesEnabled = false
+
+        self.rightAxis.enabled = false
+        self.rightAxis.drawLabelsEnabled = false
+        self.rightAxis.drawGridLinesEnabled = false
+    }
+
+    func setValues(values: Array<RepositoryRoutine>) {
+        var dataEntries: [WorkoutDataEntry] = []
+
+        for (index, entry) in values.enumerated() {
+            let dataEntry = WorkoutDataEntry(
+                    x: Double(index),
+                    y: RepositoryRoutineCompanion(entry).workoutLengthInMinutes(),
+                    repositoryRoutine: entry
+            )
+
+            dataEntries.append(dataEntry)
+        }
+
+        self.data = self.createDataSetFromDataEntries(values: dataEntries)
+    }
+
+    func createDataSetFromDataEntries(values: [WorkoutDataEntry]) -> LineChartData {
+        let lineChartData = LineChartData()
+        let lineChartDataSet = LineChartDataSet(values: values, label: nil)
+
+        lineChartDataSet.lineWidth = 1.8
+        lineChartDataSet.mode = .cubicBezier
+        lineChartDataSet.cubicIntensity = 0.2
+        lineChartDataSet.drawCirclesEnabled = false
+        lineChartDataSet.drawValuesEnabled = false
+        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
+        lineChartDataSet.colors = [UIColor.primary()]
+
+        lineChartData.addDataSet(lineChartDataSet)
+
+        return lineChartData
+    }
+
     func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if let data = repositoryRoutine as? RepositoryRoutine {
-            print("\(entry.x) \(entry.y) with data \(data.startTime)")
+        if let data = entry as? WorkoutDataEntry {
+            let companion = RepositoryRoutineCompanion(data.repositoryRoutine!)
+
+            titleLabel?.text = companion.date()
+            valueLabel?.text = companion.workoutLength()
         }
     }
 }
@@ -32,8 +124,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             self.addView(self.createProgressCard(repositoryRoutine: repositoryRoutine))
             self.addView(ValueLabel.create(text: "Workout Length History"))
             self.addView(self.createWorkoutLengthHistoryCard(repositoryRoutine: repositoryRoutine))
-            self.addView(ValueLabel.create(text: "Completion Rate History"))
-            self.addView(self.createCompletionRateHistoryCard())
+//            self.addView(ValueLabel.create(text: "Completion Rate History"))
+//            self.addView(self.createCompletionRateHistoryCard())
             self.addView(ValueLabel.create(text: "Not Completed Exercises"))
             self.addView(self.createNotCompletedExercisesCard(repositoryRoutine: repositoryRoutine))
         }
@@ -279,22 +371,17 @@ class WorkoutLogGeneralViewController: AbstractViewController {
 
         let allWorkouts = realm.objects(RepositoryRoutine.self)
 
-        let values = Array(allWorkouts).map({
-            (repositoryRoutine: $0, workoutLength: RepositoryRoutineCompanion($0).workoutLengthInMinutes())
-        })
+        let label = TitleLabel()
+        let value = ValueLabel()
 
-        let graph = LineChartView()
+        let graph = WorkoutChartView()
+        graph.titleLabel = label
+        graph.valueLabel = value
+
+        graph.setValues(values: Array(allWorkouts))
         card.addSubview(graph)
 
-        setupChart(graph)
-        setChart(values, lineChartView: graph)
-
-        let label = TitleLabel()
-        label.text = "{{date}}"
         card.addSubview(label)
-
-        let value = ValueLabel()
-        value.text = "11%"
         card.addSubview(value)
 
         label.snp.makeConstraints { (make) -> Void in
@@ -319,61 +406,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         }
         
         return card
-    }
-
-    func setupChart(_ lineChartView: LineChartView) {
-        lineChartView.delegate = self
-        lineChartView.backgroundColor = UIColor.white
-        lineChartView.chartDescription?.enabled = false
-        lineChartView.dragEnabled = true
-        lineChartView.drawGridBackgroundEnabled = false
-        lineChartView.drawMarkers = false
-        lineChartView.legend.enabled = false
-        lineChartView.animate(
-                xAxisDuration: 1.0,
-                yAxisDuration: 1.0,
-                easingOption: .easeInSine
-        )
-
-        lineChartView.xAxis.enabled = false
-        lineChartView.xAxis.drawLabelsEnabled = false
-        lineChartView.xAxis.drawGridLinesEnabled = false
-
-        lineChartView.leftAxis.enabled = false
-        lineChartView.leftAxis.drawLabelsEnabled = false
-        lineChartView.leftAxis.drawGridLinesEnabled = false
-
-        lineChartView.rightAxis.enabled = false
-        lineChartView.rightAxis.drawLabelsEnabled = false
-        lineChartView.rightAxis.drawGridLinesEnabled = false
-    }
-
-    func setChart(_ values: [(repositoryRoutine: RepositoryRoutine, workoutLength: Double)], lineChartView: LineChartView) {
-        var dataEntries: [ChartDataEntry] = []
-
-        for (index, entry) in values.enumerated() {
-            let dataEntry = ChartDataEntry(
-                    x: Double(index),
-                    y: entry.workoutLength,
-                    data: entry.repositoryRoutine
-            )
-
-            dataEntries.append(dataEntry)
-        }
-
-        let lineChartDataSet = LineChartDataSet(values: dataEntries, label: nil)
-        lineChartDataSet.lineWidth = 1.8
-        lineChartDataSet.mode = .cubicBezier
-        lineChartDataSet.cubicIntensity = 0.2
-        lineChartDataSet.drawCirclesEnabled = false
-        lineChartDataSet.drawValuesEnabled = false
-        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
-        lineChartDataSet.colors = [UIColor.primary()]
-
-        let lineChartData = LineChartData()
-        lineChartData.addDataSet(lineChartDataSet)
-
-        lineChartView.data = lineChartData
     }
     
     func createCompletionRateHistoryCard() -> CardView {

@@ -19,8 +19,10 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         
         if let repositoryCategory = self.repositoryCategory {
             self.addView(self.createProgressCard(repositoryCategory: repositoryCategory))
-            self.addView(ValueLabel.create(text: "Category Completion Rate"))
-            self.addView(self.createCompletionRateHistoryCard())
+
+            // TODO: Finish Graph for Category Completion Rate
+            // self.addView(ValueLabel.create(text: "Category Completion Rate"))
+            // self.addView(self.createCompletionRateHistoryCard())
             
             for repositorySection in repositoryCategory.sections {
                 self.addView(ValueLabel.create(text: repositorySection.title))
