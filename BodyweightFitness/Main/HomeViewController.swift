@@ -2,8 +2,9 @@ import UIKit
 import RxSwift
 import StoreKit
 import SnapKit
+import MessageUI
 
-class HomeViewController: AbstractViewController {
+class HomeViewController: AbstractViewController, MFMailComposeViewControllerDelegate {
     var routine: Routine? = nil
     
     override func viewDidLoad() {
@@ -397,6 +398,19 @@ class HomeViewController: AbstractViewController {
     }
 
     @IBAction func sendFeedback(_ sender: AnyObject) {
+        if MFMailComposeViewController.canSendMail() {
+            let emailController = MFMailComposeViewController()
 
+            emailController.mailComposeDelegate = self
+            emailController.setToRecipients(["damian@mazur.io"])
+            emailController.setSubject("Bodyweight Fitness App for iOS - Feedback")
+            emailController.setMessageBody("Hi Damian,\n", isHTML: false)
+
+            self.present(emailController, animated: true, completion: nil)
+        }
+    }
+
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }
