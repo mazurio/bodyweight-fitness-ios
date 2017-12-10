@@ -28,7 +28,7 @@ class DataEntriesCompanionSpec: QuickSpec {
                             workoutChartType: .WorkoutLength
                     )
 
-                    expect(dataEntries.count).to(equal(7))
+                    expect(dataEntries.count).to(equal(8))
 
                     expect(dataEntries[0].x).to(equal(0))
                     expect(dataEntries[0].y).to(equal(0))
@@ -51,7 +51,7 @@ class DataEntriesCompanionSpec: QuickSpec {
                             workoutChartType: .WorkoutLength
                     )
 
-                    expect(dataEntries.count).to(equal(30))
+                    expect(dataEntries.count).to(equal(31))
 
                     expect(dataEntries[0].x).to(equal(0))
                     expect(dataEntries[0].y).to(equal(0))
@@ -80,16 +80,19 @@ class DataEntriesCompanionSpec: QuickSpec {
                             workoutChartType: .WorkoutLength
                     )
 
-                    expect(dataEntries.count).to(equal(7))
+                    expect(dataEntries.count).to(equal(8))
 
                     expect(dataEntries[0].x).to(equal(0))
                     expect(dataEntries[0].y).to(equal(0))
 
-                    expect(dataEntries[1].x).to(equal(1))
-                    expect(dataEntries[1].y).to(equal(50))
+                    expect(dataEntries[5].x).to(equal(5))
+                    expect(dataEntries[5].y).to(equal(0))
 
                     expect(dataEntries[6].x).to(equal(6))
-                    expect(dataEntries[6].y).to(equal(0))
+                    expect(dataEntries[6].y).to(equal(50))
+
+                    expect(dataEntries[7].x).to(equal(7))
+                    expect(dataEntries[7].y).to(equal(0))
                 }
             }
         }

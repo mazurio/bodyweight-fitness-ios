@@ -9,11 +9,18 @@ class DataEntriesCompanion {
     ) -> [WorkoutDataEntry] {
         var dataEntries: [WorkoutDataEntry] = []
 
-        for index in 0...(numberOfDays - 1) {
+        let baseLineDay: Date = (Calendar.current as NSCalendar).date(
+                byAdding: .day,
+                value: -numberOfDays,
+                to: fromDate,
+                options: []
+        )!
+
+        for index in 0...numberOfDays {
             let date = (Calendar.current as NSCalendar).date(
                     byAdding: .day,
-                    value: -index,
-                    to: fromDate,
+                    value: index,
+                    to: baseLineDay,
                     options: []
             )!
 

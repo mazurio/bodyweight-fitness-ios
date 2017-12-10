@@ -48,7 +48,6 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
     }
 
     func setValues(values: [RepositoryRoutine]) {
-
         let dataEntriesCompanion = DataEntriesCompanion()
         let dataEntries = dataEntriesCompanion.getDataEntries(
                 fromDate: Date(),
