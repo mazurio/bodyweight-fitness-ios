@@ -26,7 +26,9 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
             self.calendarView.selectDates([Date()])
         }
 
-        self.initializeContent(contentForDate: date)
+        _ = RoutineStream.sharedInstance.repositoryObservable().subscribe(onNext: { (it) in
+            self.initializeContent(contentForDate: self.date)
+        })
     }
 
     override func mainView() -> UIView {
@@ -290,8 +292,6 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
                                 try! realm.write {
                                     realm.delete(repositoryRoutine)
                                 }
-
-                                self.initializeContent(contentForDate: self.date)
 
                                 RoutineStream.sharedInstance.setRepository()
                             }
