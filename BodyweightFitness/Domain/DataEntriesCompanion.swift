@@ -7,7 +7,6 @@ class DataEntriesCompanion {
                         repositoryRoutines: [RepositoryRoutine],
                         workoutChartType: WorkoutChartType
     ) -> [WorkoutDataEntry] {
-
         var dataEntries: [WorkoutDataEntry] = []
 
         for index in 0...(numberOfDays - 1) {
