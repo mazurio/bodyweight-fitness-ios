@@ -9,10 +9,7 @@ class RepositoryRoutineCompanion {
     }
 
     func date() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "EEEE, d MMMM YYYY"
-
-        return formatter.string(from: self.repositoryRoutine.startTime)
+        return self.repositoryRoutine.startTime.description
     }
 
     func dateWithTime() -> String {

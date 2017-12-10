@@ -33,7 +33,12 @@ class DataEntriesCompanion {
                 )
             } else {
                 dataEntries.append(
-                        WorkoutDataEntry(x: Double(index), y: 0)
+                        WorkoutDataEntry(
+                                x: Double(index),
+                                y: 0,
+                                title: date.description,
+                                label: "No Data"
+                        )
                 )
             }
         }

@@ -23,6 +23,15 @@ extension Date {
             return "\(day) \(month) \(year)"
         }
     }
+
+    public var description: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE, d MMMM YYYY"
+
+            return formatter.string(from: self)
+        }
+    }
     
     func dateFormattedStringWithFormat(_ format: String, fromDate date: Date) -> String {
         let formatter = DateFormatter()
