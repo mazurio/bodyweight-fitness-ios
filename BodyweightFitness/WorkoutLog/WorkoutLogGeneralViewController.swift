@@ -14,7 +14,7 @@ class WorkoutDataEntry: ChartDataEntry {
         super.init()
     }
 
-    init(x: Double, y: Double, repositoryRoutine: RepositoryRoutine) {
+    init(x: Double, y: Double, repositoryRoutine: RepositoryRoutine?) {
         super.init(x: x, y: y)
 
         self.repositoryRoutine = repositoryRoutine

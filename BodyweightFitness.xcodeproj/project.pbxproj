@@ -14,7 +14,9 @@
 		46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
+		46B027EB1551695226B1E7FB /* DataEntriesCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */; };
 		46B02827BB8DE1BAFE67526A /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */; };
+		46B0290A46500C9466C686E6 /* DataEntriesCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */; };
 		46B0298B0EDBEA87D2268270 /* ListOfRepositoryExercisesCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02D377395D66E54A3A405 /* ListOfRepositoryExercisesCompanionSpec.swift */; };
 		46B029ACFEA5B810F06CFFA9 /* ListOfRepositoryExercisesCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */; };
 		46B02D4A90A267975DE60D70 /* RepositoryExerciseCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02DE6A0CBDB57EE450605 /* RepositoryExerciseCompanion.swift */; };
@@ -190,12 +192,14 @@
 		0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness_BodyweightFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntriesCompanion.swift; sourceTree = "<group>"; };
 		46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanion.swift; sourceTree = "<group>"; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfRepositoryExercisesCompanion.swift; sourceTree = "<group>"; };
 		46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExerciseCompanionSpec.swift; sourceTree = "<group>"; };
 		46B026D8FF35A60FEA72641A /* CompletionRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionRate.swift; sourceTree = "<group>"; };
+		46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntriesCompanionSpec.swift; sourceTree = "<group>"; };
 		46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
@@ -432,6 +436,7 @@
 				46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */,
 				46B02D377395D66E54A3A405 /* ListOfRepositoryExercisesCompanionSpec.swift */,
 				46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */,
+				46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -704,6 +709,7 @@
 				46B02DE6A0CBDB57EE450605 /* RepositoryExerciseCompanion.swift */,
 				46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */,
 				46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */,
+				46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1148,6 +1154,7 @@
 				46B02D4A90A267975DE60D70 /* RepositoryExerciseCompanion.swift in Sources */,
 				46B021FDBB6A7E1B7E98EDC6 /* RepositoryRoutineCompanion.swift in Sources */,
 				46B029ACFEA5B810F06CFFA9 /* ListOfRepositoryExercisesCompanion.swift in Sources */,
+				46B027EB1551695226B1E7FB /* DataEntriesCompanion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1159,6 +1166,7 @@
 				46B0249136D6147956309E7B /* RepositoryExerciseCompanionSpec.swift in Sources */,
 				46B0298B0EDBEA87D2268270 /* ListOfRepositoryExercisesCompanionSpec.swift in Sources */,
 				46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */,
+				46B0290A46500C9466C686E6 /* DataEntriesCompanionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
