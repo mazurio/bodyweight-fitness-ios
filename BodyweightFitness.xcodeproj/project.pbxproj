@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46B020360D75A80752429FF4 /* WorkoutDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */; };
 		46B021B6A56C2000CA08000B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */; };
 		46B021FDBB6A7E1B7E98EDC6 /* RepositoryRoutineCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */; };
+		46B0228CAE19F330773C3B4D /* WorkoutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0265FEE50A960EC0335F9 /* WorkoutChartView.swift */; };
 		46B023C64AF59B2DAAC02813 /* CompletionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B026D8FF35A60FEA72641A /* CompletionRate.swift */; };
 		46B0249136D6147956309E7B /* RepositoryExerciseCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */; };
+		46B0261810EF8860661743BE /* WorkoutChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */; };
 		46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
@@ -197,11 +200,14 @@
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfRepositoryExercisesCompanion.swift; sourceTree = "<group>"; };
+		46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDataEntry.swift; sourceTree = "<group>"; };
 		46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExerciseCompanionSpec.swift; sourceTree = "<group>"; };
+		46B0265FEE50A960EC0335F9 /* WorkoutChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutChartView.swift; sourceTree = "<group>"; };
 		46B026D8FF35A60FEA72641A /* CompletionRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionRate.swift; sourceTree = "<group>"; };
 		46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntriesCompanionSpec.swift; sourceTree = "<group>"; };
 		46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutChartType.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		46B02D377395D66E54A3A405 /* ListOfRepositoryExercisesCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfRepositoryExercisesCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02DE6A0CBDB57EE450605 /* RepositoryExerciseCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExerciseCompanion.swift; sourceTree = "<group>"; };
@@ -689,6 +695,7 @@
 				73BF3BC01CBF05ED00E0258D /* SnackBar.swift */,
 				738B96CE1D76337C009A8625 /* HomeBarView.swift */,
 				731A41EB1F991B3400C44922 /* Views.swift */,
+				46B0265FEE50A960EC0335F9 /* WorkoutChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -710,6 +717,8 @@
 				46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */,
 				46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */,
 				46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */,
+				46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */,
+				46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1155,6 +1164,9 @@
 				46B021FDBB6A7E1B7E98EDC6 /* RepositoryRoutineCompanion.swift in Sources */,
 				46B029ACFEA5B810F06CFFA9 /* ListOfRepositoryExercisesCompanion.swift in Sources */,
 				46B027EB1551695226B1E7FB /* DataEntriesCompanion.swift in Sources */,
+				46B020360D75A80752429FF4 /* WorkoutDataEntry.swift in Sources */,
+				46B0261810EF8860661743BE /* WorkoutChartType.swift in Sources */,
+				46B0228CAE19F330773C3B4D /* WorkoutChartView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

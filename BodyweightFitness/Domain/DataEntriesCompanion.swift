@@ -1,18 +1,13 @@
-//
-// Created by Damian Mazurkiewicz on 10/12/2017.
-// Copyright (c) 2017 Damian Mazurkiewicz. All rights reserved.
-//
-
 import Foundation
-
-// getEntries
-// for 7days
-
-//    return (Calendar.current as NSCalendar).date(byAdding: .day, value: 10, to: Date(), options: [])!
 
 class DataEntriesCompanion {
 
-    func getDataEntries(fromDate: Date, numberOfDays: Int, repositoryRoutines: [RepositoryRoutine]) -> [WorkoutDataEntry] {
+    func getDataEntries(fromDate: Date,
+                        numberOfDays: Int,
+                        repositoryRoutines: [RepositoryRoutine],
+                        workoutChartType: WorkoutChartType
+    ) -> [WorkoutDataEntry] {
+
         var dataEntries: [WorkoutDataEntry] = []
 
         for index in 0...(numberOfDays - 1) {
@@ -23,19 +18,48 @@ class DataEntriesCompanion {
                     options: []
             )!
 
-            print(date)
-            print(index)
+            let routinesForDay = repositoryRoutines.filter({
+                return $0.startTime.commonDescription == date.commonDescription
+            })
 
-            dataEntries.append(
-                    WorkoutDataEntry(
-                            x: Double(index),
-                            y: 0,
-                            repositoryRoutine: nil
-                    )
-            )
+            if let repositoryRoutine = routinesForDay.first {
+                dataEntries.append(
+                        WorkoutDataEntry(
+                                x: Double(index),
+                                y: self.getValue(repositoryRoutine: repositoryRoutine, workoutChartType: workoutChartType),
+                                title: self.getTitle(repositoryRoutine: repositoryRoutine),
+                                label: self.getLabel(repositoryRoutine: repositoryRoutine, workoutChartType: workoutChartType)
+                        )
+                )
+            } else {
+                dataEntries.append(
+                        WorkoutDataEntry(x: Double(index), y: 0)
+                )
+            }
         }
 
-
         return dataEntries
+    }
+
+    private func getValue(repositoryRoutine: RepositoryRoutine, workoutChartType: WorkoutChartType) -> Double {
+        switch workoutChartType {
+        case .WorkoutLength:
+            return RepositoryRoutineCompanion(repositoryRoutine).workoutLengthInMinutes()
+        case .CompletionRate:
+            return Double(ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().percentage)
+        }
+    }
+
+    private func getTitle(repositoryRoutine: RepositoryRoutine) -> String {
+        return RepositoryRoutineCompanion(repositoryRoutine).date()
+    }
+
+    private func getLabel(repositoryRoutine: RepositoryRoutine, workoutChartType: WorkoutChartType) -> String {
+        switch workoutChartType {
+        case .WorkoutLength:
+            return RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
+        case .CompletionRate:
+            return ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().label
+        }
     }
 }

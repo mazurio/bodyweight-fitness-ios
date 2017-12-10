@@ -2,136 +2,6 @@ import SnapKit
 import Charts
 import RealmSwift
 
-enum WorkoutChartType {
-    case WorkoutLength
-    case CompletionRate
-}
-
-class WorkoutDataEntry: ChartDataEntry {
-    var repositoryRoutine: RepositoryRoutine?
-
-    public required init() {
-        super.init()
-    }
-
-    init(x: Double, y: Double, repositoryRoutine: RepositoryRoutine?) {
-        super.init(x: x, y: y)
-
-        self.repositoryRoutine = repositoryRoutine
-    }
-}
-
-class WorkoutChartView: LineChartView, ChartViewDelegate {
-    var workoutChartType: WorkoutChartType = .WorkoutLength
-    var workoutChartLength: Int = 30
-
-    var titleLabel: UILabel?
-    var valueLabel: UILabel?
-
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-
-        self.commonInit()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        self.commonInit()
-    }
-
-    func commonInit() {
-        self.delegate = self
-        self.backgroundColor = UIColor.white
-        self.chartDescription?.enabled = false
-        self.dragEnabled = true
-        self.drawGridBackgroundEnabled = false
-        self.drawMarkers = false
-        self.legend.enabled = false
-        self.animate(
-                xAxisDuration: 1.0,
-                yAxisDuration: 1.0,
-                easingOption: .easeInSine
-        )
-
-        self.xAxis.enabled = false
-        self.xAxis.drawLabelsEnabled = false
-        self.xAxis.drawGridLinesEnabled = false
-
-        self.leftAxis.enabled = false
-        self.leftAxis.drawLabelsEnabled = false
-        self.leftAxis.drawGridLinesEnabled = false
-
-        self.rightAxis.enabled = false
-        self.rightAxis.drawLabelsEnabled = false
-        self.rightAxis.drawGridLinesEnabled = false
-    }
-
-    func setValues(values: Array<RepositoryRoutine>) {
-        var dataEntries: [WorkoutDataEntry] = []
-
-        for (index, repositoryRoutine) in values.enumerated() {
-            dataEntries.append(
-                    WorkoutDataEntry(
-                            x: Double(index),
-                            y: getYValue(repositoryRoutine: repositoryRoutine),
-                            repositoryRoutine: repositoryRoutine
-                    )
-            )
-        }
-
-        self.data = self.createDataSetFromDataEntries(values: dataEntries)
-    }
-
-    func createDataSetFromDataEntries(values: [WorkoutDataEntry]) -> LineChartData {
-        let lineChartData = LineChartData()
-        let lineChartDataSet = LineChartDataSet(values: values, label: nil)
-
-        lineChartDataSet.lineWidth = 1.8
-        lineChartDataSet.mode = .cubicBezier
-        lineChartDataSet.cubicIntensity = 0.2
-        lineChartDataSet.drawCirclesEnabled = false
-        lineChartDataSet.drawValuesEnabled = false
-        lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
-        lineChartDataSet.colors = [UIColor.primary()]
-
-        lineChartData.addDataSet(lineChartDataSet)
-
-        return lineChartData
-    }
-
-    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-        if let data = entry as? WorkoutDataEntry {
-            if let repositoryRoutine = data.repositoryRoutine {
-                titleLabel?.text = getYTitle(repositoryRoutine: repositoryRoutine)
-                valueLabel?.text = getYLabel(repositoryRoutine: repositoryRoutine)
-            }
-        }
-    }
-
-    func getYValue(repositoryRoutine: RepositoryRoutine) -> Double {
-        switch workoutChartType {
-        case .WorkoutLength:
-            return RepositoryRoutineCompanion(repositoryRoutine).workoutLengthInMinutes()
-        case .CompletionRate:
-            return Double(ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().percentage)
-        }
-    }
-
-    func getYTitle(repositoryRoutine: RepositoryRoutine) -> String {
-        return RepositoryRoutineCompanion(repositoryRoutine).date()
-    }
-
-    func getYLabel(repositoryRoutine: RepositoryRoutine) -> String {
-        switch workoutChartType {
-        case .WorkoutLength:
-            return RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
-        case .CompletionRate:
-            return ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().label
-        }
-    }
-}
-
 class WorkoutLogGeneralViewController: AbstractViewController {
     var repositoryRoutine: RepositoryRoutine?
 
@@ -408,8 +278,9 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         value.text = RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
 
         let graph = WorkoutChartView()
-
         graph.workoutChartType = .WorkoutLength
+        graph.workoutChartLength = 7
+
         graph.titleLabel = label
         graph.valueLabel = value
 
