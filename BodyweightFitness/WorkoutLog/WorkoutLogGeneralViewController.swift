@@ -23,6 +23,7 @@ class WorkoutDataEntry: ChartDataEntry {
 
 class WorkoutChartView: LineChartView, ChartViewDelegate {
     var workoutChartType: WorkoutChartType = .WorkoutLength
+    var workoutChartLength: Int = 30
 
     var titleLabel: UILabel?
     var valueLabel: UILabel?
@@ -418,6 +419,35 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         card.addSubview(label)
         card.addSubview(value)
 
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 8
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        card.addSubview(stackView)
+
+        let oneWeekButton = CardButton()
+        oneWeekButton.setTitleColor(.black, for: .selected)
+        oneWeekButton.setTitle("1W", for: .normal)
+        stackView.addArrangedSubview(oneWeekButton)
+
+        let oneMonthButton = CardButton()
+        oneMonthButton.setTitle("1M", for: .normal)
+        stackView.addArrangedSubview(oneMonthButton)
+
+        let threeMonthsButton = CardButton()
+        threeMonthsButton.setTitle("3M", for: .normal)
+        stackView.addArrangedSubview(threeMonthsButton)
+
+        let sixMonthsButton = CardButton()
+        sixMonthsButton.setTitle("6M", for: .normal)
+        stackView.addArrangedSubview(sixMonthsButton)
+
+        let oneYearButton = CardButton()
+        oneYearButton.setTitle("1Y", for: .normal)
+        stackView.addArrangedSubview(oneYearButton)
+
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
             make.left.equalTo(card).offset(16)
@@ -434,9 +464,16 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.top.equalTo(value.snp.bottom).offset(8)
             make.left.equalTo(card).offset(0)
             make.right.equalTo(card).offset(0)
-            make.bottom.equalTo(card).offset(0)
+//            make.bottom.equalTo(card).offset(0)
 
             make.height.equalTo(200)
+        }
+
+        stackView.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(graph.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
         }
         
         return card
