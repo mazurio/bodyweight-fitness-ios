@@ -65,7 +65,7 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
 
         lineChartDataSet.lineWidth = 1.8
         lineChartDataSet.mode = .cubicBezier
-        lineChartDataSet.cubicIntensity = 0.2
+        lineChartDataSet.cubicIntensity = 0
         lineChartDataSet.drawCirclesEnabled = false
         lineChartDataSet.drawValuesEnabled = false
         lineChartDataSet.drawHorizontalHighlightIndicatorEnabled = false
