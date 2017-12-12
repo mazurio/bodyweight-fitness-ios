@@ -14,7 +14,15 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         
         self.initializeContent()
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        let t = WorkoutLogFullReportViewController()
+        t.repositoryExercise = repositoryRoutine?.exercises.first
+        self.parent?.navigationController?.pushViewController(t, animated: true)
+    }
+
     override func initializeContent() {
         super.initializeContent()
 

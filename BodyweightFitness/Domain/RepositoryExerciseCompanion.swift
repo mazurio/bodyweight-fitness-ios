@@ -47,8 +47,6 @@ class RepositoryExerciseCompanion {
                 } else {
                     return "\(totalNumberOfSets) \(setLabel), \(minutes) \(minutesLabel), \(seconds) \(secondsLabel)"
                 }
-
-                return defaultLabel
             } else {
                 let totalNumberOfReps = self.repositoryExercise.sets.map({ $0.reps }).reduce(0, +)
 

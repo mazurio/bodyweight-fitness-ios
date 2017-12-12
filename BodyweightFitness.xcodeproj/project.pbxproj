@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		46B020360D75A80752429FF4 /* WorkoutDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */; };
+		46B0206C2FB198B77A55D58B /* RepositorySetCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02E81E0E6B7E91B837D18 /* RepositorySetCompanionSpec.swift */; };
+		46B021554334D4A0E403E91D /* WorkoutLogFullReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0200067A6AD55EEC8C78C /* WorkoutLogFullReportViewController.swift */; };
 		46B021B6A56C2000CA08000B /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */; };
 		46B021FDBB6A7E1B7E98EDC6 /* RepositoryRoutineCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */; };
 		46B0228CAE19F330773C3B4D /* WorkoutChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0265FEE50A960EC0335F9 /* WorkoutChartView.swift */; };
 		46B023C64AF59B2DAAC02813 /* CompletionRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B026D8FF35A60FEA72641A /* CompletionRate.swift */; };
 		46B0249136D6147956309E7B /* RepositoryExerciseCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B024DF95FEB56EBBABCC5F /* RepositoryExerciseCompanionSpec.swift */; };
 		46B0261810EF8860661743BE /* WorkoutChartType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */; };
+		46B02674689A34473A36826D /* RepositorySetCompanion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B021BE7E895523B27CEC51 /* RepositorySetCompanion.swift */; };
 		46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */; };
 		46B0271B985965324463B90C /* RoutineStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */; };
 		46B02780EEC08B16FB384A4F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B020C26FAF7645B926FA26 /* CardView.swift */; };
@@ -195,9 +198,11 @@
 		0CAA43DD8E9A2A7D985EE7DE /* Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1445A7C286C120C5BB49F5F7 /* Pods_BodyweightFitness_BodyweightFitnessTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BodyweightFitness_BodyweightFitnessTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BD2CA831B458FFD00841AB7 /* Bodyweight Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bodyweight Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		46B0200067A6AD55EEC8C78C /* WorkoutLogFullReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogFullReportViewController.swift; sourceTree = "<group>"; };
 		46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntriesCompanion.swift; sourceTree = "<group>"; };
 		46B020705508E9962E756BEF /* RepositoryRoutineCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanion.swift; sourceTree = "<group>"; };
 		46B020C26FAF7645B926FA26 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		46B021BE7E895523B27CEC51 /* RepositorySetCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySetCompanion.swift; sourceTree = "<group>"; };
 		46B022B7A7B5E9A8B85DEBA0 /* PersistenceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		46B023135387177F75329BFC /* ListOfRepositoryExercisesCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfRepositoryExercisesCompanion.swift; sourceTree = "<group>"; };
 		46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDataEntry.swift; sourceTree = "<group>"; };
@@ -211,6 +216,7 @@
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
 		46B02D377395D66E54A3A405 /* ListOfRepositoryExercisesCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfRepositoryExercisesCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02DE6A0CBDB57EE450605 /* RepositoryExerciseCompanion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryExerciseCompanion.swift; sourceTree = "<group>"; };
+		46B02E81E0E6B7E91B837D18 /* RepositorySetCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositorySetCompanionSpec.swift; sourceTree = "<group>"; };
 		46B02F2362EA8A9111571B02 /* RepositoryStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryStream.swift; sourceTree = "<group>"; };
 		57E3C9E9DB8DAC7C6AEAF13D /* Pods-BodyweightFitness.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness/Pods-BodyweightFitness.debug.xcconfig"; sourceTree = "<group>"; };
 		628DF7CC1CBCA3E8CB0633B9 /* Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BodyweightFitness-BodyweightFitnessTests/Pods-BodyweightFitness-BodyweightFitnessTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -443,6 +449,7 @@
 				46B02D377395D66E54A3A405 /* ListOfRepositoryExercisesCompanionSpec.swift */,
 				46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */,
 				46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */,
+				46B02E81E0E6B7E91B837D18 /* RepositorySetCompanionSpec.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -672,6 +679,7 @@
 				7328DCBD1F8FF56700BD96CD /* WorkoutLogGeneralViewController.swift */,
 				731A41E91F991B1600C44922 /* WorkoutLogCategoryViewController.swift */,
 				73D393261F8D4B7D00D9F4DD /* WorkoutLog.storyboard */,
+				46B0200067A6AD55EEC8C78C /* WorkoutLogFullReportViewController.swift */,
 			);
 			path = WorkoutLog;
 			sourceTree = "<group>";
@@ -719,6 +727,7 @@
 				46B02031F8ECBCA46AF76185 /* DataEntriesCompanion.swift */,
 				46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */,
 				46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */,
+				46B021BE7E895523B27CEC51 /* RepositorySetCompanion.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -1167,6 +1176,8 @@
 				46B020360D75A80752429FF4 /* WorkoutDataEntry.swift in Sources */,
 				46B0261810EF8860661743BE /* WorkoutChartType.swift in Sources */,
 				46B0228CAE19F330773C3B4D /* WorkoutChartView.swift in Sources */,
+				46B021554334D4A0E403E91D /* WorkoutLogFullReportViewController.swift in Sources */,
+				46B02674689A34473A36826D /* RepositorySetCompanion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1179,6 +1190,7 @@
 				46B0298B0EDBEA87D2268270 /* ListOfRepositoryExercisesCompanionSpec.swift in Sources */,
 				46B026956DE6CC558370B9FE /* RepositoryRoutineCompanionSpec.swift in Sources */,
 				46B0290A46500C9466C686E6 /* DataEntriesCompanionSpec.swift in Sources */,
+				46B0206C2FB198B77A55D58B /* RepositorySetCompanionSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
