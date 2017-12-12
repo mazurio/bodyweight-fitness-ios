@@ -157,11 +157,17 @@ class WorkoutLogCategoryViewController: AbstractViewController {
         value.text = companion.setSummaryLabel()
         card.addSubview(value)
 
-        let button = CardButton()
-        button.repositoryExercise = repositoryExercise
-        button.setTitle("Edit", for: .normal)
-        button.addTarget(self, action: #selector(edit(_:)), for: .touchUpInside)
-        card.addSubview(button)
+        let editButton = CardButton()
+        editButton.repositoryExercise = repositoryExercise
+        editButton.setTitle("Edit", for: .normal)
+        editButton.addTarget(self, action: #selector(edit(_:)), for: .touchUpInside)
+        card.addSubview(editButton)
+
+        let fullReportButton = CardButton()
+        fullReportButton.repositoryExercise = repositoryExercise
+        fullReportButton.setTitle("Full Report", for: .normal)
+        fullReportButton.addTarget(self, action: #selector(fullReport(_:)), for: .touchUpInside)
+        card.addSubview(fullReportButton)
 
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
@@ -175,10 +181,17 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             make.right.equalTo(card).offset(-16)
         }
 
-        button.snp.makeConstraints { (make) -> Void in
+        editButton.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(value.snp.bottom).offset(16)
             make.left.equalTo(card).offset(16)
-            make.right.equalTo(card).offset(-16)
+            make.bottom.equalTo(card).offset(-16)
+
+            make.height.equalTo(36)
+        }
+
+        fullReportButton.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(value.snp.bottom).offset(16)
+            make.left.equalTo(editButton.snp.right).offset(16)
             make.bottom.equalTo(card).offset(-16)
 
             make.height.equalTo(36)
@@ -190,11 +203,11 @@ class WorkoutLogCategoryViewController: AbstractViewController {
     @IBAction func edit(_ sender: CardButton) {
         let controller = self.parent!
 
-        if let exercise = sender.repositoryExercise {
+        if let repositoryExercise = sender.repositoryExercise {
             let logWorkoutController = LogWorkoutController()
             
             logWorkoutController.parentController = controller
-            logWorkoutController.exercise = exercise
+            logWorkoutController.exercise = repositoryExercise
             logWorkoutController.routine = repositoryRoutine
             
             logWorkoutController.modalTransitionStyle = .coverVertical
@@ -202,6 +215,15 @@ class WorkoutLogCategoryViewController: AbstractViewController {
             
             controller.dim(.in, alpha: 0.5, speed: 0.5)
             controller.present(logWorkoutController, animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func fullReport(_ sender: CardButton) {
+        if let repositoryExercise = sender.repositoryExercise {
+            let workoutLogFullReportViewController = WorkoutLogFullReportViewController()
+            workoutLogFullReportViewController.repositoryExercise = repositoryExercise
+
+            self.parent?.navigationController?.pushViewController(workoutLogFullReportViewController, animated: true)
         }
     }
 }
