@@ -268,8 +268,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let card = CardView()
 
         let realm = try! Realm()
-
         let allWorkouts = realm.objects(RepositoryRoutine.self)
+                .filter("routineId == '\(repositoryRoutine.routineId)'")
 
         let label = TitleLabel()
         label.text = RepositoryRoutineCompanion(repositoryRoutine).date()
@@ -335,7 +335,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.top.equalTo(value.snp.bottom).offset(8)
             make.left.equalTo(card).offset(0)
             make.right.equalTo(card).offset(0)
-//            make.bottom.equalTo(card).offset(0)
 
             make.height.equalTo(200)
         }
@@ -354,8 +353,8 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let card = CardView()
 
         let realm = try! Realm()
-
         let allWorkouts = realm.objects(RepositoryRoutine.self)
+                .filter("routineId == '\(repositoryRoutine.routineId)'")
 
         let label = TitleLabel()
         label.text = RepositoryRoutineCompanion(repositoryRoutine).date()
