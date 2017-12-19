@@ -5,6 +5,8 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
     var workoutChartType: WorkoutChartType = .WorkoutLength
     var workoutChartLength: Int = 30
 
+    var values: [RepositoryRoutine] = []
+
     var titleLabel: UILabel?
     var valueLabel: UILabel?
 
@@ -49,12 +51,12 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
         self.rightAxis.drawGridLinesEnabled = false
     }
 
-    func setValues(values: [RepositoryRoutine]) {
+    func setValues() {
         let dataEntriesCompanion = DataEntriesCompanion()
         let dataEntries = dataEntriesCompanion.getDataEntries(
                 fromDate: Date(),
-                numberOfDays: workoutChartLength,
-                repositoryRoutines: values,
+                numberOfDays: self.workoutChartLength,
+                repositoryRoutines: self.values,
                 workoutChartType: self.workoutChartType
         )
 
@@ -91,5 +93,24 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
 
             self.buttonBar?.frame.origin.x = offset + 16
         }
+
+        switch sender.selectedSegmentIndex {
+        case 0:
+            self.workoutChartLength = 7
+        case 1:
+            self.workoutChartLength = 31
+        case 2:
+            self.workoutChartLength = 93
+        case 3:
+            self.workoutChartLength = 186
+        case 4:
+            self.workoutChartLength = 365
+        case 5:
+            self.workoutChartLength = 1095
+        default:
+            self.workoutChartLength = 7
+        }
+
+        self.setValues()
     }
 }

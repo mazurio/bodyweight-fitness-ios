@@ -283,10 +283,12 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let graph = WorkoutChartView()
         graph.workoutChartType = .WorkoutLength
         graph.workoutChartLength = 7
+        graph.values = Array(allWorkouts)
         graph.titleLabel = label
         graph.valueLabel = value
         graph.buttonBar = buttonBar
-        graph.setValues(values: Array(allWorkouts))
+
+        graph.setValues()
 
         let segmentedControl = UISegmentedControl()
         segmentedControl.addTarget(graph, action: #selector(graph.segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
@@ -373,8 +375,9 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         graph.workoutChartType = .CompletionRate
         graph.titleLabel = label
         graph.valueLabel = value
+        graph.values = Array(allWorkouts)
 
-        graph.setValues(values: Array(allWorkouts))
+        graph.setValues()
         card.addSubview(graph)
 
         card.addSubview(label)
