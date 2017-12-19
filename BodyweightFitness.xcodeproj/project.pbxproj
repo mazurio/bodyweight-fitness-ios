@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46B0202394FA05D77A5014E7 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B029916D58913C17FBEDCF /* TestViewController.swift */; };
 		46B020360D75A80752429FF4 /* WorkoutDataEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0238107010BE20DA270F9 /* WorkoutDataEntry.swift */; };
 		46B0206C2FB198B77A55D58B /* RepositorySetCompanionSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B02E81E0E6B7E91B837D18 /* RepositorySetCompanionSpec.swift */; };
 		46B021554334D4A0E403E91D /* WorkoutLogFullReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B0200067A6AD55EEC8C78C /* WorkoutLogFullReportViewController.swift */; };
@@ -211,6 +212,7 @@
 		46B026D8FF35A60FEA72641A /* CompletionRate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompletionRate.swift; sourceTree = "<group>"; };
 		46B027987C3B7C0FCAB8955C /* DataEntriesCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntriesCompanionSpec.swift; sourceTree = "<group>"; };
 		46B0288C269FF355D6443614 /* RepositoryRoutineCompanionSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryRoutineCompanionSpec.swift; sourceTree = "<group>"; };
+		46B029916D58913C17FBEDCF /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		46B02AEDB4B0B259C2EAE1E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		46B02B23C756AB46D0590C59 /* WorkoutChartType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutChartType.swift; sourceTree = "<group>"; };
 		46B02B2F18B13D956F1E2AD6 /* RoutineStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineStream.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 				7366D8E91C52416C00819790 /* SupportDeveloperViewController.swift */,
 				7347DC2A1F8D2091001E1BE5 /* SettingsViewController.swift */,
 				73737FF41F8C347200C616B8 /* Main.storyboard */,
+				46B029916D58913C17FBEDCF /* TestViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -1178,6 +1181,7 @@
 				46B0228CAE19F330773C3B4D /* WorkoutChartView.swift in Sources */,
 				46B021554334D4A0E403E91D /* WorkoutLogFullReportViewController.swift in Sources */,
 				46B02674689A34473A36826D /* RepositorySetCompanion.swift in Sources */,
+				46B0202394FA05D77A5014E7 /* TestViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

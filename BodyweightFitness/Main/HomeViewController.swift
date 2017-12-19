@@ -22,6 +22,9 @@ class HomeViewController: AbstractViewController, MFMailComposeViewControllerDel
         })
         
         self.requestReviewIfAllowed()
+
+        let testViewController = TestViewController()
+        self.navigationController?.pushViewController(testViewController, animated: true)
     }
 
     override func initializeContent() {
