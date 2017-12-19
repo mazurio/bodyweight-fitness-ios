@@ -348,7 +348,7 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.left.equalTo(segmentedControl.snp.left)
             make.bottom.equalTo(card).offset(-16)
 
-            make.width.equalTo(segmentedControl.snp.width).multipliedBy(1 / CGFloat(segmentedControl.numberOfSegments)).constraint
+            make.width.equalTo(segmentedControl.snp.width).multipliedBy(1 / CGFloat(segmentedControl.numberOfSegments))
 
             make.height.equalTo(2)
         }
