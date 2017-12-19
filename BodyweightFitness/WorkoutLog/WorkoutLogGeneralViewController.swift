@@ -277,19 +277,19 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let value = ValueLabel()
         value.text = RepositoryRoutineCompanion(repositoryRoutine).workoutLength()
 
+        let buttonBar = UIView()
+        buttonBar.backgroundColor = UIColor.primary()
+
         let graph = WorkoutChartView()
         graph.workoutChartType = .WorkoutLength
         graph.workoutChartLength = 7
         graph.titleLabel = label
         graph.valueLabel = value
+        graph.buttonBar = buttonBar
         graph.setValues(values: Array(allWorkouts))
 
-        let buttonBar = UIView()
-        buttonBar.backgroundColor = UIColor.primary()
-
-        let segmentedControl = CardSegmentedControl()
-        segmentedControl.buttonBar = buttonBar
-        segmentedControl.addTarget(self, action: #selector(graph.segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
+        let segmentedControl = UISegmentedControl()
+        segmentedControl.addTarget(graph, action: #selector(graph.segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
         segmentedControl.insertSegment(withTitle: "1W", at: 0, animated: true)
         segmentedControl.insertSegment(withTitle: "1M", at: 1, animated: true)
         segmentedControl.insertSegment(withTitle: "3M", at: 2, animated: true)
