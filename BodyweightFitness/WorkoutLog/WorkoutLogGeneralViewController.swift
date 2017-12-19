@@ -280,44 +280,39 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let graph = WorkoutChartView()
         graph.workoutChartType = .WorkoutLength
         graph.workoutChartLength = 7
-
         graph.titleLabel = label
         graph.valueLabel = value
-
         graph.setValues(values: Array(allWorkouts))
-        card.addSubview(graph)
+
+        let buttonBar = UIView()
+        buttonBar.backgroundColor = UIColor.primary()
+
+        let segmentedControl = CardSegmentedControl()
+        segmentedControl.buttonBar = buttonBar
+        segmentedControl.addTarget(self, action: #selector(graph.segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
+        segmentedControl.insertSegment(withTitle: "1W", at: 0, animated: true)
+        segmentedControl.insertSegment(withTitle: "1M", at: 1, animated: true)
+        segmentedControl.insertSegment(withTitle: "3M", at: 2, animated: true)
+        segmentedControl.insertSegment(withTitle: "6M", at: 3, animated: true)
+        segmentedControl.insertSegment(withTitle: "1Y", at: 4, animated: true)
+        segmentedControl.insertSegment(withTitle: "ALL", at: 5, animated: true)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        segmentedControl.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+            NSForegroundColorAttributeName: UIColor.lightGray
+        ], for: .normal)
+        segmentedControl.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+            NSForegroundColorAttributeName: UIColor.primary()
+        ], for: .selected)
 
         card.addSubview(label)
         card.addSubview(value)
-
-        let stackView = UIStackView()
-        stackView.axis = .horizontal
-        stackView.distribution = .fillEqually
-        stackView.alignment = .fill
-        stackView.spacing = 8
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        card.addSubview(stackView)
-
-        let oneWeekButton = CardButton()
-        oneWeekButton.setTitleColor(.black, for: .selected)
-        oneWeekButton.setTitle("1W", for: .normal)
-        stackView.addArrangedSubview(oneWeekButton)
-
-        let oneMonthButton = CardButton()
-        oneMonthButton.setTitle("1M", for: .normal)
-        stackView.addArrangedSubview(oneMonthButton)
-
-        let threeMonthsButton = CardButton()
-        threeMonthsButton.setTitle("3M", for: .normal)
-        stackView.addArrangedSubview(threeMonthsButton)
-
-        let sixMonthsButton = CardButton()
-        sixMonthsButton.setTitle("6M", for: .normal)
-        stackView.addArrangedSubview(sixMonthsButton)
-
-        let oneYearButton = CardButton()
-        oneYearButton.setTitle("1Y", for: .normal)
-        stackView.addArrangedSubview(oneYearButton)
+        card.addSubview(graph)
+        card.addSubview(segmentedControl)
+        card.addSubview(buttonBar)
 
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
@@ -339,11 +334,22 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.height.equalTo(200)
         }
 
-        stackView.snp.makeConstraints { (make) -> Void in
+        segmentedControl.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(graph.snp.bottom).offset(16)
             make.left.equalTo(card).offset(16)
             make.right.equalTo(card).offset(-16)
+
+            make.height.equalTo(36)
+        }
+
+        buttonBar.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(segmentedControl.snp.bottom)
+            make.left.equalTo(segmentedControl.snp.left)
             make.bottom.equalTo(card).offset(-16)
+
+            make.width.equalTo(segmentedControl.snp.width).multipliedBy(1 / CGFloat(segmentedControl.numberOfSegments)).constraint
+
+            make.height.equalTo(2)
         }
         
         return card

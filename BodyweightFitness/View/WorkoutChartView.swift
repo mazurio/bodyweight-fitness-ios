@@ -1,6 +1,10 @@
 import UIKit
 import Charts
 
+class CardSegmentedControl: UISegmentedControl {
+    var buttonBar: UIView? = nil
+}
+
 class WorkoutChartView: LineChartView, ChartViewDelegate {
     var workoutChartType: WorkoutChartType = .WorkoutLength
     var workoutChartLength: Int = 30
@@ -80,6 +84,16 @@ class WorkoutChartView: LineChartView, ChartViewDelegate {
         if let data = entry as? WorkoutDataEntry {
             titleLabel?.text = data.title
             valueLabel?.text = data.label
+        }
+    }
+
+    func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+        if let cardSegmentedControl = sender as? CardSegmentedControl {
+            UIView.animate(withDuration: 0.2) {
+                let offset = ((cardSegmentedControl.frame.width) / CGFloat(cardSegmentedControl.numberOfSegments)) * CGFloat(cardSegmentedControl.selectedSegmentIndex)
+
+                cardSegmentedControl.buttonBar?.frame.origin.x = offset + 16
+            }
         }
     }
 }
