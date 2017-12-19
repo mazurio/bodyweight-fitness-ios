@@ -287,7 +287,6 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         graph.titleLabel = label
         graph.valueLabel = value
         graph.buttonBar = buttonBar
-
         graph.setValues()
 
         let segmentedControl = UISegmentedControl()
@@ -370,18 +369,43 @@ class WorkoutLogGeneralViewController: AbstractViewController {
         let value = ValueLabel()
         value.text = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises).completionRate().label
 
-        let graph = WorkoutChartView()
+        let buttonBar = UIView()
+        buttonBar.backgroundColor = UIColor.primary()
 
+        let graph = WorkoutChartView()
         graph.workoutChartType = .CompletionRate
+        graph.workoutChartLength = 7
+        graph.values = Array(allWorkouts)
         graph.titleLabel = label
         graph.valueLabel = value
-        graph.values = Array(allWorkouts)
-
+        graph.buttonBar = buttonBar
         graph.setValues()
-        card.addSubview(graph)
+
+        let segmentedControl = UISegmentedControl()
+        segmentedControl.addTarget(graph, action: #selector(graph.segmentedControlValueChanged(_:)), for: UIControlEvents.valueChanged)
+        segmentedControl.insertSegment(withTitle: "1W", at: 0, animated: true)
+        segmentedControl.insertSegment(withTitle: "1M", at: 1, animated: true)
+        segmentedControl.insertSegment(withTitle: "3M", at: 2, animated: true)
+        segmentedControl.insertSegment(withTitle: "6M", at: 3, animated: true)
+        segmentedControl.insertSegment(withTitle: "1Y", at: 4, animated: true)
+        segmentedControl.insertSegment(withTitle: "ALL", at: 5, animated: true)
+        segmentedControl.selectedSegmentIndex = 0
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.tintColor = .clear
+        segmentedControl.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+            NSForegroundColorAttributeName: UIColor.lightGray
+        ], for: .normal)
+        segmentedControl.setTitleTextAttributes([
+            NSFontAttributeName: UIFont.systemFont(ofSize: 16),
+            NSForegroundColorAttributeName: UIColor.primary()
+        ], for: .selected)
 
         card.addSubview(label)
         card.addSubview(value)
+        card.addSubview(graph)
+        card.addSubview(segmentedControl)
+        card.addSubview(buttonBar)
 
         label.snp.makeConstraints { (make) -> Void in
             make.top.equalTo(card).offset(20)
@@ -399,9 +423,26 @@ class WorkoutLogGeneralViewController: AbstractViewController {
             make.top.equalTo(value.snp.bottom).offset(8)
             make.left.equalTo(card).offset(0)
             make.right.equalTo(card).offset(0)
-            make.bottom.equalTo(card).offset(0)
 
             make.height.equalTo(200)
+        }
+
+        segmentedControl.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(graph.snp.bottom).offset(16)
+            make.left.equalTo(card).offset(16)
+            make.right.equalTo(card).offset(-16)
+
+            make.height.equalTo(36)
+        }
+
+        buttonBar.snp.makeConstraints { (make) -> Void in
+            make.top.equalTo(segmentedControl.snp.bottom)
+            make.left.equalTo(segmentedControl.snp.left)
+            make.bottom.equalTo(card).offset(-16)
+
+            make.width.equalTo(segmentedControl.snp.width).multipliedBy(1 / CGFloat(segmentedControl.numberOfSegments)).constraint
+
+            make.height.equalTo(2)
         }
 
         return card
