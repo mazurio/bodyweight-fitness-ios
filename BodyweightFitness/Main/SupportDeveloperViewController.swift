@@ -111,7 +111,8 @@ class SupportDeveloperViewController: UIViewController, SKPaymentTransactionObse
         let alertController = UIAlertController(
             title: "IAP Disabled",
             message: "Please enable In App Purchases in Settings",
-            preferredStyle: .alert)
+            preferredStyle: .alert
+        )
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
         

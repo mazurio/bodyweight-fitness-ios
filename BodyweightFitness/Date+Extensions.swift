@@ -1,12 +1,16 @@
 import Foundation
 
+func secondsToHoursMinutesSeconds(_ seconds : Int) -> (Int, Int, Int) {
+    return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
+}
+
 extension Date {
     public var globalDescription: String {
         get {
             let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
             let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
             
-            return "\(month), \(year)"
+            return "\(month) \(year)"
         }
     }
     
@@ -16,7 +20,16 @@ extension Date {
             let month = dateFormattedStringWithFormat("MMMM", fromDate: self)
             let year = dateFormattedStringWithFormat("YYYY", fromDate: self)
             
-            return "\(day) \(month), \(year)"
+            return "\(day) \(month) \(year)"
+        }
+    }
+
+    public var description: String {
+        get {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "EEEE, d MMMM YYYY"
+
+            return formatter.string(from: self)
         }
     }
     

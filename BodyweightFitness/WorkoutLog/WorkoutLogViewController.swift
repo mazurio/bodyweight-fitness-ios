@@ -17,28 +17,18 @@ class WorkoutLogViewController: UIViewController {
             self.navigationItem.title = routine.startTime.commonDescription
         }
         
-        let generalViewController: ProgressGeneralViewController = ProgressGeneralViewController(
-            nibName: "ProgressGeneralViewController",
-            bundle: nil)
-        
-        generalViewController.parentController = self.navigationController
+        let generalViewController = WorkoutLogGeneralViewController()
         generalViewController.title = "General"
-        generalViewController.date = date
-        generalViewController.repositoryRoutine = self.repositoryRoutine
-        
+        generalViewController.repositoryRoutine = repositoryRoutine
         controllerArray.append(generalViewController)
         
-        if let routine = repositoryRoutine {
-            for category in routine.categories {
-                let viewController: ProgressPageViewController = ProgressPageViewController(
-                    nibName: "ProgressPageViewController",
-                    bundle: nil)
-                
-                viewController.parentController = self.navigationController
-                viewController.title = category.title
-                viewController.category = category
-                
-                controllerArray.append(viewController)
+        if let repositoryRoutine = repositoryRoutine {
+            for repositoryCategory in repositoryRoutine.categories {
+                let categoryViewController = WorkoutLogCategoryViewController()
+                categoryViewController.title = repositoryCategory.title
+                categoryViewController.repositoryRoutine = repositoryRoutine
+                categoryViewController.repositoryCategory = repositoryCategory
+                controllerArray.append(categoryViewController)
             }
         }
         
@@ -53,7 +43,7 @@ class WorkoutLogViewController: UIViewController {
                 UIColor(red:0.02, green:0.21, blue:0.18, alpha:1)
             ),
             .bottomMenuHairlineColor(
-                UIColor(red: 70.0/255.0, green: 70.0/255.0, blue: 80.0/255.0, alpha: 1.0)
+                UIColor.primary()
             ),
             .selectedMenuItemLabelColor(
                 UIColor(red:0, green:0.33, blue:0.29, alpha:1)
@@ -73,8 +63,11 @@ class WorkoutLogViewController: UIViewController {
         pageMenu = CAPSPageMenu(
             viewControllers: controllerArray,
             frame: CGRect(x: 0.0, y: 0.0, width: self.view.frame.width, height: self.view.frame.height),
-            pageMenuOptions: parameters)
-        
+            pageMenuOptions: parameters
+        )
+
+        self.addChildViewController(pageMenu!)
         self.view.addSubview(pageMenu!.view)
+        self.pageMenu!.didMove(toParentViewController: self)
     }
 }

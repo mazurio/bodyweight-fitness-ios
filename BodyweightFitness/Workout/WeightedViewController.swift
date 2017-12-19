@@ -176,7 +176,7 @@ class WeightedViewController: UIViewController {
                             
                             sets.append(repositorySet)
                             
-                            repositoryRoutine.lastUpdatedTime = NSDate() as Date
+                            repositoryRoutine.lastUpdatedTime = Date()
                         }
                         
                         realm.add(repositoryRoutine, update: true)
