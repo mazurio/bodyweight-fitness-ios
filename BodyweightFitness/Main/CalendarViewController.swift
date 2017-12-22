@@ -18,7 +18,7 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
         self.calendarView.calendarDelegate = self
         self.calendarView.calendarDataSource = self
         self.calendarView.allowsMultipleSelection = false
-        self.calendarView.scrollingMode = .stopAtEachCalendarFrameWidth
+        self.calendarView.scrollingMode = .stopAtEachCalendarFrame
         self.calendarView.isRangeSelectionUsed = false
         self.calendarView.reloadData()
 
@@ -174,96 +174,27 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
     }
 
     @IBAction func exportWorkout(_ sender: CardButton) {
-        let mailString = NSMutableString()
-
-        if let repositoryRoutine = sender.repositoryRoutine {
-            let companion = RepositoryRoutineCompanion(repositoryRoutine)
-            let exercisesCompanion = ListOfRepositoryExercisesCompanion(repositoryRoutine.exercises)
-
-            mailString.append("Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds\n")
-
-            for exercise in exercisesCompanion.visibleExercises() {
-                let title = exercise.title
-                let weightValue = getWeightUnit()
-                var index = 1
-
-                for set in exercise.sets {
-                    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
-
-                    mailString.append(String(
-                            format: "%@,%@,%@,%@,%@,%@,%d,%f,%@,%d,%d,%d\n",
-                            companion.date(),
-                            companion.startTime(),
-                            companion.lastUpdatedTime(),
-                            companion.workoutLength(),
-                            "\(repositoryRoutine.title) - \(repositoryRoutine.subtitle)",
-                            title,
-                            index,
-                            set.weight,
-                            weightValue,
-                            set.reps,
-                            minutes,
-                            seconds
-                    ))
-
-                    index += 1
-                }
-            }
-
-            let content = NSMutableString()
-            let emailTitle = "\(repositoryRoutine.title) workout for \(companion.dateWithTime())"
-
-            content.append("Hello,\nThe following is your workout in Text/HTML format (CSV attached).")
-
-            content.append("\n\nWorkout on \(companion.dateWithTime()).")
-            content.append("\nLast Updated at \(companion.lastUpdatedTime())")
-            content.append("\nWorkout length: \(companion.workoutLength())")
-
-            content.append("\n\n\(repositoryRoutine.title)\n\(repositoryRoutine.subtitle)")
-
-            let weightUnit = getWeightUnit()
-
-            for exercise in exercisesCompanion.visibleExercises() {
-                content.append("\n\n\(exercise.title)")
-
-                var index = 1
-                for set in exercise.sets {
-                    let (_, minutes, seconds) = secondsToHoursMinutesSeconds(set.seconds)
-
-                    content.append("\nSet \(index)")
-
-                    if (set.isTimed) {
-                        if minutes > 0 {
-                            content.append(", Minutes: \(minutes)")
-                        }
-
-                        content.append(", Seconds: \(seconds)")
-                    } else {
-                        content.append(", Reps: \(set.reps)")
-
-                        if set.weight > 0 {
-                            content.append(", Weight: \(set.weight) \(weightUnit)")
-                        }
-                    }
-
-                    index += 1
-                }
-            }
-
-            let data = mailString.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)
-            if let data = data {
-                if !MFMailComposeViewController.canSendMail() {
-                    print("Mail services are not available")
-                    return
-                }
-
-                let emailViewController = configuredMailComposeViewController(data, subject: emailTitle, messageBody: content as String)
-
-                if MFMailComposeViewController.canSendMail() {
-                    self.present(emailViewController, animated: true, completion: nil)
-                }
-            }
+        if !MFMailComposeViewController.canSendMail() {
+           print("Mail services are not available")
+           return
         }
+
+        guard let routine = sender.repositoryRoutine else {
+            return
+        }
+
+        let weightUnit = getWeightUnit()
+
+        let companion = RepositoryRoutineCompanion(routine)
+
+        let subject = companion.emailSubject()
+        let body = companion.emailBody(weightUnit: weightUnit)
+
+        let csv = companion.csv(weightUnit: weightUnit)
+        let csvName = companion.csvName()
+
+        let emailViewController = configuredMailComposeViewController(subject: subject, messageBody: body, csv: data, csvName: csvName)
+        self.present(emailViewController, animated: true, completion: nil)
     }
 
     @IBAction func removeLoggedWorkout(_ sender: CardButton) {
@@ -302,16 +233,21 @@ class CalendarViewController: AbstractViewController, MFMailComposeViewControlle
         }
     }
 
-    func configuredMailComposeViewController(_ data: Data, subject: String, messageBody: String) -> MFMailComposeViewController {
+    func configuredMailComposeViewController(subject: String, messageBody: String, csv: Data?, csvName: String) -> MFMailComposeViewController {
         let emailController = MFMailComposeViewController()
 
         emailController.mailComposeDelegate = self
         emailController.setSubject(subject)
         emailController.setMessageBody(messageBody, isHTML: false)
-        emailController.addAttachmentData(data, mimeType: "text/csv", fileName: "Workout.csv")
+
+        if let data = csv {
+            emailController.addAttachmentData(data, mimeType: "text/csv", fileName: csvName)
+        }
 
         return emailController
     }
+
+    // MARK: - MFMailComposeViewControllerDelegate
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
@@ -393,5 +329,8 @@ extension CalendarViewController: JTAppleCalendarViewDataSource, JTAppleCalendar
                 calendar.selectDates([f])
             }
         }
+    }
+
+    func calendar(_ calendar: JTAppleCalendarView, willDisplay cell: JTAppleCell, forItemAt date: Date, cellState: CellState, indexPath: IndexPath) {
     }
 }

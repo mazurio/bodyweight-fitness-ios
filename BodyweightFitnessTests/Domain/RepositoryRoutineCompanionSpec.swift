@@ -9,9 +9,39 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
         let dateFormatter = DateFormatter()
 
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
 
         return dateFormatter.date(from: from)!
+    }
+
+    var routineCompleted: RepositoryRoutine {
+        let completedSet = RepositorySet()
+        completedSet.isTimed = true
+        completedSet.seconds = 10
+
+        let firstExercise = RepositoryExercise()
+        firstExercise.visible = true
+        firstExercise.sets.append(completedSet)
+
+        let secondExercise = RepositoryExercise()
+        secondExercise.visible = true
+        secondExercise.sets.append(completedSet)
+
+        let thirdExercise = RepositoryExercise()
+        thirdExercise.visible = true
+        thirdExercise.sets.append(completedSet)
+
+        let repositoryRoutine = RepositoryRoutine()
+        repositoryRoutine.exercises.append(firstExercise)
+        repositoryRoutine.exercises.append(secondExercise)
+        repositoryRoutine.exercises.append(thirdExercise)
+
+        repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:13:00Z")
+        repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T15:13:21Z")
+
+        repositoryRoutine.title = "Bodyweight Fitness"
+        repositoryRoutine.subtitle = "Recommended Routine"
+
+        return repositoryRoutine
     }
 
     override func spec() {
@@ -30,18 +60,18 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
             context("dateWithTime()") {
                 it("should return start date and time in EEE, d MMMM YYYY - HH:mm format") {
                     let repositoryRoutine = RepositoryRoutine()
-                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T12:13:00Z")
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T15:13:00Z")
 
                     let companion = RepositoryRoutineCompanion(repositoryRoutine)
 
-                    expect(companion.dateWithTime()).to(equal("Monday, 7 August 2017 - 13:13"))
+                    expect(companion.dateWithTime()).to(equal("Monday, 7 August 2017 - 15:13"))
                 }
             }
 
             context("startTime()") {
                 it("should return start time in HH:mm format") {
                     let repositoryRoutine = RepositoryRoutine()
-                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T12:13:21Z")
+                    repositoryRoutine.startTime = self.mockDate(from: "2017-08-07T13:13:21Z")
 
                     let companion = RepositoryRoutineCompanion(repositoryRoutine)
 
@@ -52,8 +82,7 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
             context("lastUpdatedTime()") {
                 it("should return last updated time in HH:mm format") {
                     let repositoryRoutine = RepositoryRoutine()
-                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T13:13:21Z")
-
+                    repositoryRoutine.lastUpdatedTime = self.mockDate(from: "2017-08-07T14:13:21Z")
                     let companion = RepositoryRoutineCompanion(repositoryRoutine)
 
                     expect(companion.lastUpdatedTime()).to(equal("14:13"))
@@ -62,29 +91,7 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
 
             context("lastUpdatedTimeLabel()") {
                 it("should return 'End Time' if all exercises are completed") {
-                    let completedSet = RepositorySet()
-                    completedSet.isTimed = true
-                    completedSet.seconds = 10
-
-                    let firstExercise = RepositoryExercise()
-                    firstExercise.visible = true
-                    firstExercise.sets.append(completedSet)
-
-                    let secondExercise = RepositoryExercise()
-                    secondExercise.visible = true
-                    secondExercise.sets.append(completedSet)
-
-                    let thirdExercise = RepositoryExercise()
-                    thirdExercise.visible = true
-                    thirdExercise.sets.append(completedSet)
-
-                    let repositoryRoutine = RepositoryRoutine()
-                    repositoryRoutine.exercises.append(firstExercise)
-                    repositoryRoutine.exercises.append(secondExercise)
-                    repositoryRoutine.exercises.append(thirdExercise)
-
-                    let companion = RepositoryRoutineCompanion(repositoryRoutine)
-
+                    let companion = RepositoryRoutineCompanion(self.routineCompleted)
                     expect(companion.lastUpdatedTimeLabel()).to(equal("End Time"))
                 }
 
@@ -211,6 +218,78 @@ class RepositoryRoutineCompanionSpec: QuickSpec {
                     let companion = RepositoryRoutineCompanion(repositoryRoutine)
 
                     expect(companion.workoutLengthInMinutes()).to(equal(215))
+                }
+            }
+
+            context("email") {
+                let unit = "kg"
+
+                it("exercisesAsCSV should return empty string") {
+                    let companion = RepositoryRoutineCompanion(RepositoryRoutine())
+                    let csv = companion.csv(weightUnit: unit)
+                    expect(csv).to(beNil())
+                }
+
+                it("exercisesAsCSV should return correct CSV") {
+                    let companion = RepositoryRoutineCompanion(self.routineCompleted)
+                    let csv = companion.csv(weightUnit: unit)
+
+                    let expectedStr =
+                    """
+Date, Start Time, End Time, Workout Length, Routine, Exercise, Set Order, Weight, Weight Units, Reps, Minutes, Seconds
+Monday, 7 August 2017,13:13,15:13,2h,Bodyweight Fitness - Recommended Routine,,1,0.000000,kg,0,0,10
+Monday, 7 August 2017,13:13,15:13,2h,Bodyweight Fitness - Recommended Routine,,1,0.000000,kg,0,0,10
+Monday, 7 August 2017,13:13,15:13,2h,Bodyweight Fitness - Recommended Routine,,1,0.000000,kg,0,0,10
+
+"""
+                    let expected = expectedStr.data(using: String.Encoding.utf8, allowLossyConversion: false)
+                    expect(csv).to(equal(expected))
+                }
+
+                it("csvName should return correct filename") {
+                    let companion = RepositoryRoutineCompanion(self.routineCompleted)
+                    let csvName = companion.csvName()
+
+                    let expected = "Workout-Bodyweight Fitness-Monday, 7 August 2017 - 13:13.csv"
+                    expect(csvName).to(equal(expected))
+                }
+
+                it("emailSubject should be correct") {
+                    let companion = RepositoryRoutineCompanion(self.routineCompleted)
+                    let subject = companion.emailSubject()
+
+                    let expected = "Bodyweight Fitness workout for Monday, 7 August 2017 - 13:13"
+
+                    expect(subject).to(equal(expected))
+                }
+
+                it("emailBody should return correct body text") {
+                    let companion = RepositoryRoutineCompanion(self.routineCompleted)
+                    let body = companion.emailBody(weightUnit: unit)
+
+                    let expected =
+                    """
+Hello,
+The following is your workout in Text/HTML format (CSV attached).
+
+Workout on Monday, 7 August 2017 - 13:13.
+Last Updated at 15:13
+Workout length: 2h
+
+Bodyweight Fitness
+Recommended Routine
+
+
+Set 1, Seconds: 10
+
+
+Set 1, Seconds: 10
+
+
+Set 1, Seconds: 10
+"""
+
+                    expect(body).to(equal(expected))
                 }
             }
         }

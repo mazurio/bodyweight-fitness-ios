@@ -392,7 +392,7 @@ open class CWStatusBarNotification : NSObject {
                                     self.firstFrameChange()
         }, completion: { (finished) -> () in
             if let delayInSeconds = self.notificationLabel?.scrollTime() {
-                performClosureAfterDelay(Double(delayInSeconds), closure: {
+                let _ = performClosureAfterDelay(Double(delayInSeconds), closure: {
                     () -> () in
                     completion()
                 })
